@@ -3,7 +3,52 @@ An appkit for AngularJS developers.
 
 ---
 
-## Overview
+## Overview of Build Conventions
+
+### Modules
+- Modules are used for setting up configs and registering:
+	- Controllers
+	- Routes
+	- Directives
+	- Services
+
+### Components
+- Components can have one or many parts.
+- Components should have a functional purpose.
+
+#### Primary Component Files
+- Components are organized in directories comprised of any or all of the following files:
+	- Directives (js)
+	- Templates (tpl)
+	- Routes (js)
+	- Services (js)
+	- Controllers (js)
+	
+#### Supplementary Component Files
+- These files should only be used if a primary file already exists in the given directory.
+- Supplementary files are comprised of any or all of the following files:
+	- Models (json)
+	- Styles (scss)
+	- Images (png, jpg, jpeg, gif, svg, ico)
+	
+### Public vs. Private Internals
+- **Public** internals are parts of the app that can be used throughout the app by it's other parts.
+	- An example of this would be the main SCSS file for your site: `src/client/public/design/style/scafold.scss`.
+	- Another example would be the language service: `service.vendor.language` found at `src/client/public/service/service.vendor.language.js`.
+
+- **Private** internals are parts of the app that shouldn't be used throughout the app by it's other parts.
+	- Esentially, these are exclusive parts of the app.
+	- An example of this would be the controller for the main view for your app: `src/client/private/component/home/home.js`.
+
+### Files by Functionality (FBF) Structure
+- Basically, files are organized according to what they are used for.
+	- For example, the demo `excuse` component is located here: `src/client/private/component/excuse/`.
+	- It's directives, models, template, route, controller, and styles are all in the same directory as the view.
+	- Now you can save your fingers from years of scrolling hell!
+	
+### Index Naming Convention
+- Do not use it. It's cursed.
+	- Never name a file `src/**/index.ext` unless you are evil or it is an actual index for something.
 
 ### Assets
 - Asset paths are stored in `JSON` format in the `task` folder that is used by the task-runner.
@@ -40,14 +85,17 @@ An appkit for AngularJS developers.
 ---
 
 ### Services
+- Services are used for sending/receiving and manipulating data.
 - Global service modules are registerd in `src/client/public/modules/service.module.js`.
 - All service modules are prefixed with `service`.
+- Services that belong in specific components should be prefixed with `service.{{component}}`.
 
 **Example:** A module for a service may be called `service.myService`.
 
 ---
 
 ### Controllers
+- Controllers are used for passing around data provided by URL params and other means.
 - Controller modules are registerd in `src/client/public/modules/controller.module.js`.
 - All controller modules are prefixed with `controller`.
 
@@ -56,6 +104,7 @@ An appkit for AngularJS developers.
 ---
 
 ### Directives
+- Directives are used control DOM behaviour and to render data in HTML.
 - Global directive modules are registerd in `src/client/public/modules/directive.module.js`.
 - The structure of a directive template path is this: `{{component}}/directive/{{template}}.html`.
 - All directive modules are prefixed with `directive`.
@@ -110,8 +159,12 @@ An appkit for AngularJS developers.
 
 ### Vendor Utilities
 
+### Angular Tranlsate
+- Called via `service.vendor.language` and injected via `Language`.
+- Learn more about `angular-translate` [here](https://angular-translate.github.io/).
+
 #### MomentJS
-- Called via `service.vendor.moment` and injected via `moment`.
+- Called via `service.vendor.moment` and injected via `Moment`.
 - Learn more about `angularMoment` [here](https://github.com/urish/angular-moment).
 - Learn more about `MomentJS` [here](http://momentjs.com/docs/).
 

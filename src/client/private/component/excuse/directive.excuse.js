@@ -10,21 +10,19 @@
  * **Note:** http://bofh.bjash.com
  *
  * @example
- * <excuse time="self.time"></excuse>
+ * <excuse></excuse>
  */
 angular.module("directive.excuse", [
-	"service.material.toast",
-	"service.model"
+	"service.excuse",
+	"service.material.toast"
 ])
-	.directive("excuse", function DirectiveExcuse(Toast, Model) {
+	.directive("excuse", function DirectiveExcuse(Toast, Excuse) {
 		return {
 			"restrict": "E",
 			"replace": true,
 			"scope": {},
 			"templateUrl": "excuse/directive/excuse.html",
 			"link": function DirectiveExcuseLink(scope, element, attrs, controller) {
-				const model = Model["excuse/excuse.json"];
-				let excuse = model[Math.floor(Math.random()*model.length)];
 				const popToast = msg => {
 					Toast.show(
 						Toast.simple()
@@ -33,10 +31,9 @@ angular.module("directive.excuse", [
 							.hideDelay(7000)
 					);
 				};
-				popToast(excuse);
+				popToast(Excuse.get());
 				scope.tryAgain = msg => {
-					excuse = model[Math.floor(Math.random()*model.length)];
-					popToast(excuse);
+					popToast(Excuse.get());
 				};
 			}
 		};

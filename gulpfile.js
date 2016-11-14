@@ -151,7 +151,7 @@ gulp.task("copy-fonts", () => {
 
 gulp.task("copy-images", () => {
 	return gulp.src([
-		"./src/client/public/design/image/*.{png,jpg,jpeg,gif,svg}"
+		"./src/client/public/design/image/*.{png,jpg,jpeg,gif,svg,ico}"
 	])
 	.pipe(gulp.dest("./dist/images"));
 });
