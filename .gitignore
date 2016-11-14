@@ -1,0 +1,32 @@
+# Blacklist Every File
+*
+
+# Whitelist Javascript Files
+!gulpfile.js
+!package.json
+!server.js
+
+# Whitelist Markdown Files
+!LICENSE.md
+!README.md
+
+# Whitelist Dot Files
+!.babelrc
+!.envrc
+!.eslintignore
+!.eslintrc
+!.gitignore
+!.jsbeautifyrc
+!.nvmrc
+
+# Whitelist Source Files
+!/src
+!/src/**/*
+
+# Whitelist Test Files
+!/test
+!/test/**/*
+
+# Blacklist Other Files
+/test/test.js
+.DS_Store
