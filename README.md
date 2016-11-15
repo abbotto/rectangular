@@ -118,7 +118,7 @@ An appkit for AngularJS developers.
 - The structure of a route path is this: `{{component}}/{{template}}.tpl`.
 - All route modules are prefixed with `route`.
 
-**Example:** A module for a service may be called `service.myDirective`.
+**Example:** A module for a service may be called `directive.myDirective`.
 
 ---
 
