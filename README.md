@@ -104,7 +104,7 @@ An appkit for AngularJS developers.
 ---
 
 ### Directives
-- Directives are used control DOM behaviour and to render data in HTML.
+- Directives are used to control DOM behaviour and to render data in HTML format.
 - Global directive modules are registerd in `src/client/public/modules/directive.module.js`.
 - The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 - All directive modules are prefixed with `directive`.
