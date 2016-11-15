@@ -33,8 +33,8 @@ An appkit for AngularJS developers.
 	
 ### Public vs. Private Internals
 - **Public** internals are parts of the app that can be used throughout the app by it's other parts.
-	- An example of this would be the main SCSS file for your site: `src/client/public/design/style/scafold.scss`.
-	- Another example would be the language service: `service.vendor.language` found at `src/client/public/service/service.vendor.language.js`.
+	- An example of this would be the main SCSS file for your site: `src/client/public/design/style/scaffold.scss`.
+	- Another example would be the language service: `service.vendor.language` found at `src/client/public/component/vendor/language/service.vendor.language.js`.
 
 - **Private** internals are parts of the app that shouldn't be used throughout the app by it's other parts.
 	- Esentially, these are exclusive parts of the app.
@@ -68,11 +68,11 @@ An appkit for AngularJS developers.
 ---
 
 ### Templates
-- The structure of a template path is this: `{{component}}/{{template}}.html`.
+- The structure of a template path is this: `{{component}}/{{template}}.tpl`.
 
 **Example:**
 
-	<ng-include src="'home/home.html'"></ng-include>
+	<ng-include src="'home/home.tpl'"></ng-include>
 
 ---
 
@@ -99,14 +99,14 @@ An appkit for AngularJS developers.
 - Controller modules are registerd in `src/client/public/modules/controller.module.js`.
 - All controller modules are prefixed with `controller`.
 
-**Example:** A module for a service may be called `service.myController`.
+**Example:** A module for a service may be called `controller.myController`.
 
 ---
 
 ### Directives
 - Directives are used control DOM behaviour and to render data in HTML.
 - Global directive modules are registerd in `src/client/public/modules/directive.module.js`.
-- The structure of a directive template path is this: `{{component}}/directive/{{template}}.html`.
+- The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 - All directive modules are prefixed with `directive`.
 
 **Example:** A module for a service may be called `service.myDirective`.
@@ -115,7 +115,7 @@ An appkit for AngularJS developers.
 
 ### Routes
 - Route modules are registerd in `src/client/public/modules/route.module.js`.
-- The structure of a route path is this: `{{component}}/{{template}}.html`.
+- The structure of a route path is this: `{{component}}/{{template}}.tpl`.
 - All route modules are prefixed with `route`.
 
 **Example:** A module for a service may be called `service.myDirective`.
@@ -126,21 +126,21 @@ An appkit for AngularJS developers.
 
 #### Material Design
 - `Angular Material` has been integrated into `Rectangular` for building awesome app interfaces.
-- Services are called via `service.material.*`.
+- Services are called via `service.ui.*`.
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
 
 
 - **Integrated Services**
-	- Called via `service.material.bottomSheet` and injected via `BottomSheet`.
-	- Called via `service.material.colors` and injected via `Colors`.
-	- Called via `service.material.dialog` and injected via `Dialog`.
-	- Called via `service.material.icon` and injected via `Icon`.
-	- Called via `service.material.inkRipple` and injected via `InkRipple`.
-	- Called via `service.material.media` and injected via `Media`.
-	- Called via `service.material.panel` and injected via `Panel`.
-	- Called via `service.material.sidenav` and injected via `Sidenav`.
-	- Called via `service.material.sticky` and injected via `Sticky`.
-	- Called via `service.material.toast` and injected via `Toast`.
+	- Called via `service.ui.bottomSheet` and injected via `BottomSheet`.
+	- Called via `service.ui.colors` and injected via `Colors`.
+	- Called via `service.ui.dialog` and injected via `Dialog`.
+	- Called via `service.ui.icon` and injected via `Icon`.
+	- Called via `service.ui.inkRipple` and injected via `InkRipple`.
+	- Called via `service.ui.media` and injected via `Media`.
+	- Called via `service.ui.panel` and injected via `Panel`.
+	- Called via `service.ui.sidenav` and injected via `Sidenav`.
+	- Called via `service.ui.sticky` and injected via `Sticky`.
+	- Called via `service.ui.toast` and injected via `Toast`.
 
 
 #### Animations
@@ -149,7 +149,7 @@ An appkit for AngularJS developers.
 
 #### Messages
 - HTML messages are handled via `ngMessage`.
-- Learn more about `ngMessage` [here](https://docs.angularjs.org/api/ngMessages/directive/ngMessages).
+- Learn more about `ngMessage` [here](https://docs.angularjs.org/api/ngMessages/directive.ngMessages).
 
 #### Assistive Technology
 - Assistive technology support is handled via `ngAria`.

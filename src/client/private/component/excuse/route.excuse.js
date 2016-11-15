@@ -3,8 +3,8 @@ angular
 	.config(($routeProvider) => {
 		$routeProvider
 			.when("/excuse", {
-				"templateUrl": "excuse/excuse.html",
-				"controller": "excuse as self"
+				"templateUrl": "excuse/excuse.tpl",
+				"controllerAs": "self"
 			})
 		;
 	})

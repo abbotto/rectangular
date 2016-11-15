@@ -1,6 +1,6 @@
 angular
 	.module("app.services", [
-		"service.vendor.language",
-		"service.material"
+		"service.locale",
+		"service.ui"
 	])
 ;

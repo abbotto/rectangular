@@ -1,5 +1,5 @@
 angular
-	.module("service.material.panel", [])
+	.module("service.ui.panel", [])
 		.factory("Panel", function ServiceMaterialPanel($mdPanel) {
 			return $mdPanel;
 		}

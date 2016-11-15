@@ -3,7 +3,7 @@ angular
 	.config($routeProvider => {
 		$routeProvider
 			.when("/", {
-				"templateUrl": "home/home.html"
+				"templateUrl": "home/home.tpl"
 			})
 		;
 	})

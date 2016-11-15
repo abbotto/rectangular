@@ -1,5 +1,5 @@
 angular
-	.module("service.material.sticky", [])
+	.module("service.ui.sticky", [])
 		.factory("Sticky", function ServiceMaterialSticky($mdSticky) {
 			return $mdSticky;
 		}

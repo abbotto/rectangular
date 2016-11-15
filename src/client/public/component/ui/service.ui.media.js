@@ -1,5 +1,5 @@
 angular
-	.module("service.material.media", [])
+	.module("service.ui.media", [])
 		.factory("Media", function ServiceMaterialMedia($mdMedia) {
 			return $mdMedia;
 		}

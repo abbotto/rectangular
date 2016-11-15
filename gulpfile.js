@@ -131,10 +131,8 @@ gulp.task("cache-html", () => {
 	}))
 	// Remove the extension
 	// from the template reference
-	.pipe(replace(".tpl", ".html"))
 	.pipe(replace("private/component/", ""))
 	.pipe(replace("public/component/", ""))
-	.pipe(replace("directive.", "directive/"))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp"));
 });
