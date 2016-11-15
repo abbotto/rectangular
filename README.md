@@ -157,6 +157,7 @@ An appkit for AngularJS developers.
 
 #### Language Support
 - Called via `service.locale` and injected via `Language`.
+- Translations are handled via `angular-translate`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
 ---
