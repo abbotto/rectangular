@@ -155,13 +155,13 @@ An appkit for AngularJS developers.
 - Assistive technology support is handled via `ngAria`.
 - Learn more about `ngAria` [here](https://docs.angularjs.org/api/ngAria).
 
+#### Language Support
+- Called via `service.locale` and injected via `Language`.
+- Learn more about `angular-translate` [here](https://angular-translate.github.io/).
+
 ---
 
 ### Vendor Utilities
-
-#### Angular Tranlsate
-- Called via `service.vendor.language` and injected via `Language`.
-- Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
 #### MomentJS
 - Called via `service.vendor.moment` and injected via `Moment`.
