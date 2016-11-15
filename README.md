@@ -99,7 +99,7 @@ An appkit for AngularJS developers.
 - Controller modules are registerd in `src/client/public/modules/controller.module.js`.
 - All controller modules are prefixed with `controller`.
 
-**Example:** A module for a service may be called `controller.myController`.
+**Example:** A module for a controller may be called `controller.myController`.
 
 ---
 
@@ -109,7 +109,7 @@ An appkit for AngularJS developers.
 - The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 - All directive modules are prefixed with `directive`.
 
-**Example:** A module for a service may be called `service.myDirective`.
+**Example:** A module for a directive may be called `directive.myDirective`.
 
 ---
 
@@ -118,7 +118,7 @@ An appkit for AngularJS developers.
 - The structure of a route path is this: `{{component}}/{{template}}.tpl`.
 - All route modules are prefixed with `route`.
 
-**Example:** A module for a service may be called `directive.myDirective`.
+**Example:** A module for a route may be called `route.myRoute`.
 
 ---
 
