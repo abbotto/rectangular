@@ -5,8 +5,8 @@ An appkit for AngularJS developers.
 
 ## Overview of Build Conventions
 
-### Modules
-- Modules are used for setting up configs and registering:
+### App Modules
+- App modules are used for setting up configs and registering:
 	- Controllers
 	- Routes
 	- Directives
