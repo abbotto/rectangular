@@ -159,7 +159,7 @@ An appkit for AngularJS developers.
 
 ### Vendor Utilities
 
-### Angular Tranlsate
+#### Angular Tranlsate
 - Called via `service.vendor.language` and injected via `Language`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
