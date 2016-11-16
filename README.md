@@ -33,11 +33,12 @@ An appkit for AngularJS developers.
 	
 ### Public vs. Private Internals
 - **Public** internals are parts of the app that can be used throughout the app by it's other parts.
+	- Essentially, these are `inclusive` parts of the app.
 	- An example of this would be the main SCSS file for your site: `src/client/public/design/style/scaffold.scss`.
 	- Another example would be the language service: `service.vendor.language` found at `src/client/public/component/vendor/language/service.vendor.language.js`.
 
 - **Private** internals are parts of the app that shouldn't be used throughout the app by it's other parts.
-	- Esentially, these are exclusive parts of the app.
+	- Essentially, these are `exclusive` parts of the app.
 	- An example of this would be the controller for the main view for your app: `src/client/private/component/home/home.js`.
 
 ### Files by Functionality (FBF) Structure
