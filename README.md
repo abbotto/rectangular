@@ -18,6 +18,7 @@ Rectangular is designed around best-practices and built on the principles of:
 - Documentation: [View](readme/documentation.md)
 - Functions: [View](readme/functions.md)
 - Models: [View](readme/models.md)
+- Naming: [View](readme/naming.md)
 - Registry: [View](readme/registry.md)
 - Structure: [View](readme/structure.md)
 - Templates: [View](readme/templates.md)
