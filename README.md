@@ -14,31 +14,31 @@ Rectangular is designed around best-practices and built on the principles of:
 # Table of Contents
 
 ## Assets
-(View)[readme/assets.md]
+[View](readme/assets.md)
 
 ## Components
-(View)[readme/components.md]
+[View](readme/components.md)
 
 ## Documentation
-(View)[readme/documentation.md]
+[View](readme/documentation.md)
 
 ## Functions
-(View)[readme/functions.md]
+[View](readme/functions.md)
 
 ## Models
-(View)[readme/models.md]
+[View](readme/models.md)
 
 ## Registry
-(View)[readme/registry.md]
+[View](readme/registry.md)
 
 ## Structure
-(View)[readme/structure.md]
+[View](readme/structure.md)
 
 ## Templates
-(View)[readme/templates.md]
+[View](readme/templates.md)
 
 ## User Experience
-(View)[readme/user-experience.md]
+[View](readme/user-experience.md)
 
 ## Vendor Utilities
-(View)[readme/vendor-utilities.md]
+[View](readme/vendor-utilities.md)
