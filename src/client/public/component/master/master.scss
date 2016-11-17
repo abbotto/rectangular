@@ -1,10 +1,6 @@
-html {
-	font-size: 100%;
-	body: {
-		font-size: 16px;
-	}
-}
-
-#app, .app {
-	display: block;
+#master,
+.master {
+	margin: 0 auto;
+	width: 64rem; // 1024px
+	min-width: 28rem;
 }

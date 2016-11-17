@@ -12,7 +12,6 @@ Rectangular is designed around best-practices and built on the principles of:
 ---
 
 # Table of Contents
-
 - Assets: [View](readme/assets.md)
 - Components: [View](readme/components.md)
 - Controllers: [View](readme/controllers.md)

@@ -44,10 +44,10 @@ gulp.task("intro", () => {
 //--------------------------------
 let vendorJS, appJS, vendorSCSS, appSCSS;
 gulp.task("dependencies", () => {
-	vendorJS = require("./task/asset/vendor.js.json");
 	appJS = require("./task/asset/source.js.json");
-	vendorSCSS = require("./task/asset/vendor.scss.json");
 	appSCSS = require("./task/asset/source.scss.json");
+	vendorJS = require("./task/asset/vendor.js.json");
+	vendorSCSS = require("./task/asset/vendor.scss.json");
 });
 
 //--------------------------------
@@ -178,29 +178,6 @@ gulp.task("compile-index", () => {
 	fs.writeFile("./dist/index.html", contents);
 });
 
-gulp.task("compile-js", () => {
-	return gulp.src(vendorJS)
-	.pipe(concat("vendor.js"))
-	.on("error", console.log)
-	.pipe(gulp.dest("./tmp/"))
-	.on("end", () => {
-		return gulp.src(appJS)
-		.pipe(babel())
-		.pipe(concat("source.js"))
-		.on("error", console.log)
-		.pipe(gulp.dest("./tmp/"))
-		.on("end", () => {
-			return gulp.src([
-				"./tmp/vendor.js",
-				"./tmp/source.js"
-			])
-			.pipe(concat("app.js"))
-			.on("error", console.log)
-			.pipe(gulp.dest("./dist/"));
-		});
-	});
-});
-
 gulp.task("compile-scss", () => {
 	return gulp.src(vendorSCSS)
 	.pipe(concat("vendor.scss"))
@@ -223,6 +200,29 @@ gulp.task("compile-scss", () => {
 			.pipe(cleanCSS({
 				"compatibility": "*"
 			}))
+			.pipe(gulp.dest("./dist/"));
+		});
+	});
+});
+
+gulp.task("compile-js", () => {
+	return gulp.src(vendorJS)
+	.pipe(concat("vendor.js"))
+	.on("error", console.log)
+	.pipe(gulp.dest("./tmp/"))
+	.on("end", () => {
+		return gulp.src(appJS)
+		.pipe(babel())
+		.pipe(concat("source.js"))
+		.on("error", console.log)
+		.pipe(gulp.dest("./tmp/"))
+		.on("end", () => {
+			return gulp.src([
+				"./tmp/vendor.js",
+				"./tmp/source.js"
+			])
+			.pipe(concat("app.js"))
+			.on("error", console.log)
 			.pipe(gulp.dest("./dist/"));
 		});
 	});
@@ -306,16 +306,11 @@ gulp.task("open", () => {
 		}));
 });
 
-gulp.task("reload", () => {
-	gulp.src(__filename).pipe(livereload());
-});
-
-gulp.task("compiled", () => {
-	eventEmitter.emit("compiled");
-});
-
-eventEmitter.on("compiled", () => {
-	gulp.start(["reload"]);
+gulp.task("reload", (done) => {
+	setTimeout(() => {
+		gulp.src(__filename).pipe(livereload());
+		done();
+	}, 1500);
 });
 
 gulp.task("watchTasks", () => {
@@ -326,12 +321,12 @@ gulp.task("watchTasks", () => {
 		"copy-fonts",
 		"copy-images",
 		"copy-downloads",
-		"cache-html",
 		"dependencies",
 		"compile-index",
-		"compile-js",
+		"cache-html",
 		"compile-scss",
-		"compiled"
+		"compile-js",
+		"reload"
 	);
 });
 
@@ -341,7 +336,7 @@ gulp.task("monitor", ["compile", "server"], done => {
 		gulp.start(["open"]);
 		gulp.src(__filename).pipe(notify("application has loaded."));
 		done();
-	}, 1000);
+	}, 1500);
 });
 
 gulp.task("default", ["compile"]);

@@ -1,7 +1,7 @@
 ## Naming
 
 ### Files
-- Naming files in the following way keeps them organized within lists:
+- Naming modular files in the following way keeps them organized within lists:
 	- Controllers: `controller.{{component}}.js`
 	- Routes: `route.{{component}}.js`
 	- Directives: `directive.{{component}}.js`
