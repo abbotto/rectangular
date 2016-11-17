@@ -2,7 +2,7 @@ angular
 	.module("service.locale", [
 		"service.vendor.translate"
 	])
-	.factory("Language", function ServiceLanguage($translateProvider) {
+	.factory("Language$", function LanguageService($translateProvider) {
 		return $translateProvider;
 	})
 	.config(($translateProvider, LANGUAGE) => {

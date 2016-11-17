@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.inkRipple", [])
-		.factory("InkRipple", function ServiceMaterialInkRipple($mdInkRipple) {
+		.factory("InkRipple$", function MaterialInkRippleService($mdInkRipple) {
 			return $mdInkRipple;
 		}
 	)

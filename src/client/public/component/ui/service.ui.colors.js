@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.colors", [])
-		.factory("Colors", function ServiceMaterialColors($mdColors) {
+		.factory("Colors$", function MaterialColorsService($mdColors) {
 			return $mdColors;
 		}
 	)

@@ -1,22 +1,54 @@
+* 1. [The Registry](#TheRegistry)
+* 2. [Components](#Components)
+	* 2.1. [Primary Component Files](#PrimaryComponentFiles)
+	* 2.2. [Supplementary Component Files](#SupplementaryComponentFiles)
+* 3. [Public vs. Private Internals](#Publicvs.PrivateInternals)
+* 4. [Files by Functionality (FBF) Structure](#FilesbyFunctionalityFBFStructure)
+* 5. [Index Naming Convention](#IndexNamingConvention)
+* 6. [Assets](#Assets)
+* 7. [Models](#Models)
+* 8. [Templates](#Templates)
+* 9. [Modules](#Modules)
+* 10. [Services](#Services)
+* 11. [Controllers](#Controllers)
+* 12. [ViewModel](#ViewModel)
+	* 12.1. [controllerAs syntax with vm](#controllerAssyntaxwithvm)
+* 13. [Directives](#Directives)
+* 14. [Routes](#Routes)
+* 15. [Functions](#Functions)
+	* 15.1. [Named vs Anonymous Functions](#NamedvsAnonymousFunctions)
+* 16. [User Experience](#UserExperience)
+	* 16.1. [Material Design](#MaterialDesign)
+	* 16.2. [Animations](#Animations)
+	* 16.3. [Messages](#Messages)
+	* 16.4. [Assistive Technology](#AssistiveTechnology)
+	* 16.5. [Language Support](#LanguageSupport)
+* 17. [Vendor Utilities](#VendorUtilities)
+	* 17.1. [MomentJS](#MomentJS)
+	* 17.2. [Lodash](#Lodash)
+* 18. [Source files](#Sourcefiles)
+	* 18.1. [Server](#Server)
+	* 18.2. [Client](#Client)
+* 19. [Documentation](#Documentation)
+* 20. [Suggested Reading](#SuggestedReading)
+
 # Rectangular
 An appkit for AngularJS developers.
 
 ---
 
-## Overview of Build Conventions
-
-### App Modules
-- App modules are used for setting up configs and registering:
+##  1. <a name='TheRegistry'></a>The Registry
+- The registry is used for setting up configs and registering:
 	- Controllers
 	- Routes
 	- Directives
 	- Services
 
-### Components
+##  2. <a name='Components'></a>Components
 - Components can have one or many parts.
 - Components should have a functional purpose.
 
-#### Primary Component Files
+###  2.1. <a name='PrimaryComponentFiles'></a>Primary Component Files
 - Components are organized in directories comprised of any or all of the following files:
 	- Directives (js)
 	- Templates (tpl)
@@ -24,14 +56,14 @@ An appkit for AngularJS developers.
 	- Services (js)
 	- Controllers (js)
 	
-#### Supplementary Component Files
+###  2.2. <a name='SupplementaryComponentFiles'></a>Supplementary Component Files
 - These files should only be used if a primary file already exists in the given directory.
 - Supplementary files are comprised of any or all of the following files:
 	- Models (json)
 	- Styles (scss)
 	- Images (png, jpg, jpeg, gif, svg, ico)
 	
-### Public vs. Private Internals
+##  3. <a name='Publicvs.PrivateInternals'></a>Public vs. Private Internals
 - **Public** internals are parts of the app that can be used throughout the app by it's other parts.
 	- Essentially, these are `inclusive` parts of the app.
 	- An example of this would be the main SCSS file for your site: `src/client/public/design/style/scaffold.scss`.
@@ -41,17 +73,17 @@ An appkit for AngularJS developers.
 	- Essentially, these are `exclusive` parts of the app.
 	- An example of this would be the controller for the main view for your app: `src/client/private/component/home/home.js`.
 
-### Files by Functionality (FBF) Structure
+##  4. <a name='FilesbyFunctionalityFBFStructure'></a>Files by Functionality (FBF) Structure
 - Basically, files are organized according to what they are used for.
 	- For example, the demo `excuse` component is located here: `src/client/private/component/excuse/`.
 	- It's directives, models, template, route, controller, and styles are all in the same directory as the view.
 	- Now you can save your fingers from years of scrolling hell!
 	
-### Index Naming Convention
+##  5. <a name='IndexNamingConvention'></a>Index Naming Convention
 - Do not use it. It's cursed.
 	- Never name a file `src/**/index.ext` unless you are evil or it is an actual index for something.
 
-### Assets
+##  6. <a name='Assets'></a>Assets
 - Asset paths are stored in `JSON` format in the `task` folder that is used by the task-runner.
 - Currently, the asset files are called:
 	- `task/vendor.js.json`
@@ -61,14 +93,14 @@ An appkit for AngularJS developers.
 
 ---
 
-### Models
+##  7. <a name='Models'></a>Models
 - Models should be stored in `JSON` format in the `component` directories.
 - Models can be accessed via the `service.model` module and injected via `Model`.
 - A model can be accessed like this: `Model[{{component}}/{{model}}.json]`.
 
 ---
 
-### Templates
+##  8. <a name='Templates'></a>Templates
 - The structure of a template path is this: `{{component}}/{{template}}.tpl`.
 
 **Example:**
@@ -77,7 +109,7 @@ An appkit for AngularJS developers.
 
 ---
 
-### Modules
+##  9. <a name='Modules'></a>Modules
 - Application Modules are registerd in `src/client/public/modules/app.module.js`.
 - All app modules are prefixed with `app`.
 
@@ -85,47 +117,79 @@ An appkit for AngularJS developers.
 
 ---
 
-### Services
+##  10. <a name='Services'></a>Services
 - Services are used for sending/receiving and manipulating data.
 - Global service modules are registerd in `src/client/public/modules/service.module.js`.
 - All service modules are prefixed with `service`.
 - Services that belong in specific components should be prefixed with `service.{{component}}`.
-
-**Example:** A module for a service may be called `service.myService`.
+- Services should be named in `UpperCamelCase` format.
+- Built-in Angular services are prefixed with `$`. To keep things concise, other services should have a suffix of `$`.
+	- Built-in: `$location`.
+	- Other: `Weather$`.
 
 ---
 
-### Controllers
+##  11. <a name='Controllers'></a>Controllers
 - Controllers are used for passing around data provided by URL params and other means.
 - Controller modules are registerd in `src/client/public/modules/controller.module.js`.
 - All controller modules are prefixed with `controller`.
+- Controllers should be named in `UpperCamelCase` format.
 
-**Example:** A module for a controller may be called `controller.myController`.
+##  12. <a name='ViewModel'></a>ViewModel
+
+###  12.1. <a name='controllerAssyntaxwithvm'></a>controllerAs syntax with vm
+
+A consistent capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
+
+The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
+
+Capturing the context of this avoids encountering this problem.
+
+**Example:**
+
+	function ctrl() {
+		var vm = this;
+		vm.foo = {};
+		vm.bar = function() { };
+	}
 
 ---
 
-### Directives
+##  13. <a name='Directives'></a>Directives
 - Directives are used to control DOM behaviour and to render data in HTML format.
 - Global directive modules are registerd in `src/client/public/modules/directive.module.js`.
 - The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 - All directive modules are prefixed with `directive`.
-
-**Example:** A module for a directive may be called `directive.myDirective`.
+- Directives should be named in `lowerCamelCase` format.
 
 ---
 
-### Routes
+##  14. <a name='Routes'></a>Routes
 - Route modules are registerd in `src/client/public/modules/route.module.js`.
 - The structure of a route path is this: `{{component}}/{{template}}.tpl`.
 - All route modules are prefixed with `route`.
 
-**Example:** A module for a route may be called `route.myRoute`.
+---
+
+##  15. <a name='Functions'></a>Functions
+
+###  15.1. <a name='NamedvsAnonymousFunctions'></a>Named vs Anonymous Functions
+
+Rectangular uses named functions instead of passing an anonymous function in as a callback.
+
+This produces more readable code, is much easier to debug, and reduces the amount of nested callback code.
+
+**Example:**
+
+	angular
+		.module('app')
+		.controller('vmDashboard', vmDashboard() { })
 
 ---
 
-### User Interface
+##  16. <a name='UserExperience'></a>User Experience
 
-#### Material Design
+###  16.1. <a name='MaterialDesign'></a>Material Design
 - `Angular Material` has been integrated into `Rectangular` for building awesome app interfaces.
 - Services are called via `service.ui.*`.
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
@@ -144,49 +208,53 @@ An appkit for AngularJS developers.
 	- Called via `service.ui.toast` and injected via `Toast`.
 
 
-#### Animations
+###  16.2. <a name='Animations'></a>Animations
 - Animations are handled via `ngAnimate`.
 - Learn more about `ngAnimate` [here](https://docs.angularjs.org/api/ngAnimate).
 
-#### Messages
+###  16.3. <a name='Messages'></a>Messages
 - HTML messages are handled via `ngMessage`.
 - Learn more about `ngMessage` [here](https://docs.angularjs.org/api/ngMessages/directive.ngMessages).
 
-#### Assistive Technology
+###  16.4. <a name='AssistiveTechnology'></a>Assistive Technology
 - Assistive technology support is handled via `ngAria`.
 - Learn more about `ngAria` [here](https://docs.angularjs.org/api/ngAria).
 
-#### Language Support
+###  16.5. <a name='LanguageSupport'></a>Language Support
 - Called via `service.locale` and injected via `Language`.
 - Translations are handled via `angular-translate`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
 ---
 
-### Vendor Utilities
+##  17. <a name='VendorUtilities'></a>Vendor Utilities
 
-#### MomentJS
-- Called via `service.vendor.moment` and injected via `Moment`.
+###  17.1. <a name='MomentJS'></a>MomentJS
+- Called via `service.vendor.moment` and injected via `Moment$`.
 - Learn more about `angularMoment` [here](https://github.com/urish/angular-moment).
 - Learn more about `MomentJS` [here](http://momentjs.com/docs/).
 
-#### Lodash
-- Called via `service.vendor.lodash` and injected via `_`.
+###  17.2. <a name='Lodash'></a>Lodash
+- Called via `service.vendor.lodash` and injected via `Lodash$`.
 - Learn more about `Lodash` [here](https://lodash.com/docs/4.16.6).
 
 ---
- 
-### Source files
 
-#### Server
+##  18. <a name='Sourcefiles'></a>Source files
+
+###  18.1. <a name='Server'></a>Server
 The server-side files are kept in `src/server`.
 
-#### Client
+###  18.2. <a name='Client'></a>Client
 The clent-side files are kept in `src/client`.
 
 ---
 
-### Documentation
-- Documentation is provided via `ngDocs` and can be compiled by running `gulp compile-docs`.
+##  19. <a name='Documentation'></a>Documentation
+- Documentation can be generated via `ngDocs` by running `gulp compile-docs`.
 - Learn more about `ngDocs` [here](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation).
 - Learn more about `gulp-ngdocs` [here](https://github.com/nikhilmodak/gulp-ngdocs).
+
+##  20. <a name='SuggestedReading'></a>Suggested Reading
+- https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make
+- https://scotch.io/tutorials/making-skinny-angularjs-controllers

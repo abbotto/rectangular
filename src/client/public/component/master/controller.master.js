@@ -1,6 +1,6 @@
 angular
 	.module("controller.master", [])
-	.controller("master", function ControllerMaster() {
+	.controller("Master", function MasterController() {
 		// Put code here
 	})
 ;

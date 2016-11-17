@@ -296,7 +296,6 @@ const watchFiles = [
 	"./src/client/**/*.js",
 	"./src/client/**/*.json",
 	"./src/client/**/*.tpl",
-	"./src/client/**/*.inc",
 	"./task/**/*.json"
 ];
 

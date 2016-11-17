@@ -1,6 +1,6 @@
 angular
 	.module("service.ui", [
-		"service.vendor.material"
+		"ngMaterial"
 	])
 	.config($mdThemingProvider => {
 		// https://material.angularjs.org/latest/Theming/01_introduction

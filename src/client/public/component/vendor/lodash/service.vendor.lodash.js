@@ -1,6 +1,6 @@
 angular
 	.module("service.vendor.lodash", [])
-		.factory("_", function Service_($window) {
+		.factory("Lodash$", function LodashService($window) {
 			return $window._;
 		}
 	)

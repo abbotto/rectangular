@@ -16,17 +16,17 @@ angular.module("directive.excuse", [
 	"service.excuse",
 	"service.ui.toast"
 ])
-	.directive("excuse", function DirectiveExcuse(Toast, Excuse) {
+	.directive("excuse", function excuseDirective(Toast$, Excuse$) {
 		return {
 			"restrict": "E",
 			"replace": true,
 			"scope": {},
 			"templateUrl": "excuse/directive.excuse.tpl",
-			"link": function DirectiveExcuseLink(scope, element, attrs, controller) {
+			"link": function excuseDirectiveLink(scope, element, attrs, controller) {
 				const popToast = () => {
-					const msg = Excuse();
-					Toast.show(
-						Toast.simple()
+					const msg = Excuse$();
+					Toast$.show(
+						Toast$.simple()
 							.textContent(msg)
 							.position("top right")
 							.hideDelay(7000)

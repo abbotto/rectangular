@@ -2,7 +2,7 @@ angular
 	.module("controller.excuse", [
 		"directive.excuse"
 	])
-	.controller("excuse", function ControllerExcuse() {
+	.controller("Excuse", function ExcuseController() {
 		// Put stuff here...
 	})
 ;

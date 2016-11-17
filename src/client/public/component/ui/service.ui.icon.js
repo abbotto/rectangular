@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.icon", [])
-		.factory("Icon", function ServiceMaterialIcon($mdIcon) {
+		.factory("Icon$", function MaterialIconService($mdIcon) {
 			return $mdIcon;
 		}
 	)

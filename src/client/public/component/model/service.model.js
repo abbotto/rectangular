@@ -1,6 +1,6 @@
 /**
- * @ngdoc directive
- * @name service.model:Model
+ * @ngdoc service
+ * @name service.model:Model$
  * @function
  *
  * @description
@@ -9,11 +9,11 @@
  * **Note:** This function will return your models as you'd expect, not as JSON strings
  *
  * @example
- * Model["{{component}}/{{model}}.json"]
+ * Model$["{{component}}/{{model}}.json"]
  */
 angular
 	.module("service.model", ["ngModels"])
-		.factory("Model", function ServiceModel(ngModel) {
+		.factory("Model$", function ModelService(ngModel) {
 			let key;
 			for (key in ngModel) {
 				if (ngModel.hasOwnProperty(key)) ngModel[key] = JSON.parse(ngModel[key]);
