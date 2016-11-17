@@ -12,14 +12,14 @@ An appkit for AngularJS developers.
 
 
 ### App Modules
-- App Modules are registerd in `src/client/registry/module.app.js`.
+- App Modules are registered in `src/client/registry/module.app.js`.
 - All app modules are prefixed with `app`.
 
 ---
 
 ### Services
 - Services are used for sending/receiving and manipulating data.
-- Global service modules are registerd in `src/client/registry/module.service.js`.
+- Global service modules are registered in `src/client/registry/module.service.js`.
 - All service modules are prefixed with `service`.
 - Services that belong in specific components should be prefixed with `service.{{component}}`.
 - Services should be named in `UpperCamelCase` format.
@@ -31,7 +31,7 @@ An appkit for AngularJS developers.
 
 ### Controllers
 - Controllers are used for pulling/pushing data to/from services and other means.
-- Controller modules are registerd in `src/client/registry/module.controller.js`.
+- Controller modules are registered in `src/client/registry/module.controller.js`.
 - All controller modules are prefixed with `controller`.
 - Controllers should be named in `UpperCamelCase` format.
 
@@ -57,7 +57,7 @@ Capturing the context of this avoids encountering this problem.
 
 ### Directives
 - Directives are used to control DOM behaviour and to render data in HTML format.
-- Global directive modules are registerd in `src/client/registry/directive.module.js`.
+- Global directive modules are registered in `src/client/registry/directive.module.js`.
 - The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 - All directive modules are prefixed with `directive`.
 - Directives should be named in `lowerCamelCase` format.
@@ -65,7 +65,7 @@ Capturing the context of this avoids encountering this problem.
 ---
 
 ### Routes
-- Route modules are registerd in `src/client/registry/route.module.js`.
+- Route modules are registered in `src/client/registry/route.module.js`.
 - The structure of a route path is this: `{{component}}/{{template}}.tpl`.
 - All route modules are prefixed with `route`.
 
