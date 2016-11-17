@@ -14,7 +14,7 @@
 
 ### Services
 - Services are used for sending/receiving and manipulating data.
-- Global service modules are registered in `src/client/registry/module.service.js`.
+- App service modules are registered in `src/client/registry/module.service.js`.
 - All service modules are prefixed with `service`.
 - Services that belong in specific components should be prefixed with `service.{{component}}`.
 - Services should be named in `UpperCamelCase` format.
@@ -26,7 +26,7 @@
 
 ### Controllers
 - Controllers are used for pulling/pushing data to/from services and other means.
-- Controller modules are registered in `src/client/registry/module.controller.js`.
+- App Controller modules are registered in `src/client/registry/module.controller.js`.
 - All controller modules are prefixed with `controller`.
 - Controllers should be named in `UpperCamelCase` format.
 
@@ -52,7 +52,7 @@ Capturing the context of this avoids encountering this problem.
 
 ### Directives
 - Directives are used to control DOM behaviour and to render data in HTML format.
-- Global directive modules are registered in `src/client/registry/directive.module.js`.
+- App directive modules are registered in `src/client/registry/module.directive.js`.
 - The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 - All directive modules are prefixed with `directive`.
 - Directives should be named in `lowerCamelCase` format.
