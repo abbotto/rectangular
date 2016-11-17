@@ -23,10 +23,9 @@
 !/src
 !/src/**/*
 
-# Whitelist Test Files
-!/test
-!/test/**/*
+# Whitelist Readme Files
+!/readme
+!/readme/**/*
 
 # Blacklist Other Files
-/test/test.js
 .DS_Store
