@@ -1,11 +1,17 @@
 ## Naming
 
 ### Files
+- Naming files in the following way keeps them organized within lists:
+	- Controllers: `controller.{{component}}.js`
+	- Routes: `route.{{component}}.js`
+	- Directives: `directive.{{component}}.js`
+	- Services: `service.{{component}}.js`
 
 ### Modules
 - App modules should be prefixed with `app`.
-- All other modules should be prefixed by type.
-	- Example: `service.public`.
+- All other modules should follow a pattern similar to their file name.
+	- Example: File = `service.public.js` and Module = `service.public`.
+	- Naming modules this way keeps them organized within lists.
 
 ### Controllers
 - All controller modules are prefixed with `controller`.
