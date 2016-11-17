@@ -14,19 +14,15 @@
 	- Naming modules this way keeps them organized within lists.
 
 ### Controllers
-- All controller modules are prefixed with `controller`.
 - Controllers should be named in `UpperCamelCase` format.
 
 ### Routes
-- All route modules are prefixed with `route`.
 - Routes should be named in `lowerCamelCase` format.
 
 ### Directives
-- All directive modules are prefixed with `directive`.
 - Directives should be named in `lowerCamelCase` format.
 
 ### Services
-- All service modules are prefixed with `service`.
 - Services should be named in `UpperCamelCase` format.
 - Built-in Angular services are prefixed with `$`. To keep things concise, other services should have a suffix of `$`.
 	- Built-in: `$location`.
