@@ -24,10 +24,11 @@ angular.module("directive.excuse", [
 			"templateUrl": "excuse/directive.excuse.tpl",
 			"link": function DirectiveExcuseLink(scope, element, attrs, controller) {
 				const popToast = () => {
+					const msg = Excuse();
 					Toast.show(
 						Toast.simple()
-							.textContent(Excuse())
-							.position("bottom left")
+							.textContent(msg)
+							.position("top right")
 							.hideDelay(7000)
 					);
 				};

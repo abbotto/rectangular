@@ -7,7 +7,7 @@
 	</head>
 
 	<body id="master" class="master" ng-app="app" ng-controller='master'>
-		<div ng-view class="view-animate"></div>
+		<div id="appView" class="view-animate" ng-view></div>
 		<script type="text/javascript" src="app.js"></script>
 	</body>
 </html>

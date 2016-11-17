@@ -14,7 +14,8 @@
 angular
 	.module("service.model", ["ngModels"])
 		.factory("Model", function ServiceModel(ngModel) {
-			for (const key in ngModel) {
+			let key;
+			for (key in ngModel) {
 				if (ngModel.hasOwnProperty(key)) ngModel[key] = JSON.parse(ngModel[key]);
 			}
 			return ngModel;

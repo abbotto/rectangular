@@ -1,3 +1,1 @@
-angular.module("app.directives", [
-	"directive.logo"
-]);
+angular.module("app.directives", []);

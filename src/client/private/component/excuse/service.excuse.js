@@ -3,7 +3,10 @@ angular
 		"service.model"
 	])
 	.factory("Excuse", function ServiceExcuse(Model) {
-		const model = Model["excuse/excuse.json"];
-		return model[Math.floor(Math.random() * model.length)];
+		return function ServiceExcuseModel() {
+			const model = Model["excuse/excuse.json"];
+			const len = model.length;
+			return model[Math.floor(Math.random() * len)];
+		};
 	})
 ;

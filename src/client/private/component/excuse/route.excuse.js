@@ -4,7 +4,7 @@ angular
 		$routeProvider
 			.when("/excuse", {
 				"templateUrl": "excuse/excuse.tpl",
-				"controllerAs": "self"
+				"controllerAs": "vm"
 			})
 		;
 	})

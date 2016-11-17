@@ -24,6 +24,8 @@ const sh = require("shelljs");
 const b2v = require("buffer-to-vinyl");
 const runTasks = require("run-sequence");
 const spawn = require("child_process").spawn;
+const events = require("events");
+const eventEmitter = new events.EventEmitter();
 
 //--------------------------------
 // Load environment variables
@@ -33,7 +35,7 @@ require("dotenv").config();
 //--------------------------------
 // Intro
 //--------------------------------
-gulp.task('intro', () => {
+gulp.task("intro", () => {
 	sh.exec("chmod +x ./task/script/intro.sh && ./task/script/intro.sh");
 });
 
@@ -92,8 +94,8 @@ gulp.task("constants", () => {
 
 gulp.task("models", () => {
 	return gulp.src([
-		"./src/client/private/component/**/model.*.json",
-		"./src/client/public/component/**/model.*.json"])
+		"./src/client/private/component/**/*.json",
+		"./src/client/public/component/**/*.json"])
 		.pipe(filelist("models.json"))
 		.pipe(gulp.dest("./tmp"))
 		.on("end", () => {
@@ -305,15 +307,33 @@ gulp.task("open", () => {
 		}));
 });
 
-gulp.task("reload", done => {
-	setTimeout(function reloadTimeOut() {
-		gulp.src(__filename).pipe(livereload());
-		done();
-	}, 1500);
+gulp.task("reload", () => {
+	gulp.src(__filename).pipe(livereload());
 });
 
-gulp.task("watchTasks", ["compile"], () => {
+gulp.task("compiled", () => {
+	eventEmitter.emit("compiled");
+});
+
+eventEmitter.on("compiled", () => {
 	gulp.start(["reload"]);
+});
+
+gulp.task("watchTasks", () => {
+	runTasks(
+		"delint",
+		"models",
+		"constants",
+		"copy-fonts",
+		"copy-images",
+		"copy-downloads",
+		"cache-html",
+		"dependencies",
+		"compile-index",
+		"compile-js",
+		"compile-scss",
+		"compiled"
+	);
 });
 
 gulp.task("monitor", ["compile", "server"], done => {
@@ -326,3 +346,4 @@ gulp.task("monitor", ["compile", "server"], done => {
 });
 
 gulp.task("default", ["compile"]);
+

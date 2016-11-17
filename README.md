@@ -64,7 +64,7 @@ An appkit for AngularJS developers.
 ### Models
 - Models should be stored in `JSON` format in the `component` directories.
 - Models can be accessed via the `service.model` module and injected via `Model`.
-- A model can be accessed like this: `Modal[{{component}}/{{model}}.json]`.
+- A model can be accessed like this: `Model[{{component}}/{{model}}.json]`.
 
 ---
 
