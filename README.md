@@ -7,7 +7,7 @@ Rectangular is designed around best-practices and built on the principles of:
 - Modularity
 - Testibility
 - User experience
-- Functional structure
+- Functional layout
 
 ---
 
