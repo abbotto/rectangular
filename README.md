@@ -30,7 +30,7 @@ An appkit for AngularJS developers.
 ---
 
 ### Controllers
-- Controllers are used for passing around data provided by URL params and other means.
+- Controllers are used for pulling/pushing data to/from services and other means.
 - Controller modules are registerd in `src/client/registry/module.controller.js`.
 - All controller modules are prefixed with `controller`.
 - Controllers should be named in `UpperCamelCase` format.
