@@ -12,43 +12,19 @@
 ---
 
 ### Services
-- Services are used for sending/receiving and manipulating data.
 - App service modules are registered in `src/client/registry/module.service.js`.
 
 ---
 
 ### Controllers
-- Controllers are used for pulling/pushing data to/from services and other means.
 - App Controller modules are registered in `src/client/registry/module.controller.js`.
-
-
-#### ViewModel
-
-##### controllerAs syntax with vm
-
-A consistent capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
-
-The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
-
-Capturing the context of this avoids encountering this problem.
-
-**Example:**
-
-	function ctrl() {
-		var vm = this;
-		vm.foo = {};
-		vm.bar = function() { };
-	}
 
 ---
 
 ### Directives
-- Directives are used to control DOM behaviour and to render data in HTML format.
 - App directive modules are registered in `src/client/registry/module.directive.js`.
-- The structure of a directive template path is this: `{{component}}/directive.{{template}}.tpl`.
 
 ---
 
 ### Routes
 - Route modules are registered in `src/client/registry/route.module.js`.
-- The structure of a route path is this: `{{component}}/{{template}}.tpl`.

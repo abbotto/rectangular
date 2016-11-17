@@ -24,6 +24,6 @@
 
 ### Services
 - Services should be named in `UpperCamelCase` format.
-- Built-in Angular services are prefixed with `$`. To keep things concise, other services should have a suffix of `$`.
+- Built-in Angular services are prefixed with `$`. To keep things consistant and concise, other services should have a suffix of `$`.
 	- Built-in: `$location`.
 	- Other: `Weather$`.
