@@ -42,10 +42,11 @@ gulp.task("intro", () => {
 //--------------------------------
 // File dependencies for the app
 //--------------------------------
-let vendorJS, appJS, vendorSCSS, appSCSS;
+let vendorJS, appJS, vendorSCSS, appSCSS, specJS;
 gulp.task("dependencies", () => {
 	appJS = require("./task/asset/source.js.json");
 	appSCSS = require("./task/asset/source.scss.json");
+	specJS = require("./task/asset/spec.js.json");
 	vendorJS = require("./task/asset/vendor.js.json");
 	vendorSCSS = require("./task/asset/vendor.scss.json");
 });
@@ -228,6 +229,14 @@ gulp.task("compile-js", () => {
 	});
 });
 
+gulp.task("compile-tests", () => {
+	return gulp.src(specJS)
+	.pipe(babel())
+	.pipe(concat("spec.js"))
+	.on("error", console.log)
+	.pipe(gulp.dest("./tmp/"));
+});
+
 gulp.task("compile-docs", [], () => {
 	const options = {
 		"html5Mode": true,
@@ -284,6 +293,7 @@ gulp.task("compile", () => {
 		"dependencies",
 		"compile-index",
 		"compile-js",
+		"compile-tests",
 		"compile-scss"
 	);
 });
