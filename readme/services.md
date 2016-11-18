@@ -1,2 +1,2 @@
 ## Services
-- Services are used for sending/receiving and manipulating data.
+- Services are used for sending/receiving/manipulating data.
