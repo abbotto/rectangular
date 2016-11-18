@@ -22,6 +22,9 @@
 ### Directives
 - Directives should be named in `lowerCamelCase` format.
 
+### Filters
+- Filters should be named in `lowerCamelCase` format.
+
 ### Services
 - Services should be named in `UpperCamelCase` format.
 - Built-in Angular services are prefixed with `$`. To keep things consistant and concise, other services should have a suffix of `$`.
