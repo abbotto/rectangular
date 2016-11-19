@@ -1,5 +1,5 @@
 angular
-	.module("route.private", [
+	.module("route.component", [
 		"route.excuse",
 		"route.home"
 	])

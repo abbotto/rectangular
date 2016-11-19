@@ -5,8 +5,6 @@ const app = angular.module(
 	"app", [
 		"app.constants",
 		"app.controllers",
-		"app.directives",
-		"app.filters",
 		"app.routes",
 		"app.services",
 		"app.templates",

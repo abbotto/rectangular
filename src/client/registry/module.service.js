@@ -3,6 +3,6 @@
 // --------------------------------
 angular
 	.module("app.services", [
-		"service.public"
+		"service.component"
 	])
 ;

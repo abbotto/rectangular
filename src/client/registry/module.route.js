@@ -4,6 +4,6 @@
 angular
 	.module("app.routes", [
 		"ngRoute",
-		"route.private"
+		"route.component"
 	])
 ;

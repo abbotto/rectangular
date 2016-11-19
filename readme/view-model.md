@@ -10,7 +10,7 @@ Capturing the context of this with `vm` avoids encountering this problem.
 
 **Example:**
 
-	function ctrl() {
+	function Ctrl() {
 		var vm = this;
 		vm.foo = {};
 		vm.bar = function() { };

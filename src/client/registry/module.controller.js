@@ -3,7 +3,6 @@
 // --------------------------------
 angular
 	.module("app.controllers", [
-		"controller.public",
-		"controller.private"
+		"controller.component"
 	])
 ;

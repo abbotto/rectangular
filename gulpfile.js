@@ -95,8 +95,7 @@ gulp.task("constants", () => {
 
 gulp.task("models", () => {
 	return gulp.src([
-		"./src/client/private/component/**/*.json",
-		"./src/client/public/component/**/*.json"])
+		"./src/client/component/**/*.json"])
 		.pipe(filelist("models.json"))
 		.pipe(gulp.dest("./tmp"))
 		.on("end", () => {
@@ -106,8 +105,6 @@ gulp.task("models", () => {
 			arr.forEach(function modelsLoop(path) {
 				key = path
 					.replace("src/client/", "")
-					.replace("private/", "")
-					.replace("public/", "")
 					.replace("component/", "")
 					.replace("model.", "")
 				;
@@ -125,7 +122,7 @@ gulp.task("models", () => {
 gulp.task("cache-html", () => {
 	return gulp.src([
 		"src/client/**/*.tpl",
-		"!src/client/public/component/master/master.tpl",
+		"!src/client/component/master/master.tpl",
 	])
 	//.pipe(minify and preprocess the template html here)
 	.pipe(cacheHTML({
@@ -134,8 +131,7 @@ gulp.task("cache-html", () => {
 	}))
 	// Remove the extension
 	// from the template reference
-	.pipe(replace("private/component/", ""))
-	.pipe(replace("public/component/", ""))
+	.pipe(replace("component/", ""))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp"));
 });
@@ -152,14 +148,14 @@ gulp.task("copy-fonts", () => {
 
 gulp.task("copy-images", () => {
 	return gulp.src([
-		"./src/client/public/design/image/*.{png,jpg,jpeg,gif,svg,ico}"
+		"./src/client/design/image/*.{png,jpg,jpeg,gif,svg,ico}"
 	])
 	.pipe(gulp.dest("./dist/images"));
 });
 
 gulp.task("copy-downloads", () => {
 	return gulp.src([
-		"./src/client/public/download/**/*.*"
+		"./src/client/download/**/*.*"
 	])
 	.pipe(gulp.dest("./dist/downloads"));
 });
@@ -168,7 +164,7 @@ gulp.task("copy-downloads", () => {
 // Compile Assets
 //--------------------------------
 gulp.task("compile-index", () => {
-	let contents = fs.readFileSync("src/client/public/component/master/master.tpl").toString();
+	let contents = fs.readFileSync("src/client/component/master/master.tpl").toString();
 	// Inject Livereload
 	if (process.env.NODE_ENV === "development") {
 		contents = contents.replace(
