@@ -41,5 +41,5 @@
 - Currently, there isn't an `eslint-plugin-angular` rule to enforce naming conventions on `constructor` services.
 - A ticket has been created [here](https://github.com/Gillespie59/eslint-plugin-angular/issues/418) to address the problem.
 - For the time being, `Rectangular` will enforce `UpperCamelCase` for all services.
-- You can disable this rule for `non-constructor` services such as `.factory()` by add the following line to the top of the file:
-	- `/* eslint-plugin-disable angular */`
+	- This rule can be disabled for `non-constructor` services such as `.factory()`.
+	- Add the following line to the top of the service file: `/* eslint-plugin-disable angular */`
