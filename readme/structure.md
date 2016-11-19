@@ -1,4 +1,6 @@
-## Files by Functionality (FBF) Structure
+## Structure
+
+### Files by Functionality (FBF) Structure
 - Basically, files are organized according to what they are used for.
 	- For example, the demo `excuse` component is located here: `src/client/component/excuse/`.
 	- It's directives, models, template, route, controller, and styles are all in the same directory as the view.
