@@ -32,6 +32,6 @@
 - Learn more about `ngAria` [here](https://docs.angularjs.org/api/ngAria).
 
 ### Language Support
-- Called via `service.locale` and injected via `Locale$`.
+- Called via `service.locale` and injected via `locale$`.
 - Translations are handled via `angular-translate`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).

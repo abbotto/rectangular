@@ -1,8 +1,9 @@
+/* eslint-plugin-disable angular */
 angular
 	.module("service.locale", [
 		"service.vendor.translate"
 	])
-	.factory("Locale$", function LocaleService($translateProvider) {
+	.factory("locale$", function LocaleService($translateProvider) {
 		return $translateProvider;
 	})
 	.config(($translateProvider, LANGUAGE) => {

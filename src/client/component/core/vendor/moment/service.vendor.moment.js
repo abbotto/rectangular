@@ -1,6 +1,7 @@
+/* eslint-plugin-disable angular */
 angular
 	.module("service.vendor.moment", ["angularMoment"])
-		.factory("Moment$", function ServiceMoment(moment) {
+		.factory("moment$", function momentService(moment) {
 			return moment;
 		}
 	)

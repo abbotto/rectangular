@@ -3,11 +3,11 @@ angular
 	.module("service.promise", [
 		"service.vendor.bluebird"
 	])
-	.factory("promise$", function promiseService($rootScope, Bluebird$) {
-		const $promise = Bluebird$;
+	.factory("promise$", function promiseService($rootScope, bluebird$) {
+		const $promise = bluebird$;
 		const defer = () => {
 			let resolve, reject;
-			const promise = new Bluebird$((_resolve, _reject) => {
+			const promise = new bluebird$((_resolve, _reject) => {
 				resolve = _resolve;
 				reject = _reject;
 			});
@@ -19,11 +19,11 @@ angular
 			};
 		};
 		$promise.defer = defer;
-		$promise.when = Bluebird$.cast;
+		$promise.when = bluebird$.cast;
 		return $promise;
 	})
-	.run(($rootScope, Bluebird$) => {
-		Bluebird$.setScheduler(cb => {
+	.run(($rootScope, bluebird$) => {
+		bluebird$.setScheduler(cb => {
 			$rootScope.$evalAsync(cb);
 		});
 	})
