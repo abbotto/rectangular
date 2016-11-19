@@ -1,6 +1,6 @@
 angular
 	.module("controller.master", [])
-	.controller("Master", function MasterController() {
-		// Put code here
+	.controller("Master", function MasterController($log) {
+		$log("App has loaded.");
 	})
 ;

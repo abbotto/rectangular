@@ -11,6 +11,7 @@
  * @example
  * model$["{{component}}/{{model}}.json"]
  */
+/* eslint-plugin-disable angular */
 angular
 	.module("service.model", ["appModels"])
 		.factory("model$", function modelService(appModel) {

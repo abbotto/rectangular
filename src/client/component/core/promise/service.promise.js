@@ -1,8 +1,9 @@
+/* eslint-plugin-disable angular */
 angular
 	.module("service.promise", [
 		"service.vendor.bluebird"
 	])
-	.factory("Promise$", function PromiseService($rootScope, Bluebird$) {
+	.factory("promise$", function promiseService($rootScope, Bluebird$) {
 		const $promise = Bluebird$;
 		const defer = () => {
 			let resolve, reject;
