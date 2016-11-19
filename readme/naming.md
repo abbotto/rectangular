@@ -37,7 +37,6 @@
 	- It returns an object that contains the members of the service.
 	- It should be named in `lowerCamelCase` format.
 
-
 #### Caveat
 - Currently, there isn't an `eslint-plugin-angular` rule to enforce naming conventions on `constructor` services.
 - A ticket has been created [here](https://github.com/Gillespie59/eslint-plugin-angular/issues/418) to address the problem.
