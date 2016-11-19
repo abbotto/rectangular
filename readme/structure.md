@@ -6,6 +6,7 @@
 	- It's directives, models, template, route, controller, and styles are all in the same directory as the view.
 	- Now you can save your fingers from years of scrolling hell!
 
+
 	src
 	├── client
 	│   ├── component
