@@ -33,9 +33,9 @@
 	- Other: `Weather$`.
 
 #### Factories
-- Factories return an object that contains the members of the service.
 - A factory is an implementation of a service that is invoked with `.factory()`.
-- A factory should be named in `lowerCamelCase` format.
+	- It returns an object that contains the members of the service.
+	- It should be named in `lowerCamelCase` format.
 
 
 #### Caveat
