@@ -10,7 +10,7 @@
 ### Modules
 - App modules should be prefixed with `app`.
 - All other modules should follow a pattern similar to their file name.
-	- File = `service.public.js` and Module = `service.public`.
+	- File = `service.component.js` and Module = `service.component`.
 	- Naming modules this way keeps them organized within lists.
 
 ### Controllers
