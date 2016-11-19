@@ -24,12 +24,19 @@
 - Filters should be named in `lowerCamelCase` format.
 
 ### Services
-- Services that are created with `.service` should be named in `UpperCamelCase` format.
-- Services that are created with `.service` are `constructor` functions.
-- Services that are created with `.factory` return `function values` and should be named in `lowerCamelCase` format.
+- All services are singletons.
+- A service that is invoked with `.service()` is a `constructor` function.
+- A service that is invoked with `.service()` can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
+- A service that is invoked with `.service()`  should be named in `UpperCamelCase` format.
 - Built-in Angular services are prefixed with `$`. To keep things consistent and concise, all other services should have a suffix of `$`.
 	- Built-in: `$location`.
 	- Other: `Weather$`.
+
+#### Factories
+- Factories return an object that contains the members of the service.
+- A factory is an implementation of a service that is invoked with `.factory()`.
+- A factory should be named in `lowerCamelCase` format.
+
 
 #### Caveat
 - Currently, there isn't an `eslint-plugin-angular` rule to enforce naming conventions on `constructor` services.
@@ -37,3 +44,5 @@
 - For the time being, `Rectangular` will enforce `UpperCamelCase` for all services.
 - You can disable this rule for `non-constructor` services such as `.factory()` by add the following line to the top of the file:
 	- `/* eslint-plugin-disable angular */`
+	
+Services are instantiated with the new keyword, use this for public methods and variables.
