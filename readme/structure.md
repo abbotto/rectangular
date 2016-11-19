@@ -76,5 +76,6 @@
 	└── server
 		└── core.js
 
+
 ### Index Naming Convention
 - Never name a file `src/**/index.ext` unless you are evil or it is an actual index for something.
