@@ -17,9 +17,6 @@
 - Controllers should be named in `UpperCamelCase` format.
 - Controllers are `constructor` functions.
 
-### Routes
-- Routes should be named in `lowerCamelCase` format.
-
 ### Directives
 - Directives should be named in `lowerCamelCase` format.
 
