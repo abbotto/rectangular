@@ -31,7 +31,7 @@ src
 │   │   ├── controller.component.js
 │   │   ├── route.component.js
 │   │   ├── service.component.js
-│   │   └── shared
+│   │   └── core
 │   │       ├── locale
 │   │       │   └── service.locale.js
 │   │       ├── master
