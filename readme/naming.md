@@ -42,4 +42,4 @@
 - A ticket has been created [here](https://github.com/Gillespie59/eslint-plugin-angular/issues/418) to address the problem.
 - For the time being, `Rectangular` will enforce `UpperCamelCase` for all services.
 	- This rule can be disabled for `non-constructor` services such as `.factory()`.
-	- Add the following line to the top of the service file: `/* eslint-plugin-disable angular */`
+	- To disable, add the following line to the top of the service file: `/* eslint-plugin-disable angular */`
