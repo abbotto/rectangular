@@ -26,11 +26,8 @@
 - Filters should be named in `lowerCamelCase` format.
 
 ### Services
-- Services should be named in `UpperCamelCase` `(PascalCase)` format when they are `constructor` functions.
-- All other services should be named in `lowerCamelCase` format.
-- Built-in Angular services are prefixed with `$`. To keep things consistant and concise, other services should have a suffix of `$`.
+- Services that are created with `.service` should be named in `UpperCamelCase` format because they are `constructor` functions and can be invoked with `new`.
+- Services that are created with `.factory` should be named in `lowerCamelCase` format.
+- Built-in Angular services are prefixed with `$`. To keep things consistant and concise, all other services should have a suffix of `$`.
 	- Built-in: `$location`.
 	- Other: `Weather$`.
-
-UpperCamelCase (PascalCase) for naming your services, used as constructor functions
-lowerCamelCase for all other services.

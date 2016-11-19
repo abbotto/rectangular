@@ -105,16 +105,16 @@ gulp.task("models", () => {
 			arr.forEach(function modelsLoop(path) {
 				key = path
 					.replace("src/client/", "")
-					.replace("component/shared/", "")
+					.replace("component/core/", "")
 					.replace("component/", "")
 					.replace("model.", "")
 				;
 				models[key] = fs.readFileSync(path, "utf8");
 			});
 			return b2v.stream(new Buffer(JSON.stringify({
-				"ngModel": models
+				"appModel": models
 			})), "models.js")
-				.pipe(ngConstants("ngModels"))
+				.pipe(ngConstants("appModels"))
 				.pipe(gulp.dest("./tmp"));
 		})
 	;
@@ -132,7 +132,7 @@ gulp.task("cache-html", () => {
 	}))
 	// Remove the extension
 	// from the template reference
-	.pipe(replace("component/shared/", ""))
+	.pipe(replace("component/core/", ""))
 	.pipe(replace("component/", ""))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp"));
