@@ -4,7 +4,7 @@ angular
 		"service.model"
 	])
 	.factory("excuse$", function excuseService(model$) {
-		return function excuseServiceModel() {
+		return () => {
 			const model = model$["excuse/excuse.json"];
 			const len = model.length;
 			return model[Math.floor(Math.random() * len)];

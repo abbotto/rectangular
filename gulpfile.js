@@ -123,7 +123,7 @@ gulp.task("models", () => {
 gulp.task("cache-html", () => {
 	return gulp.src([
 		"src/client/**/*.tpl",
-		"!src/client/component/**/master/master.tpl",
+		"!src/client/component/core/master/master.tpl",
 	])
 	//.pipe(minify and preprocess the template html here)
 	.pipe(cacheHTML({
@@ -166,7 +166,7 @@ gulp.task("copy-downloads", () => {
 // Compile Assets
 //--------------------------------
 gulp.task("compile-index", () => {
-	let contents = fs.readFileSync("src/client/component/**/master/master.tpl").toString();
+	let contents = fs.readFileSync("src/client/component/core/master/master.tpl").toString();
 	// Inject Livereload
 	if (process.env.NODE_ENV === "development") {
 		contents = contents.replace(

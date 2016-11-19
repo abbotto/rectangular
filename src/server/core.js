@@ -17,7 +17,7 @@ app.all("/*", (req, res) => {
 	res.sendFile(path.resolve(www + "/index.html"));
 });
 
-const server = app.listen((process.env.PORT || port), function server() {
+const server = app.listen((process.env.PORT || port), function appServer() {
 	const host = server.address().address;
 	const port = server.address().port;
 	// console.log('http://%s:%s', host, port);
