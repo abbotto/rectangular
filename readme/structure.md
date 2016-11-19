@@ -11,7 +11,6 @@
 src
 ├── client
 │   ├── component
-│   │   ├── controller.component.js
 │   │   ├── excuse
 │   │   │   ├── controller.excuse.js
 │   │   │   ├── directive.excuse.js
@@ -29,6 +28,7 @@ src
 │   │   │   ├── home.scss
 │   │   │   ├── home.tpl
 │   │   │   └── route.home.js
+│   │   ├── controller.component.js
 │   │   ├── route.component.js
 │   │   ├── service.component.js
 │   │   └── shared
