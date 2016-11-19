@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.bottomSheet", [])
-		.factory("BottomSheet$", function MaterialBottomSheetService($mdBottomSheet) {
+		.factory("bottomSheet$", function materialBottomSheetService($mdBottomSheet) {
 			return $mdBottomSheet;
 		}
 	)

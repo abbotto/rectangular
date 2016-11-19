@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.sidenav", [])
-		.factory("Sidenav$", function MaterialSidenavService($mdSidenav) {
+		.factory("sidenav$", function materialSidenavService($mdSidenav) {
 			return $mdSidenav;
 		}
 	)

@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.panel", [])
-		.factory("Panel$", function MaterialPanelService($mdPanel) {
+		.factory("panel$", function materialPanelService($mdPanel) {
 			return $mdPanel;
 		}
 	)

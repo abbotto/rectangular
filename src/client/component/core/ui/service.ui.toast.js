@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.toast", [])
-		.factory("Toast$", function MaterialToastService($mdToast) {
+		.factory("toast$", function materialToastService($mdToast) {
 			return $mdToast;
 		}
 	)

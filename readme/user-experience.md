@@ -7,16 +7,16 @@
 
 
 - **Integrated Services**
-	- Called via `service.ui.bottomSheet` and injected via `BottomSheet$`.
-	- Called via `service.ui.colors` and injected via `Colors$`.
-	- Called via `service.ui.dialog` and injected via `Dialog$`.
-	- Called via `service.ui.icon` and injected via `Icon$`.
-	- Called via `service.ui.inkRipple` and injected via `InkRipple$`.
-	- Called via `service.ui.media` and injected via `Media$`.
-	- Called via `service.ui.panel` and injected via `Panel$`.
-	- Called via `service.ui.sidenav` and injected via `Sidenav$`.
-	- Called via `service.ui.sticky` and injected via `Sticky$`.
-	- Called via `service.ui.toast` and injected via `Toast$`.
+	- Called via `service.ui.bottomSheet` and injected via `bottomSheet$`.
+	- Called via `service.ui.colors` and injected via `colors$`.
+	- Called via `service.ui.dialog` and injected via `dialog$`.
+	- Called via `service.ui.icon` and injected via `icon$`.
+	- Called via `service.ui.inkRipple` and injected via `inkRipple$`.
+	- Called via `service.ui.media` and injected via `media$`.
+	- Called via `service.ui.panel` and injected via `panel$`.
+	- Called via `service.ui.sidenav` and injected via `sidenav$`.
+	- Called via `service.ui.sticky` and injected via `sticky$`.
+	- Called via `service.ui.toast` and injected via `toast$`.
 
 
 ### Animations

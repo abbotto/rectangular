@@ -1,6 +1,6 @@
 angular
 	.module("service.ui.dialog", [])
-		.factory("Dialog$", function MaterialDialogService($mdDialog) {
+		.factory("dialog$", function materialDialogService($mdDialog) {
 			return $mdDialog;
 		}
 	)
