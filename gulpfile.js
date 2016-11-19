@@ -105,6 +105,7 @@ gulp.task("models", () => {
 			arr.forEach(function modelsLoop(path) {
 				key = path
 					.replace("src/client/", "")
+					.replace("component/shared/", "")
 					.replace("component/", "")
 					.replace("model.", "")
 				;
@@ -122,7 +123,7 @@ gulp.task("models", () => {
 gulp.task("cache-html", () => {
 	return gulp.src([
 		"src/client/**/*.tpl",
-		"!src/client/component/master/master.tpl",
+		"!src/client/component/**/master/master.tpl",
 	])
 	//.pipe(minify and preprocess the template html here)
 	.pipe(cacheHTML({
@@ -131,6 +132,7 @@ gulp.task("cache-html", () => {
 	}))
 	// Remove the extension
 	// from the template reference
+	.pipe(replace("component/shared/", ""))
 	.pipe(replace("component/", ""))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp"));
@@ -164,7 +166,7 @@ gulp.task("copy-downloads", () => {
 // Compile Assets
 //--------------------------------
 gulp.task("compile-index", () => {
-	let contents = fs.readFileSync("src/client/component/master/master.tpl").toString();
+	let contents = fs.readFileSync("src/client/component/**/master/master.tpl").toString();
 	// Inject Livereload
 	if (process.env.NODE_ENV === "development") {
 		contents = contents.replace(
