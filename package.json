@@ -68,6 +68,7 @@
     "stylelint": "^7.5.0"
   },
   "scripts": {
+    "init": "cp .envrc .env && gulp compile",
     "delint": "node_modules/eslint/bin/eslint.js src/",
     "test": "gulp compile && karma test",
     "compile": "gulp compile",
