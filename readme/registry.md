@@ -1,4 +1,4 @@
-## The Registry
+## Registry
 - The registry is used for setting up configs and registering:
 	- Controllers
 	- Routes
