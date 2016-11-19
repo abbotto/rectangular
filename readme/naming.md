@@ -15,6 +15,7 @@
 
 ### Controllers
 - Controllers should be named in `UpperCamelCase` format.
+- Controllers are `constructor` functions.
 
 ### Routes
 - Routes should be named in `lowerCamelCase` format.
@@ -26,7 +27,8 @@
 - Filters should be named in `lowerCamelCase` format.
 
 ### Services
-- Services that are created with `.service` should be named in `UpperCamelCase` format because they are `constructor` functions and can be invoked with `new`.
+- Services that are created with `.service` should be named in `UpperCamelCase` format.
+- Services that are created with `.service` are `constructor` functions.
 - Services that are created with `.factory` should be named in `lowerCamelCase` format.
 - Built-in Angular services are prefixed with `$`. To keep things consistant and concise, all other services should have a suffix of `$`.
 	- Built-in: `$location`.
