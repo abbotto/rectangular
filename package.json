@@ -7,7 +7,7 @@
   "main": "server.js",
   "scripts": {
     "init": "cp .envrc .env && gulp compile",
-    "delint": "node_modules/eslint/bin/eslint.js --fix src/",
+    "delint": "node_modules/eslint/bin/eslint.js --fix src/ && node_modules/stylelint/dist/cli.js src/**/*.scss",
     "test": "gulp compile && karma test",
     "compile": "gulp compile",
     "server": "node server.js",
@@ -79,6 +79,6 @@
     "shelljs": "^0.7.5",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
-    "stylelint": "^7.5.0"
+    "stylelint": "^7.6.0"
   }
 }
