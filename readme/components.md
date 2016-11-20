@@ -34,7 +34,7 @@
 	}
 
 ##### Component Views: Directives and Routes Example
-- A simple component view directive may resemble the following:
+- A simple component view `directive` may resemble the following:
 
 		(() => {
 			"use strict";
@@ -67,7 +67,7 @@
 			});
 		})();
 
-- The component view route would look like this:
+- The component view `route` would look like this:
 
 		(() => {
 			"use strict";
