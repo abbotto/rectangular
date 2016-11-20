@@ -2,13 +2,13 @@
 	"use strict";
 	
 	// --------------------------------
-	// View model for view directive
+	// Model for view directive
 	// --------------------------------
 	let view = {};
 	view.templateUrl = "excuse/excuse.view.tpl";
 	
 	// --------------------------------
-	// Controller for view model
+	// Controller and ViewModel
 	// --------------------------------
 	view.controller = function ExcuseController($log) {
 		$log.debug("ExcuseView has loaded.");

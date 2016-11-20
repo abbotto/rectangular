@@ -2,13 +2,13 @@
 	"use strict";
 	
 	// --------------------------------
-	// View model for view directive
+	// Model for view directive
 	// --------------------------------
 	let view = {};
 	view.templateUrl = "home/home.view.tpl";
 	
 	// --------------------------------
-	// Controller for view model
+	// Controller and ViewModel
 	// --------------------------------
 	view.controller = function HomeController($log) {
 		$log.debug("HomeView has loaded.");

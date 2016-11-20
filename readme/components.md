@@ -19,7 +19,7 @@
 - You can read more about component patterns for AngularJS [here](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives) and [here](http://busypeoples.github.io/post/thinking-in-components-angular-js/).
 - You can read more about the `no-controller` rule [here](https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/no-controller.md).
 
-#### Component ViewModel
+#### View Model
 
 A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
 
@@ -44,16 +44,18 @@ Capturing the context of this with `vm` avoids encountering this problem.
 			"use strict";
 			
 			// --------------------------------
-			// View model for view directive
+			// Model for view directive
 			// --------------------------------
 			let view = {};
 			view.templateUrl = "home/home.view.tpl";
 			
 			// --------------------------------
-			// Controller for view model
+			// Controller and ViewModel
 			// --------------------------------
 			view.controller = function HomeController($log) {
-				$log.debug("HomeView has loaded.");
+				const vm = this;
+				vm.foo = {};
+				vm.bar = function() { };
 			};
 			
 			// --------------------------------
