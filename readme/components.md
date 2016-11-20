@@ -18,7 +18,7 @@
 	- Images (png, jpg, jpeg, gif, svg, ico)
 	
 ### Component Views
-
+- Component views are special `directives` for rendering `views`.
 - A simple component view may resemble the following:
 
 		(() => {
