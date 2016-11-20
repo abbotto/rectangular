@@ -1,17 +1,14 @@
 ## Components
 - Components can have one or many parts.
 - Components should have a functional purpose.
-
-### Primary
 - Components are organized in directories comprised of any or all of the following files:
 	- Directives (js, tpl)
 	- Views (js, tpl)
 	- Routes (js)
 	- Services (js)
 
-### Secondary
-- These files should only be used if a primary file already exists in the given directory.
-- Supplementary files are comprised of any or all of the following files:
+### Component Sssets
+- Asset files are comprised of any or all of the following types:
 	- Tests (js)
 	- Styles (scss)
 	- Models ([data|mixin]json)
