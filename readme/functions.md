@@ -30,12 +30,6 @@
 
 **Example:**
 
-	(() => {
-		const RemoteController = function RemoteController() {
-			// Logic goes here...
-		};
-
-		angular
-		.module("remote.controller", [])
-		.controller("Remote", RemoteController);
-	})();
+	const Remote = function RemoteController() {
+		// Logic goes here...
+	};
