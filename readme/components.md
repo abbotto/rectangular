@@ -19,6 +19,24 @@
 - You can read more about component patterns for AngularJS [here](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives) and [here](http://busypeoples.github.io/post/thinking-in-components-angular-js/).
 - You can read more about the `no-controller` rule [here](https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/no-controller.md).
 
+#### Component ViewModel
+
+A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
+
+This variable is assigned using the `controllerAs` syntax.
+
+The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
+
+Capturing the context of this with `vm` avoids encountering this problem.
+
+**Example:**
+
+	function Ctrl() {
+		var vm = this;
+		vm.foo = {};
+		vm.bar = function() { };
+	}
+
 #### Directives and Routes
 - A simple component view directive may resemble the following:
 
@@ -67,21 +85,3 @@
 				});
 			});
 		})();
-
-#### Component ViewModel
-
-A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
-
-This variable is assigned using the `controllerAs` syntax.
-
-The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
-
-Capturing the context of this with `vm` avoids encountering this problem.
-
-**Example:**
-
-	function Ctrl() {
-		var vm = this;
-		vm.foo = {};
-		vm.bar = function() { };
-	}
