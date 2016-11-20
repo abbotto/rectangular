@@ -2,8 +2,9 @@
 // Routes
 // --------------------------------
 angular
-	.module("app.routes", [
+	.module("app.route", [
 		"ngRoute",
-		"route.component"
+		"excuse.route",
+		"home.route"
 	])
 ;

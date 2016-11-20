@@ -1,5 +1,5 @@
 angular
-	.module("service.vendor.translate", [
+	.module("translate.vendor.service", [
 		"pascalprecht.translate"
 	])
 ;

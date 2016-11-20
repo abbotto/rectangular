@@ -1,5 +1,6 @@
-angular
-	.module("service.ui", [
+(() => {
+	angular
+	.module("ui.service", [
 		"ngMaterial"
 	])
 	.config($mdThemingProvider => {
@@ -29,5 +30,5 @@ angular
 	})
 	.config($mdProgressCircularProvider => {
 		// https://material.angularjs.org/latest/api/service/$mdProgressCircular
-	})
-;
+	});
+})();

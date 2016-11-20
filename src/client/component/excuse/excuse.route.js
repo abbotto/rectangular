@@ -1,5 +1,5 @@
 angular
-	.module("route.excuse", [])
+	.module("excuse.route", [])
 	.config(($routeProvider) => {
 		$routeProvider
 			.when("/excuse", {

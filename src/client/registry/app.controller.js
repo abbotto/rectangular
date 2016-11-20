@@ -2,7 +2,8 @@
 // Controllers
 // --------------------------------
 angular
-	.module("app.controllers", [
-		"controller.component"
+	.module("app.controller", [
+		"master.controller",
+		"excuse.controller"
 	])
 ;

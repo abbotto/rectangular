@@ -1,9 +1,6 @@
 /* eslint-plugin-disable angular */
-angular
-	.module("service.promise", [
-		"service.vendor.bluebird"
-	])
-	.factory("promise$", function promiseService($rootScope, bluebird$) {
+(() => {
+	const promiseService = function promiseService($rootScope, bluebird$) {
 		const $promise = bluebird$;
 		const defer = () => {
 			let resolve, reject;
@@ -21,10 +18,15 @@ angular
 		$promise.defer = defer;
 		$promise.when = bluebird$.cast;
 		return $promise;
-	})
+	};
+
+	angular.module("promise.service", [
+		"bluebird.vendor.service"
+	])
+	.factory("promise$", promiseService)
 	.run(($rootScope, bluebird$) => {
 		bluebird$.setScheduler(cb => {
 			$rootScope.$evalAsync(cb);
 		});
-	})
-;
+	});
+})();

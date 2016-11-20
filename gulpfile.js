@@ -61,7 +61,6 @@ gulp.task("reset", () => {
 	sh.mkdir("dist");
 	sh.mkdir("dist/fonts");
 	sh.mkdir("dist/images");
-	sh.mkdir("dist/downloads");
 });
 
 gulp.task("delint", () => {
@@ -89,7 +88,7 @@ gulp.task("constants", () => {
 		"NODE_ENV": process.env.NODE_ENV,
 		"LANGUAGE": process.env.LANGUAGE
 	})), "constants.js")
-		.pipe(ngConstants("app.constants"))
+		.pipe(ngConstants("app.constant"))
 		.pipe(gulp.dest("./tmp"));
 });
 
@@ -104,9 +103,8 @@ gulp.task("models", () => {
 			const models = {};
 			arr.forEach(function modelsLoop(path) {
 				key = path
-					.replace("src/client/", "")
-					.replace("component/core/", "")
-					.replace("component/", "")
+					.replace("src/client/component/", "")
+					.replace("core/", "")
 					.replace("model.", "")
 				;
 				models[key] = fs.readFileSync(path, "utf8");
@@ -114,7 +112,7 @@ gulp.task("models", () => {
 			return b2v.stream(new Buffer(JSON.stringify({
 				"appModel": models
 			})), "models.js")
-				.pipe(ngConstants("appModels"))
+				.pipe(ngConstants("appModel"))
 				.pipe(gulp.dest("./tmp"));
 		})
 	;
@@ -127,13 +125,13 @@ gulp.task("cache-html", () => {
 	])
 	//.pipe(minify and preprocess the template html here)
 	.pipe(cacheHTML({
-		"module": "app.templates",
+		"module": "app.template",
 		"standalone": true
 	}))
 	// Remove the extension
 	// from the template reference
-	.pipe(replace("component/core/", ""))
 	.pipe(replace("component/", ""))
+	.pipe(replace("core/", ""))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp"));
 });
@@ -153,13 +151,6 @@ gulp.task("copy-images", () => {
 		"./src/client/design/image/*.{png,jpg,jpeg,gif,svg,ico}"
 	])
 	.pipe(gulp.dest("./dist/images"));
-});
-
-gulp.task("copy-downloads", () => {
-	return gulp.src([
-		"./src/client/download/**/*.*"
-	])
-	.pipe(gulp.dest("./dist/downloads"));
 });
 
 //--------------------------------
@@ -286,7 +277,6 @@ gulp.task("compile", () => {
 		"constants",
 		"copy-fonts",
 		"copy-images",
-		"copy-downloads",
 		"cache-html",
 		"dependencies",
 		"compile-index",
@@ -328,12 +318,12 @@ gulp.task("watchTasks", () => {
 		"constants",
 		"copy-fonts",
 		"copy-images",
-		"copy-downloads",
 		"dependencies",
 		"compile-index",
 		"cache-html",
 		"compile-scss",
 		"compile-js",
+		"compile-tests",
 		"reload"
 	);
 });

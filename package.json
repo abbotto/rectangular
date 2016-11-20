@@ -69,7 +69,7 @@
   },
   "scripts": {
     "init": "cp .envrc .env && gulp compile",
-    "delint": "node_modules/eslint/bin/eslint.js src/",
+    "delint": "node_modules/eslint/bin/eslint.js --fix src/",
     "test": "gulp compile && karma test",
     "compile": "gulp compile",
     "server": "node server.js",

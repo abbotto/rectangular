@@ -33,9 +33,9 @@
 		"angular/directive-name": [2, "/^([a-z])+([A-Za-z]*)*/"],
 		"angular/component-limit": [0, 1],
 		"angular/document-service": 2,
-		"angular/empty-controller": 0,
+		"angular/empty-controller": 2,
 		"angular/file-name": 0,
-		"angular/filter-name": 0,
+		"angular/filter-name": [2, "/^([a-z])+([A-Za-z]*)*/"],
 		"angular/foreach": 0,
 		"angular/function-type": 0,
 		"angular/interval-service": 2,
@@ -101,7 +101,7 @@
 		"func-style": [2, "expression", {
 			"allowArrowFunctions": true
 		}],
-		"func-names": "error",
+		"func-names": 2,
 		// make sure for-in loops have an if statement
 		"guard-for-in": 2,
 		// disallow the use of alert, confirm, and prompt

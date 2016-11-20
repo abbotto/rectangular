@@ -1,5 +1,5 @@
 angular
-	.module("route.home", [])
+	.module("home.route", [])
 	.config($routeProvider => {
 		$routeProvider
 			.when("/", {

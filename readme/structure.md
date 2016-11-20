@@ -12,53 +12,53 @@ src
 ├── client
 │   ├── component
 │   │   ├── excuse
-│   │   │   ├── controller.excuse.js
-│   │   │   ├── directive.excuse.js
-│   │   │   ├── directive.excuse.tpl
+│   │   │   ├── excuse.controller.js
+│   │   │   ├── excuse.directive.js
+│   │   │   ├── excuse.directive.tpl
 │   │   │   ├── excuse.json
 │   │   │   ├── excuse.scss
 │   │   │   ├── excuse.tpl
-│   │   │   ├── route.excuse.js
-│   │   │   ├── service.excuse.js
+│   │   │   ├── excuse.route.js
+│   │   │   ├── excuse.service.js
 │   │   │   └── test
-│   │   │       ├── spec.controller.excuse.js
-│   │   │       ├── spec.directive.excuse.js
-│   │   │       └── spec.service.excuse.js
+│   │   │       ├── spec.excuse.controller.js
+│   │   │       ├── spec.excuse.directive.js
+│   │   │       └── spec.excuse.service.js
 │   │   ├── home
 │   │   │   ├── home.scss
 │   │   │   ├── home.tpl
-│   │   │   └── route.home.js
-│   │   ├── controller.component.js
-│   │   ├── route.component.js
-│   │   ├── service.component.js
+│   │   │   └── home.route.js
+│   │   ├── controller.js
+│   │   ├── route.js
+│   │   ├── service.js
 │   │   └── core
 │   │       ├── locale
-│   │       │   └── service.locale.js
+│   │       │   └── locale.service.js
 │   │       ├── master
-│   │       │   ├── controller.master.js
+│   │       │   ├── master.controller.js
 │   │       │   ├── master.scss
 │   │       │   └── master.tpl
 │   │       ├── model
-│   │       │   └── service.model.js
+│   │       │   └── model.service.js
 │   │       ├── promise
-│   │       │   └── service.promise.js
+│   │       │   └── promise.service.js
 │   │       ├── ui
-│   │       │   ├── service.ui.bottomSheet.js
-│   │       │   ├── service.ui.colors.js
-│   │       │   ├── service.ui.dialog.js
-│   │       │   ├── service.ui.icon.js
-│   │       │   ├── service.ui.inkRipple.js
-│   │       │   ├── service.ui.js
-│   │       │   ├── service.ui.media.js
-│   │       │   ├── service.ui.panel.js
-│   │       │   ├── service.ui.sidenav.js
-│   │       │   ├── service.ui.sticky.js
-│   │       │   └── service.ui.toast.js
+│   │       │   ├── ui.service.bottomSheet.js
+│   │       │   ├── ui.service.colors.js
+│   │       │   ├── ui.service.dialog.js
+│   │       │   ├── ui.service.icon.js
+│   │       │   ├── ui.service.inkRipple.js
+│   │       │   ├── ui.service.js
+│   │       │   ├── ui.service.media.js
+│   │       │   ├── ui.service.panel.js
+│   │       │   ├── ui.service.sidenav.js
+│   │       │   ├── ui.service.sticky.js
+│   │       │   └── ui.toast.service.js
 │   │       └── vendor
 │   │           ├── angular-translate
-│   │           │   └── service.vendor.translate.js
+│   │           │   └── translate.vendor.service.js
 │   │           ├── bluebird
-│   │           │   └── service.vendor.bluebird.js
+│   │           │   └── bluebird.vendor.service.js
 │   │           ├── lodash
 │   │           │   └── service.vendor.lodash.js
 │   │           └── moment

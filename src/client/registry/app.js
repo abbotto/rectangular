@@ -2,11 +2,11 @@
 // App
 // --------------------------------
 angular.module("app", [
-	"app.constants",
-	"app.controllers",
-	"app.routes",
-	"app.services",
-	"app.templates",
+	"app.constant",
+	"app.controller",
+	"app.route",
+	"app.service",
+	"app.template",
 	"ngAria",
 	"ngAnimate",
 	"ngMessages"
