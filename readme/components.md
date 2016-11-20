@@ -7,6 +7,9 @@
 	- **Routes** (js)
 	- **Services** (js)
 
+- You can read more about component patterns for AngularJS [here](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives) and [here](http://busypeoples.github.io/post/thinking-in-components-angular-js/).
+- You can read more about the `no-controller` rule [here](https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/no-controller.md).
+
 ### Component Assets
 - Component asset files are kept in component directories and are comprised of any or all of the following types:
 	- **Tests** (js)
@@ -16,8 +19,6 @@
 
 ### Component Views
 - Component views are special `directives` for rendering `views`.
-- You can read more about component patterns for AngularJS [here](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives) and [here](http://busypeoples.github.io/post/thinking-in-components-angular-js/).
-- You can read more about the `no-controller` rule [here](https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/no-controller.md).
 
 #### View Model
 - A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
