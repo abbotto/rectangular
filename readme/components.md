@@ -20,14 +20,10 @@
 - You can read more about the `no-controller` rule [here](https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/no-controller.md).
 
 #### View Model
-
-A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
-
-This variable is assigned using the `controllerAs` syntax.
-
-The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
-
-Capturing the context of this with `vm` avoids encountering this problem.
+- A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
+- This variable is assigned using the `controllerAs` syntax.
+- The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
+- Capturing the context of this with `vm` avoids encountering this problem.
 
 **Example:**
 
