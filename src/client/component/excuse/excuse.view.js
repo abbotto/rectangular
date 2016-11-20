@@ -28,7 +28,7 @@
 	// Callback for view model
 	// --------------------------------
 	view.link = function excuseViewLink(scope) {
-		const showToast = () => {
+		scope.tryAgain = () => {
 			const msg = service.excuse$();
 			const config = service.toast$.simple();
 			config.textContent(msg);
@@ -36,10 +36,7 @@
 			config.hideDelay(5000);
 			service.toast$.show(config);
 		};
-		showToast();
-		scope.tryAgain = () => {
-			showToast();
-		};
+		scope.tryAgain();
 	};
 
 	// --------------------------------
