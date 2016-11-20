@@ -71,13 +71,13 @@
 		"angular/typecheck-string": 2,
 		"angular/watchers-execution": [0, "$digest"],
 		"angular/window-service": 2,
-		"no-use-before-define": 0,
 		// --------------------------------
 		// END ANGULAR RULES
 		// --------------------------------
 		// --------------------------------
 		// START JS RULES
 		// --------------------------------
+		"no-use-before-define": 2,
 		// use double-quotes for strings
 		"quotes": [2, "double"],
 		// enforce tabular indentation: https://www.youtube.com/watch?v=SsoOG6ZeyUI
