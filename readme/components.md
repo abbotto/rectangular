@@ -8,7 +8,7 @@
 	- Services (js)
 
 ### Component Assets
-- Asset files are kept in component directories and are comprised of any or all of the following types:
+- `Component asset` files are kept in component directories and are comprised of any or all of the following types:
 	- Tests (js)
 	- Styles (scss)
 	- Models ([data|mixin]json)
