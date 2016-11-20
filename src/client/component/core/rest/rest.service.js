@@ -7,7 +7,7 @@
 	};
 
 	angular
-	.module("restangular.vendor.service", [
+	.module("rest.service", [
 		"restangular.vendor.service"
 	])
 	.factory("rest$", restService);
