@@ -16,6 +16,7 @@
 	
 ### Component Views
 - Component views are special `directives` for rendering `views`.
+- You can read more about component patterns for AngularJS [here](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives) and [here](http://busypeoples.github.io/post/thinking-in-components-angular-js/).
 - A simple component view may resemble the following:
 
 		(() => {
