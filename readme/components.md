@@ -2,17 +2,17 @@
 - Components should have a functional purpose.
 - Components can be as simple as a service or they can be comprised of many related parts.
 - Component files are organized in directories comprised of any or all of the following types:
-	- Directives (js, tpl)
-	- Views (js, tpl)
-	- Routes (js)
-	- Services (js)
+	- **Directives** (js, tpl)
+	- **Views** (js, tpl)
+	- **Routes** (js)
+	- **Services** (js)
 
 ### Component Assets
 - `Component asset` files are kept in component directories and are comprised of any or all of the following types:
-	- Tests (js)
-	- Styles (scss)
-	- Models ([data|mixin]json)
-	- Images (png, jpg, jpeg, gif, svg, ico)
+	- **Tests** (js)
+	- **Styles** (scss)
+	- **Models** ([data|mixin]json)
+	- **Images** (png, jpg, jpeg, gif, svg, ico)
 	
 ### Component Views
 - Component views are special `directives` for rendering `views`.
