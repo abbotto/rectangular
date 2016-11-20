@@ -18,7 +18,6 @@ Rectangular is designed around best-practices and built on the principles of:
 - Directives: [View](readme/directives.md)
 - Documentation: [View](readme/documentation.md)
 - Functions: [View](readme/functions.md)
-- IIFE: [View](readme/iife.md)
 - Models: [View](readme/models.md)
 - Naming: [View](readme/naming.md)
 - Promises: [View](readme/promises.md)
