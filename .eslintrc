@@ -42,7 +42,7 @@
 		"angular/filter-name": [2,
 			"/^([a-z])+([A-Za-z]*)*/"
 		],
-		"angular/foreach": 0,
+		"angular/foreach": 2,
 		"angular/function-type": 0,
 		"angular/interval-service": 2,
 		"angular/json-functions": 2,
