@@ -14,6 +14,7 @@
 	- Avoids using the non-standard `arguments.callee` property.
 
 **Example:**
+
 	const RemoteController = function RemoteController() {
 		// Logic goes here...
 	};
