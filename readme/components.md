@@ -4,18 +4,17 @@
 
 ### Primary
 - Components are organized in directories comprised of any or all of the following files:
-	- Directives (js)
-	- Templates (tpl)
+	- Directives (js, tpl)
+	- Views (js, tpl)
 	- Routes (js)
 	- Services (js)
-	- Controllers (js)
 
 ### Secondary
 - These files should only be used if a primary file already exists in the given directory.
 - Supplementary files are comprised of any or all of the following files:
 	- Tests (js)
-	- Models (json)
 	- Styles (scss)
+	- Models ([data|mixin]json)
 	- Images (png, jpg, jpeg, gif, svg, ico)
 	
 ### Component Views
