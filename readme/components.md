@@ -1,6 +1,7 @@
 ## Components
-- Components can have one or many parts.
 - Components should have a functional purpose.
+- Components can be as simple as a service or they can be comprised of many related parts.
+
 - Components are organized in directories comprised of any or all of the following files:
 	- Directives (js, tpl)
 	- Views (js, tpl)
