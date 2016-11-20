@@ -10,6 +10,12 @@ Rectangular is designed around best-practices and built on the principles of:
 - Functional layouts
 - Component patterns
 
+Rectangular provides a consistent structure that:
+- Scales well
+- Is modular
+- Makes it easy to find code quickly
+- Increases developer efficiency and productivity
+
 ---
 
 # Table of Contents
