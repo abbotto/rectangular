@@ -18,10 +18,6 @@
 	const RemoteController = function RemoteController() {
 		// Logic goes here...
 	};
-
-	angular
-	.module('remote.controller')
-	.controller('Remote', RemoteController)
 		
 ### Immediately Invoked Function Expressions
 - All AngularJS modules should be wrapped in an `Immediately Invoked Function Expression` (IIFE).
@@ -30,6 +26,10 @@
 
 **Example:**
 
-	const Remote = function RemoteController() {
-		// Logic goes here...
-	};
+	(() => {
+		"use strict";
+		
+		const RemoteController = function RemoteController() {
+			// Logic goes here...
+		};
+	})();
