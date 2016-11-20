@@ -1,11 +1,14 @@
-angular
-	.module("excuse.route", [])
-	.config(($routeProvider) => {
+(() => {
+	"use strict";
+	
+	angular
+	.module("excuse.route", [
+		"excuse.view"
+	])
+	.config($routeProvider => {
 		$routeProvider
-			.when("/excuse", {
-				"templateUrl": "excuse/excuse.tpl",
-				"controllerAs": "vm"
-			})
-		;
-	})
-;
+		.when("/excuse", {
+			"template": "<excuse></excuse>"
+		});
+	});
+})();

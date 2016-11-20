@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const promiseService = function promiseService($rootScope, bluebird$) {
 		const $promise = bluebird$;
 		const defer = () => {

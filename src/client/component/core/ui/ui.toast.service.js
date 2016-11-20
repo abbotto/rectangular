@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialToastService = function materialToastService($mdToast) {
 		return $mdToast;
 	};

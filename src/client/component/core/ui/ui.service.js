@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	angular
 	.module("ui.service", [
 		"ngMaterial"

@@ -1,0 +1,8 @@
+{
+	"bindToController": true,
+	"controller": false,
+	"controllerAs": "vm",
+	"replace": true,
+	"restrict": "E",
+	"scope": {}
+}

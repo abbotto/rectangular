@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialDialogService = function materialDialogService($mdDialog) {
 		return $mdDialog;
 	};

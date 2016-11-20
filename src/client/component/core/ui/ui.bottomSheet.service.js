@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialBottomSheetService = function materialBottomSheetService($mdBottomSheet) {
 		return $mdBottomSheet;
 	};

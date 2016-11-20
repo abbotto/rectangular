@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialStickyService = function materialStickyService($mdSticky) {
 		return $mdSticky;
 	};

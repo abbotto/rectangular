@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialColorsService = function materialColorsService($mdColors) {
 		return $mdColors;
 	};

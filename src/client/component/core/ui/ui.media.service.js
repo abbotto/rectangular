@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialMediaService = function materialMediaService($mdMedia) {
 		return $mdMedia;
 	};

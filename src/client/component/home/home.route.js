@@ -1,10 +1,14 @@
-angular
-	.module("home.route", [])
+(() => {
+	"use strict";
+	
+	angular
+	.module("home.route", [
+		"home.view"
+	])
 	.config($routeProvider => {
 		$routeProvider
-			.when("/", {
-				"templateUrl": "home/home.tpl"
-			})
-		;
-	})
-;
+		.when("/", {
+			"template": "<home></home>"
+		});
+	});
+})();

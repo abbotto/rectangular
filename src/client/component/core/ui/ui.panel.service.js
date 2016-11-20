@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialPanelService = function materialPanelService($mdPanel) {
 		return $mdPanel;
 	};

@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialIconService = function materialIconService($mdIcon) {
 		return $mdIcon;
 	};

@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const momentVendorService = function momentVendorService(moment) {
 		return moment;
 	};

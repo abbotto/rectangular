@@ -1,10 +1,11 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const modelService = function modelService(appModel) {
-		const m = appModel;
-		let key;
-		for (key in m) if (m.hasOwnProperty(key)) m[key] = JSON.parse(m[key]);
-		return m;
+		return (key) => {
+			return JSON.parse(appModel[key]);
+		};
 	};
 
 	angular.module("model.service", [

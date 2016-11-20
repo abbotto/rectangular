@@ -94,28 +94,31 @@ gulp.task("constants", () => {
 
 gulp.task("models", () => {
 	return gulp.src([
-		"./src/client/component/**/*.json"])
-		.pipe(filelist("models.json"))
-		.pipe(gulp.dest("./tmp"))
-		.on("end", () => {
-			const arr = require("./tmp/models.json");
-			let key;
-			const models = {};
-			arr.forEach(function modelsLoop(path) {
-				key = path
-					.replace("src/client/component/", "")
-					.replace("core/", "")
-					.replace("model.", "")
-				;
-				models[key] = fs.readFileSync(path, "utf8");
-			});
-			return b2v.stream(new Buffer(JSON.stringify({
-				"appModel": models
-			})), "models.js")
-				.pipe(ngConstants("appModel"))
-				.pipe(gulp.dest("./tmp"));
-		})
-	;
+		"./src/client/**/*.mixin.json",
+		"./src/client/**/*.model.json"
+	])
+	.pipe(filelist("models.json"))
+	.pipe(gulp.dest("./tmp"))
+	.on("end", () => {
+		const arr = require("./tmp/models.json");
+		let key;
+		const models = {};
+		arr.forEach(function modelsLoop(path) {
+			key = path
+				.replace("src/client/", "")
+				.replace("component/", "")
+				.replace("model/", "")
+				.replace("mixin/", "")
+				.replace("core/", "")
+			;
+			models[key] = fs.readFileSync(path, "utf8");
+		});
+		return b2v.stream(new Buffer(JSON.stringify({
+			"appModel": models
+		})), "models.js")
+			.pipe(ngConstants("appModel"))
+			.pipe(gulp.dest("./tmp"));
+	});
 });
 
 gulp.task("cache-html", () => {

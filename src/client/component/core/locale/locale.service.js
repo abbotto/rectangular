@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const localeService = function localeService($translateProvider) {
 		return $translateProvider;
 	};

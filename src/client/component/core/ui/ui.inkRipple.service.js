@@ -1,5 +1,7 @@
 /* eslint-plugin-disable angular */
 (() => {
+	"use strict";
+	
 	const materialInkRippleService = function materialInkRippleService($mdInkRipple) {
 		return $mdInkRipple;
 	};
