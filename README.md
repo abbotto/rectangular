@@ -29,4 +29,3 @@ Rectangular is designed around best-practices and built on the principles of:
 - Templates: [View](readme/templates.md)
 - User Experience: [View](readme/user-experience.md)
 - Vendor Utilities: [View](readme/vendor-utilities.md)
-- View Model: [View](readme/view-model.md)
