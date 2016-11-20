@@ -43,7 +43,7 @@
 	};
 
 	// --------------------------------
-	// View directive module
+	// View module
 	// --------------------------------
 	angular.module("excuse.view", [
 		"excuse.service",

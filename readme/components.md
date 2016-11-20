@@ -59,7 +59,7 @@ Capturing the context of this with `vm` avoids encountering this problem.
 			};
 			
 			// --------------------------------
-			// View directive module
+			// View module
 			// --------------------------------
 			angular.module("home.view", [
 				"mixin.service"

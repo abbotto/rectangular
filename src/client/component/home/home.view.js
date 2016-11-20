@@ -15,7 +15,7 @@
 	};
 	
 	// --------------------------------
-	// View directive module
+	// View module
 	// --------------------------------
 	angular.module("home.view", [
 		"mixin.service"
