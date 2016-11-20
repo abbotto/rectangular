@@ -11,58 +11,51 @@
 src
 ├── client
 │   ├── component
+│   │   ├── core
+│   │   │   ├── locale
+│   │   │   │   └── locale.service.js
+│   │   │   ├── master
+│   │   │   │   ├── master.controller.js
+│   │   │   │   ├── master.scss
+│   │   │   │   └── master.tpl
+│   │   │   ├── model
+│   │   │   │   └── model.service.js
+│   │   │   ├── promise
+│   │   │   │   └── promise.service.js
+│   │   │   ├── ui
+│   │   │   │   ├── ui.bottomSheet.service.js
+│   │   │   │   ├── ui.colors.service.js
+│   │   │   │   ├── ui.dialog.service.js
+│   │   │   │   ├── ui.icon.service.js
+│   │   │   │   ├── ui.inkRipple.service.js
+│   │   │   │   ├── ui.media.service.js
+│   │   │   │   ├── ui.panel.service.js
+│   │   │   │   ├── ui.service.js
+│   │   │   │   ├── ui.sidenav.service.js
+│   │   │   │   ├── ui.sticky.service.js
+│   │   │   │   └── ui.toast.service.js
+│   │   │   └── vendor
+│   │   │       ├── angular-translate
+│   │   │       │   └── translate.vendor.service.js
+│   │   │       ├── bluebird
+│   │   │       │   └── bluebird.vendor.service.js
+│   │   │       ├── lodash
+│   │   │       │   └── lodash.vendor.service.js
+│   │   │       └── moment
+│   │   │           └── moment.vendor.service.js
 │   │   ├── excuse
 │   │   │   ├── excuse.controller.js
 │   │   │   ├── excuse.directive.js
 │   │   │   ├── excuse.directive.tpl
 │   │   │   ├── excuse.json
-│   │   │   ├── excuse.scss
-│   │   │   ├── excuse.tpl
 │   │   │   ├── excuse.route.js
+│   │   │   ├── excuse.scss
 │   │   │   ├── excuse.service.js
-│   │   │   └── test
-│   │   │       ├── spec.excuse.controller.js
-│   │   │       ├── spec.excuse.directive.js
-│   │   │       └── spec.excuse.service.js
-│   │   ├── home
-│   │   │   ├── home.scss
-│   │   │   ├── home.tpl
-│   │   │   └── home.route.js
-│   │   ├── controller.js
-│   │   ├── route.js
-│   │   ├── service.js
-│   │   └── core
-│   │       ├── locale
-│   │       │   └── locale.service.js
-│   │       ├── master
-│   │       │   ├── master.controller.js
-│   │       │   ├── master.scss
-│   │       │   └── master.tpl
-│   │       ├── model
-│   │       │   └── model.service.js
-│   │       ├── promise
-│   │       │   └── promise.service.js
-│   │       ├── ui
-│   │       │   ├── ui.service.bottomSheet.js
-│   │       │   ├── ui.service.colors.js
-│   │       │   ├── ui.service.dialog.js
-│   │       │   ├── ui.service.icon.js
-│   │       │   ├── ui.service.inkRipple.js
-│   │       │   ├── ui.service.js
-│   │       │   ├── ui.service.media.js
-│   │       │   ├── ui.service.panel.js
-│   │       │   ├── ui.service.sidenav.js
-│   │       │   ├── ui.service.sticky.js
-│   │       │   └── ui.toast.service.js
-│   │       └── vendor
-│   │           ├── angular-translate
-│   │           │   └── translate.vendor.service.js
-│   │           ├── bluebird
-│   │           │   └── bluebird.vendor.service.js
-│   │           ├── lodash
-│   │           │   └── service.vendor.lodash.js
-│   │           └── moment
-│   │               └── service.vendor.moment.js
+│   │   │   └── excuse.tpl
+│   │   └── home
+│   │       ├── home.route.js
+│   │       ├── home.scss
+│   │       └── home.tpl
 │   ├── design
 │   │   ├── font
 │   │   ├── image
@@ -70,12 +63,13 @@ src
 │   │       ├── scaffold.scss
 │   │       └── vendor.scaffold.scss
 │   └── registry
-│       ├── module.app.js
-│       ├── module.controller.js
-│       ├── module.route.js
-│       └── module.service.js
+│       ├── app.controller.js
+│       ├── app.js
+│       ├── app.route.js
+│       └── app.service.js
 └── server
-	└── core.js
+    └── core.js
+
 ```
 
 ### Index Naming Convention
