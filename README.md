@@ -24,6 +24,7 @@ Rectangular is designed around best-practices and built on the principles of:
 - Naming: [View](readme/naming.md)
 - Promises: [View](readme/promises.md)
 - Registry: [View](readme/registry.md)
+- REST: [View](readme/rest.md)
 - Routes: [View](readme/routes.md)
 - Services: [View](readme/services.md)
 - Structure: [View](readme/structure.md)
