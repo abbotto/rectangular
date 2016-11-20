@@ -1,5 +1,5 @@
 ## Addons
-- Add-ons consist of 3rd-party code that is integrated into the app as vendor services.
+- Add-ons consist of `3rd-party code` that is integrated into the app as `vendor services`.
 
 ### Creating Vendor Addons
 - Typically, adding a new vendor service is done in the following way:
