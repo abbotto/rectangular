@@ -11,6 +11,7 @@
 	// Controller and ViewModel
 	// --------------------------------
 	view.controller = function ExcuseController($log) {
+		const vm = this;
 		$log.debug("ExcuseView has loaded.");
 	};
 
