@@ -15,13 +15,15 @@ src
 │   │   │   ├── locale
 │   │   │   │   └── locale.service.js
 │   │   │   ├── master
-│   │   │   │   ├── master.controller.js
 │   │   │   │   ├── master.scss
 │   │   │   │   └── master.tpl
 │   │   │   ├── model
+│   │   │   │   ├── mixin.service.js
 │   │   │   │   └── model.service.js
 │   │   │   ├── promise
 │   │   │   │   └── promise.service.js
+│   │   │   ├── rest
+│   │   │   │   └── rest.service.js
 │   │   │   ├── ui
 │   │   │   │   ├── ui.bottomSheet.service.js
 │   │   │   │   ├── ui.colors.service.js
@@ -41,32 +43,39 @@ src
 │   │   │       │   └── bluebird.vendor.service.js
 │   │   │       ├── lodash
 │   │   │       │   └── lodash.vendor.service.js
-│   │   │       └── moment
-│   │   │           └── moment.vendor.service.js
+│   │   │       ├── moment
+│   │   │       │   └── moment.vendor.service.js
+│   │   │       └── restangular
+│   │   │           └── restangular.vendor.service.js
 │   │   ├── excuse
-│   │   │   ├── excuse.controller.js
-│   │   │   ├── excuse.directive.js
-│   │   │   ├── excuse.directive.tpl
-│   │   │   ├── excuse.json
+│   │   │   ├── excuse.data.json
 │   │   │   ├── excuse.route.js
-│   │   │   ├── excuse.scss
 │   │   │   ├── excuse.service.js
-│   │   │   └── excuse.tpl
+│   │   │   ├── excuse.view.js
+│   │   │   ├── excuse.view.tpl
+│   │   │   └── spec
+│   │   │       ├── excuse.service.spec.js
+│   │   │       └── excuse.view.spec.js
 │   │   └── home
 │   │       ├── home.route.js
-│   │       ├── home.scss
-│   │       └── home.tpl
+│   │       ├── home.view.js
+│   │       └── home.view.tpl
+│   ├── data
+│   │   └── app.data.json
 │   ├── design
 │   │   ├── font
 │   │   ├── image
 │   │   └── style
 │   │       ├── scaffold.scss
 │   │       └── vendor.scaffold.scss
-│   └── registry
-│       ├── app.controller.js
-│       ├── app.js
-│       ├── app.route.js
-│       └── app.service.js
+│   ├── mixin
+│   │   └── view.mixin.json
+│   ├── registry
+│   │   ├── app.js
+│   │   ├── app.route.js
+│   │   └── app.service.js
+│   └── spec
+│       └── config.spec.js
 └── server
     └── core.js
 
