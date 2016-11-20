@@ -32,4 +32,6 @@
 		const RemoteController = function RemoteController() {
 			// Logic goes here...
 		};
+		
+		// Module goes here...
 	})();
