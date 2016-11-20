@@ -11,6 +11,7 @@
 	// Controller and ViewModel
 	// --------------------------------
 	view.controller = function HomeController($log) {
+		const vm = this;
 		$log.debug("HomeView has loaded.");
 	};
 	
