@@ -17,7 +17,10 @@
 ### Component Views
 - Component views are special `directives` for rendering `views`.
 - You can read more about component patterns for AngularJS [here](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives) and [here](http://busypeoples.github.io/post/thinking-in-components-angular-js/).
-- A simple component view may resemble the following:
+- You can read more about the `no-controller` rule [here](https://github.com/Gillespie59/eslint-plugin-angular/blob/master/docs/no-controller.md).
+
+#### Directive and Route
+- A simple component view directive may resemble the following:
 
 		(() => {
 			"use strict";
@@ -48,7 +51,7 @@
 			});
 		})();
 
-- The view route would look like this:
+- The component view route would look like this:
 
 		(() => {
 			"use strict";

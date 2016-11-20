@@ -53,7 +53,7 @@
 		],
 		"angular/module-setter": 2,
 		"angular/no-angular-mock": 2,
-		"angular/no-controller": 0,
+		"angular/no-controller": 2,
 		"angular/no-cookiestore": 2,
 		"angular/no-jquery-angularelement": 2,
 		"angular/no-private-call": 2,
