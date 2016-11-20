@@ -30,12 +30,11 @@
 	view.link = function excuseViewLink(scope) {
 		const showToast = () => {
 			const msg = service.excuse$();
-			service.toast$.show(
-				service.toast$.simple()
-				.textContent(msg)
-				.position("top right")
-				.hideDelay(5000)
-			);
+			const config = service.toast$.simple();
+			config.textContent(msg)
+			config.position("top right")
+			config.hideDelay(5000);
+			service.toast$.show(config);
 		};
 		showToast();
 		scope.tryAgain = () => {
