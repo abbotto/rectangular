@@ -3,4 +3,4 @@
 
 **Example:**
 
-	<ng-include src="'home/home.tpl'"></ng-include>
+	<ng-include src="'{{component}}/{{template}}.tpl'"></ng-include>
