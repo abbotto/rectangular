@@ -4,17 +4,17 @@
 ### Creating Vendor Addons
 - Typically, adding a new vendor service is done in the following way:
 
-	(() => {
-		"use strict";
-		
-		const exampleVendorService = function exampleVendorService($window) {
-			return $window.example;
-		};
+		(() => {
+			"use strict";
+			
+			const exampleVendorService = function exampleVendorService($window) {
+				return $window.example;
+			};
 
-		angular
-		.module("example.vendor.service", [])
-		.factory("example$", exampleVendorService);
-	})();
+			angular
+			.module("example.vendor.service", [])
+			.factory("example$", exampleVendorService);
+		})();
 
 ### Integrated Vendors
 
