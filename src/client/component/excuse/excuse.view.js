@@ -31,8 +31,8 @@
 		const showToast = () => {
 			const msg = service.excuse$();
 			const config = service.toast$.simple();
-			config.textContent(msg)
-			config.position("top right")
+			config.textContent(msg);
+			config.position("top right");
 			config.hideDelay(5000);
 			service.toast$.show(config);
 		};
