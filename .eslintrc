@@ -35,7 +35,7 @@
 		"angular/directive-name": [2,
 			"/^([a-z])+([A-Za-z]*)*/"
 		],
-		"angular/component-limit": [0, 1],
+		"angular/component-limit": [2, 1],
 		"angular/document-service": 2,
 		"angular/empty-controller": 2,
 		"angular/file-name": 0,
