@@ -16,7 +16,7 @@
 			.factory("example$", exampleVendorService);
 		})();
 
-### Integrated Vendors
+### Integrated Add-Ons
 
 #### Angular Translate
 - Used by `locale.service`.
