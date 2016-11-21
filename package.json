@@ -28,8 +28,10 @@
     "font-awesome": "^4.7.0",
     "lodash": "^4.16.6",
     "moment": "^2.16.0",
+    "ng-file-upload": "^12.2.13",
     "normalize.css": "^5.0.0",
-    "restangular": "^1.5.2"
+    "restangular": "^1.5.2",
+    "uglify-js": "^2.7.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8",
@@ -63,6 +65,7 @@
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
     "karma": "^1.3.0",
     "karma-babel-preprocessor": "^6.0.1",

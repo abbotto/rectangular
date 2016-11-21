@@ -23,7 +23,7 @@
 	};
 
 	angular.module("promise.service", [
-		"bluebird.vendor.service"
+		"bluebird.extension"
 	])
 	.factory("promise$", promiseService)
 	.run(($rootScope, bluebird$) => {

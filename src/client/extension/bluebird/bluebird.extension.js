@@ -7,6 +7,6 @@
 	};
 
 	angular
-	.module("bluebird.vendor.service", [])
+	.module("bluebird.extension", [])
 	.factory("bluebird$", bluebirdVendorService);
 })();

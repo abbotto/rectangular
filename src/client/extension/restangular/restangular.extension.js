@@ -2,7 +2,7 @@
 	"use strict";
 
 	angular
-	.module("restangular.vendor.service", [
+	.module("restangular.extension", [
 		"restangular"
 	]);
 })();

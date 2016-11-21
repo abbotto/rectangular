@@ -19,12 +19,12 @@ Rectangular provides a consistent structure that:
 ---
 
 # Table of Contents
-- Add-Ons: [View](readme/add-ons.md)
 - Assets: [View](readme/assets.md)
 - Components: [View](readme/components.md)
 - Controllers: [View](readme/controllers.md)
 - Directives: [View](readme/directives.md)
 - Documentation: [View](readme/documentation.md)
+- Extensions: [View](readme/extensions.md)
 - Functions: [View](readme/functions.md)
 - Models: [View](readme/models.md)
 - Naming: [View](readme/naming.md)

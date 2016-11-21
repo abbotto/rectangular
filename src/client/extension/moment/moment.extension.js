@@ -7,6 +7,6 @@
 	};
 
 	angular
-	.module("moment.vendor.service", [])
+	.module("moment.extension", [])
 	.factory("moment$", momentVendorService);
 })();

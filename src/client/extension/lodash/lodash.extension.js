@@ -7,6 +7,6 @@
 	};
 
 	angular
-	.module("lodash.vendor.service", [])
+	.module("lodash.extension", [])
 	.factory("lodash$", lodashVendorService);
 })();

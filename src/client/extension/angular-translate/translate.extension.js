@@ -2,7 +2,7 @@
 	"use strict";
 	
 	angular
-	.module("translate.vendor.service", [
+	.module("translate.extension", [
 		"pascalprecht.translate"
 	]);
 })();

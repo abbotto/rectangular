@@ -7,6 +7,7 @@ const watch = require("gulp-watch");
 const notify = require("gulp-notify");
 const concat = require("gulp-concat");
 const rename = require("gulp-rename");
+const uglify = require('gulp-uglify');
 const gulpDocs = require("gulp-ngdocs");
 const replace = require("gulp-replace");
 const include = require("gulp-include");
@@ -17,7 +18,7 @@ const cleanCSS = require("gulp-clean-css");
 const livereload = require("gulp-livereload");
 const ngConstants = require("gulp-ng-config");
 const sourcemaps = require("gulp-sourcemaps");
-const cacheHTML = require("gulp-angular-templatecache");
+
 const fs = require("fs");
 const sh = require("shelljs");
 const b2v = require("buffer-to-vinyl");
@@ -25,6 +26,7 @@ const runTasks = require("run-sequence");
 const spawn = require("child_process").spawn;
 const events = require("events");
 const eventEmitter = new events.EventEmitter();
+let assets;
 
 //--------------------------------
 // Load environment variables
@@ -53,7 +55,7 @@ gulp.task("dependencies", () => {
 //--------------------------------
 // Clean-up
 //--------------------------------
-gulp.task("reset", () => {
+gulp.task("reset", ["dependencies"], () => {
 	sh.rm("-rf", "tmp");
 	sh.mkdir("tmp");
 	sh.rm("-rf", "dist");
@@ -66,64 +68,7 @@ gulp.task("delint", () => {
 	sh.exec("npm run delint");
 });
 
-//--------------------------------
-// Caching
-//--------------------------------
-gulp.task("constants", () => {
-	return b2v.stream(new Buffer(JSON.stringify({
-		"NODE_ENV": process.env.NODE_ENV,
-		"LANGUAGE": process.env.LANGUAGE
-	})), "constants.js")
-	.pipe(ngConstants("app.constant"))
-	.pipe(gulp.dest("./tmp"));
-});
 
-gulp.task("models", () => {
-	return gulp.src([
-		"./src/client/**/*.mixin.json",
-		"./src/client/**/*.data.json"
-	])
-	.pipe(filelist("models.json"))
-	.pipe(gulp.dest("./tmp"))
-	.on("end", () => {
-		const arr = require("./tmp/models.json");
-		let key;
-		const models = {};
-		arr.forEach(function modelsLoop(path) {
-			key = path
-				.replace("src/client/", "")
-				.replace("component/", "")
-				.replace("data/", "")
-				.replace("mixin/", "")
-				.replace("core/", "")
-			;
-			models[key] = fs.readFileSync(path, "utf8");
-		});
-		return b2v.stream(new Buffer(JSON.stringify({
-			"appModel": models
-		})), "models.js")
-		.pipe(ngConstants("appModel"))
-		.pipe(gulp.dest("./tmp"));
-	});
-});
-
-gulp.task("cache-html", () => {
-	return gulp.src([
-		"src/client/**/*.tpl",
-		"!src/client/component/core/master/master.tpl",
-	])
-	//.pipe(minify and preprocess the template html here)
-	.pipe(cacheHTML({
-		"module": "app.template",
-		"standalone": true
-	}))
-	// Remove the extension
-	// from the template reference
-	.pipe(replace("component/", ""))
-	.pipe(replace("core/", ""))
-	.on("error", console.log)
-	.pipe(gulp.dest("./tmp"));
-});
 
 //--------------------------------
 // Copy Files
@@ -142,6 +87,13 @@ gulp.task("copy-images", () => {
 	.pipe(gulp.dest("./dist/images"));
 });
 
+gulp.task("copy-tasks", () => {
+	runTasks(
+		"copy-fonts",
+		"copy-images"
+	);
+});
+
 //--------------------------------
 // Compile Assets
 //--------------------------------
@@ -158,52 +110,35 @@ gulp.task("compile-index", () => {
 });
 
 gulp.task("compile-scss", () => {
-	return gulp.src(vendorSCSS)
-	.pipe(concat("vendor.scss"))
-	.pipe(gulp.dest("./tmp"))
-	.on("end", () => {
-		return gulp.src(appSCSS)
-		.pipe(concat("source.scss"))
-		.pipe(gulp.dest("./tmp"))
-		.on("end", () => {
-			return gulp.src([
-				"./tmp/vendor.scss",
-				"./tmp/source.scss"
-			])
-			.pipe(concat("app.scss"))
-			.pipe(sass.sync())
-			.pipe(prefix({
-				"browsers": ["last 5 versions"],
-				"cascade": false
-			}))
-			.pipe(cleanCSS({
-				"compatibility": "*"
-			}))
-			.pipe(gulp.dest("./dist/"));
-		});
-	});
+	assets = vendorSCSS;
+	assets = assets.concat(appSCSS);
+	return gulp.src(assets)
+	.pipe(concat("app.scss"))
+	.pipe(sass.sync())
+	.pipe(prefix({
+		"browsers": ["last 5 versions"],
+		"cascade": false
+	}))
+	.pipe(cleanCSS({
+		"compatibility": "*"
+	}))
+	.pipe(gulp.dest("./dist"));
 });
 
 gulp.task("compile-js", () => {
-	return gulp.src(vendorJS)
-	.pipe(concat("vendor.js"))
+	return gulp.src(appJS)
+	.pipe(babel())
+	// .pipe(babel({"compact": false}))
+	// .pipe(uglify({"mangle":false}))
+	.pipe(concat("source.js"))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp/"))
 	.on("end", () => {
-		return gulp.src(appJS)
-		.pipe(babel())
-		.pipe(concat("source.js"))
+		vendorJS.push("./tmp/source.js");
+		return gulp.src(vendorJS)
+		.pipe(concat("app.js"))
 		.on("error", console.log)
-		.pipe(gulp.dest("./tmp/"))
-		.on("end", () => {
-			return gulp.src([
-				"./tmp/vendor.js",
-				"./tmp/source.js"
-			])
-			.pipe(concat("app.js"))
-			.on("error", console.log)
-			.pipe(gulp.dest("./dist/"));
-		});
+		.pipe(gulp.dest("./dist/"))
 	});
 });
 
@@ -213,6 +148,15 @@ gulp.task("compile-tests", () => {
 	.pipe(concat("spec.js"))
 	.on("error", console.log)
 	.pipe(gulp.dest("./tmp/"));
+});
+
+gulp.task("compile-tasks", () => {
+	runTasks(
+		"compile-index",
+		"compile-scss",
+		"compile-js",
+		"compile-tests"
+	);
 });
 
 gulp.task("compile-docs", [], () => {
@@ -246,6 +190,8 @@ gulp.task("server", cb => {
 		if (!started) {
 			cb();
 			started = true;
+			gulp.start(["compile"]);
+			gulp.start(["open"]);
 			livereload.listen();
 		}
 	})
@@ -261,17 +207,10 @@ gulp.task("compile", () => {
 	runTasks(
 		"intro",
 		"reset",
+		"cache-tasks",
+		"copy-tasks",
 		"delint",
-		"models",
-		"constants",
-		"copy-fonts",
-		"copy-images",
-		"cache-html",
-		"dependencies",
-		"compile-index",
-		"compile-js",
-		"compile-tests",
-		"compile-scss"
+		"compile-tasks"
 	);
 });
 
@@ -286,45 +225,33 @@ const watchFiles = [
 	"./task/**/*.json"
 ];
 
-gulp.task("open", () => {
-	gulp.src(__filename)
-		.pipe(open({
-			"uri": "http://localhost:" + process.env.PORT + "/#/"
-		}));
-});
-
 gulp.task("reload", (done) => {
-	setTimeout(() => {
-		gulp.src(__filename).pipe(livereload());
-		done();
-	}, 1500);
+	gulp.src(__filename).pipe(livereload());
+	done();
 });
 
 gulp.task("watchTasks", () => {
 	runTasks(
+		"intro",
+		"reset",
+		"cache-tasks",
+		"copy-tasks",
 		"delint",
-		"models",
-		"constants",
-		"copy-fonts",
-		"copy-images",
-		"dependencies",
-		"compile-index",
-		"cache-html",
-		"compile-scss",
-		"compile-js",
-		"compile-tests",
+		"compile-tasks",
 		"reload"
 	);
 });
 
-gulp.task("monitor", ["compile", "server"], done => {
+gulp.task("open", () => {
+	gulp.src(__filename)
+	.pipe(open({
+		"uri": "http://localhost:" + process.env.PORT + "/#/"
+	}));
+});
+
+gulp.task("monitor", ["server"], done => {
 	gulp.watch(watchFiles, ["watchTasks"]);
-	setTimeout(() => {
-		gulp.start(["open"]);
-		gulp.src(__filename).pipe(notify("application has loaded."));
-		done();
-	}, 1500);
+	gulp.src(__filename).pipe(notify("application has loaded."));
 });
 
 gulp.task("default", ["compile"]);
-

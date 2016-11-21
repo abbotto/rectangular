@@ -38,15 +38,15 @@ src
 │   │   │   │   └── ui.toast.service.js
 │   │   │   └── vendor
 │   │   │       ├── angular-translate
-│   │   │       │   └── translate.vendor.service.js
+│   │   │       │   └── translate.extension.js
 │   │   │       ├── bluebird
-│   │   │       │   └── bluebird.vendor.service.js
+│   │   │       │   └── bluebird.extension.js
 │   │   │       ├── lodash
-│   │   │       │   └── lodash.vendor.service.js
+│   │   │       │   └── lodash.extension.js
 │   │   │       ├── moment
-│   │   │       │   └── moment.vendor.service.js
+│   │   │       │   └── moment.extension.js
 │   │   │       └── restangular
-│   │   │           └── restangular.vendor.service.js
+│   │   │           └── restangular.extension.js
 │   │   ├── excuse
 │   │   │   ├── excuse.data.json
 │   │   │   ├── excuse.route.js

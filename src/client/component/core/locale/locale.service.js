@@ -8,7 +8,7 @@
 	
 	angular
 	.module("locale.service", [
-		"translate.vendor.service"
+		"translate.extension"
 	])
 	.factory("locale$", localeService)
 	.config(($translateProvider, LANGUAGE) => {
