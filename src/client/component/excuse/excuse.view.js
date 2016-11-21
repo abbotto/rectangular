@@ -2,7 +2,7 @@
 	"use strict";
 	
 	// --------------------------------
-	// Model for view directive
+	// Settings for view directive
 	// --------------------------------
 	let view = {};
 	view.templateUrl = "excuse/excuse.view.tpl";
@@ -16,7 +16,7 @@
 	};
 
 	// --------------------------------
-	// Services for view.link
+	// Services for view.link callback
 	// Injected and populated in the view directive
 	// --------------------------------
 	const service = {
@@ -25,7 +25,7 @@
 	};
 
 	// --------------------------------
-	// Callback for view model
+	// Callback for DOM actions
 	// --------------------------------
 	view.link = function excuseViewLink(scope) {
 		scope.tryAgain = () => {
@@ -48,7 +48,7 @@
 		"ui.toast.service"
 	])
 	.directive("excuse", function excuseView(mixin$, excuse$, toast$) {
-		// Set defaults for view.link
+		// Set defaults for view
 		view = mixin$("view.mixin.json", [view]);
 		
 		// Provide services for view.link

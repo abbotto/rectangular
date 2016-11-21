@@ -2,7 +2,7 @@
 	"use strict";
 	
 	// --------------------------------
-	// Model for view directive
+	// Settings for view directive
 	// --------------------------------
 	let view = {};
 	view.templateUrl = "home/home.view.tpl";
@@ -22,7 +22,7 @@
 		"mixin.service"
 	])
 	.directive("home", function homeView(mixin$) {
-		// Set defaults for view.link
+		// Set defaults for view
 		view = mixin$("view.mixin.json", [view]);
 		return view;
 	});
