@@ -3,11 +3,12 @@
 	
 	angular
 	.module("excuse.route", [
-		"excuse.view"
+		"excuse.component"
 	])
-	.config($routeProvider => {
-		$routeProvider
-		.when("/excuse", {
+	.config($stateProvider => {
+		$stateProvider
+		.state("excuse", {
+			"url": "/excuse",
 			"template": "<excuse></excuse>"
 		});
 	});

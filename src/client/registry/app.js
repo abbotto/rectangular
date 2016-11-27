@@ -12,7 +12,8 @@
 		"app.template",
 		"ngAria",
 		"ngAnimate",
-		"ngMessages"
+		"ngMessages",
+		"ngSanitize"
 	])
 	.config($locationProvider => {
 		$locationProvider.html5Mode(true);

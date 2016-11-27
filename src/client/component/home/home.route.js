@@ -3,11 +3,12 @@
 	
 	angular
 	.module("home.route", [
-		"home.view"
+		"home.component"
 	])
-	.config($routeProvider => {
-		$routeProvider
-		.when("/", {
+	.config($stateProvider => {
+		$stateProvider
+		.state("home", {
+			"url": "/",
 			"template": "<home></home>"
 		});
 	});

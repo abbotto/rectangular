@@ -1,61 +1,31 @@
 (() => {
 	"use strict";
 	
-	// --------------------------------
-	// Settings for view directive
-	// --------------------------------
-	let view = {};
-	view.templateUrl = "excuse/excuse.view.tpl";
+	// Module definition
+	angular.module("excuse.component", [
+		"excuse.service",
+		"ui.toast.service"
+	]);
 	
-	// --------------------------------
+	// Settings for view directive
+	const options = {};
+	options.templateUrl = "excuse/excuse.view.tpl";
+	
 	// Controller and ViewModel
-	// --------------------------------
-	view.controller = function ExcuseController($log) {
+	options.controllerAs = "vm";
+	options.controller = function ExcuseController(excuse$, toast$) {
 		const vm = this;
-		$log.debug("ExcuseView has loaded.");
-	};
-
-	// --------------------------------
-	// Services for view.link callback
-	// Injected and populated in the view directive
-	// --------------------------------
-	const service = {
-		"excuse$": false,
-		"toast$": false
-	};
-
-	// --------------------------------
-	// Callback for DOM actions
-	// --------------------------------
-	view.link = function excuseViewLink(scope) {
-		scope.tryAgain = () => {
-			const msg = service.excuse$();
-			const config = service.toast$.simple();
+		vm.tryAgain = () => {
+			const msg = excuse$();
+			const config = toast$.simple();
 			config.textContent(msg);
 			config.position("top right");
 			config.hideDelay(5000);
-			service.toast$.show(config);
+			toast$.show(config);
 		};
-		scope.tryAgain();
+		vm.tryAgain();
 	};
-
-	// --------------------------------
-	// View module
-	// --------------------------------
-	angular.module("excuse.view", [
-		"excuse.service",
-		"mixin.service",
-		"ui.toast.service"
-	])
-	.directive("excuse", function excuseView(mixin$, excuse$, toast$) {
-		// Set defaults for view
-		view = mixin$("view.mixin.json", [view]);
-		
-		// Provide services for view.link
-		service.excuse$ = excuse$;
-		service.toast$ = toast$;
-		
-		return view;
-	});
+	
+	// Register the component
+	angular.module("excuse.component").component("excuse", options);
 })();
-

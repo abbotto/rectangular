@@ -22,6 +22,9 @@
 		// START ANGULAR RULES
 		// --------------------------------
 		"angular/angularelement": 1,
+		"angular/component-name": [2,
+			"/^([a-z])+([A-Za-z]*)*/"
+		],
 		"angular/controller-as": 2,
 		"angular/controller-as-route": 2,
 		"angular/controller-as-vm": [2, "vm"],

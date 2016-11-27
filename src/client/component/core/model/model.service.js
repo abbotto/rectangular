@@ -1,6 +1,10 @@
 /* eslint-plugin-disable angular */
 (() => {
 	"use strict";
+
+	angular.module("model.service", [
+		"app.model"
+	]);
 	
 	const modelService = function modelService(appModel) {
 		return (key) => {
@@ -8,8 +12,5 @@
 		};
 	};
 
-	angular.module("model.service", [
-		"appModel"
-	])
-	.factory("model$", modelService);
+	angular.module("model.service").factory("model$", modelService);
 })();

@@ -2,6 +2,10 @@
 (() => {
 	"use strict";
 	
+	angular.module("excuse.service", [
+		"model.service"
+	]);
+	
 	const excuseService = function excuseService(model$) {
 		return () => {
 			const model = model$("excuse/excuse.data.json");
@@ -9,9 +13,6 @@
 			return model[Math.floor(Math.random() * len)];
 		};
 	};
-
-	angular.module("excuse.service", [
-		"model.service"
-	])
-	.factory("excuse$", excuseService);
+	
+	angular.module("excuse.service").factory("excuse$", excuseService);
 })();

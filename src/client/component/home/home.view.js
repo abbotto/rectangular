@@ -1,29 +1,18 @@
 (() => {
 	"use strict";
 	
-	// --------------------------------
-	// Settings for view directive
-	// --------------------------------
-	let view = {};
-	view.templateUrl = "home/home.view.tpl";
+	// Module definition
+	angular.module("home.component", []);
 	
-	// --------------------------------
+	// Settings for view directive
+	const options = {};
+	options.templateUrl = "home/home.view.tpl";
+	
 	// Controller and ViewModel
-	// --------------------------------
-	view.controller = function HomeController($log) {
+	options.controller = function HomeController() {
 		const vm = this;
-		$log.debug("HomeView has loaded.");
 	};
 	
-	// --------------------------------
-	// View module
-	// --------------------------------
-	angular.module("home.view", [
-		"mixin.service"
-	])
-	.directive("home", function homeView(mixin$) {
-		// Set defaults for view
-		view = mixin$("view.mixin.json", [view]);
-		return view;
-	});
+	// Register the component
+	angular.module("home.component").component("home", options);
 })();
