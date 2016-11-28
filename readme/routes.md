@@ -8,27 +8,15 @@
 		(() => {
 			"use strict";
 			
-			// --------------------------------
-			// Define the route
-			// --------------------------------
-			const HomeRoute = function HomeRoute($router) {
-				$router.config([{
-					"path": "/",
-					"component": "home"
-				}]);
-			};
-			
-			// --------------------------------
-			// Inject the $router service
-			// --------------------------------
-			HomeRoute.$inject = ["$router"];
-			
-			// --------------------------------
-			// Define the route module
-			// --------------------------------
-			angular.module("home.route", [
-				// Inject the view
-				"home.view"
+			angular
+			.module("home.route", [
+				"home.component"
 			])
-			.controller("HomeRoute", HomeRoute);
+			.config($stateProvider => {
+				$stateProvider
+				.state("home", {
+					"url": "/",
+					"template": "<home></home>"
+				});
+			});
 		})();

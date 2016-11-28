@@ -5,6 +5,7 @@
 	- An optional 'route'.
 - Components can also contiain their own `directives` and `services`.
 - Component files are placed in the `src/client/component/{{componentName}}` directory:
+	- **Components** (js)
 	- **Directives** (js)
 	- **Templates** (tpl)
 	- **Routes** (js)
@@ -29,30 +30,22 @@
 		(() => {
 			"use strict";
 			
-			// --------------------------------
-			// Settings for view directive
-			// --------------------------------
-			let view = {};
-			view.templateUrl = "home/home.view.tpl";
+			// Module definition
+			angular.module("home.component", []);
 			
-			// --------------------------------
+			// Options
+			const options = {};
+			
+			// Template
+			options.templateUrl = "home/home.component.tpl";
+			
 			// Controller and ViewModel
-			// --------------------------------
-			view.controller = function HomeController() {
+			options.controllerAs = "vm";
+			options.controller = function HomeController() {
 				const vm = this;
-				vm.foo = {};
-				vm.bar = function() { };
 			};
 			
-			// --------------------------------
-			// View module
-			// --------------------------------
-			angular.module("home.view", [
-				"mixin.service"
-			])
-			.component("home", function homeView(mixin$) {
-				// Set defaults for view.link
-				view = mixin$("view.mixin.json", [view]);
-				return view;
-			});
+			// Register the component
+			angular.module("home.component").component("home", options);
 		})();
+

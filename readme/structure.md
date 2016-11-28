@@ -8,15 +8,34 @@
 
 ```
 .
-src
+src/
 ├── client
 │   ├── component
-│   │   ├── core
+│   │   ├── excuse
+│   │   │   ├── excuse.component.js
+│   │   │   ├── excuse.component.tpl
+│   │   │   ├── excuse.data.json
+│   │   │   ├── excuse.route.js
+│   │   │   ├── excuse.service.js
+│   │   │   └── spec
+│   │   │       ├── excuse.component.spec.js
+│   │   │       └── excuse.service.spec.js
+│   │   └── home
+│   │       ├── home.component.js
+│   │       ├── home.component.tpl
+│   │       └── home.route.js
+│   ├── core
+│   │   ├── design
+│   │   │   ├── font
+│   │   │   ├── image
+│   │   │   └── style
+│   │   │       ├── app.scaffold.scss
+│   │   │       └── vendor.scaffold.scss
+│   │   ├── model
+│   │   │   └── app.data.json
+│   │   ├── service
 │   │   │   ├── locale
 │   │   │   │   └── locale.service.js
-│   │   │   ├── master
-│   │   │   │   ├── master.scss
-│   │   │   │   └── master.tpl
 │   │   │   ├── model
 │   │   │   │   ├── mixin.service.js
 │   │   │   │   └── model.service.js
@@ -36,40 +55,24 @@ src
 │   │   │   │   ├── ui.sidenav.service.js
 │   │   │   │   ├── ui.sticky.service.js
 │   │   │   │   └── ui.toast.service.js
-│   │   │   └── vendor
-│   │   │       ├── angular-translate
-│   │   │       │   └── translate.extension.js
-│   │   │       ├── bluebird
-│   │   │       │   └── bluebird.extension.js
-│   │   │       ├── lodash
-│   │   │       │   └── lodash.extension.js
-│   │   │       ├── moment
-│   │   │       │   └── moment.extension.js
-│   │   │       └── restangular
-│   │   │           └── restangular.extension.js
-│   │   ├── excuse
-│   │   │   ├── excuse.data.json
-│   │   │   ├── excuse.route.js
-│   │   │   ├── excuse.service.js
-│   │   │   ├── excuse.view.js
-│   │   │   ├── excuse.view.tpl
-│   │   │   └── spec
-│   │   │       ├── excuse.service.spec.js
-│   │   │       └── excuse.view.spec.js
-│   │   └── home
-│   │       ├── home.route.js
-│   │       ├── home.view.js
-│   │       └── home.view.tpl
-│   ├── data
-│   │   └── app.data.json
-│   ├── design
-│   │   ├── font
-│   │   ├── image
-│   │   └── style
-│   │       ├── scaffold.scss
-│   │       └── vendor.scaffold.scss
-│   ├── mixin
-│   │   └── view.mixin.json
+│   │   │   └── upload
+│   │   │       └── upload.service.js
+│   │   └── view
+│   │       ├── view.scss
+│   │       └── view.tpl
+│   ├── extension
+│   │   ├── angular-translate
+│   │   │   └── translate.extension.js
+│   │   ├── bluebird
+│   │   │   └── bluebird.extension.js
+│   │   ├── file-upload
+│   │   │   └── upload.extension.js
+│   │   ├── lodash
+│   │   │   └── lodash.extension.js
+│   │   ├── moment
+│   │   │   └── moment.extension.js
+│   │   └── restangular
+│   │       └── restangular.extension.js
 │   ├── registry
 │   │   ├── app.js
 │   │   ├── app.route.js

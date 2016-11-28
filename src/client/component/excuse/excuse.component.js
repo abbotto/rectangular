@@ -7,8 +7,10 @@
 		"ui.toast.service"
 	]);
 	
-	// Settings for view directive
+	// Options
 	const options = {};
+	
+	// Template
 	options.templateUrl = "excuse/excuse.component.tpl";
 	
 	// Controller and ViewModel

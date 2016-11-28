@@ -4,11 +4,14 @@
 	// Module definition
 	angular.module("home.component", []);
 	
-	// Settings for view directive
+	// Options
 	const options = {};
+	
+	// Template
 	options.templateUrl = "home/home.component.tpl";
 	
 	// Controller and ViewModel
+	options.controllerAs = "vm";
 	options.controller = function HomeController() {
 		const vm = this;
 	};
