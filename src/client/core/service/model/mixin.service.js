@@ -2,8 +2,7 @@
 (() => {
 	"use strict";
 	
-	angular
-	.module("mixin.service", [
+	angular.module("mixin.service", [
 		"model.service"
 	]);
 	
