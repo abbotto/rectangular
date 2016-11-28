@@ -20,6 +20,7 @@
 !.jsbeautifyrc
 !.nvmrc
 !.stylelintrc
+!.travis.yml
 
 # Whitelist Source Files
 !/src
