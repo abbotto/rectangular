@@ -6,7 +6,7 @@
 	
 	// Settings for view directive
 	const options = {};
-	options.templateUrl = "home/home.view.tpl";
+	options.templateUrl = "home/home.component.tpl";
 	
 	// Controller and ViewModel
 	options.controller = function HomeController() {

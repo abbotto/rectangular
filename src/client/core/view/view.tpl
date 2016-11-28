@@ -12,7 +12,7 @@
 
 	<body ng-app="app">
 		<!-- Viewport -->
-		<div id="master" class="master" class="view-animate" ui-view></div>
+		<div id="view" class="view" class="view-animate" ui-view></div>
 		
 		<!-- Scripts -->
 		<script type="text/javascript" src="app.js"></script>

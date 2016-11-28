@@ -9,7 +9,7 @@
 	
 	// Settings for view directive
 	const options = {};
-	options.templateUrl = "excuse/excuse.view.tpl";
+	options.templateUrl = "excuse/excuse.component.tpl";
 	
 	// Controller and ViewModel
 	options.controllerAs = "vm";

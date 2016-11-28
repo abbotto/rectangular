@@ -32,7 +32,8 @@ gulp.task("doc.compile", [], () => {
 //--------------------------------
 gulp.task("compile", () => {
 	sh.exec("node task/compile.js");
-	livereload();
+	gulp.src(__filename)
+	.pipe(livereload());
 });
 
 //--------------------------------

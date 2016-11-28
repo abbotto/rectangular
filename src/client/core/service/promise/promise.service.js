@@ -1,7 +1,11 @@
 /* eslint-plugin-disable angular */
 (() => {
 	"use strict";
-	
+
+	angular.module("promise.service", [
+		"bluebird.extension"
+	]);
+
 	const promiseService = function promiseService($rootScope, bluebird$) {
 		const $promise = bluebird$;
 		const defer = () => {
@@ -22,9 +26,7 @@
 		return $promise;
 	};
 
-	angular.module("promise.service", [
-		"bluebird.extension"
-	])
+	angular.module("promise.service")
 	.factory("promise$", promiseService)
 	.run(($rootScope, bluebird$) => {
 		bluebird$.setScheduler(cb => {
