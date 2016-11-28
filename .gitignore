@@ -3,11 +3,12 @@
 
 # Whitelist Javascript Files
 !gulpfile.js
+!karma.conf.js
 !package.json
 !server.js
 
 # Whitelist Markdown Files
-!LICENSE.md
+!license.md
 !README.md
 
 # Whitelist Dot Files
