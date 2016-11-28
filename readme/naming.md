@@ -25,7 +25,7 @@
 - A service that is invoked with `.service()` is a `constructor` function.
 	- It can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
 	- It should be named in `UpperCamelCase` format.
-- Built-in Angular services are prefixed with `$`. To keep things consistent and concise, all other services should have a suffix of `$`.
+- Angular services are prefixed with `$`. To keep things consistent and concise, all other services should have a suffix of `$`.
 	- Built-in: `$location`.
 	- Other: `service$`.
 
