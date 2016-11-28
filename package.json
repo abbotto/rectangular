@@ -10,7 +10,7 @@
     "test": "gulp compile && karma test",
     "compile": "gulp compile",
     "server": "node server.js",
-    "start": "cp .envrc .env && gulp compile && node server.js"
+    "start": "cp .envrc .env && gulp compile"
   },
   "dependencies": {
     "angular": "^1.5.8",
