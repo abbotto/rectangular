@@ -6,12 +6,11 @@
   "author": "Jared Abbott",
   "main": "server.js",
   "scripts": {
-    "init": "cp .envrc .env && gulp compile",
     "delint": "node_modules/eslint/bin/eslint.js --fix src/ && node_modules/stylelint/dist/cli.js src/**/*.scss",
     "test": "gulp compile && karma test",
     "compile": "gulp compile",
     "server": "node server.js",
-    "start": "gulp compile && node server.js"
+    "start": "cp .envrc .env && gulp compile && node server.js"
   },
   "dependencies": {
     "angular": "^1.5.8",
