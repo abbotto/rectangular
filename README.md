@@ -35,5 +35,7 @@ Rectangular provides a consistent structure that:
 - Services: [View](readme/services.md)
 - Structure: [View](readme/structure.md)
 - Templates: [View](readme/templates.md)
-- User Experience: [View](readme/user-experience.md)
+- Translations: [View](readme/translations.md)
 - Uploads: [View](readme/uploads.md)
+- User Experience: [View](readme/user-experience.md)
+- Utilities: [View](readme/utilities.md)
