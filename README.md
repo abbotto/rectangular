@@ -19,6 +19,7 @@ Rectangular provides a consistent structure that:
 ---
 
 # Table of Contents
+- Setup: [View](readme/setup.md)
 - Assets: [View](readme/assets.md)
 - Components: [View](readme/components.md)
 - Controllers: [View](readme/controllers.md)
