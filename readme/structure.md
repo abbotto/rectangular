@@ -13,7 +13,7 @@ src/
 │   ├── component
 │   │   ├── excuse
 │   │   │   ├── excuse.component.js
-│   │   │   ├── excuse.component.tpl
+│   │   │   ├── excuse.component.html
 │   │   │   ├── excuse.data.json
 │   │   │   ├── excuse.route.js
 │   │   │   ├── excuse.service.js
@@ -22,7 +22,7 @@ src/
 │   │   │       └── excuse.service.spec.js
 │   │   └── home
 │   │       ├── home.component.js
-│   │       ├── home.component.tpl
+│   │       ├── home.component.html
 │   │       └── home.route.js
 │   ├── core
 │   │   ├── design
@@ -59,7 +59,7 @@ src/
 │   │   │       └── upload.service.js
 │   │   └── view
 │   │       ├── view.scss
-│   │       └── view.tpl
+│   │       └── view.html
 │   ├── extension
 │   │   ├── angular-translate
 │   │   │   └── translate.extension.js

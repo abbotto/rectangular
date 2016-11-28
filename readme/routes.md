@@ -1,6 +1,6 @@
 ## Routes
-- Routes are used to guide the users throught the application.
-- The structure of a route path is this: `{{component}}/{{template}}.tpl`.
+- `Routes` are used to guide the users throught the application.
+- The structure of a route path is this: `{{component}}/{{template}}.html`.
 - Routing is provided by `ui-router`.
 - Learn more about `ui-router` [here](https://github.com/angular-ui/ui-router).
 

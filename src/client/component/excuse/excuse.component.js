@@ -11,7 +11,7 @@
 	const options = {};
 	
 	// Template
-	options.templateUrl = "excuse/excuse.component.tpl";
+	options.templateUrl = "excuse/excuse.component.html";
 	
 	// Controller and ViewModel
 	options.controllerAs = "vm";

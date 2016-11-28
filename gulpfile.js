@@ -55,7 +55,7 @@ const watchFiles = [
 	"./src/client/**/*.scss",
 	"./src/client/**/*.js",
 	"./src/client/**/*.json",
-	"./src/client/**/*.tpl",
+	"./src/client/**/*.html",
 	"./task/**/*.js",
 	"./task/**/*.json"
 ];

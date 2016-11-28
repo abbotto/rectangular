@@ -8,7 +8,7 @@
 	const options = {};
 	
 	// Template
-	options.templateUrl = "home/home.component.tpl";
+	options.templateUrl = "home/home.component.html";
 	
 	// Controller and ViewModel
 	options.controllerAs = "vm";

@@ -7,7 +7,7 @@
 - Component files are placed in the `src/client/component/{{componentName}}` directory:
 	- **Components** (js)
 	- **Directives** (js)
-	- **Templates** (tpl)
+	- **Templates** (html)
 	- **Routes** (js)
 	- **Services** (js)
 
@@ -37,7 +37,7 @@
 			const options = {};
 			
 			// Template
-			options.templateUrl = "home/home.component.tpl";
+			options.templateUrl = "home/home.component.html";
 			
 			// Controller and ViewModel
 			options.controllerAs = "vm";

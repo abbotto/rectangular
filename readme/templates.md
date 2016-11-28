@@ -1,6 +1,6 @@
 ## Templates
-- The structure of a template path is this: `{{component}}/{{template}}.tpl`.
+- The structure of a template path is this: `{{component}}/{{template}}.html`.
 
 **Example:**
 
-	<ng-include src="'{{component}}/{{template}}.tpl'"></ng-include>
+	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
