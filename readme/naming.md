@@ -10,7 +10,7 @@
 #### Components
 - Component module names:
 	- Should be in `lowerCamelCase`.
-- 	- Should be in the following format: `{{component}}.*.{{type}}`.
+	- Should be in the following format: `{{component}}.*.{{type}}`.
 	
 ### Controllers
 - Controllers should be named in `UpperCamelCase` format.
@@ -30,7 +30,7 @@
 	- Other: `service$`.
 
 #### Factories
-- A factory is an implementation of a service that is invoked with `.factory()`.
+- A `factory` is an implementation of a service that is invoked with `.factory()`.
 	- It returns an object that contains the members of the service.
 	- It should be named in `lowerCamelCase` format.
 
