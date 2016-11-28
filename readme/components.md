@@ -1,8 +1,8 @@
 ## Components
 - Components are comprised of the following:
-	- A `component directive`.
-	- A `template`'
-	- An optional 'route'.
+	- A `component` directive.
+	- A component `template`
+	- An optional `route`.
 - Components can also contiain their own `directives` and `services`.
 - Component files are placed in the `src/client/component/{{componentName}}` directory:
 	- **Components** (js)
@@ -25,7 +25,7 @@
 - Capturing the context of this with `vm` avoids encountering this problem.
 
 #### Component View Example
-- A simple `component directive` may resemble the following:
+- A simple `component` directive may resemble the following:
 
 		(() => {
 			"use strict";

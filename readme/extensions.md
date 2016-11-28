@@ -19,7 +19,7 @@
 ### Integrated Extensions
 
 #### Angular Translate
-- Used by `locale.service`.
+- Used by `locale.service` and injected via `locale$`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
 #### Lodash
