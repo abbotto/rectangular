@@ -1,4 +1,5 @@
 # Rectangular
+[![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 
 ## Introduction
 Rectangular is an appkit for AngularJS developers.
