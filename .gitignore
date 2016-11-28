@@ -28,5 +28,9 @@
 !/readme
 !/readme/**/*
 
+# Whitelist Tasks
+!/task
+!/task/**/*
+
 # Blacklist Other Files
 .DS_Store
