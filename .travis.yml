@@ -7,5 +7,4 @@ branches:
   only:
     - master
 
-script:
-  - npm start
+script: npm start
