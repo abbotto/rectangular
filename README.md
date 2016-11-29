@@ -25,7 +25,7 @@ Rectangular is designed to be:
 
 ---
 
-# Table of Contents
+## Table of Contents
 - Setup: 			[View](readme/setup.md)
 - Assets: 			[View](readme/assets.md)
 - Components: 		[View](readme/components.md)
