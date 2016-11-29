@@ -7,13 +7,10 @@
 
 ## NPM
 
-	npm run delint
-	npm run test
 	npm run compile
+	npm run delint
+	npm run dev
+	npm run docs
 	npm run server
 	npm run start
-
-## Gulp
-
-	gulp docs
-	gulp dev
+	npm run test
