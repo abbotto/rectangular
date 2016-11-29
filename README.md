@@ -10,7 +10,7 @@ Rectangular is an appkit for AngularJS developers.
 - Environment, model and template caching.
 - A fast and robust promise implementation.
 - An advanced REST interface.
-- Multiple language support.
+- Locale support for multiple languages.
 - An extension system.
 
 ### Goals

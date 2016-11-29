@@ -6,7 +6,8 @@
 	
 	angular.module("app.route", [
 		"ui.router",
-		"home.route"
+		"home.route",
+		"excuse.route"
 	])
 	.config($urlRouterProvider => {
 		$urlRouterProvider.otherwise("/");
