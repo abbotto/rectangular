@@ -11,7 +11,7 @@ Rectangular is an appkit for AngularJS developers.
 ### Features
 - [Material Design](https://material.angularjs.org/latest/) integration.
 - Upload support for drag-n-drop, progress, validation filters and a queue. 
-- Environment, model and template caching.
+- Environment, model, and template caching.
 - A fast and robust promise implementation.
 - An advanced REST interface.
 - Locale support for multiple languages.

@@ -26,8 +26,8 @@
 	- It can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
 	- It should be named in `UpperCamelCase` format.
 - Angular services are prefixed with `$`. To keep things consistent and concise, all other services should have a suffix of `$`.
-	- Built-in: `$location`.
-	- Other: `service$`.
+	- Angular-style: `$service`.
+	- App-style: `service$`.
 
 #### Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
