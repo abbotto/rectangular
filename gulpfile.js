@@ -64,7 +64,7 @@ const watchFiles = [
 // Server
 //--------------------------------
 const nodemon = require("gulp-nodemon");
-gulp.task("server", cb => {	
+gulp.task("dev", cb => {	
 	let started = false;
 	nodemon({
 			// the script to run the app

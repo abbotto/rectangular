@@ -16,4 +16,4 @@
 ## Gulp
 
 	gulp docs
-	gulp server
+	gulp dev
