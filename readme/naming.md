@@ -8,8 +8,8 @@
 		- `angular.module("{{component}}.*.service")`.
 
 #### Components
-- Component module names should be:
-	- In `lowerCamelCase`.
+- Component module names should:
+	- Be `lowerCamelCase`.
 	- Follow this format: `{{component}}.*.{{type}}`.
 	
 ### Controllers
