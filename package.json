@@ -7,8 +7,8 @@
   "main": "server.js",
   "scripts": {
     "delint": "node_modules/eslint/bin/eslint.js --fix src/ && node_modules/stylelint/dist/cli.js src/**/*.scss",
-    "test": "gulp compile && karma test",
-    "compile": "gulp compile",
+    "test": "node task/compile.js && karma test",
+    "compile": "node task/compile.js",
     "server": "node server.js",
     "start": "cp .envrc .env && gulp compile"
   },

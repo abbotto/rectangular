@@ -11,7 +11,7 @@ require("dotenv").config();
 // ngDocs
 //--------------------------------
 const gulpDocs = require("gulp-ngdocs");
-gulp.task("doc.compile", [], () => {
+gulp.task("docs", [], () => {
 	const options = {
 		"html5Mode": true,
 		"startPage": "/api",
@@ -22,7 +22,7 @@ gulp.task("doc.compile", [], () => {
 	};
 	gulp.src(appJS)
 		.pipe(gulpDocs.process(options))
-		.pipe(gulp.dest("./doc"))
+		.pipe(gulp.dest("./docs"))
 		.pipe(exit());
 	;
 });
