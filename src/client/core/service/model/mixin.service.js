@@ -19,6 +19,5 @@
 		};
 	};
 	
-	angular.module("mixin.service")
-	.factory("mixin$", mixinService);
+	angular.module("mixin.service").factory("mixin$", mixinService);
 })();
