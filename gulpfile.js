@@ -61,7 +61,7 @@ const watchFiles = [
 ];
 
 //--------------------------------
-// Server
+// Development server
 //--------------------------------
 const nodemon = require("gulp-nodemon");
 gulp.task("dev", cb => {	
