@@ -1,8 +1,7 @@
 (() => {
 	"use strict";
 	
-	angular
-	.module("translate.extension", [
+	angular.module("translate.extension", [
 		"pascalprecht.translate"
 	]);
 })();

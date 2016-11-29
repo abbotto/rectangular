@@ -15,13 +15,13 @@ Rectangular is an appkit for AngularJS developers.
 
 ### Goals
 Rectangular is designed to be:
+- Component-based
+- Organized
+- Modular
 - Scalable
 - Testable
 - Efficient
 - Presentable
-- Component-based
-- Organized
-- Modular
 
 ---
 

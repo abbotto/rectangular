@@ -1,8 +1,7 @@
 (() => {
 	"use strict";
-
-	angular
-	.module("restangular.extension", [
+	
+	angular.module("restangular.extension", [
 		"restangular"
 	]);
 })();
