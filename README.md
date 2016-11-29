@@ -1,8 +1,12 @@
 # Rectangular
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 
+---
+
 ## Introduction
 Rectangular is an appkit for AngularJS developers.
+
+---
 
 ### Features
 - [Material Design](https://material.angularjs.org/latest/) integration.
@@ -12,6 +16,8 @@ Rectangular is an appkit for AngularJS developers.
 - An advanced REST interface.
 - Locale support for multiple languages.
 - An extension system.
+
+---
 
 ### Goals
 Rectangular is designed to be:
