@@ -4,4 +4,4 @@
 	cp .envrc .env && nvm use && npm install
 
 ## Run
-	gulp server
+	npm run dev
