@@ -26,24 +26,33 @@ Rectangular is designed to be:
 ---
 
 ## Table of Contents
+---
 - Setup: 			[View](readme/setup.md)
+---
+- Tasks: 			[View](readme/tasks.md)
 - Assets: 			[View](readme/assets.md)
+---
+- Functions:		[View](readme/functions.md)
+- Naming:			[View](readme/naming.md)
+- Structure:		[View](readme/structure.md)
+---
 - Components: 		[View](readme/components.md)
 - Controllers: 		[View](readme/controllers.md)
 - Directives: 		[View](readme/directives.md)
-- Documentation:	[View](readme/documentation.md)
-- Extensions:		[View](readme/extensions.md)
-- Functions:		[View](readme/functions.md)
-- Models:			[View](readme/models.md)
-- Naming:			[View](readme/naming.md)
-- Promises:			[View](readme/promises.md)
 - Registry:			[View](readme/registry.md)
-- REST:				[View](readme/rest.md)
 - Routes:			[View](readme/routes.md)
 - Services:			[View](readme/services.md)
-- Structure:		[View](readme/structure.md)
 - Templates:		[View](readme/templates.md)
+---
+- Extensions:		[View](readme/extensions.md)
+- Models:			[View](readme/models.md)
+- Promises:			[View](readme/promises.md)
+- REST:				[View](readme/rest.md)
 - Translations:		[View](readme/translations.md)
 - Uploads:			[View](readme/uploads.md)
 - User Experience:	[View](readme/user-experience.md)
 - Utilities:		[View](readme/utilities.md)
+
+
+
+
