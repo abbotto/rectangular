@@ -2,7 +2,7 @@
 	"use strict";
 	
 	// Module definition
-	angular.module("home.component", []);
+	const home = angular.module("home.component", []);
 	
 	// Options
 	const options = {};
@@ -17,5 +17,5 @@
 	};
 	
 	// Register the component
-	angular.module("home.component").component("home", options);
+	home.component("home", options);
 })();
