@@ -2,7 +2,7 @@
 	"use strict";
 	
 	// Module definition
-	angular.module("excuse.component", [
+	const excuse = angular.module("excuse.component", [
 		"excuse.service",
 		"ui.toast.service"
 	]);
@@ -29,5 +29,5 @@
 	};
 	
 	// Register the component
-	angular.module("excuse.component").component("excuse", options);
+	excuse.component("excuse", options);
 })();
