@@ -50,7 +50,7 @@
 		"angular/interval-service": 2,
 		"angular/json-functions": 2,
 		"angular/log": 2,
-		"angular/module-getter": 2,
+		"angular/module-getter": 0,
 		"angular/module-name": [2,
 			"/(\\.?([a-z])+([A-Z])*)+/"
 		],
