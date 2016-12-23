@@ -2,7 +2,7 @@
 
 ## Application
 ### Arrays, Objects & Strings
-- Called via `example.extension` and injected via `example$`.
+- Called via `lodash.extension` and injected via `lodash$`.
 - Learn more about `Lodash` [here](https://example.com/docs/4.16.6).
 
 ### Date & Time
