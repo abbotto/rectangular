@@ -2,7 +2,7 @@ const sh = require("shelljs");
 
 // Load environment variables
 require("dotenv").config();
-
-sh.exec("./node_modules/asciify/bin/asciify.js process.env.APP_NAME -f rev");
+const name = process.env.APP_NAME;
+sh.exec("./node_modules/asciify/bin/asciify.js " + name + " -f rev");
 console.log("Compiling app...\n\n");
 sh.exec("sleep 1");
