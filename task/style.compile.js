@@ -7,7 +7,7 @@ const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modul
 const nodeSASS = "node_modules/node-sass/bin/node-sass";
 vendorSCSS.push(tmpCSS);
 
-sh.exec("node_modules/stylelint/dist/cli.js src/**/*.scss");
+sh.exec("node_modules/stylelint/bin/stylelint.js src/**/*.scss");
 sh.exec("node task/font.copy.js");
 sh.exec("node task/image.copy.js");
 

@@ -11,7 +11,5 @@
 				return $window.exampleLibrary;
 			};
 
-			angular
-			.module("example.extension", [])
-			.factory("example$", exampleExtension);
+			angular.module("example.extension", []).factory("example$", exampleExtension);
 		})();

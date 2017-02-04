@@ -1,9 +1,9 @@
 [
 	"!./src/client/**/spec.*.js",
-	"./src/client/registry/app.js",
-	"./src/client/registry/app.route.js",
+	"./src/client/app/app.js",
+	"./src/client/app/app.route.js",
 	"./src/client/**/*.route.js",
-	"./src/client/registry/app.service.js",
+	"./src/client/app/app.service.js",
 	"./src/client/**/*.service.js",
 	"./src/client/**/*.component.js",
 	"./src/client/**/*.directive.js",

@@ -11,7 +11,7 @@ files.forEach((path) => {
 	key = path
 	.replace("./src/client/", "")
 	.replace("component/", "")
-	.replace("core/", "")
+	.replace("shared/", "")
 	value = JSON.stringify(fs.readFileSync(path, "utf8"));
 	templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
 });

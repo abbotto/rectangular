@@ -4,7 +4,7 @@
 ---
 
 ## Introduction
-Rectangular is an appkit for AngularJS developers.
+A modern app kit for AngularJS developers.
 
 ---
 
@@ -32,23 +32,13 @@ Rectangular is designed to be:
 ---
 
 ## Table of Contents
----
 
 - Setup: 			[View](readme/setup.md)
-
----
-
 - Tasks: 			[View](readme/tasks.md)
 - Assets: 			[View](readme/assets.md)
-
----
-
 - Functions:		[View](readme/functions.md)
 - Naming:			[View](readme/naming.md)
 - Structure:		[View](readme/structure.md)
-
----
-
 - Components: 		[View](readme/components.md)
 - Controllers: 		[View](readme/controllers.md)
 - Directives: 		[View](readme/directives.md)
@@ -56,9 +46,6 @@ Rectangular is designed to be:
 - Routes:			[View](readme/routes.md)
 - Services:			[View](readme/services.md)
 - Templates:		[View](readme/templates.md)
-
----
-
 - Extensions:		[View](readme/extensions.md)
 - Models:			[View](readme/models.md)
 - Promises:			[View](readme/promises.md)

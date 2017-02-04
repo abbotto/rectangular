@@ -15,7 +15,7 @@ files.forEach((path) => {
 	.replace("src/client/", "")
 	.replace("component/", "")
 	.replace("model/", "")
-	.replace("core/", "");
+	.replace("shared/", "");
 	models[key] = fs.readFileSync(path, "utf8");
 });
 

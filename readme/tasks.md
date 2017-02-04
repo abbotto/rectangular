@@ -1,10 +1,5 @@
 # Tasks
 
-## NodeJS
-
-	node task/enable-demo
-	node task/disable-demo
-
 ## NPM
 
 	npm run compile

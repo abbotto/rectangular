@@ -1,1 +1,1 @@
-require("./src/server/core.js");
+require("./src/server/index.js");

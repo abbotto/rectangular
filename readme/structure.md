@@ -15,7 +15,7 @@ src
 │   │       ├── home.component.html
 │   │       ├── home.component.js
 │   │       └── home.route.js
-│   ├── core
+│   ├── shared
 │   │   ├── design
 │   │   │   ├── font
 │   │   │   ├── image
@@ -71,6 +71,6 @@ src
 │   └── spec
 │       └── config.spec.js
 └── server
-    └── core.js
+    └── index.js
 
 ```

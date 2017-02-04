@@ -1,6 +1,7 @@
 [	
-	"./src/client/core/design/**/*.scaffold.scss",
-	"./src/client/core/view/view.scss",
-	"./src/client/core/**/*.scss",
+	"./src/client/shared/design/scaffold.scss",
+	"./src/client/shared/design/vendor.scss",
+	"./src/client/app/app.scss",
+	"./src/client/shared/**/*.scss",
 	"./src/client/component/**/*.scss"
 ]

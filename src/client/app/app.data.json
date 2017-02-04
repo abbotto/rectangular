@@ -1,0 +1,12 @@
+{
+	"name": "appName",
+	"description": "appDescription",
+	"version": "1.0.0",
+	"license": "MIT",
+	"contributors": [
+		{
+			"name": "Your name",
+			"email": "Your email address"
+		}
+	]
+}
