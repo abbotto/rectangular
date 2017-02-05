@@ -8,7 +8,7 @@
 	"scripts": {
 		"compile": "node task/compile.js",
 		"delint-css": "node_modules/stylelint/bin/stylelint.js src/**/*.scss",
-		"delint-js": "node_modules/eslint/bin/eslint.js --fix src/",
+		"delint-js": "node_modules/eslint/bin/eslint.js --fix src/ && node_modules/eslint/bin/eslint.js --fix task/",
 		"delint": "npm run delint-js && npm run delint-css",
 		"dev": "gulp dev",
 		"docs": "gulp docs",
