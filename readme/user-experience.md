@@ -1,10 +1,11 @@
 ## User Experience
 
 ### [Rectangular UI](https://github.com/abbotto/rectangular-ui.git)
-
+ 
+ - Services are called via `ui.*.service`.
+ 
 #### Material Design
-- `Angular Material` can be easily integrated into `Rectangular`.
-- Services are called via `ui.*.service`.
+- Material Design functionality is added via `Angular Material`.
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
 
 #### Install Material Design
@@ -30,8 +31,7 @@
 - Called via `ui.toast.service` and injected via `toast$`.
 
 #### Bootstrap
-- `Angular Strap` can be easily integrated into `rectangular`.
-- Services are called via `ui.*.service`.
+- Bootstrap functionality is added via `Angular Strap`.
 - Learn more about `angular-strap` [here](https://mgcrea.github.io/angular-strap/).
 
 ##### Integrated Services
