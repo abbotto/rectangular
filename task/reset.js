@@ -1,3 +1,5 @@
+"use strict";
+
 const sh = require("shelljs");
 sh.rm("-rf", "./tmp");
 sh.mkdir("./tmp");

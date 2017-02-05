@@ -1,15 +1,13 @@
+"use strict";
+
 const gulp = require("gulp");
 const sh = require("shelljs");
 const livereload = require("gulp-livereload");
 
-//--------------------------------
 // Load environment variables
-//--------------------------------
 require("dotenv").config();
 
-//--------------------------------
 // ngDocs
-//--------------------------------
 const gulpDocs = require("gulp-ngdocs");
 gulp.task("docs", [], () => {
 	const options = {
@@ -27,18 +25,14 @@ gulp.task("docs", [], () => {
 	;
 });
 
-//--------------------------------
 // Client Tasks
-//--------------------------------
 gulp.task("compile", () => {
 	sh.exec("node task/compile.js");
 	gulp.src(__filename)
 	.pipe(livereload());
 });
 
-//--------------------------------
 // Open the app in a browser
-//--------------------------------
 const open = require("gulp-open");
 gulp.task("open", ["compile"], () => {
 	gulp.src(__filename)
@@ -47,9 +41,7 @@ gulp.task("open", ["compile"], () => {
 	}));
 });
 
-//--------------------------------
 // Watch files
-//--------------------------------
 const watch = require("gulp-watch");
 const watchFiles = [
 	"./src/client/**/*.scss",
@@ -60,9 +52,7 @@ const watchFiles = [
 	"./task/**/*.json"
 ];
 
-//--------------------------------
 // Development server
-//--------------------------------
 const nodemon = require("gulp-nodemon");
 gulp.task("dev", cb => {	
 	let started = false;

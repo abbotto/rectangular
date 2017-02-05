@@ -1,4 +1,6 @@
 const finder = require("glob-concat");
+"use strict";
+
 const fs = require("fs");
 const path = require("path");
 

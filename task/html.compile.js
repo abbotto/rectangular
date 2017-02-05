@@ -1,6 +1,5 @@
-//--------------------------------
-// Required
-//--------------------------------
+"use strict";
+
 const fs = require("fs");
 const sh = require("shelljs");
 

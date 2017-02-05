@@ -1,21 +1,34 @@
-//--------------------------------
-// Required
-//--------------------------------
-const gulp = require("gulp");
-const babel = require("gulp-babel");
-const concat = require("gulp-concat");
-const exit = require("gulp-exit");
+"use strict";
 
-let specJS;
-gulp.task("spec.asset", () => {
-	specJS = require("./asset/spec.js.json");
-});
+(() => {
+	const sh = require("shelljs");
+	const finder = require("glob-concat");
+	const fs = require("fs");
 
-gulp.task("spec.compile", ["spec.asset"], () => {
-	return gulp.src(specJS)
-	.pipe(babel())
-	.pipe(concat("spec.js"))
-	.on("error", console.log)
-	.pipe(gulp.dest("./tmp/"))
-	.pipe(exit());
-});
+	// Load environment variables
+	require("dotenv").config();
+
+	// Cross-platform newline
+	const EOL = require("os").EOL;
+
+	// Output paths
+	const tmpSpecJS = "tmp/spec.js";
+
+	const scripts = finder.sync(require("./asset/spec.js.json"));
+
+	// Concatenate and clean-up the output
+	let script, output;
+	const n = scripts.length;
+	let i = 0;
+
+	for (; i < n; i+=1) {
+		script = fs.readFileSync(scripts[i], "utf8");
+		output += (script.trim());
+	}
+
+	// Write the output to a file
+	fs.appendFile(tmpSpecJS, output);
+
+	// Convert ES6 to ES5
+	sh.exec("cat " + tmpSpecJS + " | node_modules/babel-cli/bin/babel.js > " + tmpSpecJS);
+})();

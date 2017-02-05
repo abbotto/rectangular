@@ -1,4 +1,4 @@
 [
 	"./src/client/app/app.spec.js",
-	"./src/client/**/spec.*.js"
+	"./src/client/**/*.spec.js"
 ]

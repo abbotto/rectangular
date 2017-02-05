@@ -1,3 +1,5 @@
+"use strict";
+
 const sh = require("shelljs");
 sh.exec("node task/reset.js");
 sh.exec("node task/app.intro.js");

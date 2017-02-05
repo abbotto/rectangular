@@ -1,3 +1,5 @@
+"use strict";
+
 const sh = require("shelljs");
 
 // Load environment variables

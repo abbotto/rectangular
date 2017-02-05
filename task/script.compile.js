@@ -1,6 +1,5 @@
-// --------------------------------
-// JavaScript Compiler
-// --------------------------------
+"use strict";
+
 const sh = require("shelljs");
 const finder = require("glob-concat");
 const fs = require("fs");

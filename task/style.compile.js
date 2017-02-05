@@ -1,3 +1,5 @@
+"use strict";
+
 const sh = require("shelljs");
 const finder = require("glob-concat");
 const vendorSCSS = finder.sync(require("./asset/vendor.scss.json"));

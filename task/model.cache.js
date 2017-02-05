@@ -1,3 +1,5 @@
+"use strict";
+
 const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
