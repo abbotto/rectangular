@@ -36,3 +36,10 @@
 	- It returns an object that contains the members of the service.
 	- It should be named in `lowerCamelCase` format.
 	
+### Caveat
+
+- Currently, there isn't an `eslint-plugin-angular` rule to enforce naming conventions on `constructor` services.
+- A ticket has been created [here](https://github.com/Gillespie59/eslint-plugin-angular/issues/418) to address the problem.
+- For the time being, `Rectangular` will enforce `UpperCamelCase` for all services.
+	- This rule can be disabled for `non-constructor` services such as `.factory()`.
+	- To disable, add the following line to the top of the service file: `/* eslint-plugin-disable angular */`
