@@ -9,7 +9,7 @@ A modern app kit for AngularJS developers.
 ---
 
 ### Features
-- [Material Design](https://material.angularjs.org/latest/) integration.
+- [Rectangular UI](https://github.com/abbotto/rectangular-ui) support.
 - Upload support for drag-n-drop, progress, validation filters and a queue. 
 - Environment, model, and template caching.
 - A fast and robust promise implementation.
