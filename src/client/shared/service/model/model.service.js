@@ -1,6 +1,6 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	const modelService = function modelService(appModel) {
 		return (key) => {
 			return angular.fromJson(appModel[key]);

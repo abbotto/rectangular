@@ -1,6 +1,6 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	const dateService = function dateService(moment$) {
 		return moment$;
 	};

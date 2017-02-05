@@ -1,6 +1,6 @@
-(() => {
-	"use strict";
+"use strict";
 
+(() => {
 	const localeService = function localeService($translateProvider) {
 		return $translateProvider;
 	};

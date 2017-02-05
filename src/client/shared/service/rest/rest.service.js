@@ -1,6 +1,6 @@
-(() => {
-	"use strict";
+"use strict";
 
+(() => {
 	const restService = function restService(Restangular) {
 		return Restangular;
 	};

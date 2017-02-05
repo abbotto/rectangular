@@ -1,6 +1,6 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	const lodashVendorService = function lodashVendorService($window) {
 		return $window._;
 	};

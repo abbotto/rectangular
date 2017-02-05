@@ -1,6 +1,6 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	const momentVendorService = function momentVendorService(moment) {
 		return moment;
 	};

@@ -1,6 +1,6 @@
-(() => {
-	"use strict";
+"use strict";
 
+(() => {
 	const _Service = function _Service(lodash$) {
 		return lodash$;
 	};
