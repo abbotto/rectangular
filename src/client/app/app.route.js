@@ -1,9 +1,6 @@
-// --------------------------------
-// Routes
-// --------------------------------
+"use strict";
+
 (() => {
-	"use strict";
-	
 	angular.module("app.route", [
 		"ui.router",
 		"component.route"
