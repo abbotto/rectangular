@@ -7,7 +7,5 @@
 		};
 	};
 	
-	angular.module("model.service", [
-		"app.model"
-	]).factory("model$", modelService);
+	angular.module("model.service", ["app.model"]).factory("model$", modelService);
 })();

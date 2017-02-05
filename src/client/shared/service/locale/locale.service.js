@@ -5,7 +5,5 @@
 		return $translateProvider;
 	};
 	
-	angular.module("locale.service", [
-		"translate.extension"
-	]).factory("locale$", localeService);
+	angular.module("locale.service", ["translate.extension"]).factory("locale$", localeService);
 })();

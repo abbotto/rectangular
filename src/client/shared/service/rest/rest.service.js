@@ -5,7 +5,5 @@
 		return Restangular;
 	};
 
-	angular.module("rest.service", [
-		"restangular.extension"
-	]).factory("rest$", restService);
+	angular.module("rest.service", ["restangular.extension"]).factory("rest$", restService);
 })();
