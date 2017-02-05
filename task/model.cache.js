@@ -11,11 +11,12 @@ let models = {}, key;
 
 files.forEach((path) => {
 	key = path
-	.replace("./", "")
-	.replace("src/client/", "")
-	.replace("component/", "")
-	.replace("model/", "")
-	.replace("shared/", "");
+		.replace("./", "")
+		.replace("src/client/", "")
+		.replace("component/", "")
+		.replace("model/", "")
+		.replace("shared/", "")
+	;
 	models[key] = fs.readFileSync(path, "utf8");
 });
 

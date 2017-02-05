@@ -1,6 +1,6 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	angular
 	.module("home.route", [
 		"home.component"

@@ -11,6 +11,7 @@ require("dotenv").config();
 // Pre-flight tasks
 sh.exec("node_modules/eslint/bin/eslint.js --fix src/");
 sh.exec("node task/constant.cache.js");
+sh.exec("node task/route.compile.js");
 sh.exec("node task/model.cache.js");
 sh.exec("node task/html.cache.js");
 

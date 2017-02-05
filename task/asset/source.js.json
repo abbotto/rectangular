@@ -2,6 +2,7 @@
 	"!./src/client/**/spec.*.js",
 	"./src/client/app/app.js",
 	"./src/client/app/app.route.js",
+	"./tmp/component.route.js",
 	"./src/client/**/*.route.js",
 	"./src/client/app/app.service.js",
 	"./src/client/**/*.service.js",
