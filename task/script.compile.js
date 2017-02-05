@@ -11,6 +11,7 @@ require("dotenv").config();
 sh.exec("node_modules/eslint/bin/eslint.js --fix src/");
 sh.exec("node task/constant.cache.js");
 sh.exec("node task/route.compile.js");
+sh.exec("node task/spec.compile.js");
 sh.exec("node task/model.cache.js");
 sh.exec("node task/html.cache.js");
 
@@ -25,6 +26,7 @@ const EOL = require("os").EOL;
 // Locate scripts to compile
 const srcJS = finder.sync(require("./asset/source.js.json"));
 let scripts = finder.sync(require("./asset/vendor.js.json"));
+
 const tmpScripts = [
 	"tmp/constants.js",
 	"tmp/models.js",
