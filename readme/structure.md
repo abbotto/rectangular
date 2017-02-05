@@ -8,69 +8,59 @@
 
 ```
 .
-src
-├── client
-│   ├── component
-│   │   └── home
-│   │       ├── home.component.html
-│   │       ├── home.component.js
-│   │       └── home.route.js
-│   ├── shared
-│   │   ├── design
-│   │   │   ├── font
-│   │   │   ├── image
-│   │   │   └── style
-│   │   │       ├── app.scaffold.scss
-│   │   │       └── vendor.scaffold.scss
-│   │   ├── model
-│   │   │   └── app.data.json
-│   │   ├── service
-│   │   │   ├── locale
-│   │   │   │   └── locale.service.js
-│   │   │   ├── model
-│   │   │   │   ├── mixin.service.js
-│   │   │   │   └── model.service.js
-│   │   │   ├── promise
-│   │   │   │   └── promise.service.js
-│   │   │   ├── rest
-│   │   │   │   └── rest.service.js
-│   │   │   ├── ui
-│   │   │   │   ├── ui.bottomSheet.service.js
-│   │   │   │   ├── ui.colors.service.js
-│   │   │   │   ├── ui.dialog.service.js
-│   │   │   │   ├── ui.icon.service.js
-│   │   │   │   ├── ui.inkRipple.service.js
-│   │   │   │   ├── ui.media.service.js
-│   │   │   │   ├── ui.panel.service.js
-│   │   │   │   ├── ui.service.js
-│   │   │   │   ├── ui.sidenav.service.js
-│   │   │   │   ├── ui.sticky.service.js
-│   │   │   │   └── ui.toast.service.js
-│   │   │   └── upload
-│   │   │       └── upload.service.js
-│   │   └── view
-│   │       ├── view.html
-│   │       └── view.scss
-│   ├── extension
-│   │   ├── angular-translate
-│   │   │   └── translate.extension.js
-│   │   ├── bluebird
-│   │   │   └── bluebird.extension.js
-│   │   ├── file-upload
-│   │   │   └── upload.extension.js
-│   │   ├── lodash
-│   │   │   └── lodash.extension.js
-│   │   ├── moment
-│   │   │   └── moment.extension.js
-│   │   └── restangular
-│   │       └── restangular.extension.js
-│   ├── registry
-│   │   ├── app.js
-│   │   ├── app.route.js
-│   │   └── app.service.js
-│   └── spec
-│       └── config.spec.js
-└── server
-    └── index.js
+|____ client
+| |____ .eslintrc
+| |____ app
+| | |____ app.data.json
+| | |____ app.js
+| | |____ app.route.js
+| | |____ app.service.js
+| | |____ app.spec.js
+| | |____ app.html
+| | |____ app.scss
+| |____ component
+| | |____ home
+| | | |____ home.component.html
+| | | |____ home.component.js
+| | | |____ home.route.js
+| | | |____ home.scss
+| |____ extension
+| | |____ angular-translate
+| | | |____ translate.extension.js
+| | |____ bluebird
+| | | |____ bluebird.extension.js
+| | |____ file-upload
+| | | |____ upload.extension.js
+| | |____ lodash
+| | | |____ lodash.extension.js
+| | |____ moment
+| | | |____ moment.extension.js
+| | |____ restangular
+| | | |____ restangular.extension.js
+| |____ shared
+| | |____ design
+| | | |____ style
+| | | | |____ scaffold.scss
+| | | | |____ vendor.scss
+| | |____ model
+| | | |____ app.data.json
+| | |____ service
+| | | |____ _
+| | | | |____ _.service.js
+| | | |____ date
+| | | | |____ date.service.js
+| | | |____ locale
+| | | | |____ locale.service.js
+| | | |____ model
+| | | | |____ mixin.service.js
+| | | | |____ model.service.js
+| | | |____ promise
+| | | | |____ promise.service.js
+| | | |____ rest
+| | | | |____ rest.service.js
+| | | |____ upload
+| | | | |____ upload.service.js
+|____ server
+  |____ index.js
 
 ```
