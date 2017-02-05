@@ -1,14 +1,15 @@
 // Karma configuration
-// Generated on Sun Jun 12 2016 12:34:55 GMT+0530 (India Standard Time)
 module.exports = function karmaConfig(config) {
 	let paths = [];
 	const vendorJS = require("./task/asset/vendor.js.json");
 	const appJS = require("./task/asset/source.js.json");
-	const specJS = require("./task/asset/spec.js.json");
+	const specJS = ["./tmp/spec.js"];
+	
 	paths = paths.concat(vendorJS);
 	paths.push("node_modules/angular-mocks/angular-mocks.js");
 	paths = paths.concat(appJS);
 	paths = paths.concat(specJS);
+	
 	config.set({
 		// base path that will be used to resolve all patterns (eg. files, exclude)
 		"basePath": "",
