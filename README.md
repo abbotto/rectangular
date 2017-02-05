@@ -4,7 +4,7 @@
 ---
 
 ## Introduction
-A modern app kit for AngularJS developers.
+A starter kit for AngularJS developers.
 
 ---
 
