@@ -11,7 +11,7 @@ A modern app kit for AngularJS developers.
 ### Features
 - [Rectangular UI](https://github.com/abbotto/rectangular-ui) support.
 - Upload support for drag-n-drop, progress, validation filters and a queue. 
-- Environment, model, and template caching.
+- Environment variable, model, and template caching.
 - A fast and robust promise implementation.
 - An advanced REST interface.
 - Locale support for multiple languages.
