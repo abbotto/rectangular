@@ -8,7 +8,6 @@
 	angular.module("app", [
 		"app.constant",
 		"app.route",
-		"app.service",
 		"app.template",
 		"ngAria",
 		"ngAnimate",
