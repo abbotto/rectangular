@@ -1,6 +1,6 @@
-const finder = require("glob-concat");
 "use strict";
 
+const finder = require("glob-concat");
 const fs = require("fs");
 const path = require("path");
 
@@ -8,7 +8,7 @@ const path = require("path");
 const EOL = require("os").EOL;
 
 const files = finder.sync([
-	"./src/client/component/**/*.route.js"
+	"./src/client/shared/service/**/*.route.js"
 ]);
 
 const tmpJS = "tmp/component.route.js";
