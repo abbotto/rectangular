@@ -1,3 +1,8 @@
+// Todo
+// Make sure UI scripts and styles get added to the build process
+// Make sure UI dependencies get injected into app.service.js
+
+
 const prompt = require("prompt");
 const sh = require("shelljs");
 
