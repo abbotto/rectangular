@@ -21,13 +21,13 @@ const schema = {
 
 // Get two properties from the user: username and email 
 prompt.get(schema, (err, input) => {
-	sh.exec("npm i https://github.com/abbotto/rectangular-ui/");
+	sh.exec("npm i https://github.com/abbotto/rectangular-ui.git");
 	if (input.BootstrapUI.match(/^(?:Yes|yes|Y|y)$/)) {
-		sh.exec("cp ./node_modules/rectangular-ui/ui/bootstrap/src/ ./src/client/");
+		sh.exec("cp -r ./node_modules/rectangular-ui/ui/bootstrap/src/ ./src/client/");
 		sh.exec("echo Follow-up instructions: https://github.com/abbotto/rectangular-ui/blob/master/ui/bootstrap/README.md");
 	}
 	if (input.MaterialUI.match(/^(?:Yes|yes|Y|y)$/)) {
-		sh.exec("cp ./node_modules/rectangular-ui/ui/material-design/src/ ./src/client/");
+		sh.exec("cp -r ./node_modules/rectangular-ui/ui/material-design/src/ ./src/client/");
 		sh.exec("echo Follow-up instructions: https://github.com/abbotto/rectangular-ui/blob/master/ui/material-design/README.md");
 	}
 });
