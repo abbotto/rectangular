@@ -21,7 +21,6 @@ const schema = {
 	}
 };
 
-// Get two properties from the user: username and email 
 prompt.get(schema, (err, input) => {
 	sh.exec("npm i https://github.com/abbotto/rectangular-ui.git");
 	if (input.BootstrapUI.match(/^(?:Yes|yes|Y|y)$/)) {
