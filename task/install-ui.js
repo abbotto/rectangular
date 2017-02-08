@@ -8,12 +8,14 @@ const schema = {
 	"properties": {
 		"BootstrapUI": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Install Bootstrap UI? [y/n]",
+			"message": "Yes|No|yes|no|Y|N|y|n",
+			"description": "Install Bootstrap UI? [y/n]",
 			"required": true
 		},
 		"MaterialUI": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Install Material UI? [y/n]",
+			"message": "Yes|No|yes|no|Y|N|y|n]",
+			"description": "Install Material UI? [y/n]",
 			"required": true
 		}
 	}
@@ -23,11 +25,15 @@ const schema = {
 prompt.get(schema, (err, input) => {
 	sh.exec("npm i https://github.com/abbotto/rectangular-ui.git");
 	if (input.BootstrapUI.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Bootstrap UI...");
 		sh.exec("cp -r ./node_modules/rectangular-ui/ui/bootstrap/src/ ./src/client/");
-		sh.exec("echo Follow-up instructions: https://github.com/abbotto/rectangular-ui/blob/master/ui/bootstrap/README.md");
+		sh.exec("curl https://raw.githubusercontent.com/abbotto/rectangular-ui/master/ui/bootstrap/README.md");
 	}
 	if (input.MaterialUI.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Material UI...");
 		sh.exec("cp -r ./node_modules/rectangular-ui/ui/material-design/src/ ./src/client/");
-		sh.exec("echo Follow-up instructions: https://github.com/abbotto/rectangular-ui/blob/master/ui/material-design/README.md");
+		sh.exec("curl https://raw.githubusercontent.com/abbotto/rectangular-ui/master/ui/material-design/README.md");
 	}
 });
