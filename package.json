@@ -14,7 +14,8 @@
 	"dev": "gulp dev",
 	"docs": "gulp docs",
 	"server": "node server.js",
-	"start": "nvm i 6.9.4 && nvm use && npm i && cp .envrc .env && gulp compile",
+	"setup": "nvm i 6.9.4 && nvm use && npm i && cp .envrc .env && gulp compile",
+	"start": "npm i && gulp compile",
 	"test": "node task/compile.js && karma test"
   },
   "dependencies": {
