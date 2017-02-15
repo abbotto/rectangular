@@ -11,7 +11,7 @@
 		.run(($rootScope, bluebird$) => {
 			bluebird$.setScheduler((cb) => {
 				$rootScope.$evalAsync(cb);
-			})
-		;
-	});
+			});
+		})
+	;
 })();
