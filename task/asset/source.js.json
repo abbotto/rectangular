@@ -4,7 +4,7 @@
 	"./src/client/app/app.route.js",
 	"./tmp/component.route.js",
 	"./src/client/**/*.route.js",
-	"./src/client/app/app.service.js",
+	"./tmp/app.service.js",
 	"./src/client/**/*.service.js",
 	"./src/client/**/*.component.js",
 	"./src/client/**/*.directive.js",
