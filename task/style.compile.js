@@ -7,6 +7,7 @@ const appSCSS = finder.sync(require("./asset/source.scss.json"));
 const tmpCSS = "tmp/source.scss";
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const nodeSASS = "node_modules/node-sass/bin/node-sass";
+vendorSCSS.push("./tmp/vendor.scss.json");
 vendorSCSS.push(tmpCSS);
 
 sh.exec("node_modules/stylelint/bin/stylelint.js src/**/*.scss");

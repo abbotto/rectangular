@@ -29,6 +29,7 @@ const srcJS = finder.sync(require("./asset/source.js.json"));
 let scripts = finder.sync(require("./asset/vendor.js.json"));
 
 const tmpScripts = [
+	"tmp/vendor.js.json",
 	"tmp/constants.js",
 	"tmp/models.js",
 	"tmp/templates.js"

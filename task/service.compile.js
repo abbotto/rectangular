@@ -17,10 +17,10 @@ serviceFiles.forEach((path) => {
 	if (path.indexOf("ui.bootstrap.service.js") > -1) {
 		services.push("ui.bootstrap.service");
 		// Deps
-		tmpJSAssets.push("./node_modules/angular-strap/dist/angular-strap.min.js");
-		tmpJSAssets.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
-		tmpSCSSAssets.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
-		tmpSCSSAssets.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+		tmpJSAssets.push("\"./node_modules/angular-strap/dist/angular-strap.min.js\"");
+		tmpJSAssets.push("\"./node_modules/angular-strap/dist/angular-strap.tpl.min.js\"");
+		tmpSCSSAssets.push("\"./node_modules/bootstrap/dist/css/bootstrap.min.css\"");
+		tmpSCSSAssets.push("\"./node_modules/bootstrap/dist/css/bootstrap-theme.min.css\"");
 		sh.exec("npm i bootstrap angular-strap");
 	}
 	
@@ -31,8 +31,8 @@ serviceFiles.forEach((path) => {
 	else if (path.indexOf("ui.material.service.js") > -1) {
 		services.push("ui.material.service");
 		// Deps
-		tmpJSAssets.push("./node_modules/angular-material/angular-material.min.js");
-		tmpSCSSAssets.push("./node_modules/angular-material/angular-material.min.css");
+		tmpJSAssets.push("\"./node_modules/angular-material/angular-material.min.js\"");
+		tmpSCSSAssets.push("\"./node_modules/angular-material/angular-material.min.css\"");
 		sh.exec("npm i angular-material");
 	}
 	
@@ -40,7 +40,7 @@ serviceFiles.forEach((path) => {
 		services.push("promise.service");
 	};
 });
-console.log(tmpJSAssets, tmpSCSSAssets);
+
 const deps = (services.concat(serviceAssets)).sort();
 const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(deps) + ")})();";
 
