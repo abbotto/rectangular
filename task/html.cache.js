@@ -3,7 +3,7 @@
 const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
-const md = require("markdown-it")();
+const pug = require("pug");
 
 const files = finder.sync([
 	"./src/client/component/**/*.html"
@@ -18,7 +18,7 @@ files.forEach((path) => {
 		.replace("component/", "")
 		.replace("shared/", "")
 	;
-	value = JSON.stringify(fs.readFileSync(path, "utf8"));
+	value = JSON.stringify(pug.compileFile(path)());
 	templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
 });
 
