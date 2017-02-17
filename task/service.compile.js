@@ -10,7 +10,6 @@ const tmpJSAssets = !!fs.exists("./tmp/vendor.js.json") ? require("./tmp/vendor.
 const tmpSCSSAssets = !!fs.exists("./tmp/vendor.scss.json") ? require("./tmp/vendor.scss.json") : [];
 const tmpJS = "tmp/app.service.js";
 
-
 const services = [];
 
 serviceFiles.forEach((path) => {
@@ -41,7 +40,7 @@ serviceFiles.forEach((path) => {
 	};
 });
 
-const deps = (services.concat(serviceAssets)).sort();
+const deps = !!serviceAssets.length ? (services.concat(serviceAssets)).sort() : services.sort();
 const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(deps) + ")})();";
 
 // Write the files

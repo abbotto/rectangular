@@ -17,30 +17,24 @@ sh.exec("node task/model.cache.js");
 sh.exec("node task/html.cache.js");
 
 // Output paths
-const appJS = "dist/app.js";
-const mapJS = "dist/app.js.map";
-const tmpJS = "tmp/source.js";
+const appJS = "./dist/app.js";
+const mapJS = "./dist/app.js.map";
+const tmpJS = "./tmp/source.js";
 
 // Cross-platform newline
 const EOL = require("os").EOL;
 
 // Locate scripts to compile
 const srcJS = finder.sync(require("./asset/source.js.json"));
-let scripts = finder.sync(require("./asset/vendor.js.json"));
+const tmpVendorScripts = !!fs.exists("./tmp/vendor.js.json") ? finder.sync(require("./tmp/vendor.js.json")) : [];
+const scripts = finder
+	.sync(require("./asset/vendor.js.json"))
+	.concat(tmpVendorScripts)
+;
 
-const tmpScripts = [
-	"tmp/vendor.js.json",
-	"tmp/constants.js",
-	"tmp/models.js",
-	"tmp/templates.js"
-];
-
-scripts.push(tmpJS);
-scripts = scripts.concat(tmpScripts);
-
-// Write source code
-// to temporary file
+// Write source code to temporary file
 sh.cat(srcJS).to(tmpJS);
+scripts.push(tmpJS);
 
 // Convert ES6 to ES5
 sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJS + " --out-file " + tmpJS);
@@ -56,6 +50,7 @@ let script, output = "";
 const n = scripts.length;
 let i = 0;
 
+// Prevent minified files from cramming together
 for (; i < n; i+=1) {
 	script = fs.readFileSync(scripts[i], "utf8");
 	output += (script.trim()) + EOL + EOL;

@@ -1,6 +1,6 @@
 "use strict";
 
-(() => {	
+(() => {
 	// Options
 	const options = {};
 	
