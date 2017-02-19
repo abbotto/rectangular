@@ -3,19 +3,26 @@
 const sh = require("shelljs");
 const fs = require("fs");
 const finder = require("glob-concat");
-const vendorSCSS = finder.sync(require("./asset/vendor.scss.json"));
 const appSCSS = finder.sync(require("./asset/source.scss.json"));
 const tmpCSS = "tmp/source.scss";
-const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
-const nodeSASS = "node_modules/node-sass/bin/node-sass";
-vendorSCSS.push("./tmp/vendor.scss.json");
-vendorSCSS.push(tmpCSS);
 
+// Commands
+const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
+const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
+
+// Vendor files
+const vendorJSON = finder.sync(require("./asset/vendor.scss.json"));
+const tmpVendorJSON = !!fs.exists("./tmp/vendor.scss.json") ? finder.sync(require("./tmp/vendor.scss.json")) : [];
+if (!!fs.exists("./tmp/vendor.scss.json")) sh.cat(tmpVendorJSON).to(vendorJSON);
+
+// Preflight
 sh.exec("node_modules/stylelint/bin/stylelint.js src/**/*.scss");
 sh.exec("node task/font.copy.js");
 sh.exec("node task/image.copy.js");
 
+// Build
 sh.cat(appSCSS).to(tmpCSS);
-sh.exec(nodeSASS + " -q --output-style compressed --include-path " + tmpCSS + " " + tmpCSS);
+sh.exec(nodeSASS + " -q --output-style compressed --include-path scss " + tmpCSS + " " + tmpCSS);
 sh.exec(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpCSS);
-sh.cat(vendorSCSS).to("dist/app.css");
+vendorJSON.push(tmpCSS);
+sh.cat(vendorJSON).to("dist/app.css");
