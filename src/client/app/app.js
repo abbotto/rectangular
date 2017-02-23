@@ -7,6 +7,7 @@
 	
 	angular.module("app", [
 		"app.constant",
+		"app.service",
 		"app.route",
 		"app.template",
 		"ngAria",
