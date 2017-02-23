@@ -25,16 +25,16 @@ const tmpJS = "./tmp/source.js";
 const EOL = require("os").EOL;
 
 // Locate scripts to compile
-const srcJS = finder.sync(require("./asset/source.js.json"));
-const tmpVendorScripts = !!fs.exists("./tmp/vendor.js.json") ? finder.sync(require("./tmp/vendor.js.json")) : [];
-const scripts = finder
-	.sync(require("./asset/vendor.js.json"))
-	.concat(tmpVendorScripts)
-;
+const sourceJSON = finder.sync(require("./asset/source.js.json"));
+let vendorJSON = finder.sync(require("./asset/vendor.js.json"));
+const tmpVendorJSON = finder.sync(require("../tmp/vendor.js.json")) || [];
+if (!!tmpVendorJSON.length) vendorJSON = vendorJSON.concat(tmpVendorJSON);
 
 // Write source code to temporary file
-sh.cat(srcJS).to(tmpJS);
-scripts.push(tmpJS);
+sh.cat(sourceJSON).to(tmpJS);
+
+// Add tmpJS to the compile list
+vendorJSON.push(tmpJS);
 
 // Convert ES6 to ES5
 sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJS + " --out-file " + tmpJS);
@@ -45,16 +45,19 @@ const sourceMap = (process.env.NODE_ENV === "development") ? "--source-map " + m
 // Minify the output
 sh.exec("node_modules/uglify-js/bin/uglifyjs " + tmpJS + " " + sourceMap + "-o " + tmpJS);
 
-// Concatenate and clean-up the output
-let script, output = "";
-const n = scripts.length;
+// Push the file contents into an array
+const script = [];
+const n = vendorJSON.length;
 let i = 0;
 
 // Prevent minified files from cramming together
 for (; i < n; i+=1) {
-	script = fs.readFileSync(scripts[i], "utf8");
-	output += (script.trim()) + EOL + EOL;
+	script.push(fs.readFileSync(vendorJSON[i], "utf8"));
 }
 
+// Prevent minified files from cramming together
+// and breaking as a result
+const output = script.join("\n\n");
+
 // Write the output to a file
-fs.appendFile(appJS, output);
+fs.writeFileSync(appJS, output, "utf8");
