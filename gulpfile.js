@@ -37,7 +37,7 @@ const open = require("gulp-open");
 gulp.task("open", ["compile"], () => {
 	gulp.src(__filename)
 	.pipe(open({
-		"uri": "http://localhost:" + process.env.PORT + "/#/"
+		"uri": "http://localhost:" + process.env.PORT + "/"
 	}));
 });
 

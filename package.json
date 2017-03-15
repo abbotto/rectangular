@@ -24,7 +24,7 @@
     "angular-aria": "1.5.5",
     "angular-messages": "1.5.5",
     "angular-moment": "^1.0.0",
-    "angular-sanitize": "^1.5.9",
+    "angular-sanitize": "1.5.5",
     "angular-translate": "^2.13.0",
     "angular-ui-router": "^0.3.2",
     "animate.css": "^3.5.2",

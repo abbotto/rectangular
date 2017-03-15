@@ -1,10 +1,7 @@
+"use strict";
+
 /* eslint-plugin-disable angular */
-// --------------------------------
-// App
-// --------------------------------
 (() => {
-	"use strict";
-	
 	angular.module("app", [
 		"app.constant",
 		"app.service",
