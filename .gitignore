@@ -32,7 +32,7 @@
 
 # Whitelist Tasks
 !/task
-!/task/**/*
+!/dev/task/**/*
 
 # Blacklist Other Files
 .DS_Store

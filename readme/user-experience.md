@@ -15,8 +15,8 @@
 	- `rectangular-ui/material-design/src/shared`
 - Inject `ui.material.service` into `rectangular` via `src/client/app/app.service.js`
 - Run `npm i angular-material` inside of `rectangular`.
-- Add `"./node_modules/angular-material/angular-material.min.js"` to `task/asset/vendor.js.json` in `rectangular`.
-- Add `"./node_modules/angular-material/angular-material.min.css"` to `task/asset/vendor.scss.json` in `rectangular`.
+- Add `"./node_modules/angular-material/angular-material.min.js"` to `dev/task/asset/vendor.js.json` in `rectangular`.
+- Add `"./node_modules/angular-material/angular-material.min.css"` to `dev/task/asset/vendor.scss.json` in `rectangular`.
 
 ##### Integrated Services
 - Called via `ui.bottomSheet.service` and injected via `bottomSheet$`.
@@ -54,10 +54,10 @@
 	- `rectangular-ui/bootstrap/src/shared`
 - Inject `ui.bootstrap.service` into `rectangular` via `src/client/app/app.service.js`
 - Run `npm i bootstrap angular-strap` inside of `rectangular`.
-- Add the following to `task/asset/vendor.js.json` in `rectangular`.
+- Add the following to `dev/task/asset/vendor.js.json` in `rectangular`.
 	- `"./node_modules/angular-strap/dist/angular-strap.min.js"` 
 	- `"./node_modules/angular-strap/dist/angular-strap.tpl.min.js"` 
-- Add the following to `task/asset/vendor.scss.json` in `rectangular`.
+- Add the following to `dev/task/asset/vendor.scss.json` in `rectangular`.
 	- `"./node_modules/bootstrap/dist/css/bootstrap.min.js"`.
 	- `"./node_modules/bootstrap/dist/css/bootstrap-theme.min.js"`.
 

@@ -1,9 +1,5 @@
-## App Overview
-- Currently, the `app` folder is used for setting up configs and registering:
-	- App modules
-	- Routes
-	- Services
-	- Tests
+## App Folder Overview
+- The `app` folder contains initialization files.
 
 ### App Modules
 - App Modules are registered in `src/client/app/app.js`.

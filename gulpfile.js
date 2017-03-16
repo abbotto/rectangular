@@ -27,7 +27,7 @@ gulp.task("docs", [], () => {
 
 // Client Tasks
 gulp.task("compile", () => {
-	sh.exec("node task/compile.js");
+	sh.exec("node dev/task/compile.js");
 	gulp.src(__filename)
 	.pipe(livereload());
 });
@@ -48,8 +48,8 @@ const watchFiles = [
 	"./src/client/**/*.js",
 	"./src/client/**/*.json",
 	"./src/client/**/*.html",
-	"./task/**/*.js",
-	"./task/**/*.json"
+	"./dev/task/**/*.js",
+	"./dev/task/**/*.json"
 ];
 
 // Development server

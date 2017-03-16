@@ -1,12 +1,13 @@
 // Karma configuration
 module.exports = function karmaConfig(config) {
 	let paths = [];
-	const vendorJS = require("./task/asset/vendor.js.json");
-	const appJS = require("./task/asset/source.js.json");
+	const vendorJS = require("./dev/task/asset/vendor.js.json");
+	const appJS = require("./dev/task/asset/source.js.json");
 	const specJS = ["./tmp/spec.js"];
 	
 	paths = paths.concat(vendorJS);
 	paths.push("node_modules/angular-mocks/angular-mocks.js");
+	paths.push("node_modules/bardjs/dist/bard.js");
 	paths = paths.concat(appJS);
 	paths = paths.concat(specJS);
 	
@@ -18,7 +19,8 @@ module.exports = function karmaConfig(config) {
 		"frameworks": [
 			"mocha",
 			"chai-sinon",
-			"chai"
+			"chai",
+			"sinon"
 		],
 		// list of files / patterns to load in the browser
 		"files": paths,
