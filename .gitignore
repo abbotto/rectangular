@@ -26,13 +26,13 @@
 !/src
 !/src/**/*
 
+# Whitelist Dev Files
+!/dev
+!/dev/**/*
+
 # Whitelist Readme Files
 !/readme
 !/readme/**/*
-
-# Whitelist Tasks
-!/task
-!/dev/task/**/*
 
 # Blacklist Other Files
 .DS_Store
