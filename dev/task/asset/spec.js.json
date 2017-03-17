@@ -1,0 +1,6 @@
+[
+	"./dev/test/test.config.js",
+	"./dev/test/test.*.js",
+	"./src/client/app/app.spec.js",
+	"./src/client/**/*.spec.js"
+]

@@ -1,0 +1,7 @@
+[	
+	"./src/client/shared/design/scaffold.scss",
+	"./src/client/shared/design/vendor.scss",
+	"./src/client/app/app.scss",
+	"./src/client/shared/**/*.scss",
+	"./src/client/component/**/*.scss"
+]
