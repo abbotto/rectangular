@@ -9,10 +9,12 @@
 	
 	// Controller and ViewModel
 	options.controllerAs = "vm";
-	options.controller = function HomeController() {
+	options.controller = function HomeController(home$) {
 		const vm = this;
+		
+		vm.projectName = home$();
 	};
 	
 	// Register the component
-	angular.module("home.component", []).component("home", options);
+	angular.module("home.component", ["home.service"]).component("home", options);
 })();

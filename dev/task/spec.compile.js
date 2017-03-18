@@ -13,22 +13,25 @@
 
 	// Output paths
 	const tmpSpecJS = "tmp/spec.js";
-
 	const scripts = finder.sync(require("./asset/spec.js.json"));
 
-	// Concatenate and clean-up the output
-	let script, output;
+	// Push the file contents into an array
+	const script = [];
 	const n = scripts.length;
 	let i = 0;
 
-	for (; i < n; i+=1) {
-		script = fs.readFileSync(scripts[i], "utf8");
-		output += (script.trim());
+	// Prevent minified files from cramming together
+	for (; i < n; i += 1) {
+		script.push(fs.readFileSync(scripts[i], "utf8"));
 	}
 
+	// Prevent minified files from cramming together
+	// and breaking as a result
+	const output = script.join("\n\n").trim();
+
 	// Write the output to a file
-	fs.appendFile(tmpSpecJS, output);
+	fs.writeFileSync(tmpSpecJS, output, "utf8");
 
 	// Convert ES6 to ES5
-	sh.exec("cat " + tmpSpecJS + " | node_modules/babel-cli/bin/babel.js > " + tmpSpecJS);
+	sh.exec("node_modules/babel-cli/bin/babel.js " + tmpSpecJS + " --out-file " + tmpSpecJS);
 })();

@@ -2,3 +2,4 @@
 const test = {};
 
 // Add more stuff below...
+const expect = chai.expect;
