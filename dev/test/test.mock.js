@@ -1,14 +1,14 @@
 "use strict";
 
-// mockService lets you easily mock services using BardJS and Jasmine
+// mock lets you easily mock services using BardJS and Jasmine
 
 // Example
-// test.mockService({
-// 	ServiceUserNetwork: ['getCurrent'],
-// 	ServiceUserOrganization: ['getOrganization']
+// test.mock({
+// 	UserNetwork: ['getCurrent'],
+// 	UserOrganization: ['getOrganization']
 // });
 (() => {
-	test.mockService = function testMockService(mocks) {
+	test.mock = function testMock(mocks) {
 		const keys = Object.keys(mocks);
 		let mock;
 		
@@ -21,7 +21,7 @@
 				mock[prop] = sinon.spy(service, prop);
 			});
 
-			bard.mockService(service, mock);
+			bard.mock(service, mock);
 		});
 	};
 })();

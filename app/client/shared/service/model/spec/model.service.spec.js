@@ -1,17 +1,14 @@
 "use strict";
 
 describe("Project name", () => {
-
+	let mocks;
 	beforeEach(() => {
-		test.module(
-			"home.service"
-		);
-		test.inject(
-			"home$"
-		);
+		mocks = {
+			"home$": {"project": "Rectangular"}
+		};
 	});
 
 	it("is correctly set in the home view", () => {
-		expect(home$.project).to.equal("Rectangular");
+		expect(mocks.home$.project).to.equal("Rectangular");
 	});
 });
