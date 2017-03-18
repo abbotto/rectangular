@@ -1,7 +1,7 @@
 [	
-	"./src/client/shared/design/scaffold.scss",
-	"./src/client/shared/design/vendor.scss",
-	"./src/client/app/app.scss",
-	"./src/client/shared/**/*.scss",
-	"./src/client/component/**/*.scss"
+	"./app/client/shared/design/scaffold.scss",
+	"./app/client/shared/design/vendor.scss",
+	"./app/client/app/app.scss",
+	"./app/client/shared/**/*.scss",
+	"./app/client/component/**/*.scss"
 ]

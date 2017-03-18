@@ -31,14 +31,14 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bootstrap UI...");
 		// sh.exec("npm i bootstrap angular-strap --save");
-		sh.exec("cp -r node_modules/rectangular-ui/ui/bootstrap/src/* src/client/");
+		sh.exec("cp -r node_modules/rectangular-ui/ui/bootstrap/app/* app/client/");
 		sh.exec("curl https://raw.githubusercontent.com/abbotto/rectangular-ui/master/ui/bootstrap/README.md");
 	}
 	if (input.MaterialUI.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Material UI...");
 		// sh.exec("npm i angular-material --save");
-		sh.exec("cp -r node_modules/rectangular-ui/ui/material-design/src/* src/client/");
+		sh.exec("cp -r node_modules/rectangular-ui/ui/material-design/app/* app/client/");
 		sh.exec("curl https://raw.githubusercontent.com/abbotto/rectangular-ui/master/ui/material-design/README.md");
 	}
 });

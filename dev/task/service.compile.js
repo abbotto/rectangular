@@ -4,7 +4,7 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
 
-const serviceFiles = finder.sync(["./src/client/**/*.service.js"]);
+const serviceFiles = finder.sync(["./app/client/**/*.service.js"]);
 const serviceAssets = require("./asset/service.ng.json");
 const tmpJSAssets = !!fs.exists("./tmp/vendor.js.json") ? require("./tmp/vendor.js.json") : [];
 const tmpSCSSAssets = !!fs.exists("./tmp/vendor.scss.json") ? require("./tmp/vendor.scss.json") : [];

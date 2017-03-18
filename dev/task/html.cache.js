@@ -6,7 +6,7 @@ const sh = require("shelljs");
 const pug = require("pug");
 
 const files = finder.sync([
-	"./src/client/component/**/*.html"
+	"./app/client/component/**/*.html"
 ]);
 
 const tmpJS = "tmp/templates.js";
@@ -14,7 +14,7 @@ let templates = [], key, value;
 
 files.forEach((path) => {
 	key = path
-		.replace("./src/client/", "")
+		.replace("./app/client/", "")
 		.replace("component/", "")
 		.replace("shared/", "")
 	;

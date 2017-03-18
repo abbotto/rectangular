@@ -29,7 +29,7 @@ module.exports = function karmaConfig(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		"preprocessors": {
-			"src/client/**/*.js": [
+			"app/client/**/*.js": [
 				"babel",
 				"coverage"
 			]

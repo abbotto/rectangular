@@ -8,8 +8,8 @@
   "scripts": {
     "install-ui": "node dev/task/install-ui.js",
     "compile": "node dev/task/compile.js",
-    "delint-css": "node_modules/stylelint/bin/stylelint.js src/**/*.scss",
-    "delint-js": "node_modules/eslint/bin/eslint.js --fix src/ && node_modules/eslint/bin/eslint.js --fix dev/task/",
+    "delint-css": "node_modules/stylelint/bin/stylelint.js app/**/*.scss",
+    "delint-js": "node_modules/eslint/bin/eslint.js --fix app/ && node_modules/eslint/bin/eslint.js --fix dev/task/",
     "delint": "npm run delint-js && npm run delint-css",
     "dev": "gulp dev",
     "docs": "gulp docs",

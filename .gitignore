@@ -23,8 +23,8 @@
 !.travis.yml
 
 # Whitelist Source Files
-!/src
-!/src/**/*
+!/app
+!/app/**/*
 
 # Whitelist Dev Files
 !/dev

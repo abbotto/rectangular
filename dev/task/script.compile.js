@@ -8,7 +8,7 @@ const fs = require("fs");
 require("dotenv").config();
 
 // Pre-flight tasks
-sh.exec("node_modules/eslint/bin/eslint.js --fix src/");
+sh.exec("node_modules/eslint/bin/eslint.js --fix app/");
 sh.exec("node dev/task/service.compile.js");
 sh.exec("node dev/task/constant.cache.js");
 sh.exec("node dev/task/route.compile.js");
@@ -27,7 +27,7 @@ const EOL = require("os").EOL;
 // Locate scripts to compile
 const sourceJSON = finder.sync(require("./asset/source.js.json"));
 let vendorJSON = finder.sync(require("./asset/vendor.js.json"));
-const tmpVendorJSON = finder.sync(require("../tmp/vendor.js.json")) || [];
+const tmpVendorJSON = finder.sync(require("../../tmp/vendor.js.json")) || [];
 if (!!tmpVendorJSON.length) vendorJSON = vendorJSON.concat(tmpVendorJSON);
 
 // Write source code to temporary file

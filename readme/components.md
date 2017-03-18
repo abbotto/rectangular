@@ -4,7 +4,7 @@
 	- A component `template`
 	- An optional `route`.
 - Components can also contiain their own `directives` and `services`.
-- Component files are placed in the `src/client/component/{{componentName}}` directory:
+- Component files are placed in the `app/client/component/{{componentName}}` directory:
 	- **Components** (js)
 	- **Directives** (js)
 	- **Templates** (html)
@@ -12,7 +12,7 @@
 	- **Services** (js)
 
 ### Component Assets
-- Component asset files are also placed in the `src/client/component/{{componentName}}` directory:
+- Component asset files are also placed in the `app/client/component/{{componentName}}` directory:
 	- **Tests** (js)
 	- **Styles** (scss)
 	- **Models** ([data|mixin]json)

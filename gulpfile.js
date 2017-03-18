@@ -44,10 +44,10 @@ gulp.task("open", ["compile"], () => {
 // Watch files
 const watch = require("gulp-watch");
 const watchFiles = [
-	"./src/client/**/*.scss",
-	"./src/client/**/*.js",
-	"./src/client/**/*.json",
-	"./src/client/**/*.html",
+	"./app/client/**/*.scss",
+	"./app/client/**/*.js",
+	"./app/client/**/*.json",
+	"./app/client/**/*.html",
 	"./dev/task/**/*.js",
 	"./dev/task/**/*.json"
 ];
@@ -60,7 +60,7 @@ gulp.task("dev", cb => {
 			// the script to run the app
 		"script": "server.js",
 		"ext": "js",
-		"watch": "src/server"
+		"watch": "app/server"
 	})
 	.on("start", () => {
 		// Avoid nodemon being started multiple times
