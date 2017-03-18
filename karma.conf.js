@@ -7,6 +7,7 @@ module.exports = function karmaConfig(config) {
 	
 	paths = paths.concat(vendorJS);
 	paths.push("node_modules/angular-mocks/angular-mocks.js");
+	paths.push("node_modules/ng-describe/dist/ng-describe.js");
 	paths.push("node_modules/bardjs/dist/bard.js");
 	paths = paths.concat(appJS);
 	paths = paths.concat(specJS);
