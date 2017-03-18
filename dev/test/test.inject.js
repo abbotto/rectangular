@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // inject lets you easily inject Angular dependencies using BardJS
 
@@ -8,6 +8,6 @@
 //     'arg2', /* global arg2 */
 //     'arg3' /* global arg3 */
 // )
-module.exports = function inject() {
-	require('bardjs').inject.apply(this, arguments);
-});
+test.inject = function inject() {
+	require("bardjs").inject.apply(this, arguments);
+};

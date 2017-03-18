@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // mockService lets you easily mock services using BardJS and Jasmine
 
@@ -8,8 +8,8 @@
 // 	ServiceUserOrganization: ['getOrganization']
 // });
 
-module.exports = function MockService(mocks) {
-	let keys = Object.keys(mocks);
+test.mockService = function MockService(mocks) {
+	const keys = Object.keys(mocks);
 	const bard = require('bardjs');
 	bard.inject.apply(this, keys);
 	
@@ -23,4 +23,4 @@ module.exports = function MockService(mocks) {
 		
 		bard.mockService(service, mock);
 	});
-});
+};
