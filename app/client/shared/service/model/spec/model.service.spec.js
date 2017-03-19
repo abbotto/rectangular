@@ -3,7 +3,8 @@
 describe("Project name", () => {
 	let mocks;
 	beforeEach(() => {
-		test.module("app.model")
+		test.module("app.model");
+		test.inject("appModel");
 		mocks = {
 			"home$": {"project": "Rectangular"}
 		};
