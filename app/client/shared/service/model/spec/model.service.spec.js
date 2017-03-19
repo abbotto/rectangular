@@ -1,16 +1,15 @@
 "use strict";
 
-describe("Project name", () => {
-	let mocks;
+describe("model$ service", () => {
+	var appModel;
 	beforeEach(() => {
-		test.module("app.model");
-		test.inject("appModel");
-		mocks = {
-			"home$": {"project": "Rectangular"}
-		};
+		test.module("model.service");
+		test.inject("model$");
+		test.stub(appModel, { "project": { "name": "Rectangular" } });
 	});
 
-	it("is correctly set in the home view", () => {
-		expect(mocks.home$.project).to.equal("Rectangular");
+	it("should return the correct value", () => {
+		console.log(model$.project);
+		test.expect(model$.project.name).to.equal("Rectangular");
 	});
 });
