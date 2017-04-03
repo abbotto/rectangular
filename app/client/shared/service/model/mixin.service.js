@@ -4,7 +4,7 @@
 	const mixinService = function mixinService(model$) {
 		return (key, toBeMerged, deep) => {
 			// Get the mixin data
-			const toBeMixed = model$(key);
+			const toBeMixed = model$.get(key);
 			// Add mixin as beginning argument
 			toBeMerged.unshift(toBeMixed);
 			// Deep merge

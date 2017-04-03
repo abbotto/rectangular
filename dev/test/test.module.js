@@ -3,12 +3,12 @@
 // module lets you easily load Angular services and directives
 
 // Example
-// test.module(
+// __.module(
 //     *.service',
 //     *.directive'
 // )
 (() => {
-	test.module = function testModule() {
+	__.module = function testModule() {
 		module.apply(this, arguments);
 	};
 })();

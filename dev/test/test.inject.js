@@ -1,15 +1,17 @@
 "use strict";
 
-// inject lets you easily inject Angular dependencies using BardJS
+// inject lets you easily inject Angular deps using BardJS
 
 // Example
-// test.inject(
-//     'arg1', /* global arg1 */
-//     'arg2', /* global arg2 */
-//     'arg3' /* global arg3 */
+// __.inject(
+//     'arg1',
+//     'arg2',
+//     'arg3'
 // )
 (() => {
-	test.inject = function testInject() {
-		bard.inject.apply(this, arguments);
+	__.inject = function testInject() {
+		const args = Array.prototype.slice.call(arguments);
+		const deps = angular.injector(args);
+		__.subject = deps.get;
 	};
 })();

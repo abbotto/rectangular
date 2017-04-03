@@ -14,7 +14,8 @@
 	},
 	"plugins": [
 		"angular",
-		"disable"
+		"disable",
+		"json"
 	],
 	"rules": {
 		"no-use-before-define": 2,
@@ -171,7 +172,7 @@
 		"no-with": 2,
 		"object-shorthand": 2,
 		"prefer-const": 2,
-		"quote-props": 2,
+		"quote-props": 0,
 		// require use of the second argument for parseInt()
 		"radix": 2,
 		// require or disallow semicolons instead of automatic semicolon insertion (ASI)
