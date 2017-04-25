@@ -16,7 +16,7 @@ const tmpVendorJSON = !!fs.exists("./tmp/vendor.scss.json") ? finder.sync(requir
 if (!!fs.exists("./tmp/vendor.scss.json")) sh.cat(tmpVendorJSON).to(vendorJSON);
 
 // Preflight
-sh.exec("node_modules/stylelint/bin/stylelint.js app/**/*.scss");
+sh.exec("node_modules/stylelint/lib/cli.js app/**/*.scss");
 sh.exec("node dev/task/font.copy.js");
 sh.exec("node dev/task/image.copy.js");
 

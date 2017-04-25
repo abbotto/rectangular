@@ -8,7 +8,7 @@
   "scripts": {
     "install-ui": "node dev/task/install-ui.js",
     "compile": "node dev/task/compile.js",
-    "delint-css": "node_modules/stylelint/bin/stylelint.js app/**/*.scss",
+    "delint-css": "node_modules/stylelint/lib/cli.js app/**/*.scss",
     "delint-js": "node_modules/eslint/bin/eslint.js --ext .json --ext .js --fix *.js* app/ dev/task/",
     "delint": "npm run delint-js && npm run delint-css",
     "dev": "gulp dev",
@@ -44,7 +44,6 @@
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-es2015-without-strict": "0.0.4",
-    "bardjs": "^0.1.8",
     "chai": "^3.5.0",
     "dotenv": "^2.0.0",
     "eslint": "^3.10.2",
