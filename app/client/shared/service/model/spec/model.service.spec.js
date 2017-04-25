@@ -3,7 +3,7 @@
 describe("model.service", () => {
 	const svc = "model.service";
 
-	let _modelSpy, getSpy, mixinSpy, model$, result, spy;
+	let model$, result;
 	
 	const mockKey = "project.data.json";
 	
@@ -22,15 +22,15 @@ describe("model.service", () => {
 
 	beforeEach(() => {
 		__.module(svc);
-		__.inject(svc);
+		__.inject(svc); // Provides __.subject("model$")
 		
 		model$ = __.subject("model$");
+		model$._model = __.createSpy("model$");
+		model$.get = __.createSpy("model$.get");
 		
-		// __.stub(model$, "_model")
-		// 	.callsFake((key) => {
-		// 		return appModelMock1[key];
-		// 	})
-		// ;
+		model$._model.and.callFake((key) => {
+			return appModelMock1[key];
+		});
 	});
 	
 	// describe("When 'model$._model' is called", () => {
@@ -59,18 +59,20 @@ describe("model.service", () => {
 	// });
 	
 	describe("When 'model$.get' is called", () => {
+		
 		beforeEach(() => {
-			spy = sinon.spy(model$, "get");
-			
+			model$.get(mockKey);
 		});
-		
-		afterEach(() => {
-			model$.get.restore();
+
+		it("it should call 'model$._model' exactly once", () => {
+			console.log(model$._model);
+			expect(model$._model).calls.count().toEqual(1);
 		});
-		
-		it("it should call 'model$.get' with the correct arguments", () => {
-			__.expect(model$.get(mockKey)).to.be.called.withArgs(mockKey);
-		});
+
+		// it("it should call 'model$.get' with the correct arguments", () => {
+		// 	model$.get(mockKey);
+		// 	__.expect(model$.get(mockKey)).to.be.called.withArgs(mockKey);
+		// });
 		
 		// it("it should return the correct value", () => {
 		// 	__.expect(result).to.deep.equal(
