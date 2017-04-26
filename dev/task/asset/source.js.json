@@ -1,7 +1,7 @@
 [
 	"!./app/client/**/spec.*.js",
-	"./app/client/app/app.js",
-	"./app/client/app/app.route.js",
+	"./app/client/app.module.js",
+	"./app/client/app.route.js",
 	"./tmp/component.route.js",
 	"./app/client/**/*.route.js",
 	"./tmp/app.service.js",

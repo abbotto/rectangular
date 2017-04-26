@@ -10,14 +10,9 @@
 .
 |____ client
 | |____ .eslintrc
-| |____ app
-| | |____ app.data.json
-| | |____ app.js
-| | |____ app.route.js
-| | |____ app.service.js
-| | |____ app.spec.js
-| | |____ app.html
-| | |____ app.scss
+| |____ app.module.js
+| |____ app.route.js
+| |____ app.html
 | |____ component
 | | |____ home
 | | | |____ home.component.html

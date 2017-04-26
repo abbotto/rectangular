@@ -1,6 +1,6 @@
 [
 	"./dev/test/test.config.js",
 	"./dev/test/test.*.js",
-	"./app/client/app/app.spec.js",
+	"./app/client/app.spec.js",
 	"./app/client/**/*.spec.js"
 ]
