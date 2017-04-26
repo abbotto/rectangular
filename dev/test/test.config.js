@@ -1,5 +1,7 @@
-// Testing tools should be attached to the 'test' object
+// Shorthand access to Jasmine methods
 const __ = angular.extend({}, jasmine);
+
+// Reusable test subject
 __.subject = {};
 
 // Add more stuff below...

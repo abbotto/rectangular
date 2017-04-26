@@ -1,8 +1,6 @@
 "use strict";
 
 describe("model.service", () => {
-	const svc = "model.service";
-
 	let model$, result;
 	
 	const mockKey = "project.data.json";
@@ -21,11 +19,9 @@ describe("model.service", () => {
 	});
 
 	beforeEach(() => {
-		// __.module(svc);
-		__.inject(svc); // Provides __.subject("model$")
+		__.inject("model.service");
 		
 		model$ = __.subject("model$");
-		
 		model$._model = __.createSpy("model$._model");
 		
 		model$._model.and.callFake((key) => {
