@@ -45,7 +45,7 @@ module.exports = function karmaConfig(config) {
 			"dir": "coverage/"
 		},
 		"reporters": [
-			"progress",
+			"spec",
 			"coverage"
 		],
 		// web server port
@@ -54,7 +54,7 @@ module.exports = function karmaConfig(config) {
 		"colors": true,
 		// level of logging
 		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-		"logLevel": config.LOG_DEBUG,
+		"logLevel": config.LOG_INFO,
 		// enable / disable watching file and executing tests whenever any file changes
 		"autoWatch": true,
 		// start these browsers

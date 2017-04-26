@@ -7,101 +7,91 @@ describe("model.service", () => {
 	
 	const mockKey = "project.data.json";
 	
-	const appModelMock1 = {
+	const appModelMock1 = angular.toJson({
 		"project.data.json": angular.toJson({
 			"name": "Rectangular"
 		})
-	};
+	});
 
-	const appModelMock2 = {
+	const appModelMock2 = angular.toJson({
 		"project.data.json": angular.toJson({
 			"name": "Rectangular",
 			"version": "1.0.0"
 		})
-	};
+	});
 
 	beforeEach(() => {
-		__.module(svc);
+		// __.module(svc);
 		__.inject(svc); // Provides __.subject("model$")
 		
 		model$ = __.subject("model$");
-		model$._model = __.createSpy("model$");
-		model$.get = __.createSpy("model$.get");
+		
+		model$._model = __.createSpy("model$._model");
 		
 		model$._model.and.callFake((key) => {
 			return appModelMock1[key];
 		});
 	});
-	
-	// describe("When 'model$._model' is called", () => {
-	// 	beforeEach(() => {
-	// 		__.spy(model$, "get");
-	// 		result = model$.get(mockKey);
-	// 	});
-	
-	// 	// it("it should call 'model$._model' exactly once", () => {
-	// 	// 	__.expect(model$._model).callCount.to.equal(1);
-	// 	// });
-	
-	// 	// it("it should call 'model$._model' with the correct arguments", () => {
-	// 	// 	__.expect(model$._model).to.be.called.withArgs(mockKey);
-	// 	// });
-	
-	// 	it("it should call 'model$._model' with the correct arguments", () => {
-	// 		__.expect(model$._model).to.be.called.withArgs(mockKey);
-	// 	});
-	
-	// 	it("it should return the correct value", () => {
-	// 		__.expect(result).to.deep.equal(
-	// 			angular.fromJson(appModelMock1[mockKey])
-	// 		);
-	// 	});
-	// });
-	
-	describe("When 'model$.get' is called", () => {
-		
-		beforeEach(() => {
-			model$.get(mockKey);
+
+	describe("When 'model$._model' is called", () => {
+		beforeEach(() => {			
+			result = model$._model(mockKey);
 		});
 
-		it("it should call 'model$._model' exactly once", () => {
-			console.log(model$._model);
-			expect(model$._model).calls.count().toEqual(1);
+		it("it should be called exactly once", () => {
+			expect(model$._model.calls.count()).toEqual(1);
 		});
 
-		// it("it should call 'model$.get' with the correct arguments", () => {
-		// 	model$.get(mockKey);
-		// 	__.expect(model$.get(mockKey)).to.be.called.withArgs(mockKey);
-		// });
-		
-		// it("it should return the correct value", () => {
-		// 	__.expect(result).to.deep.equal(
-		// 		angular.fromJson(appModelMock1[mockKey])
-		// 	);
-		// });
+		it("it should be called with the correct arguments", () => {
+			expect(model$._model.calls.mostRecent().args[0]).toEqual(mockKey);
+		});
+
+		it("it should return the correct result", () => {
+			expect(model$._model(mockKey)).toEqual(appModelMock1[mockKey]);
+		});
 	});
 
-	// describe("When 'model$.mixin' is called", () => {
-	// 	beforeEach(() => {
-	// 		mixinSpy = __.spy(model$, "mixin");
+	describe("When 'model$.get' is called", () => {
+		beforeEach(() => {
+			model$.get = __.createSpy("model$.get");
 			
-	// 		__.stub()
-	// 			.callsFake((key) => {
-	// 				return appModelMock1[key];
-	// 			})
-	// 		;
+			result = model$.get(mockKey);
+		});
+		
+		it("it should be called exactly once", () => {
+			expect(model$.get.calls.count()).toEqual(1);
+		});
+		
+		it("it should be called with the correct arguments", () => {
+			expect(model$.get.calls.mostRecent().args[0]).toEqual(mockKey);
+		});
+		
+		it("it should return the correct value", () => {
+			expect(result).toEqual(
+				angular.fromJson(appModelMock1[mockKey])
+			);
+		});
+	});
+
+	describe("When 'model$.mixin' is called", () => {
+		beforeEach(() => {
+			model$.mixin = __.createSpy("model$.mixin");
 			
-	// 		result = model$.mixin(mockKey, [{version: "1.0.0"}]);
-	// 	});
-
-	// 	// it("it should call 'model$.mixin' with the correct arguments", () => {
-	// 	// 	__.expect(mixinSpy).to.be.called.withArgs(mockKey);
-	// 	// });
-
-	// 	it("it should return the correct value", () => {
-	// 		__.expect(result).to.deep.equal(
-	// 			angular.fromJson(appModelMock2[mockKey])
-	// 		);
-	// 	});
-	// });
+			result = model$.mixin(mockKey, [{version: "1.0.0"}]);
+		});
+		
+		it("it should be called exactly once", () => {
+			expect(model$.mixin.calls.count()).toEqual(1);
+		});
+		
+		it("it should be called with the correct arguments", () => {
+			expect(model$.mixin.calls.mostRecent().args[0]).toEqual(mockKey);
+		});
+		
+		it("it should return the correct value", () => {
+			expect(result).toEqual(
+				angular.fromJson(appModelMock2[mockKey])
+			);
+		});
+	});
 });
