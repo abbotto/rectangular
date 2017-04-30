@@ -1,7 +1,18 @@
 # Setup
 
-## Dependencies
-	cp .envrc .env && nvm use && npm install
+## Create a project folder
+	mkdir myApp
+	cd myApp
 
-## Run
-	npm run dev
+## Initialize with NPM
+	npm init
+
+## Install Rectangular
+	npm i https://github.com/abbotto/rectangular.git
+	
+## Copy the project files
+	cp -R node_modules/rectangular/project/ node_modules/../
+
+## Run setup
+	npm run setup
+

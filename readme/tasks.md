@@ -3,7 +3,7 @@
 ## NPM
 
 	npm run compile
-	npm run delint
+	npm run setup
 	npm run dev
 	npm run docs
 	npm run server
