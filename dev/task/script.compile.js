@@ -66,6 +66,6 @@ for (; i < n; i+=1) {
 const output = script.join("\n\n");
 
 // Write the output to a file
-console.log("Writing the file...");
+console.log("Building...");
 sh.exec("sleep 2");
 fs.writeFileSync(appJS, output, "utf8");
