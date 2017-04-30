@@ -1,0 +1,35 @@
+{
+  "name": "project-name",
+  "description": "project-description",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "project-author",
+  "main": "server.js",
+  "engines": {
+    "node": "6.10"
+  },
+  "scripts": {
+    "build-modules": "cd node_modules/rectangular && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cp .envrc .env && cd ../../",
+    "compile": "cd node_modules/rectangular && node dev/task/compile.js && cd ../../",
+    "delint-css": "node_modules/rectangular/node_modules/stylelint/lib/cli.js app/**/*.scss",
+    "delint-js": "/node_modules/rectangular/node_modules/eslint/bin/eslint.js --ext .json --ext .js --fix *.js* app/ dev/task/",
+    "delint": "npm run delint-js && npm run delint-css",
+    "dev": "gulp dev",
+    "docs": "gulp docs",
+    "server": "node server.js",
+    "setup": "npm run build-modules && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i --force && cp .envrc .env",
+    "start": "gulp compile",
+    "test": "node node_modules/rectangular/dev/task/compile.js && node_modules/.bin/karma start karma.conf.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-ngdocs": "^0.3.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-open": "^2.0.0",
+    "gulp-watch": "^4.3.10"
+  }
+}
