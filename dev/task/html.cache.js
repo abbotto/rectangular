@@ -15,7 +15,9 @@ let templates = [], key, value;
 
 files.forEach((path) => {
 	key = path
-		.replace("./app/client/", "")
+		.replace("./", "")
+		.replace("tmp/src/", "")
+		.replace("app/client/", "")
 		.replace("component/", "")
 		.replace("shared/", "")
 	;

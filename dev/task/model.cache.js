@@ -22,6 +22,7 @@ let models = {}, key;
 files.forEach((path) => {
 	key = path
 		.replace("./", "")
+		.replace("tmp/src/", "")
 		.replace("app/client/", "")
 		.replace("component/", "")
 		.replace("model/", "")
