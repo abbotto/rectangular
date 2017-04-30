@@ -3,7 +3,9 @@
 const sh = require("shelljs");
 const fs = require("fs");
 const finder = require("glob-concat");
-const appSCSS = finder.sync(require("./asset/source.scss.json"));
+const sources = require("./asset/source.scss.json").concat(require("./../../tmp/src/dev/task/asset/source.scss.json"));
+
+const appSCSS = finder.sync(sources);
 const tmpCSS = "tmp/source.scss";
 
 // Commands
@@ -16,7 +18,7 @@ const tmpVendorJSON = !!fs.exists("./tmp/vendor.scss.json") ? finder.sync(requir
 if (!!fs.exists("./tmp/vendor.scss.json")) sh.cat(tmpVendorJSON).to(vendorJSON);
 
 // Preflight
-sh.exec("node_modules/stylelint/lib/cli.js app/**/*.scss");
+sh.exec("node_modules/stylelint/lib/cli.js app/**/*.scss tmp/src/app/**/*.scss");
 sh.exec("node dev/task/font.copy.js");
 sh.exec("node dev/task/image.copy.js");
 

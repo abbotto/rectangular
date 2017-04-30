@@ -6,3 +6,4 @@ sh.exec("node dev/task/app.intro.js");
 sh.exec("node dev/task/script.compile.js");
 sh.exec("node dev/task/html.compile.js");
 sh.exec("node dev/task/style.compile.js");
+sh.exec("cp dist ./../../");
