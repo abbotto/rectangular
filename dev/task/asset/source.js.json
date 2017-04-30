@@ -10,10 +10,6 @@
 	"./app/client/**/*.directive.js",
 	"./app/client/**/*.filter.js",
 	"./app/client/**/*.extension.js",
-	"./tmp/constants.js",
-	"./tmp/models.js",
-	"./tmp/templates.js",
-	
 	"!./tmp/src/app/client/**/spec.*.js",
 	"./tmp/src/app/client/app.module.js",
 	"./tmp/src/app/client/app.route.js",
@@ -22,5 +18,8 @@
 	"./tmp/src/app/client/**/*.component.js",
 	"./tmp/src/app/client/**/*.directive.js",
 	"./tmp/src/app/client/**/*.filter.js",
-	"./tmp/src/app/client/**/*.extension.js"
+	"./tmp/src/app/client/**/*.extension.js",
+	"./tmp/constants.js",
+	"./tmp/models.js",
+	"./tmp/templates.js"
 ]

@@ -17,9 +17,9 @@ sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
 // Output paths
-const appJS = "./dist/app.js";
-const mapJS = "./dist/app.js.map";
-const tmpJS = "./tmp/source.js";
+const appJS = "dist/app.js";
+const mapJS = "dist/app.js.map";
+const tmpJS = "tmp/source.js";
 
 // Cross-platform newline
 const EOL = require("os").EOL;
@@ -37,12 +37,18 @@ sh.cat(sourceJSON).to(tmpJS);
 vendorJSON.push(tmpJS);
 
 // Convert ES6 to ES5
+console.log("Converting ES6 to ES5...");
+sh.exec("sleep 2");
 sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJS + " --out-file " + tmpJS);
 
 // Generate a source map in dev mode
+console.log("Generating sourcemap...");
+sh.exec("sleep 2");
 const sourceMap = (process.env.NODE_ENV === "development") ? "--source-map " + mapJS + " " : "";
 
 // Minify the output
+console.log("Minifying the output...");
+sh.exec("sleep 2");
 sh.exec("node_modules/uglify-js/bin/uglifyjs " + tmpJS + " " + sourceMap + "-o " + tmpJS);
 
 // Push the file contents into an array
@@ -60,4 +66,6 @@ for (; i < n; i+=1) {
 const output = script.join("\n\n");
 
 // Write the output to a file
+console.log("Writing the file...");
+sh.exec("sleep 2");
 fs.writeFileSync(appJS, output, "utf8");

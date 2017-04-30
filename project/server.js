@@ -1,1 +1,1 @@
-require("./node_modules/rectangular/app/server/index.js");
+require("./app/server/index.js");

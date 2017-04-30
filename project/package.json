@@ -10,7 +10,7 @@
   },
   "scripts": {
     "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cd ../../",
-    "compile": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp tmp/src && cp -aR ../../app tmp/src && node dev/task/compile.js && cd ../../",
+    "compile": "cd node_modules/rectangular && node dev/task/compile.js && cd ../../",
     "dev": "gulp dev",
     "docs": "gulp docs",
     "server": "node server.js",
