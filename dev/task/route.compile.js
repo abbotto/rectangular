@@ -8,8 +8,8 @@ const path = require("path");
 const EOL = require("os").EOL;
 
 const files = finder.sync([
-	"./app/client/component/**/*.route.js",
-	"./../../tmp/src/app/client/component/**/*.route.js"
+	"app/client/component/**/*.route.js",
+	"tmp/src/app/client/component/**/*.route.js"
 ]);
 
 const tmpJS = "tmp/component.route.js";

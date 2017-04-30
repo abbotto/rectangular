@@ -9,14 +9,14 @@
     "node": "6.10"
   },
   "scripts": {
-    "build-modules": "cd node_modules/rectangular && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cp .envrc .env && cd ../../",
-    "compile": "cp src node_modules/rectangular/tmp && cd node_modules/rectangular && node dev/task/compile.js && cd ../../",
+    "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cd ../../",
+    "compile": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp tmp/src && cp -aR ../../app tmp/src && node dev/task/compile.js && cd ../../",
     "dev": "gulp dev",
     "docs": "gulp docs",
     "server": "node server.js",
-    "setup": "npm run build-modules && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i --force && cp .envrc .env",
-    "start": "gulp compile",
-    "test": "node node_modules/rectangular/dev/task/compile.js && node_modules/.bin/karma start karma.conf.js"
+    "setup": "npm run rectangular && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i --force",
+    "start": "npm run compile",
+    "test": "npm run compile && node_modules/.bin/karma start karma.conf.js"
   },
   "dependencies": {},
   "devDependencies": {

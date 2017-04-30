@@ -3,5 +3,11 @@
 	"./app/client/shared/design/vendor.scss",
 	"./app/client/app.scss",
 	"./app/client/shared/**/*.scss",
-	"./app/client/component/**/*.scss"
+	"./app/client/component/**/*.scss",
+	
+	"./tmp/src/app/client/shared/design/scaffold.scss",
+	"./tmp/src/app/client/shared/design/vendor.scss",
+	"./tmp/src/app/client/app.scss",
+	"./tmp/src/app/client/shared/**/*.scss",
+	"./tmp/src/app/client/component/**/*.scss"
 ]

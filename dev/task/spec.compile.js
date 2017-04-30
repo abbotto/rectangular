@@ -13,7 +13,7 @@
 
 	// Output paths
 	const tmpSpecJS = "tmp/spec.js";
-	const sources = require("./asset/spec.js.json").concat(require("./../../tmp/src/dev/task/asset/spec.js.json"));
+	const sources = require("./../../dev/task/asset/spec.js.json");
 	const scripts = finder.sync(require("./asset/spec.js.json"));
 
 	// Push the file contents into an array

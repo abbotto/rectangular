@@ -6,8 +6,8 @@ const sh = require("shelljs");
 const pug = require("pug");
 
 const files = finder.sync([
-	"./app/client/component/**/*.html",
-	"./../../tmp/src/app/client/component/**/*.html"
+	"app/client/component/**/*.html",
+	"tmp/src/app/client/component/**/*.html"
 ]);
 
 const tmpJS = "tmp/templates.js";
