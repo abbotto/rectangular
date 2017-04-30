@@ -4,18 +4,16 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "Jared Abbott",
-  "main": "server.js",
-  "scripts": {
-    "install-ui": "node dev/task/install-ui.js",
-    "compile": "node dev/task/compile.js",
-    "delint-css": "node_modules/stylelint/lib/cli.js app/**/*.scss",
-    "delint-js": "node_modules/eslint/bin/eslint.js --ext .json --ext .js --fix *.js* app/ dev/task/",
-    "delint": "npm run delint-js && npm run delint-css",
-    "setup": "nvm i 6.9.4 && nvm use && npm i && cp .envrc .env && npm run compile",
-    "start": "npm i && cp .envrc .env && npm run compile",
-    "test": "node dev/task/compile.js && node_modules/.bin/karma start karma.conf.js"
+  "engines": {
+    "node": "6.10"
   },
-  "dependencies": {
+  "scripts": {
+    "ui": "node dev/task/install-ui.js",
+    "setup": "nvm i 6.10 && nvm use && npm i && cp .envrc .env",
+    "start": "npm i && cp .envrc .env"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "angular": "1.5.5",
     "angular-animate": "1.5.5",
     "angular-aria": "1.5.5",
@@ -26,16 +24,12 @@
     "angular-ui-router": "^0.3.2",
     "animate.css": "^3.5.2",
     "bluebird": "^3.4.6",
-    "compression": "^1.6.2",
-    "express": "^4.14.0",
     "font-awesome": "^4.7.0",
     "lodash": "^4.16.6",
     "moment": "^2.16.0",
     "ng-file-upload": "^12.2.13",
     "normalize.css": "^5.0.0",
-    "restangular": "^1.5.2"
-  },
-  "devDependencies": {
+    "restangular": "^1.5.2",
     "angular-mocks": "1.5.5",
     "asciify": "^1.3.5",
     "babel-cli": "^6.18.0",
@@ -49,7 +43,6 @@
     "glob-concat": "^1.0.1",
     "marked": "^0.3.6",
     "node-sass": "^4.5.0",
-    "phantomjs-prebuilt": "^2.1.13",
     "postcss": "^5.2.14",
     "prompt": "^1.0.0",
     "pug": "^2.0.0-beta11",

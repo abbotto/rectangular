@@ -30,6 +30,10 @@
 !/dev
 !/dev/**/*
 
+# Whitelist Project Files
+!/project
+!/project/**/*
+
 # Whitelist Readme Files
 !/readme
 !/readme/**/*

@@ -24,7 +24,9 @@ sh.exec("node dev/task/image.copy.js");
 
 // Build
 sh.cat(appSCSS).to(tmpCSS);
+
 sh.exec(nodeSASS + " -q --output-style compressed --include-path scss " + tmpCSS + " " + tmpCSS);
 sh.exec(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpCSS);
+
 vendorJSON.push(tmpCSS);
 sh.cat(vendorJSON).to("dist/app.css");
