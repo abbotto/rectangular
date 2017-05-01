@@ -28,7 +28,7 @@ Rectangular is designed to be:
 
 ---
 
-### Install
+### Quick Install Method
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install && chmod +x install && ./install
 
 ---
