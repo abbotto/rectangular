@@ -18,9 +18,9 @@ Apps built with Rectangular are designed to be:
 ### Features
 - A caching system that retains your environment variables, models, and templates for instant recall.
 - A no-nonsense extension system for integrating 3rd-party vendor plugins and libraries in a jiffy.
+- Support for [Bootstrap and Material Design](https://github.com/abbotto/rectangular-ui) service integration so you can keep it fancy.
 - Support for multiple languages because there's more than one language.
 - Support for ES6 syntax so you can write your JavaScript in style.
-- Support for [Bootstrap and Material Design](https://github.com/abbotto/rectangular-ui) service integration.
 - Testing utilities to help your code pass with flying colors.
 
 ---
