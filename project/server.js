@@ -5,7 +5,7 @@ const compression = require("compression");
 const express = exports.express = require("express");
 const app = module.exports.app = exports.app = express();
 const route = exports.route = express.Router();
-const www = __dirname + "/../dist";
+const www = __dirname + "/dist";
 
 app.set("view cache", true);
 app.use(express.static(www));

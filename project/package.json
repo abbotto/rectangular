@@ -15,7 +15,7 @@
     "dev": "gulp dev",
     "docs": "gulp docs",
     "server": "node server.js",
-    "setup": "npm run rectangular && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i --force",
+    "setup": "npm run rectangular && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i",
     "start": "npm run compile",
     "test": "node_modules/karma/bin/karma start karma.conf.js"
   },
