@@ -2,7 +2,7 @@
 
 ### Named Function Expressions
 
-- Rectangular uses `named functions` instead of passing an `anonymous function` in as a callback.
+- It's preferable to use `named functions` instead of passing an `anonymous function` in as a callback.
 - If a function must be anonymous, consider using an `arrow function`.
 
 **Why use a NFE?**
