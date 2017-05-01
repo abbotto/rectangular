@@ -6,14 +6,12 @@
 ## Introduction
 A build kit for AngularJS applications.
 
-Rectangular is designed to be:
-- Component-based
-- Organized
-- Modular
+Apps built with Rectangular are designed to be:
 - Scalable
 - Testable
-- Efficient
-- Presentable
+- Organized
+- Responsive
+- Modular
 
 ---
 
