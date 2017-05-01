@@ -11,7 +11,7 @@
 	npm i https://github.com/abbotto/rectangular.git
 	
 ## Copy the project files
-	cp -R node_modules/rectangular/project/ node_modules/../
+	cp -R node_modules/rectangular/project/ .
 
 ## Run setup
 	npm run setup
