@@ -6,6 +6,15 @@
 ## Introduction
 A build kit for AngularJS applications.
 
+Rectangular is designed to be:
+- Component-based
+- Organized
+- Modular
+- Scalable
+- Testable
+- Efficient
+- Presentable
+
 ---
 
 ### Features
@@ -16,18 +25,6 @@ A build kit for AngularJS applications.
 - An advanced REST interface.
 - Locale support for multiple languages.
 - An extension system.
-
----
-
-### Goals
-Rectangular is designed to be:
-- Component-based
-- Organized
-- Modular
-- Scalable
-- Testable
-- Efficient
-- Presentable
 
 ---
 
