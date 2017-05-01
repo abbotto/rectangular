@@ -1,3 +1,6 @@
+# Auomated method
+	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install && chmod +x install && ./install
+
 # Manual Method
 
 ## Create a project folder
@@ -16,6 +19,3 @@
 ## Run setup
 	npm run setup
 
-# Easy method
-
-	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install && chmod +x install && ./install
