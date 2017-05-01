@@ -25,5 +25,5 @@
 ## Change directory
 	cd myApp
 
-## Install ppackages
+## Install packages
 	nvm use && npm i
