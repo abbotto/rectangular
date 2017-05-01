@@ -36,7 +36,7 @@ Rectangular is designed to be:
 
 ---
 
-## Table of Contents
+## Documentation
 
 - Setup: 			[View](readme/setup.md)
 - Tasks: 			[View](readme/tasks.md)
