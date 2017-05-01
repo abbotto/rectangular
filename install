@@ -1,0 +1,23 @@
+!#/bin/bash
+
+echo "What is your project name?"
+
+read projectName
+
+echo "Installing $projectName"
+
+mkdir $projectName
+
+cd $projectName
+
+npm init --yes
+
+npm i https://github.com/abbotto/rectangular.git
+
+cp -R node_modules/rectangular/project/ .
+
+npm run setup
+
+cd ..
+
+echo "Finished. Thank you for choosing Rectangular."

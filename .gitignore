@@ -38,5 +38,8 @@
 !/readme
 !/readme/**/*
 
+# Whitelist Other Files
+!install
+
 # Blacklist Other Files
 .DS_Store
