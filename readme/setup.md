@@ -5,7 +5,7 @@
 	cd myApp
 
 ## Initialize with NPM
-	npm init
+	npm init --yes
 
 ## Install Rectangular
 	npm i https://github.com/abbotto/rectangular.git
