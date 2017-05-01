@@ -25,7 +25,7 @@ const tmpJS = "tmp/source.js";
 const EOL = require("os").EOL;
 
 // Locate scripts to compile
-const sourceJSON = finder.sync(require("./../../dev/task/asset/source.js.json"));
+const sourceJSON = finder.sync(require("./../../dev/task/asset/source.js.json").concat(require("./../tmp/src/dev/task/asset/source.js.json")));
 let vendorJSON = finder.sync(require("./../../dev/task/asset/vendor.js.json"));
 const tmpVendorJSON = finder.sync(require("./../../tmp/vendor.js.json")) || [];
 if (!!tmpVendorJSON.length) vendorJSON = vendorJSON.concat(tmpVendorJSON);

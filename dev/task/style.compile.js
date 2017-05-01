@@ -3,7 +3,7 @@
 const sh = require("shelljs");
 const fs = require("fs");
 const finder = require("glob-concat");
-const sources = require("./../../dev/task/asset/source.scss.json");
+const sources = require("./../../dev/task/asset/source.scss.json").concat(require("./../../tmp/src/dev/task/asset/source.scss.json"));
 
 const appSCSS = finder.sync(sources);
 const tmpCSS = "tmp/source.scss";
