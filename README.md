@@ -21,7 +21,7 @@ Apps built with Rectangular are designed to be:
 - An extension system for easily adding 3rd-party plugins and libraries.
 - Support for multiple languages.
 - Support for ES6 syntax.
-- Testing utilities
+- Testing utilities.
 
 ---
 
