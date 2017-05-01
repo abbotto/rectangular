@@ -18,6 +18,4 @@ cp -R node_modules/rectangular/project/ .
 
 npm run setup
 
-cd $projectName
-
 echo "Finished. Thank you for choosing Rectangular."
