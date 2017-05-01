@@ -5,13 +5,13 @@ const fs = require("fs");
 const sh = require("shelljs");
 
 const mixin = finder.sync([
-	"app/client/**/*.mixin.json",
-	"tmp/src/app/client/**/*.mixin.json"
+	"app/**/*.mixin.json",
+	"tmp/src/app/**/*.mixin.json"
 ]);
 
 const data = finder.sync([
-	"./app/client/**/*.data.json",
-	"./tmp/src/app/client/**/*.data.json"
+	"./app/**/*.data.json",
+	"./tmp/src/app/**/*.data.json"
 ]);
 
 const tmpJS = "tmp/models.js";
@@ -23,7 +23,7 @@ files.forEach((path) => {
 	key = path
 		.replace("./", "")
 		.replace("tmp/src/", "")
-		.replace("app/client/", "")
+		.replace("app/", "")
 		.replace("component/", "")
 		.replace("model/", "")
 		.replace("shared/", "")

@@ -10,10 +10,10 @@
 
 #### Install Material Design
 
-- Copy the following folders into `rectangular` via `app/client/`.
+- Copy the following folders into `rectangular` via `app/`.
 	- `rectangular-ui/material-design/app/extension`
 	- `rectangular-ui/material-design/app/shared`
-- Inject `ui.material.service` into `rectangular` via `app/client/app.service.js`
+- Inject `ui.material.service` into `rectangular` via `app/app.service.js`
 - Run `npm i angular-material` inside of `rectangular`.
 - Add `"./node_modules/angular-material/angular-material.min.js"` to `dev/task/asset/vendor.js.json` in `rectangular`.
 - Add `"./node_modules/angular-material/angular-material.min.css"` to `dev/task/asset/vendor.scss.json` in `rectangular`.
@@ -49,10 +49,10 @@
 
 ##### Install Bootstrap
 
-- Copy the following folders into `rectangular` via `app/client/`.
+- Copy the following folders into `rectangular` via `app/`.
 	- `rectangular-ui/bootstrap/app/extension`
 	- `rectangular-ui/bootstrap/app/shared`
-- Inject `ui.bootstrap.service` into `rectangular` via `app/client/app.service.js`
+- Inject `ui.bootstrap.service` into `rectangular` via `app/app.service.js`
 - Run `npm i bootstrap angular-strap` inside of `rectangular`.
 - Add the following to `dev/task/asset/vendor.js.json` in `rectangular`.
 	- `"./node_modules/angular-strap/dist/angular-strap.min.js"` 

@@ -47,10 +47,10 @@ gulp.task("open", ["compile"], () => {
 // Watch files
 const watch = require("gulp-watch");
 const watchFiles = [
-	"./app/client/**/*.scss",
-	"./app/client/**/*.js",
-	"./app/client/**/*.json",
-	"./app/client/**/*.html",
+	"./app/**/*.scss",
+	"./app/**/*.js",
+	"./app/**/*.json",
+	"./app/**/*.html",
 	"./dev/task/**/*.js",
 	"./dev/task/**/*.json"
 ];

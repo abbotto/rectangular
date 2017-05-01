@@ -5,8 +5,8 @@ const fs = require("fs");
 const sh = require("shelljs");
 
 const serviceFiles = finder.sync([
-	"app/client/**/*.service.js",
-	"tmp/src/app/client/**/*.service.js"
+	"app/**/*.service.js",
+	"tmp/src/app/**/*.service.js"
 ]);
 
 const serviceAssets = require("./../../dev/task/asset/service.ng.json");

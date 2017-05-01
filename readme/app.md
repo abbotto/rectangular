@@ -2,7 +2,7 @@
 - The `app` folder contains initialization files.
 
 ### App Modules
-- App Modules are registered in `app/client/app.module.js`.
+- App Modules are registered in `app/app.module.js`.
 
 ### Routes
-- Route modules are registered in `app/client/app.route.js`.
+- Route modules are registered in `app/app.route.js`.

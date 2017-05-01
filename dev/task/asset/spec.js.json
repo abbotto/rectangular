@@ -1,8 +1,8 @@
 [
 	"./dev/test/test.config.js",
 	"./dev/test/test.*.js",
-	"./app/client/app.spec.js",
-	"./app/client/**/*.spec.js",
-	"./tmp/src/app/client/app.spec.js",
-	"./tmp/src/app/client/**/*.spec.js"
+	"./app/app.spec.js",
+	"./app/**/*.spec.js",
+	"./tmp/src/app/app.spec.js",
+	"./tmp/src/app/**/*.spec.js"
 ]
