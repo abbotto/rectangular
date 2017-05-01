@@ -1,8 +1,9 @@
 // Karma configuration
 module.exports = function karmaConfig(config) {
 	const sh = require("shelljs");
+	const fs = require("fs");
 	
-	sh.exec("npm run rectangular && npm run compile");
+	!fs.exists("./dist") && sh.exec("npm run rectangular && npm run compile");
 	
 	let paths = [];
 	
