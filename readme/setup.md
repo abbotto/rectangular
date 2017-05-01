@@ -15,4 +15,3 @@
 
 ## Run setup
 	npm run setup
-
