@@ -16,13 +16,12 @@ Apps built with Rectangular are designed to be:
 ---
 
 ### Features
-- [Rectangular UI](https://github.com/abbotto/rectangular-ui) support.
-- Upload support for drag-n-drop, progress, validation filters and a queue. 
-- Environment variable, data model, and template caching.
-- A fast and robust promise implementation.
-- An advanced REST interface.
-- Locale support for multiple languages.
-- An extension system.
+- [Bootstrap and Material Design](https://github.com/abbotto/rectangular-ui) integration.
+- Caching for environment variables, data models, and templates.
+- An extension system for easily adding 3rd-party plugins and libraries.
+- Support for multiple languages.
+- Support for ES6 syntax.
+- A Testing suite.
 
 ---
 
