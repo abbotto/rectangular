@@ -1,4 +1,4 @@
-# Setup
+# Manual Method
 
 ## Create a project folder
 	mkdir myApp
@@ -15,3 +15,8 @@
 
 ## Run setup
 	npm run setup
+
+# Easy method
+
+	curl -fsSL https://raw.githubusercontent.com/abbotto/rectangular/master/install && chmod +x install && ./install
+	
