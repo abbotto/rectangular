@@ -31,6 +31,11 @@ Rectangular is designed to be:
 
 ---
 
+### Install
+	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install && chmod +x install && ./install
+
+---
+
 ## Table of Contents
 
 - Setup: 			[View](readme/setup.md)
