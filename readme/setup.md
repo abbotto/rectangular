@@ -1,7 +1,7 @@
 # Auomated method
 
 ## Fetch and run the install file
-	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install && chmod +x install && ./install
+	curl -O https://git.io/v9l26 && chmod +x install && ./install
 
 # Manual Method
 
@@ -20,4 +20,3 @@
 
 ## Run setup
 	npm run setup
-
