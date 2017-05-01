@@ -8,13 +8,14 @@ branches:
     - master
 
 install:
+  - cd ..
   - mkdir testApp
   - cd testApp
   - npm init --yes
   - npm i https://github.com/abbotto/rectangular.git
   - cp -R node_modules/rectangular/project/ .
   - npm run test
-  - cd ..
-  - rm -rf testApp
+  - cd ../rectangular
+  - rm -rf ../testApp
 
 script: npm start
