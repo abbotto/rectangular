@@ -1,7 +1,7 @@
 # Auomated method
 
 ## Fetch and run the install file
-	curl -o install https://git.io/v9l26 && chmod +x install && ./install
+	curl -O https://git.io/v9l26 && mv v9l26 install && chmod +x install && ./install
 
 # Manual Method
 

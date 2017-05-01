@@ -27,7 +27,7 @@ Apps built with Rectangular are designed to be:
 ---
 
 ### Quick Install Method
-	curl -o install https://git.io/v9l26 && chmod +x install && ./install
+	curl -O https://git.io/v9l26 && mv v9l26 install && chmod +x install && ./install
 
 ---
 
