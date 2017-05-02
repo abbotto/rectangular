@@ -14,6 +14,14 @@ npm init --yes
 
 npm i https://github.com/abbotto/rectangular.git
 
+cd node_modules/rectangular/
+
+nvm use
+
+npm i
+
+node dev/task/vendor.install.js
+
 cp -R node_modules/rectangular/project/ .
 
 npm run setup
