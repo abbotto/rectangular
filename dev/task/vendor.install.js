@@ -4,7 +4,7 @@
 
 const prompt = require("prompt");
 const sh = require("shelljs");
-const sh = require("fs");
+const fs = require("fs");
 
 let vendorJS = [];
 let vendorCSS = [];

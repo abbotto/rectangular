@@ -16,6 +16,8 @@ npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
 
+. ~/.nvm/nvm.sh
+
 nvm use
 
 npm i
