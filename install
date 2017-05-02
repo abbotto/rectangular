@@ -2,11 +2,13 @@
 
 echo ""
 echo "Rectangular Installer"
+
 echo ""
 echo "What is your project name?"
 
 read projectName
 
+echo ""
 echo "Installing $projectName"
 
 mkdir $projectName
@@ -33,4 +35,5 @@ cp -R node_modules/rectangular/project/ .
 
 npm run setup
 
+echo ""
 echo "Finished. Thank you for choosing Rectangular."

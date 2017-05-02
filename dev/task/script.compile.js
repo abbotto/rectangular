@@ -37,7 +37,7 @@ sh.cat(sourceJSON).to(tmpJS);
 vendorJSON.push(tmpJS);
 
 // Convert ES6 to ES5
-console.log("Converting ES6 to ES5...");
+console.log("\nConverting ES6 to ES5...");
 sh.exec("sleep 2");
 sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJS + " --out-file " + tmpJS);
 
