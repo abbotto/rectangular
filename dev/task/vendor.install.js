@@ -130,11 +130,11 @@ prompt.get(schema, (err, input) => {
 	}
 	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing ngFileUpload...");
+		console.log("Installing ng-file-upload...");
 		
-		sh.exec("rm -rf project/app/extension/ngFileUpload && mkdir project/app/extension/ngFileUpload");
+		sh.exec("rm -rf project/app/extension/ng-file-upload && mkdir project/app/extension/ng-file-upload");
 		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
-		sh.exec("cp -r dev/task/vendor/extension/ngFileUpload/* project/app/extension/ngFileUpload/");
+		sh.exec("cp -r dev/task/vendor/extension/ng-file-upload/* project/app/extension/ng-file-upload/");
 		sh.exec("cp -r dev/task/vendor/shared/service/upload/* project/app/shared/service/upload/");
 		
 		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
@@ -149,9 +149,9 @@ prompt.get(schema, (err, input) => {
 			: sh.exec("rm -rf project/app/shared/service/ui")
 		;
 		
-		sh.exec("rm -rf project/app/extension/bootstrap && mkdir project/app/extension/bootstrap");
-		sh.exec("cp -r dev/task/vendor/extension/bootstrap/* project/app/extension/bootstrap/");
-		sh.exec("cp -r dev/task/vendor/shared/service/ui/* project/app/shared/service/ui/");
+		sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
+		sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
+		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap* project/app/shared/service/ui/");
 		sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
 		
 		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
@@ -171,7 +171,7 @@ prompt.get(schema, (err, input) => {
 		
 		sh.exec("mkdir project/app/extension/angular-material");
 		sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
-		sh.exec("cp -r dev/task/vendor/shared/service/ui/* project/app/shared/service/ui/");
+		sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
 		sh.exec("cd project && npm i --save-dev angular-material && cd ..");
 		
 		vendorJS.push("./node_modules/angular-material/angular-material.min.js");
