@@ -183,6 +183,6 @@ prompt.get(schema, (err, input) => {
 	vendorJS = JSON.stringify(vendorJS);
 	vendorCSS = JSON.stringify(vendorJS);
 	
-	fs.writeFile("project/dev/task/asset/source.js.json", vendorJS);
-	fs.writeFile("project/dev/task/asset/source.js.scss", vendorCSS);
+	fs.writeFile("project/dev/task/asset/vendor.js.json", vendorJS);
+	fs.writeFile("project/dev/task/asset/vendor.scss.json", vendorCSS);
 });
