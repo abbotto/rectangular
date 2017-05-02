@@ -151,7 +151,7 @@ prompt.get(schema, (err, input) => {
 		
 		sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
 		sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
-		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap* project/app/shared/service/ui/");
+		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
 		sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
 		
 		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
