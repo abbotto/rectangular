@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "What is your project name?"
+echo "\nRectangular\n\n"
+echo "\nWhat is your project name?"
 
 read projectName
 
@@ -16,11 +17,15 @@ npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
 
+. ~/.nvm/nvm.sh
+
 nvm use
 
 npm i
 
 node dev/task/vendor.install.js
+
+cd ../../
 
 cp -R node_modules/rectangular/project/ .
 
