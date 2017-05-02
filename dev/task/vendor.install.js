@@ -130,7 +130,7 @@ prompt.get(schema, (err, input) => {
 	}
 	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing ng-file-upload...");
+		console.log("Installing Material Design...");
 		
 		sh.exec("rm -rf project/app/extension/ng-file-upload && mkdir project/app/extension/ng-file-upload");
 		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
@@ -183,6 +183,6 @@ prompt.get(schema, (err, input) => {
 	vendorJS = JSON.stringify(vendorJS);
 	vendorCSS = JSON.stringify(vendorJS);
 	
-	fs.writeFile(vendorJS, "project/dev/task/asset/source.js.json");
-	fs.writeFile(vendorCSS, "project/dev/task/asset/source.js.scss");
+	fs.writeFile("project/dev/task/asset/source.js.json", vendorJS);
+	fs.writeFile("project/dev/task/asset/source.js.scss", vendorCSS);
 });

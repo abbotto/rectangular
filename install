@@ -1,7 +1,9 @@
 #!/bin/bash
 
-echo "\nRectangular\n\n"
-echo "\nWhat is your project name?"
+echo ""
+echo "Rectangular"
+echo ""
+echo "What is your project name?"
 
 read projectName
 
