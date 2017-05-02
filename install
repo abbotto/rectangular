@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo ""
-echo "Rectangular"
+echo "Rectangular Installer"
 echo ""
 echo "What is your project name?"
 
