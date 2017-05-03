@@ -62,10 +62,12 @@ During the initial installation process, you can install the following extension
 
 #### REST
 - Called via `rest.service` and injected via `rest$`.
+- The rest$ service can be used in place of $resource.
 - Learn more about `restangular` [here](https://github.com/mgonto/restangular).
 
 #### Promises
 - Called via `promise.service` and injected via `promise$`.
+- `promise$` can be used in place of `$q` - it is a speedier and more robust implementation.
 - Learn more about `bluebird` [here](https://github.com/petkaantonov/bluebird).
 
 #### File Uploading

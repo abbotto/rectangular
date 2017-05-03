@@ -45,13 +45,7 @@ Rectangular is a sweet build kit for AngularJS apps that are designed to be:
 - Templates:		[View](readme/templates.md)
 - Extensions:		[View](readme/extensions.md)
 - Models:			[View](readme/models.md)
-- Promises:			[View](readme/promises.md)
-- REST:				[View](readme/rest.md)
-- Translations:		[View](readme/translations.md)
-- Uploads:			[View](readme/uploads.md)
 - User Experience:	[View](readme/user-experience.md)
-- Utilities:		[View](readme/utilities.md)
-
-
+- Task Runner:		[View](readme/task-runner.md)
 
 
