@@ -14,12 +14,12 @@ prompt.start();
 
 const schema = {
 	"properties": {
-		"Bootstrap": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n",
-			"description": "Install Bootstrap UI? [y/n]",
-			"required": true
-		},
+		// "Bootstrap": {
+		// 	"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+		// 	"message": "Yes|No|yes|no|Y|N|y|n",
+		// 	"description": "Install Bootstrap UI? [y/n]",
+		// 	"required": true
+		// },
 		"MaterialDesign": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
@@ -128,26 +128,26 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/restangular/dist/restangular.min.js");
 	}
-	if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
-		console.log("");
-		console.log("Installing Bootstrap...");
+	// if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
+	// 	console.log("");
+	// 	console.log("Installing Bootstrap...");
 		
-		!fs.exists("project/app/shared/service/ui/*")
-			? sh.exec("mkdir project/app/shared/service/ui")
-			: sh.exec("rm -rf project/app/shared/service/ui")
-		;
+	// 	!fs.exists("project/app/shared/service/ui/*")
+	// 		? sh.exec("mkdir project/app/shared/service/ui")
+	// 		: sh.exec("rm -rf project/app/shared/service/ui")
+	// 	;
 		
-		sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
-		sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
-		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
+	// 	sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
+	// 	sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
+	// 	sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
+	// 	sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
 		
-		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
-		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
+	// 	vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
+	// 	vendorJS.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
 		
-		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
-		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-	}
+	// 	vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
+	// 	vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+	// }
 	if (input.MaterialDesign.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Material Design...");
