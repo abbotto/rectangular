@@ -20,7 +20,6 @@ sh.exec("node dev/task/html.cache.js");
 const appJSPath = "dist/app.js";
 const mapJSPath = "dist/app.js.map";
 const tmpJSPath = "tmp/source.js";
-
 const EOL = require("os").EOL;
 
 const sourceJSON = finder

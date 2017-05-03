@@ -5,7 +5,7 @@ const fs = require("fs");
 const finder = require("glob-concat");
 const tmpCSSPath = "tmp/source.scss";
 
-const appJSON = finder
+const sourceJSON = finder
 	.sync(
 		require("./../../dev/task/asset/source.scss.json")
 		.concat(require("./../../tmp/src/dev/task/asset/source.scss.json"))
@@ -29,7 +29,7 @@ sh.exec("node dev/task/font.copy.js");
 sh.exec("node dev/task/image.copy.js");
 
 // Build
-sh.cat(appJSON).to(tmpCSSPath);
+sh.cat(sourceJSON).to(tmpCSSPath);
 
 sh.exec(nodeSASS + " -q --output-style compressed --include-path scss " + tmpCSSPath + " " + tmpCSSPath);
 sh.exec(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpCSSPath);
