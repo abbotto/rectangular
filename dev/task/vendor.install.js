@@ -20,12 +20,12 @@ const schema = {
 		// 	"description": "Install Bootstrap UI? [y/n]",
 		// 	"required": true
 		// },
-		"MaterialDesign": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Material UI? [y/n]",
-			"required": true
-		},
+		// "MaterialDesign": {
+		// 	"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+		// 	"message": "Yes|No|yes|no|Y|N|y|n]",
+		// 	"description": "Install Material UI? [y/n]",
+		// 	"required": true
+		// },
 		"Lodash": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
@@ -148,23 +148,23 @@ prompt.get(schema, (err, input) => {
 	// 	vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
 	// 	vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
 	// }
-	if (input.MaterialDesign.match(/^(?:Yes|yes|Y|y)$/)) {
-		console.log("");
-		console.log("Installing Material Design...");
+	// if (input.MaterialDesign.match(/^(?:Yes|yes|Y|y)$/)) {
+	// 	console.log("");
+	// 	console.log("Installing Material Design...");
 		
-		!fs.exists("project/app/shared/service/ui")
-			? sh.exec("mkdir project/app/shared/service/ui")
-			: sh.exec("rm -rf project/app/shared/service/ui")
-		;
+	// 	!fs.exists("project/app/shared/service/ui")
+	// 		? sh.exec("mkdir project/app/shared/service/ui")
+	// 		: sh.exec("rm -rf project/app/shared/service/ui")
+	// 	;
 		
-		sh.exec("mkdir project/app/extension/angular-material");
-		sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
-		sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save-dev angular-material && cd ..");
+	// 	sh.exec("mkdir project/app/extension/angular-material");
+	// 	sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
+	// 	sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
+	// 	sh.exec("cd project && npm i --save-dev angular-material && cd ..");
 		
-		vendorJS.push("./node_modules/angular-material/angular-material.min.js");
-		vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
-	}
+	// 	vendorJS.push("./node_modules/angular-material/angular-material.min.js");
+	// 	vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
+	// }
 	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular File Upload...");
