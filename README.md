@@ -22,6 +22,7 @@ Apps built with Rectangular are designed to be:
 - Support for multiple languages because there's more than one language out there.
 - Support for ES6 syntax so you can write your JavaScript in style.
 - Testing utilities to help your code pass with flying colors.
+- ...
 
 ---
 
