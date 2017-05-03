@@ -1,16 +1,15 @@
 {
-  "name": "project-name",
-  "description": "project-description",
+  "name": "name",
+  "description": "description",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "project-author",
+  "contributors": [],
   "main": "server.js",
   "engines": {
     "node": "6.10"
   },
   "scripts": {
     "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cd ../../",
-    "rectangular-ui": "cd node_modules/rectangular && node dev/task/install-ui.js && cd ../../",
     "compile": "cd node_modules/rectangular && node dev/task/compile.js && cd ../../",
     "dev": "gulp dev",
     "docs": "gulp docs",

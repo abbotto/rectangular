@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo ""
-echo "Rectangular Installer"
+echo "---------------------"
+echo "RECTANGULAR INSTALLER"
+echo "---------------------"
 
 echo ""
 echo "What is your project name?"
@@ -15,13 +17,13 @@ mkdir $projectName
 
 cd $projectName
 
+. ~/.nvm/nvm.sh
+
 npm init --yes
 
 npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
-
-. ~/.nvm/nvm.sh
 
 nvm use
 
