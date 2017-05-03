@@ -4,9 +4,7 @@
 ---
 
 ## Introduction
-A build kit for AngularJS applications.
-
-Apps built with Rectangular are designed to be:
+Rectangular is a sweet build kit for AngularJS apps that are designed to be:
 - Scalable
 - Testable
 - Organized

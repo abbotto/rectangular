@@ -31,7 +31,7 @@ const sourceJSON = finder
 ;
 
 let vendorJSON = finder.sync(require("./../../dev/task/asset/vendor.js.json"));
-const tmpVendorJSON = finder.sync(require("./../../tmp/vendor.js.json")) || [];
+const tmpVendorJSON = !!fs.exists("./../../tmp/vendor.js.json") ? require("./../../tmp/vendor.js.json") : [];
 if (!!tmpVendorJSON.length) vendorJSON = vendorJSON.concat(tmpVendorJSON);
 
 // Write source code to temporary file
