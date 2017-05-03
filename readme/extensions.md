@@ -1,5 +1,5 @@
 ## Extensions
-- Extensions consist of `3rd-party code` or `custom` code that is integrated into the app.
+- Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
 
 ### Adding Extensions
 - Typically, adding a new `extension` is done in the following way:
