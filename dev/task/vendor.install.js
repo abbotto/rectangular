@@ -132,7 +132,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bootstrap...");
 		
-		!fs.exists("project/app/shared/service/ui")
+		!fs.exists("project/app/shared/service/ui/*")
 			? sh.exec("mkdir project/app/shared/service/ui")
 			: sh.exec("rm -rf project/app/shared/service/ui")
 		;
@@ -145,8 +145,8 @@ prompt.get(schema, (err, input) => {
 		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
 		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
 		
-		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.js");
-		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.js");
+		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
+		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
 	}
 	if (input.MaterialDesign.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
@@ -167,7 +167,7 @@ prompt.get(schema, (err, input) => {
 	}
 	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing Material Design...");
+		console.log("Installing Angular File Upload...");
 		
 		sh.exec("rm -rf project/app/extension/ng-file-upload && mkdir project/app/extension/ng-file-upload");
 		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
@@ -181,7 +181,7 @@ prompt.get(schema, (err, input) => {
 	sh.exec("rm -rf project/node_modules");
 	
 	vendorJS = JSON.stringify(vendorJS);
-	vendorCSS = JSON.stringify(vendorJS);
+	vendorCSS = JSON.stringify(vendorCSS);
 	
 	fs.writeFile("project/dev/task/asset/vendor.js.json", vendorJS);
 	fs.writeFile("project/dev/task/asset/vendor.scss.json", vendorCSS);
