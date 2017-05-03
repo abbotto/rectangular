@@ -5,8 +5,6 @@
 - Typically, adding a new `extension` is done in the following way:
 
 		(() => {
-			"use strict";
-			
 			const exampleExtension = function exampleExtension($window) {
 				return $window.exampleLibrary;
 			};
