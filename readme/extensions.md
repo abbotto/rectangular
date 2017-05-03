@@ -16,7 +16,7 @@
 
 ### Available Extensions
 
-During the initial installation process, you can install the following extensions:
+- During the initial installation process, you can install the following extensions:
 
 #### UI Services
 
