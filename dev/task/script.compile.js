@@ -17,9 +17,9 @@ sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
 // Output paths
-const appJS = "dist/app.js";
-const mapJS = "dist/app.js.map";
-const tmpJS = "tmp/source.js";
+const appJSPath = "dist/app.js";
+const mapJSPath = "dist/app.js.map";
+const tmpJSPath = "tmp/source.js";
 
 const EOL = require("os").EOL;
 
@@ -30,39 +30,43 @@ const sourceJSON = finder
 	)
 ;
 
-let vendorJSON = finder.sync(require("./../../dev/task/asset/vendor.js.json"));
-const tmpVendorJSON = !!fs.exists("./../../tmp/vendor.js.json") ? require("./../../tmp/vendor.js.json") : [];
-if (!!tmpVendorJSON.length) vendorJSON = vendorJSON.concat(tmpVendorJSON);
+const vendorJSON = finder
+	.sync(
+		require("./../../dev/task/asset/vendor.js.json")
+		.concat(require("./../../tmp/src/dev/task/asset/vendor.js.json"))
+	)
+;
 
 // Write source code to temporary file
-sh.cat(sourceJSON).to(tmpJS);
+sh.cat(sourceJSON).to(tmpJSPath);
 
-// Add tmpJS to the compile list
-vendorJSON.push(tmpJS);
+// Add tmpJSPath to the compile list
+vendorJSON.push(tmpJSPath);
+const files = vendorJSON;
 
 // Convert ES6 to ES5
 console.log("\nConverting ES6 to ES5...");
 sh.exec("sleep 2");
-sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJS + " --out-file " + tmpJS);
+sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJSPath + " --out-file " + tmpJSPath);
 
 // Generate a source map in dev mode
 console.log("Generating sourcemap...");
 sh.exec("sleep 2");
-const sourceMap = (process.env.NODE_ENV === "development") ? "--source-map " + mapJS + " " : "";
+const sourceMap = (process.env.NODE_ENV === "development") ? "--source-map " + mapJSPath + " " : "";
 
 // Minify the output
 console.log("Minifying the output...");
 sh.exec("sleep 2");
-sh.exec("node_modules/uglify-js/bin/uglifyjs " + tmpJS + " " + sourceMap + "-o " + tmpJS);
+sh.exec("node_modules/uglify-js/bin/uglifyjs " + tmpJSPath + " " + sourceMap + "-o " + tmpJSPath);
 
 // Push the file contents into an array
 const script = [];
-const n = vendorJSON.length;
+const n = files.length;
 let i = 0;
 
 // Prevent minified files from cramming together
 for (; i < n; i+=1) {
-	script.push(fs.readFileSync(vendorJSON[i], "utf8"));
+	script.push(fs.readFileSync(files[i], "utf8"));
 }
 
 // Prevent minified files from cramming together
@@ -72,4 +76,4 @@ const output = script.join("\n\n");
 // Write the output to a file
 console.log("Building...");
 sh.exec("sleep 2");
-fs.writeFileSync(appJS, output, "utf8");
+fs.writeFileSync(appJSPath, output, "utf8");
