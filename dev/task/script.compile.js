@@ -24,7 +24,7 @@ const EOL = require("os").EOL;
 
 const sourceJSON = finder
 	.sync(
-		require("./../../dev/task/asset/source.js.json")
+		.concat(require("./../../dev/task/asset/source.js.json"))
 		.concat(require("./../../tmp/src/dev/task/asset/source.js.json"))
 	)
 ;
