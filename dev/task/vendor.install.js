@@ -99,7 +99,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("mkdir project/app/extension/angular-material");
 		sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
 		sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save-dev angular-material && cd ..");
+		sh.exec("cd project && npm i --save-dev angular-material angular-aria && cd ..");
 		
 		vendorJS.push("./node_modules/angular-material/angular-material.min.js");
 		vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
