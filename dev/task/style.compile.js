@@ -4,7 +4,13 @@ const sh = require("shelljs");
 const fs = require("fs");
 const finder = require("glob-concat");
 const tmpCSSPath = "tmp/source.scss";
-const sourceJSON = finder.sync(require("./../../tmp/src/dev/task/asset/source.scss.json"));
+const sourceJSON = finder
+	.sync(
+		require("./../../dev/task/asset/source.scss.json")
+		.concat(require("./../../tmp/src/dev/task/asset/source.scss.json"))
+	)
+;
+
 const vendorJSON = finder.sync(require("./../../tmp/src/dev/task/asset/vendor.scss.json"));
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
