@@ -32,7 +32,6 @@ Apps built with Rectangular are designed to be:
 ---
 
 ## Documentation
-- Install: 			[View](readme/install.md)
 - Tasks: 			[View](readme/tasks.md)
 - Assets: 			[View](readme/assets.md)
 - Functions:		[View](readme/functions.md)
