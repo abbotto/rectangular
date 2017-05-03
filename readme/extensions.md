@@ -21,8 +21,6 @@ During the initial installation process, you can install the following extension
 #### UI
 
 ##### Material Design
-- `Angular Material` has been integrated into `rectangular-ui-material-design`.
-- Services are called via `ui.*.service`.
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
 
 ###### Integrated Services
@@ -39,7 +37,6 @@ During the initial installation process, you can install the following extension
 
 ##### Bootstrap
 - `Angular Strap` has been integrated into `rectangular-ui`.
-- Services are called via `ui.*.service`.
 - Learn more about `angular-strap` [here](https://mgcrea.github.io/angular-strap/).
 
 ###### Integrated Services
@@ -56,31 +53,27 @@ During the initial installation process, you can install the following extension
 - Called via `ui.typeahead.service` and injected via `typeahead$`.
 
 #### Arrays, Objects & Strings
-- Called via `lodash.extension` and injected via `lodash$`.
+- Called via `_.service` and injected via `_`.
 - Learn more about `Lodash` [here](https://example.com/docs/4.16.6).
 
 #### Date & Time
-- Called via `moment.extension` and injected via `moment$`.
+- Called via `date.service` and injected via `date$`.
 - Learn more about `angularMoment` [here](https://github.com/urish/angular-moment).
 - Learn more about `MomentJS` [here](http://momentjs.com/docs/).
 
 #### REST
 - Called via `rest.service` and injected via `rest$`.
-- Uploads are handled via `restangular`.
 - Learn more about `restangular` [here](https://github.com/mgonto/restangular).
 
 #### Promises
 - Called via `promise.service` and injected via `promise$`.
-- Uploads are handled via `bluebird`.
 - Learn more about `bluebird` [here](https://github.com/petkaantonov/bluebird).
 
 #### File Uploading
 - Called via `upload.service` and injected via `upload$`.
-- Uploads are handled via `ng-file-upload`.
 - Learn more about `ng-file-upload` [here](https://github.com/danialfarid/ng-file-upload).
 
 #### Language Support
 - Called via `locale.service` and injected via `locale$`.
-- Translations are handled via `angular-translate`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
