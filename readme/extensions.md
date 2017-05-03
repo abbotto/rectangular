@@ -36,7 +36,6 @@ During the initial installation process, you can install the following extension
 - Called via `ui.toast.service` and injected via `toast$`.
 
 ##### Bootstrap
-- `Angular Strap` has been integrated into `rectangular-ui`.
 - Learn more about `angular-strap` [here](https://mgcrea.github.io/angular-strap/).
 
 ###### Integrated Services
