@@ -48,7 +48,7 @@ const schema = {
 		"NG File Upload": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install ngFileUpload? [y/n]",
+			"description": "Install NG File Upload? [y/n]",
 			"required": true
 		},
 		"MomentJS": {
