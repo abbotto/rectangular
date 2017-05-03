@@ -4,12 +4,12 @@
 ---
 
 ## Introduction
-Rectangular is a sweet build kit for AngularJS apps that are designed to be:
-- Scalable
-- Testable
-- Organized
-- Responsive
-- Modular
+Rectangular is built on the principles of:
+- Scalability
+- Testability
+- Organization
+- Responsiveness
+- Modularity
 
 ---
 
