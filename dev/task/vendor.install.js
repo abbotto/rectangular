@@ -172,7 +172,7 @@ prompt.get(schema, (err, input) => {
 		vendorJS.push("./node_modules/restangular/dist/restangular.min.js");
 	}
 	
-	if (input.["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing NG File Upload...");
 		
