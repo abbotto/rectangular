@@ -14,18 +14,18 @@ prompt.start();
 
 const schema = {
 	"properties": {
-		// "Bootstrap": {
-		// 	"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-		// 	"message": "Yes|No|yes|no|Y|N|y|n",
-		// 	"description": "Install Bootstrap UI? [y/n]",
-		// 	"required": true
-		// },
-		// "MaterialDesign": {
-		// 	"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-		// 	"message": "Yes|No|yes|no|Y|N|y|n]",
-		// 	"description": "Install Material UI? [y/n]",
-		// 	"required": true
-		// },
+		"Bootstrap": {
+			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			"message": "Yes|No|yes|no|Y|N|y|n",
+			"description": "Install Bootstrap UI? [y/n]",
+			"required": true
+		},
+		"Material Design": {
+			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			"message": "Yes|No|yes|no|Y|N|y|n]",
+			"description": "Install Material UI? [y/n]",
+			"required": true
+		},
 		"Lodash": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
@@ -44,7 +44,7 @@ const schema = {
 			"description": "Install Bluebird? [y/n]",
 			"required": true
 		},
-		"ngFileUpload": {
+		"NG File Upload": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
 			"description": "Install ngFileUpload? [y/n]",
@@ -56,7 +56,7 @@ const schema = {
 			"description": "Install MomentJS? [y/n]",
 			"required": true
 		},
-		"AngularTranslate": {
+		"Angular Translate": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
 			"description": "Install AngularTranslate? [y/n]",
@@ -66,6 +66,45 @@ const schema = {
 };
 
 prompt.get(schema, (err, input) => {
+	if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Bootstrap...");
+		
+		!fs.exists("project/app/shared/service/ui/*")
+			? sh.exec("mkdir project/app/shared/service/ui")
+			: sh.exec("rm -rf project/app/shared/service/ui")
+		;
+		
+		sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
+		sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
+		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
+		sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
+		
+		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
+		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
+		
+		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
+		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+	}
+	
+	if (input["Material Design"].match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Material Design...");
+		
+		!fs.exists("project/app/shared/service/ui")
+			? sh.exec("mkdir project/app/shared/service/ui")
+			: sh.exec("rm -rf project/app/shared/service/ui")
+		;
+		
+		sh.exec("mkdir project/app/extension/angular-material");
+		sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
+		sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
+		sh.exec("cd project && npm i --save-dev angular-material && cd ..");
+		
+		vendorJS.push("./node_modules/angular-material/angular-material.min.js");
+		vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
+	}
+	
 	if (input.Bluebird.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Bluebird...");
@@ -78,6 +117,7 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/bluebird/js/browser/bluebird.min.js");
 	}
+	
 	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing MomentJS...");
@@ -92,6 +132,7 @@ prompt.get(schema, (err, input) => {
 		vendorJS.push("./node_modules/moment/min/moment.min.js");
 		vendorJS.push("./node_modules/angular-moment/angular-moment.min.js");
 	}
+	
 	if (input.Lodash.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Lodash...");
@@ -104,7 +145,8 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/lodash/lodash.min.js");
 	}
-	if (input.AngularTranslate.match(/^(?:Yes|yes|Y|y)$/)) {
+	
+	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular Translate...");
 		
@@ -116,6 +158,7 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/angular-translate/dist/angular-translate.min.js");
 	}
+	
 	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Restangular...");
@@ -128,46 +171,10 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/restangular/dist/restangular.min.js");
 	}
-	// if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
-	// 	console.log("");
-	// 	console.log("Installing Bootstrap...");
-		
-	// 	!fs.exists("project/app/shared/service/ui/*")
-	// 		? sh.exec("mkdir project/app/shared/service/ui")
-	// 		: sh.exec("rm -rf project/app/shared/service/ui")
-	// 	;
-		
-	// 	sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
-	// 	sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
-	// 	sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
-	// 	sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
-		
-	// 	vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
-	// 	vendorJS.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
-		
-	// 	vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
-	// 	vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
-	// }
-	// if (input.MaterialDesign.match(/^(?:Yes|yes|Y|y)$/)) {
-	// 	console.log("");
-	// 	console.log("Installing Material Design...");
-		
-	// 	!fs.exists("project/app/shared/service/ui")
-	// 		? sh.exec("mkdir project/app/shared/service/ui")
-	// 		: sh.exec("rm -rf project/app/shared/service/ui")
-	// 	;
-		
-	// 	sh.exec("mkdir project/app/extension/angular-material");
-	// 	sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
-	// 	sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
-	// 	sh.exec("cd project && npm i --save-dev angular-material && cd ..");
-		
-	// 	vendorJS.push("./node_modules/angular-material/angular-material.min.js");
-	// 	vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
-	// }
-	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
+	
+	if (input.["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing Angular File Upload...");
+		console.log("Installing NG File Upload...");
 		
 		sh.exec("rm -rf project/app/extension/ng-file-upload && mkdir project/app/extension/ng-file-upload");
 		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
