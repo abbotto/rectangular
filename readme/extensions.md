@@ -29,7 +29,7 @@
 ##### Material Design
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
 
-###### Integrated Services
+###### Sub-services
 - Called via `ui.bottomSheet.service` and injected via `bottomSheet$`.
 - Called via `ui.colors.service` and injected via `colors$`.
 - Called via `ui.dialog.service` and injected via `dialog$`.
@@ -44,7 +44,7 @@
 ##### Bootstrap
 - Learn more about `angular-strap` [here](https://mgcrea.github.io/angular-strap/).
 
-###### Integrated Services
+###### Sub-services
 - Called via `ui.affix.service` and injected via `affix$`.
 - Called via `ui.alert.service` and injected via `alert$`.
 - Called via `ui.datepicker.service` and injected via `datepicker$`.
