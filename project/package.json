@@ -19,6 +19,18 @@
     "test": "node_modules/karma/bin/karma start karma.conf.js"
   },
   "dependencies": {
+    "angular": "1.5.5",
+    "angular-animate": "1.5.5",
+    "angular-aria": "1.5.5",
+    "angular-messages": "1.5.5",
+    "angular-moment": "^1.0.0",
+    "angular-sanitize": "1.5.5",
+    "angular-translate": "^2.13.0",
+    "angular-ui-router": "^0.3.2",
+    "angular-mocks": "1.5.5",
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^5.0.0",
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "rectangular": "git+https://github.com/abbotto/rectangular.git"

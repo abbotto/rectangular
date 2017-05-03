@@ -5,9 +5,10 @@
 const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
+const slice = require("../utility/slice.util.js");
 
-let vendorJS = [];
-let vendorCSS = [];
+let vendorJS = require("./asset/vendor.js.json");
+let vendorCSS = require("./asset/vendor.scss.json");
 
 // Start the prompt 
 prompt.start();
@@ -79,12 +80,12 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
 		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
 		sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
-		
-		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.min.js");
-		vendorJS.push("./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
-		
-		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap.min.css");
-		vendorCSS.push("./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.min.js");
+		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
+		vendorCSS = slice(vendorCSS, "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+		vendorCSS = slice(vendorCSS, "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
 	}
 	
 	if (input["Material Design"].match(/^(?:Yes|yes|Y|y)$/)) {
@@ -99,10 +100,11 @@ prompt.get(schema, (err, input) => {
 		sh.exec("mkdir project/app/extension/angular-material");
 		sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
 		sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save-dev angular-material angular-aria && cd ..");
-		
-		vendorJS.push("./node_modules/angular-material/angular-material.min.js");
-		vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
+		sh.exec("cd project && npm i --save-dev angular-material && cd ..");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/angular-material/angular-material.min.js");
+		vendorCSS = slice(vendorCSS, "./node_modules/angular-material/angular-material.min.css");
 	}
 	
 	if (input.Bluebird.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -114,8 +116,9 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -r dev/task/vendor/extension/bluebird/* project/app/extension/bluebird/");
 		sh.exec("cp -r dev/task/vendor/shared/service/promise/* project/app/shared/service/promise/");
 		sh.exec("cd project && npm i --save-dev bluebird && cd ..");
-		
-		vendorJS.push("./node_modules/bluebird/js/browser/bluebird.min.js");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/bluebird/js/browser/bluebird.min.js");
 	}
 	
 	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -128,9 +131,10 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -r dev/task/vendor/shared/service/date/* project/app/shared/service/date/");
 		sh.exec("cd project && npm i --save-dev moment && cd ..");
 		sh.exec("cd project && npm i --save-dev angular-moment && cd ..");
-		
-		vendorJS.push("./node_modules/moment/min/moment.min.js");
-		vendorJS.push("./node_modules/angular-moment/angular-moment.min.js");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/moment/min/moment.min.js");
+		vendorJS = slice(vendorJS, "./node_modules/angular-moment/angular-moment.min.js");
 	}
 	
 	if (input.Lodash.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -142,8 +146,9 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -r dev/task/vendor/extension/lodash/* project/app/extension/lodash/");
 		sh.exec("cp -r dev/task/vendor/shared/service/_/* project/app/shared/service/_/");
 		sh.exec("cd project && npm i --save-dev lodash && cd ..");
-		
-		vendorJS.push("./node_modules/lodash/lodash.min.js");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
 	}
 	
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
@@ -155,8 +160,9 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -r dev/task/vendor/extension/angular-translate/* project/app/extension/angular-translate/");
 		sh.exec("cp -r dev/task/vendor/shared/service/locale/* project/app/shared/service/locale/");
 		sh.exec("cd project && npm i --save-dev angular-translate && cd ..");
-		
-		vendorJS.push("./node_modules/angular-translate/dist/angular-translate.min.js");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/angular-translate/dist/angular-translate.min.js");	
 	}
 	
 	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -168,8 +174,9 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -r dev/task/vendor/extension/restangular/* project/app/extension/restangular/");
 		sh.exec("cp -r dev/task/vendor/shared/service/promise/* project/app/shared/service/promise/");
 		sh.exec("cd project && npm i --save-dev restangular && cd ..");
-		
-		vendorJS.push("./node_modules/restangular/dist/restangular.min.js");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/restangular/dist/restangular.min.js");
 	}
 	
 	if (input["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
@@ -180,9 +187,10 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
 		sh.exec("cp -r dev/task/vendor/extension/ng-file-upload/* project/app/extension/ng-file-upload/");
 		sh.exec("cp -r dev/task/vendor/shared/service/upload/* project/app/shared/service/upload/");
-		
-		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
-		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
+		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
 	}
 	
 	sh.exec("rm -rf project/node_modules");

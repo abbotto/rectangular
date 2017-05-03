@@ -3,6 +3,12 @@
 const sh = require("shelljs");
 const finder = require("glob-concat");
 const fs = require("fs");
+const appJSPath = "dist/app.js";
+const mapJSPath = "dist/app.js.map";
+const tmpJSPath = "tmp/source.js";
+const EOL = require("os").EOL;
+const sourceJSON = finder.sync(require("./../../tmp/src/dev/task/asset/source.js.json"));
+const vendorJSON = finder.sync(require("./../../tmp/src/dev/task/asset/vendor.js.json"));
 
 // Load environment variables
 require("dotenv").config();
@@ -15,26 +21,6 @@ sh.exec("node dev/task/route.compile.js");
 sh.exec("node dev/task/spec.compile.js");
 sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
-
-// Output paths
-const appJSPath = "dist/app.js";
-const mapJSPath = "dist/app.js.map";
-const tmpJSPath = "tmp/source.js";
-const EOL = require("os").EOL;
-
-const sourceJSON = finder
-	.sync(
-		require("./../../dev/task/asset/source.js.json")
-		.concat(require("./../../tmp/src/dev/task/asset/source.js.json"))
-	)
-;
-
-const vendorJSON = finder
-	.sync(
-		require("./../../dev/task/asset/vendor.js.json")
-		.concat(require("./../../tmp/src/dev/task/asset/vendor.js.json"))
-	)
-;
 
 // Write source code to temporary file
 sh.cat(sourceJSON).to(tmpJSPath);

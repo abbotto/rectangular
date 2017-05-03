@@ -11,7 +11,7 @@ module.exports = function karmaConfig(config) {
 	const specJS = ["./node_modules/rectangular/tmp/spec.js"];
 	
 	paths = paths.concat(appJS);
-	paths.push("node_modules/rectangular/node_modules/angular-mocks/angular-mocks.js");
+	paths.push("node_modules/angular-mocks/angular-mocks.js");
 	paths = paths.concat(specJS);
 	
 	config.set({
