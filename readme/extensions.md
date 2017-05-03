@@ -11,7 +11,17 @@
 				return $window.exampleLibrary;
 			};
 
-			angular.module("example.extension", []).factory("example$", exampleExtension);
+			angular.module("example.extension", []).factory("exampleExtension", exampleExtension);
+		})();
+
+- The extension can then be wrapped as a custom service:
+
+		(() => {
+			const exampleService = function exampleService(exampleExtension) {
+				return exampleExtension;
+			};
+
+			angular.module("example.service", ["example.extension"]).factory("example$", exampleService);
 		})();
 
 ### Available Extensions
