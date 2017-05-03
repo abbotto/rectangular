@@ -5,7 +5,7 @@
 const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
-const slice = require("../utility/slice.util.js");
+const slice = require("slice.js");
 
 let vendorJS = require("./asset/vendor.js.json");
 let vendorCSS = require("./asset/vendor.scss.json");
