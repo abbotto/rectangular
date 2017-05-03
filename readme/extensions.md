@@ -18,7 +18,7 @@
 
 During the initial installation process, you can install the following extensions:
 
-#### UI
+#### UI Services
 
 ##### Material Design
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
