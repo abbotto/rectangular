@@ -23,8 +23,6 @@ const vendorJSON = finder
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
 
-// Vendor files
-
 // Preflight
 sh.exec("node_modules/stylelint/bin/stylelint.js app/**/*.scss tmp/src/app/**/*.scss");
 sh.exec("node dev/task/font.copy.js");
