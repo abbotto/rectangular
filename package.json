@@ -1,7 +1,7 @@
 {
   "name": "rectangular",
   "description": "A starter kit for AnguarJS applications.",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "license": "MIT",
   "author": "Jared Abbott",
   "engines": {
