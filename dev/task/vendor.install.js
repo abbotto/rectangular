@@ -128,18 +128,6 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/restangular/dist/restangular.min.js");
 	}
-	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
-		console.log("");
-		console.log("Installing Material Design...");
-		
-		sh.exec("rm -rf project/app/extension/ng-file-upload && mkdir project/app/extension/ng-file-upload");
-		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
-		sh.exec("cp -r dev/task/vendor/extension/ng-file-upload/* project/app/extension/ng-file-upload/");
-		sh.exec("cp -r dev/task/vendor/shared/service/upload/* project/app/shared/service/upload/");
-		
-		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
-		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
-	}
 	if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Bootstrap...");
@@ -176,6 +164,18 @@ prompt.get(schema, (err, input) => {
 		
 		vendorJS.push("./node_modules/angular-material/angular-material.min.js");
 		vendorCSS.push("./node_modules/angular-material/angular-material.min.css");
+	}
+	if (input.ngFileUpload.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Material Design...");
+		
+		sh.exec("rm -rf project/app/extension/ng-file-upload && mkdir project/app/extension/ng-file-upload");
+		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
+		sh.exec("cp -r dev/task/vendor/extension/ng-file-upload/* project/app/extension/ng-file-upload/");
+		sh.exec("cp -r dev/task/vendor/shared/service/upload/* project/app/shared/service/upload/");
+		
+		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
+		vendorJS.push("./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
 	}
 	
 	sh.exec("rm -rf project/node_modules");
