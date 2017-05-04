@@ -4,7 +4,7 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const path = require("path");
 const EOL = require("os").EOL;
-const files = finder.sync(["./../../tmp/dev/app/component/**/*.route.js"]);
+const files = finder.sync([__dirname + "/../../tmp/dev/app/component/**/*.route.js"]);
 const tmpJS = "tmp/component.route.js";
 const newFiles = [];
 
