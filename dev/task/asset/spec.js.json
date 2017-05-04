@@ -1,8 +1,0 @@
-[
-	"./dev/test/test.config.js",
-	"./dev/test/test.*.js",
-	"./app/app.spec.js",
-	"./app/**/*.spec.js",
-	"./tmp/src/app/app.spec.js",
-	"./tmp/src/app/**/*.spec.js"
-]

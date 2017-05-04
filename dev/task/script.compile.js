@@ -7,6 +7,7 @@ const appJSPath = "dist/app.js";
 const mapJSPath = "dist/app.js.map";
 const tmpJSPath = "tmp/source.js";
 const EOL = require("os").EOL;
+const projectPath = require("./project.path.js");
 
 // Load environment variables
 require("dotenv").config();
@@ -20,14 +21,8 @@ sh.exec("node dev/task/spec.compile.js");
 sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
-const sourceJSON = finder
-	.sync(
-		require("./../../dev/task/asset/source.js.json")
-		.concat(require("./../../tmp/src/dev/task/asset/source.js.json"))
-	)
-;
-
-const vendorJSON = require("./../../tmp/src/dev/task/asset/vendor.js.json");
+const sourceJSON = projectPath(finder.sync(require("./../../tmp/dev/task/asset/source.js.json")));
+const vendorJSON = projectPath(require("./../../tmp/dev/task/asset/vendor.js.json"));
 
 // Write source code to temporary file
 sh.cat(sourceJSON).to(tmpJSPath);

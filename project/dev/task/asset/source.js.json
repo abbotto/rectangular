@@ -1,1 +1,16 @@
-[]
+[
+	"!./app/**/spec.*.js",
+	"./app/app.module.js",
+	"./app/app.route.js",
+	"./node_modules/rectangular/component.route.js",
+	"./app/**/*.route.js",
+	"./node_modules/rectangular/app.service.js",
+	"./app/**/*.service.js",
+	"./app/**/*.component.js",
+	"./app/**/*.directive.js",
+	"./app/**/*.filter.js",
+	"./app/**/*.extension.js",
+	"./node_modules/rectangular/tmp/constants.js",
+	"./node_modules/rectangular/models.js",
+	"./node_modules/rectangular/templates.js"
+]

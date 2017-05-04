@@ -4,6 +4,7 @@
 	const sh = require("shelljs");
 	const finder = require("glob-concat");
 	const fs = require("fs");
+	const projectPath = require("./project.path.js");
 
 	// Load environment variables
 	require("dotenv").config();
@@ -13,8 +14,7 @@
 
 	// Output paths
 	const tmpSpecJS = "tmp/spec.js";
-	const sources = require("./../../dev/task/asset/spec.js.json");
-	const scripts = finder.sync(require("./asset/spec.js.json"));
+	const scripts = projectPath(require("./../../tmp/dev/task/asset/spec.js.json"));
 
 	// Push the file contents into an array
 	const script = [];

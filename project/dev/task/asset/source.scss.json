@@ -1,1 +1,7 @@
-[]
+[
+	"./app/shared/design/vendor.scss",
+	"./app/shared/design/scaffold.scss",
+	"./app/app.scss",
+	"./app/shared/**/*.scss",
+	"./app/component/**/*.scss"
+]

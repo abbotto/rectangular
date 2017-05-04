@@ -4,19 +4,14 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
 const pug = require("pug");
-
-const files = finder.sync([
-	"app/component/**/*.html",
-	"tmp/src/app/component/**/*.html"
-]);
-
+const files = finder.sync(["./../../app/component/**/*.html"]);
 const tmpJS = "tmp/templates.js";
+
 let templates = [], key, value;
 
 files.forEach((path) => {
 	key = path
 		.replace("./", "")
-		.replace("tmp/src/", "")
 		.replace("app/", "")
 		.replace("component/", "")
 		.replace("shared/", "")

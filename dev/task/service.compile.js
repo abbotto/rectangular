@@ -4,28 +4,18 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
 
-const serviceFiles = finder.sync([
-	"app/**/*.service.js",
-	"tmp/src/app/**/*.service.js"
-]);
-
-const serviceAssets = require("./../../dev/task/asset/service.ng.json");
-const tmpJSAssets = !!fs.exists("./../../tmp/vendor.js.json") ? require("./../../tmp/vendor.js.json") : [];
-const tmpSCSSAssets = !!fs.exists("./../../tmp/vendor.scss.json") ? require("./../../tmp/vendor.scss.json") : [];
+const serviceFiles = finder.sync(["./../../app/**/*.service.js"]);
 const tmpJS = "tmp/app.service.js";
 
 const services = [];
+let name, parts;
 
 serviceFiles.forEach((path) => {
-	if (path.indexOf("ui.bootstrap.service.js") > -1) {
-		services.push("ui.bootstrap.service");
-	}
-	else if (path.indexOf("ui.material.service.js") > -1) {
-		services.push("ui.material.service");
-	}
+	parts = path.split("/");
+	name = parts.pop();
+	services.push(name.split(".js"[0]));
 });
 
-const deps = !!serviceAssets.length ? (services.concat(serviceAssets)).sort() : services.sort();
-const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(deps) + ")})();";
+const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(services.sort()) + ")})();";
 
 fs.writeFile(tmpJS, appService);

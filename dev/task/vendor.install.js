@@ -6,6 +6,7 @@ const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
 const slice = require("./slice.js");
+const projectPath = require("./project.path.js");
 
 let vendorJS = require("./asset/vendor.js.json");
 let vendorCSS = require("./asset/vendor.scss.json");
@@ -197,16 +198,8 @@ prompt.get(schema, (err, input) => {
 	sh.exec("rm -rf project/node_modules");
 	
 	// Update paths to point to the root project directory
-	vendorJS.forEach((e, i, a) => {
-		a[i] = a[i].replace(".", "./../..");
-	});
-
-	vendorCSS.forEach((e, i, a) => {
-		a[i] = a[i].replace(".", "./../..");
-	});
-
-	vendorJS = JSON.stringify(vendorJS);
-	vendorCSS = JSON.stringify(vendorCSS);
+	vendorJS = JSON.stringify(projectPath(vendorJS));
+	vendorCSS = JSON.stringify(projectPath(vendorCSS));
 	
 	fs.writeFile("project/dev/task/asset/vendor.js.json", vendorJS);
 	fs.writeFile("project/dev/task/asset/vendor.scss.json", vendorCSS);
