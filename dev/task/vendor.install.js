@@ -79,7 +79,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
 		sh.exec("cp -r dev/task/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
 		sh.exec("cp -r dev/task/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save-dev angular-strap && cd ..");
+		sh.exec("cd project && npm i --save angular-strap && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.min.js");
@@ -100,7 +100,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("mkdir project/app/extension/angular-material");
 		sh.exec("cp -r dev/task/vendor/extension/angular-material/* project/app/extension/angular-material/");
 		sh.exec("cp -r dev/task/vendor/shared/service/ui/material-design/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save-dev angular-material && cd ..");
+		sh.exec("cd project && npm i --save angular-material && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-material/angular-material.min.js");
@@ -115,7 +115,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/promise && mkdir project/app/shared/service/promise");
 		sh.exec("cp -r dev/task/vendor/extension/bluebird/* project/app/extension/bluebird/");
 		sh.exec("cp -r dev/task/vendor/shared/service/promise/* project/app/shared/service/promise/");
-		sh.exec("cd project && npm i --save-dev bluebird && cd ..");
+		sh.exec("cd project && npm i --save bluebird && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/bluebird/js/browser/bluebird.min.js");
@@ -129,8 +129,8 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/date && mkdir project/app/shared/service/date");
 		sh.exec("cp -r dev/task/vendor/extension/moment/* project/app/extension/moment/");
 		sh.exec("cp -r dev/task/vendor/shared/service/date/* project/app/shared/service/date/");
-		sh.exec("cd project && npm i --save-dev moment && cd ..");
-		sh.exec("cd project && npm i --save-dev angular-moment && cd ..");
+		sh.exec("cd project && npm i --save moment && cd ..");
+		sh.exec("cd project && npm i --save angular-moment && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/moment/min/moment.min.js");
@@ -145,7 +145,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/_ && mkdir project/app/shared/service/_");
 		sh.exec("cp -r dev/task/vendor/extension/lodash/* project/app/extension/lodash/");
 		sh.exec("cp -r dev/task/vendor/shared/service/_/* project/app/shared/service/_/");
-		sh.exec("cd project && npm i --save-dev lodash && cd ..");
+		sh.exec("cd project && npm i --save lodash && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
@@ -159,7 +159,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/locale && mkdir project/app/shared/service/locale");
 		sh.exec("cp -r dev/task/vendor/extension/angular-translate/* project/app/extension/angular-translate/");
 		sh.exec("cp -r dev/task/vendor/shared/service/locale/* project/app/shared/service/locale/");
-		sh.exec("cd project && npm i --save-dev angular-translate && cd ..");
+		sh.exec("cd project && npm i --save angular-translate && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-translate/dist/angular-translate.min.js");	
@@ -173,7 +173,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/promise && mkdir project/app/shared/service/promise");
 		sh.exec("cp -r dev/task/vendor/extension/restangular/* project/app/extension/restangular/");
 		sh.exec("cp -r dev/task/vendor/shared/service/promise/* project/app/shared/service/promise/");
-		sh.exec("cd project && npm i --save-dev restangular && cd ..");
+		sh.exec("cd project && npm i --save restangular && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/restangular/dist/restangular.min.js");
@@ -187,6 +187,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/shared/service/upload && mkdir project/app/shared/service/upload");
 		sh.exec("cp -r dev/task/vendor/extension/ng-file-upload/* project/app/extension/ng-file-upload/");
 		sh.exec("cp -r dev/task/vendor/shared/service/upload/* project/app/shared/service/upload/");
+		sh.exec("cd project && npm i --save ng-file-upload && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
@@ -194,7 +195,8 @@ prompt.get(schema, (err, input) => {
 	}
 
 	sh.exec("rm -rf project/node_modules");
-
+	
+	// Update paths to point to the root project directory
 	vendorJS.forEach((e, i, a) => {
 		a[i] = a[i].replace(".", "./../..");
 	});
