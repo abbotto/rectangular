@@ -22,7 +22,9 @@ sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
 const sourceJSON = projectPath(finder.sync(require("./../../tmp/dev/asset/source.js.json")));
-console;
+console.log(__dirname);
+console.log(sourceJSON);
+
 const vendorJSON = projectPath(require("./../../tmp/dev/asset/vendor.js.json"));
 
 // Write source code to temporary file
