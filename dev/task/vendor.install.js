@@ -196,12 +196,12 @@ prompt.get(schema, (err, input) => {
 	sh.exec("rm -rf project/node_modules");
 
 	// Update the paths
-	vendorJS.forEach((el, i) => {
-		vendorJS[i].replace("./", "./../../../../");
+	vendorJS.forEach(function(e, i, a) {
+    	a[i] = a[i].replace(".", "./../../../..");
 	});
 
-	vendorCSS.forEach((el, i) => {
-		vendorCSS[i].replace("./", "./../../../../");
+	vendorCSS.forEach(function(e, i, a) {
+    	a[i] = a[i].replace(".", "./../../../..");
 	});
 	
 	vendorJS = JSON.stringify(vendorJS);
