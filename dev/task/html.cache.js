@@ -4,7 +4,7 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
 const pug = require("pug");
-const files = finder.sync([__dirname + "/../../../../dev/app/component/**/*.html"]);
+const files = finder.sync([__dirname.split("/node_modules")[0] + "//dev/app/component/**/*.html"]);
 const tmpJS = "tmp/templates.js";
 
 let templates = [], key, value;

@@ -21,10 +21,10 @@ sh.exec("node dev/task/spec.compile.js");
 sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
-const sourceJSON = projectPath(finder.sync(require(__dirname + "/../../../../dev/asset/source.js.json")));
-console.log(sourceJSON);
+const sourceJSON = projectPath(finder.sync(require(__dirname.split("/node_modules")[0] + "//dev/asset/source.js.json")));
+console.log(__dirname.split("/node_modules")[0], sourceJSON);
 
-const vendorJSON = projectPath(require(__dirname + "/../../../../dev/asset/vendor.js.json"));
+const vendorJSON = projectPath(require(__dirname.split("/node_modules")[0] + "//dev/asset/vendor.js.json"));
 
 // Write source code to temporary file
 sh.cat(sourceJSON).to(tmpJSPath);

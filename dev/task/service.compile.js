@@ -4,7 +4,7 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
 
-const serviceFiles = finder.sync([__dirname + "/../../../../dev/app/**/*.service.js"]);
+const serviceFiles = finder.sync([__dirname.split("/node_modules")[0] + "//dev/app/**/*.service.js"]);
 const tmpJS = "tmp/app.service.js";
 
 const services = [];
