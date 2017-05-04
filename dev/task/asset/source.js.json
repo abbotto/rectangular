@@ -11,8 +11,6 @@
 	"./app/**/*.filter.js",
 	"./app/**/*.extension.js",
 	"!./tmp/src/app/**/spec.*.js",
-	"./tmp/src/app/app.module.js",
-	"./tmp/src/app/app.route.js",
 	"./tmp/src/app/**/*.route.js",
 	"./tmp/src/app/**/*.service.js",
 	"./tmp/src/app/**/*.component.js",
