@@ -8,7 +8,7 @@ require("dotenv").config();
 
 // Inject Livereload
 if (process.env.NODE_ENV === "development") {
-	let html = fs.readFileSync(__dirname + "/../../tmp/dev/app/app.index.html").toString();
+	let html = fs.readFileSync(__dirname + "/../../../../dev/app/app.index.html").toString();
 	html = html.replace(
 		"</body>",
 		"	<script src=\"http://localhost:35729/livereload.js\"></script>\n	</body>"
