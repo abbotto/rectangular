@@ -192,9 +192,17 @@ prompt.get(schema, (err, input) => {
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
 	}
-	
+
 	sh.exec("rm -rf project/node_modules");
-	
+
+	vendorJS.forEach((e, i, a) => {
+		a[i] = a[i].replace(".", "./../..");
+	});
+
+	vendorCSS.forEach((e, i, a) => {
+		a[i] = a[i].replace(".", "./../..");
+	});
+
 	vendorJS = JSON.stringify(vendorJS);
 	vendorCSS = JSON.stringify(vendorCSS);
 	
