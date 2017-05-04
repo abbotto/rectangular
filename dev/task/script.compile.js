@@ -15,6 +15,7 @@ const sourceJSON = finder
 ;
 
 const vendorJSON = require("./../../tmp/src/dev/task/asset/vendor.js.json");
+console.log(vendorJSON);
 
 // Load environment variables
 require("dotenv").config();
