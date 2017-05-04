@@ -14,7 +14,7 @@
 
 	// Output paths
 	const tmpSpecJS = "tmp/spec.js";
-	const scripts = projectPath(finder.sync(require(__dirname.split("/node_modules")[0] + "//dev/asset/spec.js.json")));
+	const scripts = projectPath(finder.sync(require(__dirname.split("/node_modules/rectangular")[0] + "/dev/asset/spec.js.json")));
 
 	// Push the file contents into an array
 	const script = [];

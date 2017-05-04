@@ -3,8 +3,8 @@
 const finder = require("glob-concat");
 const fs = require("fs");
 const sh = require("shelljs");
-const mixin = finder.sync([__dirname.split("/node_modules")[0] + "//dev/app/**/*.mixin.json"]);
-const data = finder.sync([__dirname.split("/node_modules")[0] + "//dev/app/**/*.data.json"]);
+const mixin = finder.sync([__dirname.split("/node_modules/rectangular")[0] + "/dev/app/**/*.mixin.json"]);
+const data = finder.sync([__dirname.split("/node_modules/rectangular")[0] + "/dev/app/**/*.data.json"]);
 const tmpJS = "tmp/models.js";
 const files = mixin.concat(data);
 

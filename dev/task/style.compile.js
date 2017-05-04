@@ -6,8 +6,8 @@ const finder = require("glob-concat");
 const projectPath = require("./project.path.js");
 const tmpCSSPath = "tmp/source.scss";
 
-const sourceJSON = projectPath(finder.sync(require(__dirname.split("/node_modules")[0] + "//dev/asset/source.scss.json")));
-const vendorJSON = projectPath(require(__dirname.split("/node_modules")[0] + "//dev/asset/vendor.scss.json"));
+const sourceJSON = projectPath(finder.sync(require(__dirname.split("/node_modules/rectangular")[0] + "/dev/asset/source.scss.json")));
+const vendorJSON = projectPath(require(__dirname.split("/node_modules/rectangular")[0] + "/dev/asset/vendor.scss.json"));
 
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
