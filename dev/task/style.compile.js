@@ -13,7 +13,7 @@ const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modul
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
 
 // Preflight
-sh.exec("node_modules/stylelint/bin/stylelint.js app/**/*.scss tmp/app/**/*.scss");
+sh.exec("node_modules/stylelint/bin/stylelint.js " + __dirname.split("/node_modules/rectangular")[0] + "/app/**/*.scss");
 sh.exec("node dev/task/font.copy.js");
 sh.exec("node dev/task/image.copy.js");
 
