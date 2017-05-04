@@ -14,21 +14,16 @@ echo ""
 echo "Installing $projectName"
 
 mkdir $projectName
-
 cd $projectName
 
 . ~/.nvm/nvm.sh
-
 npm init --yes
-
 npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
 
 nvm use
-
 npm i
-
 node dev/task/vendor.install.js
 
 cd ../../
