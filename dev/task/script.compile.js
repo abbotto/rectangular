@@ -13,9 +13,8 @@ const sourceJSON = finder
 		.concat(require("./../../tmp/src/dev/task/asset/source.js.json"))
 	)
 ;
-
+console.log(sourceJSON);
 const vendorJSON = require("./../../tmp/src/dev/task/asset/vendor.js.json");
-console.log(vendorJSON);
 
 // Load environment variables
 require("dotenv").config();
