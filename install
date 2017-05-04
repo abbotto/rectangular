@@ -29,7 +29,7 @@ nvm use
 
 npm i
 
-node dev/task/vendor.install.js
+node dev/vendor.install.js
 
 cd ../../
 
