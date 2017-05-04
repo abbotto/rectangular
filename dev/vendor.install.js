@@ -7,8 +7,8 @@ const sh = require("shelljs");
 const fs = require("fs");
 const slice = require("./slice.js");
 
-let vendorJS = require("./../../project/dev/task/asset/vendor.js.json");
-let vendorCSS = require("./../../project/dev/task/asset/vendor.scss.json");
+let vendorJS = require("./../../project/dev/asset/vendor.js.json");
+let vendorCSS = require("./../../project/dev/asset/vendor.scss.json");
 
 // Start the prompt 
 prompt.start();
@@ -200,6 +200,6 @@ prompt.get(schema, (err, input) => {
 	vendorJS = JSON.stringify(vendorJS);
 	vendorCSS = JSON.stringify(vendorCSS);
 	
-	fs.writeFile("project/dev/task/asset/vendor.js.json", vendorJS);
-	fs.writeFile("project/dev/task/asset/vendor.scss.json", vendorCSS);
+	fs.writeFile("project/dev/asset/vendor.js.json", vendorJS);
+	fs.writeFile("project/dev/asset/vendor.scss.json", vendorCSS);
 });

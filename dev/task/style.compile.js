@@ -6,13 +6,13 @@ const finder = require("glob-concat");
 const projectPath = require("./project.path.js");
 const tmpCSSPath = "tmp/source.scss";
 
-const sourceJSON = projectPath(finder.sync(require("./../../tmp/dev/task/asset/source.scss.json")));
-const vendorJSON = projectPath(require("./../../tmp/dev/task/asset/vendor.scss.json"));
+const sourceJSON = projectPath(finder.sync(require("./../../tmp/dev/asset/source.scss.json")));
+const vendorJSON = projectPath(require("./../../tmp/dev/asset/vendor.scss.json"));
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
 
 // Preflight
-sh.exec("node_modules/stylelint/bin/stylelint.js app/**/*.scss tmp/src/app/**/*.scss");
+sh.exec("node_modules/stylelint/bin/stylelint.js app/**/*.scss tmp/app/**/*.scss");
 sh.exec("node dev/task/font.copy.js");
 sh.exec("node dev/task/image.copy.js");
 

@@ -21,8 +21,9 @@ sh.exec("node dev/task/spec.compile.js");
 sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
-const sourceJSON = projectPath(finder.sync(require("./../../tmp/dev/task/asset/source.js.json")));
-const vendorJSON = projectPath(require("./../../tmp/dev/task/asset/vendor.js.json"));
+const sourceJSON = projectPath(finder.sync(require("./../../tmp/dev/asset/source.js.json")));
+console;
+const vendorJSON = projectPath(require("./../../tmp/dev/asset/vendor.js.json"));
 
 // Write source code to temporary file
 sh.cat(sourceJSON).to(tmpJSPath);

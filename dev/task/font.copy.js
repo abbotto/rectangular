@@ -5,7 +5,7 @@ const sh = require("shelljs");
 
 const fonts = finder.sync([
 	"./../../node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}",
-	"./../../dev/app/shared/design/font/*.{ttf,woff,woff2,eot,svg}"
+	"./../../tmp/dev/app/shared/design/font/*.{ttf,woff,woff2,eot,svg}"
 ]);
 
 if (!!fonts) {
