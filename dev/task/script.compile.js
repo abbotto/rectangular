@@ -25,7 +25,7 @@ sh.exec("node dev/task/html.cache.js");
 const sourceJSON = finder.sync(setPath(require(getPath() + "/dev/asset/source.js.json")));
 console.log(getPath(), sourceJSON);
 
-const vendorJSON = setPath(require(getPath() + "/ dev/asset/vendor.js.json"));
+const vendorJSON = setPath(require(getPath() + "/dev/asset/vendor.js.json"));
 
 // Write source code to temporary file
 sh.cat(sourceJSON).to(tmpJSPath);
