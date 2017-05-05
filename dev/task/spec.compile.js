@@ -15,7 +15,7 @@
 
 	// Output paths
 	const tmpSpecJS = "tmp/spec.js";
-	const scripts = setPath(finder.sync(require(getPath() + "/dev/asset/spec.js.json")));
+	const scripts = finder.sync(setPath(require(getPath() + "/dev/asset/spec.js.json")));
 
 	// Push the file contents into an array
 	const script = [];

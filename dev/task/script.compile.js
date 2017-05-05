@@ -22,7 +22,7 @@ sh.exec("node dev/task/spec.compile.js");
 sh.exec("node dev/task/model.cache.js");
 sh.exec("node dev/task/html.cache.js");
 
-const sourceJSON = setPath(finder.sync(require(getPath() + "/dev/asset/source.js.json")));
+const sourceJSON = finder.sync(setPath(require(getPath() + "/dev/asset/source.js.json")));
 console.log(getPath(), sourceJSON);
 
 const vendorJSON = setPath(require(getPath() + "/ dev/asset/vendor.js.json"));

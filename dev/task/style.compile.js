@@ -7,7 +7,7 @@ const setPath = require("./set.path.js");
 const getPath = require("./get.path.js");
 const tmpCSSPath = "tmp/source.scss";
 
-const sourceJSON = setPath(finder.sync(require(getPath() + "/dev/asset/source.scss.json")));
+const sourceJSON = finder.sync(setPath(require(getPath() + "/dev/asset/source.scss.json")));
 const vendorJSON = setPath(require(getPath() + "/dev/asset/vendor.scss.json"));
 
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
