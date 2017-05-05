@@ -3,7 +3,6 @@
 const sh = require("shelljs");
 sh.rm("-rf", "./tmp");
 sh.mkdir("./tmp");
-sh.mkdir("./tmp/src");
 sh.rm("-rf", "./dist");
 sh.mkdir("./dist");
 sh.mkdir("./dist/fonts");

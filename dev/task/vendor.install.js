@@ -79,7 +79,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("rm -rf project/app/extension/ng-strap && mkdir project/app/extension/ng-strap");
 		sh.exec("cp -r dev/vendor/extension/ng-strap/* project/app/extension/ng-strap/");
 		sh.exec("cp -r dev/vendor/shared/service/ui/bootstrap/* project/app/shared/service/ui/");
-		sh.exec("cd project && npm i --save angular-strap && cd ..");
+		sh.exec("cd project && npm i --save bootstrap angular-strap && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.min.js");
