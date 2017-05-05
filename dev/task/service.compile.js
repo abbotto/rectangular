@@ -13,7 +13,7 @@ let name, parts;
 
 serviceFiles.forEach((path) => {
 	parts = path.split("/");
-	name = parts.pop();
+	name = parts.pop().join(".");
 	services.push(name.split(".js"[0]));
 });
 
