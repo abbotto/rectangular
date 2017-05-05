@@ -13,8 +13,8 @@ let name, parts;
 
 serviceFiles.forEach((path) => {
 	parts = path.split("/");
-	name = parts.pop().join(".");
-	services.push(name.split(".js"[0]));
+	name = parts.pop();
+	services.push(name.split(".js"[0]).join("."));
 });
 
 const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(services.sort()) + ")})();";
