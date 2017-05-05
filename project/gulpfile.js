@@ -1,11 +1,31 @@
 "use strict";
 
 const gulp = require("gulp");
+const bump = require("gulp-bump");
 const sh = require("shelljs");
 const livereload = require("gulp-livereload");
 
 // Load environment variables
 require("dotenv").config();
+
+// Versioning
+gulp.task("bump-major", function () {
+	gulp.src(["./package.json"])
+		.pipe(bump({ type: "major" }))
+		.pipe(gulp.dest("./"));
+});
+
+gulp.task("bump-minor", function () {
+	gulp.src(["./package.json"])
+		.pipe(bump({ type: "minor" }))
+		.pipe(gulp.dest("./"));
+});
+
+gulp.task("bump-patch", function () {
+	gulp.src(["./package.json"])
+		.pipe(bump({ type: "patch" }))
+		.pipe(gulp.dest("./"));
+});
 
 // ngDocs
 const gulpDocs = require("gulp-ngdocs");

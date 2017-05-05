@@ -1,6 +1,6 @@
 "use strict";
 
-// inject lets you easily inject Angular deps using BardJS
+// inject lets you easily inject Angular deps
 
 // Example
 // __.inject("foo.service")
