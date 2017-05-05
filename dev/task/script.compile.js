@@ -33,15 +33,12 @@ vendorJSON.push(tmpJSPath);
 const files = vendorJSON;
 
 // Convert ES6 to ES5
-sh.exec("sleep 2");
 sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJSPath + " --out-file " + tmpJSPath);
 
 // Generate a source map in dev mode
-sh.exec("sleep 2");
 const sourceMap = (process.env.NODE_ENV === "development") ? "--source-map " + mapJSPath + " " : "";
 
 // Minify the output
-sh.exec("sleep 2");
 sh.exec("node_modules/uglify-js/bin/uglifyjs " + tmpJSPath + " " + sourceMap + "-o " + tmpJSPath);
 
 // Push the file contents into an array

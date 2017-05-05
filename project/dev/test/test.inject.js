@@ -1,6 +1,6 @@
 "use strict";
 
-// inject lets you easily inject Angular deps
+// easily inject Angular deps in tests
 
 // Example
 // __.inject("foo.service")
