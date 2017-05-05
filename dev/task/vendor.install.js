@@ -16,13 +16,13 @@ const schema = {
 		"Bootstrap": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n",
-			"description": "Install Bootstrap UI? [y/n]",
+			"description": "Install Bootstrap? [y/n]",
 			"required": true
 		},
 		"Material Design": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Material UI? [y/n]",
+			"description": "Install Material Design? [y/n]",
 			"required": true
 		},
 		"Lodash": {
