@@ -2,10 +2,11 @@
 
 const finder = require("glob-concat");
 const sh = require("shelljs");
+const getPath = require("./get.path.js");
 
 const fonts = finder.sync([
-	__dirname.split("/node_modules/rectangular")[0] + "/node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}",
-	__dirname.split("/node_modules/rectangular")[0] + "/dev/app/shared/design/font/*.{ttf,woff,woff2,eot,svg}"
+	getPath() + "/node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}",
+	getPath() + "/dev/app/shared/design/font/*.{ttf,woff,woff2,eot,svg}"
 ]);
 
 if (!!fonts) {

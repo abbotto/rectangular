@@ -2,7 +2,8 @@
 
 const finder = require("glob-concat");
 const sh = require("shelljs");
-const images = finder.sync([__dirname.split("/node_modules/rectangular")[0] + "/dev/app/**/*.{png,svg,jpg,jpeg,gif}"]);
+const getPath = require("./get.path.js");
+const images = finder.sync([getPath() + "/dev/app/**/*.{png,svg,jpg,jpeg,gif}"]);
 
 if (!!images) {
 	images.forEach((image) => {
