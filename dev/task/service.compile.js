@@ -14,7 +14,9 @@ let name, parts;
 serviceFiles.forEach((path) => {
 	parts = path.split("/");
 	name = parts.pop();
-	services.push(name.split(".js"[0]).join("."));
+	if (name === "ui.bootstrap.service" || name === "ui.material.service") {
+		services.push(name.split(".js"[0]).join("."));
+	}
 });
 
 const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(services.sort()) + ")})();";
