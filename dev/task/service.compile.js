@@ -13,9 +13,10 @@ let name, parts;
 
 serviceFiles.forEach((path) => {
 	parts = path.split("/");
-	name = parts.pop();
+	name = parts.pop().split(".js")[0];
+	
 	if (name === "ui.bootstrap.service" || name === "ui.material.service") {
-		services.push(name.split(".js"[0]).join("."));
+		services.push(name);
 	}
 });
 
