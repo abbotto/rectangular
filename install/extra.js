@@ -16,7 +16,7 @@ const schema = {
 		"Extras": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n",
-			"description": "Choose extra packages to install? [y/n]",
+			"description": "Choose extra packages to install? (Lodash, Bootstrap, MomentJS, etc...) [y/n]",
 			"required": true
 		},
 		"Bootstrap": {
