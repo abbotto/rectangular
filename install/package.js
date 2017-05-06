@@ -9,4 +9,4 @@ packageJSON.description = args[1];
 packageJSON.license = args[2];
 packageJSON.author = args[3];
 
-fs.writeFile("package.json", JSON.stringify(packageJSON));
+fs.writeFile(__dirname + "/package.json", JSON.stringify(packageJSON));
