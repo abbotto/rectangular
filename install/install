@@ -27,6 +27,15 @@ echo -e "prompt: ${RED}Project License${NC}"
 
 read projectLicense
 
+# Get the project author
+echo ""
+echo -e "prompt: ${RED}Project Author${NC}"
+
+read projectAuthor
+
+echo ""
+echo -e "${YELLOW}Installing $projectName...${NC}"
+
 echo ""
 echo -e "${YELLOW}Installing $projectName...${NC}"
 
@@ -40,7 +49,7 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 
 # Add the project name and description
-node package.js "$projectName" "$projectDescription" "$projectLicense"
+node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 
 # Clean up
 rm package.js
