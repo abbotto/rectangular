@@ -71,8 +71,7 @@ const schema = {
 };
 
 prompt.get(schema, (err, input) => {
-	
-	if (!input.Extras.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.Extras.match(/^(?:No|no|N|n)$/)) {
 		console.log("");
 		console.log("Skipping extras...");
 		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.min.js");
@@ -90,7 +89,7 @@ prompt.get(schema, (err, input) => {
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
 	}
-	else {
+	else if (input.Extras.match(/^(?:Yes|yes|Y|y)$/)) {
 		if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
 			console.log("");
 			console.log("Installing Bootstrap...");
