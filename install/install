@@ -28,7 +28,7 @@ cd $projectName
 . ~/.nvm/nvm.sh > /dev/null
 curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js
 node package.js "$projectName" "$projectDescription"
-rm package.js
+
 
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 
