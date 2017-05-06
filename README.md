@@ -31,6 +31,9 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 - An `app compiler` that finds and compiles required files for you.
 - Support for `PUG` syntax so you can write cleaner HTML templates.
 - Support for `ES6` syntax so you can write modernized JavaScript.
+- Support for `SASS` for awesome stylesheets.
+- Support for `autoprefixer`.
+- Support for `stylelint`.
 
 ---
 
