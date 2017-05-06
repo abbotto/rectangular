@@ -26,9 +26,9 @@
 !/app
 !/app/**/*
 
-# Whitelist Dev Files
-!/dev
-!/dev/**/*
+# Whitelist Task Files
+!/task
+!/task/**/*
 
 # Whitelist Readme Files
 !/readme
