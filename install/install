@@ -44,7 +44,6 @@ node install/extra.js
 cd ../../
 
 cp -R node_modules/rectangular/tmp/project/ .
-
 npm run setup
 
 echo ""
