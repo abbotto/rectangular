@@ -32,10 +32,10 @@ npm i https://github.com/abbotto/rectangular.git > /dev/null
 cd node_modules/rectangular/
 mkdir tmp && mkdir tmp/project
 cp -R install/project/ tmp/project
-
-nvm use > /dev/null
 node install/package.js $projectName $projectDescription
 cp tmp/project/package.json ../../
+
+nvm use > /dev/null
 npm i
 node install/extra.js
 
