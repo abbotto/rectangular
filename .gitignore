@@ -36,7 +36,7 @@
 
 # Whitelist Install Files
 !/install
-!/install/**/
+!/install/**/*
 
 # Blacklist Other Files
 .DS_Store
