@@ -9,11 +9,13 @@ echo -e "${YELLOW}---------------------${NC}"
 echo -e "${YELLOW}RECTANGULAR INSTALLER${NC}"
 echo -e "${YELLOW}---------------------${NC}"
 
+# Get the project name
 echo ""
 echo -e "prompt: ${RED}What is your project's name?${NC}"
 
 read projectName
 
+# Get the project description
 echo ""
 echo -e "prompt: ${RED}Please describe your project${NC}"
 
@@ -22,29 +24,42 @@ read projectDescription
 echo ""
 echo -e "${YELLOW}Installing $projectName...${NC}"
 
+# Create the project directory
 mkdir $projectName
 cd $projectName
 
+# Initialize package.json
 . ~/.nvm/nvm.sh
-curl -o -s package.js https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js
-curl -o -s package.json https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
+
+# Add the project name and description
 node package.js "$projectName" "$projectDescription"
+
+# Clean up
 rm package.js
 
+# Grab r\Rectangular
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 
+# Setup temporary project files and directories
 mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
 cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
 cp package.json node_modules/rectangular/tmp/project/
 
+# Initialize Rectangular
 cd node_modules/rectangular/
 nvm use
 npm i
+
+# Install extras
 node install/extra.js
 cd ../../
 
+# Copy the project files and run the setup task
 cp -R node_modules/rectangular/tmp/project/ .
 npm run setup
 
+# Completed
 echo ""
 echo -e "${YELLOW}Finished. Thank you for choosing Rectangular.${NC}"
