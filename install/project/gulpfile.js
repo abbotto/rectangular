@@ -71,8 +71,8 @@ const watchFiles = [
 	"./app/**/*.js",
 	"./app/**/*.json",
 	"./app/**/*.html",
-	"./dev/task/**/*.js",
-	"./dev/task/**/*.json"
+	"./task/**/*.js",
+	"./task/**/*.json"
 ];
 
 // Development server
