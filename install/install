@@ -25,21 +25,21 @@ echo -e "${YELLOW}Installing $projectName...${NC}"
 mkdir $projectName
 cd $projectName
 
+mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
+cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
+node node_modules/rectangular/install/package.js "$projectName" "$projectDescription"
+cp node_modules/rectangular/tmp/project/package.json .
+
 . ~/.nvm/nvm.sh > /dev/null
 npm init --yes > /dev/null
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 
 cd node_modules/rectangular/
-mkdir tmp && mkdir tmp/project
-cp -R install/project/ tmp/project
-node install/package.js "$projectName" "$projectDescription"
-cp tmp/project/package.json ../../
-
 nvm use > /dev/null
 npm i
 node install/extra.js
-
 cd ../../
+
 cp -R node_modules/rectangular/tmp/project/ .
 
 npm run setup
