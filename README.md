@@ -56,7 +56,6 @@ Essentially, there are 3 parts to `Rectangular`:
 - Naming:			[View](readme/naming.md)
 - Structure:		[View](readme/structure.md)
 - Tasks: 			[View](readme/tasks.md)
-- Task Runner:		[View](readme/task-runner.md)
 - User Experience:	[View](readme/user-experience.md)
 
 
