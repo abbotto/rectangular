@@ -15,7 +15,7 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 
 ### Application Kit
 #### Features
-- A caching system that retains your environment variables, models, and templates for instant access.
+- A `caching system` that retains your environment variables, models, and templates for instant access.
 - A no-nonsense extension system for integrating 3rd-party vendor plugins and libraries in a jiffy.
 - A built-in `asset loader` for easily adding additional styles and scripts.
 - Pre-configured `eslint` rules for `ES6` and `AngularJS`.
@@ -28,10 +28,10 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 #### Features
 - An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
-- Automatically find and compile required tests, services and routes.
+- An `auto compiler` that finds and compiles required tests, services and routes.
 - Support for `ES6` syntax so you can write your JavaScript in style.
 - Support for `PUG` syntax so you can write cleaner HTML templates.
-- Testing utilities to help your code pass with flying colors.
+- `Testing utilities` to help your code pass with flying colors.
 
 ---
 
