@@ -48,15 +48,15 @@ Essentially, there are 3 parts to `Rectangular`:
 ---
 
 ## Documentation
-- Tasks: 			[View](readme/tasks.md)
+- App:				[View](readme/app.md)
 - Assets: 			[View](readme/assets.md)
+- Extensions:		[View](readme/extensions.md)
 - Functions:		[View](readme/functions.md)
+- Models:			[View](readme/models.md)
 - Naming:			[View](readme/naming.md)
 - Structure:		[View](readme/structure.md)
-- App:				[View](readme/app.md)
-- Extensions:		[View](readme/extensions.md)
-- Models:			[View](readme/models.md)
-- User Experience:	[View](readme/user-experience.md)
+- Tasks: 			[View](readme/tasks.md)
 - Task Runner:		[View](readme/task-runner.md)
+- User Experience:	[View](readme/user-experience.md)
 
 
