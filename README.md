@@ -17,9 +17,9 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 ##### Features
 - A `caching system` that retains your environment variables, models, and templates for instant access.
 - A no-nonsense `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
+- A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
 - A built-in `asset loader` for easily adding additional styles and scripts.
-- Pre-configured `eslint` rules for `ES6` and `AngularJS`.
-- Pre-configured `karma` + `jasmine` testing suite.
+- Shiny `eslint` rules for `ES6` and `AngularJS`.
 - A built-in `semantic versioning` system.
 - A `livereload` server for development.
 - Support for the `gulp` task-runner.
