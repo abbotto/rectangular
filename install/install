@@ -10,7 +10,7 @@ echo -e "RECTANGULAR INSTALLER"
 echo -e "${YELLOW}---------------------${NC}"
 
 echo ""
-echo -e "Prompt: ${RED}What is your project name?${NC}"
+echo -e "prompt: ${RED}What is your project name?${NC}"
 
 read projectName
 
@@ -20,7 +20,7 @@ echo -e "${YELLOW}Installing $projectName...${NC}"
 mkdir $projectName
 cd $projectName
 
-. ~/.nvm/nvm.sh
+. ~/.nvm/nvm.sh > /dev/null
 npm init --yes > /dev/null
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 

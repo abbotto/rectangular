@@ -96,7 +96,7 @@ prompt.get(schema, (err, input) => {
 			console.log("Installing Bootstrap...");
 			
 			!fs.exists("tmp/project/app/shared/service/ui/*")
-				? sh.exec("mkdir tmp/project/app/shared/service/ui > /dev/null")
+				? sh.exec("mkdir tmp/project/app/shared/service/ui")
 				: sh.exec("rm -rf tmp/project/app/shared/service/ui")
 			;
 			
@@ -117,7 +117,7 @@ prompt.get(schema, (err, input) => {
 			console.log("Installing Material Design...");
 			
 			!fs.exists("tmp/project/app/shared/service/ui")
-				? sh.exec("mkdir tmp/project/app/shared/service/ui > /dev/null")
+				? sh.exec("mkdir tmp/project/app/shared/service/ui")
 				: sh.exec("rm -rf tmp/project/app/shared/service/ui")
 			;
 			
@@ -219,7 +219,7 @@ prompt.get(schema, (err, input) => {
 		}
 	}
 	
-	sh.exec("rm -rf tmp/project/node_modules > /dev/null");
+	sh.exec("rm -rf tmp/project/node_modules");
 	
 	// Update paths to point to the root project directory
 	vendorJS = JSON.stringify(vendorJS);
