@@ -5,8 +5,8 @@ const sh = require("shelljs");
 const fs = require("fs");
 const slice = require("./../dev/task/slice.js");
 
-let vendorJS = require("./project/dev/asset/vendor.js.json");
-let vendorCSS = require("./project/dev/asset/vendor.scss.json");
+let vendorJS = require("./tmp/project/dev/asset/vendor.js.json");
+let vendorCSS = require("./tmp/project/dev/asset/vendor.scss.json");
 
 // Start the prompt 
 prompt.start();
@@ -82,15 +82,15 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bootstrap...");
 		
-		!fs.exists("install/project/app/shared/service/ui/*")
-			? sh.exec("mkdir install/project/app/shared/service/ui")
-			: sh.exec("rm -rf install/project/app/shared/service/ui")
+		!fs.exists("tmp/project/app/shared/service/ui/*")
+			? sh.exec("mkdir tmp/project/app/shared/service/ui")
+			: sh.exec("rm -rf tmp/project/app/shared/service/ui")
 		;
 		
-		sh.exec("rm -rf install/project/app/extension/ng-strap && mkdir install/project/app/extension/ng-strap");
-		sh.exec("cp -r install/extra/extension/ng-strap/* install/project/app/extension/ng-strap/");
-		sh.exec("cp -r install/extra/shared/service/ui/bootstrap/* install/project/app/shared/service/ui/");
-		sh.exec("cd install/project && npm i --save bootstrap angular-strap && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/ng-strap && mkdir tmp/project/app/extension/ng-strap");
+		sh.exec("cp -r install/extra/extension/ng-strap/* tmp/project/app/extension/ng-strap/");
+		sh.exec("cp -r install/extra/shared/service/ui/bootstrap/* tmp/project/app/shared/service/ui/");
+		sh.exec("cd tmp/project && npm i --save bootstrap angular-strap && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.min.js");
@@ -103,15 +103,15 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Material Design...");
 		
-		!fs.exists("install/project/app/shared/service/ui")
-			? sh.exec("mkdir install/project/app/shared/service/ui")
-			: sh.exec("rm -rf install/project/app/shared/service/ui")
+		!fs.exists("tmp/project/app/shared/service/ui")
+			? sh.exec("mkdir tmp/project/app/shared/service/ui")
+			: sh.exec("rm -rf tmp/project/app/shared/service/ui")
 		;
 		
-		sh.exec("mkdir install/project/app/extension/angular-material");
-		sh.exec("cp -r install/extra/extension/angular-material/* install/project/app/extension/angular-material/");
-		sh.exec("cp -r install/extra/shared/service/ui/material-design/* install/project/app/shared/service/ui/");
-		sh.exec("cd install/project && npm i --save angular-material && cd ..");
+		sh.exec("mkdir tmp/project/app/extension/angular-material");
+		sh.exec("cp -r install/extra/extension/angular-material/* tmp/project/app/extension/angular-material/");
+		sh.exec("cp -r install/extra/shared/service/ui/material-design/* tmp/project/app/shared/service/ui/");
+		sh.exec("cd tmp/project && npm i --save angular-material && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-material/angular-material.min.js");
@@ -122,11 +122,11 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bluebird...");
 		
-		sh.exec("rm -rf install/project/app/extension/bluebird && mkdir install/project/app/extension/bluebird");
-		sh.exec("rm -rf install/project/app/shared/service/promise && mkdir install/project/app/shared/service/promise");
-		sh.exec("cp -r install/extra/extension/bluebird/* install/project/app/extension/bluebird/");
-		sh.exec("cp -r install/extra/shared/service/promise/* install/project/app/shared/service/promise/");
-		sh.exec("cd install/project && npm i --save bluebird && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/bluebird && mkdir tmp/project/app/extension/bluebird");
+		sh.exec("rm -rf tmp/project/app/shared/service/promise && mkdir tmp/project/app/shared/service/promise");
+		sh.exec("cp -r install/extra/extension/bluebird/* tmp/project/app/extension/bluebird/");
+		sh.exec("cp -r install/extra/shared/service/promise/* tmp/project/app/shared/service/promise/");
+		sh.exec("cd tmp/project && npm i --save bluebird && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/bluebird/js/browser/bluebird.min.js");
@@ -136,12 +136,12 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing MomentJS...");
 		
-		sh.exec("rm -rf install/project/app/extension/moment && mkdir install/project/app/extension/moment");
-		sh.exec("rm -rf install/project/app/shared/service/date && mkdir install/project/app/shared/service/date");
-		sh.exec("cp -r install/extra/extension/moment/* install/project/app/extension/moment/");
-		sh.exec("cp -r install/extra/shared/service/date/* install/project/app/shared/service/date/");
-		sh.exec("cd install/project && npm i --save moment && cd ..");
-		sh.exec("cd install/project && npm i --save angular-moment && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/moment && mkdir tmp/project/app/extension/moment");
+		sh.exec("rm -rf tmp/project/app/shared/service/date && mkdir tmp/project/app/shared/service/date");
+		sh.exec("cp -r install/extra/extension/moment/* tmp/project/app/extension/moment/");
+		sh.exec("cp -r install/extra/shared/service/date/* tmp/project/app/shared/service/date/");
+		sh.exec("cd tmp/project && npm i --save moment && cd ..");
+		sh.exec("cd tmp/project && npm i --save angular-moment && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/moment/min/moment.min.js");
@@ -152,11 +152,11 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Lodash...");
 		
-		sh.exec("rm -rf install/project/app/extension/lodash && mkdir install/project/app/extension/lodash");
-		sh.exec("rm -rf install/project/app/shared/service/_ && mkdir install/project/app/shared/service/_");
-		sh.exec("cp -r install/extra/extension/lodash/* install/project/app/extension/lodash/");
-		sh.exec("cp -r install/extra/shared/service/_/* install/project/app/shared/service/_/");
-		sh.exec("cd install/project && npm i --save lodash && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/lodash && mkdir tmp/project/app/extension/lodash");
+		sh.exec("rm -rf tmp/project/app/shared/service/_ && mkdir tmp/project/app/shared/service/_");
+		sh.exec("cp -r install/extra/extension/lodash/* tmp/project/app/extension/lodash/");
+		sh.exec("cp -r install/extra/shared/service/_/* tmp/project/app/shared/service/_/");
+		sh.exec("cd tmp/project && npm i --save lodash && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
@@ -166,11 +166,11 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Translate...");
 		
-		sh.exec("rm -rf install/project/app/extension/angular-translate && mkdir install/project/app/extension/angular-translate");
-		sh.exec("rm -rf install/project/app/shared/service/locale && mkdir install/project/app/shared/service/locale");
-		sh.exec("cp -r install/extra/extension/angular-translate/* install/project/app/extension/angular-translate/");
-		sh.exec("cp -r install/extra/shared/service/locale/* install/project/app/shared/service/locale/");
-		sh.exec("cd install/project && npm i --save angular-translate && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/angular-translate && mkdir tmp/project/app/extension/angular-translate");
+		sh.exec("rm -rf tmp/project/app/shared/service/locale && mkdir tmp/project/app/shared/service/locale");
+		sh.exec("cp -r install/extra/extension/angular-translate/* tmp/project/app/extension/angular-translate/");
+		sh.exec("cp -r install/extra/shared/service/locale/* tmp/project/app/shared/service/locale/");
+		sh.exec("cd tmp/project && npm i --save angular-translate && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/angular-translate/dist/angular-translate.min.js");	
@@ -180,11 +180,11 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Restangular...");
 		
-		sh.exec("rm -rf install/project/app/extension/restangular && mkdir install/project/app/extension/restangular");
-		sh.exec("rm -rf install/project/app/shared/service/promise && mkdir install/project/app/shared/service/promise");
-		sh.exec("cp -r install/extra/extension/restangular/* install/project/app/extension/restangular/");
-		sh.exec("cp -r install/extra/shared/service/promise/* install/project/app/shared/service/promise/");
-		sh.exec("cd install/project && npm i --save restangular && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/restangular && mkdir tmp/project/app/extension/restangular");
+		sh.exec("rm -rf tmp/project/app/shared/service/promise && mkdir tmp/project/app/shared/service/promise");
+		sh.exec("cp -r install/extra/extension/restangular/* tmp/project/app/extension/restangular/");
+		sh.exec("cp -r install/extra/shared/service/promise/* tmp/project/app/shared/service/promise/");
+		sh.exec("cd tmp/project && npm i --save restangular && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/restangular/dist/restangular.min.js");
@@ -194,23 +194,23 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing NG File Upload...");
 		
-		sh.exec("rm -rf install/project/app/extension/ng-file-upload && mkdir install/project/app/extension/ng-file-upload");
-		sh.exec("rm -rf install/project/app/shared/service/upload && mkdir install/project/app/shared/service/upload");
-		sh.exec("cp -r install/extra/extension/ng-file-upload/* install/project/app/extension/ng-file-upload/");
-		sh.exec("cp -r install/extra/shared/service/upload/* install/project/app/shared/service/upload/");
-		sh.exec("cd install/project && npm i --save ng-file-upload && cd ..");
+		sh.exec("rm -rf tmp/project/app/extension/ng-file-upload && mkdir tmp/project/app/extension/ng-file-upload");
+		sh.exec("rm -rf tmp/project/app/shared/service/upload && mkdir tmp/project/app/shared/service/upload");
+		sh.exec("cp -r install/extra/extension/ng-file-upload/* tmp/project/app/extension/ng-file-upload/");
+		sh.exec("cp -r install/extra/shared/service/upload/* tmp/project/app/shared/service/upload/");
+		sh.exec("cd tmp/project && npm i --save ng-file-upload && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
 		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
 	}
 
-	sh.exec("rm -rf install/project/node_modules");
+	sh.exec("rm -rf tmp/project/node_modules");
 	
 	// Update paths to point to the root project directory
 	vendorJS = JSON.stringify(vendorJS);
 	vendorCSS = JSON.stringify(vendorCSS);
 	
-	fs.writeFile("install/project/dev/asset/vendor.js.json", vendorJS);
-	fs.writeFile("install/project/dev/asset/vendor.scss.json", vendorCSS);
+	fs.writeFile("tmp/project/dev/asset/vendor.js.json", vendorJS);
+	fs.writeFile("tmp/project/dev/asset/vendor.scss.json", vendorCSS);
 });

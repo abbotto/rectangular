@@ -25,6 +25,8 @@ npm init --yes
 npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
+mkdir tmp
+cp -R install/project/* tmp/
 
 nvm use
 npm i
@@ -32,7 +34,7 @@ node install/extra.js
 
 cd ../../
 
-cp -R node_modules/rectangular/install/project/ .
+cp -R node_modules/rectangular/tmp/project/ .
 
 npm run setup
 
