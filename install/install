@@ -32,7 +32,7 @@ node install/extra.js
 
 cd ../../
 
-cp -R node_modules/rectangular/project/ .
+cp -R node_modules/rectangular/install/project/ .
 
 npm run setup
 
