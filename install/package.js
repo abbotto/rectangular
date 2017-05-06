@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const args = process.argv.slice(2);
-consty packageJSON = require(__dirname + "/package.json");
+const packageJSON = require(__dirname + "/package.json");
 
 packageJSON.name = args[0];
 packageJSON.description = args[1];
