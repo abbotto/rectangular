@@ -27,8 +27,9 @@ cd $projectName
 
 . ~/.nvm/nvm.sh
 curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js
-npm i shelljs
+curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json
 node package.js "$projectName" "$projectDescription"
+rm package.js
 
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 
@@ -44,8 +45,6 @@ cd ../../
 
 cp -R node_modules/rectangular/tmp/project/ .
 npm run setup
-rm -rf node_modules
-rm -rf package.js
 
 echo ""
 echo -e "${YELLOW}Finished. Thank you for choosing Rectangular.${NC}"
