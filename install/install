@@ -1,13 +1,13 @@
 #!/bin/bash
 
-BLUE='\033[1;34m'
+YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 
 echo ""
-echo -e "${BLUE}---------------------${NC}"
+echo -e "${YELLOW}---------------------${NC}"
 echo -e "RECTANGULAR INSTALLER"
-echo -e "${BLUE}---------------------${NC}"
+echo -e "${YELLOW}---------------------${NC}"
 
 echo ""
 echo -e "${RED}Prompt:${NC} What is your project name?"
@@ -15,7 +15,7 @@ echo -e "${RED}Prompt:${NC} What is your project name?"
 read projectName
 
 echo ""
-echo -e "${BLUE}Installing $projectName...${NC}"
+echo -e "${YELLOW}Installing $projectName...${NC}"
 
 mkdir $projectName
 cd $projectName
@@ -37,4 +37,4 @@ cp -R node_modules/rectangular/project/ .
 npm run setup
 
 echo ""
-echo -e "${BLUE}Finished. Thank you for choosing Rectangular.${NC}"
+echo -e "${YELLOW}Finished. Thank you for choosing Rectangular.${NC}"
