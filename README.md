@@ -26,7 +26,7 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 
 #### Build System
 ##### Features
-- An `project installer` for initializing the application kit.
+- An `project installer` for initializing the `application kit`.
 - An `extension installer` for several popular 3rd-party packages.
 - An `app compiler` that finds and compiles required files for you.
 - Support for `PUG` syntax so you can write cleaner HTML templates.
