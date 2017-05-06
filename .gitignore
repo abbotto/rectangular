@@ -36,7 +36,9 @@
 
 # Whitelist Install Files
 !/install
-!/install/*
+!/install/install
+!/install/extra.js
+!/install/package.js
 !/install/extra/**/*
 !/install/project/**/*
 
