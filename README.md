@@ -29,8 +29,8 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 - An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
 - An `app compiler` that finds and compiles required files for you.
-- Support for `ES6` syntax so you can write your JavaScript in style.
 - Support for `PUG` syntax so you can write cleaner HTML templates.
+- Support for `ES6` syntax so you can write modernized JavaScript.
 - `Testing utilities` to help your code pass with flying colors.
 
 ---
