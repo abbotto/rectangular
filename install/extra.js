@@ -3,10 +3,10 @@
 const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
-const slice = require("./slice.js");
+const slice = require("dev/task/slice.js");
 
-let vendorJS = require("./../install/project/dev/asset/vendor.js.json");
-let vendorCSS = require("./../install/project/dev/asset/vendor.scss.json");
+let vendorJS = require("install/project/dev/asset/vendor.js.json");
+let vendorCSS = require("install/project/dev/asset/vendor.scss.json");
 
 // Start the prompt 
 prompt.start();
