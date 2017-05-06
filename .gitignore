@@ -36,6 +36,7 @@
 
 # Whitelist Install Files
 !/install
+!/install/*
 !/install/extra/**/*
 !/install/project/**/*
 
