@@ -3,8 +3,8 @@
 const fs = require("fs");
 let packageJSON = require("./../tmp/project/package.json");
 
-packageJSON.name = process.argv[0];
-packageJSON.description = process.argv[1];
+packageJSON.name = process.argv[2];
+packageJSON.description = process.argv[3];
 
 packageJSON = JSON.stringify(packageJSON);
 
