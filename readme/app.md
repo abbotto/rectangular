@@ -1,16 +1,13 @@
-## App Folder Overview
-- The `app` folder contains initialization files.
-
-### App Modules
+# App Modules
 - App Modules are registered in `app/app.module.js`.
 
-### Routes
+# Routes
 - Route modules are registered in `app/app.route.js`.
 - `Routes` are used to guide the users throught the application.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
 - Learn more about `ui-router` [here](https://github.com/angular-ui/ui-router).
 
-#### Example
+## Example
 - A `route` looks something like this:
 
 		(() => {
@@ -29,15 +26,15 @@
 			});
 		})();
 
-## Services
+# Services
 - `Services` are used for sending/receiving/manipulating data.
 - You can use services to organize and share code across your app.
 
-## Directives
+# Directives
 - Directives are used to control DOM behaviour and to render data in HTML format.
 - The structure of a directive template path is this: `{{component}}/{{template}}.directive.html`.
 
-## Controllers
+# Controllers
 - Controllers are used in `components` and `directives`.
 - Controllers should be used for:
 	- Set up the initial state of the 'View Model`.
@@ -46,7 +43,7 @@
 	- For anything other than business logic.
 	- To share code or state across controllers — Use services instead.
 
-## Components
+# Components
 - Components are comprised of the following:
 	- A `component` directive.
 	- A component `template`
@@ -59,20 +56,20 @@
 	- **Routes** (js)
 	- **Services** (js)
 
-### Component Assets
+## Component Assets
 - Component asset files are also placed in the `app/component/{{componentName}}` directory:
 	- **Tests** (js)
 	- **Styles** (scss)
 	- **Models** ([data|mixin]json)
 	- **Images** (png, jpg, jpeg, gif, svg, ico)
 
-### View Model
+## View Model
 - A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
 - This variable is assigned using the `controllerAs` syntax.
 - The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
 - Capturing the context of this with `vm` avoids encountering this problem.
 
-#### Component View Example
+### Component View Example
 - A simple `component` directive may resemble the following:
 
 		(() => {
@@ -94,9 +91,9 @@
 			angular.module("home.component", []).component("home", options);
 		})();
 
-### Templates
+## Templates
 - The structure of a template path is this: `{{component}}/{{template}}.html`.
 
-#### Template Example
+### Template Example
 
 	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
