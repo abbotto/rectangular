@@ -6,11 +6,11 @@ NC='\033[0m'
 
 echo ""
 echo -e "${YELLOW}---------------------${NC}"
-echo -e "RECTANGULAR INSTALLER"
+echo -e "${YELLOW}RECTANGULAR INSTALLER${NC}"
 echo -e "${YELLOW}---------------------${NC}"
 
 echo ""
-echo -e "prompt: ${RED}What is your project name?${NC}"
+echo -e "prompt: ${RED}What is your project's name?${NC}"
 
 read projectName
 
@@ -27,7 +27,6 @@ cd $projectName
 
 . ~/.nvm/nvm.sh
 curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js
-npm i shelljs
 node package.js "$projectName" "$projectDescription"
 rm package.js
 

@@ -4,7 +4,7 @@ const fs = require("fs");
 const sh = require("shelljs");
 const args = process.argv.slice(2);
 
-sh.exec("curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json");
+sh.exec("curl -L https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json");
 let packageJSON = require(__dirname + "/package.json");
 
 packageJSON.name = args[0];
