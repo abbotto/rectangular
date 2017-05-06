@@ -26,14 +26,13 @@ npm i https://github.com/abbotto/rectangular.git > /dev/null
 
 cd node_modules/rectangular/
 mkdir tmp && mkdir tmp/project
-cp -R install/project/* tmp/project
+cp -R install/project/ tmp/project
 
 nvm use > /dev/null
 npm i
 node install/extra.js
 
 cd ../../
-
 cp -R node_modules/rectangular/tmp/project/ .
 
 npm run setup
