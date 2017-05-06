@@ -5,9 +5,9 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo ""
-echo -e "${YELLOW}|-----------------------|${NC}"
-echo -e "| RECTANGULAR INSTALLER |"
-echo -e "${YELLOW}|-----------------------|${NC}"
+echo -e "${YELLOW}---------------------${NC}"
+echo -e "RECTANGULAR INSTALLER"
+echo -e "${YELLOW}---------------------${NC}"
 
 echo ""
 echo -e "prompt: ${RED}What is your project name?${NC}"
