@@ -21,7 +21,7 @@ mkdir $projectName
 cd $projectName
 
 . ~/.nvm/nvm.sh
-npm init --yes
+npm init --yes --silent
 npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
