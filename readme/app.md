@@ -45,10 +45,9 @@
 
 # Components
 - Components are comprised of the following:
-	- A `component` directive.
-	- A component `template`
-	- An optional `route`.
-- Components can also contiain their own `directives` and `services`.
+	- A JS `component`.
+	- A HTML `template`.
+- Components can also contiain their own `directives`, `services` and `styles`.
 - Component files are placed in the `app/component/{{componentName}}` directory:
 	- **Components** (js)
 	- **Directives** (js)
