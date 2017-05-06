@@ -9,7 +9,7 @@ let vendorJS = require("./../tmp/project/dev/asset/vendor.js.json");
 let vendorCSS = require("./../tmp/project/dev/asset/vendor.scss.json");
 
 // Message
-console.log("\nChoose extra packages to install\n");
+console.log("\nChoose extra packages to install:\n");
 
 // Start the prompt 
 prompt.start();
