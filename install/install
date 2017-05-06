@@ -26,12 +26,15 @@ mkdir $projectName
 cd $projectName
 
 . ~/.nvm/nvm.sh > /dev/null
+curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js
+node package.js "$projectName" "$projectDescription"
+rm package.js
+
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 
 mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
 cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
-node node_modules/rectangular/install/package.js "$projectName" "$projectDescription"
-cp node_modules/rectangular/tmp/project/package.json .
+cp package.json node_modules/rectangular/tmp/project/
 
 cd node_modules/rectangular/
 nvm use > /dev/null
