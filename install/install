@@ -26,10 +26,10 @@ mkdir $projectName
 cd $projectName
 
 . ~/.nvm/nvm.sh
-curl -Os https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
+curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
 curl -Os https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 node package.js "$projectName" "$projectDescription"
-rm package.js
+# rm package.js
 
 npm i https://github.com/abbotto/rectangular.git > /dev/null
 
