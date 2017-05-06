@@ -1,10 +1,11 @@
 "use strict";
 
 const fs = require("fs");
+const args = process.argv.slice(2);
 let packageJSON = require("./../tmp/project/package.json");
 
-packageJSON.name = process.argv[2];
-packageJSON.description = process.argv[3];
+packageJSON.name = args[0];
+packageJSON.description = args[1];
 
 packageJSON = JSON.stringify(packageJSON);
 

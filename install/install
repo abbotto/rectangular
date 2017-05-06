@@ -35,13 +35,12 @@ cp -R install/project/ tmp/project
 
 nvm use > /dev/null
 node install/package.js $projectName $projectDescription
+cp tmp/project/package.json ../../
 npm i
 node install/extra.js
 
 cd ../../
 cp -R node_modules/rectangular/tmp/project/ .
-
-
 
 npm run setup
 
