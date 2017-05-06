@@ -11,7 +11,10 @@ Out-of-the-box, `Rectangular` lets you build apps that are:
 - Responsive
 - Modular
 
-Essentially, there are 3 parts to `Rectangular` - the `Installer`, the `Application Kit`, and the `Build System`.
+Essentially, there are 3 parts to `Rectangular`:
+- the `Installer`
+- the `Application Kit`
+- the `Build System`.
 
 #### Installer
 ##### Features
