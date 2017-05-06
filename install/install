@@ -1,0 +1,40 @@
+#!/bin/bash
+
+BLUE='\033[1;34m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+echo ""
+echo -e "${BLUE}---------------------${NC}"
+echo -e "RECTANGULAR INSTALLER"
+echo -e "${BLUE}---------------------${NC}"
+
+echo ""
+echo -e "${RED}Prompt:${NC} What is your project name?"
+
+read projectName
+
+echo ""
+echo -e "${BLUE}Installing $projectName...${NC}"
+
+mkdir $projectName
+cd $projectName
+
+. ~/.nvm/nvm.sh
+npm init --yes
+npm i https://github.com/abbotto/rectangular.git
+
+cd node_modules/rectangular/
+
+nvm use
+npm i
+node install/extra.js
+
+cd ../../
+
+cp -R node_modules/rectangular/project/ .
+
+npm run setup
+
+echo ""
+echo -e "${BLUE}Finished. Thank you for choosing Rectangular.${NC}"
