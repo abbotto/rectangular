@@ -8,6 +8,9 @@ const slice = require("./../dev/task/slice.js");
 let vendorJS = require("./../tmp/project/dev/asset/vendor.js.json");
 let vendorCSS = require("./../tmp/project/dev/asset/vendor.scss.json");
 
+// Message
+console.log("Choose extra packages to install\n\n");
+
 // Start the prompt 
 prompt.start();
 
@@ -65,7 +68,6 @@ const schema = {
 };
 
 prompt.get(schema, (err, input) => {
-	console.log("Choose extra packages to install\n\n");
 	if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Bootstrap...");

@@ -15,6 +15,11 @@ echo -e "prompt: ${RED}What is your project name?${NC}"
 read projectName
 
 echo ""
+echo -e "prompt: ${RED}Please describe your project${NC}"
+
+read projectDescription
+
+echo ""
 echo -e "${YELLOW}Installing $projectName...${NC}"
 
 mkdir $projectName
@@ -31,9 +36,12 @@ cp -R install/project/ tmp/project
 nvm use > /dev/null
 npm i
 node install/extra.js
+node install/package.js projectName projectDescription
 
 cd ../../
 cp -R node_modules/rectangular/tmp/project/ .
+
+
 
 npm run setup
 
