@@ -36,9 +36,6 @@ read projectAuthor
 echo ""
 echo -e "${YELLOW}Installing $projectName...${NC}"
 
-echo ""
-echo -e "${YELLOW}Installing $projectName...${NC}"
-
 # Create the project directory
 mkdir $projectName
 cd $projectName
