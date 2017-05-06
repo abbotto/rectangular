@@ -26,7 +26,7 @@ npm i https://github.com/abbotto/rectangular.git
 
 cd node_modules/rectangular/
 mkdir tmp
-cp -R install/project/* tmp/
+cp -R install/project/ tmp/
 
 nvm use
 npm i
