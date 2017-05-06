@@ -34,9 +34,9 @@ mkdir tmp && mkdir tmp/project
 cp -R install/project/ tmp/project
 
 nvm use > /dev/null
+node install/package.js projectName projectDescription
 npm i
 node install/extra.js
-node install/package.js projectName projectDescription
 
 cd ../../
 cp -R node_modules/rectangular/tmp/project/ .
