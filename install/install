@@ -10,7 +10,7 @@ echo -e "RECTANGULAR INSTALLER"
 echo -e "${YELLOW}---------------------${NC}"
 
 echo ""
-echo -e "${RED}Prompt:${NC} What is your project name?"
+echo -e "Prompt: ${RED}What is your project name?${NC}"
 
 read projectName
 
