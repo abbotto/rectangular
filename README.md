@@ -13,8 +13,8 @@ Out-of-the-box, `Rectangular` lets you build apps that are:
 
 There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build System`.
 
-### Application Kit
-#### Features
+#### Application Kit
+##### Features
 - A `caching system` that retains your environment variables, models, and templates for instant access.
 - A no-nonsense extension system for integrating 3rd-party vendor plugins and libraries in a jiffy.
 - A built-in `asset loader` for easily adding additional styles and scripts.
@@ -24,8 +24,8 @@ There are 2 main parts to `Rectangular`, the `Application Kit` and the `Build Sy
 - A `livereload` server for development.
 - Support for the `gulp` task-runner.
 
-### Build System
-#### Features
+#### Build System
+##### Features
 - An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
 - An `app compiler` that finds and compiles required files for you.
