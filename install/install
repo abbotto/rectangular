@@ -22,13 +22,13 @@ cd $projectName
 
 . ~/.nvm/nvm.sh
 npm init --yes > /dev/null
-npm i https://github.com/abbotto/rectangular.git
+npm i https://github.com/abbotto/rectangular.git > /dev/null
 
 cd node_modules/rectangular/
 mkdir tmp && mkdir tmp/project
 cp -R install/project/* tmp/project
 
-nvm use
+nvm use > /dev/null
 npm i
 node install/extra.js
 
