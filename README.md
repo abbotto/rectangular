@@ -17,12 +17,10 @@ Essentially, there are 3 parts to `Rectangular`:
 - the `Build System`.
 
 #### Installer
-##### Features
 - An `project installer` for initializing the `application kit`.
 - An `extension installer` for several popular 3rd-party packages.
 
 #### Application Kit
-##### Features
 - A built-in `caching system` that retains your environment variables, models, and templates for instant access.
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
 - A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
@@ -35,7 +33,6 @@ Essentially, there are 3 parts to `Rectangular`:
 - A built-in `semantic versioning` system.
 
 #### Build System
-##### Features
 - Support for `PUG` syntax so you can write cleaner HTML templates.
 - Support for `ES6` syntax so you can write modernized JavaScript.
 - Support for `SASS` for awesome stylesheets.
