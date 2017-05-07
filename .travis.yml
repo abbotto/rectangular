@@ -9,7 +9,6 @@ branches:
 
 script:
   - . ~/.nvm/nvm.sh && nvm use && npm i && node_modules/eslint/bin/eslint.js --fix .
-  - cd demo-app && . ~/.nvm/nvm.sh && nvm use && npm i && npm run test
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
@@ -27,6 +26,6 @@ script:
   - cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/ && . ~/.nvm/nvm.sh && nvm use && npm i && cd ../../
-  - cp -R node_modules/rectangular/tmp/project/*/**/ .
+  - cp -R node_modules/rectangular/tmp/project/* .
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && . ~/.nvm/nvm.sh && nvm use && npm i && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && npm i && npm run test
+  - . ~/.nvm/nvm.sh && nvm use && npm i && ls && npm run test
