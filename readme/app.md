@@ -13,16 +13,16 @@
 * [Templates](#Templates)
 	* [Template Include Example](#TemplateIncludeExample)
 
-##  1. <a name='AppModules'></a>App Modules
+##  <a name='AppModules'></a>App Modules
 - App Modules are registered in `app/app.module.js`.
 
-##  2. <a name='Routes'></a>Routes
+##  <a name='Routes'></a>Routes
 Routes are used to guide the users throughout the application.
 - Route modules are registered in `app/app.route.js`.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
 - Learn more about `ui-router` [here](https://github.com/angular-ui/ui-router).
 
-###  2.1. <a name='RoutesExample'></a>Routes Example
+###  <a name='RoutesExample'></a>Routes Example
 - A route looks something like this:
 
 		(() => {
@@ -40,15 +40,15 @@ Routes are used to guide the users throughout the application.
 			});
 		})();
 
-##  3. <a name='Services'></a>Services
+##  <a name='Services'></a>Services
 Services are used for `sending/receiving/manipulating` data.
 - You can use services to organize and share code across your app.
 
-##  4. <a name='Directives'></a>Directives
+##  <a name='Directives'></a>Directives
 Directives are used to control DOM behaviour and to render data in HTML format.
 - The structure of a `directive` template path is this: `{{component}}/{{template}}.directive.html`.
 
-##  5. <a name='Components'></a>Components
+##  <a name='Components'></a>Components
 A component is a specialized directive that organizes a controller with a template. One main difference between a component and a directive is that a component doesn't have a `link` function. For DOM manipulation, a component can use directives with a link function.
 
 - Components are comprised of the following:
@@ -62,20 +62,20 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Routes** (js)
 	- **Services** (js)
 
-###  5.1. <a name='ComponentAssets'></a>Component Assets
+###  <a name='ComponentAssets'></a>Component Assets
 Assets are also placed in the `app/component/{{componentName}}` directory:
 - **Tests** (js)
 - **Styles** (scss)
 - **Models** ([data|mixin]json)
 - **Images** (png, jpg, jpeg, gif, svg, ico)
 
-###  5.2. <a name='ViewModel'></a>View Model
+###  <a name='ViewModel'></a>View Model
 - A short capture variable called `vm` is generally used for the `View Model` object.
 - The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
 - Capturing the context of this with `vm` avoids encountering this problem.
 - The `vm` variable is assigned using the `controllerAs` syntax.
 
-####  5.2.1. <a name='ComponentExample'></a>Component Example
+####  <a name='ComponentExample'></a>Component Example
 A simple component directive may resemble the following:
 
 		(() => {
@@ -94,7 +94,7 @@ A simple component directive may resemble the following:
 			;
 		})();
 
-##  6. <a name='Controllers'></a>Controllers
+##  <a name='Controllers'></a>Controllers
 Controllers are used in components and directives.
 
 - Controllers should be used for:
@@ -105,9 +105,9 @@ Controllers are used in components and directives.
 	- For anything other than business logic.
 	- To share code or state across controllers — use services instead.
 
-##  7. <a name='Templates'></a>Templates
+##  <a name='Templates'></a>Templates
 - The structure of a template path is this: `{{component}}/{{template}}.html`.
 
-###  7.1. <a name='TemplateIncludeExample'></a>Template Include Example
+###  <a name='TemplateIncludeExample'></a>Template Include Example
 
 	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
