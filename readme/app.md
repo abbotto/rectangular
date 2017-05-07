@@ -22,7 +22,7 @@ Routes are used to guide the users throughout the application.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
 - Learn more about `ui-router` [here](https://github.com/angular-ui/ui-router).
 
-###  <a name='RoutesExample'></a>Routes Example
+###  <a name='RoutesExample'></a>Example
 - A route looks something like this:
 
 		(() => {
@@ -75,7 +75,7 @@ Assets are also placed in the `app/component/{{componentName}}` directory:
 - Capturing the context of this with `vm` avoids encountering this problem.
 - The `vm` variable is assigned using the `controllerAs` syntax.
 
-####  <a name='ComponentExample'></a>Component Example
+####  <a name='ComponentExample'></a>Example
 A simple component directive may resemble the following:
 
 		(() => {
@@ -108,6 +108,6 @@ Controllers are used in components and directives.
 ##  <a name='Templates'></a>Templates
 - The structure of a template path is this: `{{component}}/{{template}}.html`.
 
-###  <a name='TemplateIncludeExample'></a>Template Include Example
+###  <a name='TemplateIncludeExample'></a>Example
 
 	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
