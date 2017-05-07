@@ -9,7 +9,7 @@
   },
   "scripts": {
     "ui": "node build/install-ui.js",
-    "setup": "nvm i 6.10 && nvm use && npm i && cp .envrc .env",
+    "setup": "~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cp .envrc .env",
     "start": "npm i && cp .envrc .env"
   },
   "dependencies": {},

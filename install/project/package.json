@@ -15,7 +15,7 @@
     "compile": "cd node_modules/rectangular && node build/compile.js && cd ../../",
     "dev": "gulp dev",
     "docs": "gulp docs",
-    "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cd ../../",
+    "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run setup && cd ../../",
     "server": "node server.js",
     "setup": "npm run rectangular && cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i",
     "start": "npm run compile",
