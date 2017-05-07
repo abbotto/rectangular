@@ -15,7 +15,7 @@
 !.babelrc
 !.envrc
 !.eslintignore
-!.eslintrc
+!.eslintrc.js
 !.gitignore
 !.jsbeautifyrc
 !.nvmrc
