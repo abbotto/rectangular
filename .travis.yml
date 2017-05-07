@@ -35,6 +35,22 @@ script:
   - npm i --save angular-translate
   - npm i --save restangular
   - npm i --save ng-file-upload
+  - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
+  - cp -a install/extra/shared/service/ui/bootstrap/. tmp/project/app/shared/service/ui/
+  - cp -a install/extra/extension/angular-material/. tmp/project/app/extension/angular-material/
+  - cp -a install/extra/shared/service/ui/material-design/. tmp/project/app/shared/service/ui/
+  - cp -a install/extra/extension/bluebird/. tmp/project/app/extension/bluebird/
+  - cp -a install/extra/shared/service/promise/. tmp/project/app/shared/service/promise/
+  - cp -a install/extra/extension/moment/. tmp/project/app/extension/moment/
+  - cp -a install/extra/shared/service/date/. tmp/project/app/shared/service/date/
+  - cp -a install/extra/extension/lodash/. tmp/project/app/extension/lodash/
+  - cp -a install/extra/shared/service/_/. tmp/project/app/shared/service/_/
+  - cp -a install/extra/extension/angular-translate/. tmp/project/app/extension/angular-translate/
+  - cp -a install/extra/shared/service/locale/. tmp/project/app/shared/service/locale/
+  - cp -a install/extra/extension/restangular/. tmp/project/app/extension/restangular/
+  - cp -a install/extra/shared/service/promise/. tmp/project/app/shared/service/promise/
+  - cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/
+  - cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/
   - cd ../../../../
   - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
