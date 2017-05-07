@@ -7,14 +7,14 @@ describe("model.service", () => {
 	
 	const appModelMock1 = angular.toJson({
 		"project.data.json": angular.toJson({
-			"name": "Rectangular"
+			name: "Rectangular"
 		})
 	});
 
 	const appModelMock2 = angular.toJson({
 		"project.data.json": angular.toJson({
-			"name": "Rectangular",
-			"version": "1.0.0"
+			name: "Rectangular",
+			version: "1.0.0"
 		})
 	});
 
@@ -30,7 +30,7 @@ describe("model.service", () => {
 	});
 
 	describe("When 'model$._model' is called", () => {
-		beforeEach(() => {			
+		beforeEach(() => {
 			result = model$._model(mockKey);
 		});
 

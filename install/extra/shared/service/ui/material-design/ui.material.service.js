@@ -1,6 +1,6 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	angular.module("ui.material.service", [
 		"angularMaterial.extension"
 	]);

@@ -9,7 +9,8 @@ const data = finder.sync([getPath() + "/app/**/*.data.json"]);
 const tmpJS = "tmp/models.js";
 const files = mixin.concat(data);
 
-let models = {}, key;
+let key;
+let models = {};
 
 files.forEach((path) => {
 	key = path

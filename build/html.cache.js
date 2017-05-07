@@ -8,7 +8,8 @@ const getPath = require("./get.path.js");
 const files = finder.sync([getPath() + "/app/component/**/*.html"]);
 const tmpJS = "tmp/templates.js";
 
-let templates = [], key, value;
+let key, value;
+let templates = [];
 
 files.forEach((path) => {
 	key = path

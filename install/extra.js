@@ -11,58 +11,58 @@ let vendorCSS = require("./../tmp/project/dev/asset/vendor.scss.json");
 // Message
 console.log("\nChoose extra packages to install:\n");
 
-// Start the prompt 
+// Start the prompt
 prompt.start();
 
 const schema = {
-	"properties": {
+	properties: {
 		"Angular Strap": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n",
-			"description": "Install Angular Strap? [y/n]",
-			"required": true
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n",
+			description: "Install Angular Strap? [y/n]",
+			required: true
 		},
 		"Angular Material": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Angular Material? [y/n]",
-			"required": true
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install Angular Material? [y/n]",
+			required: true
 		},
-		"Lodash": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Lodash? [y/n]",
-			"required": true
+		Lodash: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install Lodash? [y/n]",
+			required: true
 		},
-		"Restangular": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Restangular? [y/n]",
-			"required": true
+		Restangular: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install Restangular? [y/n]",
+			required: true
 		},
-		"Bluebird": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Bluebird? [y/n]",
-			"required": true
+		Bluebird: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install Bluebird? [y/n]",
+			required: true
 		},
 		"NG File Upload": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install NG File Upload? [y/n]",
-			"required": true
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install NG File Upload? [y/n]",
+			required: true
 		},
-		"MomentJS": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install MomentJS? [y/n]",
-			"required": true
+		MomentJS: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install MomentJS? [y/n]",
+			required: true
 		},
 		"Angular Translate": {
-			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install AngularTranslate? [y/n]",
-			"required": true
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install AngularTranslate? [y/n]",
+			required: true
 		}
 	}
 };
@@ -163,7 +163,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save angular-translate && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/angular-translate/dist/angular-translate.min.js");	
+		vendorJS = slice(vendorJS, "./node_modules/angular-translate/dist/angular-translate.min.js");
 	}
 	
 	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {

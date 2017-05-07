@@ -1,7 +1,7 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
-	angular.module("upload.extension", [
+	angular.module("ngFileUpload.extension", [
 		"ngFileUpload"
 	]);
 })();

@@ -14,7 +14,7 @@ const getPath = require("./get.path.js");
 require("dotenv").config();
 
 // Pre-flight builds
-sh.exec("node_modules/eslint/bin/eslint.js --fix app/");
+sh.exec("node_modules/eslint/bin/eslint.js --fix --quiet app/../");
 sh.exec("node build/service.compile.js");
 sh.exec("node build/constant.cache.js");
 sh.exec("node build/route.compile.js");
@@ -47,7 +47,7 @@ const n = files.length;
 let i = 0;
 
 // Prevent minified files from cramming together
-for (; i < n; i+=1) {
+for (; i < n; i += 1) {
 	script.push(fs.readFileSync(files[i], "utf8"));
 }
 

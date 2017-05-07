@@ -1,9 +1,12 @@
+"use strict";
+
 (() => {
-	"use strict";
-	
 	const bootstrapPopoverService = function bootstrapPopoverService($popover) {
 		return $popover;
 	};
 	
-	angular.module("ui.popover.service", []).factory("popover$", bootstrapPopoverService);
+	angular
+		.module("ui.popover.service", [])
+		.factory("popover$", bootstrapPopoverService)
+	;
 })();
