@@ -38,41 +38,53 @@ echo -e "${YELLOW}Installing $projectName...${NC}"
 echo ""
 
 # Create the project directory
-mkdir $projectName
-cd $projectName
+mkdir "$projectName"
+cd "$projectName"
 
 # Initialize package.json
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-. ~/.nvm/nvm.sh && nvm i $PACKAGE_VERSION
+. ~/.nvm/nvm.sh
+nvm i $PACKAGE_VERSION
 
-# Add the project name and description
+# Add the project name and description, etc...
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
-
-# Clean up
 rm package.js
 
-# Grab r\Rectangular
+# Grab Rectangular
 npm i abbotto/rectangular > /dev/null
 
 # Setup temporary project files and directories
-mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
-cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
+mkdir node_modules/rectangular/tmp
+mkdir node_modules/rectangular/tmp/project
+cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
 cp package.json node_modules/rectangular/tmp/project/
 
-# Initialize Rectangular
+# Initialize Rectangula
+# and run the extras installer
 cd node_modules/rectangular/
+cp .envrc .env
 nvm use
 npm i
-
-# Install extras
 node install/extra.js
 cd ../../
 
 # Copy the project files and run the setup build
-cp -R node_modules/rectangular/tmp/project/ .
-npm run setup
+cp -a node_modules/rectangular/tmp/project/. .
+cp .envrc .env
+
+# Create the temporary directory
+cd node_modules/rectangular
+rm -rf tmp
+mkdir tmp
+cd ../../
+
+# Run the test
+. ~/.nvm/nvm.sh
+nvm use
+npm i
+node_modules/karma/bin/karma start karma.conf.js
 
 # Completed
 echo ""
