@@ -22,7 +22,6 @@
     "eslint-plugin-disable": "^0.3.0",
     "eslint-plugin-json": "^1.2.0",
     "glob-concat": "^1.0.1",
-    "marked": "^0.3.6",
     "node-sass": "^4.5.0",
     "postcss": "^5.2.14",
     "prompt": "^1.0.0",
