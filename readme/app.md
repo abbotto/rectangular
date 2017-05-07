@@ -80,10 +80,12 @@ A component is a specialized directive that organizes a controller with a templa
 		})();
 
 # Controllers
-- Controllers are used in components and directives.
+Controllers are used in components and directives.
+
 - Controllers should be used for:
-	- Set up the initial state of the View Model.
-	- Add behavior to the View Model.
+	- Setting up the initial state of the View Model.
+	- Adding behavior to the View Model.
+
 - Do not use controllers:
 	- For anything other than business logic.
 	- To share code or state across controllers — use services instead.
