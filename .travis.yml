@@ -23,7 +23,7 @@ script:
   - rm package.js
   - npm i abbotto/rectangular > /dev/null
   - mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
-  - cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
+  - cp -R node_modules/rectangular/install/project/node_modules/rectangular/tmp/project
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/ && . ~/.nvm/nvm.sh && nvm use && npm i && cd ../../
   - cp -R node_modules/rectangular/tmp/project/* .
