@@ -29,11 +29,11 @@
 - You can use services to organize and share code across your app.
 
 # Directives
-- Directives are used to control DOM behaviour and to render data in HTML format.
+- `Directives` are used to control DOM behaviour and to render data in HTML format.
 - The structure of a directive template path is this: `{{component}}/{{template}}.directive.html`.
 
 # Controllers
-- Controllers are used in `components` and `directives`.
+- `Controllers` are used in `components` and `directives`.
 - Controllers should be used for:
 	- Set up the initial state of the 'View Model`.
 	- Add behavior to the `View Model`.
