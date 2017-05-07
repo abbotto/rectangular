@@ -53,7 +53,7 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in task-runner provided by `gulp`.
 
 ####  <a name='BuildSystem'></a>Build System
-- Support for `SASS` for awesome stylesheets.
+- Support for `SASS` syntax for powerful stylesheets.
 - Support for `ES6` syntax for modernized JavaScript.
 - Support for `PUG` syntax for cleaner HTML templates.
 - Support for `stylelint` to make sure your styles come out clean.
