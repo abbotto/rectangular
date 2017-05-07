@@ -8,7 +8,7 @@ branches:
     - master
 
 install:
-  - nvm use && npm i
+  - ~/.nvm/nvm.sh && nvm use && npm i
 
 script:
   - node_modules/eslint/bin/eslint.js --fix .
