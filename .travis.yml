@@ -36,6 +36,7 @@ script:
   - npm i --save restangular > /dev/null
   - npm i --save ng-file-upload > /dev/null
   - cd ../../
+  - cp .envrc .env
   - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
   - cp -a install/extra/shared/service/ui/bootstrap/. tmp/project/app/shared/service/ui/
   - cp -a install/extra/extension/angular-material/. tmp/project/app/extension/angular-material/
@@ -55,6 +56,7 @@ script:
   - cd ../../
   - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
+  - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
   - . ~/.nvm/nvm.sh && nvm use && npm i > /dev/null
   - node_modules/karma/bin/karma start karma.conf.js
