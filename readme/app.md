@@ -11,8 +11,6 @@
 - A `route` looks something like this:
 
 		(() => {
-			"use strict";
-			
 			angular
 			.module("home.route", [
 				"home.component"
@@ -72,15 +70,8 @@
 - A simple `component` directive may resemble the following:
 
 		(() => {
-			"use strict";
-			
-			// Options
 			const options = {};
-			
-			// Template
 			options.templateUrl = "home/home.component.html";
-			
-			// Controller and ViewModel
 			options.controllerAs = "vm";
 			options.controller = function HomeController() {
 				const vm = this;
