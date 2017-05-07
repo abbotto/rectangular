@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const localeService = function localeService($translate) {
-		return $translate;
+	const localeService = function localeService(angularTranslate$) {
+		return angularTranslate$;
 	};
 	
 	angular

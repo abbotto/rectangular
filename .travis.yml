@@ -11,7 +11,7 @@ before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
 
 script:
-  - npm i && node_modules/eslint/bin/eslint.js --fix .
+  - npm i > /dev/null && node_modules/eslint/bin/eslint.js --fix .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
@@ -26,15 +26,15 @@ script:
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/tmp/project
-  - npm i --save bootstrap angular-strap
-  - npm i --save angular-material
-  - npm i --save bluebird
-  - npm i --save moment
-  - npm i --save angular-moment
-  - npm i --save lodash
-  - npm i --save angular-translate
-  - npm i --save restangular
-  - npm i --save ng-file-upload
+  - npm i --save bootstrap angular-strap > /dev/null
+  - npm i --save angular-material > /dev/null
+  - npm i --save bluebird > /dev/null
+  - npm i --save moment > /dev/null
+  - npm i --save angular-moment > /dev/null
+  - npm i --save lodash > /dev/null
+  - npm i --save angular-translate > /dev/null
+  - npm i --save restangular > /dev/null
+  - npm i --save ng-file-upload > /dev/null
   - cd ../../
   - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
   - cp -a install/extra/shared/service/ui/bootstrap/. tmp/project/app/shared/service/ui/
@@ -56,5 +56,5 @@ script:
   - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && npm i
+  - . ~/.nvm/nvm.sh && nvm use && npm i > /dev/null
   - node_modules/karma/bin/karma start karma.conf.js

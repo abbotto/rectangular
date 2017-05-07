@@ -46,7 +46,7 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 . ~/.nvm/nvm.sh
-nvm i $PACKAGE_VERSION
+nvm i $PACKAGE_VERSION > /dev/null
 
 # Add the project name and description, etc...
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
@@ -66,7 +66,7 @@ cp package.json node_modules/rectangular/tmp/project/
 cd node_modules/rectangular/
 cp .envrc .env
 nvm use
-npm i
+npm i > /dev/null
 node install/extra.js
 cd ../../
 
@@ -83,7 +83,7 @@ cd ../../
 # Run the test
 . ~/.nvm/nvm.sh
 nvm use
-npm i
+npm i > /dev/null
 node_modules/karma/bin/karma start karma.conf.js
 
 # Completed
