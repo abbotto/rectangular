@@ -1,4 +1,4 @@
-"use strict";
+/* eslint-disable impliedStrict */
 
 module.exports = (arr, val) => {
 	const i = arr.indexOf(val);

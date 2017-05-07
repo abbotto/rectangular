@@ -1,4 +1,4 @@
-"use strict";
+/* eslint-disable impliedStrict */
 
 const fs = require("fs");
 const tmpJS = "tmp/constants.js";

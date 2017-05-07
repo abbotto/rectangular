@@ -1,4 +1,4 @@
-"use strict";
+/* eslint-disable impliedStrict */
 
 module.exports = (arr) => {
 	const getPath = require("./get.path.js");

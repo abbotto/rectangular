@@ -1,4 +1,4 @@
-"use strict";
+/* eslint-disable impliedStrict */
 
 const sh = require("shelljs");
 const finder = require("glob-concat");
