@@ -5,7 +5,7 @@
 
 ## Requirements
 - NodeJS, NPM, NVM
-- Unix/Linux
+- MacOS/Linux
 
 ## Overview
 Out-of-the-box, `Rectangular` lets you build apps that are:
