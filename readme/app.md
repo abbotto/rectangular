@@ -55,7 +55,7 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Images** (png, jpg, jpeg, gif, svg, ico)
 
 ## View Model
-- A short capture variable name has been chosen and it is called `vm`, which stands for `ViewModel`.
+- A short capture variable name has been chosen and it is called `vm`, which stands for `View Model`.
 - This variable is assigned using the `controllerAs` syntax.
 - The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
 - Capturing the context of this with `vm` avoids encountering this problem.
@@ -82,7 +82,7 @@ A component is a specialized directive that organizes a controller with a templa
 # Controllers
 - Controllers are used in components and directives.
 - Controllers should be used for:
-	- Set up the initial state of the `View Model`.
+	- Set up the initial state of the View Model.
 	- Add behavior to the View Model.
 - Do not use controllers:
 	- For anything other than business logic.
