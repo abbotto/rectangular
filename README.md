@@ -8,9 +8,9 @@
 * [Requirements](#Requirements)
 * [Overview](#Overview)
 	* [Installer](#Installer)
+		* [Quick Install Method](#QuickInstallMethod)
 	* [Application Kit](#ApplicationKit)
 	* [Build System](#BuildSystem)
-	* [Quick Install Method](#QuickInstallMethod)
 * [Documentation](#Documentation)
 
 ---
@@ -36,6 +36,10 @@ Essentially, there are 3 parts to Rectangular:
 - An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
 
+#####  <a name='QuickInstallMethod'></a>Quick Install Method
+	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
+	cd myApp && nvm use && npm i
+
 #####  <a name='ApplicationKit'></a>Application Kit
 - A built-in `caching system` that retains your environment variables, models, and templates for instant access.
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
@@ -54,12 +58,6 @@ Essentially, there are 3 parts to Rectangular:
 - Support for `SASS` for awesome stylesheets.
 - Support for `autoprefixer` so your styles work on as many browsers as possible.
 - Support for `stylelint` to make sure your styles come out clean.
-
----
-
-####  <a name='QuickInstallMethod'></a>Quick Install Method
-	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
-	cd myApp && nvm use && npm i
 
 ---
 
