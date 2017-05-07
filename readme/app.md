@@ -54,7 +54,7 @@
 	- **Services** (js)
 
 ## Component Assets
-- Assets are also placed in the `app/component/{{componentName}}` directory:
+- `Assets` are also placed in the `app/component/{{componentName}}` directory:
 	- **Tests** (js)
 	- **Styles** (scss)
 	- **Models** ([data|mixin]json)
