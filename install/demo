@@ -1,0 +1,60 @@
+#!/bin/bash
+
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+echo ""
+echo -e "${YELLOW}---------------------${NC}"
+echo -e "${YELLOW}RECTANGULAR INSTALLER${NC}"
+echo -e "${YELLOW}---------------------${NC}"
+
+# Get the project name
+echo ""
+echo -e "prompt: ${RED}Project Name${NC}"
+
+projectName="demo-app"
+projectDescription="ipsum lorem"
+projectLicense="MIT"
+projectAuthor="author"
+
+echo ""
+echo -e "${YELLOW}Installing $projectName...${NC}"
+echo ""
+
+# Create the project directory
+mkdir "$projectName"
+cd "$projectName"
+
+# Initialize package.json
+. ~/.nvm/nvm.sh
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
+
+# Add the project name and description
+node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
+
+# Clean up
+rm package.js
+
+# Grab r\Rectangular
+npm i https://github.com/abbotto/rectangular.git > /dev/null
+
+# Setup temporary project files and directories
+mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
+cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
+cp package.json node_modules/rectangular/tmp/project/
+
+# Initialize Rectangular
+cd node_modules/rectangular/
+nvm use
+npm i
+cd ../../
+
+# Copy the project files and run the setup build
+cp -R node_modules/rectangular/tmp/project/ .
+npm run setup
+
+# Completed
+echo ""
+echo -e "${YELLOW}Finished. Thank you for choosing Rectangular.${NC}"
