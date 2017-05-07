@@ -64,8 +64,10 @@ A component is a specialized directive that organizes a controller with a templa
 
 		(() => {
 			const options = {};
+			
 			options.templateUrl = "home/home.component.html";
 			options.controllerAs = "vm";
+			
 			options.controller = function HomeController() {
 				const vm = this;
 			};
