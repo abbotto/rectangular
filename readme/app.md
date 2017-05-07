@@ -32,18 +32,11 @@
 - `Directives` are used to control DOM behaviour and to render data in HTML format.
 - The structure of a `directive` template path is this: `{{component}}/{{template}}.directive.html`.
 
-# Controllers
-- `Controllers` are used in `components` and `directives`.
-- `Controllers` should be used for:
-	- Set up the initial state of the `View Model`.
-	- Add behavior to the `View Model`.
-- Do not use `controllers`:
-	- For anything other than business logic.
-	- To share code or state across controllers — use services instead.
-
 # Components
+A `component` is a specialized `directive` that organizes a `controller` with a `template`. One main difference between a `component` and a `directive` is that a `component` doesn't have a `link` function. If you need DOM manipulation, your `component` can use other `directives` that include that DOM manipulation in a `link` function.
+
 - `Components` are comprised of the following:
-	- A JS `component`.
+	- A JS `component` with a `controller`.
 	- A HTML `template`.
 - `Components` can also contiain their own `directives`, `services` and `styles`.
 - `Component` files are placed in the `app/component/{{componentName}}` directory:
@@ -84,9 +77,18 @@
 			;
 		})();
 
+# Controllers
+- `Controllers` are used in `components` and `directives`.
+- `Controllers` should be used for:
+	- Set up the initial state of the `View Model`.
+	- Add behavior to the `View Model`.
+- Do not use `controllers`:
+	- For anything other than business logic.
+	- To share code or state across controllers — use services instead.
+
 ## Templates
 - The structure of a template path is this: `{{component}}/{{template}}.html`.
 
-### Template Example
+### Template Include Example
 
 	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
