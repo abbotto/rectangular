@@ -28,7 +28,7 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-. ~/.nvm/nvm.sh && nvm i 6.10 $PACKAGE_VERSION
+. ~/.nvm/nvm.sh && nvm i $PACKAGE_VERSION
 
 # Add the project name and description
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
