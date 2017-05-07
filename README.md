@@ -41,8 +41,8 @@ Essentially, there are 3 parts to Rectangular:
 - An `extension installer` for several popular 3rd-party packages.
 
 ####  <a name='ApplicationKit'></a>Application Kit
-- A built-in `caching system` that retains your environment variables, models, and templates.
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
+- A built-in `caching system` that retains your environment variables, models, and templates.
 - A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
 - A built-in `asset loader` for easily adding additional styles and scripts.
 - A built-in `service loader` that finds and compiles `services` for you.
@@ -53,11 +53,11 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in `semantic versioning` system.
 
 ####  <a name='BuildSystem'></a>Build System
-- Support for `PUG` syntax so you can write cleaner HTML templates.
-- Support for `ES6` syntax so you can write modernized JavaScript.
 - Support for `SASS` for awesome stylesheets.
-- Support for `autoprefixer` so your styles work on as many browsers as possible.
+- Support for `ES6` syntax for modernized JavaScript.
+- Support for `PUG` syntax for cleaner HTML templates.
 - Support for `stylelint` to make sure your styles come out clean.
+- Support for `autoprefixer` so your styles work on as many browsers as possible.
 
 ---
 
