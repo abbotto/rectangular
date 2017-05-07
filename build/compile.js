@@ -3,7 +3,6 @@
 const sh = require("shelljs");
 const getPath = require("./get.path.js");
 
-sh.exec(". ~/.nvm/nvm.sh && nvm use && npm i");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/reset.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/app.intro.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/script.compile.js");

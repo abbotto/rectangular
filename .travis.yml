@@ -28,4 +28,5 @@ script:
   - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && npm i && ls && npm run test
+  - . ~/.nvm/nvm.sh && nvm use && npm i
+  - node_modules/karma/bin/karma start karma.conf.js
