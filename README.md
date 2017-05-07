@@ -57,7 +57,7 @@ Essentially, there are 3 parts to Rectangular:
 - Support for `ES6` syntax for modernized JavaScript.
 - Support for `PUG` syntax for cleaner HTML templates.
 - Support for `stylelint` to make sure your styles come out shiny.
-- Support for `autoprefixer` so your styles work on as many browsers as possible.
+- Support for `autoprefixer` so your styles are welcome on the web.
 
 ---
 
