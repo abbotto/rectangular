@@ -41,7 +41,7 @@ Essentially, there are 3 parts to Rectangular:
 - An `extension installer` for several popular 3rd-party packages.
 
 ####  <a name='ApplicationKit'></a>Application Kit
-- A built-in `caching system` that retains your environment variables, models, and templates for instant access.
+- A built-in `caching system` that retains your environment variables, models, and templates.
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
 - A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
 - A built-in `asset loader` for easily adding additional styles and scripts.
