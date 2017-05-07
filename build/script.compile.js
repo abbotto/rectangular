@@ -14,13 +14,13 @@ const getPath = require("./get.path.js");
 require("dotenv").config();
 
 // Pre-flight builds
-sh.exec("node_modules/eslint/bin/eslint.js --fix --quiet app/../");
-sh.exec("node build/service.compile.js");
-sh.exec("node build/constant.cache.js");
-sh.exec("node build/route.compile.js");
-sh.exec("node build/spec.compile.js");
-sh.exec("node build/model.cache.js");
-sh.exec("node build/html.cache.js");
+sh.exec(getPath() + "/node_modules/rectangular/node_modules/eslint/bin/eslint.js --fix --quiet .");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/service.compile.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/constant.cache.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/route.compile.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/spec.compile.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/model.cache.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/html.cache.js");
 
 const sourceJSON = finder.sync(setPath(require(getPath() + "/dev/asset/source.js.json")));
 const vendorJSON = setPath(require(getPath() + "/dev/asset/vendor.js.json"));
