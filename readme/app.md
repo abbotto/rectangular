@@ -72,7 +72,6 @@ A component is a specialized directive that organizes a controller with a templa
 				const vm = this;
 			};
 			
-			// Register the component
 			angular
 				.module("home.component", [])
 				.component("home", options)
