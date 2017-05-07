@@ -1,4 +1,6 @@
-# Table of Contents
+# Application
+
+## Table of Contents
 
 * [App Modules](#AppModules)
 * [Routes](#Routes)
