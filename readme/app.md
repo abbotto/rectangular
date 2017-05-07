@@ -42,11 +42,11 @@
 	- To share code or state across controllers — use services instead.
 
 # Components
-- Components are comprised of the following:
+- `Components` are comprised of the following:
 	- A JS `component`.
 	- A HTML `template`.
-- Components can also contiain their own `directives`, `services` and `styles`.
-- Component files are placed in the `app/component/{{componentName}}` directory:
+- `Components` can also contiain their own `directives`, `services` and `styles`.
+- `Component` files are placed in the `app/component/{{componentName}}` directory:
 	- **Components** (js)
 	- **Directives** (js)
 	- **Templates** (html)
