@@ -6,9 +6,9 @@
 ## Table of Contents
 
 * [Requirements](#Requirements)
+* [Install](#Install)
 * [Overview](#Overview)
 	* [Installer](#Installer)
-		* [Quick Install Method](#QuickInstallMethod)
 	* [Application Kit](#ApplicationKit)
 	* [Build System](#BuildSystem)
 * [Documentation](#Documentation)
@@ -18,6 +18,10 @@
 ###  <a name='Requirements'></a>Requirements
 - NodeJS, NPM, NVM
 - MacOS/Linux
+
+###  <a name='Install'></a>Install
+	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
+	cd myApp && nvm use && npm i
 
 ###  <a name='Overview'></a>Overview
 Out-of-the-box, Rectangular lets you build apps that are:
@@ -35,10 +39,6 @@ Essentially, there are 3 parts to Rectangular:
 #####  <a name='Installer'></a>Installer
 - An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
-
-#####  <a name='QuickInstallMethod'></a>Quick Install Method
-	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
-	cd myApp && nvm use && npm i
 
 #####  <a name='ApplicationKit'></a>Application Kit
 - A built-in `caching system` that retains your environment variables, models, and templates for instant access.
