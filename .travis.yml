@@ -7,11 +7,8 @@ branches:
   only:
     - master
 
-install:
-  - . ~/.nvm/nvm.sh && nvm use && npm i
-
 before_script:
-  - . ~/.nvm/nvm.sh
+  - . ~/.nvm/nvm.sh && nvm use && npm i
 
 script:
   - node_modules/eslint/bin/eslint.js --fix .
