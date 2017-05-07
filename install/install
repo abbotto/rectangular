@@ -53,7 +53,7 @@ node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 rm package.js
 
 # Grab r\Rectangular
-npm i https://github.com/abbotto/rectangular.git > /dev/null
+npm i abbotto/rectangular > /dev/null
 
 # Setup temporary project files and directories
 mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
