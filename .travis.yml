@@ -35,6 +35,7 @@ script:
   - npm i --save angular-translate
   - npm i --save restangular
   - npm i --save ng-file-upload
+  - cd ../../
   - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
   - cp -a install/extra/shared/service/ui/bootstrap/. tmp/project/app/shared/service/ui/
   - cp -a install/extra/extension/angular-material/. tmp/project/app/extension/angular-material/
@@ -51,7 +52,7 @@ script:
   - cp -a install/extra/shared/service/promise/. tmp/project/app/shared/service/promise/
   - cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/
   - cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/
-  - cd ../../../../
+  - cd ../../
   - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
