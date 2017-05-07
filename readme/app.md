@@ -2,16 +2,16 @@
 
 * [App Modules](#AppModules)
 * [Routes](#Routes)
-	* [Routes Example](#RoutesExample)
+	* [Example](#RoutesExample)
 * [Services](#Services)
 * [Directives](#Directives)
 * [Components](#Components)
-	* [Component Assets](#ComponentAssets)
+	* [Assets](#ComponentAssets)
 	* [View Model](#ViewModel)
-		* [Component Example](#ComponentExample)
+		* [Example](#ComponentExample)
 * [Controllers](#Controllers)
 * [Templates](#Templates)
-	* [Template Include Example](#TemplateIncludeExample)
+	* [Example](#TemplateIncludeExample)
 
 ##  <a name='AppModules'></a>App Modules
 - App Modules are registered in `app/app.module.js`.
