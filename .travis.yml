@@ -7,4 +7,4 @@ branches:
   only:
     - master
 
-script: npm start
+script: nvm i 6.10 && npm i && node_modules/eslint/bin/eslint.js --fix build/../
