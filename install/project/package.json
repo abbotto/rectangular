@@ -12,7 +12,7 @@
     "bump-patch": "gulp bump-patch",
     "bump-minor": "gulp bump-minor",
     "bump-major": "gulp bump-major",
-    "compile": "cd node_modules/rectangular && node build/compile.js && cd ../../",
+    "compile": ". ~/.nvm/nvm.sh && nvm use && npm i && cd node_modules/rectangular && node build/compile.js && cd ../../",
     "dev": "gulp dev",
     "docs": "gulp docs",
     "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run start && cd ../../",
