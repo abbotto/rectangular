@@ -1,6 +1,6 @@
 {
   "name": "rectangular",
-  "description": "A starter kit for AnguarJS applications.",
+  "description": "A build kit for AnguarJS applications.",
   "version": "1.0.0-beta",
   "license": "MIT",
   "author": "Jared Abbott",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "ui": "node build/install-ui.js",
-    "setup": "~/.nvm/nvm.sh && nvm i 6.10 && nvm use && npm i && cp .envrc .env",
+    "setup": "npm i && cp .envrc .env",
     "start": "npm i && cp .envrc .env"
   },
   "dependencies": {},
