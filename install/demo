@@ -9,10 +9,7 @@ echo -e "${YELLOW}---------------------${NC}"
 echo -e "${YELLOW}RECTANGULAR INSTALLER${NC}"
 echo -e "${YELLOW}---------------------${NC}"
 
-# Get the project name
-echo ""
-echo -e "prompt: ${RED}Project Name${NC}"
-
+# Supply the project details
 projectName="demo-app"
 projectDescription="ipsum lorem"
 projectLicense="MIT"

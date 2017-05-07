@@ -12,4 +12,4 @@ install:
 
 script:
   - node_modules/eslint/bin/eslint.js --fix .
-  - cd install && chmod +x demo && ./demo && cd demo-app && npm run test
+  - cd install && chmod +x demo && ./demo && cd demo-app && ~/.nvm/nvm.sh && nvm use && npm i && npm run test
