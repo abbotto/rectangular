@@ -33,7 +33,7 @@
 - The structure of a `directive` template path is this: `{{component}}/{{template}}.directive.html`.
 
 # Components
-A component is a specialized directive that organizes a controller with a template. One main difference between a component and a directive is that a component doesn't have a `link` function. If you need DOM manipulation, your component can use other directives that include that DOM manipulation in a link function.
+A component is a specialized directive that organizes a controller with a template. One main difference between a component and a directive is that a component doesn't have a `link` function. For DOM manipulation, a component can use directives with a link function.
 
 - Components are comprised of the following:
 	- A JS component with a controller.
