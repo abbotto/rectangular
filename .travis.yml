@@ -8,8 +8,12 @@ branches:
     - master
 
 install:
-  - ~/.nvm/nvm.sh && nvm use && npm i
+  - . ~/.nvm/nvm.sh && nvm use && npm i
+
+before_script:
+  - . ~/.nvm/nvm.sh
 
 script:
   - node_modules/eslint/bin/eslint.js --fix .
-  - cd install && chmod +x demo && ./demo && cd demo-app && ~/.nvm/nvm.sh && nvm use && npm i && npm run test
+  - cd install && chmod +x demo && ./demo && cd demo-app
+  - nvm use && npm i && npm run test

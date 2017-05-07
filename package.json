@@ -8,8 +8,6 @@
     "node": "6.10"
   },
   "scripts": {
-    "ui": "node build/install-ui.js",
-    "setup": "npm i && cp .envrc .env",
     "start": "npm i && cp .envrc .env"
   },
   "dependencies": {},

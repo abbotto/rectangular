@@ -50,7 +50,7 @@ cd ../../
 
 # Copy the project files and run the setup build
 cp -R node_modules/rectangular/tmp/project/ .
-npm run setup
+npm run start
 
 # Completed
 echo ""
