@@ -39,7 +39,7 @@
 	- Add behavior to the `View Model`.
 - Do not use `controllers`:
 	- For anything other than business logic.
-	- To share code or state across controllers — Use services instead.
+	- To share code or state across controllers — use services instead.
 
 # Components
 - Components are comprised of the following:
