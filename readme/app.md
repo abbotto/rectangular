@@ -56,7 +56,6 @@ A component is a specialized directive that organizes a controller with a templa
 - Components are comprised of the following:
 	- A JS component with a controller.
 	- A HTML template.
-- Components can also contiain their own directives, services and styles.
 - Component files are placed in the `app/component/{{componentName}}` directory:
 	- **Components** (js)
 	- **Directives** (js)
