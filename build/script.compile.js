@@ -56,5 +56,4 @@ for (; i < n; i += 1) {
 const output = script.join("\n\n");
 
 // Write the output to a file
-sh.exec("sleep 2");
 fs.writeFileSync(appJSPath, output, "utf8");
