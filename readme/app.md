@@ -3,7 +3,7 @@
 
 # Routes
 - Route modules are registered in `app/app.route.js`.
-- Routes are used to guide the users throught the application.
+- Routes are used to guide the users throughout the application.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
 - Learn more about `ui-router` [here](https://github.com/angular-ui/ui-router).
 
