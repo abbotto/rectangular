@@ -7,25 +7,25 @@ branches:
   only:
     - master
 
+before_script:
+  - . ~/.nvm/nvm.sh && nvm i 6.10
+
 script:
-  - . ~/.nvm/nvm.sh && nvm use && npm i && node_modules/eslint/bin/eslint.js --fix .
+  - npm i && node_modules/eslint/bin/eslint.js --fix .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
   - projectAuthor="rectangular"
-  - mkdir "$projectName"
-  - cd "$projectName"
+  - mkdir "$projectName" && cd "$projectName"
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
-  - PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-  - . ~/.nvm/nvm.sh && nvm i $PACKAGE_VERSION
-  - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
-  - rm package.js
+  - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author" && rm package.js
   - npm i abbotto/rectangular > /dev/null
-  - mkdir node_modules/rectangular/tmp && mkdir node_modules/rectangular/tmp/project
-  - cp -R node_modules/rectangular/install/project/node_modules/rectangular/tmp/project
+  - mkdir node_modules/rectangular/tmp
+  - mkdir node_modules/rectangular/tmp/project
+  - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/
   - cp package.json node_modules/rectangular/tmp/project/
-  - cd node_modules/rectangular/ && . ~/.nvm/nvm.sh && nvm use && npm i && cd ../../
-  - cp -R node_modules/rectangular/tmp/project/* .
-  - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && . ~/.nvm/nvm.sh && nvm use && npm i && cd ../../
+  - cd node_modules/rectangular/ && npm i && cd ../../
+  - cp -a node_modules/rectangular/tmp/project/. .
+  - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
   - . ~/.nvm/nvm.sh && nvm use && npm i && ls && npm run test
