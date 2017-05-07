@@ -58,7 +58,7 @@ A component is a specialized directive that organizes a controller with a templa
 - A short capture variable called `vm` is generally used for the `View Model` object.
 - The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
 - Capturing the context of this with `vm` avoids encountering this problem.
-- This variable is assigned using the `controllerAs` syntax.
+- The `vm` variable is assigned using the `controllerAs` syntax.
 
 ### Component View Example
 - A simple component directive may resemble the following:
