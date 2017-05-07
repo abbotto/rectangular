@@ -27,5 +27,5 @@ script:
   - cp -R node_modules/rectangular/install/project/ node_modules/rectangular/tmp/project
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/ && . ~/.nvm/nvm.sh && nvm use && npm i && cd ../../
-  - cp -R node_modules/rectangular/tmp/project/ .
+  - cp -R node_modules/rectangular/tmp/project/*/**/ .
   - . ~/.nvm/nvm.sh && nvm use && npm i && npm run setup && npm run test
