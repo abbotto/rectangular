@@ -47,7 +47,7 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in `asset loader` for easily adding additional styles and scripts.
 - A built-in `service loader` that finds and compiles `services` for you.
 - A built-in `route loader` that finds and compiles `routes` for you.
-- A built-in `eslint` configuration for `ES6` and `AngularJS`.
+- A built-in `eslint` config for `ES6` and `AngularJS`.
 - A built-in `livereload` server for development.
 - A built-in task-runner provided by `gulp`.
 - A built-in `semantic versioning` system.
