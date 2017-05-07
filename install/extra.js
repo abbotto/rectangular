@@ -3,7 +3,7 @@
 const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
-const slice = require("./../task/slice.js");
+const slice = require("./../build/slice.js");
 
 let vendorJS = require("./../tmp/project/dev/asset/vendor.js.json");
 let vendorCSS = require("./../tmp/project/dev/asset/vendor.scss.json");

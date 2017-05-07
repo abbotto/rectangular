@@ -15,8 +15,8 @@ const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/
 
 // Preflight
 sh.exec("node_modules/stylelint/bin/stylelint.js " + getPath() + "/app/**/*.scss");
-sh.exec("node task/font.copy.js");
-sh.exec("node task/image.copy.js");
+sh.exec("node build/font.copy.js");
+sh.exec("node build/image.copy.js");
 
 // Build
 sh.cat(sourceJSON).to(tmpCSSPath);

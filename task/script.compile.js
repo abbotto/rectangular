@@ -13,14 +13,14 @@ const getPath = require("./get.path.js");
 // Load environment variables
 require("dotenv").config();
 
-// Pre-flight tasks
+// Pre-flight builds
 sh.exec("node_modules/eslint/bin/eslint.js --fix app/");
-sh.exec("node task/service.compile.js");
-sh.exec("node task/constant.cache.js");
-sh.exec("node task/route.compile.js");
-sh.exec("node task/spec.compile.js");
-sh.exec("node task/model.cache.js");
-sh.exec("node task/html.cache.js");
+sh.exec("node build/service.compile.js");
+sh.exec("node build/constant.cache.js");
+sh.exec("node build/route.compile.js");
+sh.exec("node build/spec.compile.js");
+sh.exec("node build/model.cache.js");
+sh.exec("node build/html.cache.js");
 
 const sourceJSON = finder.sync(setPath(require(getPath() + "/dev/asset/source.js.json")));
 const vendorJSON = setPath(require(getPath() + "/dev/asset/vendor.js.json"));

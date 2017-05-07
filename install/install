@@ -69,7 +69,7 @@ npm i
 node install/extra.js
 cd ../../
 
-# Copy the project files and run the setup task
+# Copy the project files and run the setup build
 cp -R node_modules/rectangular/tmp/project/ .
 npm run setup
 
