@@ -8,20 +8,20 @@
 - MacOS/Linux
 
 ## Overview
-Out-of-the-box, `Rectangular` lets you build apps that are:
+Out-of-the-box, Rectangular lets you build apps that are:
 - Scalable
 - Testable
 - Organized
 - Responsive
 - Modular
 
-Essentially, there are 3 parts to `Rectangular`:
+Essentially, there are 3 parts to Rectangular:
 - the `Installer`
 - the `Application Kit`
 - the `Build System`.
 
 #### Installer
-- An `project installer` for initializing the `application kit`.
+- An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
 
 #### Application Kit
