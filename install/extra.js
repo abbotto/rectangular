@@ -16,16 +16,16 @@ prompt.start();
 
 const schema = {
 	"properties": {
-		"Bootstrap": {
+		"Angular Strap": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n",
-			"description": "Install Bootstrap? [y/n]",
+			"description": "Install Angular Strap? [y/n]",
 			"required": true
 		},
-		"Material Design": {
+		"Angular Material": {
 			"pattern": /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			"message": "Yes|No|yes|no|Y|N|y|n]",
-			"description": "Install Material Design? [y/n]",
+			"description": "Install Angular Material? [y/n]",
 			"required": true
 		},
 		"Lodash": {
@@ -68,9 +68,9 @@ const schema = {
 };
 
 prompt.get(schema, (err, input) => {
-	if (input.Bootstrap.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["Angular Strap"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing Bootstrap...");
+		console.log("Installing Angular Strap...");
 		
 		!fs.exists("tmp/project/app/shared/service/ui/*")
 			? sh.exec("mkdir tmp/project/app/shared/service/ui")
@@ -89,9 +89,9 @@ prompt.get(schema, (err, input) => {
 		vendorCSS = slice(vendorCSS, "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
 	}
 	
-	if (input["Material Design"].match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["Angular Material"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing Material Design...");
+		console.log("Installing Angular Material...");
 		
 		!fs.exists("tmp/project/app/shared/service/ui")
 			? sh.exec("mkdir tmp/project/app/shared/service/ui")
