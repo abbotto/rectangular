@@ -17,10 +17,11 @@
 			])
 			.config(($stateProvider) => {
 				$stateProvider
-				.state("home", {
-					"url": "/",
-					"template": "<home></home>"
-				});
+					.state("home", {
+						"url": "/",
+						"template": "<home></home>"
+					})
+				;
 			});
 		})();
 
