@@ -1,17 +1,17 @@
 # Table of Contents
 
-* 1. [App Modules](#AppModules)
-* 2. [Routes](#Routes)
-	* 2.1. [Routes Example](#RoutesExample)
-* 3. [Services](#Services)
-* 4. [Directives](#Directives)
-* 5. [Components](#Components)
-	* 5.1. [Component Assets](#ComponentAssets)
-	* 5.2. [View Model](#ViewModel)
-		* 5.2.1. [Component Example](#ComponentExample)
-* 6. [Controllers](#Controllers)
-* 7. [Templates](#Templates)
-	* 7.1. [Template Include Example](#TemplateIncludeExample)
+* [App Modules](#AppModules)
+* [Routes](#Routes)
+	* [Routes Example](#RoutesExample)
+* [Services](#Services)
+* [Directives](#Directives)
+* [Components](#Components)
+	* [Component Assets](#ComponentAssets)
+	* [View Model](#ViewModel)
+		* [Component Example](#ComponentExample)
+* [Controllers](#Controllers)
+* [Templates](#Templates)
+	* [Template Include Example](#TemplateIncludeExample)
 
 ##  1. <a name='AppModules'></a>App Modules
 - App Modules are registered in `app/app.module.js`.
