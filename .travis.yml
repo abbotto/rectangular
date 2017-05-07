@@ -25,6 +25,17 @@ script:
   - mkdir node_modules/rectangular/tmp/project
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
+  - cd node_modules/rectangular/tmp/project
+  - npm i --save bootstrap angular-strap
+  - npm i --save angular-material
+  - npm i --save bluebird
+  - npm i --save moment
+  - npm i --save angular-moment
+  - npm i --save lodash
+  - npm i --save angular-translate
+  - npm i --save restangular
+  - npm i --save ng-file-upload
+  - cd ../../../../
   - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
