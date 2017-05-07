@@ -7,9 +7,9 @@
 
 * [Requirements](#Requirements)
 * [Overview](#Overview)
-		* [Installer](#Installer)
-		* [Application Kit](#ApplicationKit)
-		* [Build System](#BuildSystem)
+	* [Installer](#Installer)
+	* [Application Kit](#ApplicationKit)
+	* [Build System](#BuildSystem)
 	* [Quick Install Method](#QuickInstallMethod)
 * [Documentation](#Documentation)
 
