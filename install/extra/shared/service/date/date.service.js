@@ -5,5 +5,8 @@
 		return moment$;
 	};
 	
-	angular.module("date.service", ["date.extension"]).factory("date$", dateService);
+	angular
+		.module("date.service", ["moment.extension"])
+		.factory("date$", dateService)
+	;
 })();

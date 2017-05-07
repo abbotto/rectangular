@@ -4,7 +4,10 @@ describe("_.service", () => {
 	let _;
 
 	beforeEach(() => {
-		__.inject("upload.service");
+		__.inject(
+			"lodash.extension",
+			"_.service"
+		);
 		_ = __.subject("_");
 	});
 

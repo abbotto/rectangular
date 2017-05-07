@@ -5,5 +5,8 @@
 		return lodash$;
 	};
 
-	angular.module("_.service", ["lodash.extension"]).factory("_", _Service);
+	angular
+		.module("_.service", ["lodash.extension"])
+		.factory("_", _Service)
+	;
 })();

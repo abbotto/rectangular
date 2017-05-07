@@ -23,5 +23,8 @@
 		return $promise;
 	};
 
-	angular.module("promise.service", ["bluebird.extension"]).factory("promise$", promiseService);
+	angular
+		.module("promise.service", ["bluebird.extension"])
+		.factory("promise$", promiseService)
+	;
 })();

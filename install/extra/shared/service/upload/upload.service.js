@@ -5,5 +5,8 @@
 		return Upload;
 	};
 
-	angular.module("upload.service", ["ngFileUpload.extension"]).factory("upload$", uploadService);
+	angular
+		.module("upload.service", ["ngFileUpload.extension"])
+		.factory("upload$", uploadService)
+	;
 })();

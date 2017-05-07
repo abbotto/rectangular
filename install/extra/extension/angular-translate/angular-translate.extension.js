@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-	angular.module("translate.extension", [
+	angular.module("angularTranslate.extension", [
 		"pascalprecht.translate"
 	])
 	.config(($translateProvider, LANGUAGE) => {
