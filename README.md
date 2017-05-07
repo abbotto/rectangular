@@ -36,11 +36,11 @@ Essentially, there are 3 parts to Rectangular:
 - the `Application Kit`
 - the `Build System`.
 
-####  <a name='Installer'></a>Installer
+###  <a name='Installer'></a>Installer
 - An `project installer` for initializing the application kit.
 - An `extension installer` for several popular 3rd-party packages.
 
-####  <a name='ApplicationKit'></a>Application Kit
+###  <a name='ApplicationKit'></a>Application Kit
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
 - A built-in `caching system` that retains your environment variables, models, and templates.
 - A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
@@ -52,7 +52,7 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in `semantic versioning` system.
 - A built-in task-runner provided by `gulp`.
 
-####  <a name='BuildSystem'></a>Build System
+###  <a name='BuildSystem'></a>Build System
 - Support for `SASS` syntax for powerful stylesheets.
 - Support for `ES6` syntax for modernized JavaScript.
 - Support for `PUG` syntax for cleaner HTML templates.
