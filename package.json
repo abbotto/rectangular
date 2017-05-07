@@ -8,7 +8,7 @@
     "node": "6.10"
   },
   "scripts": {
-    "start": "ls && npm i && cp .envrc .env"
+    "start": ". ~/.nvm/nvm.sh && nvm use && npm i && cp .envrc .env"
   },
   "dependencies": {},
   "devDependencies": {

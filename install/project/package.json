@@ -12,12 +12,11 @@
     "bump-patch": "gulp bump-patch",
     "bump-minor": "gulp bump-minor",
     "bump-major": "gulp bump-major",
-    "compile": ". ~/.nvm/nvm.sh && nvm use && npm i && cd node_modules/rectangular && node build/compile.js && cd ../../",
+    "compile": ". ~/.nvm/nvm.sh && nvm use && npm i && && npm run rectangular && node node_modules/rectangular/build/compile.js",
     "dev": "gulp dev",
     "docs": "gulp docs",
     "rectangular": "cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run start && cd ../../",
     "server": "node server.js",
-    "setup": "npm run rectangular && ls && cp .envrc .env && nvm use && npm i",
     "start": "npm run compile",
     "test": "node_modules/karma/bin/karma start karma.conf.js"
   },
