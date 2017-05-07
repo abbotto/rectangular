@@ -5,5 +5,8 @@
 		return $window._;
 	};
 	
-	angular.module("lodash.extension", []).factory("lodash$", lodashVendorService);
+	angular
+		.module("lodash.extension", [])
+		.factory("lodash$", lodashVendorService)
+	;
 })();

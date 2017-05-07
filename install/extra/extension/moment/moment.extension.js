@@ -1,9 +1,12 @@
 "use strict";
 
 (() => {
-	const momentVendorService = function momentVendorService(moment) {
-		return moment;
+	const momentVendorService = function momentVendorService($window) {
+		return $window.moment;
 	};
 	
-	angular.module("moment.extension", []).factory("moment$", momentVendorService);
+	angular
+		.module("moment.extension", [])
+		.factory("moment$", momentVendorService)
+	;
 })();
