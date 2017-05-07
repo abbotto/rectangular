@@ -17,7 +17,7 @@
 			.module("home.route", [
 				"home.component"
 			])
-			.config($stateProvider => {
+			.config(($stateProvider) => {
 				$stateProvider
 				.state("home", {
 					"url": "/",
@@ -87,7 +87,10 @@
 			};
 			
 			// Register the component
-			angular.module("home.component", []).component("home", options);
+			angular
+				.module("home.component", [])
+				.component("home", options)
+			;
 		})();
 
 ## Templates
