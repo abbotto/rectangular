@@ -3,6 +3,10 @@
 
 ---
 
+## Requirements
+- NodeJS, NPM, NVM
+- Unix/Linux
+
 ## Overview
 Out-of-the-box, `Rectangular` lets you build apps that are:
 - Scalable
