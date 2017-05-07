@@ -30,14 +30,14 @@
 
 # Directives
 - `Directives` are used to control DOM behaviour and to render data in HTML format.
-- The structure of a directive template path is this: `{{component}}/{{template}}.directive.html`.
+- The structure of a `directive` template path is this: `{{component}}/{{template}}.directive.html`.
 
 # Controllers
 - `Controllers` are used in `components` and `directives`.
-- Controllers should be used for:
-	- Set up the initial state of the 'View Model`.
+- `Controllers` should be used for:
+	- Set up the initial state of the `View Model`.
 	- Add behavior to the `View Model`.
-- Do not use controllers:
+- Do not use `controllers`:
 	- For anything other than business logic.
 	- To share code or state across controllers — Use services instead.
 
