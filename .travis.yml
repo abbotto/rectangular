@@ -7,6 +7,10 @@ branches:
   only:
     - master
 
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+
 script:
+  - ~/.nvm/nvm.sh && nvm install "$(jq -r '.engines.node' package.json)"
   - node_modules/eslint/bin/eslint.js --fix .
-  - ~/.nvm/nvm.sh && cd install && chmod +x demo && ./demo && cd demo && npm run test
+  - cd install && chmod +x demo && ./demo && cd demo && npm run test
