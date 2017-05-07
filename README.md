@@ -34,7 +34,7 @@ Out-of-the-box, Rectangular lets you build apps that are:
 Essentially, there are 3 parts to Rectangular:
 - the `Installer`
 - the `Application Kit`
-- the `Build System`.
+- the `Build System`
 
 ###  <a name='Installer'></a>Installer
 - An `project installer` for initializing the application kit.
