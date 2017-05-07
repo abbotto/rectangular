@@ -1,6 +1,7 @@
 /* eslint-disable impliedStrict */
 
 const sh = require("shelljs");
+sh.exec(". ~/.nvm/nvm.sh && nvm use && npm i");
 
 sh.exec("node build/reset.js");
 sh.exec("node build/app.intro.js");

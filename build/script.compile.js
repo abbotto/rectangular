@@ -53,7 +53,7 @@ for (; i < n; i += 1) {
 
 // Prevent minified files from cramming together
 // and breaking as a result
-const output = script.join("\n\n");
+const output = script.join(EOL + EOL);
 
 // Write the output to a file
 fs.writeFileSync(appJSPath, output, "utf8");
