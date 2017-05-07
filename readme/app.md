@@ -62,7 +62,7 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Routes** (js)
 	- **Services** (js)
 
-###  <a name='ComponentAssets'></a>Component Assets
+###  <a name='ComponentAssets'></a>Assets
 Assets are also placed in the `app/component/{{componentName}}` directory:
 - **Tests** (js)
 - **Styles** (scss)
