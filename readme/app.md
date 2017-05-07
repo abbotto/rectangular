@@ -9,9 +9,9 @@
 * [Directives](#Directives)
 * [Components](#Components)
 	* [Assets](#ComponentAssets)
-	* [View Model](#ViewModel)
-		* [Example](#ComponentExample)
+	* [Example](#ComponentExample)
 * [Controllers](#Controllers)
+	* [View Model](#ViewModel)
 * [Templates](#Templates)
 	* [Example](#TemplateIncludeExample)
 
@@ -71,12 +71,6 @@ Assets are also placed in the `app/component/{{componentName}}` directory:
 - **Models** ([data|mixin]json)
 - **Images** (png, jpg, jpeg, gif, svg, ico)
 
-###  <a name='ViewModel'></a>View Model
-- A short capture variable called `vm` is generally used for the `View Model` object.
-- The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
-- Capturing the context of this with `vm` avoids encountering this problem.
-- The `vm` variable is assigned using the `controllerAs` syntax.
-
 ####  <a name='ComponentExample'></a>Example
 A simple component directive may resemble the following:
 
@@ -106,6 +100,12 @@ Controllers are used in components and directives.
 - Do not use controllers:
 	- For anything other than business logic.
 	- To share code or state across controllers — use services instead.
+
+###  <a name='ViewModel'></a>View Model
+- A short capture variable called `vm` is generally used for the `View Model` object.
+- The `this` keyword is contextual and when used within a function inside a controller it may change it's context.
+- Capturing the context of this with `vm` avoids encountering this problem.
+- The `vm` variable is assigned using the `controllerAs` syntax.
 
 ##  <a name='Templates'></a>Templates
 - The structure of a template path is this: `{{component}}/{{template}}.html`.
