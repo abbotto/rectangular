@@ -1,4 +1,4 @@
-/* eslint-disable impliedStrict */
+"use strict";
 
 const sh = require("shelljs");
 

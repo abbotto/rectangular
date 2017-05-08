@@ -1,4 +1,4 @@
-/* eslint-disable impliedStrict */
+"use strict";
 
 const finder = require("glob-concat");
 const sh = require("shelljs");
@@ -9,7 +9,7 @@ const fonts = finder.sync([
 	getPath() + "/app/shared/design/font/*.{ttf,woff,woff2,eot,svg}"
 ]);
 
-if (!!fonts) {
+if (fonts) {
 	fonts.forEach((font) => {
 		sh.exec("cp " + font + " ./dist/fonts/");
 	});

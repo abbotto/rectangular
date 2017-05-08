@@ -1,4 +1,4 @@
-/* eslint-disable impliedStrict */
+"use strict";
 
 const prompt = require("prompt");
 const sh = require("shelljs");
