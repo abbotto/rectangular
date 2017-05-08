@@ -59,7 +59,7 @@ describe("ui.material.service", () => {
 
 		it("the `icon$` service should be available", () => {
 			expect(icon$).toBeDefined();
-			expect(typeof icon$).toBe("object");
+			expect(typeof icon$).toBe("function");
 		});
 
 		it("the `inkRipple$` service should be available", () => {
@@ -69,7 +69,7 @@ describe("ui.material.service", () => {
 
 		it("the `media$` service should be available", () => {
 			expect(media$).toBeDefined();
-			expect(typeof media$).toBe("object");
+			expect(typeof media$).toBe("function");
 		});
 
 		it("the `panel$` service should be available", () => {
@@ -79,12 +79,12 @@ describe("ui.material.service", () => {
 
 		it("the `sidenav$` service should be available", () => {
 			expect(sidenav$).toBeDefined();
-			expect(typeof sidenav$).toBe("object");
+			expect(typeof sidenav$).toBe("function");
 		});
 
 		it("the `sticky$` service should be available", () => {
 			expect(sticky$).toBeDefined();
-			expect(typeof sticky$).toBe("object");
+			expect(typeof sticky$).toBe("function");
 		});
 
 		it("the `toast$` service should be available", () => {
