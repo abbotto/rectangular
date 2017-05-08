@@ -45,7 +45,7 @@ describe("model.service", () => {
 			expect(model$._model.calls.mostRecent().args[0]).toEqual(mockKey);
 		});
 
-		it("it should return the correct result", () => {
+		it("it should return the correct value", () => {
 			expect(model$._model(mockKey)).toEqual(appModelMock1[mockKey]);
 		});
 	});
