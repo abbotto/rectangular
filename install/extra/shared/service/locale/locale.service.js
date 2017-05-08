@@ -7,8 +7,8 @@
 	
 	angular
 		.module("locale.service", ["pascalprecht.translate"])
-		.config(($translateProvider, LANGUAGE) => {
-			$translateProvider.preferredLanguage(LANGUAGE);
+		.config(($translateProvider) => {
+			$translateProvider.preferredLanguage("en");
 		})
 		.factory("locale$", localeService)
 	;
