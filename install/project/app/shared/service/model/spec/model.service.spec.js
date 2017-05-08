@@ -19,9 +19,11 @@ describe("model.service", () => {
 	});
 
 	beforeEach(() => {
-		__.inject("model.service");
+		module("model.service");
+		inject(($injector) => {
+			model$ = $injector.get("model$");
+		});
 		
-		model$ = __.subject("model$");
 		model$._model = __.createSpy("model$._model");
 		
 		model$._model.and.callFake((key) => {
