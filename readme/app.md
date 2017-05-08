@@ -22,7 +22,7 @@
 Routes are pathways within the application.
 - Route modules are registered in `app/app.route.js`.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
-- Learn more about `ui-router` [here](https://github.com/angular-ui/ui-router).
+- `ui-router` handles all the routing in Rectangular apps - you can learn more about it [here](https://github.com/angular-ui/ui-router).
 
 ###  <a name='RoutesExample'></a>Example
 - A route looks something like this:
