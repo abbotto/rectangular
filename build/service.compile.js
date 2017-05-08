@@ -5,10 +5,9 @@ const fs = require("fs");
 const getPath = require("./get.path.js");
 const injectServices = finder.sync([getPath() + "/dev/asset/service.ng.json"]);
 const tmpJS = "tmp/app.service.js";
+const services = [];
 
 if (injectServices.length) {
-	const services = [];
-	
 	injectServices.forEach((service) => {
 		services.push(service);
 	});
