@@ -5,11 +5,12 @@ describe("_.service", () => {
 
 	beforeEach(() => {
 		module("_.service");
+
 		inject(($injector) => {
 			_ = $injector.get("_");
 		});
 	});
-	
+
 	describe("When the `lodash` extension is installed", () => {
 		it("the `_` service should be available", () => {
 			expect(_).toBeDefined();

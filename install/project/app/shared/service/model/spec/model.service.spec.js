@@ -20,12 +20,13 @@ describe("model.service", () => {
 
 	beforeEach(() => {
 		module("model.service");
+
 		inject(($injector) => {
 			model$ = $injector.get("model$");
 		});
 		
 		model$._model = __.createSpy("model$._model");
-		
+
 		model$._model.and.callFake((key) => {
 			return appModelMock1[key];
 		});
@@ -52,7 +53,6 @@ describe("model.service", () => {
 	describe("When 'model$.get' is called", () => {
 		beforeEach(() => {
 			model$.get = __.createSpy("model$.get");
-			
 			result = model$.get(mockKey);
 		});
 		
@@ -74,7 +74,6 @@ describe("model.service", () => {
 	describe("When 'model$.mixin' is called", () => {
 		beforeEach(() => {
 			model$.mixin = __.createSpy("model$.mixin");
-			
 			result = model$.mixin(mockKey, [{version: "1.0.0"}]);
 		});
 		
