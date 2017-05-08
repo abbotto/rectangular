@@ -15,6 +15,7 @@ describe("ui.bootstrap.service", () => {
 
 	beforeEach(() => {
 		module(
+			"ui.bootstrap.service",
 			"ui.affix.service",
 			"ui.alert.service",
 			"ui.datepicker.service",
