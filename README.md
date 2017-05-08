@@ -8,7 +8,7 @@
 * [Requirements](#Requirements)
 * [Install](#Install)
 * [Overview](#Overview)
-	* [Installer](#Installer)
+	* [Project Installer](#Project-Installer)
 	* [Application Kit](#ApplicationKit)
 	* [Build System](#BuildSystem)
 * [Documentation](#Documentation)
@@ -32,13 +32,13 @@ Out-of-the-box, Rectangular gives you the power to build apps that are:
 - Modular
 
 Essentially, there are 3 parts to Rectangular:
-- the `Installer`
+- the `Project Installer`
 - the `Application Kit`
 - the `Build System`
 
-###  <a name='Installer'></a>Installer
-- An `project installer` for initializing the application kit.
-- An `extension installer` for several popular 3rd-party packages.
+###  <a name='Project-Installer'></a>Project Installer
+- An installer for initializing the application kit.
+- An installer for several popular 3rd-party packages.
 
 ###  <a name='ApplicationKit'></a>Application Kit
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
