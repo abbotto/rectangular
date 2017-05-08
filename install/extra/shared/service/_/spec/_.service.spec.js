@@ -14,7 +14,7 @@ describe("_.service", () => {
 	describe("When the `lodash` extension is installed", () => {
 		it("the `_` service should be available", () => {
 			expect(_).toBeDefined();
-			expect(typeof _).toBe("object");
+			expect(typeof _).toBe("function");
 		});
 	});
 });
