@@ -1,17 +1,9 @@
 "use strict";
 
-const finder = require("glob-concat");
 const fs = require("fs");
 const getPath = require("./get.path.js");
-const injectServices = finder.sync([getPath() + "/dev/asset/service.ng.json"]);
+const injectServices = require(getPath() + "/dev/asset/service.ng.json");
 const tmpJS = "tmp/app.service.js";
-const services = [];
+const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(injectServices.sort()) + ")})();";
 
-if (injectServices.length) {
-	injectServices.forEach((service) => {
-		services.push(service);
-	});
-}
-
-const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(services.sort()) + ")})();";
 fs.writeFile(tmpJS, appService);
