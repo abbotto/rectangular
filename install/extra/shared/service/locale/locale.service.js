@@ -9,7 +9,7 @@
 		.module("locale.service", ["pascalprecht.translate"])
 		.config(($translateProvider, LANGUAGE) => {
 			$translateProvider.preferredLanguage(LANGUAGE);
-		});
+		})
 		.factory("locale$", localeService)
 	;
 })();
