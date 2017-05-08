@@ -44,52 +44,52 @@ describe("ui.material.service", () => {
 	describe("When the `Angular Material` extension is installed", () => {
 		it("the `bottomSheet$` service should be available", () => {
 			expect(bottomSheet$).toBeDefined();
-			expect(typeof bottomSheet$).toBe("function");
+			expect(typeof bottomSheet$).toBe("object");
 		});
 
 		it("the `colors$` service should be available", () => {
 			expect(colors$).toBeDefined();
-			expect(typeof colors$).toBe("function");
+			expect(typeof colors$).toBe("object");
 		});
 
 		it("the `dialog$` service should be available", () => {
 			expect(dialog$).toBeDefined();
-			expect(typeof dialog$).toBe("function");
+			expect(typeof dialog$).toBe("object");
 		});
 
 		it("the `icon$` service should be available", () => {
 			expect(icon$).toBeDefined();
-			expect(typeof icon$).toBe("function");
+			expect(typeof icon$).toBe("object");
 		});
 
 		it("the `inkRipple$` service should be available", () => {
 			expect(inkRipple$).toBeDefined();
-			expect(typeof inkRipple$).toBe("function");
+			expect(typeof inkRipple$).toBe("object");
 		});
 
 		it("the `media$` service should be available", () => {
 			expect(media$).toBeDefined();
-			expect(typeof media$).toBe("function");
+			expect(typeof media$).toBe("object");
 		});
 
 		it("the `panel$` service should be available", () => {
 			expect(panel$).toBeDefined();
-			expect(typeof panel$).toBe("function");
+			expect(typeof panel$).toBe("object");
 		});
 
 		it("the `sidenav$` service should be available", () => {
 			expect(sidenav$).toBeDefined();
-			expect(typeof sidenav$).toBe("function");
+			expect(typeof sidenav$).toBe("object");
 		});
 
 		it("the `sticky$` service should be available", () => {
 			expect(sticky$).toBeDefined();
-			expect(typeof sticky$).toBe("function");
+			expect(typeof sticky$).toBe("object");
 		});
 
 		it("the `toast$` service should be available", () => {
 			expect(toast$).toBeDefined();
-			expect(typeof toast$).toBe("function");
+			expect(typeof toast$).toBe("object");
 		});
 	});
 });
