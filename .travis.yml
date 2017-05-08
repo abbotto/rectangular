@@ -11,7 +11,7 @@ before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
 
 script:
-  - npm i > /dev/null && node_modules/eslint/bin/eslint.js --fix .
+  - npm i > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"

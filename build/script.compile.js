@@ -14,7 +14,7 @@ const getPath = require("./get.path.js");
 require("dotenv").config();
 
 // Pre-flight builds
-sh.exec(getPath() + "/node_modules/rectangular/node_modules/eslint/bin/eslint.js --fix --quiet .");
+sh.exec(getPath() + "/node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/service.compile.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/constant.cache.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/route.compile.js");
