@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const bootstrapTypeaheadService = function bootstrapTypeaheadService($aside) {
-		return $aside;
+	const bootstrapTypeaheadService = function bootstrapTypeaheadService($typeahead) {
+		return $typeahead;
 	};
 	
 	angular

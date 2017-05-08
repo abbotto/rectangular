@@ -4,6 +4,7 @@
 	angular.module("ngStrap.extension", [
 		"mgcrea.ngStrap.affix",
 		"mgcrea.ngStrap.alert",
+		"mgcrea.ngStrap.aside",
 		"mgcrea.ngStrap.datepicker",
 		"mgcrea.ngStrap.dropdown",
 		"mgcrea.ngStrap.modal",

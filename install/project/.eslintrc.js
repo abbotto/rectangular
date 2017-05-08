@@ -109,7 +109,7 @@ module.exports = {
 		"multiline-ternary": 0,
 		"new-cap": 1,
 		"newline-per-chained-call": [1, {
-			"ignoreChainWithDepth": 1
+			"ignoreChainWithDepth": 2
 		}],
 		"no-alert": 1,
 		"no-array-constructor": 2,

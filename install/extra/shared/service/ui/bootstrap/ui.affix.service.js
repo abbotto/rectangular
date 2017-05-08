@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const bootstrapAffixService = function bootstrapAffixService($aside) {
-		return $aside;
+	const bootstrapAffixService = function bootstrapAffixService($affix) {
+		return $affix;
 	};
 	
 	angular

@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const bootstrapTimepickerService = function bootstrapTimepickerService($aside) {
-		return $aside;
+	const bootstrapTimepickerService = function bootstrapTimepickerService($timepicker) {
+		return $timepicker;
 	};
 	
 	angular

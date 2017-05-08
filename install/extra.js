@@ -52,16 +52,16 @@ const schema = {
 			description: "Install NG File Upload? [y/n]",
 			required: true
 		},
-		MomentJS: {
+		Moment: {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
-			description: "Install MomentJS? [y/n]",
+			description: "Install Moment JS? [y/n]",
 			required: true
 		},
 		"Angular Translate": {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
-			description: "Install AngularTranslate? [y/n]",
+			description: "Install Angular Translate? [y/n]",
 			required: true
 		}
 	}
@@ -122,9 +122,9 @@ prompt.get(schema, (err, input) => {
 		vendorJS = slice(vendorJS, "./node_modules/bluebird/js/browser/bluebird.min.js");
 	}
 	
-	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.Moment.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing MomentJS...");
+		console.log("Installing Moment...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/moment && mkdir tmp/project/app/extension/moment");
 		sh.exec("rm -rf tmp/project/app/shared/service/date && mkdir tmp/project/app/shared/service/date");
