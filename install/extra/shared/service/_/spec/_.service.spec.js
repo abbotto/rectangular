@@ -12,7 +12,7 @@ describe("_.service", () => {
 	
 	describe("When the `lodash` extension is installed", () => {
 		it("the `_` service should be available", () => {
-			expect(_).toBeTruthy();
+			expect(_).toBeDefined();
 		});
 	});
 });

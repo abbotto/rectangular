@@ -20,21 +20,21 @@ script:
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
   - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author" && rm package.js
-  - npm i abbotto/rectangular > /dev/null
+  - npm i abbotto/rectangular
   - mkdir node_modules/rectangular/tmp
   - mkdir node_modules/rectangular/tmp/project
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/tmp/project
-  - npm i --save bootstrap angular-strap > /dev/null
-  - npm i --save angular-material > /dev/null
-  - npm i --save bluebird > /dev/null
-  - npm i --save moment > /dev/null
-  - npm i --save angular-moment > /dev/null
-  - npm i --save lodash > /dev/null
-  - npm i --save angular-translate > /dev/null
-  - npm i --save restangular > /dev/null
-  - npm i --save ng-file-upload > /dev/null
+  - npm i --save bootstrap angular-strap
+  - npm i --save angular-material
+  - npm i --save bluebird
+  - npm i --save moment
+  - npm i --save angular-moment
+  - npm i --save lodash
+  - npm i --save angular-translate
+  - npm i --save restangular
+  - npm i --save ng-file-upload
   - cd ../../
   - cp .envrc .env
   - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
@@ -58,5 +58,5 @@ script:
   - cp -a node_modules/rectangular/tmp/project/. .
   - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && npm i > /dev/null
+  - . ~/.nvm/nvm.sh && nvm use && npm i
   - node_modules/karma/bin/karma start karma.conf.js

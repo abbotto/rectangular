@@ -12,7 +12,7 @@ describe("upload.service", () => {
 	
 	describe("When the `ng-file-upload` extension is installed", () => {
 		it("the `upload$` service should be available", () => {
-			expect(upload$).toBeTruthy();
+			expect(upload$).toBeDefined();
 		});
 	});
 });

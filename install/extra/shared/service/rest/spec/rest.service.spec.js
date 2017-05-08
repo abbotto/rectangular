@@ -12,7 +12,7 @@ describe("rest.service", () => {
 	
 	describe("When the `restangular` extension is installed", () => {
 		it("the `rest$` service should be available", () => {
-			expect(rest$).toBeTruthy();
+			expect(rest$).toBeDefined();
 		});
 	});
 });

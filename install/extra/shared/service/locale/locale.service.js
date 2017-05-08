@@ -6,7 +6,10 @@
 	};
 	
 	angular
-		.module("locale.service", ["angularTranslate.extension"])
+		.module("locale.service", ["pascalprecht.translate"])
+		.config(($translateProvider, LANGUAGE) => {
+			$translateProvider.preferredLanguage(LANGUAGE);
+		});
 		.factory("locale$", localeService)
 	;
 })();

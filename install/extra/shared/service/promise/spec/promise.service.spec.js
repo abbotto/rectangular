@@ -12,7 +12,7 @@ describe("promise.service", () => {
 	
 	describe("When the `bluebird` extension is installed", () => {
 		it("the `promise$` service should be available", () => {
-			expect(promise$).toBeTruthy();
+			expect(promise$).toBeDefined();
 		});
 	});
 });

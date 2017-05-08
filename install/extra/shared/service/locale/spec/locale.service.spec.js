@@ -12,7 +12,7 @@ describe("locale.service", () => {
 	
 	describe("When the `angular-translate` extension is installed", () => {
 		it("the `locale$` service should be available", () => {
-			expect(locale$).toBeTruthy();
+			expect(locale$).toBeDefined();
 		});
 	});
 });

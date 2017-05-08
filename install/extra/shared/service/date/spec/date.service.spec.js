@@ -12,7 +12,8 @@ describe("date.service", () => {
 	
 	describe("When the `moment` extension is installed", () => {
 		it("the `date$` service should be available", () => {
-			expect(date$).toBeTruthy();
+			expect(date$).toBeDefined();
+			expect(typeof date$).toBe("function");
 		});
 	});
 });
