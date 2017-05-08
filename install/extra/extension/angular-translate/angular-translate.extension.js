@@ -2,9 +2,10 @@
 
 (() => {
 	angular.module("angularTranslate.extension", [
+		"app.constant",
 		"pascalprecht.translate"
 	])
-	.config(($translateProvider) => {
-		$translateProvider.preferredLanguage("en");
+	.config(($translateProvider, LANGUAGE) => {
+		$translateProvider.preferredLanguage(LANGUAGE);
 	});
 })();

@@ -4,7 +4,7 @@ describe("locale.service", () => {
 	let locale$;
 
 	beforeEach(() => {
-		module("angularTranslate.extension", "locale.service");
+		module("locale.service");
 		inject(($injector) => {
 			locale$ = $injector.get("locale$");
 		});
