@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.dialog.service", [])
+		.module("ui.dialog.service", ["ui.material.service"])
 		.factory("dialog$", materialDialogService)
 	;
 })();

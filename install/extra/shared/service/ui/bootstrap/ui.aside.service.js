@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.aside.service", [])
+		.module("ui.aside.service", ["ui.bootstrap.service"])
 		.factory("aside$", bootstrapAsideService)
 	;
 })();

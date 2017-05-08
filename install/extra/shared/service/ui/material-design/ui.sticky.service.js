@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.sticky.service", [])
+		.module("ui.sticky.service", ["ui.material.service"])
 		.factory("sticky$", materialStickyService)
 	;
 })();

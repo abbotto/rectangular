@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.timepicker.service", [])
+		.module("ui.timepicker.service", ["ui.bootstrap.service"])
 		.factory("timepicker$", bootstrapTimepickerService)
 	;
 })();

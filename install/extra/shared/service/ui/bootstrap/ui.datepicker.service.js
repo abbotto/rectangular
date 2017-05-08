@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.datepicker.service", [])
+		.module("ui.datepicker.service", ["ui.bootstrap.service"])
 		.factory("datepicker$", bootstrapDatepickerService)
 	;
 })();

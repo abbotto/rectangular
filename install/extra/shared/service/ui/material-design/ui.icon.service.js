@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.icon.service", [])
+		.module("ui.icon.service", ["ui.material.service"])
 		.factory("icon$", materialIconService)
 	;
 })();

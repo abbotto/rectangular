@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.alert.service", [])
+		.module("ui.alert.service", ["ui.bootstrap.service"])
 		.factory("alert$", bootstrapAlertService)
 	;
 })();

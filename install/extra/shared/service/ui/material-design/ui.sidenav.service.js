@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.sidenav.service", [])
+		.module("ui.sidenav.service", ["ui.material.service"])
 		.factory("sidenav$", materialSidenavService)
 	;
 })();

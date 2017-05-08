@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.modal.service", [])
+		.module("ui.modal.service", ["ui.bootstrap.service"])
 		.factory("modal$", bootstrapModalService)
 	;
 })();

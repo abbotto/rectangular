@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.popover.service", [])
+		.module("ui.popover.service", ["ui.bootstrap.service"])
 		.factory("popover$", bootstrapPopoverService)
 	;
 })();

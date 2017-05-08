@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.media.service", [])
+		.module("ui.media.service", ["ui.material.service"])
 		.factory("media$", materialMediaService)
 	;
 })();

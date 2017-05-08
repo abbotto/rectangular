@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.tooltip.service", [])
+		.module("ui.tooltip.service", ["ui.bootstrap.service"])
 		.factory("tooltip$", bootstrapTooltipService)
 	;
 })();

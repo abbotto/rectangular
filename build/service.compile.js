@@ -2,24 +2,16 @@
 
 const finder = require("glob-concat");
 const fs = require("fs");
-const sh = require("shelljs");
 const getPath = require("./get.path.js");
+const injectServices = finder.sync([getPath() + "/dev/asset/service.ng.json"]);
 
-const serviceFiles = finder.sync([getPath() + "/app/**/*.service.js"]);
-const tmpJS = "tmp/app.service.js";
-
-const services = [];
-let name, parts;
-
-serviceFiles.forEach((path) => {
-	parts = path.split("/");
-	name = parts.pop().split(".js")[0];
+if (injectServices.length) {
+	const tmpJS = "tmp/app.service.js";
+	const services = [];
 	
-	if (name === "ui.bootstrap.service" || name === "ui.material.service") {
-		services.push(name);
-	}
-});
-
-const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(services.sort()) + ")})();";
-
-fs.writeFile(tmpJS, appService);
+	injectServices.forEach((service) => {
+		services.push(service);
+	});
+	const appService = "(function(){angular.module(\"app.service\", " + JSON.stringify(services.sort()) + ")})();";
+	fs.writeFile(tmpJS, appService);
+}

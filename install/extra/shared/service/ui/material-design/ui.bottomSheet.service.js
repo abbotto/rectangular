@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.bottomSheet.service", [])
+		.module("ui.bottomSheet.service", ["ui.material.service"])
 		.factory("bottomSheet$", materialBottomSheetService)
 	;
 })();

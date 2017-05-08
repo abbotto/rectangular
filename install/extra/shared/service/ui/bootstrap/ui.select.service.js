@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.select.service", [])
+		.module("ui.select.service", ["ui.bootstrap.service"])
 		.factory("select$", bootstrapSelectService)
 	;
 })();

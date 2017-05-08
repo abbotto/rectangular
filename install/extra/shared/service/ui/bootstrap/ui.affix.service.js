@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.affix.service", [])
+		.module("ui.affix.service", ["ui.bootstrap.service"])
 		.factory("affix$", bootstrapAffixService)
 	;
 })();

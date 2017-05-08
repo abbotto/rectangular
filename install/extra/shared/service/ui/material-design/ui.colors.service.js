@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.colors.service", [])
+		.module("ui.colors.service", ["ui.material.service"])
 		.factory("colors$", materialColorsService)
 	;
 })();

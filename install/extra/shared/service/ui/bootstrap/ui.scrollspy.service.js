@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.scrollspy.service", [])
+		.module("ui.scrollspy.service", ["ui.bootstrap.service"])
 		.factory("scrollspy$", bootstrapScrollspyService)
 	;
 })();

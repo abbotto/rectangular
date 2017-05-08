@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.typeahead.service", [])
+		.module("ui.typeahead.service", ["ui.bootstrap.service"])
 		.factory("typeahead$", bootstrapTypeaheadService)
 	;
 })();

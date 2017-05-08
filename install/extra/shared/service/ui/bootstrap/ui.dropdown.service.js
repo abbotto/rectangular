@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.dropdown.service", [])
+		.module("ui.dropdown.service", ["ui.bootstrap.service"])
 		.factory("dropdown$", bootstrapDropdownService)
 	;
 })();

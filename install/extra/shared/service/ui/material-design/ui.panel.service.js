@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.panel.service", [])
+		.module("ui.panel.service", ["ui.material.service"])
 		.factory("panel$", materialPanelService)
 	;
 })();

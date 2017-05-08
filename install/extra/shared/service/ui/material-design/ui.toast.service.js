@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("ui.toast.service", [])
+		.module("ui.toast.service", ["ui.material.service"])
 		.factory("toast$", materialToastService)
 	;
 })();
