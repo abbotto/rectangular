@@ -1,6 +1,6 @@
 "use strict";
 
-fdescribe("ui.bootstrap.service", () => {
+describe("ui.bootstrap.service", () => {
 	let affix$,
 		alert$,
 		aside$,
