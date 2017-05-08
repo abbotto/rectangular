@@ -50,7 +50,7 @@ fdescribe("ui.bootstrap.service", () => {
 	describe("When the `Angular Strap` extension is installed", () => {
 		it("the `affix$` service should be available", () => {
 			expect(affix$).toBeDefined();
-			expect(typeof affix$.toBe("function");
+			expect(typeof affix$).toBe("function");
 		});
 
 		it("the `alert$` service should be available", () => {
