@@ -24,7 +24,7 @@
 	cd myApp && nvm use && npm i
 
 ##  <a name='Overview'></a>Overview
-Out-of-the-box, Rectangular gives the power to build apps that are:
+Out-of-the-box, Rectangular gives you the power to build apps that are:
 - Scalable
 - Testable
 - Organized
