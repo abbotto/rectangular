@@ -3,9 +3,14 @@ language: node_js
 node_js:
   - "6.10"
 
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
 branches:
   only:
-    - master
+    - yarn
 
 before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10

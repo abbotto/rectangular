@@ -21,6 +21,7 @@
 !.nvmrc
 !.stylelintrc
 !.travis.yml
+!yarn.lock
 
 # Whitelist Source Files
 !/app
