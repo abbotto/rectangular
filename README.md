@@ -16,9 +16,16 @@
 ---
 
 ##  <a name='Install'></a>Install
+	# Download the install script
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
+	
+	# Make the script executable
 	chmod +x install
+	
+	# Run the script
 	./install
+	
+	# Go to the app directory
 	cd myApp
 
 ###  <a name='Requirements'></a>Requirements
