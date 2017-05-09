@@ -51,7 +51,7 @@ Essentially, there are 3 parts to Rectangular:
 
 ###  <a name='Project-Installer'></a>Project Installer
 - Initialize the application kit.
-- Add extras from several popular 3rd-party packages.
+- Add extras from popular 3rd-party packages.
 
 ###  <a name='ApplicationKit'></a>Application Kit
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
