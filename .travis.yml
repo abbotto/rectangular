@@ -16,7 +16,7 @@ before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
 
 script:
-  - yarn > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
+  - yarn --ignore-engines > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
@@ -59,9 +59,9 @@ script:
   - cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/
   - cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/
   - cd ../../
-  - cd node_modules/rectangular/ && yarn && cd ../../
+  - cd node_modules/rectangular/ && yarn --ignore-engines && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && yarn
+  - . ~/.nvm/nvm.sh && nvm use && yarn --ignore-engines
   - node_modules/karma/bin/karma start karma.conf.js
