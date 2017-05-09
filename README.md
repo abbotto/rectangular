@@ -7,6 +7,7 @@
 
 * [Installation](#Installation)
 	* [Requirements](#Requirements)
+	* [Procedure](#Procedure)
 * [Overview](#Overview)
 	* [Project Installer](#Project-Installer)
 	* [Application Kit](#ApplicationKit)
@@ -23,7 +24,7 @@
 - NPM
 - NVM
 
-#
+###  <a name='Procedure'></a>Procedure
 	# Download the install script
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
 	
@@ -37,7 +38,7 @@
 	cd myApp
 
 ##  <a name='Overview'></a>Overview
-Out-of-the-box, Rectangular gives you the power to build apps that are:
+Out-of-the-box, Rectangular gives you the power to build Angular 1.x.x apps that are:
 - Scalable
 - Testable
 - Organized
