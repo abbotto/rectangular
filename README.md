@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-* [Install](#Install)
+* [Installation](#Installation)
 	* [Requirements](#Requirements)
 * [Overview](#Overview)
 	* [Project Installer](#Project-Installer)
@@ -15,7 +15,7 @@
 
 ---
 
-##  <a name='Install'></a>Install
+##  <a name='Installation'></a>Installation
 
 ###  <a name='Requirements'></a>Requirements
 - Bash
