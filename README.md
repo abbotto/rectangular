@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-* [Requirements](#Requirements)
+* [System Requirements](#System-Requirements)
 * [Install](#Install)
 * [Overview](#Overview)
 	* [Project Installer](#Project-Installer)
@@ -15,9 +15,11 @@
 
 ---
 
-##  <a name='Requirements'></a>Requirements
-- NodeJS, NPM, NVM
-- MacOS/Linux
+##  <a name='System-Requirements'></a>System Requirements
+- Bash
+- NodeJS
+- NPM
+- NVM
 
 ##  <a name='Install'></a>Install
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
