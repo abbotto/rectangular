@@ -17,7 +17,6 @@
 !.eslintignore
 !.eslintrc.js
 !.gitignore
-!.jsbeautifyrc
 !.nvmrc
 !.stylelintrc
 !.travis.yml
