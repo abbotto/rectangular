@@ -66,11 +66,11 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in `semantic versioning` system.
 
 ###  <a name='BuildSystem'></a>Build System
-- Support for `SASS` syntax for powerful stylesheets.
-- Support for `ES6` syntax for modernized JavaScript.
-- Support for `PUG` syntax for cleaner HTML templates.
-- Support for `stylelint` to make sure your styles come out shiny.
-- Support for `autoprefixer` so your styles are welcome in web browsers.
+- Supporting `SASS` syntax for powerful stylesheets.
+- Supporting `ES6` syntax for modernized JavaScript.
+- Supporting `PUG` syntax for cleaner HTML templates.
+- Supporting `stylelint` to make sure your styles come out shiny.
+- Supporting `autoprefixer` so your styles are welcome in web browsers.
 
 ---
 
