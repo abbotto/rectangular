@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-* [System Requirements](#System-Requirements)
+* [Requirements](#Requirements)
 * [Install](#Install)
 * [Overview](#Overview)
 	* [Project Installer](#Project-Installer)
@@ -15,7 +15,7 @@
 
 ---
 
-##  <a name='System-Requirements'></a>System Requirements
+##  <a name='Requirements'></a>Requirements
 - Bash
 - NodeJS
 - NPM
