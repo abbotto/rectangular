@@ -16,8 +16,10 @@
 ---
 
 ##  <a name='Install'></a>Install
-	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
-	cd myApp && nvm use && npm i
+	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
+	chmod +x install
+	./install
+	cd myApp
 
 ###  <a name='Requirements'></a>Requirements
 - Bash
