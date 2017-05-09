@@ -23,6 +23,7 @@
 - NPM
 - NVM
 
+#
 	# Download the install script
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
 	
