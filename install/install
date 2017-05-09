@@ -53,7 +53,7 @@ node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 rm package.js
 
 # Grab Rectangular
-npm i abbotto/rectangular > /dev/null
+npm i abbotto/rectangular#yarn > /dev/null
 
 # Setup temporary project files and directories
 mkdir node_modules/rectangular/tmp
@@ -66,7 +66,7 @@ cp package.json node_modules/rectangular/tmp/project/
 cd node_modules/rectangular/
 cp .envrc .env
 nvm use
-npm i
+yarn
 node install/extra.js
 cd ../../
 
@@ -83,7 +83,7 @@ cd ../../
 # Run the test
 . ~/.nvm/nvm.sh
 nvm use
-npm i
+yarn
 node_modules/karma/bin/karma start karma.conf.js
 
 # Completed

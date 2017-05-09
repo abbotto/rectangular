@@ -16,7 +16,7 @@ before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
 
 script:
-  - npm i > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
+  - yarn > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
@@ -31,15 +31,15 @@ script:
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/tmp/project
-  - npm i --save bootstrap angular-strap
-  - npm i --save angular-material
-  - npm i --save bluebird
-  - npm i --save moment
-  - npm i --save angular-moment
-  - npm i --save lodash
-  - npm i --save angular-translate
-  - npm i --save restangular
-  - npm i --save ng-file-upload
+  - yarn add bootstrap angular-strap
+  - yarn add angular-material
+  - yarn add bluebird
+  - yarn add moment
+  - yarn add angular-moment
+  - yarn add lodash
+  - yarn add angular-translate
+  - yarn add restangular
+  - yarn add ng-file-upload
   - cd ../../
   - cp .envrc .env
   - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
@@ -59,9 +59,9 @@ script:
   - cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/
   - cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/
   - cd ../../
-  - cd node_modules/rectangular/ && npm i && cd ../../
+  - cd node_modules/rectangular/ && yarn && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && npm i
+  - . ~/.nvm/nvm.sh && nvm use && yarn
   - node_modules/karma/bin/karma start karma.conf.js
