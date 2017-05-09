@@ -17,7 +17,7 @@
 
 ##  <a name='Requirements'></a>Requirements
 - Bash
-- NodeJS
+- Node.js
 - NPM
 - NVM
 
