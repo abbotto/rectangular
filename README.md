@@ -5,8 +5,8 @@
 
 ## Table of Contents
 
-* [Requirements](#Requirements)
 * [Install](#Install)
+	* [Requirements](#Requirements)
 * [Overview](#Overview)
 	* [Project Installer](#Project-Installer)
 	* [Application Kit](#ApplicationKit)
@@ -15,15 +15,15 @@
 
 ---
 
-##  <a name='Requirements'></a>Requirements
+##  <a name='Install'></a>Install
+	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
+	cd myApp && nvm use && npm i
+
+###  <a name='Requirements'></a>Requirements
 - Bash
 - Node.js
 - NPM
 - NVM
-
-##  <a name='Install'></a>Install
-	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install && chmod +x install && ./install
-	cd myApp && nvm use && npm i
 
 ##  <a name='Overview'></a>Overview
 Out-of-the-box, Rectangular gives you the power to build apps that are:
