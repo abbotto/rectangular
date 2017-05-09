@@ -16,7 +16,7 @@ before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
 
 script:
-  - yarn --ignore-engines > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
+  - yarn --ignore-engines --ignore-platform > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
@@ -31,15 +31,15 @@ script:
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/tmp/project
-  - yarn add bootstrap angular-strap
-  - yarn add angular-material
-  - yarn add bluebird
-  - yarn add moment
-  - yarn add angular-moment
-  - yarn add lodash
-  - yarn add angular-translate
-  - yarn add restangular
-  - yarn add ng-file-upload
+  - yarn add --ignore-engines --ignore-platform bootstrap angular-strap
+  - yarn add --ignore-engines --ignore-platform angular-material
+  - yarn add --ignore-engines --ignore-platform bluebird
+  - yarn add --ignore-engines --ignore-platform moment
+  - yarn add --ignore-engines --ignore-platform angular-moment
+  - yarn add --ignore-engines --ignore-platform lodash
+  - yarn add --ignore-engines --ignore-platform angular-translate
+  - yarn add --ignore-engines --ignore-platform restangular
+  - yarn add --ignore-engines --ignore-platform ng-file-upload
   - cd ../../
   - cp .envrc .env
   - cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/
@@ -59,9 +59,9 @@ script:
   - cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/
   - cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/
   - cd ../../
-  - cd node_modules/rectangular/ && yarn --ignore-engines && cd ../../
+  - cd node_modules/rectangular/ && yarn --ignore-engines --ignore-platform && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && yarn --ignore-engines
+  - . ~/.nvm/nvm.sh && nvm use && yarn --ignore-engines --ignore-platform
   - node_modules/karma/bin/karma start karma.conf.js
