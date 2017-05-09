@@ -16,6 +16,13 @@
 ---
 
 ##  <a name='Install'></a>Install
+
+###  <a name='Requirements'></a>Requirements
+- Bash
+- Node.js
+- NPM
+- NVM
+
 	# Download the install script
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
 	
@@ -27,12 +34,6 @@
 	
 	# Go to the app directory
 	cd myApp
-
-###  <a name='Requirements'></a>Requirements
-- Bash
-- Node.js
-- NPM
-- NVM
 
 ##  <a name='Overview'></a>Overview
 Out-of-the-box, Rectangular gives you the power to build apps that are:
