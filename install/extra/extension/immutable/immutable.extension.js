@@ -1,7 +1,8 @@
 "use strict";
 
 (() => {
-	const immutableVendorService = function immutableVendorService(Immutable) {
+	const immutableVendorService = function immutableVendorService() {
+		// eslint-disable-next-line no-undef
 		return Immutable;
 	};
 	

@@ -14,7 +14,7 @@ describe("data.service", () => {
 	describe("When the `immutable` extension is installed", () => {
 		it("the `data$` service should be available", () => {
 			expect(data$).toBeDefined();
-			expect(typeof data$).toBe("function");
+			expect(typeof data$).toBe("object");
 		});
 	});
 });
