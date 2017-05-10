@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-	const printService = function _Service(teleprint$) {
+	const printService = function printService(teleprint$) {
 		return teleprint$;
 	};
 

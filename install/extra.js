@@ -52,10 +52,16 @@ const schema = {
 			description: "Install NG File Upload? [y/n]",
 			required: true
 		},
-		Moment: {
+		MomentJS: {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
-			description: "Install Moment JS? [y/n]",
+			description: "Install MomentJS? [y/n]",
+			required: true
+		},
+		ImmutableJS: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install ImmutableJS? [y/n]",
 			required: true
 		},
 		Teleprint: {
@@ -128,9 +134,9 @@ prompt.get(schema, (err, input) => {
 		vendorJS = slice(vendorJS, "./node_modules/bluebird/js/browser/bluebird.min.js");
 	}
 	
-	if (input.Moment.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing Moment...");
+		console.log("Installing MomentJS...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/moment && mkdir tmp/project/app/extension/moment");
 		sh.exec("rm -rf tmp/project/app/shared/service/date && mkdir tmp/project/app/shared/service/date");
@@ -156,6 +162,22 @@ prompt.get(schema, (err, input) => {
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
+	}
+	
+	if (input.ImmutableJS.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Teleprint...");
+		
+		sh.exec("rm -rf tmp/project/app/extension/immutable && mkdir tmp/project/app/extension/immutable");
+		sh.exec("rm -rf tmp/project/app/shared/service/data && mkdir tmp/project/app/shared/service/data");
+		sh.exec("rm -rf tmp/project/app/shared/directive/data && mkdir tmp/project/app/shared/directive/data");
+		sh.exec("cp -a install/extra/extension/immutable/. tmp/project/app/extension/immutable/");
+		sh.exec("cp -a install/extra/shared/service/data/. tmp/project/app/shared/service/data/");
+		sh.exec("cp -a install/extra/shared/directive/data/. tmp/project/app/shared/directive/data/");
+		sh.exec("cd tmp/project && npm i --save immutable && cd ..");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/immutable/dist/immutable.min.js");
 	}
 	
 	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
