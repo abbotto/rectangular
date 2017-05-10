@@ -9,7 +9,10 @@
 				return $window.exampleLibrary;
 			};
 
-			angular.module("example.extension", []).factory("exampleExtension", exampleExtension);
+			angular
+				.module("example.extension", [])
+				.factory("exampleExtension", exampleExtension)
+			;
 		})();
 
 - The extension can then be exposed to the app as a custom service:
@@ -19,7 +22,10 @@
 				return exampleExtension;
 			};
 
-			angular.module("example.service", ["example.extension"]).factory("example$", exampleService);
+			angular
+				.module("example.service", ["example.extension"])
+				.factory("example$", exampleService)
+			;
 		})();
 
 ### Available Extensions
