@@ -40,6 +40,7 @@ script:
   - yarn add --ignore-engines --ignore-platform angular-translate
   - yarn add --ignore-engines --ignore-platform restangular
   - yarn add --ignore-engines --ignore-platform ng-file-upload
+  - yarn add --ignore-engines --ignore-platform immutable
   - yarn add --ignore-engines --ignore-platform teleprint
   - cd ../../
   - cp .envrc .env
@@ -59,6 +60,8 @@ script:
   - cp -a install/extra/shared/service/promise/. tmp/project/app/shared/service/promise/
   - cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/
   - cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/
+  - cp -a install/extra/extension/immutable/. tmp/project/app/extension/immutable/
+  - cp -a install/extra/shared/service/data/. tmp/project/app/shared/service/data/
   - cp -a install/extra/extension/teleprint/. tmp/project/app/extension/teleprint/
   - cp -a install/extra/shared/service/print/. tmp/project/app/shared/service/print/
   - cd ../../
