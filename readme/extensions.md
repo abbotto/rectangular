@@ -92,7 +92,6 @@
 
 #### Immutable Data
 - Service is called `data.service` and is injected via `data$`.
-- Directive is called `data.directive` and is added via `data-src`.
 - Learn more about 'immutable-js' [here](https://github.com/facebook/immutable-js/).
 
 #### Printing
