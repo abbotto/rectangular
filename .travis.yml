@@ -10,7 +10,7 @@ cache:
 
 branches:
   only:
-    - yarn
+    - master
 
 before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
