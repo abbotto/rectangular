@@ -1,7 +1,21 @@
-## Extensions
+## Table of Contents
+* [Extensions](#Extensions)
+	* [Adding Extensions](#AddingExtensions)
+	* [Available Extensions](#AvailableExtensions)
+		* [UI Services](#UIServices)
+		* [Arrays, Objects & Strings](#ArraysObjectsStrings)
+		* [Date & Time](#DateTime)
+		* [REST](#REST)
+		* [Promises](#Promises)
+		* [File Uploading](#FileUploading)
+		* [Language Support](#LanguageSupport)
+		* [Immutable Data](#ImmutableData)
+		* [Printing](#Printing)
+
+##  <a name='Extensions'></a>Extensions
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
 
-### Adding Extensions
+### <a name='AddingExtensions'></a>Adding Extensions
 - Typically, adding a new `extension` is done in the following way:
 
 		(() => {
@@ -29,9 +43,9 @@
 			;
 		})();
 
-### Available Extensions
+### <a name='AvailableExtensions'></a>Available Extensions
 
-#### UI Services
+#### <a name='UIServices'></a>UI Services
 
 ##### Material Design
 - Learn more about `angular-material` [here](https://material.angularjs.org/latest/).
@@ -64,37 +78,37 @@
 - Service is called `ui.tooltip.service` and is injected via `tooltip$`.
 - Service is called `ui.typeahead.service` and is injected via `typeahead$`.
 
-#### Arrays, Objects & Strings
+#### <a name='ArraysObjectsStrings'></a>Arrays, Objects & Strings
 - Service is called `_.service` and is injected via `_`.
 - Learn more about `Lodash` [here](https://example.com/docs/4.16.6).
 
-#### Date & Time
+#### <a name='DateTime'></a>Date & Time
 - Service is called `date.service` and is injected via `date$`.
 - Learn more about `angularMoment` [here](https://github.com/urish/angular-moment).
 - Learn more about `MomentJS` [here](http://momentjs.com/docs/).
 
-#### REST
+#### <a name='REST'></a>REST
 - Service is called `rest.service` and is injected via `rest$`.
 - The rest$ service can be used in place of $resource.
 - Learn more about `restangular` [here](https://github.com/mgonto/restangular).
 
-#### Promises
+#### <a name='Promises'></a>Promises
 - Service is called `promise.service` and is injected via `promise$`.
 - `promise$` can be used in place of `$q` - it is a speedier and more robust implementation.
 - Learn more about `bluebird` [here](https://github.com/petkaantonov/bluebird).
 
-#### File Uploading
+#### <a name='FileUploading'></a>File Uploading
 - Service is called `upload.service` and is injected via `upload$`.
 - Learn more about `ng-file-upload` [here](https://github.com/danialfarid/ng-file-upload).
 
-#### Language Support
+#### <a name='LanguageSupport'></a>Language Support
 - Service is called `locale.service` and is injected via `locale$`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
-#### Immutable Data
+#### <a name='ImmutableData'></a>Immutable Data
 - Service is called `data.service` and is injected via `data$`.
 - Learn more about 'immutable-js' [here](https://github.com/facebook/immutable-js/).
 
-#### Printing
+#### <a name='Printing'></a>Printing
 - Service is called `print.service` and is injected via `print$`.
 - Learn more about `teleprint` [here](https://github.com/abbotto/teleprint).

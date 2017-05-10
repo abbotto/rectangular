@@ -4,7 +4,6 @@
 ---
 
 ## Table of Contents
-
 * [Installation](#Installation)
 	* [Requirements](#Requirements)
 	* [Procedure](#Procedure)
