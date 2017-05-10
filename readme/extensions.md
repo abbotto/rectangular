@@ -12,6 +12,7 @@
 			angular
 				.module("example.extension", [])
 				.factory("exampleExtension", exampleExtension)
+				.config(() => { ... })
 			;
 		})();
 
