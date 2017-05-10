@@ -12,7 +12,7 @@
 			angular.module("example.extension", []).factory("exampleExtension", exampleExtension);
 		})();
 
-- The extension can then be wrapped as a custom service:
+- The extension can then be exposed to the app as a custom service:
 
 		(() => {
 			const exampleService = function exampleService(exampleExtension) {
