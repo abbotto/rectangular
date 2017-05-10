@@ -166,14 +166,12 @@ prompt.get(schema, (err, input) => {
 	
 	if (input.ImmutableJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
-		console.log("Installing Teleprint...");
+		console.log("Installing ImmutableJS...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/immutable && mkdir tmp/project/app/extension/immutable");
 		sh.exec("rm -rf tmp/project/app/shared/service/data && mkdir tmp/project/app/shared/service/data");
-		sh.exec("rm -rf tmp/project/app/shared/directive/data && mkdir tmp/project/app/shared/directive/data");
 		sh.exec("cp -a install/extra/extension/immutable/. tmp/project/app/extension/immutable/");
 		sh.exec("cp -a install/extra/shared/service/data/. tmp/project/app/shared/service/data/");
-		sh.exec("cp -a install/extra/shared/directive/data/. tmp/project/app/shared/directive/data/");
 		sh.exec("cd tmp/project && npm i --save immutable && cd ..");
 	}
 	else {

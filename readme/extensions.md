@@ -89,15 +89,6 @@
 - Directive is called `data.directive` and is added via `data-src`.
 - Learn more about 'immutable-js' [here](https://github.com/facebook/immutable-js/).
 
-##### Immutable Data Example
-	// In the controller...
-	$scope.list = data$.List([1, 2, 3, 4, 5, a, b, c, d, e, f]);
-
-	// In the template...
-	<ul>
-		<li data-src="collection" ng-repeat="item in collection track by $index" ng-bind="item"></li>
-	</ul>
-
 #### Printing
 - Service is called `print.service` and is injected via `print$`.
 - Learn more about `teleprint` [here](https://github.com/abbotto/teleprint).
