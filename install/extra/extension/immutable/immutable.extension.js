@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const immutableVendorService = function immutableVendorService(Immutable) {
-		return Immutable;
+	const immutableVendorService = function immutableVendorService($window) {
+		return $window.Immutable;
 	};
 	
 	angular
