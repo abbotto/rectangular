@@ -44,9 +44,8 @@ cd "$projectName"
 # Initialize package.json
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
-PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 . ~/.nvm/nvm.sh
-nvm i $PACKAGE_VERSION
+nvm i $(node -p -e "require('./package.json').version")
 
 # Add the project name and description, etc...
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
