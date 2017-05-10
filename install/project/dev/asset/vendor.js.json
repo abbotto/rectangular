@@ -15,5 +15,6 @@
 	"./node_modules/angular-translate/dist/angular-translate.min.js",
 	"./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js",
 	"./node_modules/restangular/dist/restangular.min.js",
-	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js"
+	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js",
+	"./node_modules/teleprint/teleprint.min.js"
 ]

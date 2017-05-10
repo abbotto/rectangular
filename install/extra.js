@@ -58,6 +58,12 @@ const schema = {
 			description: "Install Moment JS? [y/n]",
 			required: true
 		},
+		Teleprint: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install Teleprint? [y/n]",
+			required: true
+		},
 		"Angular Translate": {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
@@ -150,6 +156,20 @@ prompt.get(schema, (err, input) => {
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
+	}
+	
+	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Teleprint...");
+		
+		sh.exec("rm -rf tmp/project/app/extension/teleprint && mkdir tmp/project/app/extension/teleprint");
+		sh.exec("rm -rf tmp/project/app/shared/service/print && mkdir tmp/project/app/shared/service/print");
+		sh.exec("cp -a install/extra/extension/teleprint/. tmp/project/app/extension/teleprint/");
+		sh.exec("cp -a install/extra/shared/service/print/. tmp/project/app/shared/service/print/");
+		sh.exec("cd tmp/project && npm i --save teleprint && cd ..");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/teleprint/teleprint.min.js");
 	}
 	
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
