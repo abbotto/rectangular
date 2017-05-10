@@ -84,3 +84,6 @@
 - Called via `locale.service` and injected via `locale$`.
 - Learn more about `angular-translate` [here](https://angular-translate.github.io/).
 
+#### Printing
+- Called via `print.service` and injected via `print$`.
+- Learn more about `teleprint` [here](https://github.com/abbotto/teleprint).
