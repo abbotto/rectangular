@@ -2,7 +2,7 @@
 
 (() => {
 	const immutableVendorService = function immutableVendorService($window) {
-		return $window.Immutable;
+		return $window.immutable;
 	};
 	
 	angular
