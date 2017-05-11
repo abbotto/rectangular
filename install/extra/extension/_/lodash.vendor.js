@@ -6,7 +6,7 @@
 	};
 	
 	angular
-		.module("lodash.vendor", [])
+		.module("lodash.vendor.service", [])
 		.factory("_", lodashVendorService)
 	;
 })();

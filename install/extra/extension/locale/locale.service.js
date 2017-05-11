@@ -1,5 +1,5 @@
 "use strict";
 
 (() => {
-	angular.module("locale.service", ["angularTranslate.vendor"]);
+	angular.module("locale.service", ["angularTranslate.vendor.service"]);
 })();
