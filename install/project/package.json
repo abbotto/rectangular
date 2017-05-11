@@ -57,6 +57,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-spec-reporter": "0.0.31",
+    "karma-systemjs": "^0.16.0",
     "phantomjs-prebuilt": "^2.1.13",
     "rectangular": "git+https://github.com/abbotto/rectangular.git",
     "shelljs": "^0.7.7"

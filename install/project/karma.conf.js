@@ -21,7 +21,11 @@ module.exports = function karmaConfig(config) {
 		// frameworks to use
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
 		frameworks: [
-			"jasmine"
+			"jasmine",
+			"systemjs"
+		],
+		plugins: [
+			"karma-systemjs"
 		],
 		client: {
 			config: {
