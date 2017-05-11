@@ -1,16 +1,12 @@
 "use strict";
 
 (() => {
-	angular.module("restangular.vendor", [
-		"restangular"
-	]);
-	
 	const restangularVendorService = function restangularVendorService(Restangular) {
 		return Restangular;
 	};
 
 	angular
-		.module("restangular.vendor.service", [])
+		.module("restangular.vendor.service", ["restangular"])
 		.factory("rest$", restangularVendorService)
 	;
 })();
