@@ -44,6 +44,15 @@ script:
   - yarn add --ignore-engines --ignore-platform teleprint
   - cd ../../
   - cp .envrc .env
+  - mkdir tmp/project/app/extension/ui/
+  - mkdir tmp/project/app/extension/promise/
+  - mkdir tmp/project/app/extension/date/
+  - mkdir tmp/project/app/extension/_/
+  - mkdir tmp/project/app/extension/locale/
+  - mkdir tmp/project/app/extension/promise/
+  - mkdir tmp/project/app/extension/upload/
+  - mkdir tmp/project/app/extension/data/
+  - mkdir tmp/project/app/extension/print/
   - cp -a install/extra/extension/ui/bootstrap/. tmp/project/app/extension/ui/
   - cp -a install/extra/extension/ui/material-design/. tmp/project/app/extension/ui/
   - cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/
