@@ -14,7 +14,7 @@ describe("rest.service", () => {
 	describe("When the `restangular` package is installed", () => {
 		it("the `rest$` service should be available", () => {
 			expect(rest$).toBeDefined();
-			expect(typeof rest$).toBe("function");
+			expect(typeof rest$).toBe("object");
 		});
 	});
 });
