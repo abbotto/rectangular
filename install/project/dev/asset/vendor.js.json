@@ -1,5 +1,4 @@
 [
-	"./node_modules/systemjs/dist/system-production.js",
 	"./node_modules/bluebird/js/browser/bluebird.min.js",
 	"./node_modules/moment/min/moment.min.js",
 	"./node_modules/lodash/lodash.min.js",
@@ -18,5 +17,6 @@
 	"./node_modules/restangular/dist/restangular.min.js",
 	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js",
 	"./node_modules/immutable/dist/immutable.min.js",
-	"./node_modules/teleprint/teleprint.min.js"
+	"./node_modules/teleprint/teleprint.min.js",
+	"./node_modules/systemjs/dist/system-production.js"
 ]
