@@ -32,7 +32,6 @@
     "strip-comments": "^0.4.4",
     "stylefmt": "^5.1.2",
     "stylelint": "^7.8.0",
-    "systemjs": "^0.20.12",
     "uglify-js": "^2.7.4"
   }
 }

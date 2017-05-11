@@ -31,6 +31,7 @@
     "angular-ui-router": "^0.3.2",
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
+    "systemjs": "^0.20.12",
     "normalize.css": "^5.0.0"
   },
   "devDependencies": {
