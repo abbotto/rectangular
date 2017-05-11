@@ -17,7 +17,7 @@ files.forEach((path) => {
 		.replace("./", "")
 		.replace("app/", "")
 		.replace("component/", "")
-		.replace("shared/", "")
+		.replace("extension/", "")
 	;
 	value = JSON.stringify(pug.compileFile(path)());
 	templates.push("$templateCache.put(\"" + key + "\"," + value + ")");

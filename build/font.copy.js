@@ -6,7 +6,7 @@ const getPath = require("./get.path.js");
 
 const fonts = finder.sync([
 	getPath() + "/node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}",
-	getPath() + "/app/shared/design/font/*.{ttf,woff,woff2,eot,svg}"
+	getPath() + "/app/design/font/*.{ttf,woff,woff2,eot,svg}"
 ]);
 
 if (fonts) {

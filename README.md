@@ -15,15 +15,15 @@
 
 ---
 
-##  <a name='Installation'></a>Installation
+## <a name='Installation'></a>Installation
 
-###  <a name='Requirements'></a>Requirements
+### <a name='Requirements'></a>Requirements
 - Bash
 - Node.js
 - NPM
 - NVM
 
-###  <a name='Procedure'></a>Procedure
+### <a name='Procedure'></a>Procedure
 	# Download the install script
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
 	
@@ -36,7 +36,7 @@
 	# Go to the app directory
 	cd myApp
 
-##  <a name='Overview'></a>Overview
+## <a name='Overview'></a>Overview
 Out-of-the-box, Rectangular gives you the power to build Angular 1.x.x apps that are:
 - Scalable
 - Testable
@@ -49,11 +49,11 @@ Essentially, there are 3 parts to Rectangular:
 - the `Application Kit`
 - the `Build System`
 
-###  <a name='Project-Installer'></a>Project Installer
+### <a name='Project-Installer'></a>Project Installer
 - Initialize the application kit.
 - Add extras from popular 3rd-party packages.
 
-###  <a name='ApplicationKit'></a>Application Kit
+### <a name='ApplicationKit'></a>Application Kit
 - A built-in `extension system` for integrating 3rd-party vendor plugins and libraries in a jiffy.
 - A built-in `caching system` that retains your environment variables, models, and templates.
 - A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
@@ -65,7 +65,7 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in task-runner provided by `gulp`.
 - A built-in `semantic versioning` system.
 
-###  <a name='BuildSystem'></a>Build System
+### <a name='BuildSystem'></a>Build System
 - Supporting `SASS` syntax for powerful stylesheets.
 - Supporting `ES6` syntax for modernized JavaScript.
 - Supporting `PUG` syntax for cleaner HTML templates.
@@ -74,9 +74,9 @@ Essentially, there are 3 parts to Rectangular:
 
 ---
 
-##  <a name='Documentation'></a>Documentation
+## <a name='Documentation'></a>Documentation
 - App:				[View](readme/app.md)
-- Assets: 			[View](readme/assets.md)
+- Assets:			[View](readme/assets.md)
 - Extensions:		[View](readme/extensions.md)
 - Functions:		[View](readme/functions.md)
 - Models:			[View](readme/models.md)

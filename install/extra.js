@@ -84,14 +84,12 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Strap...");
 		
-		!fs.exists("tmp/project/app/shared/service/ui/*")
-			? sh.exec("mkdir tmp/project/app/shared/service/ui")
-			: sh.exec("rm -rf tmp/project/app/shared/service/ui")
+		!fs.exists("tmp/project/app/extension/ui/*")
+			? sh.exec("mkdir tmp/project/app/extension/ui")
+			: sh.exec("rm -rf tmp/project/app/extension/ui")
 		;
 		
-		sh.exec("rm -rf tmp/project/app/extension/ng-strap && mkdir tmp/project/app/extension/ng-strap");
-		sh.exec("cp -a install/extra/extension/ng-strap/. tmp/project/app/extension/ng-strap/");
-		sh.exec("cp -a install/extra/shared/service/ui/bootstrap/. tmp/project/app/shared/service/ui/");
+		sh.exec("cp -a install/extra/extension/ui/bootstrap/. tmp/project/app/extension/ui/");
 		sh.exec("cd tmp/project && npm i --save bootstrap angular-strap && cd ..");
 	}
 	else {
@@ -105,14 +103,12 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Material...");
 		
-		!fs.exists("tmp/project/app/shared/service/ui")
-			? sh.exec("mkdir tmp/project/app/shared/service/ui")
-			: sh.exec("rm -rf tmp/project/app/shared/service/ui")
+		!fs.exists("tmp/project/app/extension/ui")
+			? sh.exec("mkdir tmp/project/app/extension/ui")
+			: sh.exec("rm -rf tmp/project/app/extension/ui")
 		;
 		
-		sh.exec("mkdir tmp/project/app/extension/angular-material");
-		sh.exec("cp -a install/extra/extension/angular-material/. tmp/project/app/extension/angular-material/");
-		sh.exec("cp -a install/extra/shared/service/ui/material-design/. tmp/project/app/shared/service/ui/");
+		sh.exec("cp -a install/extra/extension/ui/material-design/. tmp/project/app/extension/ui/");
 		sh.exec("cd tmp/project && npm i --save angular-material && cd ..");
 	}
 	else {
@@ -124,10 +120,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bluebird...");
 		
-		sh.exec("rm -rf tmp/project/app/extension/bluebird && mkdir tmp/project/app/extension/bluebird");
-		sh.exec("rm -rf tmp/project/app/shared/service/promise && mkdir tmp/project/app/shared/service/promise");
-		sh.exec("cp -a install/extra/extension/bluebird/. tmp/project/app/extension/bluebird/");
-		sh.exec("cp -a install/extra/shared/service/promise/. tmp/project/app/shared/service/promise/");
+		sh.exec("cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/");
 		sh.exec("cd tmp/project && npm i --save bluebird && cd ..");
 	}
 	else {
@@ -138,10 +131,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing MomentJS...");
 		
-		sh.exec("rm -rf tmp/project/app/extension/moment && mkdir tmp/project/app/extension/moment");
-		sh.exec("rm -rf tmp/project/app/shared/service/date && mkdir tmp/project/app/shared/service/date");
-		sh.exec("cp -a install/extra/extension/moment/. tmp/project/app/extension/moment/");
-		sh.exec("cp -a install/extra/shared/service/date/. tmp/project/app/shared/service/date/");
+		sh.exec("cp -a install/extra/extension/date/. tmp/project/app/extension/date/");
 		sh.exec("cd tmp/project && npm i --save moment && cd ..");
 		sh.exec("cd tmp/project && npm i --save angular-moment && cd ..");
 	}
@@ -155,9 +145,9 @@ prompt.get(schema, (err, input) => {
 		console.log("Installing Lodash...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/lodash && mkdir tmp/project/app/extension/lodash");
-		sh.exec("rm -rf tmp/project/app/shared/service/_ && mkdir tmp/project/app/shared/service/_");
+		sh.exec("rm -rf tmp/project/app/extension/_ && mkdir tmp/project/app/extension/_");
 		sh.exec("cp -a install/extra/extension/lodash/. tmp/project/app/extension/lodash/");
-		sh.exec("cp -a install/extra/shared/service/_/. tmp/project/app/shared/service/_/");
+		sh.exec("cp -a install/extra/extension/_/. tmp/project/app/extension/_/");
 		sh.exec("cd tmp/project && npm i --save lodash && cd ..");
 	}
 	else {
@@ -169,9 +159,9 @@ prompt.get(schema, (err, input) => {
 		console.log("Installing ImmutableJS...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/immutable && mkdir tmp/project/app/extension/immutable");
-		sh.exec("rm -rf tmp/project/app/shared/service/data && mkdir tmp/project/app/shared/service/data");
+		sh.exec("rm -rf tmp/project/app/extension/data && mkdir tmp/project/app/extension/data");
 		sh.exec("cp -a install/extra/extension/immutable/. tmp/project/app/extension/immutable/");
-		sh.exec("cp -a install/extra/shared/service/data/. tmp/project/app/shared/service/data/");
+		sh.exec("cp -a install/extra/extension/data/. tmp/project/app/extension/data/");
 		sh.exec("cd tmp/project && npm i --save immutable && cd ..");
 	}
 	else {
@@ -183,9 +173,9 @@ prompt.get(schema, (err, input) => {
 		console.log("Installing Teleprint...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/teleprint && mkdir tmp/project/app/extension/teleprint");
-		sh.exec("rm -rf tmp/project/app/shared/service/print && mkdir tmp/project/app/shared/service/print");
+		sh.exec("rm -rf tmp/project/app/extension/print && mkdir tmp/project/app/extension/print");
 		sh.exec("cp -a install/extra/extension/teleprint/. tmp/project/app/extension/teleprint/");
-		sh.exec("cp -a install/extra/shared/service/print/. tmp/project/app/shared/service/print/");
+		sh.exec("cp -a install/extra/extension/print/. tmp/project/app/extension/print/");
 		sh.exec("cd tmp/project && npm i --save teleprint && cd ..");
 	}
 	else {
@@ -197,9 +187,9 @@ prompt.get(schema, (err, input) => {
 		console.log("Installing Angular Translate...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/angular-translate && mkdir tmp/project/app/extension/angular-translate");
-		sh.exec("rm -rf tmp/project/app/shared/service/locale && mkdir tmp/project/app/shared/service/locale");
+		sh.exec("rm -rf tmp/project/app/extension/locale && mkdir tmp/project/app/extension/locale");
 		sh.exec("cp -a install/extra/extension/angular-translate/. tmp/project/app/extension/angular-translate/");
-		sh.exec("cp -a install/extra/shared/service/locale/. tmp/project/app/shared/service/locale/");
+		sh.exec("cp -a install/extra/extension/locale/. tmp/project/app/extension/locale/");
 		sh.exec("cd tmp/project && npm i --save angular-translate && cd ..");
 	}
 	else {
@@ -211,9 +201,9 @@ prompt.get(schema, (err, input) => {
 		console.log("Installing Restangular...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/restangular && mkdir tmp/project/app/extension/restangular");
-		sh.exec("rm -rf tmp/project/app/shared/service/promise && mkdir tmp/project/app/shared/service/promise");
+		sh.exec("rm -rf tmp/project/app/extension/promise && mkdir tmp/project/app/extension/promise");
 		sh.exec("cp -a install/extra/extension/restangular/. tmp/project/app/extension/restangular/");
-		sh.exec("cp -a install/extra/shared/service/promise/. tmp/project/app/shared/service/promise/");
+		sh.exec("cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/");
 		sh.exec("cd tmp/project && npm i --save restangular && cd ..");
 	}
 	else {
@@ -225,9 +215,9 @@ prompt.get(schema, (err, input) => {
 		console.log("Installing NG File Upload...");
 		
 		sh.exec("rm -rf tmp/project/app/extension/ng-file-upload && mkdir tmp/project/app/extension/ng-file-upload");
-		sh.exec("rm -rf tmp/project/app/shared/service/upload && mkdir tmp/project/app/shared/service/upload");
+		sh.exec("rm -rf tmp/project/app/extension/upload && mkdir tmp/project/app/extension/upload");
 		sh.exec("cp -a install/extra/extension/ng-file-upload/. tmp/project/app/extension/ng-file-upload/");
-		sh.exec("cp -a install/extra/shared/service/upload/. tmp/project/app/shared/service/upload/");
+		sh.exec("cp -a install/extra/extension/upload/. tmp/project/app/extension/upload/");
 		sh.exec("cd tmp/project && npm i --save ng-file-upload && cd ..");
 	}
 	else {

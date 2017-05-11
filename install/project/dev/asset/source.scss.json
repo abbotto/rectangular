@@ -1,7 +1,8 @@
 [
-	"./app/shared/design/vendor.scss",
-	"./app/shared/design/scaffold.scss",
+	"./app/design/vendor.scss",
+	"./app/design/scaffold.scss",
 	"./app/app.scss",
-	"./app/shared/**/*.scss",
+	"./app/design/**/*.scss",
+	"./app/extension/**/*.scss",
 	"./app/component/**/*.scss"
 ]

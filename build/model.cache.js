@@ -19,7 +19,7 @@ files.forEach((path) => {
 		.replace("app/", "")
 		.replace("component/", "")
 		.replace("model/", "")
-		.replace("shared/", "")
+		.replace("extension/", "")
 	;
 	models[key] = fs.readFileSync(path, "utf8");
 });

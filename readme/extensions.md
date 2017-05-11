@@ -23,24 +23,17 @@
 				return $window.exampleLibrary;
 			};
 
-			angular
-				.module("example.extension", [])
-				.factory("exampleExtension", exampleExtension)
-				.config(() => { ... })
-			;
+			angular.module("example.vendor", []).factory("exampleExtension", exampleExtension);
 		})();
 
-- The extension can then be exposed to the app as a custom service:
+- The extension can then be wrapped as a custom service:
 
 		(() => {
 			const exampleService = function exampleService(exampleExtension) {
 				return exampleExtension;
 			};
 
-			angular
-				.module("example.service", ["example.extension"])
-				.factory("example$", exampleService)
-			;
+			angular.module("example.service", ["example.vendor"]).factory("example$", exampleService);
 		})();
 
 ### <a name='AvailableExtensions'></a>Available Extensions
@@ -90,12 +83,12 @@
 #### <a name='REST'></a>REST
 - Service is called `rest.service` and is injected via `rest$`.
 - The rest$ service can be used in place of $resource.
-- Learn more about `restangular` [here](https://github.com/mgonto/restangular).
+- Learn more about `restangular` [here](https://github.com/mgonto/restangular/blob/master/README.md).
 
 #### <a name='Promises'></a>Promises
 - Service is called `promise.service` and is injected via `promise$`.
 - `promise$` can be used in place of `$q` - it is a speedier and more robust implementation.
-- Learn more about `bluebird` [here](https://github.com/petkaantonov/bluebird).
+- Learn more about `bluebird` [here](http://bluebirdjs.com/docs/api-reference.html).
 
 #### <a name='FileUploading'></a>File Uploading
 - Service is called `upload.service` and is injected via `upload$`.
@@ -103,11 +96,12 @@
 
 #### <a name='LanguageSupport'></a>Language Support
 - Service is called `locale.service` and is injected via `locale$`.
-- Learn more about `angular-translate` [here](https://angular-translate.github.io/).
+- Learn more about `angular-translate` [here](https://angular-translate.github.io/docs/#/guide).
 
 #### <a name='ImmutableData'></a>Immutable Data
 - Service is called `data.service` and is injected via `data$`.
-- Learn more about 'immutable-js' [here](https://github.com/facebook/immutable-js/).
+- Directive is called `data.directive` and is added via `data-src`.
+- Learn more about 'immutable-js' [here](http://facebook.github.io/immutable-js/docs/).
 
 #### <a name='Printing'></a>Printing
 - Service is called `print.service` and is injected via `print$`.
