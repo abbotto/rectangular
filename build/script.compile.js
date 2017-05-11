@@ -33,7 +33,8 @@ sh.cat(sourceJSON).to(tmpJSPath);
 const vendorFiles = vendorJSON;
 const sourceFiles = [tmpJSPath];
 
-// Convert ES6 to ES5 with BabelJS + Webpack
+// Convert ES6 to ES5
+sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJSPath + " --out-file " + tmpJSPath);
 sh.exec("node_modules/.bin/webpack --config webpack.config.js " + tmpJSPath + " " + tmpJSPath);
 
 // Generate a source map in dev mode
