@@ -4,6 +4,7 @@ const sh = require("shelljs");
 const finder = require("glob-concat");
 const fs = require("fs");
 const appJSPath = "dist/app.js";
+const vendorJSPath = "dist/vendor.js";
 const mapJSPath = "dist/app.js.map";
 const tmpJSPath = "tmp/source.js";
 const EOL = require("os").EOL;
@@ -29,8 +30,8 @@ const vendorJSON = setPath(require(getPath() + "/dev/asset/vendor.js.json"));
 sh.cat(sourceJSON).to(tmpJSPath);
 
 // Add tmpJSPath to the compile list
-vendorJSON.push(tmpJSPath);
-const files = vendorJSON;
+const vendorFiles = vendorJSON;
+const sourceFiles = [tmpJSPath];
 
 // Convert ES6 to ES5
 sh.exec("node_modules/babel-cli/bin/babel.js " + tmpJSPath + " --out-file " + tmpJSPath);
@@ -42,18 +43,21 @@ const sourceMap = (process.env.NODE_ENV === "development") ? "--source-map " + m
 sh.exec("node_modules/uglify-js/bin/uglifyjs " + tmpJSPath + " " + sourceMap + "-o " + tmpJSPath);
 
 // Push the file contents into an array
-const script = [];
-const n = files.length;
-let i = 0;
+const compileScripts = (files) => {
+	const script = [];
+	const n = files.length;
+	let i = 0;
 
-// Prevent minified files from cramming together
-for (; i < n; i += 1) {
-	script.push(fs.readFileSync(files[i], "utf8"));
-}
+	// Prevent minified files from cramming together
+	for (; i < n; i += 1) {
+		script.push(fs.readFileSync(files[i], "utf8"));
+	}
 
-// Prevent minified files from cramming together
-// and breaking as a result
-const output = script.join(EOL + EOL);
+	// Prevent minified files from cramming together
+	// and breaking as a result
+	return script.join(EOL + EOL);
+};
 
 // Write the output to a file
-fs.writeFileSync(appJSPath, output, "utf8");
+fs.writeFileSync(appJSPath, compileScripts(sourceFiles), "utf8");
+fs.writeFileSync(vendorJSPath, compileScripts(vendorFiles), "utf8");
