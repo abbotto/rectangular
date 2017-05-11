@@ -49,6 +49,7 @@ script:
   - mkdir tmp/project/app/extension/date/
   - mkdir tmp/project/app/extension/_/
   - mkdir tmp/project/app/extension/locale/
+  - mkdir tmp/project/app/extension/rest/
   - mkdir tmp/project/app/extension/upload/
   - mkdir tmp/project/app/extension/data/
   - mkdir tmp/project/app/extension/print/
@@ -58,7 +59,7 @@ script:
   - cp -a install/extra/extension/date/. tmp/project/app/extension/date/
   - cp -a install/extra/extension/_/. tmp/project/app/extension/_/
   - cp -a install/extra/extension/locale/. tmp/project/app/extension/locale/
-  - cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/
+  - cp -a install/extra/extension/rest/. tmp/project/app/extension/rest/
   - cp -a install/extra/extension/upload/. tmp/project/app/extension/upload/
   - cp -a install/extra/extension/data/. tmp/project/app/extension/data/
   - cp -a install/extra/extension/print/. tmp/project/app/extension/print/
