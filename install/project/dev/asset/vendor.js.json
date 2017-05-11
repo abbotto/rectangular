@@ -1,5 +1,5 @@
 [
-	"./node_modules/systemjs/dist/system-production.js",
+	"./node_modules/systemjs/dist/system.js",
 	"./node_modules/bluebird/js/browser/bluebird.min.js",
 	"./node_modules/moment/min/moment.min.js",
 	"./node_modules/lodash/lodash.min.js",
