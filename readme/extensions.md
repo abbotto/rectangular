@@ -16,24 +16,21 @@
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
 
 ### <a name='AddingExtensions'></a>Adding Extensions
-- Typically, adding a new `extension` is done in the following way:
+- Typically, adding a new `extension` is as easy as putting services/directives in the extensions folder.
+- A 3rd-party library can be add in the following way `extension`:
 
 		(() => {
-			const exampleExtension = function exampleExtension($window) {
+			const exampleVendorService = function exampleVendorService($window) {
 				return $window.exampleLibrary;
 			};
 
-			angular.module("example.vendor", []).factory("exampleExtension", exampleExtension);
+			angular.module("example.vendor.service", []).factory("serviceName$", exampleVendorService);
 		})();
 
-- The extension can then be wrapped as a custom service:
+- The extension can then be aliased as follows:
 
 		(() => {
-			const exampleService = function exampleService(exampleExtension) {
-				return exampleExtension;
-			};
-
-			angular.module("example.service", ["example.vendor"]).factory("example$", exampleService);
+			angular.module("example.service", ["example.vendor.service"]);
 		})();
 
 ### <a name='AvailableExtensions'></a>Available Extensions
