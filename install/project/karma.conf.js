@@ -6,10 +6,11 @@ module.exports = function karmaConfig(config) {
 	!fs.exists("./dist") && sh.exec("npm run rectangular && npm run compile");
 	
 	let paths = [];
-	
+	const vendorJS = ["./dist/vendor.js"];
 	const appJS = ["./dist/app.js"];
 	const specJS = ["./node_modules/rectangular/tmp/spec.js"];
 	
+	paths = paths.concat(vendorJS);
 	paths = paths.concat(appJS);
 	paths.push("node_modules/angular-mocks/angular-mocks.js");
 	paths = paths.concat(specJS);
