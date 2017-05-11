@@ -23,7 +23,6 @@ module.exports = function karmaConfig(config) {
 		frameworks: [
 			"jasmine"
 		],
-		plugins: [],
 		client: {
 			config: {
 				browserConsoleLogOptions: true
