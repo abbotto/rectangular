@@ -17,6 +17,5 @@
 	"./node_modules/restangular/dist/restangular.min.js",
 	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js",
 	"./node_modules/immutable/dist/immutable.min.js",
-	"./node_modules/teleprint/teleprint.min.js",
-	"./node_modules/systemjs/dist/system-production.js"
+	"./node_modules/teleprint/teleprint.min.js"
 ]
