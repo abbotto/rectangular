@@ -1,15 +1,22 @@
 "use strict";
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactHtmlParser from 'react-html-parser';
+
 (() => {
+	const view$ = angular.merge({}, React, ReactDOM);
+	
+	view$.parse = (tpl) => {
+		return ReactHtmlParser;
+	}
+	
 	const reactVendorService = function reactVendorService($templateCache) {
-		// eslint-disable-next-line no-undef
-		React.template = (tpl) => {
-			// eslint-disable-next-line no-undef
+		view$.template = (tpl) => {
 			return $templateCache.get(tpl);
 		};
 		
-		// eslint-disable-next-line no-undef
-		return React;
+		return view$;
 	};
 
 	angular
