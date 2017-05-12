@@ -1,12 +1,12 @@
 "use strict";
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 
 (() => {
-	const view$ = angular.merge({}, React, ReactDOM, {parse: ReactHtmlParser});
+	const view$ = angular.merge({}, {PropTypes}, React, ReactDOM, {parse: ReactHtmlParser});
 	
 	const reactVendorService = function reactVendorService($templateCache) {
 		view$.template = (tpl) => {

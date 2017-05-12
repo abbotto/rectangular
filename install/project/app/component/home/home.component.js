@@ -3,15 +3,13 @@
 (() => {
 
 	// Options
-	const options = {};
+	const component = {};
 
-	// Controller and ViewModel
-	options.controllerAs = "vm";
-	
-	// Container for content
-	options.template = "<div id='home-component'></div>";
+	// Template, Controller, and ViewModel
+	component.template = "<div id='home-component'></div>";
+	component.controllerAs = "vm";
 
-	options.controller = function HomeController(
+	component.controller = function HomeController(
 		view$
 	) {		
 		const vm = this;
@@ -28,6 +26,6 @@
 	// Register the component
 	angular
 		.module("home.component", ["view.service"])
-		.component("home", options)
-		;
+		.component("home", component)
+	;
 })();
