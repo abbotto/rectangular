@@ -7,25 +7,17 @@
 	// Controller and ViewModel
 	options.controllerAs = "vm";
 	options.template = "<div id='home-component'></div>";
-	const el = document.createElement("div");
 	
 	options.controller = function HomeController(
-		$templateCache,
 		view$
 	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
 		
-		el.innerHTML = $templateCache.get("home/home.component.html");
-		
-		// const HomeComponent = view$.Component({
-		// 	render() {
-		// 		return view$.createElement("div", {}, template);
-			// 	}
-		// });
+		const template = view$.template("home/home.component.html");
 		
 		view$
-			.render((el),
+			.render((template),
 			document.getElementById("home-component")
 		);
 	};
