@@ -4,10 +4,8 @@
 	const preactVendorService = function preactVendorService($templateCache) {
 		// eslint-disable-next-line no-undef
 		preact.template = (tpl) => {
-			const el = document.createElement("div");
-			el.innerHTML = $templateCache.get(tpl);
 			// eslint-disable-next-line no-undef
-			return preact.createElement("div", {}, el);
+			return preact.createElement("div", {}, $templateCache.get(tpl));
 		};
 		
 		// eslint-disable-next-line no-undef
