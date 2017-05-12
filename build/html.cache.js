@@ -19,7 +19,7 @@ files.forEach((path) => {
 		.replace("component/", "")
 		.replace("extension/", "")
 	;
-	value = JSON.stringify(pug.compileFile(path)());
+	value = pug.compileFile(path)();
 	templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
 });
 
