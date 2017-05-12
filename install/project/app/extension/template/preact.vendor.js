@@ -1,8 +1,8 @@
 "use strict";
 
 (() => {
-	const preactVendorService = function preactVendorService(preact) {
-		return preact;
+	const preactVendorService = function preactVendorService($window) {
+		return $window.preact;
 	};
 
 	angular
