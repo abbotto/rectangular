@@ -11,7 +11,7 @@ describe("view.service", () => {
 		});
 	});
 
-	describe("When the `preact` package is installed", () => {
+	describe("When the `react` package is installed", () => {
 		it("the `view$` service should be available", () => {
 			expect(view$).toBeDefined();
 			expect(typeof view$).toBe("object");

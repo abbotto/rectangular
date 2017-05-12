@@ -1,19 +1,19 @@
 "use strict";
 
 (() => {
-	const preactVendorService = function preactVendorService($templateCache) {
+	const reactVendorService = function reactVendorService($templateCache) {
 		// eslint-disable-next-line no-undef
-		preact.template = (tpl) => {
+		React.template = (tpl) => {
 			// eslint-disable-next-line no-undef
 			return $templateCache.get(tpl);
 		};
 		
 		// eslint-disable-next-line no-undef
-		return preact;
+		return React;
 	};
 
 	angular
-		.module("preact.vendor.service", [])
-		.factory("view$", preactVendorService)
+		.module("react.vendor.service", [])
+		.factory("view$", reactVendorService)
 	;
 })();
