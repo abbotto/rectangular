@@ -19,7 +19,7 @@
 
 		view$
 			.render(
-				<div>{view$.parse(view$.template("home/home.component.html"))}</div>,
+				view$.parse(view$.template("home/home.component.html")),
 				document.getElementById("home-component")
 			)
 		;

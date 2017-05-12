@@ -31,6 +31,7 @@
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
     "normalize.css": "^5.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
