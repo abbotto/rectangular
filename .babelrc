@@ -1,5 +1,14 @@
 {
+	"plugins": [
+		[
+			"transform-react-jsx",
+			{
+				"pragma": "preact.h"
+			}
+		]
+	],
 	"presets": [
-		"es2015-without-strict"
+		"es2015-without-strict",
+		"react"
 	]
 }

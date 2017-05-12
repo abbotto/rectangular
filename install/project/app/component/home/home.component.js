@@ -6,30 +6,33 @@
 
 	// Controller and ViewModel
 	options.controllerAs = "vm";
+	options.template = "<div id='home-component'></div>";
+	const el = document.createElement("div");
 	
-	options.controller = function HomeController($document, $templateCache, template$) {
+	options.controller = function HomeController(
+		$templateCache,
+		view$
+	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
 		
-		const template = $templateCache.get("home/home.component.html");
+		el.innerHTML = $templateCache.get("home/home.component.html");
 		
-		const HomeComponent = template$.createClass({
-			render() {
-				return template$.createElement("div", {}, template);
-			}
-		});
+		// const HomeComponent = view$.Component({
+		// 	render() {
+		// 		return view$.createElement("div", {}, template);
+			// 	}
+		// });
 		
-		template$
-			.render(
-				template$.createElement(HomeComponent),
-				$document.getElementsById("home-component")
-			)
-		;
+		view$
+			.render((el),
+			document.getElementById("home-component")
+		);
 	};
 
 	// Register the component
 	angular
-		.module("home.component", ["template.service"])
+		.module("home.component", ["view.service"])
 		.component("home", options)
-		;
+	;
 })();

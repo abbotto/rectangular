@@ -8,6 +8,6 @@
 
 	angular
 		.module("preact.vendor.service", [])
-		.factory("template$", preactVendorService)
+		.factory("view$", preactVendorService)
 	;
 })();
