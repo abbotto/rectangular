@@ -6,7 +6,8 @@
 		preact.template = (tpl) => {
 			const el = document.createElement("div");
 			el.innerHTML = $templateCache.get(tpl);
-			return el;
+			// eslint-disable-next-line no-undef
+			return preact.createElement("div", {}, el);
 		};
 		
 		// eslint-disable-next-line no-undef
