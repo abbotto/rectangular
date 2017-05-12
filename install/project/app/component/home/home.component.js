@@ -6,7 +6,7 @@
 
 	// Controller and ViewModel
 	options.controllerAs = "vm";
-	options.template = "<div id='home-component'></div>";
+	options.template = "<div id='home-component' ></div>";
 	
 	options.controller = function HomeController(
 		view$
@@ -17,7 +17,7 @@
 		const template = view$.template("home/home.component.html");
 		
 		view$
-			.render((template),
+			.render((<div dangerouslySetInnerHTML={{__html: template}}></div>),
 			document.getElementById("home-component")
 		);
 	};
