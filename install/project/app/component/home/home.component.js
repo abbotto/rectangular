@@ -14,10 +14,11 @@
 	) {		
 		const vm = this;
 		vm.projectName = "Rectangular";
-
+		const tpl = view$.template("home/home.component.html");
+		
 		view$
 			.render(
-				view$.parse(view$.template("home/home.component.html")),
+				tpl,
 				document.getElementById("home-component")
 			)
 		;
