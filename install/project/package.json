@@ -58,6 +58,8 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-spec-reporter": "0.0.31",
     "phantomjs-prebuilt": "^2.1.13",
+    "preact-compat": "^3.16.0",
+    "react-html-parser": "^1.0.3",
     "rectangular": "git+https://github.com/abbotto/rectangular.git",
     "shelljs": "^0.7.7"
   }

@@ -19,8 +19,7 @@ files.forEach((path) => {
 		.replace("component/", "")
 		.replace("extension/", "")
 	;
-	// eslint-disable-next-line quotes
-	value = `` + pug.compileFile(path)() + ``;
+	value = JSON.stringify(pug.compileFile(path)());
 	templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
 });
 

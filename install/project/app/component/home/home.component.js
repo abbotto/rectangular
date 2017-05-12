@@ -1,6 +1,9 @@
 "use strict";
 
+import ReactHtmlParser from 'react-html-parser';
+
 (() => {
+	
 	// Options
 	const options = {};
 
@@ -17,7 +20,7 @@
 		const template = view$.template("home/home.component.html");
 		
 		view$
-			.render((<div dangerouslySetInnerHTML={{__html: template}}></div>),
+			.render(<div>{ ReactHtmlParser(template) }</div>,
 			document.getElementById("home-component")
 		);
 	};

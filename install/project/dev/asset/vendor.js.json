@@ -1,5 +1,6 @@
 [
 	"./node_modules/preact/dist/preact.min.js",
+	"./node_modules/preact-compat/dist/preact-compat.min.js",
 	"./node_modules/lodash/lodash.min.js",
 	"./node_modules/angular/angular.min.js",
 	"./node_modules/angular-animate/angular-animate.min.js",
