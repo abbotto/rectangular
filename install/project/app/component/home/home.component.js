@@ -3,21 +3,33 @@
 (() => {
 	// Options
 	const options = {};
-	
-	// Template
-	options.templateUrl = "home/home.component.html";
-	
+
 	// Controller and ViewModel
 	options.controllerAs = "vm";
-	options.controller = function HomeController() {
-		const vm = this;
-		
-		vm.projectName = "Rectangular";
-	};
 	
+	options.controller = function HomeController($document, $templateCache, template$) {
+		const vm = this;
+		vm.projectName = "Rectangular";
+		
+		const template = $templateCache.get("home/home.component.html");
+		
+		const HomeComponent = template$.createClass({
+			render() {
+				return template$.createElement("div", {}, template);
+			}
+		});
+		
+		template$
+			.render(
+				template$.createElement(HomeComponent),
+				$document.getElementsById("home-component")
+			)
+		;
+	};
+
 	// Register the component
 	angular
-		.module("home.component", [])
+		.module("home.component", ["template.service"])
 		.component("home", options)
-	;
+		;
 })();
