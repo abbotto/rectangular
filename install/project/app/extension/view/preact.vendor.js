@@ -5,7 +5,7 @@
 		// eslint-disable-next-line no-undef
 		preact.template = (tpl) => {
 			// eslint-disable-next-line no-undef
-			return preact.createElement("div", {}, $templateCache.get(tpl));
+			return $templateCache.get(tpl));
 		};
 		
 		// eslint-disable-next-line no-undef
