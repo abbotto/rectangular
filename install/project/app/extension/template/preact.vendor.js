@@ -1,12 +1,13 @@
 "use strict";
 
 (() => {
-	const preactVendorService = function preactVendorService($window) {
-		return $window.preact;
+	const preactVendorService = function preactVendorService() {
+		// eslint-disable-next-line no-undef
+		return preact;
 	};
 
 	angular
-		.module("preact.vendor.service", ["preact"])
+		.module("preact.vendor.service", [])
 		.factory("template$", preactVendorService)
 	;
 })();
