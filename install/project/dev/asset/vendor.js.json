@@ -10,6 +10,7 @@
 	"./node_modules/angular-material/angular-material.min.js",
 	"./node_modules/angular-strap/dist/angular-strap.min.js",
 	"./node_modules/angular-strap/dist/angular-strap.tpl.min.js",
+	"./node_modules/moment/min/moment.min.js",
 	"./node_modules/angular-moment/angular-moment.min.js",
 	"./node_modules/angular-translate/dist/angular-translate.min.js",
 	"./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js",
@@ -17,6 +18,5 @@
 	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js",
 	"./node_modules/bluebird/js/browser/bluebird.min.js",
 	"./node_modules/immutable/dist/immutable.min.js",
-	"./node_modules/moment/min/moment.min.js",
 	"./node_modules/teleprint/teleprint.min.js"
 ]
