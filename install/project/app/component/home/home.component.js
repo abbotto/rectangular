@@ -3,22 +3,21 @@
 (() => {
 
 	// Options
-	const component = {};
+	const options = {};
 
 	// Template, Controller, and ViewModel
-	component.template = "<div id='home-component'></div>";
-	component.controllerAs = "vm";
+	options.template = "<div id='home-component'></div>";
+	options.controllerAs = "vm";
 
-	component.controller = function HomeController(
+	options.controller = function HomeController(
 		view$
 	) {		
 		const vm = this;
 		vm.projectName = "Rectangular";
-		const tpl = view$.template("home/home.component.html");
-		
+
 		view$
-			.render(
-				tpl,
+			.dom.render(
+				view$.template("home/home.component.html"),
 				document.getElementById("home-component")
 			)
 		;
@@ -27,6 +26,6 @@
 	// Register the component
 	angular
 		.module("home.component", ["view.service"])
-		.component("home", component)
+		.component("home", options)
 	;
 })();

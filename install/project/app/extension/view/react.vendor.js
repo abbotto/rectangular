@@ -3,14 +3,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from 'html-react-parser';
 
 (() => {
-	const view$ = angular.merge({}, {PropTypes}, React, ReactDOM, {parse: ReactHtmlParser});
+	const view$ = React;
+	view$.dom = ReactDOM;
+	view$.propTypes = PropTypes;
 	
 	const reactVendorService = function reactVendorService($templateCache) {
-		view$.template = (tpl) => {
-			return $templateCache.get(tpl);
+		view$.template = (tpl, obj) => {
+			return ReactHtmlParser($templateCache.get(tpl));
 		};
 		
 		return view$;
