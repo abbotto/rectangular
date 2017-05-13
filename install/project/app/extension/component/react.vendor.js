@@ -38,7 +38,7 @@ import JSX from "react-jsx";
 	};
 
 	angular
-		.module("react.vendor.directive", ["react.vendor.service"])
+		.module("react.vendor.directive", [])
 		.directive("component", reactVendorDirective);
 	;
 
