@@ -17,6 +17,9 @@ module.exports = {
 		"disable",
 		"json"
 	],
+    "parserOptions": {
+        "sourceType": "module"
+    },
 	"rules": {
 		"accessor-pairs": 0,
 		"array-bracket-spacing": ["error", "never"],

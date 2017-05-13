@@ -16,6 +16,9 @@ module.exports = {
 		"angular",
 		"disable"
 	],
+    "parserOptions": {
+        "sourceType": "module"
+    },
 	"rules": {
 		"angular/angularelement": 1,
 		"angular/component-name": [2,

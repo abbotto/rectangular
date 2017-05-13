@@ -27,7 +27,7 @@ import JSX from 'react-jsx';
 		$rootScope,
 		$templateCache
 	) {
-		component$.template = (component, vm) => {
+		component$.view = (component, vm) => {
 			$rootScope.component = {
 				component: $templateCache.get(component).join(""),
 				vm
