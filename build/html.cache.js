@@ -42,7 +42,7 @@ files.forEach((path) => {
 	;
 
 	key.indexOf(".jsx") > -1
-		? value = JSON.stringify(fs.readFileSync(path, "utf8").split(""))
+		? value = JSON.stringify(fs.readFileSync(path, "utf8"))
 		: value = JSON.stringify(pug.compileFile(path)())
 	;
 

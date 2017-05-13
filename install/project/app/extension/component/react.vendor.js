@@ -17,11 +17,12 @@ import JSX from "react-jsx";
 			link: (scope, element) => {
 				scope.$watch("model", (nv, ov) => {
 					ReactDOM.render(
-						(JSX.client($templateCache.get(nv.template).join(""), {}))(nv),
+						(JSX.client($templateCache.get(nv.template), {}))(nv),
 						element[0]
 					);
 				});
 				
+				// Set value on first run
 				scope.model = scope.model ? scope.model : $rootScope.model;
 			}
 		};
