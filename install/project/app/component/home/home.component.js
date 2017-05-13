@@ -5,18 +5,18 @@
 	const options = {};
 	
 	// Component directive
-	options.template = "<component></component>";
+	options.template = "<component model='vm'></component>";
 	options.controllerAs = "vm";
 
 	options.controller = function HomeController(
-		$rootScope,
 		component$
 	) {
 		const vm = this;
+		vm.template = "home/home.component.jsx";
 		vm.projectName = "Rectangular";
-		
-		// Load the component template
-		component$.view("home/home.component.jsx", vm);
+
+		// Initialize component template
+		component$.render(vm);
 	};
 
 	// Register the component

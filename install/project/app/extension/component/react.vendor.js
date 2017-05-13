@@ -7,38 +7,38 @@ import JSX from "react-jsx";
 	const component$ = {};
 
 	const reactVendorDirective = function reactVendorDrective(
-		$rootScope
+		$rootScope,
+		$templateCache
 	) {
 		return {
+			scope: {
+				model: "="
+			},
 			link: (scope, element) => {
-				const watch = $rootScope.$watch;
-
-				watch("component", (nv, ov) => {
+				scope.$watch("model", (nv, ov) => {
 					ReactDOM.render(
-						(JSX.client(nv.component, {}))(nv.vm),
+						(JSX.client($templateCache.get(nv.template).join(""), {}))(nv),
 						element[0]
 					);
 				});
+				
+				scope.model = scope.model ? scope.model : $rootScope.model;
 			}
 		};
 	};
 
 	const reactVendorService = function reactVendorService(
-		$rootScope,
-		$templateCache
+		$rootScope
 	) {
-		component$.view = (component, vm) => {
-			$rootScope.component = {
-				component: $templateCache.get(component).join(""),
-				vm
-			};
+		component$.render = (model) => {
+			$rootScope.model = model;
 		};
 
 		return component$;
 	};
 
 	angular
-		.module("react.vendor.directive", [])
+		.module("react.vendor.directive", ["react.vendor.service"])
 		.directive("component", reactVendorDirective);
 	;
 
