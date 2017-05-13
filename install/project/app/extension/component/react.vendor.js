@@ -11,15 +11,16 @@ import JSX from 'react-jsx';
 	) {
 		return {
 			link: (scope, element, attrs) => {
-				$rootScope
-					.$watch('component', (nv, ov) => {
+				const watch = $rootScope.$watch;
+				
+				watch("component", (nv, ov) => {
 						ReactDOM.render(
 							(JSX.client(nv.component, {}))(nv.vm),
 							element[0]
 						);
-					})
-				;
-			}
+					}
+				);
+			};
 		}
 	};
 

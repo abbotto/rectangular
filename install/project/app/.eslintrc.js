@@ -10,14 +10,20 @@ module.exports = {
 		"angular": true
 	},
 	"ecmaFeatures": {
+		"jsx": true,
 		"impliedStrict": true
 	},
 	"plugins": [
 		"angular",
-		"disable"
+		"disable",
+		"json"
 	],
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+		"ecmaVersion": 6,
+		"ecmaFeatures": {
+			"jsx": true
+		}
     },
 	"rules": {
 		"angular/angularelement": 1,

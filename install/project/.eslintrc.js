@@ -10,6 +10,7 @@ module.exports = {
 		"angular": true
 	},
 	"ecmaFeatures": {
+		"jsx": true,
 		"impliedStrict": true
 	},
 	"plugins": [
@@ -17,9 +18,13 @@ module.exports = {
 		"disable",
 		"json"
 	],
-    "parserOptions": {
-        "sourceType": "module"
-    },
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 6,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
 	"rules": {
 		"accessor-pairs": 0,
 		"array-bracket-spacing": ["error", "never"],
