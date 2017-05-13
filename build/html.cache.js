@@ -5,11 +5,32 @@ const fs = require("fs");
 const sh = require("shelljs");
 const pug = require("pug");
 const getPath = require("./get.path.js");
-const files = finder.sync([getPath() + "/app/component/**/*.html"]);
+
+const files = finder.sync([
+	getPath() + "/app/component/**/*.html",
+	getPath() + "/app/component/**/*.jsx"
+]);
+
 const tmpJS = "tmp/templates.js";
 
 let key, value;
 let templates = [];
+
+// Push the file contents into an array
+const compileScripts = (files) => {
+	const script = [];
+	const n = files.length;
+	let i = 0;
+
+	// Prevent minified files from cramming together
+	for (; i < n; i += 1) {
+		script.push(fs.readFileSync(files[i], "utf8"));
+	}
+
+	// Prevent minified files from cramming together
+	// and breaking as a result
+	return script.join(EOL + EOL);
+};
 
 files.forEach((path) => {
 	key = path
@@ -19,7 +40,12 @@ files.forEach((path) => {
 		.replace("component/", "")
 		.replace("extension/", "")
 	;
-	value = JSON.stringify(pug.compileFile(path)());
+
+	key.indexOf(".jsx") > -1
+		? value = JSON.stringify(fs.readFileSync(path, "utf8").split(""))
+		: value = JSON.stringify(pug.compileFile(path)())
+	;
+
 	templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
 });
 

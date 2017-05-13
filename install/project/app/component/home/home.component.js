@@ -1,31 +1,29 @@
 "use strict";
 
 (() => {
-
 	// Options
 	const options = {};
 
 	// Template, Controller, and ViewModel
-	options.template = "<div id='home-component'></div>";
+	options.template = "<view></view>";
 	options.controllerAs = "vm";
 
 	options.controller = function HomeController(
+		$rootScope,
 		view$
-	) {		
+	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
-
-		view$
-			.dom.render(
-				view$.template("home/home.component.html"),
-				document.getElementById("home-component")
-			)
-		;
+		
+		view$.template("home/home.component.jsx", vm);
 	};
 
 	// Register the component
 	angular
-		.module("home.component", ["view.service"])
+		.module("home.component", [
+			"view.directive",
+			"view.service"
+		])
 		.component("home", options)
 	;
 })();

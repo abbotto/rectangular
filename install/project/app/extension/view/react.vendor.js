@@ -1,22 +1,50 @@
 "use strict";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import ReactHtmlParser from 'html-react-parser';
+import Parser from 'html-react-parser';
+import JSX from 'react-jsx';
 
 (() => {
 	const view$ = React;
 	view$.dom = ReactDOM;
 	view$.propTypes = PropTypes;
-	
-	const reactVendorService = function reactVendorService($templateCache) {
-		view$.template = (tpl, obj) => {
-			return ReactHtmlParser($templateCache.get(tpl));
+
+	const reactVendorDirective = function reactVendorDrective(
+		$rootScope,
+		view$
+	) {
+		return {
+			link: (scope, element, attrs) => {
+				$rootScope
+					.$watch('template', (nv, ov) => {
+						ReactDOM.render(
+							(JSX.client(nv.component, {}))(nv.vm),
+							element[0]
+						);
+					})
+				;
+			}
+		}
+	};
+
+	const reactVendorService = function reactVendorService(
+		$rootScope,
+		$templateCache
+	) {
+		view$.template = (component, vm) => {
+			$rootScope.template = {
+				component: $templateCache.get(component).join(""),
+				vm
+			};
 		};
-		
+
 		return view$;
 	};
+
+	angular
+		.module("react.vendor.directive", ["react.vendor.service"])
+		.directive("view", reactVendorDirective);
+	;
 
 	angular
 		.module("react.vendor.service", [])
