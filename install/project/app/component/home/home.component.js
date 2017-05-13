@@ -3,26 +3,27 @@
 (() => {
 	// Options
 	const options = {};
-
-	// Template, Controller, and ViewModel
-	options.template = "<view></view>";
+	
+	// Component directive
+	options.template = "<component></component>";
 	options.controllerAs = "vm";
 
 	options.controller = function HomeController(
 		$rootScope,
-		view$
+		component$
 	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
 		
-		view$.template("home/home.component.jsx", vm);
+		// Load the component template
+		component$.view("home/home.component.jsx", vm);
 	};
 
 	// Register the component
 	angular
 		.module("home.component", [
-			"view.directive",
-			"view.service"
+			"component.directive",
+			"component.service"
 		])
 		.component("home", options)
 	;
