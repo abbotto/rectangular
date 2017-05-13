@@ -1,27 +1,26 @@
 "use strict";
 
-import JSX from 'react-jsx';
+import ReactDOM from "react-dom";
+import JSX from "react-jsx";
 
 (() => {
 	const component$ = {};
-	
+
 	const reactVendorDirective = function reactVendorDrective(
-		$rootScope,
-		component$
+		$rootScope
 	) {
 		return {
-			link: (scope, element, attrs) => {
+			link: (scope, element) => {
 				const watch = $rootScope.$watch;
-				
+
 				watch("component", (nv, ov) => {
-						ReactDOM.render(
-							(JSX.client(nv.component, {}))(nv.vm),
-							element[0]
-						);
-					}
-				);
-			};
-		}
+					ReactDOM.render(
+						(JSX.client(nv.component, {}))(nv.vm),
+						element[0]
+					);
+				});
+			}
+		};
 	};
 
 	const reactVendorService = function reactVendorService(
