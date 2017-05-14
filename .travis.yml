@@ -4,7 +4,6 @@ node_js:
   - "6.10"
 
 cache:
-  yarn: true
   directories:
     - node_modules
 
@@ -16,7 +15,7 @@ before_script:
   - . ~/.nvm/nvm.sh && nvm i 6.10
 
 script:
-  - yarn --ignore-engines --ignore-platform > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
+  - npm i > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
   - projectName="ci-app"
   - projectDescription="continuous integration application"
   - projectLicense="MIT"
@@ -31,17 +30,17 @@ script:
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/tmp/project
-  - yarn add --ignore-engines --ignore-platform bootstrap angular-strap
-  - yarn add --ignore-engines --ignore-platform angular-material
-  - yarn add --ignore-engines --ignore-platform bluebird
-  - yarn add --ignore-engines --ignore-platform moment
-  - yarn add --ignore-engines --ignore-platform angular-moment
-  - yarn add --ignore-engines --ignore-platform lodash
-  - yarn add --ignore-engines --ignore-platform angular-translate
-  - yarn add --ignore-engines --ignore-platform restangular
-  - yarn add --ignore-engines --ignore-platform ng-file-upload
-  - yarn add --ignore-engines --ignore-platform immutable
-  - yarn add --ignore-engines --ignore-platform teleprint
+  - npm i --save bootstrap angular-strap
+  - npm i --save angular-material
+  - npm i --save bluebird
+  - npm i --save moment
+  - npm i --save angular-moment
+  - npm i --save lodash
+  - npm i --save angular-translate
+  - npm i --save restangular
+  - npm i --save ng-file-upload
+  - npm i --save immutable
+  - npm i --save teleprint
   - cd ../../
   - cp .envrc .env
   - mkdir tmp/project/app/extension/ui/
@@ -64,9 +63,9 @@ script:
   - cp -a install/extra/extension/data/. tmp/project/app/extension/data/
   - cp -a install/extra/extension/print/. tmp/project/app/extension/print/
   - cd ../../
-  - cd node_modules/rectangular/ && yarn --ignore-engines --ignore-platform && cd ../../
+  - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
   - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - . ~/.nvm/nvm.sh && nvm use && yarn --ignore-engines --ignore-platform
+  - . ~/.nvm/nvm.sh && nvm use && npm i
   - node_modules/karma/bin/karma start karma.conf.js
