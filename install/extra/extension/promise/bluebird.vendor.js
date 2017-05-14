@@ -1,8 +1,10 @@
 "use strict";
 
+import Promise from "bluebird";
+
 (() => {
-	const bluebirdVendorService = function bluebirdVendorService($rootScope, $window) {
-		const $promise = $window.Promise;
+	const bluebirdVendorService = function bluebirdVendorService($rootScope) {
+		const $promise = Promise;
 		
 		const defer = () => {
 			let reject, resolve;

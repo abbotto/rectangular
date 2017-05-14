@@ -1,8 +1,10 @@
 "use strict";
 
+import teleprint from "teleprint";
+
 (() => {
-	const teleprintVendorService = function teleprintVendorService($window) {
-		return $window.teleprint;
+	const teleprintVendorService = function teleprintVendorService() {
+		return teleprint;
 	};
 	
 	angular

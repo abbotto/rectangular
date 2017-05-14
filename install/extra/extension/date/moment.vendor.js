@@ -1,8 +1,10 @@
 "use strict";
 
+import moment from "moment";
+
 (() => {
-	const momentVendorService = function momentVendorService($window) {
-		return $window.moment;
+	const momentVendorService = function momentVendorService() {
+		return moment;
 	};
 	
 	const momentVendorDirective = function momentVendorDirective($injector) {

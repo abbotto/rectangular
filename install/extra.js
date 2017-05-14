@@ -126,9 +126,6 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/");
 		sh.exec("cd tmp/project && npm i --save bluebird && cd ..");
 	}
-	else {
-		vendorJS = slice(vendorJS, "./node_modules/bluebird/js/browser/bluebird.min.js");
-	}
 	
 	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
@@ -140,7 +137,6 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save angular-moment && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/moment/min/moment.min.js");
 		vendorJS = slice(vendorJS, "./node_modules/angular-moment/angular-moment.min.js");
 	}
 	
@@ -152,9 +148,6 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a install/extra/extension/_/. tmp/project/app/extension/_/");
 		sh.exec("cd tmp/project && npm i --save lodash && cd ..");
 	}
-	else {
-		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
-	}
 	
 	if (input.ImmutableJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
@@ -164,9 +157,6 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a install/extra/extension/data/. tmp/project/app/extension/data/");
 		sh.exec("cd tmp/project && npm i --save immutable && cd ..");
 	}
-	else {
-		vendorJS = slice(vendorJS, "./node_modules/immutable/dist/immutable.min.js");
-	}
 	
 	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
@@ -175,9 +165,6 @@ prompt.get(schema, (err, input) => {
 		sh.exec("mkdir tmp/project/app/extension/print/");
 		sh.exec("cp -a install/extra/extension/print/. tmp/project/app/extension/print/");
 		sh.exec("cd tmp/project && npm i --save teleprint && cd ..");
-	}
-	else {
-		vendorJS = slice(vendorJS, "./node_modules/teleprint/teleprint.min.js");
 	}
 	
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
