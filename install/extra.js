@@ -137,6 +137,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save angular-moment && cd ..");
 	}
 	else {
+		vendorJS = slice(vendorJS, "./node_modules/moment/min/moment.min.js");
 		vendorJS = slice(vendorJS, "./node_modules/angular-moment/angular-moment.min.js");
 	}
 	
@@ -165,6 +166,9 @@ prompt.get(schema, (err, input) => {
 		sh.exec("mkdir tmp/project/app/extension/print/");
 		sh.exec("cp -a install/extra/extension/print/. tmp/project/app/extension/print/");
 		sh.exec("cd tmp/project && npm i --save teleprint && cd ..");
+	}
+	else {
+		vendorJS = slice(vendorJS, "./node_modules/teleprint/teleprint.min.js");
 	}
 	
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
