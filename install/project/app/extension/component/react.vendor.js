@@ -30,7 +30,7 @@ import jsx from "react-jsx";
 					);
 				};
 				
-				scope.$watch(scope.name, (nv, ov) => {
+				const scopeWatcher = (nv, ov) => {
 					if (!!nv) {
 						const data = {};
 						data[(nv.controllerAs || "vm")] = nv;
@@ -41,11 +41,14 @@ import jsx from "react-jsx";
 						
 						renderReactComponent(component(data));
 					}
-				}, true);
+				};
 				
-				$rootScope.$watch(scope.name, (nv, ov) => {
+				const rootScopeWatcher =  (nv, ov) => {
 					if (!!nv) scope[scope.name] = nv;
-				}, true);
+				};
+				
+				scope.$watch(scope.name, scopeWatcher, true);
+				$rootScope.$watch(scope.name, rootScopeWatcher, true);
 				
 				// Manually unmount the React component
 				// for view cleanup when the scope is destroyed.
@@ -66,7 +69,7 @@ import jsx from "react-jsx";
 
 	angular
 		.module("react.vendor.directive", [])
-		.directive("view", reactVendorDirective);
+		.directive("component", reactVendorDirective);
 	;
 
 	angular
