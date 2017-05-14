@@ -18,12 +18,12 @@ import jsx from "react-jsx";
 			link: (scope, element) => {
 				scope.name = "React" + scope.name + "Component";
 				
-				const unmountElement = function unmountElement() {
+				const unmountReactElement = function unmountReactElement() {
 					delete $rootScope[scope.name];
 					React.unmountComponentAtNode(element[0]);
 				};
 				
-				const renderComponent = function renderComponent(component) {
+				const renderReactComponent = function renderReactComponent(component) {
 					ReactDOM.render(
 						component,
 						element[0]
@@ -39,17 +39,17 @@ import jsx from "react-jsx";
 							$templateCache.get(data.vm.templateUrl), {}
 						);
 						
-						renderComponent(component(data));
+						renderReactComponent(component(data));
 					}
 				}, true);
 				
 				$rootScope.$watch(scope.name, (nv, ov) => {
-					!!nv && scope[scope.name] = nv;
+					if (!!nv) scope[scope.name] = nv;
 				}, true);
 				
 				// Manually unmount the React component
 				// for view cleanup when the scope is destroyed.
-				scope.$on("$destroy", unmountElement);
+				scope.$on("$destroy", unmountReactElement);
 			}
 		};
 	};
