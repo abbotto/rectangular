@@ -31,7 +31,7 @@ import jsx from "react-jsx";
 				const scopeWatcher = (nv, ov) => {
 					if (!!nv) {
 						const data = {};
-						data[(nv.controllerAs || "vm")] = nv;
+						data[(nv.alias || "vm")] = nv;
 
 						const component = jsx.client(
 							$templateCache.get(data.vm.templateUrl), {}

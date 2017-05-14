@@ -4,6 +4,6 @@
 	</strong>
 
 	<ul>
-		{ vm.todo.join(", \n") }
+		{ vm.todo.join("\n") }
 	</ul>
 </div>;

@@ -4,39 +4,40 @@
 	// --------------------------------
 	// TodoList Component (ReactJS)
 	// --------------------------------
-	const TodoList = (component$) => {
-		// Updated by TodoList parent
-		this.newTodoListItem = "";
+	const TodoListComponent = function TodoListComponent(
+		component$,
+		vm
+	) {
+		// Updated by TodoList parent (HomeComponent)
+		vm.newTodoListItem = "";
 		
 		// Called by TodoList parent
-		this.updateTodoList = () => {
-			this.newTodoListItem.length && this.TodoList.todo.push(this.newTodoListItem);
+		vm.updateTodoList = () => {
+			vm.newTodoListItem.length
+				&& vm.TodoList.todo.push(vm.newTodoListItem)
+			;
 			
 			// Re-render the TodoList component
-			component$.render("TodoList", this.TodoList);
+			component$.render("TodoList", vm.TodoList);
 		};
 		
-		this.TodoList = {};
-		this.TodoList.controllerAs = "vm";
-		this.TodoList.templateUrl = "home/TodoList.jsx";
+		vm.TodoList = {};
+		vm.TodoList.alias = "vm";
+		vm.TodoList.templateUrl = "home/TodoList.jsx";
 		
-		this.TodoList.todo = [
+		vm.TodoList.todo = [
 			"get groceries",
 			"mow the lawn",
 			"walk the dog"
 		];
 		
-		this.updateTodoList();
+		vm.updateTodoList();
 	};
 	
 	// --------------------------------
-	// Home Component (AngularJS)
+	// Home Controller (AngularJS)
 	// --------------------------------
-	const options = {};
-	options.controllerAs = "vm";
-	options.templateUrl = "home/home.component.html";
-	
-	options.controller = function HomeController(
+	const HomeComponentController = function HomeComponentController(
 		$rootScope,
 		$scope,
 		$timeout,
@@ -45,16 +46,23 @@
 		const vm = this;
 		vm.projectName = "Rectangular";
 		
-		// Initialize Todo component
-		(TodoList.bind(vm))(component$);
+		// Initialize TodoList component
+		TodoListComponent(component$, vm);
 	};
 	
-	// Register the component
+	const HomeComponent = {};
+	HomeComponent.controllerAs = "vm";
+	HomeComponent.templateUrl = "home/home.component.html";
+	HomeComponent.controller = HomeComponentController;
+	
+	// --------------------------------
+	// Home Component (AngularJS)
+	// --------------------------------
 	angular
 		.module("home.component", [
 			"component.directive",
 			"component.service"
 		])
-		.component("home", options)
+		.component("home", HomeComponent)
 	;
 })();
