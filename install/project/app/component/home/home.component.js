@@ -18,7 +18,7 @@
 	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
-		
+
 		// --------------------------------
 		// TodoList Component (w/ ReactJS)
 		// --------------------------------
@@ -51,8 +51,8 @@
 	// Register the component
 	angular
 		.module("home.component", [
-			"view.directive",
-			"view.service"
+			"component.directive",
+			"component.service"
 		])
 		.component("home", options)
 	;

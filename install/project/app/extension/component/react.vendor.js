@@ -15,9 +15,7 @@ import jsx from "react-jsx";
 			scope: {
 				name: "="
 			},
-			link: (scope, element) => {
-				scope.name = "React" + scope.name + "Component";
-				
+			link: (scope, element) => {				
 				const unmountReactElement = function unmountReactElement() {
 					delete $rootScope[scope.name];
 					React.unmountComponentAtNode(element[0]);
@@ -43,7 +41,7 @@ import jsx from "react-jsx";
 					}
 				};
 				
-				const rootScopeWatcher =  (nv, ov) => {
+				const rootScopeWatcher = (nv, ov) => {
 					if (!!nv) scope[scope.name] = nv;
 				};
 				
@@ -61,7 +59,7 @@ import jsx from "react-jsx";
 		$rootScope
 	) {
 		component$.render = (name, model) => {
-			$rootScope["React" + name + "Component"] = model;
+			$rootScope[name] = model;
 		};
 
 		return component$;
