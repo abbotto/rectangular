@@ -5,7 +5,7 @@
 	// TodoList Component (ReactJS)
 	// --------------------------------
 	
-	const TodoList = () => {
+	const TodoList = (component$) => {
 		// Updated by TodoList parent
 		this.newTodoListItem = "";
 		
@@ -17,10 +17,7 @@
 			component$.render("TodoList", this.TodoList);
 		};
 		
-		// The TodoList model
 		this.TodoList = {};
-		
-		//
 		this.TodoList.templateUrl = "home/TodoList.jsx";
 		
 		this.TodoList.todo = [
@@ -49,7 +46,7 @@
 		vm.projectName = "Rectangular";
 		
 		// Initialize Todo component
-		(TodoList.bind(vm))();
+		(TodoList.bind(vm))(component$);
 	};
 	
 	// Register the component
