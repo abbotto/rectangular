@@ -1,6 +1,6 @@
 "use strict";
 
-import teleprint from "teleprint";
+import teleprint from "TELEPRINT";
 
 (() => {
 	const teleprintVendorService = function teleprintVendorService() {
