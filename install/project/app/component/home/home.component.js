@@ -4,7 +4,6 @@
 	// --------------------------------
 	// TodoList Component (ReactJS)
 	// --------------------------------
-	
 	const TodoList = (component$) => {
 		// Updated by TodoList parent
 		this.newTodoListItem = "";
@@ -18,6 +17,7 @@
 		};
 		
 		this.TodoList = {};
+		this.TodoList.controllerAs = "vm";
 		this.TodoList.templateUrl = "home/TodoList.jsx";
 		
 		this.TodoList.todo = [
@@ -25,9 +25,9 @@
 			"mow the lawn",
 			"walk the dog"
 		];
-
+		
 		this.updateTodoList();
-	}
+	};
 	
 	// --------------------------------
 	// Home Component (AngularJS)
