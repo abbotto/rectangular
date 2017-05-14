@@ -1,15 +1,44 @@
 "use strict";
 
 (() => {
-	// Options
+	// --------------------------------
+	// TodoList Component (ReactJS)
+	// --------------------------------
+	
+	const TodoList = () => {
+		// Updated by TodoList parent
+		this.newTodoListItem = "";
+		
+		// Called by TodoList parent
+		this.updateTodoList = () => {
+			this.newTodoListItem.length && this.TodoList.todo.push(this.newTodoListItem);
+			
+			// Re-render the TodoList component
+			component$.render("TodoList", this.TodoList);
+		};
+		
+		// The TodoList model
+		this.TodoList = {};
+		
+		//
+		this.TodoList.templateUrl = "home/TodoList.jsx";
+		
+		this.TodoList.todo = [
+			"get groceries",
+			"mow the lawn",
+			"walk the dog"
+		];
+
+		this.updateTodoList();
+	}
+	
+	// --------------------------------
+	// Home Component (AngularJS)
+	// --------------------------------
 	const options = {};
-
-	// Component directive
-	options.templateUrl = "home/home.component.html";
-
-	// "View Model" variable
 	options.controllerAs = "vm";
-
+	options.templateUrl = "home/home.component.html";
+	
 	options.controller = function HomeController(
 		$rootScope,
 		$scope,
@@ -18,36 +47,11 @@
 	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
-
-		// --------------------------------
-		// TodoList Component (w/ ReactJS)
-		// --------------------------------
 		
-		// For TodoList parent
-		vm.newTodoListItem = "";
-		
-		// Update the todo list
-		vm.updateTodoList = () => {
-			vm.newTodoListItem.length && vm.TodoList.todo.push(vm.newTodoListItem);
-			
-			// Re-render the TodoList component
-			component$.render("TodoList", vm.TodoList);
-		};
-		
-		// The TodoList model
-		vm.TodoList = {};
-		vm.TodoList.templateUrl = "home/TodoList.jsx";
-		
-		vm.TodoList.todo = [
-			"get groceries",
-			"mow the lawn",
-			"walk the dog"
-		];
-
-		// Initialize TodoList
-		vm.updateTodoList();
+		// Initialize Todo component
+		(TodoList.bind(vm))();
 	};
-
+	
 	// Register the component
 	angular
 		.module("home.component", [

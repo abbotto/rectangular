@@ -1,10 +1,10 @@
 "use strict";
 
-import React from "react";
-import ReactDOM from "react-dom";
-import jsx from "react-jsx";
-
 (() => {
+	import React from "react";
+	import ReactDOM from "react-dom";
+	import jsx from "react-jsx";
+	
 	const component$ = {};
 
 	const reactVendorDirective = function reactVendorDrective(
@@ -20,14 +20,14 @@ import jsx from "react-jsx";
 					delete $rootScope[scope.name];
 					React.unmountComponentAtNode(element[0]);
 				};
-				
+
 				const renderReactComponent = function renderReactComponent(component) {
 					ReactDOM.render(
 						component,
 						element[0]
 					);
 				};
-				
+
 				const scopeWatcher = (nv, ov) => {
 					if (!!nv) {
 						const data = {};
@@ -36,20 +36,20 @@ import jsx from "react-jsx";
 						const component = jsx.client(
 							$templateCache.get(data.vm.templateUrl), {}
 						);
-						
+
 						renderReactComponent(component(data));
 					}
 				};
-				
+
 				const rootScopeWatcher = (nv, ov) => {
 					if (!!nv) scope[scope.name] = nv;
 				};
-				
+
 				const scopeWatch = scope.$watch(scope.name, scopeWatcher, true);
 				const rootScopeWatch = $rootScope.$watch(scope.name, rootScopeWatcher, true);
-				
+
 				// Manually unmount the React component
-				// for view cleanup when the scope is destroyed.
+				// when the scope is destroyed.
 				scope.$on("$destroy", unmountReactElement);
 			}
 		};
