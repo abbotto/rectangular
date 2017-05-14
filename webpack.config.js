@@ -3,10 +3,10 @@ module.exports = {
 		loaders: [
 			{
 				loader: "babel-loader",
-				test: /\.js?$/,
+				test: /\.(js|jsx)?$/,
 				exclude: /node_modules/,
 				query: {
-					presets: ["es2015-without-strict"]
+					presets: ["es2015"]
 				}
 			}
 		]

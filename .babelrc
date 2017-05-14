@@ -1,6 +1,6 @@
 {
 	"presets": [
-		"es2015-without-strict",
+		"es2015",
 		"react"
 	]
 }
