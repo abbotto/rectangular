@@ -15,7 +15,7 @@ import jsx from "react-jsx";
 			scope: {
 				name: "="
 			},
-			link: (scope, element) => {				
+			link: (scope, element) => {
 				const unmountReactElement = function unmountReactElement() {
 					delete $rootScope[scope.name];
 					React.unmountComponentAtNode(element[0]);
@@ -45,8 +45,8 @@ import jsx from "react-jsx";
 					if (!!nv) scope[scope.name] = nv;
 				};
 				
-				scope.$watch(scope.name, scopeWatcher, true);
-				$rootScope.$watch(scope.name, rootScopeWatcher, true);
+				const scopeWatch = scope.$watch(scope.name, scopeWatcher, true);
+				const rootScopeWatch = $rootScope.$watch(scope.name, rootScopeWatcher, true);
 				
 				// Manually unmount the React component
 				// for view cleanup when the scope is destroyed.
