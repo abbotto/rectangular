@@ -3,29 +3,57 @@
 (() => {
 	// Options
 	const options = {};
-	
+
 	// Component directive
-	options.template = "<component model='vm'></component>";
-	
+	options.templateUrl = "home/home.component.html";
+
 	// "View Model" variable
 	options.controllerAs = "vm";
 
 	options.controller = function HomeController(
+		$rootScope,
+		$scope,
+		$timeout,
 		component$
 	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
 		
-		// JSX component template
-		vm.template = "home/home.component.jsx";
+		// --------------------------------
+		// TodoList Component (w/ ReactJS)
+		// --------------------------------
 		
-		// Initialize component template
-		component$.render(vm);
+		// For TodoList parent
+		vm.newTodoListItem = "";
+		
+		// Update the todo list
+		vm.updateTodoList = () => {
+			vm.newTodoListItem.length && vm.TodoList.todo.push(vm.newTodoListItem);
+			
+			// Re-render the TodoList component
+			component$.render("TodoList", vm.TodoList);
+		};
+		
+		// The TodoList model
+		vm.TodoList = {};
+		vm.TodoList.templateUrl = "home/TodoList.jsx";
+		
+		vm.TodoList.todo = [
+			"get groceries",
+			"mow the lawn",
+			"walk the dog"
+		];
+
+		// Initialize TodoList
+		vm.updateTodoList();
 	};
 
 	// Register the component
 	angular
-		.module("home.component", ["component.directive"])
+		.module("home.component", [
+			"view.directive",
+			"view.service"
+		])
 		.component("home", options)
 	;
 })();

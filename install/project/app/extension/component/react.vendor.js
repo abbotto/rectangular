@@ -1,7 +1,8 @@
 "use strict";
 
+import React from "react";
 import ReactDOM from "react-dom";
-import JSX from "react-jsx";
+import jsx from "react-jsx";
 
 (() => {
 	const component$ = {};
@@ -12,18 +13,43 @@ import JSX from "react-jsx";
 	) {
 		return {
 			scope: {
-				model: "="
+				name: "="
 			},
 			link: (scope, element) => {
-				scope.$watch("model", (nv, ov) => {
+				scope.name = "React" + scope.name + "Component";
+				
+				const unmountElement = function unmountElement() {
+					delete $rootScope[scope.name];
+					React.unmountComponentAtNode(element[0]);
+				};
+				
+				const renderComponent = function renderComponent(component) {
 					ReactDOM.render(
-						(JSX.client($templateCache.get(nv.template), {}))(nv),
+						component,
 						element[0]
 					);
-				});
+				};
 				
-				// Set value on first run
-				scope.model = scope.model ? scope.model : $rootScope.model;
+				scope.$watch(scope.name, (nv, ov) => {
+					if (!!nv) {
+						const data = {};
+						data[(nv.controllerAs || "vm")] = nv;
+
+						const component = jsx.client(
+							$templateCache.get(data.vm.templateUrl), {}
+						);
+						
+						renderComponent(component(data));
+					}
+				}, true);
+				
+				$rootScope.$watch(scope.name, (nv, ov) => {
+					!!nv && scope[scope.name] = nv;
+				}, true);
+				
+				// Manually unmount the React component
+				// for view cleanup when the scope is destroyed.
+				scope.$on("$destroy", unmountElement);
 			}
 		};
 	};
@@ -31,16 +57,16 @@ import JSX from "react-jsx";
 	const reactVendorService = function reactVendorService(
 		$rootScope
 	) {
-		component$.render = (model) => {
-			$rootScope.model = model;
+		component$.render = (name, model) => {
+			$rootScope["React" + name + "Component"] = model;
 		};
 
 		return component$;
 	};
 
 	angular
-		.module("react.vendor.directive", ["react.vendor.service"])
-		.directive("component", reactVendorDirective);
+		.module("react.vendor.directive", [])
+		.directive("view", reactVendorDirective);
 	;
 
 	angular

@@ -94,6 +94,7 @@ const watchFiles = [
 	"./app/**/*.js",
 	"./app/**/*.json",
 	"./app/**/*.html",
+	"./app/**/*.jsx",
 	"./task/**/*.js",
 	"./task/**/*.json"
 ];

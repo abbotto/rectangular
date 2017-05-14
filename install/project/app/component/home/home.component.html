@@ -1,7 +1,19 @@
-div#home-component
-	h1#rectangular 
-		a(href='https://github.com/abbotto/rectangular') {{vm.projectName}}
-	p
-		a(href='https://travis-ci.org/abbotto/rectangular')
-			img(src='https://travis-ci.org/abbotto/rectangular.svg?branch=master', alt='Build Status')
+<div id="home-component">
+	<h1 id="rectangular">
+		<a href='https://github.com/abbotto/rectangular'>{{vm.projectName}}</a>
+	</h1>
+	
+	<p>
+		<a href='https://travis-ci.org/abbotto/rectangular'>
+			<img src='https://travis-ci.org/abbotto/rectangular.svg?branch=master' alt='Build Status' />
+		</a>
+	</p>
 
+	<h2>Example</h2>
+	
+	<input ng-model="vm.newTodoListItem" type="text" />
+	<button ng-click="vm.updateTodoList()">Update List</button>
+	<br/>
+	
+	<component name="'TodoList'"></component>
+</div>

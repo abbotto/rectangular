@@ -8,7 +8,9 @@ const getPath = require("./get.path.js");
 
 const files = finder.sync([
 	getPath() + "/app/component/**/*.html",
-	getPath() + "/app/component/**/*.jsx"
+	getPath() + "/app/extension/**/*.html",
+	getPath() + "/app/component/**/*.jsx",
+	getPath() + "/app/extension/**/*.jsx"
 ]);
 
 const tmpJS = "tmp/templates.js";
