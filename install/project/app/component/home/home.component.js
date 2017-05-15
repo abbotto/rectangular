@@ -41,9 +41,6 @@
 	// Home Controller (AngularJS)
 	// --------------------------------
 	const HomeComponentController = function HomeComponentController(
-		$rootScope,
-		$scope,
-		$timeout,
 		component$,
 		data$
 	) {
