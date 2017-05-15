@@ -6,16 +6,18 @@
 	// --------------------------------
 	const TodoListComponent = function TodoListComponent(
 		component$,
-		vm
+		vm,
+		data$
 	) {
 		// Updated by TodoList parent (HomeComponent)
 		vm.newTodoListItem = "";
 		
 		// Called by TodoList parent
 		vm.updateTodoList = () => {
-			vm.newTodoListItem.length
-				&& vm.TodoList.todo.push(vm.newTodoListItem)
-			;
+			if (vm.newTodoListItem.length) {
+				const newList = vm.TodoList.todo.push(vm.newTodoListItem);
+				vm.TodoList.todo = newList;
+			}
 			
 			// Re-render the TodoList component
 			component$.render("TodoList", vm.TodoList);
@@ -25,11 +27,12 @@
 		vm.TodoList.alias = "vm";
 		vm.TodoList.templateUrl = "home/TodoList.jsx";
 		
-		vm.TodoList.todo = [
+		// Immutable todo list
+		vm.TodoList.todo = data$.List([
 			"get groceries",
 			"mow the lawn",
 			"walk the dog"
-		];
+		]);
 		
 		vm.updateTodoList();
 	};
@@ -41,13 +44,14 @@
 		$rootScope,
 		$scope,
 		$timeout,
-		component$
+		component$,
+		data$
 	) {
 		const vm = this;
 		vm.projectName = "Rectangular";
 		
 		// Initialize TodoList component
-		TodoListComponent(component$, vm);
+		TodoListComponent({component$, vm, data$});
 	};
 	
 	const HomeComponent = {};
@@ -61,7 +65,8 @@
 	angular
 		.module("home.component", [
 			"component.directive",
-			"component.service"
+			"component.service",
+			"data.service"
 		])
 		.component("home", HomeComponent)
 	;

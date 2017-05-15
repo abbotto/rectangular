@@ -2,8 +2,14 @@
 	<strong id="todo-title">
 		Todo List:
 	</strong>
-	
+
 	<ul>
-		{ vm.todo.join("\n") }
+		{Array.apply(null, vm.todo).map(function(task) {
+			return (
+				<li>
+					{ task }
+				</li>
+			);
+		}, this)}
 	</ul>
 </div>;

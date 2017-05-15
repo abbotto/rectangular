@@ -1,7 +1,5 @@
 "use strict";
 
-import React from "react";
-import ReactDOM from "react-dom";
 import jsx from "react-jsx";
 
 (() => {
@@ -27,12 +25,12 @@ import jsx from "react-jsx";
 						element[0]
 					);
 				};
-
+				
 				const scopeWatcher = (nv, ov) => {
 					if (!!nv) {
 						const data = {};
 						data[(nv.alias || "vm")] = nv;
-
+						
 						const component = jsx.client(
 							$templateCache.get(data.vm.templateUrl), {}
 						);
