@@ -9,10 +9,10 @@
 		vm,
 		data$
 	) {
-		// Updated by TodoList parent (HomeComponent)
+		// Updated by TodoList parent (HomeComponentController)
 		vm.newTodoListItem = "";
 		
-		// Called by TodoList parent
+		// Called by TodoList parent (HomeComponentController)
 		vm.updateTodoList = () => {
 			if (vm.newTodoListItem.length) {
 				const newList = vm.TodoList.todo.push(vm.newTodoListItem);
@@ -51,7 +51,7 @@
 		vm.projectName = "Rectangular";
 		
 		// Initialize TodoList component
-		TodoListComponent({component$, vm, data$});
+		TodoListComponent(component$, vm, data$);
 	};
 	
 	const HomeComponent = {};

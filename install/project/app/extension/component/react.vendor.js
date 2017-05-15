@@ -26,7 +26,7 @@ import jsx from "react-jsx";
 					);
 				};
 				
-				const scopeWatcher = (nv, ov) => {
+				const scopeWatchCb = (nv, ov) => {
 					if (!!nv) {
 						const data = {};
 						data[(nv.alias || "vm")] = nv;
@@ -39,12 +39,12 @@ import jsx from "react-jsx";
 					}
 				};
 				
-				const rootScopeWatcher = (nv, ov) => {
+				const rootScopeWatchCb = (nv, ov) => {
 					if (!!nv) scope[scope.name] = nv;
 				};
 				
-				const scopeWatch = scope.$watch(scope.name, scopeWatcher, true);
-				const rootScopeWatch = $rootScope.$watch(scope.name, rootScopeWatcher, true);
+				const scopeWatch = scope.$watch(scope.name, scopeWatchCb, true);
+				const rootScopeWatch = $rootScope.$watch(scope.name, rootScopeWatchCb, true);
 				
 				// Manually unmount the React component
 				// when the scope is destroyed.
