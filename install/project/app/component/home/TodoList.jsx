@@ -4,12 +4,8 @@
 	</strong>
 
 	<ul>
-		{Array.apply(null, vm.todo).map(function(task) {
-			return (
-				<li>
-					{ task }
-				</li>
-			);
-		}, this)}
+		{vm.todo.map(
+			(value, key) => <li>{value}</li>
+		)}
 	</ul>
 </div>;

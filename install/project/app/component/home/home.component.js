@@ -9,6 +9,17 @@
 		vm,
 		data$
 	) {
+		vm.TodoList = {};
+		vm.TodoList.alias = "vm";
+		vm.TodoList.templateUrl = "home/TodoList.jsx";
+		
+		// Immutable todo list
+		vm.TodoList.todo = data$.fromJS([
+			"get groceries",
+			"mow the lawn",
+			"walk the dog"
+		]);
+		
 		// Updated by TodoList parent (HomeComponentController)
 		vm.newTodoListItem = "";
 		
@@ -22,17 +33,6 @@
 			// Re-render the TodoList component
 			component$.render("TodoList", vm.TodoList);
 		};
-		
-		vm.TodoList = {};
-		vm.TodoList.alias = "vm";
-		vm.TodoList.templateUrl = "home/TodoList.jsx";
-		
-		// Immutable todo list
-		vm.TodoList.todo = data$.List([
-			"get groceries",
-			"mow the lawn",
-			"walk the dog"
-		]);
 		
 		vm.updateTodoList();
 	};
