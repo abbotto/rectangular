@@ -91,7 +91,7 @@ A simple Angular component may resemble the following:
 		})();
 
 ### <a name='ReactComponents'></a>React Components
-React components can be rendered withiin Angular components.
+React components can be rendered within Angular components.
 
 ####  <a name='ReactExample'></a>Example
 A simple React component may resemble the following:
