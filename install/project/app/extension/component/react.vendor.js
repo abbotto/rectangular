@@ -19,6 +19,7 @@ import jsx from "react-jsx";
 					React.unmountComponentAtNode(element[0]);
 				};
 				
+				// Render React element
 				const renderReactComponent = function renderReactComponent(component) {
 					ReactDOM.render(
 						component,
@@ -31,6 +32,7 @@ import jsx from "react-jsx";
 						const data = {};
 						data[(nv.alias || "vm")] = nv;
 						
+						// Convert JSX to React element
 						const component = jsx.client(
 							$templateCache.get(data.vm.templateUrl), {}
 						);
