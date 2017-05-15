@@ -9,9 +9,9 @@
 * [Directives](#Directives)
 * [Components](#Components)
 	* [Angular Components](#AngularComponents)
-		* [Angular Example](#AngularExample)
+		* [Example](#AngularExample)
 	* [React Components](#ReactComponents)
-		* [React Example](#ReactExample)	
+		* [Example](#ReactExample)	
 * [Controllers](#Controllers)
 	* [View Model](#ViewModel)
 * [Templates](#Templates)
@@ -71,7 +71,7 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Images** (png, jpg, jpeg, gif, svg, ico)
 
 ### <a name='AngularComponents'></a>Angular Components
-####  <a name='ComponentExample'></a>Example
+####  <a name='AngularExample'></a>Example
 A simple Angular component may resemble the following:
 
 		(() => {
