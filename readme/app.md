@@ -53,9 +53,6 @@ Directives are used to control DOM behaviour and to render data in HTML format.
 ## <a name='Components'></a>Components
 A component is a specialized directive that organizes a controller with a template. One main difference between a component and a directive is that a component doesn't have a `link` function. For DOM manipulation, a component can use directives with a link function.
 
-- Components are comprised of the following:
-	- A JS component with a controller.
-	- A HTML template.
 - Component files are placed in the `app/component/{{componentName}}` directory:
 	- **Components** (js)
 	- **Directives** (js)
