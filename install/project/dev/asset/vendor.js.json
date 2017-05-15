@@ -8,6 +8,7 @@
 	"./node_modules/angular-material/angular-material.min.js",
 	"./node_modules/angular-strap/dist/angular-strap.min.js",
 	"./node_modules/angular-strap/dist/angular-strap.tpl.min.js",
+	"./node_modules/lodash/lodash.min.js",
 	"./node_modules/restangular/dist/restangular.min.js",
 	"./node_modules/moment/min/moment.min.js",
 	"./node_modules/angular-moment/angular-moment.min.js",

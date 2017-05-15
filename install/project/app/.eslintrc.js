@@ -69,7 +69,7 @@ module.exports = {
 		"angular/no-services": [2, ["$http", "$resource", "Restangular"]],
 		"angular/on-watch": 2,
 		"angular/rest-service": 0,
-		"angular/service-name": [1,
+		"angular/service-name": [2,
 			"/^(\\_|[a-z])+([A-Za-z]*).*\\$$/"
 		],
 		"angular/timeout-service": 2,
