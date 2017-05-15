@@ -74,21 +74,21 @@ A component is a specialized directive that organizes a controller with a templa
 ####  <a name='AngularExample'></a>Example
 A simple Angular component may resemble the following:
 
-		(() => {
-			const options = {};
-			
-			options.templateUrl = "home/home.component.html";
-			options.controllerAs = "vm";
-			
-			options.controller = function HomeController() {
-				const vm = this;
-			};
-			
-			angular
-				.module("home.component", [])
-				.component("home", options)
-			;
-		})();
+	(() => {
+		const options = {};
+		
+		options.templateUrl = "home/home.component.html";
+		options.controllerAs = "vm";
+		
+		options.controller = function HomeController() {
+			const vm = this;
+		};
+		
+		angular
+			.module("home.component", [])
+			.component("home", options)
+		;
+	})();
 
 ### <a name='ReactComponents'></a>React Components
 React components can be rendered within Angular components.
@@ -96,47 +96,47 @@ React components can be rendered within Angular components.
 ####  <a name='ReactExample'></a>Example
 A simple React component may resemble the following:
 
-		(() => {
-			// --------------------------------
-			// ReactJS Component
-			// --------------------------------
-			const TodoListComponent = function TodoListComponent(
-				component$,
-				vm,
-				data$
-			) {
-				vm.TodoList = {};
-				vm.TodoList.alias = "vm";
-				vm.TodoList.templateUrl = "home/TodoList.jsx";
+	(() => {
+		// --------------------------------
+		// ReactJS Component
+		// --------------------------------
+		const TodoListComponent = function TodoListComponent(
+			component$,
+			vm,
+			data$
+		) {
+			vm.TodoList = {};
+			vm.TodoList.alias = "vm";
+			vm.TodoList.templateUrl = "home/TodoList.jsx";
+			
+			// Immutable todo list
+			vm.TodoList.todo = data$.fromJS([
+				"get groceries",
+				"mow the lawn",
+				"be a ninja"
+			]);
+			
+			// Updated by TodoList parent (HomeComponentController)
+			vm.newTodoListItem = "";
+			
+			// Called by TodoList parent (HomeComponentController)
+			vm.updateTodoList = () => {
+				if (vm.newTodoListItem.length) {
+					vm.TodoList.todo = vm.TodoList.todo.push(vm.newTodoListItem);
+				}
 				
-				// Immutable todo list
-				vm.TodoList.todo = data$.fromJS([
-					"get groceries",
-					"mow the lawn",
-					"be a ninja"
-				]);
-				
-				// Updated by TodoList parent (HomeComponentController)
-				vm.newTodoListItem = "";
-				
-				// Called by TodoList parent (HomeComponentController)
-				vm.updateTodoList = () => {
-					if (vm.newTodoListItem.length) {
-						vm.TodoList.todo = vm.TodoList.todo.push(vm.newTodoListItem);
-					}
-					
-					// Render the TodoList component
-					component$.render("TodoList", vm.TodoList);
-				};
-				
-				vm.updateTodoList();
+				// Render the TodoList component
+				component$.render("TodoList", vm.TodoList);
 			};
+			
+			vm.updateTodoList();
+		};
 
-			// --------------------------------
-			// AngularJS Component
-			// --------------------------------
-			...
-		})();
+		// --------------------------------
+		// AngularJS Component
+		// --------------------------------
+		...
+	})();
 
 ##  <a name='Controllers'></a>Controllers
 Controllers are used in components and directives.
