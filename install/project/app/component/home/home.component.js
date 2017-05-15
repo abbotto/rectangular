@@ -26,8 +26,7 @@
 		// Called by TodoList parent (HomeComponentController)
 		vm.updateTodoList = () => {
 			if (vm.newTodoListItem.length) {
-				const newList = vm.TodoList.todo.push(vm.newTodoListItem);
-				vm.TodoList.todo = newList;
+				vm.TodoList.todo = vm.TodoList.todo.push(vm.newTodoListItem);
 			}
 			
 			// Re-render the TodoList component
