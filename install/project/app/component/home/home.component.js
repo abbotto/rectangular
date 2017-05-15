@@ -29,7 +29,7 @@
 				vm.TodoList.todo = vm.TodoList.todo.push(vm.newTodoListItem);
 			}
 			
-			// Re-render the TodoList component
+			// Render the TodoList component
 			component$.render("TodoList", vm.TodoList);
 		};
 		
