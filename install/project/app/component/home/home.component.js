@@ -37,7 +37,7 @@
 	};
 	
 	// --------------------------------
-	// Home Controller (AngularJS)
+	// Home Component Controller (AngularJS)
 	// --------------------------------
 	const HomeComponentController = function HomeComponentController(
 		component$,
