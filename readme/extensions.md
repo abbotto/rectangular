@@ -11,6 +11,7 @@
 		* [Language Support](#LanguageSupport)
 		* [Immutable Data](#ImmutableData)
 		* [Printing](#Printing)
+		* [Virtual DOM](#VirtualDOM)
 
 ##  <a name='Extensions'></a>Extensions
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
