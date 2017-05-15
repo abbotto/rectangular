@@ -53,9 +53,7 @@ import jsx from "react-jsx";
 		};
 	};
 	
-	const reactVendorService = function reactVendorService(
-		$rootScope
-	) {
+	const reactVendorService = function reactVendorService($rootScope) {
 		component$.render = (name, model) => {
 			$rootScope[name] = model;
 		};
