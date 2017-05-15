@@ -1,10 +1,8 @@
 "use strict";
 
-import _ from "lodash";
-
 (() => {
-	const lodashVendorService = function lodashVendorService() {
-		return _;
+	const lodashVendorService = function lodashVendorService($window) {
+		return $window._;
 	};
 	
 	angular

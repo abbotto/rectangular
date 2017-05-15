@@ -149,6 +149,9 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a install/extra/extension/_/. tmp/project/app/extension/_/");
 		sh.exec("cd tmp/project && npm i --save lodash && cd ..");
 	}
+	else if (input.Restangular.match(/^(?:No|no|N|n)$/)) {
+		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
+	}
 	
 	if (input.ImmutableJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
@@ -158,7 +161,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a install/extra/extension/data/. tmp/project/app/extension/data/");
 		sh.exec("cd tmp/project && npm i --save immutable && cd ..");
 	}
-	
+
 	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Teleprint...");
@@ -189,7 +192,7 @@ prompt.get(schema, (err, input) => {
 		
 		sh.exec("mkdir tmp/project/app/extension/rest/");
 		sh.exec("cp -a install/extra/extension/rest/. tmp/project/app/extension/rest/");
-		sh.exec("cd tmp/project && npm i --save restangular && cd ..");
+		sh.exec("cd tmp/project && npm i --save lodash restangular && cd ..");
 	}
 	else {
 		vendorJS = slice(vendorJS, "./node_modules/restangular/dist/restangular.min.js");
