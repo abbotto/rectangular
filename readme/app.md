@@ -8,8 +8,10 @@
 * [Services](#Services)
 * [Directives](#Directives)
 * [Components](#Components)
-	* [Assets](#ComponentAssets)
-	* [Example](#ComponentExample)
+	* [Angular Components](#AngularComponents)
+		* [Angular Example](#AngularExample)
+	* [React Components](#ReactComponents)
+		* [React Example](#ReactExample)	
 * [Controllers](#Controllers)
 	* [View Model](#ViewModel)
 * [Templates](#Templates)
@@ -62,16 +64,15 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Templates** (html)
 	- **Routes** (js)
 	- **Services** (js)
+- Assets are also placed in the `app/component/{{componentName}}` directory:
+	- **Tests** (js)
+	- **Styles** (scss)
+	- **Models** ([data|mixin]json)
+	- **Images** (png, jpg, jpeg, gif, svg, ico)
 
-###  <a name='ComponentAssets'></a>Assets
-Assets are also placed in the `app/component/{{componentName}}` directory:
-- **Tests** (js)
-- **Styles** (scss)
-- **Models** ([data|mixin]json)
-- **Images** (png, jpg, jpeg, gif, svg, ico)
-
+### <a name='AngularComponents'></a>Angular Components
 ####  <a name='ComponentExample'></a>Example
-A simple component directive may resemble the following:
+A simple Angular component may resemble the following:
 
 		(() => {
 			const options = {};
@@ -87,6 +88,54 @@ A simple component directive may resemble the following:
 				.module("home.component", [])
 				.component("home", options)
 			;
+		})();
+
+### <a name='ReactComponents'></a>React Components
+React components can be rendered withiin Angular components.
+
+####  <a name='ComponentExample'></a>Example
+A simple React component may resemble the following:
+
+		(() => {
+			// --------------------------------
+			// ReactJS Component
+			// --------------------------------
+			const TodoListComponent = function TodoListComponent(
+				component$,
+				vm,
+				data$
+			) {
+				vm.TodoList = {};
+				vm.TodoList.alias = "vm";
+				vm.TodoList.templateUrl = "home/TodoList.jsx";
+				
+				// Immutable todo list
+				vm.TodoList.todo = data$.fromJS([
+					"get groceries",
+					"mow the lawn",
+					"be a ninja"
+				]);
+				
+				// Updated by TodoList parent (HomeComponentController)
+				vm.newTodoListItem = "";
+				
+				// Called by TodoList parent (HomeComponentController)
+				vm.updateTodoList = () => {
+					if (vm.newTodoListItem.length) {
+						vm.TodoList.todo = vm.TodoList.todo.push(vm.newTodoListItem);
+					}
+					
+					// Render the TodoList component
+					component$.render("TodoList", vm.TodoList);
+				};
+				
+				vm.updateTodoList();
+			};
+
+			// --------------------------------
+			// AngularJS Component
+			// --------------------------------
+			...
 		})();
 
 ##  <a name='Controllers'></a>Controllers
