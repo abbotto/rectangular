@@ -4,7 +4,6 @@ import Immutable from "immutable";
 
 (() => {
 	const immutableVendorService = function immutableVendorService() {
-		// eslint-disable-next-line no-undef
 		return Immutable;
 	};
 	

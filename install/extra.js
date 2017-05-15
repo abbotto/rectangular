@@ -58,12 +58,6 @@ const schema = {
 			description: "Install MomentJS? [y/n]",
 			required: true
 		},
-		ImmutableJS: {
-			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			message: "Yes|No|yes|no|Y|N|y|n]",
-			description: "Install ImmutableJS? [y/n]",
-			required: true
-		},
 		Teleprint: {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
@@ -151,15 +145,6 @@ prompt.get(schema, (err, input) => {
 	}
 	else if (input.Restangular.match(/^(?:No|no|N|n)$/)) {
 		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
-	}
-	
-	if (input.ImmutableJS.match(/^(?:Yes|yes|Y|y)$/)) {
-		console.log("");
-		console.log("Installing ImmutableJS...");
-		
-		sh.exec("mkdir tmp/project/app/extension/data/");
-		sh.exec("cp -a install/extra/extension/data/. tmp/project/app/extension/data/");
-		sh.exec("cd tmp/project && npm i --save immutable && cd ..");
 	}
 
 	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
