@@ -17,7 +17,7 @@
 		vm.TodoList.todo = data$.fromJS([
 			"get groceries",
 			"mow the lawn",
-			"walk the dog"
+			"be a ninja"
 		]);
 		
 		// Updated by TodoList parent (HomeComponentController)
@@ -61,7 +61,6 @@
 	angular
 		.module("home.component", [
 			"component.directive",
-			"component.service",
 			"data.service"
 		])
 		.component("home", HomeComponent)
