@@ -1,4 +1,5 @@
 # Rectangular
+#### Focus on apps, not ops.
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 
 ---
