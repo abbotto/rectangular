@@ -7,7 +7,7 @@
 	const HomeComponent = {};
 	HomeComponent.controllerAs = "vm";
 	HomeComponent.templateUrl = "home/home.component.html";
-	HomeComponent.controller = require("home.controller");
+	HomeComponent.controller = require("./home/home.controller.js");
 	
 	// --------------------------------
 	// Home Component (AngularJS)
