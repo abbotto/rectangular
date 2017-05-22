@@ -1,4 +1,4 @@
-const TodoListComponent = require("./todo-list/todo-list.component");
+const TodoListComponent = require("../todo-list/todo-list.component");
 
 module.exports = function HomeComponentController(
 	component$,
