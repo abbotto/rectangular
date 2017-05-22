@@ -8,7 +8,7 @@ module.exports = function TodoListComponent(
 ) {
 	model.TodoList = {};
 	model.TodoList.alias = "vm";
-	model.TodoList.templateUrl = "todo-list/todo-list.jsx";
+	model.TodoList.templateUrl = "todo-list/todo-list.component.jsx";
 	
 	// Immutable todo list
 	model.TodoList.todo = data$.fromJS([
