@@ -9,9 +9,6 @@
 	HomeComponent.templateUrl = "home/home.component.html";
 	HomeComponent.controller = require("home.controller.js");
 	
-	// --------------------------------
-	// Home Component (AngularJS)
-	// --------------------------------
 	angular
 		.module("home.component", [
 			"component.directive",
