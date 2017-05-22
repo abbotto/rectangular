@@ -4,9 +4,6 @@
 // Home Component (AngularJS)
 // --------------------------------
 (() => {
-	// --------------------------------
-	// Home Component Controller (AngularJS)
-	// --------------------------------
 	const HomeComponent = {};
 	HomeComponent.controllerAs = "vm";
 	HomeComponent.templateUrl = "home/home.component.html";
