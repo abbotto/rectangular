@@ -1,7 +1,7 @@
 <div id="TodoList">
 	<ul>
 		{vm.todo.map(
-			(value, key) => <li>{value}</li>
+			(value) => <li>{value}</li>
 		)}
 	</ul>
 </div>;
