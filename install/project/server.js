@@ -11,6 +11,15 @@ app.set("view cache", true);
 app.use(express.static(www));
 app.use(compression());
 
+// Enable gzip encoding
+if (process.env.NODE_ENV === "production") {
+	app.get("*.js", (req, res, next) => {
+		req.url = req.url + ".gz";
+		res.set("Content-Encoding", "gzip");
+		next();
+	});
+}
+
 // This route handles HTML5Mode for AngularJS
 // It forwards missing files to index.html
 app.all("/*", (req, res) => {
@@ -20,5 +29,5 @@ app.all("/*", (req, res) => {
 const server = app.listen((process.env.PORT || port), function appServer() {
 	const host = server.address().address;
 	const port = server.address().port;
-	// console.log('http://%s:%s', host, port);
+	// console.log("http://%s:%s", host, port);
 });

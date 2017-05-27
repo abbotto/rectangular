@@ -33,21 +33,21 @@ module.exports = {
 		"angular/controller-as": 2,
 		"angular/controller-as-route": 2,
 		"angular/controller-as-vm": [2, "vm"],
-		"angular/controller-name": [2,
+		"angular/controller-name": [1,
 			"/^([A-Z])+([A-Za-z]*)*/"
 		],
 		"angular/deferred": 0,
 		"angular/definedundefined": 2,
 		"angular/di": [2, "function"],
 		"angular/di-order": [0, true],
-		"angular/directive-name": [2,
+		"angular/directive-name": [1,
 			"/^([a-z])+([A-Za-z]*)*/"
 		],
 		"angular/component-limit": [2, 5],
 		"angular/document-service": 2,
 		"angular/empty-controller": 2,
 		"angular/file-name": 0,
-		"angular/filter-name": [2,
+		"angular/filter-name": [1,
 			"/^([a-z])+([A-Za-z]*)*/"
 		],
 		"angular/foreach": 2,
@@ -56,7 +56,7 @@ module.exports = {
 		"angular/json-functions": 2,
 		"angular/log": 0,
 		"angular/module-getter": 2,
-		"angular/module-name": [2,
+		"angular/module-name": [1,
 			"/(\\.?([a-z])+([A-Z])*)+/"
 		],
 		"angular/module-setter": 2,
@@ -69,7 +69,7 @@ module.exports = {
 		"angular/no-services": [2, ["$http", "$resource", "Restangular"]],
 		"angular/on-watch": 2,
 		"angular/rest-service": 0,
-		"angular/service-name": [2,
+		"angular/service-name": [1,
 			"/^(\\_|[a-z])+([A-Za-z]*).*\\$$/"
 		],
 		"angular/timeout-service": 2,

@@ -29,8 +29,13 @@ sh.exec("node " + getPath() + "/node_modules/rectangular/build/model.cache.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/html.cache.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/vendor.compile.js");
 
-// Convert ES6 to ES5 w/ webpack
+// Convert ES6 to ES5 w/ webpack + babel
 sh.exec("node_modules/.bin/webpack --config app.webpack.js");
 
 // Write the output to a file
-sh.exec("cp tmp/app.js dist/app.js");
+if (process.env.NODE_ENV === "production") {
+	sh.exec("cp tmp/app.js.gz dist/app.js.gz");
+}
+else if (process.env.NODE_ENV === "development") {
+	sh.exec("cp tmp/app.js dist/app.js");
+}

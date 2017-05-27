@@ -1,5 +1,7 @@
 const path = require("path");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require("webpack");
+const CompressionPlugin = require("compression-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config = {
 	entry: {
@@ -19,16 +21,46 @@ const config = {
 		]
 	},
 	module: {
-		loaders: [
-			{
-				loader: "babel",
-				test: /\.(js)?$/,
-				exclude: /node_modules/
-			}
-		]
+		loaders: [{
+			loader: "babel",
+			test: /\.(js)?$/,
+			exclude: /node_modules/
+		}]
 	},
 	plugins: [
-		new UglifyJSPlugin()
+		new webpack.DefinePlugin({
+			"process.env": {
+				"NODE_ENV": JSON.stringify("development")
+			}
+		}),
+		new webpack.DefinePlugin({
+			"process.env": {
+				"NODE_ENV": JSON.stringify("production")
+			}
+		}),
+		new UglifyJsPlugin({
+			comments: false,
+			mangle: false,
+			compress: {
+				unused: true,
+				dead_code: true,
+				warnings: false,
+				drop_debugger: true,
+				conditionals: true,
+				evaluate: true,
+				drop_console: true,
+				sequences: true,
+				booleans: true
+			}
+		}),
+		new webpack.optimize.AggressiveMergingPlugin(),
+		new CompressionPlugin({
+			asset: "[path].gz[query]",
+			algorithm: "gzip",
+			test: /\.(js)$/,
+			threshold: 10240,
+			minRatio: 0.8
+		})
 	]
 };
 
