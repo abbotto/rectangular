@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const bootstrapAsideService = function bootstrapAsideService($aside) {
-		return $aside;
-	};
-	
-	angular
-		.module("ui.aside.service", ["ui.bootstrap.service"])
-		.factory("aside$", bootstrapAsideService)
-	;
-})();
+import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+
+const bootstrapAsideService = function bootstrapAsideService($aside) {
+	return $aside;
+};
+
+export default angular
+	.module("ui.aside.service", [ngStrapVendorService])
+	.factory("aside$", bootstrapAsideService)
+	.name
+;

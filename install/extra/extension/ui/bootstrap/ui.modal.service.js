@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const bootstrapModalService = function bootstrapModalService($modal) {
-		return $modal;
-	};
-	
-	angular
-		.module("ui.modal.service", ["ui.bootstrap.service"])
-		.factory("modal$", bootstrapModalService)
-	;
-})();
+import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+
+const bootstrapModalService = function bootstrapModalService($modal) {
+	return $modal;
+};
+
+export default angular
+	.module("ui.modal.service", [ngStrapVendorService])
+	.factory("modal$", bootstrapModalService)
+	.name
+;

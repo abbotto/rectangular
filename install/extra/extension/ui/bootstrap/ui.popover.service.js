@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const bootstrapPopoverService = function bootstrapPopoverService($popover) {
-		return $popover;
-	};
-	
-	angular
-		.module("ui.popover.service", ["ui.bootstrap.service"])
-		.factory("popover$", bootstrapPopoverService)
-	;
-})();
+import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+
+const bootstrapPopoverService = function bootstrapPopoverService($popover) {
+	return $popover;
+};
+
+export default angular
+	.module("ui.popover.service", [ngStrapVendorService])
+	.factory("popover$", bootstrapPopoverService)
+	.name
+;

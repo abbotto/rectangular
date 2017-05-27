@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const bootstrapSelectService = function bootstrapSelectService($select) {
-		return $select;
-	};
-	
-	angular
-		.module("ui.select.service", ["ui.bootstrap.service"])
-		.factory("select$", bootstrapSelectService)
-	;
-})();
+import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+
+const bootstrapSelectService = function bootstrapSelectService($select) {
+	return $select;
+};
+
+export default angular
+	.module("ui.select.service", [ngStrapVendorService])
+	.factory("select$", bootstrapSelectService)
+	.name
+;

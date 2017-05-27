@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const bootstrapTimepickerService = function bootstrapTimepickerService($timepicker) {
-		return $timepicker;
-	};
-	
-	angular
-		.module("ui.timepicker.service", ["ui.bootstrap.service"])
-		.factory("timepicker$", bootstrapTimepickerService)
-	;
-})();
+import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+
+const bootstrapTimepickerService = function bootstrapTimepickerService($timepicker) {
+	return $timepicker;
+};
+
+export default angular
+	.module("ui.timepicker.service", [ngStrapVendorService])
+	.factory("timepicker$", bootstrapTimepickerService)
+	.name
+;

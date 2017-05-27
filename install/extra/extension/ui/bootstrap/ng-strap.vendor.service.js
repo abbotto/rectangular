@@ -1,7 +1,7 @@
-(() => {
-	"use strict";
-	
-	angular.module("ngStrap.vendor.service", [
+"use strict";
+
+export default angular
+	.module("ngStrap.vendor.service", [
 		"mgcrea.ngStrap.affix",
 		"mgcrea.ngStrap.alert",
 		"mgcrea.ngStrap.aside",
@@ -14,5 +14,6 @@
 		"mgcrea.ngStrap.timepicker",
 		"mgcrea.ngStrap.tooltip",
 		"mgcrea.ngStrap.typeahead"
-	]);
-})();
+	])
+	.name
+;

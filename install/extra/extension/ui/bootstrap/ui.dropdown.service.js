@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const bootstrapDropdownService = function bootstrapDropdownService($dropdown) {
-		return $dropdown;
-	};
+import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+
+const bootstrapDropdownService = function bootstrapDropdownService($dropdown) {
+	return $dropdown;
+};
 	
-	angular
-		.module("ui.dropdown.service", ["ui.bootstrap.service"])
-		.factory("dropdown$", bootstrapDropdownService)
-	;
-})();
+export default angular
+	.module("ui.dropdown.service", [ngStrapVendorService])
+	.factory("dropdown$", bootstrapDropdownService)
+	.name
+;
