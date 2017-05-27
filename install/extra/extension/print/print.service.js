@@ -1,5 +1,8 @@
 "use strict";
 
-(() => {
-	angular.module("print.service", ["teleprint.vendor.service"]);
-})();
+import teleprintVendorService from "app/extension/print/teleprint.vendor.service.js";
+
+export default angular
+	.module("print.service", [teleprintVendorService])
+	.name
+;

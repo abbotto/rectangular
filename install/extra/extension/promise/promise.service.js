@@ -1,5 +1,8 @@
 "use strict";
 
-(() => {
-	angular.module("promise.service", ["bluebird.vendor.service"]);
-})();
+import bluebirdVendorService from "app/extension/promise/bluebird.vendor.service.js";
+
+export default angular
+	.module("promise.service", [bluebirdVendorService])
+	.name
+;

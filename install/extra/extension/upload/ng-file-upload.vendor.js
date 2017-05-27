@@ -1,12 +1,11 @@
 "use strict";
 
-(() => {
-	const ngFileUploadVendorService = function ngFileUploadVendorService(Upload) {
-		return Upload;
-	};
+const ngFileUploadVendorService = function ngFileUploadVendorService(Upload) {
+	return Upload;
+};
 
-	angular
-		.module("ngFileUpload.vendor.service", ["ngFileUpload"])
-		.factory("upload$", ngFileUploadVendorService)
-	;
-})();
+export default angular
+	.module("ngFileUpload.vendor.service", ["ngFileUpload"])
+	.factory("upload$", ngFileUploadVendorService)
+	.name
+;

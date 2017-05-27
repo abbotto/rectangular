@@ -1,5 +1,8 @@
 "use strict";
 
-(() => {
-	angular.module("date.service", ["moment.vendor.service"]);
-})();
+import momentVendorService from "app/extension/date/moment.vendor.service.js";
+
+export default angular
+	.module("date.service", [momentVendorService])
+	.name
+;

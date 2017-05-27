@@ -1,5 +1,8 @@
 "use strict";
 
-(() => {
-	angular.module("_.service", ["lodash.vendor.service"]);
-})();
+import lodashVendorService from "app/extension/_/lodash.vendor.service.js";
+
+export default angular
+	.module("_.service", [lodashVendorService])
+	.name
+;

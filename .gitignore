@@ -11,7 +11,7 @@
 !license.md
 !README.md
 
-# Whitelist Dot Files
+# Whitelist Config Files
 !.babelrc
 !.envrc
 !.eslintignore
@@ -20,7 +20,7 @@
 !.nvmrc
 !.stylelintrc
 !.travis.yml
-!webpack.config.js
+!*.webpack.js
 !yarn.lock
 
 # Whitelist Source Files
