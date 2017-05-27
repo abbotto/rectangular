@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialStickyService = function materialStickyService($mdSticky) {
-		return $mdSticky;
-	};
-	
-	angular
-		.module("ui.sticky.service", ["ui.material.service"])
-		.factory("sticky$", materialStickyService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialStickyService = function materialStickyService($mdSticky) {
+	return $mdSticky;
+};
+
+export default angular
+	.module("ui.sticky.service", [angularMaterialVendorService])
+	.factory("sticky$", materialStickyService)
+	.name
+;

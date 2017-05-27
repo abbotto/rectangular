@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialPanelService = function materialPanelService($mdPanel) {
-		return $mdPanel;
-	};
-	
-	angular
-		.module("ui.panel.service", ["ui.material.service"])
-		.factory("panel$", materialPanelService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialPanelService = function materialPanelService($mdPanel) {
+	return $mdPanel;
+};
+
+export default angular
+	.module("ui.panel.service", [angularMaterialVendorService])
+	.factory("panel$", materialPanelService)
+	.name
+;

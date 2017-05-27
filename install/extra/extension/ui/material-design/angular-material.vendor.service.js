@@ -1,7 +1,7 @@
-(() => {
-	"use strict";
-	
-	angular.module("angularMaterial.vendor.service", [
+"use strict";
+
+export default angular
+	.module("angularMaterial.vendor.service", [
 		"ngMaterial"
 	])
 	.config($mdThemingProvider => {
@@ -31,5 +31,6 @@
 	})
 	.config($mdProgressCircularProvider => {
 		// https://material.angularjs.org/latest/api/service/$mdProgressCircular
-	});
-})();
+	})
+	.name
+;

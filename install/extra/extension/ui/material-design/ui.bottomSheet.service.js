@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialBottomSheetService = function materialBottomSheetService($mdBottomSheet) {
-		return $mdBottomSheet;
-	};
-	
-	angular
-		.module("ui.bottomSheet.service", ["ui.material.service"])
-		.factory("bottomSheet$", materialBottomSheetService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialBottomSheetService = function materialBottomSheetService($mdBottomSheet) {
+	return $mdBottomSheet;
+};
+
+export default angular
+	.module("ui.bottomSheet.service", [angularMaterialVendorService])
+	.factory("bottomSheet$", materialBottomSheetService)
+	.name
+;

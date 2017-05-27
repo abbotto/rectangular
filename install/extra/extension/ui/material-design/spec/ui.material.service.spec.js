@@ -1,6 +1,6 @@
 "use strict";
 
-describe("ui.material.service", () => {
+describe(angularMaterialVendorService, () => {
 	let bottomSheet$,
 		colors$,
 		dialog$,
@@ -14,7 +14,7 @@ describe("ui.material.service", () => {
 
 	beforeEach(() => {
 		module(
-			"ui.material.service",
+			"angularMaterialVendorService",
 			"ui.bottomSheet.service",
 			"ui.colors.service",
 			"ui.dialog.service",

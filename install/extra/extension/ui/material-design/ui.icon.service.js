@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialIconService = function materialIconService($mdIcon) {
-		return $mdIcon;
-	};
-	
-	angular
-		.module("ui.icon.service", ["ui.material.service"])
-		.factory("icon$", materialIconService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialIconService = function materialIconService($mdIcon) {
+	return $mdIcon;
+};
+
+export default angular
+	.module("ui.icon.service", [angularMaterialVendorService])
+	.factory("icon$", materialIconService)
+	.name
+;

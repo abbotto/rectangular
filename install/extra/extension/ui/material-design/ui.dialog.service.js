@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialDialogService = function materialDialogService($mdDialog) {
-		return $mdDialog;
-	};
-	
-	angular
-		.module("ui.dialog.service", ["ui.material.service"])
-		.factory("dialog$", materialDialogService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialDialogService = function materialDialogService($mdDialog) {
+	return $mdDialog;
+};
+
+export default angular
+	.module("ui.dialog.service", [angularMaterialVendorService])
+	.factory("dialog$", materialDialogService)
+	.name
+;

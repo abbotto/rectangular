@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialMediaService = function materialMediaService($mdMedia) {
-		return $mdMedia;
-	};
-	
-	angular
-		.module("ui.media.service", ["ui.material.service"])
-		.factory("media$", materialMediaService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialMediaService = function materialMediaService($mdMedia) {
+	return $mdMedia;
+};
+
+export default angular
+	.module("ui.media.service", [angularMaterialVendorService])
+	.factory("media$", materialMediaService)
+	.name
+;

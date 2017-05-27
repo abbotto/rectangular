@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialInkRippleService = function materialInkRippleService($mdInkRipple) {
-		return $mdInkRipple;
-	};
-	
-	angular
-		.module("ui.inkRipple.service", ["ui.material.service"])
-		.factory("inkRipple$", materialInkRippleService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialInkRippleService = function materialInkRippleService($mdInkRipple) {
+	return $mdInkRipple;
+};
+
+export default angular
+	.module("ui.inkRipple.service", [angularMaterialVendorService])
+	.factory("inkRipple$", materialInkRippleService)
+	.name
+;

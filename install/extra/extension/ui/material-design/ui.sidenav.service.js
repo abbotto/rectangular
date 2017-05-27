@@ -1,12 +1,13 @@
 "use strict";
 
-(() => {
-	const materialSidenavService = function materialSidenavService($mdSidenav) {
-		return $mdSidenav;
-	};
-	
-	angular
-		.module("ui.sidenav.service", ["ui.material.service"])
-		.factory("sidenav$", materialSidenavService)
-	;
-})();
+import angularMaterialVendorService from "app/extension/ui/angular-material.vendor.service.js"
+
+const angularMaterialSidenavService = function materialSidenavService($mdSidenav) {
+	return $mdSidenav;
+};
+
+export default angular
+	.module("ui.sidenav.service", [angularMaterialVendorService])
+	.factory("sidenav$", materialSidenavService)
+	.name
+;
