@@ -16,13 +16,9 @@ files.forEach((path) => {
 	key = path
 		.replace(getPath() + "/", "")
 		.replace("./", "")
-		.replace("app/", "")
-		.replace("component/", "")
-		.replace("model/", "")
-		.replace("extension/", "")
 	;
 	models[key] = fs.readFileSync(path, "utf8");
 });
 
-models = "(function(){angular.module(\"app.model\", []).constant(\"appModel\", " + JSON.stringify(models) + ")})();";
+models = "export default angular.module(\"app.model\", []).constant(\"appModel\", " + JSON.stringify(models) + ").name;";
 fs.writeFile(tmpJS, models);

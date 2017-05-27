@@ -1,6 +1,6 @@
-const TodoListComponent = require("../todo-list/todo-list.component");
+import todoListComponent from "app/component/todo-list/todo-list.component.js";
 
-module.exports = function HomeComponentController(
+export default function HomeComponentController(
 	component$,
 	data$
 ) {
@@ -8,5 +8,5 @@ module.exports = function HomeComponentController(
 	vm.projectName = "Rectangular";
 	
 	// Initialize TodoList component
-	TodoListComponent(component$, vm, data$);
+	todoListComponent(component$, vm, data$);
 };

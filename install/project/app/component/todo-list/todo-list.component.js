@@ -1,14 +1,14 @@
 // --------------------------------
 // Todo-List Component (ReactJS)
 // --------------------------------
-module.exports = function TodoListComponent(
+export default function TodoListComponent(
 	component$,
 	model,
 	data$
 ) {
 	model.TodoList = {};
 	model.TodoList.alias = "vm";
-	model.TodoList.templateUrl = "todo-list/todo-list.component.jsx";
+	model.TodoList.templateUrl = "app/component/todo-list/todo-list.component.jsx";
 	
 	// Immutable todo list
 	model.TodoList.todo = data$.fromJS([

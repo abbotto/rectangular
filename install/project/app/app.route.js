@@ -1,11 +1,16 @@
+
 "use strict";
 
-(() => {
-	angular.module("app.route", [
+// Auto-generated file
+import componentRoute from "component.route.js";
+
+export default angular
+	.module("app.route", [
 		"ui.router",
-		"component.route"
+		componentRoute
 	])
-	.config($urlRouterProvider => {
+	.config(($urlRouterProvider) => {
 		$urlRouterProvider.otherwise("/");
-	});
-})();
+	})
+	.name
+;

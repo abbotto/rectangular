@@ -4,14 +4,21 @@ const finder = require("glob-concat");
 const fs = require("fs");
 const path = require("path");
 const getPath = require("./get.path.js");
+const camelCase = require("camelcase");
 const EOL = require("os").EOL;
-const files = finder.sync([getPath() + "/app/component/**/*.route.js"]);
-const tmpJS = "tmp/component.route.js";
-const newFiles = [];
+
+const files = finder.sync([__dirname.split("/build")[0] + "/tmp/app/component/**/*.route.js"]);
+const tmpJS = __dirname.split("/build")[0] + "/tmp/component.route.js";
+const routes = [];
+const imports = [];
+const deps = [];
 
 files.forEach((file) => {
-	newFiles.push(path.basename(file).replace(".js", ""));
+	const route = path.basename(file).replace(".js", "");
+	imports.push("import " + camelCase(route) + " from \"app/" + file.split("app/")[1] + "\";");
+	deps.push(camelCase(route));
+	routes.push(route);
 });
 
-const componentRoutes = "(function(){angular.module(\"component.route\", " + JSON.stringify(newFiles) + ");})();" + EOL;
+const componentRoutes = imports.join("") + "export default angular.module(\"component.route\", [" + deps.join(",") + "]).name;" + EOL;
 fs.writeFile(tmpJS, componentRoutes);

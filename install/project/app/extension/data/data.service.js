@@ -1,5 +1,8 @@
 "use strict";
 
-(() => {
-	angular.module("data.service", ["immutable.vendor.service"]);
-})();
+import immutableVendorService from "app/extension/data/immutable.vendor.service.js";
+
+export default angular
+	.module("data.service", [immutableVendorService])
+	.name
+;

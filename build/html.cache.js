@@ -38,9 +38,6 @@ files.forEach((path) => {
 	key = path
 		.replace(getPath() + "/", "")
 		.replace("./", "")
-		.replace("app/", "")
-		.replace("component/", "")
-		.replace("extension/", "")
 	;
 
 	key.indexOf(".jsx") > -1
@@ -52,5 +49,5 @@ files.forEach((path) => {
 });
 
 const cache = templates.join(";");
-templates = "(function(){angular.module(\"app.template\", []).run(function($templateCache) {" + cache + "})})()";
+templates = "export default angular.module(\"app.template\", []).run(function($templateCache) {" + cache + "}).name;";
 fs.writeFile(tmpJS, templates);
