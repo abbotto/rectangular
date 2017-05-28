@@ -1,13 +1,6 @@
 "use strict";
 
 const sh = require("shelljs");
-const finder = require("glob-concat");
-const fs = require("fs");
-// const appJSPath = "dist/app.js";
-const mapJSPath = "dist/app.js.map";
-const tmpJSPath = "tmp/app.js";
-const EOL = require("os").EOL;
-const setPath = require("./set.path.js");
 const getPath = require("./get.path.js");
 
 // Load environment variables

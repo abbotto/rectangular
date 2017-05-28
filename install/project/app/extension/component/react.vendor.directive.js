@@ -1,7 +1,9 @@
 "use strict";
 
 import componentService from "app/extension/component/react.vendor.service.js";
-import jsx from "react-jsx";
+import React from "react";
+import {render} from "react-dom";
+import {client} from "react-jsx";
 
 const reactVendorDirective = function reactVendorDrective(
 	$rootScope,
@@ -19,19 +21,19 @@ const reactVendorDirective = function reactVendorDrective(
 			
 			// Render React element
 			const renderReactComponent = function renderReactComponent(component) {
-				ReactDOM.render(
+				render(
 					component,
 					element[0]
 				);
 			};
 			
-			const scopeWatchCb = (nv, ov) => {
+			const scopeWatchCb = (nv) => {
 				if (nv) {
 					const data = {};
 					data[(nv.alias || "vm")] = nv;
 					
 					// Convert JSX to React element
-					const component = jsx.client(
+					const component = client(
 						$templateCache.get(data.vm.templateUrl), {}
 					);
 					
@@ -39,7 +41,7 @@ const reactVendorDirective = function reactVendorDrective(
 				}
 			};
 			
-			const rootScopeWatchCb = (nv, ov) => {
+			const rootScopeWatchCb = (nv) => {
 				if (nv) scope[scope.name] = nv;
 			};
 			
