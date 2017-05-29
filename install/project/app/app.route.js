@@ -6,10 +6,9 @@ import componentRoute from "component.route.js";
 export default angular
 	.module("app.route", [
 		"ui.router",
-		componentRoute
+		componentRoute.name
 	])
 	.config(($urlRouterProvider) => {
 		$urlRouterProvider.otherwise("/");
 	})
-	.name
 ;

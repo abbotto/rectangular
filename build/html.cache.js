@@ -49,5 +49,5 @@ files.forEach((path) => {
 });
 
 const cache = templates.join(";");
-templates = "export default angular.module(\"app.template\", []).run(function($templateCache) {" + cache + "}).name;";
+templates = "export default angular.module(\"app.template\", []).run(function($templateCache) {" + cache + "});";
 fs.writeFile(tmpJS, templates);

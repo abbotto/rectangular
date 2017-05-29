@@ -19,5 +19,5 @@ lines.forEach((line) => {
 	constants += ".constant(\"" + kv[0] + "\", " + kv[1] + ")";
 });
 
-constants = "export default angular.module(\"app.constant\", [])" + constants + ".name;";
+constants = "export default angular.module(\"app.constant\", [])" + constants + ";";
 fs.writeFile(tmpJS, constants);

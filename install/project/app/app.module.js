@@ -9,10 +9,10 @@ import appTemplate from "templates.js";
 
 angular
 	.module("app", [
-		appConstant,
-		appService,
-		appRoute,
-		appTemplate,
+		appConstant.name,
+		appService.name,
+		appRoute.name,
+		appTemplate.name,
 		"ngAnimate",
 		"ngAria",
 		"ngMessages",
