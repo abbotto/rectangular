@@ -30,17 +30,9 @@ script:
   - cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
   - cp package.json node_modules/rectangular/tmp/project/
   - cd node_modules/rectangular/tmp/project
-  - npm i --save bootstrap angular-strap
-  - npm i --save angular-material
-  - npm i --save bluebird
-  - npm i --save moment
-  - npm i --save angular-moment
-  - npm i --save lodash
-  - npm i --save angular-translate
-  - npm i --save restangular
-  - npm i --save ng-file-upload
-  - npm i --save teleprint
+  - npm i --save bootstrap angular-strap angular-material bluebird moment angular-moment lodash angular-translate restangular ng-file-upload teleprint
   - cd ../../
+  - npm i
   - cp .envrc .env
   - mkdir tmp/project/app/extension/ui/
   - mkdir tmp/project/app/extension/promise/
@@ -60,8 +52,7 @@ script:
   - cp -a install/extra/extension/upload/. tmp/project/app/extension/upload/
   - cp -a install/extra/extension/print/. tmp/project/app/extension/print/
   - cd ../../
-  - cd node_modules/rectangular/ && npm i && cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
+  - rm -rf node_modules/rectangular/tmp/{*,.*}
   - cp .envrc .env
-  - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
   - npm test
