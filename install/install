@@ -80,7 +80,10 @@ mkdir tmp
 cd ../../
 
 # Run the test
-nvm test
+. ~/.nvm/nvm.sh
+nvm use
+npm i
+npm test
 
 # Completed
 echo ""

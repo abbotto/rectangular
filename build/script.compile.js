@@ -16,12 +16,12 @@ sh.exec("cp -a " + getPath() + "/dev/. tmp/dev/");
 
 // Pre-requisite builds
 sh.exec(getPath() + "/node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/service.compile.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/constant.cache.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/route.compile.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/model.cache.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/html.cache.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/vendor.compile.js");
+sh.exec("node build/vendor.compile.js");
+sh.exec("node build/service.compile.js");
+sh.exec("node build/constant.cache.js");
+sh.exec("node build/route.compile.js");
+sh.exec("node build/model.cache.js");
+sh.exec("node build/html.cache.js");
 
 // Convert ES6 to ES5 w/ webpack + babel
 const es6Files = finder.sync([
