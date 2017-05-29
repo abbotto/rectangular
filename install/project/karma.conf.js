@@ -1,12 +1,5 @@
 // Karma configuration
 // npm run test
-const fs = require("fs");
-const sh = require("shelljs");
-
-!fs.exists("./node_modules/rectangular/dist/vendor.js")
-	&& sh.exec("cd node_modules/rectangular && node build/spec.compile.js && cd ../..")
-;
-
 let paths = [];
 
 const vendorJS = ["./node_modules/rectangular/dist/vendor.js"];

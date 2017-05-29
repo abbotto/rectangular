@@ -64,6 +64,4 @@ script:
   - cp -a node_modules/rectangular/tmp/project/. .
   - cp .envrc .env
   - cd node_modules/rectangular && rm -rf tmp && mkdir tmp && cd ../../
-  - cd node_modules/rectangular && node build/spec.compile.js && cd ../..
-  - . ~/.nvm/nvm.sh && nvm use && npm i
-  - node_modules/karma/bin/karma start karma.conf.js
+  - npm test
