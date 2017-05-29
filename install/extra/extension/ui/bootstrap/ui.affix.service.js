@@ -7,7 +7,6 @@ const bootstrapAffixService = function bootstrapAffixService($affix) {
 };
 
 export default angular
-	.module("ui.affix.service", [ngStrapVendorService])
+	.module("ui.affix.service", [ngStrapVendorService.name])
 	.factory("affix$", bootstrapAffixService)
-	.name
 ;

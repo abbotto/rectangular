@@ -15,5 +15,4 @@ export default angular
 		"mgcrea.ngStrap.tooltip",
 		"mgcrea.ngStrap.typeahead"
 	])
-	.name
 ;

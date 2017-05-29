@@ -7,7 +7,6 @@ const angularMaterialPanelService = function materialPanelService($mdPanel) {
 };
 
 export default angular
-	.module("ui.panel.service", [angularMaterialVendorService])
-	.factory("panel$", materialPanelService)
-	.name
+	.module("ui.panel.service", [angularMaterialVendorService.name])
+	.factory("panel$", angularMaterialPanelService)
 ;

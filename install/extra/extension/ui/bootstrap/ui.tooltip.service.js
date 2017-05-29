@@ -7,7 +7,6 @@ const bootstrapTooltipService = function bootstrapTooltipService($tooltip) {
 };
 
 export default angular
-	.module("ui.tooltip.service", [ngStrapVendorService])
+	.module("ui.tooltip.service", [ngStrapVendorService.name])
 	.factory("tooltip$", bootstrapTooltipService)
-	.name
 ;

@@ -7,7 +7,6 @@ const angularMaterialBottomSheetService = function materialBottomSheetService($m
 };
 
 export default angular
-	.module("ui.bottomSheet.service", [angularMaterialVendorService])
-	.factory("bottomSheet$", materialBottomSheetService)
-	.name
+	.module("ui.bottomSheet.service", [angularMaterialVendorService.name])
+	.factory("bottomSheet$", angularMaterialBottomSheetService)
 ;

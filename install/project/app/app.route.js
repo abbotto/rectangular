@@ -1,4 +1,3 @@
-
 "use strict";
 
 // Auto-generated file

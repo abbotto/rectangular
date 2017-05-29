@@ -7,7 +7,6 @@ const bootstrapAlertService = function bootstrapAlertService($alert) {
 };
 
 export default angular
-	.module("ui.alert.service", [ngStrapVendorService])
+	.module("ui.alert.service", [ngStrapVendorService.name])
 	.factory("alert$", bootstrapAlertService)
-	.name
 ;

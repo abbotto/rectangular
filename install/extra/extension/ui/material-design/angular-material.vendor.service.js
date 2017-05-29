@@ -32,5 +32,4 @@ export default angular
 	.config($mdProgressCircularProvider => {
 		// https://material.angularjs.org/latest/api/service/$mdProgressCircular
 	})
-	.name
 ;

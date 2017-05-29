@@ -7,7 +7,6 @@ const angularMaterialToastService = function materialToastService($mdToast) {
 };
 
 export default angular
-	.module("ui.toast.service", [angularMaterialVendorService])
-	.factory("toast$", materialToastService)
-	.name
+	.module("ui.toast.service", [angularMaterialVendorService.name])
+	.factory("toast$", angularMaterialToastService)
 ;

@@ -1,16 +1,13 @@
 "use strict";
 
+import PrintService from "app/extension/print/print.service.js";
+let print$;
+
 describe("print.service", () => {
-	let print$;
-	
 	beforeEach(() => {
-		module("print.service");
-		
-		inject(($injector) => {
-			print$ = $injector.get("print$");
-		});
+		print$ = PrintService;
 	});
-	
+
 	describe("When the `teleprint` package is installed", () => {
 		it("the `print$` service should be available", () => {
 			expect(print$).toBeDefined();

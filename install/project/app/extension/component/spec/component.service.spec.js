@@ -1,14 +1,11 @@
 "use strict";
 
+import ComponentService from "app/extension/component/component.service.js";
+let component$;
+
 describe("component.service", () => {
-	let component$;
-
 	beforeEach(() => {
-		module("component.service");
-
-		inject(($injector) => {
-			component$ = $injector.get("component$");
-		});
+		component$ = ComponentService;
 	});
 
 	describe("When the `react` package is installed", () => {

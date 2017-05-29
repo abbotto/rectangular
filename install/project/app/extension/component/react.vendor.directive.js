@@ -1,11 +1,10 @@
 "use strict";
 
-import componentService from "app/extension/component/react.vendor.service.js";
 import React from "react";
 import {render} from "react-dom";
 import {client} from "react-jsx";
 
-const reactVendorDirective = function reactVendorDrective(
+export default function reactVendorDrective(
 	$rootScope,
 	$templateCache
 ) {
@@ -54,9 +53,3 @@ const reactVendorDirective = function reactVendorDrective(
 		}
 	};
 };
-
-export default angular
-	.module("react.vendor.directive", [componentService])
-	.directive("component", reactVendorDirective)
-	.name
-;

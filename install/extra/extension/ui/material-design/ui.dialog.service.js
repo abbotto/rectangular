@@ -7,7 +7,6 @@ const angularMaterialDialogService = function materialDialogService($mdDialog) {
 };
 
 export default angular
-	.module("ui.dialog.service", [angularMaterialVendorService])
-	.factory("dialog$", materialDialogService)
-	.name
+	.module("ui.dialog.service", [angularMaterialVendorService.name])
+	.factory("dialog$", angularMaterialDialogService)
 ;

@@ -1,14 +1,11 @@
 "use strict";
 
+import PromiseService from "app/extension/promise/promise.service.js";
+let promise$;
+
 describe("promise.service", () => {
-	let promise$;
-
 	beforeEach(() => {
-		module("promise.service");
-
-		inject(($injector) => {
-			promise$ = $injector.get("promise$");
-		});
+		promise$ = PromiseService;
 	});
 
 	describe("When the `bluebird` package is installed", () => {

@@ -1,39 +1,52 @@
 "use strict";
 
-(() => {
-	const sh = require("shelljs");
-	const finder = require("glob-concat");
-	const fs = require("fs");
-	const setPath = require("./set.path.js");
-	const getPath = require("./get.path.js");
-	
-	// Load environment variables
-	require("dotenv").config();
+const sh = require("shelljs");
+const finder = require("glob-concat");
+const fs = require("fs");
+const getPath = require("./get.path.js");
+const transpile = require("./script.transpile.js");
 
-	// Cross-platform newline
-	const EOL = require("os").EOL;
+// Load environment variables
+require("dotenv").config();
 
-	// Output paths
-	const tmpSpecJS = "tmp/spec.js";
-	const scripts = finder.sync(setPath(require(getPath() + "/dev/asset/spec.js.json")));
+sh.exec("node build/reset.js");
+sh.exec("mkdir tmp/app");
+sh.exec("mkdir tmp/dev");
+sh.exec("touch tmp/spec.js");
+sh.exec("cp -a " + getPath() + "/app/. tmp/app/");
+sh.exec("cp -a " + getPath() + "/dev/. tmp/dev/");
 
-	// Push the file contents into an array
-	const script = [];
-	const n = scripts.length;
-	let i = 0;
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/service.compile.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/constant.cache.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/route.compile.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/model.cache.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/html.cache.js");
+sh.exec("node " + getPath() + "/node_modules/rectangular/build/vendor.compile.js");
 
-	// Prevent minified files from cramming together
-	for (; i < n; i += 1) {
-		script.push(fs.readFileSync(scripts[i], "utf8"));
-	}
+const es6Files = finder.sync([
+	getPath() + "/node_modules/rectangular/tmp/**/test..js",
+	getPath() + "/node_modules/rectangular/tmp/**/*.spec.js",
+	getPath() + "/node_modules/rectangular/tmp/**/*.js"
+]);
 
-	// Prevent minified files from cramming together
-	// and breaking as a result
-	const output = script.join("\n\n").trim();
+transpile(es6Files);
 
-	// Write the output to a file
-	fs.writeFileSync(tmpSpecJS, output, "utf8");
+// Push the file contents into an array
+const script = [];
+const n = es6Files.length;
+let i = 0;
 
-	// Convert ES6 to ES5
-	sh.exec("node_modules/babel-cli/bin/babel.js " + tmpSpecJS + " --out-file " + tmpSpecJS);
-})();
+// Prevent minified files from cramming together
+for (; i < n; i += 1) {
+	script.push(fs.readFileSync(es6Files[i], "utf8"));
+}
+
+// Write the output to a file
+fs.writeFileSync(
+	"tmp/spec.js",
+	script.join("\n\n").trim(),
+	"utf8"
+);
+
+// Run through webpack
+sh.exec("node_modules/.bin/webpack --config build/webpack/spec.config.js");

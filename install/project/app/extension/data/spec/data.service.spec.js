@@ -1,14 +1,11 @@
 "use strict";
 
+import DataService from "app/extension/data/data.service.js";
+let data$;
+
 describe("data.service", () => {
-	let data$;
-	
 	beforeEach(() => {
-		module("data.service");
-		
-		inject(($injector) => {
-			data$ = $injector.get("data$");
-		});
+		data$ = DataService;
 	});
 	
 	describe("When the `immutable` package is installed", () => {

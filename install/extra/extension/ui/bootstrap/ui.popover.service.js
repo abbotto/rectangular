@@ -7,7 +7,6 @@ const bootstrapPopoverService = function bootstrapPopoverService($popover) {
 };
 
 export default angular
-	.module("ui.popover.service", [ngStrapVendorService])
+	.module("ui.popover.service", [ngStrapVendorService.name])
 	.factory("popover$", bootstrapPopoverService)
-	.name
 ;

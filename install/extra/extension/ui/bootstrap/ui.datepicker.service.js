@@ -7,7 +7,6 @@ const bootstrapDatepickerService = function bootstrapDatepickerService($datepick
 };
 
 export default angular
-	.module("ui.datepicker.service", [ngStrapVendorService])
+	.module("ui.datepicker.service", [ngStrapVendorService.name])
 	.factory("datepicker$", bootstrapDatepickerService)
-	.name
 ;

@@ -7,7 +7,6 @@ const bootstrapSelectService = function bootstrapSelectService($select) {
 };
 
 export default angular
-	.module("ui.select.service", [ngStrapVendorService])
+	.module("ui.select.service", [ngStrapVendorService.name])
 	.factory("select$", bootstrapSelectService)
-	.name
 ;

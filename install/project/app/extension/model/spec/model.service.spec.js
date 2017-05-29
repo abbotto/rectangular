@@ -1,7 +1,10 @@
 "use strict";
 
+import ModelService from "app/extension/model/model.service.js";
+let model$;
+
 describe("model.service", () => {
-	let model$, result;
+	let result;
 	
 	const mockKey = "project.data.json";
 	
@@ -19,12 +22,7 @@ describe("model.service", () => {
 	});
 
 	beforeEach(() => {
-		module("model.service");
-
-		inject(($injector) => {
-			model$ = $injector.get("model$");
-		});
-		
+		model$ = ModelService;
 		model$._model = __.createSpy("model$._model");
 
 		model$._model.and.callFake((key) => {

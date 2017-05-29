@@ -34,7 +34,6 @@ const modelService = function modelService(appModel) {
 };
 
 export default angular
-	.module("model.service", [appModel])
+	.module("model.service", [appModel.name])
 	.factory("model$", modelService)
-	.name
 ;

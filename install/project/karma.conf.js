@@ -1,20 +1,15 @@
 // Karma configuration
+// npm run test
+
+let paths = [];
+const vendorJS = ["./dist/vendor.js"];
+const specJS = ["./node_modules/rectangular/tmp/spec.js"];
+
+paths = paths.concat(vendorJS);
+paths.push("node_modules/angular-mocks/angular-mocks.js");
+paths = paths.concat(specJS);
+
 module.exports = function karmaConfig(config) {
-	const sh = require("shelljs");
-	const fs = require("fs");
-	
-	!fs.exists("./dist") && sh.exec("npm run rectangular && npm run compile");
-	
-	let paths = [];
-	const vendorJS = ["./dist/vendor.js"];
-	const appJS = ["./dist/app.js"];
-	const specJS = ["./node_modules/rectangular/tmp/spec.js"];
-	
-	paths = paths.concat(vendorJS);
-	paths = paths.concat(appJS);
-	paths.push("node_modules/angular-mocks/angular-mocks.js");
-	paths = paths.concat(specJS);
-	
 	config.set({
 		// base path that will be used to resolve all patterns (eg. files, exclude)
 		basePath: "",

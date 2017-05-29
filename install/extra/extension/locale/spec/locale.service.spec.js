@@ -1,14 +1,11 @@
 "use strict";
 
+import LocaleService from "app/extension/locale/locale.service.js";
+let locale$;
+
 describe("locale.service", () => {
-	let locale$;
-
 	beforeEach(() => {
-		module("locale.service");
-
-		inject(($injector) => {
-			locale$ = $injector.get("locale$");
-		});
+		locale$ = LocaleService;
 	});
 
 	describe("When the `angular-translate` package is installed", () => {

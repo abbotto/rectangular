@@ -14,9 +14,8 @@ HomeComponent.controller = homeController;
 
 export default angular
 	.module("home.component", [
-		componentDirective,
-		dataService
+		componentDirective.name,
+		dataService.name
 	])
 	.component("home", HomeComponent)
-	.name
 ;

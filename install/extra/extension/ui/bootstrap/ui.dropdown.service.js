@@ -7,7 +7,6 @@ const bootstrapDropdownService = function bootstrapDropdownService($dropdown) {
 };
 	
 export default angular
-	.module("ui.dropdown.service", [ngStrapVendorService])
+	.module("ui.dropdown.service", [ngStrapVendorService.name])
 	.factory("dropdown$", bootstrapDropdownService)
-	.name
 ;

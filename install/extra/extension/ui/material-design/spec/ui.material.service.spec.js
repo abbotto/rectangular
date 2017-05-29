@@ -1,44 +1,39 @@
 "use strict";
 
-describe(angularMaterialVendorService, () => {
-	let bottomSheet$,
-		colors$,
-		dialog$,
-		icon$,
-		inkRipple$,
-		media$,
-		panel$,
-		sidenav$,
-		sticky$,
-		toast$;
+import BottomSheetService from "app/extension/ui/ui.bottomSheet.service.js";
+import ColorsService from "app/extension/ui/ui.colors.service.js";
+import DialogService from "app/extension/ui/ui.dialog.service.js";
+import IconService from "app/extension/ui/ui.icon.service.js";
+import InkRippleService from "app/extension/ui/ui.inkRipple.service.js";
+import MediaService from "app/extension/ui/ui.media.service.js";
+import PanelService from "app/extension/ui/ui.panel.service.js";
+import SidenavService from "app/extension/ui/ui.sidenav.service.js";
+import StickyService from "app/extension/ui/ui.sticky.service.js";
+import ToastService from "app/extension/ui/ui.toast.service.js";
 
+let bottomSheet$,
+	colors$,
+	dialog$,
+	icon$,
+	inkRipple$,
+	media$,
+	panel$,
+	sidenav$,
+	sticky$,
+	toast$;
+
+describe("angular-material.vendor.service", () => {
 	beforeEach(() => {
-		module(
-			"angularMaterialVendorService",
-			"ui.bottomSheet.service",
-			"ui.colors.service",
-			"ui.dialog.service",
-			"ui.icon.service",
-			"ui.inkRipple.service",
-			"ui.media.service",
-			"ui.panel.service",
-			"ui.sidenav.service",
-			"ui.sticky.service",
-			"ui.toast.service"
-		);
-
-		inject(($injector) => {
-			bottomSheet$ = $injector.get("bottomSheet$");
-			colors$ = $injector.get("colors$");
-			dialog$ = $injector.get("dialog$");
-			icon$ = $injector.get("icon$");
-			inkRipple$ = $injector.get("inkRipple$");
-			media$ = $injector.get("media$");
-			panel$ = $injector.get("panel$");
-			sidenav$ = $injector.get("sidenav$");
-			sticky$ = $injector.get("sticky$");
-			toast$ = $injector.get("toast$");
-		});
+		bottomSheet$ = BottomSheetService;
+		colors$ = ColorsService;
+		dialog$ = DialogService;
+		icon$ = IconService;
+		inkRipple$ = InkRippleService;
+		media$ = MediaService;
+		panel$ = PanelService;
+		sidenav$ = SidenavService;
+		sticky$ = StickyService;
+		toast$ = ToastService;
 	});
 
 	describe("When the `Angular Material` package is installed", () => {

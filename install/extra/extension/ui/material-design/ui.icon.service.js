@@ -7,7 +7,6 @@ const angularMaterialIconService = function materialIconService($mdIcon) {
 };
 
 export default angular
-	.module("ui.icon.service", [angularMaterialVendorService])
-	.factory("icon$", materialIconService)
-	.name
+	.module("ui.icon.service", [angularMaterialVendorService.name])
+	.factory("icon$", angularMaterialIconService)
 ;

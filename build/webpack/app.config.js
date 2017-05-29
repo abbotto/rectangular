@@ -2,13 +2,23 @@ const path = require("path");
 const webpack = require("webpack");
 const CompressionPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const uglifyOpts = require(__dirname + "/uglify.config.json");
+
+uglifyOpts.output.comments = (node, comment) => {
+	const text = comment.value;
+	const type = comment.type;
+	if (type === "comment2") {
+		return /@copyright/i.test(text);
+	}
+	return false;
+};
 
 const config = {
 	entry: {
-		main: __dirname + "/tmp/app/app.module.js"
+		main: __dirname + "/../../tmp/app/app.module.js"
 	},
 	output: {
-		path: path.join(__dirname, "/tmp"),
+		path: path.join(__dirname, "/../../tmp"),
 		filename: "app.js"
 	},
 	externals: {
@@ -19,13 +29,6 @@ const config = {
 			"node_modules",
 			"tmp"
 		]
-	},
-	module: {
-		loaders: [{
-			loader: "babel",
-			test: /\.(js)?$/,
-			exclude: /node_modules/
-		}]
 	},
 	plugins: [
 		new webpack.DefinePlugin({
@@ -38,21 +41,7 @@ const config = {
 				NODE_ENV: JSON.stringify("production")
 			}
 		}),
-		new UglifyJsPlugin({
-			comments: false,
-			mangle: false,
-			compress: {
-				unused: true,
-				dead_code: true,
-				warnings: false,
-				drop_debugger: true,
-				conditionals: true,
-				evaluate: true,
-				drop_console: true,
-				sequences: true,
-				booleans: true
-			}
-		}),
+		new UglifyJsPlugin(uglifyOpts),
 		new webpack.optimize.AggressiveMergingPlugin(),
 		new CompressionPlugin({
 			asset: "[path].gz[query]",

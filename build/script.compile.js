@@ -1,7 +1,9 @@
 "use strict";
 
 const sh = require("shelljs");
+const finder = require("glob-concat");
 const getPath = require("./get.path.js");
+const transpile = require("./script.transpile.js");
 
 // Load environment variables
 require("dotenv").config();
@@ -17,13 +19,19 @@ sh.exec(getPath() + "/node_modules/rectangular/node_modules/eslint/bin/eslint.js
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/service.compile.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/constant.cache.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/route.compile.js");
-// sh.exec("node " + getPath() + "/node_modules/rectangular/build/spec.compile.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/model.cache.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/html.cache.js");
 sh.exec("node " + getPath() + "/node_modules/rectangular/build/vendor.compile.js");
 
 // Convert ES6 to ES5 w/ webpack + babel
-sh.exec("node_modules/.bin/webpack --config app.webpack.js");
+const es6Files = finder.sync([
+	"!" + getPath() + "/node_modules/rectangular/tmp/**/test.*.js",
+	"!" + getPath() + "/node_modules/rectangular/tmp/**/*.spec.js",
+	getPath() + "/node_modules/rectangular/tmp/**/*.js"
+]);
+
+transpile(es6Files);
+sh.exec("node_modules/.bin/webpack --config build/webpack/app.config.js");
 
 // Write the output to a file
 if (process.env.NODE_ENV === "production") {

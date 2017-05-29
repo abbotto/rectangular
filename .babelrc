@@ -9,9 +9,6 @@
 			"polyfill": false,
 			"regenerator": true,
 			"moduleName": "babel-runtime"
-		}],
-		["module-resolver", {
-			"root": ["./tmp"]
 		}]
 	]
 }

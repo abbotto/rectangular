@@ -7,7 +7,6 @@ const angularMaterialStickyService = function materialStickyService($mdSticky) {
 };
 
 export default angular
-	.module("ui.sticky.service", [angularMaterialVendorService])
-	.factory("sticky$", materialStickyService)
-	.name
+	.module("ui.sticky.service", [angularMaterialVendorService.name])
+	.factory("sticky$", angularMaterialStickyService)
 ;

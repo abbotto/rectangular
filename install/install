@@ -60,7 +60,7 @@ mkdir node_modules/rectangular/tmp/project
 cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
 cp package.json node_modules/rectangular/tmp/project/
 
-# Initialize Rectangula
+# Initialize Rectangular
 # and run the extras installer
 cd node_modules/rectangular/
 cp .envrc .env
@@ -83,6 +83,9 @@ cd ../../
 . ~/.nvm/nvm.sh
 nvm use
 npm i
+cd node_modules/rectangular
+node build/spec.compile.js
+cd ../../
 node_modules/karma/bin/karma start karma.conf.js
 
 # Completed

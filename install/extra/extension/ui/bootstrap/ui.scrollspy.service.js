@@ -7,7 +7,6 @@ const bootstrapScrollspyService = function bootstrapScrollspyService($scrollspy)
 };
 
 export default angular
-	.module("ui.scrollspy.service", [ngStrapVendorService])
+	.module("ui.scrollspy.service", [ngStrapVendorService.name])
 	.factory("scrollspy$", bootstrapScrollspyService)
-	.name
 ;

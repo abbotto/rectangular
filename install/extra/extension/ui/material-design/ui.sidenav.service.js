@@ -7,7 +7,6 @@ const angularMaterialSidenavService = function materialSidenavService($mdSidenav
 };
 
 export default angular
-	.module("ui.sidenav.service", [angularMaterialVendorService])
-	.factory("sidenav$", materialSidenavService)
-	.name
+	.module("ui.sidenav.service", [angularMaterialVendorService.name])
+	.factory("sidenav$", angularMaterialSidenavService)
 ;

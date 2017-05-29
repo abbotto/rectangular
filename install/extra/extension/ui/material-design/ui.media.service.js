@@ -7,7 +7,6 @@ const angularMaterialMediaService = function materialMediaService($mdMedia) {
 };
 
 export default angular
-	.module("ui.media.service", [angularMaterialVendorService])
-	.factory("media$", materialMediaService)
-	.name
+	.module("ui.media.service", [angularMaterialVendorService.name])
+	.factory("media$", angularMaterialMediaService)
 ;

@@ -20,5 +20,5 @@ files.forEach((path) => {
 	models[key] = fs.readFileSync(path, "utf8");
 });
 
-models = "export default angular.module(\"app.model\", []).constant(\"appModel\", " + JSON.stringify(models) + ").name;";
+models = "export default angular.module(\"app.model\", []).constant(\"appModel\", " + JSON.stringify(models) + ");";
 fs.writeFile(tmpJS, models);

@@ -7,7 +7,6 @@ const bootstrapTypeaheadService = function bootstrapTypeaheadService($typeahead)
 };
 
 export default angular
-	.module("ui.typeahead.service", [ngStrapVendorService])
+	.module("ui.typeahead.service", [ngStrapVendorService.name])
 	.factory("typeahead$", bootstrapTypeaheadService)
-	.name
 ;

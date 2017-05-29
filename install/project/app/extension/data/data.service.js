@@ -3,6 +3,6 @@
 import immutableVendorService from "app/extension/data/immutable.vendor.service.js";
 
 export default angular
-	.module("data.service", [immutableVendorService])
-	.name
+	.module("data.service", [])
+	.factory("data$", immutableVendorService)
 ;

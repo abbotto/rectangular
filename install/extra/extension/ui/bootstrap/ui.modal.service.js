@@ -7,7 +7,6 @@ const bootstrapModalService = function bootstrapModalService($modal) {
 };
 
 export default angular
-	.module("ui.modal.service", [ngStrapVendorService])
+	.module("ui.modal.service", [ngStrapVendorService.name])
 	.factory("modal$", bootstrapModalService)
-	.name
 ;

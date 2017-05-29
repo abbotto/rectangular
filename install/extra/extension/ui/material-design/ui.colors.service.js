@@ -7,7 +7,6 @@ const angularMaterialColorsService = function materialColorsService($mdColors) {
 };
 
 export default angular
-	.module("ui.colors.service", [angularMaterialVendorService])
-	.factory("colors$", materialColorsService)
-	.name
+	.module("ui.colors.service", [angularMaterialVendorService.name])
+	.factory("colors$", angularMaterialColorsService)
 ;

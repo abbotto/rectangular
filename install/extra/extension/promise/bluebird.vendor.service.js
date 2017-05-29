@@ -2,7 +2,7 @@
 
 import Promise from "bluebird";
 
-const bluebirdVendorService = function bluebirdVendorService($rootScope) {
+export default function bluebirdVendorService($rootScope) {
 	const $promise = Promise;
 	
 	const defer = () => {
@@ -26,14 +26,3 @@ const bluebirdVendorService = function bluebirdVendorService($rootScope) {
 	
 	return $promise;
 };
-
-export default angular
-	.module("bluebird.vendor.service", [])
-	.factory("promise$", bluebirdVendorService)
-	.run(($rootScope, promise$) => {
-		promise$.setScheduler((cb) => {
-			$rootScope.$evalAsync(cb);
-		});
-	})
-	.name
-;

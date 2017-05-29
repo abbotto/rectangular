@@ -7,7 +7,6 @@ const bootstrapAsideService = function bootstrapAsideService($aside) {
 };
 
 export default angular
-	.module("ui.aside.service", [ngStrapVendorService])
+	.module("ui.aside.service", [ngStrapVendorService.name])
 	.factory("aside$", bootstrapAsideService)
-	.name
 ;

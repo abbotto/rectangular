@@ -1,14 +1,11 @@
 "use strict";
 
+import UploadService from "app/extension/upload/upload.service.js";
+let upload$;
+
 describe("upload.service", () => {
-	let upload$;
-
 	beforeEach(() => {
-		module("upload.service");
-
-		inject(($injector) => {
-			upload$ = $injector.get("upload$");
-		});
+		upload$ = UploadService;
 	});
 
 	describe("When the `ng-file-upload` package is installed", () => {

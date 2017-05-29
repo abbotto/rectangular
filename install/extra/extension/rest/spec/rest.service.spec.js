@@ -1,14 +1,11 @@
 "use strict";
 
+import RestService from "app/extension/rest/rest.service.js";
+let rest$;
+
 describe("rest.service", () => {
-	let rest$;
-
 	beforeEach(() => {
-		module("rest.service");
-
-		inject(($injector) => {
-			rest$ = $injector.get("rest$");
-		});
+		rest$ = RestService;
 	});
 
 	describe("When the `restangular` package is installed", () => {

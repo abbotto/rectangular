@@ -20,7 +20,6 @@
 !.nvmrc
 !.stylelintrc
 !.travis.yml
-!*.webpack.js
 !yarn.lock
 
 # Whitelist Source Files

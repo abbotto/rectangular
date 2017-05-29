@@ -7,7 +7,6 @@ const bootstrapTimepickerService = function bootstrapTimepickerService($timepick
 };
 
 export default angular
-	.module("ui.timepicker.service", [ngStrapVendorService])
+	.module("ui.timepicker.service", [ngStrapVendorService.name])
 	.factory("timepicker$", bootstrapTimepickerService)
-	.name
 ;

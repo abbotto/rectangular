@@ -7,7 +7,6 @@ const angularMaterialInkRippleService = function materialInkRippleService($mdInk
 };
 
 export default angular
-	.module("ui.inkRipple.service", [angularMaterialVendorService])
-	.factory("inkRipple$", materialInkRippleService)
-	.name
+	.module("ui.inkRipple.service", [angularMaterialVendorService.name])
+	.factory("inkRipple$", angularMaterialInkRippleService)
 ;

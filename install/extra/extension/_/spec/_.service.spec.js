@@ -1,14 +1,11 @@
 "use strict";
 
+import LodashVendorService from "app/extension/_/_.service.js";
+let _;
+
 describe("_.service", () => {
-	let _;
-
 	beforeEach(() => {
-		module("_.service");
-
-		inject(($injector) => {
-			_ = $injector.get("_");
-		});
+		_ = LodashVendorService;
 	});
 
 	describe("When the `lodash` package is installed", () => {

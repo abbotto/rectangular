@@ -1,14 +1,11 @@
 "use strict";
 
+import DateService from "app/extension/date/date.service.js";
+let date$;
+
 describe("date.service", () => {
-	let date$;
-
 	beforeEach(() => {
-		module("date.service");
-
-		inject(($injector) => {
-			date$ = $injector.get("date$");
-		});
+		date$ = DateService;
 	});
 
 	describe("When the `moment` package is installed", () => {
