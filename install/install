@@ -83,7 +83,10 @@ cd ../../
 . ~/.nvm/nvm.sh
 nvm use
 npm i
-npm test
+cd node_modules/rectangular
+node build/spec.compile.js
+cd ../../
+node_modules/karma/bin/karma start karma.conf.js
 
 # Completed
 echo ""
