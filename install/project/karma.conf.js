@@ -3,7 +3,7 @@
 const sh = require("shelljs");
 
 // Generate the required files
-sh.exec("cd node_modules/rectangular && node build/spec.compile.js && cd ../.. && sleep 10");
+sh.exec("cd node_modules/rectangular && node build/spec.compile.js && cd ../..");
 
 let paths = [];
 
