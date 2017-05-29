@@ -80,13 +80,7 @@ mkdir tmp
 cd ../../
 
 # Run the test
-. ~/.nvm/nvm.sh
-nvm use
-npm i
-cd node_modules/rectangular
-node build/spec.compile.js
-cd ../../
-node_modules/karma/bin/karma start karma.conf.js
+nvm test
 
 # Completed
 echo ""

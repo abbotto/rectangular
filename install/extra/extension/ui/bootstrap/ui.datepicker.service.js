@@ -1,6 +1,6 @@
 "use strict";
 
-import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+import ngStrapVendorService from "app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapDatepickerService = function bootstrapDatepickerService($datepicker) {
 	return $datepicker;

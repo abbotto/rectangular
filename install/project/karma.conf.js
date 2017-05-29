@@ -2,7 +2,7 @@
 // npm run test
 
 let paths = [];
-const vendorJS = ["./dist/vendor.js"];
+const vendorJS = ["./node_modules/rectangular/vendor.js"];
 const specJS = ["./node_modules/rectangular/tmp/spec.js"];
 
 paths = paths.concat(vendorJS);

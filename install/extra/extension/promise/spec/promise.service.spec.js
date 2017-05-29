@@ -11,7 +11,7 @@ describe("promise.service", () => {
 	describe("When the `bluebird` package is installed", () => {
 		it("the `promise$` service should be available", () => {
 			expect(promise$).toBeDefined();
-			expect(typeof promise$).toBe("function");
+			expect(typeof promise$).toBe("object");
 		});
 	});
 });

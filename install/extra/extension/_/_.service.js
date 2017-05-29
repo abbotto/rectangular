@@ -1,8 +1,8 @@
 "use strict";
 
-import lodashVendorService from "app/extension/_/lodash.vendor.service.js";
+import LodashVendorService from "app/extension/_/lodash.vendor.service.js";
 
 export default angular
 	.module("_.service", [])
-	.factory("_", lodashVendorService)
+	.factory("_", LodashVendorService)
 ;

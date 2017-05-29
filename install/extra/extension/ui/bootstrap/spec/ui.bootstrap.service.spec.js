@@ -50,57 +50,57 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `alert$` service should be available", () => {
 			expect(alert$).toBeDefined();
-			expect(typeof alert$).toBe("function");
+			expect(typeof alert$).toBe("object");
 		});
 
 		it("the `aside$` service should be available", () => {
 			expect(aside$).toBeDefined();
-			expect(typeof aside$).toBe("function");
+			expect(typeof aside$).toBe("object");
 		});
 
 		it("the `datepicker$` service should be available", () => {
 			expect(datepicker$).toBeDefined();
-			expect(typeof datepicker$).toBe("function");
+			expect(typeof datepicker$).toBe("object");
 		});
 
 		it("the `dropdown$` service should be available", () => {
 			expect(dropdown$).toBeDefined();
-			expect(typeof dropdown$).toBe("function");
+			expect(typeof dropdown$).toBe("object");
 		});
 
 		it("the `modal$` service should be available", () => {
 			expect(modal$).toBeDefined();
-			expect(typeof modal$).toBe("function");
+			expect(typeof modal$).toBe("object");
 		});
 
 		it("the `popover$` service should be available", () => {
 			expect(popover$).toBeDefined();
-			expect(typeof popover$).toBe("function");
+			expect(typeof popover$).toBe("object");
 		});
 
 		it("the `scrollspy$` service should be available", () => {
 			expect(scrollspy$).toBeDefined();
-			expect(typeof scrollspy$).toBe("function");
+			expect(typeof scrollspy$).toBe("object");
 		});
 
 		it("the `select$` service should be available", () => {
 			expect(select$).toBeDefined();
-			expect(typeof select$).toBe("function");
+			expect(typeof select$).toBe("object");
 		});
 
 		it("the `timepicker$` service should be available", () => {
 			expect(timepicker$).toBeDefined();
-			expect(typeof timepicker$).toBe("function");
+			expect(typeof timepicker$).toBe("object");
 		});
 
 		it("the `tooltip$` service should be available", () => {
 			expect(tooltip$).toBeDefined();
-			expect(typeof tooltip$).toBe("function");
+			expect(typeof tooltip$).toBe("object");
 		});
 		
 		it("the `typeahead$` service should be available", () => {
 			expect(typeahead$).toBeDefined();
-			expect(typeof typeahead$).toBe("function");
+			expect(typeof typeahead$).toBe("object");
 		});
 	});
 });

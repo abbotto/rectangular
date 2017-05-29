@@ -1,7 +1,6 @@
 "use strict";
 
 const fs = require("fs");
-const vendorJSPath = "dist/vendor.js";
 const EOL = require("os").EOL;
 const setPath = require("./set.path.js");
 const getPath = require("./get.path.js");
@@ -26,4 +25,4 @@ const compileScripts = (files) => {
 };
 
 // Write the output to a file
-fs.writeFileSync(vendorJSPath, compileScripts(vendorFiles), "utf8");
+fs.writeFileSync("dist/vendor.js", compileScripts(vendorFiles), "utf8");

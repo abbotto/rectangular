@@ -11,7 +11,7 @@ describe("print.service", () => {
 	describe("When the `teleprint` package is installed", () => {
 		it("the `print$` service should be available", () => {
 			expect(print$).toBeDefined();
-			expect(typeof print$).toBe("function");
+			expect(typeof print$).toBe("object");
 		});
 	});
 });

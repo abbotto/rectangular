@@ -1,6 +1,6 @@
 "use strict";
 
-import ngStrapVendorService from "app/extension/ui/ngStrap.vendor.js";
+import ngStrapVendorService from "app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapDropdownService = function bootstrapDropdownService($dropdown) {
 	return $dropdown;

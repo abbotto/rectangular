@@ -11,7 +11,7 @@ describe("_.service", () => {
 	describe("When the `lodash` package is installed", () => {
 		it("the `_` service should be available", () => {
 			expect(_).toBeDefined();
-			expect(typeof _).toBe("function");
+			expect(typeof _).toBe("object");
 		});
 	});
 });

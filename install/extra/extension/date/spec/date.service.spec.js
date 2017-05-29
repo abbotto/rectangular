@@ -11,7 +11,7 @@ describe("date.service", () => {
 	describe("When the `moment` package is installed", () => {
 		it("the `date$` service should be available", () => {
 			expect(date$).toBeDefined();
-			expect(typeof date$).toBe("function");
+			expect(typeof date$).toBe("object");
 		});
 	});
 });

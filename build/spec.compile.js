@@ -15,13 +15,12 @@ sh.exec("mkdir tmp/dev");
 sh.exec("touch tmp/spec.js");
 sh.exec("cp -a " + getPath() + "/app/. tmp/app/");
 sh.exec("cp -a " + getPath() + "/dev/. tmp/dev/");
-
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/service.compile.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/constant.cache.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/route.compile.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/model.cache.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/html.cache.js");
-sh.exec("node " + getPath() + "/node_modules/rectangular/build/vendor.compile.js");
+sh.exec("node build/service.compile.js");
+sh.exec("node build/constant.cache.js");
+sh.exec("node build/route.compile.js");
+sh.exec("node build/model.cache.js");
+sh.exec("node build/html.cache.js");
+sh.exec("node build/vendor.compile.js");
 
 const es6Files = finder.sync([
 	getPath() + "/node_modules/rectangular/tmp/**/test..js",

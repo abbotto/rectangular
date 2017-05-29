@@ -54,7 +54,7 @@ describe("angular-material.vendor.service", () => {
 
 		it("the `icon$` service should be available", () => {
 			expect(icon$).toBeDefined();
-			expect(typeof icon$).toBe("function");
+			expect(typeof icon$).toBe("object");
 		});
 
 		it("the `inkRipple$` service should be available", () => {
@@ -64,7 +64,7 @@ describe("angular-material.vendor.service", () => {
 
 		it("the `media$` service should be available", () => {
 			expect(media$).toBeDefined();
-			expect(typeof media$).toBe("function");
+			expect(typeof media$).toBe("object");
 		});
 
 		it("the `panel$` service should be available", () => {
@@ -74,12 +74,12 @@ describe("angular-material.vendor.service", () => {
 
 		it("the `sidenav$` service should be available", () => {
 			expect(sidenav$).toBeDefined();
-			expect(typeof sidenav$).toBe("function");
+			expect(typeof sidenav$).toBe("object");
 		});
 
 		it("the `sticky$` service should be available", () => {
 			expect(sticky$).toBeDefined();
-			expect(typeof sticky$).toBe("function");
+			expect(typeof sticky$).toBe("object");
 		});
 
 		it("the `toast$` service should be available", () => {
