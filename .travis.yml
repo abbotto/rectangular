@@ -68,6 +68,6 @@ script:
   - cp -a install/extra/extension/print/. tmp/project/app/extension/print/
   - cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
-  - rm -rf node_modules/rectangular/tmp/{*,.*}
+  - rm -rf node_modules/rectangular/tmp/*
   - cp .envrc .env
   - npm test
