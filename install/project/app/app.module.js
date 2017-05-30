@@ -18,10 +18,10 @@ angular
 		"ngMessages",
 		"ngSanitize"
 	])
-	.config(function ($locationProvider) {
+	.config(($locationProvider) => {
 		$locationProvider.html5Mode(true);
 	})
-	.config(function ($logProvider, NODE_ENV) {
+	.config(($logProvider, NODE_ENV) => {
 		if (NODE_ENV === "development") $logProvider.debugEnabled(true);
 	})
 ;
