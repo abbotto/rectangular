@@ -5,9 +5,10 @@ const fs = require("fs");
 const path = require("path");
 const camelCase = require("camelcase");
 const EOL = require("os").EOL;
+const getPath = require("./get.path.js");
 
-const files = finder.sync([__dirname.split("/build")[0] + "/tmp/app/component/**/*.route.js"]);
-const tmpJS = __dirname.split("/build")[0] + "/tmp/component.route.js";
+const files = finder.sync([getPath() + "/node_modules/rectangular/tmp/app/component/**/*.route.js"]);
+const tmpJS = getPath() + "/node_modules/rectangular/tmp/component.route.js";
 const routes = [];
 const imports = [];
 const deps = [];
