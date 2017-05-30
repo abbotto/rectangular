@@ -50,4 +50,4 @@ fs.writeFileSync(
 
 // Run through webpack
 sh.exec("node_modules/.bin/webpack --config build/webpack/spec.config.js");
-sh.exec("ls -lah");
+sh.exec("ls tmp -lah");
