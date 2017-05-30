@@ -16,7 +16,7 @@ const deps = [];
 files.forEach((file) => {
 	const route = path.basename(file).replace(".js", "");
 	console.log(file);
-	imports.push("import " + camelCase(route) + " from \"app/" + file.split("app/")[1] + "\";");
+	imports.push("import " + camelCase(route) + " from \"" + file.split("node_modules/")[1] + "\";");
 	deps.push(camelCase(route) + ".name");
 	routes.push(route);
 });
