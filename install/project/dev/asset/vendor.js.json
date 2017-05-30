@@ -15,6 +15,5 @@
 	"./node_modules/angular-moment/angular-moment.min.js",
 	"./node_modules/angular-translate/dist/angular-translate.min.js",
 	"./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js",
-	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js",
-	"./node_modules/teleprint/teleprint.min.js"
+	"./node_modules/ng-file-upload/dist/ng-file-upload.min.js"
 ]

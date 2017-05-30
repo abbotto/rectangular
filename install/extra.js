@@ -155,9 +155,6 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a install/extra/extension/print/. tmp/project/app/extension/print/");
 		sh.exec("cd tmp/project && npm i --save teleprint && cd ..");
 	}
-	else {
-		vendorJS = slice(vendorJS, "./node_modules/teleprint/teleprint.min.js");
-	}
 	
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
