@@ -1,0 +1,45 @@
+
+. ~/.nvm/nvm.sh && nvm use
+
+projectName="rectangular-staging"
+projectDescription="javascript application"
+projectLicense="MIT"
+projectAuthor="Jared Abbott"
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
+node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
+rm -rf package.js
+npm i abbotto/rectangular
+mkdir node_modules/rectangular/tmp
+mkdir node_modules/rectangular/tmp/project
+cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
+cp package.json node_modules/rectangular/tmp/project/
+cd node_modules/rectangular/tmp/project
+npm i --save bootstrap angular-strap angular-material bluebird moment angular-moment lodash angular-translate restangular ng-file-upload teleprint
+cd ../../
+npm i
+cp .envrc .env
+mkdir tmp/project/app/extension/ui/
+mkdir tmp/project/app/extension/promise/
+mkdir tmp/project/app/extension/date/
+mkdir tmp/project/app/extension/_/
+mkdir tmp/project/app/extension/locale/
+mkdir tmp/project/app/extension/rest/
+mkdir tmp/project/app/extension/upload/
+mkdir tmp/project/app/extension/print/
+cp -a install/extra/extension/ui/bootstrap/. tmp/project/app/extension/ui/
+cp -a install/extra/extension/ui/material-design/. tmp/project/app/extension/ui/
+cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/
+cp -a install/extra/extension/date/. tmp/project/app/extension/date/
+cp -a install/extra/extension/_/. tmp/project/app/extension/_/
+cp -a install/extra/extension/locale/. tmp/project/app/extension/locale/
+cp -a install/extra/extension/rest/. tmp/project/app/extension/rest/
+cp -a install/extra/extension/upload/. tmp/project/app/extension/upload/
+cp -a install/extra/extension/print/. tmp/project/app/extension/print/
+cd ../../
+cp -a node_modules/rectangular/tmp/project/. .
+rm -rf node_modules/rectangular/tmp/*
+cp .envrc .env
+npm run start
+git add . && git -am "Deploy to staging"
+git push
