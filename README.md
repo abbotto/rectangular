@@ -45,8 +45,11 @@ Once installed, you can immediatley focus on the features of your app - all the 
 	# Go to the app directory
 	cd myApp
 
+	# Start developing
+	npm run dev
+
 ## <a name='Overview'></a>Overview
-Out-of-the-box, Rectangular gives you the power to build Angular apps that are:
+Out-of-the-box, Rectangular gives you the power to build Angular 1 apps that are:
 - Scalable
 - Testable
 - Organized
