@@ -62,6 +62,7 @@
 		"karma-spec-reporter": "0.0.31",
 		"phantomjs-prebuilt": "^2.1.13",
 		"rectangular": "git+https://github.com/abbotto/rectangular.git",
-		"shelljs": "^0.7.7"
+		"shelljs": "^0.7.7",
+		"webpack-dev-server": "^2.4.5"
 	}
 }
