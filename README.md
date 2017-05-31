@@ -46,7 +46,7 @@ Once installed, you can immediatley focus on the features of your app - all the 
 	cd myApp
 
 ## <a name='Overview'></a>Overview
-Out-of-the-box, Rectangular gives you the power to build Angular 1.x.x apps that are:
+Out-of-the-box, Rectangular gives you the power to build Angular apps that are:
 - Scalable
 - Testable
 - Organized
@@ -75,7 +75,7 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in `semantic versioning` system.
 
 ### <a name='BuildSystem'></a>Build System
-- Supporting `SASS` syntax for powerful stylesheets.
+- Supporting `SASS` syntax for expressive stylesheets.
 - Supporting `ES6` syntax for modernized JavaScript.
 - Supporting `PUG` syntax for cleaner HTML templates.
 - Supporting `stylelint` to make sure your styles come out shiny.
