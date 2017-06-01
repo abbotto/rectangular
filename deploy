@@ -1,7 +1,7 @@
 
 . ~/.nvm/nvm.sh && nvm use
 
-projectName="rectangular-staging"
+projectName="staging"
 projectDescription="javascript application"
 projectLicense="MIT"
 projectAuthor="Jared Abbott"
