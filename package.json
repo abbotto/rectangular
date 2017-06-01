@@ -9,7 +9,7 @@
     "npm": "3.10"
   },
   "scripts": {
-    "preinstall": "npm i",
+    "preinstall": "nvm use && npm i",
     "bump-patch": "gulp bump-patch",
     "bump-minor": "gulp bump-minor",
     "bump-major": "gulp bump-major",
