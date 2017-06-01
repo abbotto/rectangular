@@ -1,4 +1,3 @@
-
 . ~/.nvm/nvm.sh && nvm use
 
 projectName="staging"
