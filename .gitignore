@@ -12,7 +12,7 @@
 !.nvmrc
 !.stylelintrc
 !.eslintignore
-!.Procfile
+!Procfile
 !.gitignore
 !deploy
 
