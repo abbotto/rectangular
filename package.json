@@ -15,7 +15,8 @@
     "dev": "gulp dev",
     "docs": "gulp docs",
     "rectangular": ". ~/.nvm/nvm.sh && nvm use && npm i && cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run compile && cd ../../",
-    "start": ". ~/.nvm/nvm.sh && nvm use && npm i && node server.js",
+    "start": "npm run nvm && . ~/.nvm/nvm.sh && nvm use && npm i && node server.js",
+    "nvm": "curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash",
     "test": "npm run rectangular && cd node_modules/rectangular && node build/spec.compile.js && cd ../../ && node_modules/karma/bin/karma start karma.conf.js"
   },
   "dependencies": {
