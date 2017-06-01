@@ -15,7 +15,7 @@
     "dev": "gulp dev",
     "docs": "gulp docs",
     "rectangular": ". ~/.nvm/nvm.sh && nvm use && npm i && cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run compile && cd ../../",
-    "start": "node server.js",
+    "start": "nvm use && npm i && node server.js",
     "test": "npm run rectangular && cd node_modules/rectangular && node build/spec.compile.js && cd ../../ && node_modules/karma/bin/karma start karma.conf.js"
   },
   "dependencies": {
