@@ -41,5 +41,5 @@ cp -a node_modules/rectangular/tmp/project/. .
 rm -rf node_modules/rectangular/tmp/*
 cp .envrc .env
 npm run start
-git add . && git -am "Deploy to staging"
+git add . && git commit -am "Deploy to staging"
 git push

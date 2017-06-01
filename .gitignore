@@ -19,6 +19,17 @@
 !/dist
 !/dist/**/*
 
+# Whitelist Source Files
+!/app
+!/app/**/*
+
+# Whitelist Dev Files
+!/dev
+!/dev/**/*
+
+# Blacklist Other Files
+.DS_Store
+
 # Blacklist Other Files
 .DS_Store
 /node_modules
