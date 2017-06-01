@@ -5,6 +5,7 @@
 !server.js
 !gulpfile.js
 !karma.conf.js
+!package.json
 
 # Whitelist Config Files
 !.envrc
