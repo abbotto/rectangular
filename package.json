@@ -5,7 +5,8 @@
   "license": "MIT",
   "contributors": [],
   "engines": {
-    "node": "6.10"
+    "node": "6.10",
+    "npm": "3.10"
   },
   "scripts": {
     "bump-patch": "gulp bump-patch",
