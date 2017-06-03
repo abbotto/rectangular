@@ -14,7 +14,7 @@
 		"compile": "npm run rectangular && cd node_modules/rectangular && node build/compile.js && cd ../../",
 		"dev": "gulp dev",
 		"docs": "gulp docs",
-		"rectangular": ". ~/.nvm/nvm.sh && nvm use && npm i && cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run start && cd ../../",
+		"rectangular": "npm i && cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run start && cd ../../",
 		"server": "node server.js",
 		"start": "npm run compile",
 		"test": "npm run rectangular && cd node_modules/rectangular && node build/spec.compile.js && cd ../../ && node_modules/karma/bin/karma start karma.conf.js"
@@ -62,7 +62,6 @@
 		"karma-spec-reporter": "0.0.31",
 		"phantomjs-prebuilt": "^2.1.13",
 		"rectangular": "git+https://github.com/abbotto/rectangular.git",
-		"shelljs": "^0.7.7",
-		"webpack-dev-server": "^2.4.5"
+		"shelljs": "^0.7.7"
 	}
 }
