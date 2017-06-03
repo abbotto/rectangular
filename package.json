@@ -7,7 +7,9 @@
   "engines": {
     "node": "6.10"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "npm i"
+  },
   "dependencies": {},
   "devDependencies": {
     "asciify": "^1.3.5",
