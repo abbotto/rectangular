@@ -16,7 +16,6 @@
 		"dev": "gulp dev",
 		"docs": "gulp docs",
 		"init": "cp .envrc .env && npm i && cd node_modules/rectangular && npm run init && cd ../../",
-		"postinstall": "npm run compile-app",
 		"start": "node server.js",
 		"test": "npm run compile-test && node_modules/karma/bin/karma start karma.conf.js"
 	},
