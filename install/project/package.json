@@ -13,10 +13,11 @@
 		"bump-patch": "gulp bump-patch",
 		"bump-minor": "gulp bump-minor",
 		"bump-major": "gulp bump-major",
-		"start": "npm run compile && node server.js",
-		"compile": "npm run init && cd node_modules/rectangular && node build/compile.js && cd ../../",
-		"init": "cp .envrc .env && npm i && cd node_modules/rectangular && npm i && rm -rf tmp && mkdir tmp && cp .envrc .env && npm run start && cd ../../",
-		"test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../ && node_modules/karma/bin/karma start karma.conf.js"
+		"start": "npm run init && npm run compile-app && node server.js",
+		"compile-app": "cd node_modules/rectangular && node build/compile.js && cd ../../",
+		"init": "cp .envrc .env && npm i && cd node_modules/rectangular && npm run init && cd ../../",
+		"compile-test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../",
+		"test": "npm run compile-test && node_modules/karma/bin/karma start karma.conf.js"
 	},
 	"dependencies": {
 		"angular": "1.5.5",
