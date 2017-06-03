@@ -27,7 +27,7 @@ branches:
     - master
 
 before_script:
-  - npm i babel webpack -g
+  - npm i babel-cli webpack -g
 
 script:
   - npm i > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .

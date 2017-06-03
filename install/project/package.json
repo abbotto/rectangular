@@ -8,15 +8,17 @@
 		"node": "6.10"
 	},
 	"scripts": {
+		"build": "npm run init && npm run compile-app",
+		"bump-major": "gulp bump-major",
+		"bump-minor": "gulp bump-minor",
+		"bump-patch": "gulp bump-patch",
+		"compile-app": "cd node_modules/rectangular && node build/compile.js && cd ../../",
+		"compile-test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../",
 		"dev": "gulp dev",
 		"docs": "gulp docs",
-		"bump-patch": "gulp bump-patch",
-		"bump-minor": "gulp bump-minor",
-		"bump-major": "gulp bump-major",
-		"start": "npm run init && npm run compile-app && node server.js",
-		"compile-app": "cd node_modules/rectangular && node build/compile.js && cd ../../",
 		"init": "cp .envrc .env && npm i && cd node_modules/rectangular && npm run init && cd ../../",
-		"compile-test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../",
+		"postinstall": "npm run build",
+		"start": "node server.js",
 		"test": "npm run compile-test && node_modules/karma/bin/karma start karma.conf.js"
 	},
 	"dependencies": {
