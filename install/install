@@ -68,16 +68,8 @@ cd ../../
 
 # Copy the project files and run the setup build
 cp -a node_modules/rectangular/tmp/project/. .
-cp .envrc .env
-
-# Create the temporary directory
-cd node_modules/rectangular
-rm -rf tmp
-mkdir tmp
-cd ../../
 
 # Run the test
-npm i
 npm test
 
 # Completed

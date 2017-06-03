@@ -47,8 +47,6 @@ script:
   - cd node_modules/rectangular/tmp/project
   - npm i --save bootstrap angular-strap angular-material bluebird moment angular-moment lodash angular-translate restangular ng-file-upload teleprint
   - cd ../../
-  - npm i
-  - cp .envrc .env
   - mkdir tmp/project/app/extension/ui/
   - mkdir tmp/project/app/extension/promise/
   - mkdir tmp/project/app/extension/date/
@@ -68,6 +66,4 @@ script:
   - cp -a install/extra/extension/print/. tmp/project/app/extension/print/
   - cd ../../
   - cp -a node_modules/rectangular/tmp/project/. .
-  - rm -rf node_modules/rectangular/tmp/*
-  - cp .envrc .env
   - npm test
