@@ -8,7 +8,7 @@
     "node": "6.10"
   },
   "scripts": {
-    "start": ". ~/.nvm/nvm.sh && nvm use && npm i && node server.js",
+    "start": "npm i && node server.js",
   },
   "dependencies": {
     "compression": "1.6.2",
