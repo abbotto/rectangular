@@ -8,16 +8,15 @@
 		"node": "6.10"
 	},
 	"scripts": {
+		"dev": "gulp dev",
+		"docs": "gulp docs",
 		"bump-patch": "gulp bump-patch",
 		"bump-minor": "gulp bump-minor",
 		"bump-major": "gulp bump-major",
-		"compile": "npm run rectangular && cd node_modules/rectangular && node build/compile.js && cd ../../",
-		"dev": "gulp dev",
-		"docs": "gulp docs",
-		"rectangular": "npm i && cd node_modules/rectangular && rm -rf tmp && mkdir tmp && npm run start && cd ../../",
-		"server": "node server.js",
-		"start": "npm run compile",
-		"test": "npm run rectangular && cd node_modules/rectangular && node build/spec.compile.js && cd ../../ && node_modules/karma/bin/karma start karma.conf.js"
+		"start": "npm run compile && node server.js",
+		"compile": "npm run init && cd node_modules/rectangular && node build/compile.js && cd ../../",
+		"init": "cp .envrc .env && npm i && cd node_modules/rectangular && npm i && rm -rf tmp && mkdir tmp && cp .envrc .env && npm run start && cd ../../",
+		"test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../ && node_modules/karma/bin/karma start karma.conf.js"
 	},
 	"dependencies": {
 		"angular": "1.5.5",
@@ -28,6 +27,8 @@
 		"angular-translate": "^2.13.0",
 		"angular-ui-router": "^0.3.2",
 		"animate.css": "^3.5.2",
+		"compression": "^1.6.2",
+		"express": "^4.15.2",
 		"font-awesome": "^4.7.0",
 		"immutable": "^3.8.1",
 		"normalize.css": "^5.0.0",
@@ -37,13 +38,11 @@
 	},
 	"devDependencies": {
 		"angular-mocks": "1.5.5",
-		"compression": "^1.6.2",
 		"dotenv": "^4.0.0",
 		"eslint": "^3.19.0",
 		"eslint-plugin-angular": "^1.6.4",
 		"eslint-plugin-disable": "^0.3.0",
 		"eslint-plugin-json": "^1.2.0",
-		"express": "^4.15.2",
 		"gulp": "^3.9.1",
 		"gulp-bump": "^2.7.0",
 		"gulp-livereload": "^3.8.1",
