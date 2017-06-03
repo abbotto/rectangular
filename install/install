@@ -44,8 +44,6 @@ cd "$projectName"
 # Initialize package.json
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
-. ~/.nvm/nvm.sh
-nvm i $(node -p -e "require('./package.json').version")
 
 # Add the project name and description, etc...
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
@@ -64,7 +62,6 @@ cp package.json node_modules/rectangular/tmp/project/
 # and run the extras installer
 cd node_modules/rectangular/
 cp .envrc .env
-nvm use
 npm i
 node install/extra.js
 cd ../../
