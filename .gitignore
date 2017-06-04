@@ -16,7 +16,7 @@
 !.gitignore
 !deploy
 
-# Whitelist Source Files
+# Whitelist Distribution Files
 !/dist
 !/dist/**/*
 
