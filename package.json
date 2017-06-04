@@ -8,7 +8,7 @@
     "node": "6.10"
   },
   "scripts": {
-    "init": "npm i && rm -rf tmp && mkdir tmp && cp .envrc .env"
+    "init": ". ~/.nvm/nvm.sh && nvm i 6.10 && npm i && rm -rf tmp && mkdir tmp && cp .envrc .env"
   },
   "dependencies": {},
   "devDependencies": {
