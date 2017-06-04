@@ -8,8 +8,8 @@
     "node": "6.10"
   },
   "scripts": {
-    "preinstall": "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash",
-    "start": "npm i && node server.js",
+    "preinstall": "ls && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash",
+    "start": "ls && npm i && node server.js",
   },
   "dependencies": {
     "compression": "1.6.2",
