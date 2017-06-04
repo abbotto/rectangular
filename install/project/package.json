@@ -15,6 +15,7 @@
 		"compile-test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../",
 		"dev": "gulp dev",
 		"docs": "gulp docs",
+		"eslint": "node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
 		"init": "cp .envrc .env && npm i && cd node_modules/rectangular && npm run init && cd ../../",
 		"start": "node server.js",
 		"test": "npm run compile-test && node_modules/karma/bin/karma start karma.conf.js"

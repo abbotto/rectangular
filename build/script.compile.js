@@ -15,7 +15,6 @@ sh.exec("cp -a " + getPath() + "/app/. tmp/app/");
 sh.exec("cp -a " + getPath() + "/dev/. tmp/dev/");
 
 // Pre-requisite builds
-sh.exec(getPath() + "/node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .");
 sh.exec("node build/vendor.compile.js");
 sh.exec("node build/service.compile.js");
 sh.exec("node build/constant.cache.js");

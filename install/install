@@ -45,32 +45,32 @@ cd "$projectName"
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 
-# Add the project name and description, etc...
+echo -e "Add the project details..."
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 rm package.js
 
-# Grab Rectangular
+echo -e "Grab Rectangular..."
 npm i abbotto/rectangular > /dev/null
 
-# Setup temporary project files and directories
+echo -e "Setup temporary project files and directories..."
 mkdir node_modules/rectangular/tmp
 mkdir node_modules/rectangular/tmp/project
 cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
 cp package.json node_modules/rectangular/tmp/project/
 
-# Initialize Rectangular
-# and run the extras installer
+echo -e "Initialize Rectangular and run the extras installer..."
 cd node_modules/rectangular/
 cp .envrc .env
 npm i
 node install/extra.js
 cd ../../
 
-# Copy the project files and run the setup build
+echo -e "Copy the project files and run the setup build..."
 cp -a node_modules/rectangular/tmp/project/. .
 
-# Run the test
-npm test
+echo -e "Build the app..."
+npm i
+npm run compile-app
 
 # Completed
 echo ""
