@@ -8,6 +8,7 @@
     "node": "6.10"
   },
   "scripts": {
+    "heroku-postinstall": "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash",
     "start": "npm i && node server.js",
   },
   "dependencies": {
