@@ -14,7 +14,7 @@ const vendorFiles = require(getPath() + "/dev/asset/vendor.scss.json");
 const vendorKeys = Object.keys(vendorFiles);
 let assets = [];
 
-vendorKeys.forEach((item) => assets.push(vendorFiles[item]) );
+vendorKeys.forEach((item) => assets.push(vendorFiles[item]));
 assets = setPath(flatten(assets));
 
 if (!fs.existsSync(getPath() + "/dist")) {

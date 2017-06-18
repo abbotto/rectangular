@@ -26,13 +26,13 @@ const config = {
 		}),
 		new webpack.optimize.AggressiveMergingPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor',
-			filename: 'vendor.import.js',
+			name: "vendor",
+			filename: "vendor.import.js",
 			minChunks(module, count) {
 				const context = module.context;
 				return context
-					&& context.indexOf('node_modules') > -1
-					&& context.indexOf('node_modules/rectangular') < 0
+					&& context.indexOf("node_modules") > -1
+					&& context.indexOf("node_modules/rectangular") < 0
 				;
 			}
 		})

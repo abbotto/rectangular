@@ -1,4 +1,4 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const webpack = require("webpack");
 const getPath = require("../utility/get.path.js");
@@ -25,13 +25,13 @@ const plugins = [
 	new UglifyJsPlugin(uglifyOpts),
 	new webpack.optimize.AggressiveMergingPlugin(),
 	new webpack.optimize.CommonsChunkPlugin({
-		name: 'vendor',
-		filename: 'vendor.import.js',
+		name: "vendor",
+		filename: "vendor.import.js",
 		minChunks(module, count) {
 			const context = module.context;
 			return context
-				&& context.indexOf('node_modules') > -1
-				&& context.indexOf('node_modules/rectangular') < 0
+				&& context.indexOf("node_modules") > -1
+				&& context.indexOf("node_modules/rectangular") < 0
 			;
 		}
 	})
@@ -40,7 +40,7 @@ const plugins = [
 if (process.env.NODE_ENV === "development") {
 	plugins.push(
 		new BundleAnalyzerPlugin({
-			analyzerMode: 'static'
+			analyzerMode: "static"
 		})
 	);
 }

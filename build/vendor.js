@@ -2,7 +2,6 @@
 
 const fs = require("fs");
 const sh = require("shelljs");
-const zlib = require("zlib");
 const join = require("./utility/join.js");
 const flatten = require("./utility/flatten.js");
 const setPath = require("./utility/set.path.js");
@@ -12,7 +11,7 @@ const vendorFiles = require(getPath() + "/dev/asset/vendor.global.js.json");
 const vendorKeys = Object.keys(vendorFiles);
 let assets = [];
 
-vendorKeys.forEach((item) => assets.push(vendorFiles[item]) );
+vendorKeys.forEach((item) => assets.push(vendorFiles[item]));
 assets = setPath(flatten(assets));
 
 if (!fs.existsSync(getPath() + "/dist")) {
