@@ -4,12 +4,13 @@ let paths = [];
 
 const vendorGlobal = ["./dist/vendor.global.js"];
 const vendorImport = ["./dist/vendor.import.js"];
+const angularMocks = ["./node_modules/angular-mocks/angular-mocks.js"];
 const specJS = ["./node_modules/rectangular/tmp/spec.js"];
 
-paths = paths.concat(vendorImport);
 paths = paths.concat(vendorGlobal);
-paths.push("node_modules/angular-mocks/angular-mocks.js");
+paths = paths.concat(angularMocks);
 paths = paths.concat(specJS);
+paths = paths.concat(vendorImport);
 
 module.exports = function karmaConfig(config) {
 	config.set({
