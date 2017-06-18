@@ -1,6 +1,6 @@
 "use strict";
 
-import React from "react";
+import {unmountComponentAtNode} from "react";
 import {render} from "react-dom";
 import {client} from "react-jsx";
 
@@ -15,7 +15,7 @@ export default function reactVendorDrective(
 		link: (scope, element) => {
 			const unmountReactElement = function unmountReactElement() {
 				delete $rootScope[scope.name];
-				React.unmountComponentAtNode(element[0]);
+				unmountComponentAtNode(element[0]);
 			};
 			
 			// Render React element

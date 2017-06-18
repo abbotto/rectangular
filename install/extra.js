@@ -3,10 +3,9 @@
 const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
-const slice = require("./../build/slice.js");
 
-let vendorJS = require("./../tmp/project/dev/asset/vendor.js.json");
-let vendorCSS = require("./../tmp/project/dev/asset/vendor.scss.json");
+let vendorJs = require("./../tmp/project/dev/asset/vendor.global.js.json");
+let vendorCss = require("./../tmp/project/dev/asset/vendor.scss.json");
 
 // Message
 console.log("\nChoose extra packages to install:\n");
@@ -88,10 +87,8 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save bootstrap angular-strap && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.min.js");
-		vendorJS = slice(vendorJS, "./node_modules/angular-strap/dist/angular-strap.tpl.min.js");
-		vendorCSS = slice(vendorCSS, "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-		vendorCSS = slice(vendorCSS, "./node_modules/bootstrap/dist/css/bootstrap-theme.min.css");
+		delete vendorJs["angular-strap"];
+		delete vendorCss.bootstrap;
 	}
 	
 	if (input["Angular Material"].match(/^(?:Yes|yes|Y|y)$/)) {
@@ -108,8 +105,8 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save angular-material && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/angular-material/angular-material.min.js");
-		vendorCSS = slice(vendorCSS, "./node_modules/angular-material/angular-material.min.css");
+		delete vendorJs["angular-material"];
+		delete vendorCss["angular-material"];
 	}
 	
 	if (input.Bluebird.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -131,8 +128,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save angular-moment && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/moment/min/moment.min.js");
-		vendorJS = slice(vendorJS, "./node_modules/angular-moment/angular-moment.min.js");
+		delete vendorJs.moment;
 	}
 	
 	if (input.Lodash.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -144,7 +140,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save lodash && cd ..");
 	}
 	else if (input.Restangular.match(/^(?:No|no|N|n)$/)) {
-		vendorJS = slice(vendorJS, "./node_modules/lodash/lodash.min.js");
+		delete vendorJs.lodash;
 	}
 
 	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -165,7 +161,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save angular-translate && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/angular-translate/dist/angular-translate.min.js");
+		delete vendorJs["angular-translate"];
 	}
 	
 	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {
@@ -177,7 +173,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save lodash restangular && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/restangular/dist/restangular.min.js");
+		delete vendorJs.restangular;
 	}
 	
 	if (input["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
@@ -189,16 +185,15 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cd tmp/project && npm i --save ng-file-upload && cd ..");
 	}
 	else {
-		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js");
-		vendorJS = slice(vendorJS, "./node_modules/ng-file-upload/dist/ng-file-upload.min.js");
+		delete vendorJs["ng-file-upload"];;
 	}
 	
 	sh.exec("rm -rf tmp/project/node_modules");
 	
 	// Update paths to point to the root project directory
-	vendorJS = JSON.stringify(vendorJS);
-	vendorCSS = JSON.stringify(vendorCSS);
+	vendorJs = JSON.stringify(vendorJs);
+	vendorCss = JSON.stringify(vendorCss);
 	
-	fs.writeFile("tmp/project/dev/asset/vendor.js.json", vendorJS);
-	fs.writeFile("tmp/project/dev/asset/vendor.scss.json", vendorCSS);
+	fs.writeFile("tmp/project/dev/asset/vendor.global.js.json", vendorJs);
+	fs.writeFile("tmp/project/dev/asset/vendor.scss.json", vendorCss);
 });

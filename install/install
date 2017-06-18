@@ -50,7 +50,7 @@ node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 rm package.js
 
 echo -e "Grab Rectangular..."
-npm i abbotto/rectangular > /dev/null
+npm i --save-dev abbotto/rectangular > /dev/null
 
 echo -e "Setup temporary project files and directories..."
 mkdir node_modules/rectangular/tmp
@@ -70,7 +70,7 @@ cp -a node_modules/rectangular/tmp/project/. .
 
 echo -e "Build the app..."
 npm i
-npm run compile-app
+npm run build
 
 # Completed
 echo ""

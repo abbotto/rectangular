@@ -7,20 +7,23 @@
 	"engines": {
 		"node": "6.10"
 	},
-	"scripts": {
-		"bump-major": "gulp bump-major",
-		"bump-minor": "gulp bump-minor",
-		"bump-patch": "gulp bump-patch",
-		"compile-app": "npm run init && cd node_modules/rectangular && node build/compile.js && cd ../../",
-		"compile-test": "npm run init && cd node_modules/rectangular && node build/spec.compile.js && cd ../../",
-		"dev": "gulp dev",
-		"docs": "gulp docs",
-		"eslint": "node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
-		"init": "cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && npm i && cd node_modules/rectangular && npm run init && cd ../../",
-		"heroku-postinstall": "npm run compile-app",
-		"start": "node server.js",
-		"test": "npm run compile-test && node_modules/karma/bin/karma start karma.conf.js"
-	},
+  "scripts": {
+    "bump-major": "gulp bump-major",
+    "bump-minor": "gulp bump-minor",
+    "bump-patch": "gulp bump-patch",
+    "build": "npm run init && cd node_modules/rectangular && node build/vendor.js && node build/build.js && cd ../../",
+    "build-js": "cd node_modules/rectangular && node build/script.js && cd ../../",
+    "build-vendor": "cd node_modules/rectangular && node build/vendor.js && cd ../../",
+    "build-scss": "cd node_modules/rectangular && node build/design.js && cd ../../",
+    "build-spec": "npm run init && cd node_modules/rectangular && node build/spec.js && cd ../../",
+    "dev": "gulp dev",
+    "docs": "gulp docs",
+    "eslint": "node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
+    "init": "cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && npm i && cd node_modules/rectangular && npm run init && cd ../../",
+    "heroku-postinstall": "npm run build",
+    "start": "node server.js",
+    "test": "npm run build-spec && node_modules/karma/bin/karma start karma.conf.js"
+  },
 	"dependencies": {
 		"angular": "1.5.5",
 		"angular-animate": "1.5.5",
@@ -63,7 +66,7 @@
 		"karma-phantomjs-launcher": "^1.0.2",
 		"karma-spec-reporter": "0.0.31",
 		"phantomjs-prebuilt": "^2.1.13",
-		"rectangular": "git+https://github.com/abbotto/rectangular.git",
+		"rectangular": "github:abbotto/rectangular",
 		"shelljs": "^0.7.7"
 	}
 }

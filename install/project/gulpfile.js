@@ -55,7 +55,7 @@ gulp
 			titleLink: "/api"
 		};
 		gulp
-			.src(appJS)
+			.src("SOME_PATH")
 			.pipe(gulpDocs.process(options))
 			.pipe(gulp.dest("./docs"))
 			.pipe(process.exit())
@@ -65,8 +65,34 @@ gulp
 
 // Client Tasks
 gulp
-	.task("compile", () => {
-		sh.exec("npm run compile");
+	.task("build", () => {
+		sh.exec("npm run build");
+	})
+;
+
+gulp
+	.task("build-js", () => {
+		sh.exec("npm run build-js");
+		gulp
+			.src(__filename)
+			.pipe(livereload())
+		;
+	})
+;
+
+gulp
+	.task("build-vendor", () => {
+		sh.exec("npm run build-vendor");
+		gulp
+			.src(__filename)
+			.pipe(livereload())
+		;
+	})
+;
+
+gulp
+	.task("build-scss", () => {
+		sh.exec("npm run build-scss");
 		gulp
 			.src(__filename)
 			.pipe(livereload())
@@ -78,7 +104,7 @@ gulp
 const open = require("gulp-open");
 
 gulp
-	.task("open", ["compile"], () => {
+	.task("open", ["build"], () => {
 		gulp
 		.src(__filename)
 		.pipe(open({
@@ -88,15 +114,23 @@ gulp
 ;
 
 // Watch files
-const watch = require("gulp-watch");
-const watchFiles = [
-	"./app/**/*.scss",
+const watchAppScripts = [
+	"!./app/**/*.spec.js",
 	"./app/**/*.js",
 	"./app/**/*.json",
 	"./app/**/*.html",
 	"./app/**/*.jsx",
-	"./task/**/*.js",
-	"./task/**/*.json"
+	"./dev/**/service.ng.json"
+];
+
+const watchVendorScripts = [
+	"./dev/**/vendor.global.js.json"
+];
+
+const watchStyles = [
+	"./app/**/*.scss",
+	"./dev/**/app.scss.json",
+	"./dev/**/vendor.scss.json"
 ];
 
 // Development server
@@ -116,7 +150,9 @@ gulp
 				cb();
 				started = true;
 				livereload.listen();
-				gulp.watch(watchFiles, ["compile"]);
+				gulp.watch(watchAppScripts, ["build-js"]);
+				gulp.watch(watchVendorScripts, ["build-vendor"]);
+				gulp.watch(watchStyles, ["build-scss"]);
 				gulp.start(["open"]);
 			}
 		})
@@ -125,6 +161,5 @@ gulp
 		});
 	})
 ;
-;
 
-gulp.task("default", ["compile"]);
+gulp.task("default", ["build"]);

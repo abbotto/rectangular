@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 const config = {
 	entry: {
-		main: __dirname + "/../../tmp/spec.js"
+		spec: __dirname + "/../../tmp/spec.js"
 	},
 	output: {
 		path: path.join(__dirname, "/../../tmp"),
@@ -21,15 +21,21 @@ const config = {
 	plugins: [
 		new webpack.DefinePlugin({
 			"process.env": {
-				NODE_ENV: JSON.stringify("development")
-			}
-		}),
-		new webpack.DefinePlugin({
-			"process.env": {
 				NODE_ENV: JSON.stringify("production")
 			}
 		}),
-		new webpack.optimize.AggressiveMergingPlugin()
+		new webpack.optimize.AggressiveMergingPlugin(),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			filename: 'vendor.import.js',
+			minChunks(module, count) {
+				const context = module.context;
+				return context
+					&& context.indexOf('node_modules') > -1
+					&& context.indexOf('node_modules/rectangular') < 0
+				;
+			}
+		})
 	]
 };
 

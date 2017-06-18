@@ -2,10 +2,12 @@
 // npm run test
 let paths = [];
 
-const vendorJS = ["./node_modules/rectangular/dist/vendor.js"];
+const vendorGlobal = ["./dist/vendor.global.js"];
+const vendorImport = ["./dist/vendor.import.js"];
 const specJS = ["./node_modules/rectangular/tmp/spec.js"];
 
-paths = paths.concat(vendorJS);
+paths = paths.concat(vendorGlobal);
+paths = paths.concat(vendorImport);
 paths.push("node_modules/angular-mocks/angular-mocks.js");
 paths = paths.concat(specJS);
 

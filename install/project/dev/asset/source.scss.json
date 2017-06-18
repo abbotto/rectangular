@@ -1,8 +1,0 @@
-[
-	"./app/design/vendor.scss",
-	"./app/design/scaffold.scss",
-	"./app/app.scss",
-	"./app/design/**/*.scss",
-	"./app/extension/**/*.scss",
-	"./app/component/**/*.scss"
-]
