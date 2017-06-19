@@ -9,23 +9,10 @@ const transpile = require("./script/transpile.js");
 // Load environment variables
 require("dotenv").config();
 
-sh.exec("node build/reset.js");
-sh.exec("touch tmp/spec.js");
-sh.exec("cp -a " + getPath() + "/app/. tmp/app/");
-sh.exec("cp -a " + getPath() + "/dev/. tmp/dev/");
-
-sh.exec("node build/vendor.js");
-sh.exec("node build/script/service.js");
-sh.exec("node build/script/constant.js");
-sh.exec("node build/script/route.js");
-sh.exec("node build/script/model.js");
-sh.exec("node build/script/template.js");
-
 const es6Files = finder.sync([
 	getPath() + "/node_modules/rectangular/tmp/app/**/*.js",
 	getPath() + "/node_modules/rectangular/tmp/dev/**/test.*.js",
 	getPath() + "/node_modules/rectangular/tmp/app/**/*.spec.js"
-	
 ]);
 
 transpile(es6Files);

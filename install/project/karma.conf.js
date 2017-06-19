@@ -3,6 +3,7 @@
 const files = [
 	"./dist/vendor.global.js",
 	"./dist/vendor.import.js",
+	"./dist/app.js",
 	"./node_modules/angular-mocks/angular-mocks.js",
 	"./node_modules/rectangular/tmp/spec.js"
 ];
