@@ -1,16 +1,11 @@
 // Karma configuration
 // npm run test
-let paths = [];
-
-const vendorGlobal = ["./dist/vendor.global.js"];
-const vendorImport = ["./dist/vendor.import.js"];
-const angularMocks = ["./node_modules/angular-mocks/angular-mocks.js"];
-const specJS = ["./node_modules/rectangular/tmp/spec.js"];
-
-paths = paths.concat(vendorGlobal);
-paths = paths.concat(angularMocks);
-paths = paths.concat(specJS);
-paths = paths.concat(vendorImport);
+const files = [
+	"./dist/vendor.global.js",
+	"./dist/vendor.import.js",
+	"./node_modules/angular-mocks/angular-mocks.js",
+	"./node_modules/rectangular/tmp/spec.js"
+];
 
 module.exports = function karmaConfig(config) {
 	config.set({
@@ -27,7 +22,7 @@ module.exports = function karmaConfig(config) {
 			}
 		},
 		// list of files / patterns to load in the browser
-		files: paths,
+		files,
 		// list of files to exclude
 		exclude: [],
 		// preprocess matching files before serving them to the browser

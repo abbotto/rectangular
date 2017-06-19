@@ -22,9 +22,10 @@ sh.exec("node build/script/model.js");
 sh.exec("node build/script/template.js");
 
 const es6Files = finder.sync([
+	getPath() + "/node_modules/rectangular/tmp/app/**/*.js",
 	getPath() + "/node_modules/rectangular/tmp/dev/**/test.*.js",
-	getPath() + "/node_modules/rectangular/tmp/app/**/*.spec.js",
-	getPath() + "/node_modules/rectangular/tmp/app/**/*.js"
+	getPath() + "/node_modules/rectangular/tmp/app/**/*.spec.js"
+	
 ]);
 
 transpile(es6Files);

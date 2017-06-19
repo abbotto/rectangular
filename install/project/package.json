@@ -15,7 +15,7 @@
     "build-js": "cd node_modules/rectangular && node build/script.js && cd ../../",
     "build-vendor": "cd node_modules/rectangular && node build/vendor.js && cd ../../",
     "build-scss": "cd node_modules/rectangular && node build/design.js && cd ../../",
-    "build-spec": "npm run init && cd node_modules/rectangular && node build/spec.js && cd ../../",
+    "build-spec": "npm run init && cd node_modules/rectangular && node build/vendor.js && node build/spec.js && cd ../../",
     "dev": "gulp dev",
     "docs": "gulp docs",
     "eslint": "node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
