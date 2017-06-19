@@ -50,7 +50,7 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `alert$` service should be available", () => {
 			expect(alert$).toBeDefined();
-			expect(typeof alert$).toBe("object");
+			expect(typeof alert$).toBe("function");
 		});
 
 		it("the `aside$` service should be available", () => {
@@ -60,7 +60,7 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `datepicker$` service should be available", () => {
 			expect(datepicker$).toBeDefined();
-			expect(typeof datepicker$).toBe("object");
+			expect(typeof datepicker$).toBe("function");
 		});
 
 		it("the `dropdown$` service should be available", () => {
@@ -80,7 +80,7 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `scrollspy$` service should be available", () => {
 			expect(scrollspy$).toBeDefined();
-			expect(typeof scrollspy$).toBe("object");
+			expect(typeof scrollspy$).toBe("function");
 		});
 
 		it("the `select$` service should be available", () => {
@@ -100,7 +100,7 @@ describe("ui.bootstrap.service", () => {
 		
 		it("the `typeahead$` service should be available", () => {
 			expect(typeahead$).toBeDefined();
-			expect(typeof typeahead$).toBe("object");
+			expect(typeof typeahead$).toBe("function");
 		});
 	});
 });

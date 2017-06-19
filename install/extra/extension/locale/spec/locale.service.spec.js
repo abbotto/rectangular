@@ -11,7 +11,7 @@ describe("locale.service", () => {
 	describe("When the `angular-translate` package is installed", () => {
 		it("the `locale$` service should be available", () => {
 			expect(locale$).toBeDefined();
-			expect(typeof locale$).toBe("object");
+			expect(typeof locale$).toBe("function");
 		});
 	});
 });

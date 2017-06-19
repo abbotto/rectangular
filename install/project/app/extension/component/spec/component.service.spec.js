@@ -11,7 +11,7 @@ describe("component.service", () => {
 	describe("When the `react` package is installed", () => {
 		it("the `component$` service should be available", () => {
 			expect(component$).toBeDefined();
-			expect(typeof component$).toBe("object");
+			expect(typeof component$).toBe("function");
 		});
 	});
 });

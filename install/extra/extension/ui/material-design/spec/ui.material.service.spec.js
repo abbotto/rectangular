@@ -39,7 +39,7 @@ describe("angular-material.vendor.service", () => {
 	describe("When the `Angular Material` package is installed", () => {
 		it("the `bottomSheet$` service should be available", () => {
 			expect(bottomSheet$).toBeDefined();
-			expect(typeof bottomSheet$).toBe("object");
+			expect(typeof bottomSheet$).toBe("function");
 		});
 
 		it("the `colors$` service should be available", () => {
@@ -59,7 +59,7 @@ describe("angular-material.vendor.service", () => {
 
 		it("the `inkRipple$` service should be available", () => {
 			expect(inkRipple$).toBeDefined();
-			expect(typeof inkRipple$).toBe("object");
+			expect(typeof inkRipple$).toBe("function");
 		});
 
 		it("the `media$` service should be available", () => {
