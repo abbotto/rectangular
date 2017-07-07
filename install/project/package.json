@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"contributors": [],
 	"engines": {
-		"node": "6.10"
+		"node": "6.11"
 	},
   "scripts": {
     "bump-major": "gulp bump-major",
@@ -19,7 +19,7 @@
     "dev": "gulp dev",
     "docs": "gulp docs",
     "eslint": "node_modules/rectangular/node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
-    "init": "cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.10 && npm i && cd node_modules/rectangular && npm run init && cd ../../",
+    "init": "cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.11 && npm i && cd node_modules/rectangular && npm run init && cd ../../",
     "heroku-postinstall": "npm run build",
     "start": "node server.js",
     "test": "npm run build-spec && node_modules/karma/bin/karma start karma.conf.js"

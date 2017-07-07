@@ -7,7 +7,7 @@ const getPath = require("./utility/get.path.js");
 // Load environment variables
 require("dotenv").config();
 
-let html = fs.readFileSync(getPath() + "/app/app.index.html").toString();
+let html = fs.readFileSync(getPath() + "/app/index.html").toString();
 
 // Inject Livereload
 if (process.env.NODE_ENV === "development") {

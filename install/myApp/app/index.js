@@ -1,11 +1,11 @@
 "use strict";
 
-import appRoute from "app/app.route.js";
+import appRoute from "route.js";
 
 // Auto-generated files
-import appConstant from "constants.js";
-import appService from "app.service.js";
-import appTemplate from "templates.js";
+import appConstant from "../tmp/constants.js";
+import appService from "../tmp/services.js";
+import appTemplate from "../tmp/templates.js";
 
 angular
 	.module("app", [
@@ -22,6 +22,8 @@ angular
 		$locationProvider.html5Mode(true);
 	})
 	.config(($logProvider, NODE_ENV) => {
-		if (NODE_ENV === "development") $logProvider.debugEnabled(true);
+		NODE_ENV === "development"
+			&& $logProvider.debugEnabled(true)
+		;
 	})
 ;

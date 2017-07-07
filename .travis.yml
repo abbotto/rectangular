@@ -6,7 +6,7 @@ notifications:
 sudo: false
 
 node_js:
-  - "6.10"
+  - "6.11"
 
 env:
   - CXX=g++-4.8

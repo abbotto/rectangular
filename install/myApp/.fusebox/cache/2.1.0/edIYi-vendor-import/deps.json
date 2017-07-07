@@ -41,9 +41,9 @@
       "name": "constants.js",
       "version": "0.0.0"
     },
-    "app.service.js@0.0.0": {
+    "services.js@0.0.0": {
       "deps": {},
-      "name": "app.service.js",
+      "name": "services.js",
       "version": "0.0.0"
     },
     "templates.js@0.0.0": {
@@ -57,7 +57,7 @@
       "name": "app@0.0.0",
       "version": "0.0.0",
       "files": [
-        "app.route.js",
+        "route.js",
         "extension/component/component.directive.js",
         "extension/component/component.service.js",
         "extension/component/react.vendor.service.js",
@@ -105,8 +105,8 @@
       "version": "0.0.0",
       "files": []
     },
-    "app.service.js@0.0.0": {
-      "name": "app.service.js@0.0.0",
+    "services.js@0.0.0": {
+      "name": "services.js@0.0.0",
       "version": "0.0.0",
       "files": []
     },

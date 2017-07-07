@@ -2,12 +2,13 @@
 
 const fs = require("fs");
 const glob = require("glob-concat");
-const dataFiles = glob.sync(["app/**/*.data.json"]);
-const mixinFiles = glob.sync(["app/**/*.mixin.json"]);
-const modelFiles = mixinFiles.concat(dataFiles);
 const tmpModelJs = "tmp/models.js";
 
 module.exports = function image() {
+	const dataFiles = glob.sync(["app/**/*.data.json"]);
+	const mixinFiles = glob.sync(["app/**/*.mixin.json"]);
+	const modelFiles = mixinFiles.concat(dataFiles);
+	
 	let key;
 	let models = {};
 	

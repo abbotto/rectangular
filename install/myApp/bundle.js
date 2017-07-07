@@ -8,66 +8,37 @@ const {
 	BabelPlugin,
 	EnvPlugin,
 	FuseBox,
-	HTMLPlugin,
-	// QuantumPlugin
-	SassPlugin,
-	CSSPlugin
-	// WebIndexPlugin,
-	// TypeScriptHelpers,
-	// JSONPlugin,
-	// HTMLPlugin,
-	// Sparky,
+	HTMLPlugin
 } = require("fuse-box");
 
 const fuse = FuseBox.init({
 	homeDir: "app/",
 	output: "dist/$name.js",
 	plugins: [
-		EnvPlugin(
-			{
-				NODE_ENV: NODE_ENV === "production"
-					? "production"
-					: "development"
-			}
+		EnvPlugin({
+			NODE_ENV: NODE_ENV === "production"
+				? "production"
+				: "development"
+		}
 		),
-		// WebIndexPlugin({
-		// 	title: 'FuseBox + Angular',
-		// 	template: 'src/index.html',
-		// }), [
-
-		// ],
-		SassPlugin({
-			outputStyle: "compressed"
-		}),
-		CSSPlugin(),
-		// JSONPlugin(),
-		// HTMLPlugin({
-		// 	useDefault: false,
-		// }),
 		HTMLPlugin({
 			useDefault: true
 		}),
 		BabelPlugin()
-		// http://fuse-box.org/page/quantum
-		// QuantumPlugin({
-		// 	browser: true,
-		// 	uglify: true,
-		// 	ensureES5 : true
-		// })
 	]
 });
 
 fuse
-	.bundle("vendor-import")
+	.bundle("vendor")
 	.target("browser")
-	.instructions("~ **/**.{js,ts}")
+	.instructions("~ **/**.{js}")
 ;
 
 fuse
 	.bundle("app")
 	.target("browser")
 	// .sourceMaps(!isProduction)
-	.instructions("!> [app.module.js]")
+	.instructions("!> [index.js]")
 ;
 
 fuse.run();

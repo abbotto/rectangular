@@ -3,12 +3,13 @@
   "description": "A build kit for AnguarJS applications.",
   "version": "1.0.0-beta",
   "license": "MIT",
+  "main": "rectangular.js",
   "author": "Jared Abbott",
   "engines": {
-    "node": "6.10"
+    "node": "6.11"
   },
   "scripts": {
-    "init": ". ~/.nvm/nvm.sh && nvm i 6.10 && npm i && rm -rf tmp && mkdir tmp && cp .envrc .env"
+    "init": ". ~/.nvm/nvm.sh && nvm i 6.11 && npm i && rm -rf tmp && mkdir tmp && cp .envrc .env"
   },
   "dependencies": {},
   "devDependencies": {

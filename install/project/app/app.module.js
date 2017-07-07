@@ -1,10 +1,10 @@
 "use strict";
 
-import appRoute from "app/app.route.js";
+import appRoute from "app/route.js";
 
 // Auto-generated files
 import appConstant from "constants.js";
-import appService from "app.service.js";
+import appService from "services.js";
 import appTemplate from "templates.js";
 
 angular

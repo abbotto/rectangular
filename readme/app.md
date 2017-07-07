@@ -16,11 +16,11 @@
 	* [Example](#TemplateIncludeExample)
 
 ## <a name='AppModules'></a>App Modules
-- App Modules are registered in `app/app.module.js`.
+- App Modules are registered in `app/index.js`.
 
 ## <a name='Routes'></a>Routes
 Routes are pathways within the application.
-- Route modules are registered in `app/app.route.js`.
+- Route modules are registered in `app/route.js`.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
 - `ui-router` handles all the routing in Rectangular apps - you can learn more about it [here](https://github.com/angular-ui/ui-router).
 

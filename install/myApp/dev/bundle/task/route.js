@@ -4,14 +4,14 @@ const camelCase = require("camelcase");
 const EOL = require("os").EOL;
 const fs = require("fs");
 const glob = require("glob-concat");
-const routeFiles = glob.sync(["app/component/**/*.route.js"]);
 const path = require("path");
 const tmpRouteJs = "tmp/component.route.js";
 
 module.exports = function image() {
-	const routes = [];
-	const imports = [];
 	const deps = [];
+	const imports = [];
+	const routeFiles = glob.sync(["app/component/**/*.route.js"]);
+	const routes = [];
 
 	routeFiles.forEach((file) => {
 		const route = path.basename(file).replace(".js", "");
