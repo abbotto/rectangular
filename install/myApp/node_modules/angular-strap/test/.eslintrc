@@ -1,0 +1,20 @@
+{
+  "extends": "mgcrea/legacy",
+  "env": {
+    "browser": false,
+    "jasmine": true,
+    "node": true
+  },
+  "rules": {
+    "consistent-return": 1,
+    "padded-blocks": 0,
+    "no-param-reassign": 1,
+    "no-shadow": 1,
+    "space-before-function-paren": [2, "always"]
+  },
+  "globals": {
+    "angular": 1,
+    "jQuery": 1,
+    "$": 1
+  }
+}

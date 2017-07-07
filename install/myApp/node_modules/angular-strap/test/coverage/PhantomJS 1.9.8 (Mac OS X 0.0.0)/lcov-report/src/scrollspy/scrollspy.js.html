@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/scrollspy/scrollspy.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/scrollspy/</a> scrollspy.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.89% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>85/129</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.77% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>82/121</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('mgcrea.ngStrap.scrollspy', ['mgcrea.ngStrap.helpers.debounce', 'mgcrea.ngStrap.helpers.dimensions'])
+&nbsp;
+  .provider('$scrollspy', function () {
+&nbsp;
+    // Pool of registered spies
+    var spies = this.$$spies = {};
+&nbsp;
+    var defaults = this.defaults = {
+      debounce: 150,
+      throttle: 100,
+      offset: 100
+    };
+&nbsp;
+    this.$get = function ($window, $document, $rootScope, dimensions, debounce, throttle) {
+&nbsp;
+      var windowEl = angular.element($window);
+      var docEl = angular.element($document.prop('documentElement'));
+      var bodyEl = angular.element($window.document.body);
+&nbsp;
+      // Helper functions
+&nbsp;
+      function nodeName(element, name) {
+        return element[0].nodeName &amp;&amp; element[0].nodeName.toLowerCase() === name.toLowerCase();
+      }
+&nbsp;
+      function ScrollSpyFactory(config) {
+&nbsp;
+        // Common vars
+        var options = angular.extend({}, defaults, config);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!options.element) options.element = bodyEl;
+        var isWindowSpy = nodeName(options.element, 'body');
+        var scrollEl = isWindowSpy ? windowEl : <span class="branch-1 cbranch-no" title="branch not covered" >options.element;</span>
+        var scrollId = isWindowSpy ? 'window' : <span class="branch-1 cbranch-no" title="branch not covered" >options.id;</span>
+&nbsp;
+        // Use existing spy
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (spies[scrollId]) {
+<span class="cstat-no" title="statement not covered" >          spies[scrollId].$$count++;</span>
+<span class="cstat-no" title="statement not covered" >          return spies[scrollId];</span>
+        }
+&nbsp;
+        var $scrollspy = {};
+&nbsp;
+        // Private vars
+        var unbindViewContentLoaded;
+        var unbindIncludeContentLoaded;
+        var trackedElements = $scrollspy.$trackedElements = [];
+        var sortedElements = [];
+        var activeTarget;
+        var debouncedCheckPosition;
+        var throttledCheckPosition;
+        var debouncedCheckOffsets;
+        /* eslint-disable no-unused-vars */
+        var viewportHeight;
+        /* eslint-enable no-unused-vars */
+        var scrollTop;
+&nbsp;
+        $scrollspy.init = function () {
+&nbsp;
+          // Setup internal ref counter
+          this.$$count = 1;
+&nbsp;
+          // Bind events
+          debouncedCheckPosition = debounce(this.checkPosition, options.debounce);
+          throttledCheckPosition = throttle(this.checkPosition, options.throttle);
+          scrollEl.on('click', this.checkPositionWithEventLoop);
+          windowEl.on('resize', debouncedCheckPosition);
+          scrollEl.on('scroll', throttledCheckPosition);
+&nbsp;
+          debouncedCheckOffsets = debounce(this.checkOffsets, options.debounce);
+          unbindViewContentLoaded = $rootScope.$on('$viewContentLoaded', debouncedCheckOffsets);
+          unbindIncludeContentLoaded = $rootScope.$on('$includeContentLoaded', debouncedCheckOffsets);
+          debouncedCheckOffsets();
+&nbsp;
+          // Register spy for reuse
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (scrollId) {
+            spies[scrollId] = $scrollspy;
+          }
+&nbsp;
+        };
+&nbsp;
+        $scrollspy.destroy = function () {
+&nbsp;
+          // Check internal ref counter
+          this.$$count--;
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (this.$$count &gt; 0) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          }
+&nbsp;
+          // Unbind events
+          scrollEl.off('click', this.checkPositionWithEventLoop);
+          windowEl.off('resize', debouncedCheckPosition);
+          scrollEl.off('scroll', throttledCheckPosition);
+          unbindViewContentLoaded();
+          unbindIncludeContentLoaded();
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (scrollId) {
+            delete spies[scrollId];
+          }
+        };
+&nbsp;
+        $scrollspy.checkPosition = function () {
+&nbsp;
+          // Not ready yet
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (!sortedElements.length) return;
+&nbsp;
+          // Calculate the scroll position
+<span class="cstat-no" title="statement not covered" >          scrollTop = (isWindowSpy ? $window.pageYOffset : scrollEl.prop('scrollTop')) || 0;</span>
+&nbsp;
+          // Calculate the viewport height for use by the components
+<span class="cstat-no" title="statement not covered" >          viewportHeight = Math.max($window.innerHeight, docEl.prop('clientHeight'));</span>
+&nbsp;
+          // Activate first element if scroll is smaller
+<span class="cstat-no" title="statement not covered" >          if (scrollTop &lt; sortedElements[0].offsetTop &amp;&amp; activeTarget !== sortedElements[0].target) {</span>
+<span class="cstat-no" title="statement not covered" >            return $scrollspy.$activateElement(sortedElements[0]);</span>
+          }
+&nbsp;
+          // Activate proper element
+<span class="cstat-no" title="statement not covered" >          for (var i = sortedElements.length; i--;) {</span>
+<span class="cstat-no" title="statement not covered" >            if (angular.isUndefined(sortedElements[i].offsetTop) || sortedElements[i].offsetTop === null) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (activeTarget === sortedElements[i].target) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (scrollTop &lt; sortedElements[i].offsetTop) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (sortedElements[i + 1] &amp;&amp; scrollTop &gt; sortedElements[i + 1].offsetTop) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+<span class="cstat-no" title="statement not covered" >            return $scrollspy.$activateElement(sortedElements[i]);</span>
+          }
+&nbsp;
+        };
+&nbsp;
+        $scrollspy.checkPositionWithEventLoop = function () {
+          // IE 9 throws an error if we use 'this' instead of '$scrollspy'
+          // in this setTimeout call
+          setTimeout($scrollspy.checkPosition, 1);
+        };
+&nbsp;
+        // Protected methods
+&nbsp;
+        $scrollspy.$activateElement = <span class="fstat-no" title="function not covered" >function (element) {</span>
+<span class="cstat-no" title="statement not covered" >          if (activeTarget) {</span>
+<span class="cstat-no" title="statement not covered" >            var activeElement = $scrollspy.$getTrackedElement(activeTarget);</span>
+<span class="cstat-no" title="statement not covered" >            if (activeElement) {</span>
+<span class="cstat-no" title="statement not covered" >              activeElement.source.removeClass('active');</span>
+<span class="cstat-no" title="statement not covered" >              if (nodeName(activeElement.source, 'li') &amp;&amp; nodeName(activeElement.source.parent().parent(), 'li')) {</span>
+<span class="cstat-no" title="statement not covered" >                activeElement.source.parent().parent().removeClass('active');</span>
+              }
+            }
+          }
+<span class="cstat-no" title="statement not covered" >          activeTarget = element.target;</span>
+<span class="cstat-no" title="statement not covered" >          element.source.addClass('active');</span>
+<span class="cstat-no" title="statement not covered" >          if (nodeName(element.source, 'li') &amp;&amp; nodeName(element.source.parent().parent(), 'li')) {</span>
+<span class="cstat-no" title="statement not covered" >            element.source.parent().parent().addClass('active');</span>
+          }
+        };
+&nbsp;
+        $scrollspy.$getTrackedElement = <span class="fstat-no" title="function not covered" >function (target) {</span>
+<span class="cstat-no" title="statement not covered" >          return trackedElements.filter(<span class="fstat-no" title="function not covered" >function (obj) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return obj.target === target;</span>
+          })[0];
+        };
+&nbsp;
+        // Track offsets behavior
+&nbsp;
+        $scrollspy.checkOffsets = <span class="fstat-no" title="function not covered" >function () {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          angular.forEach(trackedElements, <span class="fstat-no" title="function not covered" >function (trackedElement) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var targetElement = document.querySelector(trackedElement.target);</span>
+<span class="cstat-no" title="statement not covered" >            trackedElement.offsetTop = targetElement ? dimensions.offset(targetElement).top : null;</span>
+<span class="cstat-no" title="statement not covered" >            if (options.offset &amp;&amp; trackedElement.offsetTop !== null) <span class="cstat-no" title="statement not covered" >trackedElement.offsetTop -= options.offset * 1;</span></span>
+          });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          sortedElements = trackedElements</span>
+          .filter(<span class="fstat-no" title="function not covered" >function (el) {</span>
+<span class="cstat-no" title="statement not covered" >            return el.offsetTop !== null;</span>
+          })
+          .sort(<span class="fstat-no" title="function not covered" >function (a, b) {</span>
+<span class="cstat-no" title="statement not covered" >            return a.offsetTop - b.offsetTop;</span>
+          });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          debouncedCheckPosition();</span>
+&nbsp;
+        };
+&nbsp;
+        $scrollspy.trackElement = function (target, source) {
+          trackedElements.push({target: target, source: source});
+        };
+&nbsp;
+        $scrollspy.untrackElement = function (target, source) {
+          var toDelete;
+          for (var i = trackedElements.length; i--;) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (trackedElements[i].target === target &amp;&amp; trackedElements[i].source === source) {
+              toDelete = i;
+              break;
+            }
+          }
+          trackedElements = trackedElements.splice(toDelete, 1);
+        };
+&nbsp;
+        $scrollspy.activate = <span class="fstat-no" title="function not covered" >function (i) {</span>
+<span class="cstat-no" title="statement not covered" >          trackedElements[i].addClass('active');</span>
+        };
+&nbsp;
+        // Initialize plugin
+&nbsp;
+        $scrollspy.init();
+        return $scrollspy;
+&nbsp;
+      }
+&nbsp;
+      return ScrollSpyFactory;
+&nbsp;
+    };
+&nbsp;
+  })
+&nbsp;
+  .directive('bsScrollspy', function ($rootScope, debounce, dimensions, $scrollspy) {
+&nbsp;
+    return {
+      restrict: 'EAC',
+      link: function postLink(scope, element, attr) {
+&nbsp;
+        var options = {scope: scope};
+        angular.forEach(['offset', 'target'], function (key) {
+          if (angular.isDefined(attr[key])) options[key] = attr[key];
+        });
+&nbsp;
+        var scrollspy = $scrollspy(options);
+        scrollspy.trackElement(options.target, element);
+&nbsp;
+        scope.$on('$destroy', function () {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (scrollspy) {
+            scrollspy.untrackElement(options.target, element);
+            scrollspy.destroy();
+          }
+          options = null;
+          scrollspy = null;
+        });
+&nbsp;
+      }
+    };
+&nbsp;
+  })
+&nbsp;
+&nbsp;
+  .directive('bsScrollspyList', <span class="fstat-no" title="function not covered" >function ($rootScope, debounce, dimensions, $scrollspy) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      restrict: 'A',
+      compile: <span class="fstat-no" title="function not covered" >function postLink(element, attr) {</span>
+<span class="cstat-no" title="statement not covered" >        var children = element[0].querySelectorAll('li &gt; a[href]');</span>
+<span class="cstat-no" title="statement not covered" >        angular.forEach(children, <span class="fstat-no" title="function not covered" >function (child) {</span></span>
+<span class="cstat-no" title="statement not covered" >          var childEl = angular.element(child);</span>
+<span class="cstat-no" title="statement not covered" >          childEl.parent().attr('bs-scrollspy', '').attr('data-target', childEl.attr('href'));</span>
+        });
+      }
+&nbsp;
+    };
+&nbsp;
+  });
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 16 2016 15:40:23 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

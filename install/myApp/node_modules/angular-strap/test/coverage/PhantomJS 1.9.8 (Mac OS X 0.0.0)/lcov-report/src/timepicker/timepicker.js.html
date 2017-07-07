@@ -1,0 +1,1835 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/timepicker/timepicker.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/timepicker/</a> timepicker.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.07% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>303/348</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.62% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>177/231</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.48% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>38/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.2% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>284/322</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">2489×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">65×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">740×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-yes">161×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">1845×</span>
+<span class="cline-any cline-yes">1845×</span>
+<span class="cline-any cline-yes">615×</span>
+<span class="cline-any cline-yes">1230×</span>
+<span class="cline-any cline-yes">615×</span>
+<span class="cline-any cline-yes">615×</span>
+<span class="cline-any cline-yes">615×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">2415×</span>
+<span class="cline-any cline-yes">2415×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">1610×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-yes">805×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2415×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">2660×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">475×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">185×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">76×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">66×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">133×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">228×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('mgcrea.ngStrap.timepicker', ['mgcrea.ngStrap.helpers.dateParser', 'mgcrea.ngStrap.helpers.dateFormatter', 'mgcrea.ngStrap.tooltip'])
+&nbsp;
+  .provider('$timepicker', function () {
+&nbsp;
+    var defaults = this.defaults = {
+      animation: 'am-fade',
+      // uncommenting the following line will break backwards compatability
+      // prefixEvent: 'timepicker',
+      prefixClass: 'timepicker',
+      placement: 'bottom-left',
+      templateUrl: 'timepicker/timepicker.tpl.html',
+      trigger: 'focus',
+      container: false,
+      keyboard: true,
+      html: false,
+      delay: 0,
+      // lang: $locale.id,
+      useNative: true,
+      timeType: 'date',
+      timeFormat: 'shortTime',
+      timezone: null,
+      modelTimeFormat: null,
+      autoclose: false,
+      minTime: -Infinity,
+      maxTime: +Infinity,
+      length: 5,
+      hourStep: 1,
+      minuteStep: 5,
+      secondStep: 5,
+      roundDisplay: false,
+      iconUp: 'glyphicon glyphicon-chevron-up',
+      iconDown: 'glyphicon glyphicon-chevron-down',
+      arrowBehavior: 'pager'
+    };
+&nbsp;
+    this.$get = function ($window, $document, $rootScope, $sce, $dateFormatter, $tooltip, $timeout) {
+&nbsp;
+      var isNative = /(ip[ao]d|iphone|android)/ig.test($window.navigator.userAgent);
+      var isTouch = ('createTouch' in $window.document) &amp;&amp; isNative;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!defaults.lang) {
+        defaults.lang = $dateFormatter.getDefaultLocale();
+      }
+&nbsp;
+      function timepickerFactory(element, controller, config) {
+&nbsp;
+        var $timepicker = $tooltip(element, angular.extend({}, defaults, config));
+        var parentScope = config.scope;
+        var options = $timepicker.$options;
+        var scope = $timepicker.$scope;
+&nbsp;
+        var lang = options.lang;
+        var formatDate = function (date, format, timezone) {
+          return $dateFormatter.formatDate(date, format, lang, timezone);
+        };
+&nbsp;
+        function floorMinutes(time) {
+          // coeff used to floor current time to nearest minuteStep interval
+          var coeff = 1000 * 60 * options.minuteStep;
+          return new Date(Math.floor(time.getTime() / coeff) * coeff);
+        }
+&nbsp;
+        // View vars
+&nbsp;
+        var selectedIndex = 0;
+        var defaultDate = options.roundDisplay ? floorMinutes(new Date()) : new Date();
+        var startDate = controller.$dateValue || defaultDate;
+        var viewDate = {
+          hour: startDate.getHours(),
+          meridian: startDate.getHours() &lt; 12,
+          minute: startDate.getMinutes(),
+          second: startDate.getSeconds(),
+          millisecond: startDate.getMilliseconds()
+        };
+&nbsp;
+        var format = $dateFormatter.getDatetimeFormat(options.timeFormat, lang);
+&nbsp;
+        var hoursFormat = $dateFormatter.hoursFormat(format);
+        var timeSeparator = $dateFormatter.timeSeparator(format);
+        var minutesFormat = $dateFormatter.minutesFormat(format);
+        var secondsFormat = $dateFormatter.secondsFormat(format);
+        var showSeconds = $dateFormatter.showSeconds(format);
+        var showAM = $dateFormatter.showAM(format);
+&nbsp;
+        scope.$iconUp = options.iconUp;
+        scope.$iconDown = options.iconDown;
+&nbsp;
+        // Scope methods
+&nbsp;
+        scope.$select = function (date, index) {
+          $timepicker.select(date, index);
+        };
+        scope.$moveIndex = <span class="fstat-no" title="function not covered" >function (value, index) {</span>
+<span class="cstat-no" title="statement not covered" >          $timepicker.$moveIndex(value, index);</span>
+        };
+        scope.$switchMeridian = <span class="fstat-no" title="function not covered" >function (date) {</span>
+<span class="cstat-no" title="statement not covered" >          $timepicker.switchMeridian(date);</span>
+        };
+&nbsp;
+        // Public methods
+&nbsp;
+        $timepicker.update = function (date) {
+          // console.warn('$timepicker.update() newValue=%o', date);
+          if (angular.isDate(date) &amp;&amp; !isNaN(date.getTime())) {
+            $timepicker.$date = date;
+            angular.extend(viewDate, {
+              hour: date.getHours(),
+              minute: date.getMinutes(),
+              second: date.getSeconds(),
+              millisecond: date.getMilliseconds()
+            });
+            $timepicker.$build();
+          } else if (!$timepicker.$isBuilt) {
+            $timepicker.$build();
+          }
+        };
+&nbsp;
+        $timepicker.select = function (date, index, keep) {
+          // console.warn('$timepicker.select', date, scope.$mode);
+          if (!controller.$dateValue || isNaN(controller.$dateValue.getTime())) controller.$dateValue = new Date(1970, 0, 1);
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (!angular.isDate(date)) <span class="cstat-no" title="statement not covered" >date = new Date(date);</span>
+          if (index === 0) controller.$dateValue.setHours(date.getHours());
+          else if (index === 1) controller.$dateValue.setMinutes(date.getMinutes());
+          else <span class="missing-if-branch" title="else path not taken" >E</span>if (index === 2) controller.$dateValue.setSeconds(date.getSeconds());
+          controller.$setViewValue(angular.copy(controller.$dateValue));
+          controller.$render();
+          if (options.autoclose &amp;&amp; !keep) {
+            $timeout(function () {
+              $timepicker.hide(true);
+            });
+          }
+        };
+&nbsp;
+        $timepicker.switchMeridian = function (date) {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (!controller.$dateValue || isNaN(controller.$dateValue.getTime())) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          }
+          var hours = (date || controller.$dateValue).getHours();
+          controller.$dateValue.setHours(hours &lt; 12 ? hours + 12 : <span class="branch-1 cbranch-no" title="branch not covered" >hours - 12)</span>;
+          controller.$setViewValue(angular.copy(controller.$dateValue));
+          controller.$render();
+        };
+&nbsp;
+        // Protected methods
+&nbsp;
+        $timepicker.$build = function () {
+          // console.warn('$timepicker.$build() viewDate=%o', viewDate);
+          var i;
+          var midIndex = scope.midIndex = parseInt(options.length / 2, 10);
+          var hours = [];
+          var hour;
+          for (i = 0; i &lt; options.length; i++) {
+            hour = new Date(1970, 0, 1, viewDate.hour - (midIndex - i) * options.hourStep);
+            hours.push({
+              date: hour,
+              label: formatDate(hour, hoursFormat),
+              selected: $timepicker.$date &amp;&amp; $timepicker.$isSelected(hour, 0),
+              disabled: $timepicker.$isDisabled(hour, 0)
+            });
+          }
+          var minutes = [];
+          var minute;
+          for (i = 0; i &lt; options.length; i++) {
+            minute = new Date(1970, 0, 1, 0, viewDate.minute - (midIndex - i) * options.minuteStep);
+            minutes.push({
+              date: minute,
+              label: formatDate(minute, minutesFormat),
+              selected: $timepicker.$date &amp;&amp; $timepicker.$isSelected(minute, 1),
+              disabled: $timepicker.$isDisabled(minute, 1)
+            });
+          }
+          var seconds = [];
+          var second;
+          for (i = 0; i &lt; options.length; i++) {
+            second = new Date(1970, 0, 1, 0, 0, viewDate.second - (midIndex - i) * options.secondStep);
+            seconds.push({
+              date: second,
+              label: formatDate(second, secondsFormat),
+              selected: $timepicker.$date &amp;&amp; $timepicker.$isSelected(second, 2),
+              disabled: $timepicker.$isDisabled(second, 2)
+            });
+          }
+&nbsp;
+          var rows = [];
+          for (i = 0; i &lt; options.length; i++) {
+            if (showSeconds) {
+              rows.push([hours[i], minutes[i], seconds[i]]);
+            } else {
+              rows.push([hours[i], minutes[i]]);
+            }
+          }
+          scope.rows = rows;
+          scope.showSeconds = showSeconds;
+          scope.showAM = showAM;
+          scope.isAM = ($timepicker.$date || hours[midIndex].date).getHours() &lt; 12;
+          scope.timeSeparator = timeSeparator;
+          $timepicker.$isBuilt = true;
+        };
+&nbsp;
+        $timepicker.$isSelected = function (date, index) {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (!$timepicker.$date) <span class="cstat-no" title="statement not covered" >return false;</span>
+          else if (index === 0) {
+            return date.getHours() === $timepicker.$date.getHours();
+          } else if (index === 1) {
+            return date.getMinutes() === $timepicker.$date.getMinutes();
+          } else <span class="missing-if-branch" title="else path not taken" >E</span>if (index === 2) {
+            return date.getSeconds() === $timepicker.$date.getSeconds();
+          }
+        };
+&nbsp;
+        $timepicker.$isDisabled = function (date, index) {
+          var selectedTime;
+          if (index === 0) {
+            selectedTime = date.getTime() + viewDate.minute * 6e4 + viewDate.second * 1e3;
+          } else if (index === 1) {
+            selectedTime = date.getTime() + viewDate.hour * 36e5 + viewDate.second * 1e3;
+          } else <span class="missing-if-branch" title="else path not taken" >E</span>if (index === 2) {
+            selectedTime = date.getTime() + viewDate.hour * 36e5 + viewDate.minute * 6e4;
+          }
+          return selectedTime &lt; options.minTime * 1 || selectedTime &gt; options.maxTime * 1;
+        };
+&nbsp;
+        scope.$arrowAction = function (value, index) {
+          if (options.arrowBehavior === 'picker') {
+            $timepicker.$setTimeByStep(value, index);
+          } else {
+            $timepicker.$moveIndex(value, index);
+          }
+        };
+&nbsp;
+        $timepicker.$setTimeByStep = function (value, index) {
+          var newDate = new Date($timepicker.$date || startDate);
+          var hours = newDate.getHours();
+          var minutes = newDate.getMinutes();
+          var seconds = newDate.getSeconds();
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (index === 0) {
+            newDate.setHours(hours - (parseInt(options.hourStep, 10) * value));
+          } else <span class="cstat-no" title="statement not covered" >if (index === 1) {</span>
+<span class="cstat-no" title="statement not covered" >            newDate.setMinutes(minutes - (parseInt(options.minuteStep, 10) * value));</span>
+          } else <span class="cstat-no" title="statement not covered" >if (index === 2) {</span>
+<span class="cstat-no" title="statement not covered" >            newDate.setSeconds(seconds - (parseInt(options.secondStep, 10) * value));</span>
+          }
+          $timepicker.select(newDate, index, true);
+        };
+&nbsp;
+        $timepicker.$moveIndex = function (value, index) {
+          var targetDate;
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (index === 0) {
+            targetDate = new Date(1970, 0, 1, viewDate.hour + (value * options.length), viewDate.minute, viewDate.second);
+            angular.extend(viewDate, {
+              hour: targetDate.getHours()
+            });
+          } else <span class="cstat-no" title="statement not covered" >if (index === 1) {</span>
+<span class="cstat-no" title="statement not covered" >            targetDate = new Date(1970, 0, 1, viewDate.hour, viewDate.minute + (value * options.length * options.minuteStep), viewDate.second);</span>
+<span class="cstat-no" title="statement not covered" >            angular.extend(viewDate, {</span>
+              minute: targetDate.getMinutes()
+            });
+          } else <span class="cstat-no" title="statement not covered" >if (index === 2) {</span>
+<span class="cstat-no" title="statement not covered" >            targetDate = new Date(1970, 0, 1, viewDate.hour, viewDate.minute, viewDate.second + (value * options.length * options.secondStep));</span>
+<span class="cstat-no" title="statement not covered" >            angular.extend(viewDate, {</span>
+              second: targetDate.getSeconds()
+            });
+          }
+          $timepicker.$build();
+        };
+&nbsp;
+        $timepicker.$onMouseDown = <span class="fstat-no" title="function not covered" >function (evt) {</span>
+          // Prevent blur on mousedown on .dropdown-menu
+<span class="cstat-no" title="statement not covered" >          if (evt.target.nodeName.toLowerCase() !== 'input') <span class="cstat-no" title="statement not covered" >evt.preventDefault();</span></span>
+<span class="cstat-no" title="statement not covered" >          evt.stopPropagation();</span>
+          // Emulate click for mobile devices
+<span class="cstat-no" title="statement not covered" >          if (isTouch) {</span>
+<span class="cstat-no" title="statement not covered" >            var targetEl = angular.element(evt.target);</span>
+<span class="cstat-no" title="statement not covered" >            if (targetEl[0].nodeName.toLowerCase() !== 'button') {</span>
+<span class="cstat-no" title="statement not covered" >              targetEl = targetEl.parent();</span>
+            }
+<span class="cstat-no" title="statement not covered" >            targetEl.triggerHandler('click');</span>
+          }
+        };
+&nbsp;
+        $timepicker.$onKeyDown = function (evt) {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (!/(38|37|39|40|13)/.test(evt.keyCode) || evt.shiftKey || evt.altKey) <span class="cstat-no" title="statement not covered" >return;</span>
+          evt.preventDefault();
+          evt.stopPropagation();
+&nbsp;
+          // Close on enter
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (evt.keyCode === 13) {
+<span class="cstat-no" title="statement not covered" >            $timepicker.hide(true);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          }
+&nbsp;
+          // Navigate with keyboard
+          var newDate = new Date($timepicker.$date);
+          var hours = newDate.getHours();
+          var hoursLength = formatDate(newDate, hoursFormat).length;
+          var minutes = newDate.getMinutes();
+          var minutesLength = formatDate(newDate, minutesFormat).length;
+          var seconds = newDate.getSeconds();
+          var secondsLength = formatDate(newDate, secondsFormat).length;
+          var sepLength = 1;
+          var lateralMove = /(37|39)/.test(evt.keyCode);
+          var count = 2 + showSeconds * 1 + showAM * 1;
+&nbsp;
+          // Navigate indexes (left, right)
+          if (lateralMove) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (evt.keyCode === 37) <span class="cstat-no" title="statement not covered" >selectedIndex = selectedIndex &lt; 1 ? count - 1 : selectedIndex - 1;</span>
+            else <span class="missing-if-branch" title="else path not taken" >E</span>if (evt.keyCode === 39) selectedIndex = selectedIndex &lt; count - 1 ? selectedIndex + 1 : 0;
+          }
+&nbsp;
+          // Update values (up, down)
+          var selectRange = [0, hoursLength];
+          var incr = 0;
+          if (evt.keyCode === 38) incr = -1;
+          if (evt.keyCode === 40) incr = +1;
+          var isSeconds = selectedIndex === 2 &amp;&amp; showSeconds;
+          var isMeridian = selectedIndex === 2 &amp;&amp; !showSeconds || selectedIndex === 3 &amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >showSeconds;</span>
+          if (selectedIndex === 0) {
+            newDate.setHours(hours + incr * parseInt(options.hourStep, 10));
+            // re-calculate hours length because we have changed hours value
+            hoursLength = formatDate(newDate, hoursFormat).length;
+            selectRange = [0, hoursLength];
+          } else if (selectedIndex === 1) {
+            newDate.setMinutes(minutes + incr * parseInt(options.minuteStep, 10));
+            // re-calculate minutes length because we have changes minutes value
+            minutesLength = formatDate(newDate, minutesFormat).length;
+            selectRange = [hoursLength + sepLength, minutesLength];
+          } else if (isSeconds) {
+            newDate.setSeconds(seconds + incr * parseInt(options.secondStep, 10));
+            // re-calculate seconds length because we have changes seconds value
+            secondsLength = formatDate(newDate, secondsFormat).length;
+            selectRange = [hoursLength + sepLength + minutesLength + sepLength, secondsLength];
+          } else <span class="missing-if-branch" title="else path not taken" >E</span>if (isMeridian) {
+            if (!lateralMove) $timepicker.switchMeridian();
+            selectRange = [hoursLength + sepLength + minutesLength + sepLength + (secondsLength + sepLength) * showSeconds, 2];
+          }
+          $timepicker.select(newDate, selectedIndex, true);
+          createSelection(selectRange[0], selectRange[1]);
+          parentScope.$digest();
+        };
+&nbsp;
+        // Private
+&nbsp;
+        function createSelection(start, length) {
+          var end = start + length;
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (element[0].createTextRange) {
+<span class="cstat-no" title="statement not covered" >            var selRange = element[0].createTextRange();</span>
+<span class="cstat-no" title="statement not covered" >            selRange.collapse(true);</span>
+<span class="cstat-no" title="statement not covered" >            selRange.moveStart('character', start);</span>
+<span class="cstat-no" title="statement not covered" >            selRange.moveEnd('character', end);</span>
+<span class="cstat-no" title="statement not covered" >            selRange.select();</span>
+          } else <span class="missing-if-branch" title="else path not taken" >E</span>if (element[0].setSelectionRange) {
+            element[0].setSelectionRange(start, end);
+          } else <span class="cstat-no" title="statement not covered" >if (angular.isUndefined(element[0].selectionStart)) {</span>
+<span class="cstat-no" title="statement not covered" >            element[0].selectionStart = start;</span>
+<span class="cstat-no" title="statement not covered" >            element[0].selectionEnd = end;</span>
+          }
+        }
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function focusElement() {</span>
+<span class="cstat-no" title="statement not covered" >          element[0].focus();</span>
+        }
+&nbsp;
+        // Overrides
+&nbsp;
+        var _init = $timepicker.init;
+        $timepicker.init = function () {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (isNative &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >options.useNative)</span> {
+<span class="cstat-no" title="statement not covered" >            element.prop('type', 'time');</span>
+<span class="cstat-no" title="statement not covered" >            element.css('-webkit-appearance', 'textfield');</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if (isTouch) {
+<span class="cstat-no" title="statement not covered" >            element.prop('type', 'text');</span>
+<span class="cstat-no" title="statement not covered" >            element.attr('readonly', 'true');</span>
+<span class="cstat-no" title="statement not covered" >            element.on('click', focusElement);</span>
+          }
+          _init();
+        };
+&nbsp;
+        var _destroy = $timepicker.destroy;
+        $timepicker.destroy = function () {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (isNative &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >options.useNative)</span> {
+<span class="cstat-no" title="statement not covered" >            element.off('click', focusElement);</span>
+          }
+          _destroy();
+        };
+&nbsp;
+        var _show = $timepicker.show;
+        $timepicker.show = function () {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if ((!isTouch &amp;&amp; element.attr('readonly')) || element.attr('disabled')) <span class="cstat-no" title="statement not covered" >return;</span>
+          _show();
+          // use timeout to hookup the events to prevent
+          // event bubbling from being processed imediately.
+          $timeout(function () {
+            if ($timepicker.$element) $timepicker.$element.on(isTouch ? <span class="branch-0 cbranch-no" title="branch not covered" >'touchstart' </span>: 'mousedown', $timepicker.$onMouseDown);
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (options.keyboard) {
+              <span class="missing-if-branch" title="else path not taken" >E</span>if (element) element.on('keydown', $timepicker.$onKeyDown);
+            }
+          }, 0, false);
+        };
+&nbsp;
+        var _hide = $timepicker.hide;
+        $timepicker.hide = function (blur) {
+          if (!$timepicker.$isShown) return;
+          <span class="missing-if-branch" title="else path not taken" >E</span>if ($timepicker.$element) $timepicker.$element.off(isTouch ? <span class="branch-0 cbranch-no" title="branch not covered" >'touchstart' </span>: 'mousedown', $timepicker.$onMouseDown);
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (options.keyboard) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (element) element.off('keydown', $timepicker.$onKeyDown);
+          }
+          _hide(blur);
+        };
+&nbsp;
+        return $timepicker;
+&nbsp;
+      }
+&nbsp;
+      timepickerFactory.defaults = defaults;
+      return timepickerFactory;
+&nbsp;
+    };
+&nbsp;
+  })
+&nbsp;
+&nbsp;
+  .directive('bsTimepicker', function ($window, $parse, $q, $dateFormatter, $dateParser, $timepicker) {
+&nbsp;
+    var defaults = $timepicker.defaults;
+    var isNative = /(ip[ao]d|iphone|android)/ig.test($window.navigator.userAgent);
+&nbsp;
+    return {
+      restrict: 'EAC',
+      require: 'ngModel',
+      link: function postLink(scope, element, attr, controller) {
+&nbsp;
+        // Directive options
+        var options = {
+          scope: scope
+        };
+        angular.forEach(['template', 'templateUrl', 'controller', 'controllerAs', 'placement', 'container', 'delay', 'trigger', 'keyboard', 'html', 'animation', 'autoclose', 'timeType', 'timeFormat', 'timezone', 'modelTimeFormat', 'useNative', 'hourStep', 'minuteStep', 'secondStep', 'length', 'arrowBehavior', 'iconUp', 'iconDown', 'roundDisplay', 'id', 'prefixClass', 'prefixEvent'], function (key) {
+          if (angular.isDefined(attr[key])) options[key] = attr[key];
+        });
+&nbsp;
+        // use string regex match boolean attr falsy values, leave truthy values be
+        var falseValueRegExp = /^(false|0|)$/i;
+        angular.forEach(['html', 'container', 'autoclose', 'useNative', 'roundDisplay'], function (key) {
+          if (angular.isDefined(attr[key]) &amp;&amp; falseValueRegExp.test(attr[key])) {
+            options[key] = false;
+          }
+        });
+&nbsp;
+&nbsp;
+        // Initialize timepicker
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isNative &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >options.useNative </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >defaults.useNative)</span>) <span class="cstat-no" title="statement not covered" >options.timeFormat = 'HH:mm';</span>
+        var timepicker = $timepicker(element, controller, options);
+        options = timepicker.$options;
+&nbsp;
+        var lang = options.lang;
+        var formatDate = function (date, format, timezone) {
+          return $dateFormatter.formatDate(date, format, lang, timezone);
+        };
+&nbsp;
+        // Visibility binding support
+        if (attr.bsShow) {
+          scope.$watch(attr.bsShow, function (newValue, oldValue) {
+            if (!timepicker || !angular.isDefined(newValue)) return;
+            if (angular.isString(newValue)) newValue = !!newValue.match(/true|,?(timepicker),?/i);
+            if (newValue === true) {
+              timepicker.show();
+            } else {
+              timepicker.hide();
+            }
+          });
+        }
+&nbsp;
+        // Initialize parser
+        var dateParser = $dateParser({
+          format: options.timeFormat,
+          lang: lang
+        });
+&nbsp;
+        // Observe attributes for changes
+        angular.forEach(['minTime', 'maxTime'], function (key) {
+          // console.warn('attr.$observe(%s)', key, attr[key]);
+          if (angular.isDefined(attr[key])) {
+            attr.$observe(key, function (newValue) {
+              timepicker.$options[key] = dateParser.getTimeForAttribute(key, newValue);
+              <span class="missing-if-branch" title="else path not taken" >E</span>if (!isNaN(timepicker.$options[key])) timepicker.$build();
+              validateAgainstMinMaxTime(controller.$dateValue);
+            });
+          }
+        });
+&nbsp;
+        // Watch model for changes
+        scope.$watch(attr.ngModel, function (newValue, oldValue) {
+          // console.warn('scope.$watch(%s)', attr.ngModel, newValue, oldValue, controller.$dateValue);
+          timepicker.update(controller.$dateValue);
+        }, true);
+&nbsp;
+        function validateAgainstMinMaxTime(parsedTime) {
+          if (!angular.isDate(parsedTime)) return;
+          var isMinValid = isNaN(options.minTime) || new Date(parsedTime.getTime()).setFullYear(1970, 0, 1) &gt;= options.minTime;
+          var isMaxValid = isNaN(options.maxTime) || new Date(parsedTime.getTime()).setFullYear(1970, 0, 1) &lt;= options.maxTime;
+          var isValid = isMinValid &amp;&amp; isMaxValid;
+          controller.$setValidity('date', isValid);
+          controller.$setValidity('min', isMinValid);
+          controller.$setValidity('max', isMaxValid);
+          // Only update the model when we have a valid date
+          if (!isValid) {
+            return;
+          }
+          controller.$dateValue = parsedTime;
+        }
+&nbsp;
+        // viewValue -&gt; $parsers -&gt; modelValue
+        controller.$parsers.unshift(function (viewValue) {
+          // console.warn('$parser("%s"): viewValue=%o', element.attr('ng-model'), viewValue);
+          var date;
+          // Null values should correctly reset the model value &amp; validity
+          if (!viewValue) {
+            // BREAKING CHANGE:
+            // return null (not undefined) when input value is empty, so angularjs 1.3
+            // ngModelController can go ahead and run validators, like ngRequired
+            controller.$setValidity('date', true);
+            return null;
+          }
+          var parsedTime = angular.isDate(viewValue) ? viewValue : dateParser.parse(viewValue, controller.$dateValue);
+          if (!parsedTime || isNaN(parsedTime.getTime())) {
+            controller.$setValidity('date', false);
+            // Return undefined, causes ngModelController to
+            // invalidate model value
+            return undefined;
+          }
+          validateAgainstMinMaxTime(parsedTime);
+&nbsp;
+          if (options.timeType === 'string') {
+            date = dateParser.timezoneOffsetAdjust(parsedTime, options.timezone, true);
+            return formatDate(date, options.modelTimeFormat || options.timeFormat);
+          }
+          date = dateParser.timezoneOffsetAdjust(controller.$dateValue, options.timezone, true);
+          if (options.timeType === 'number') {
+            return date.getTime();
+          } else if (options.timeType === 'unix') {
+            return date.getTime() / 1000;
+          } else if (options.timeType === 'iso') {
+            return date.toISOString();
+          }
+          return new Date(date);
+        });
+&nbsp;
+        // modelValue -&gt; $formatters -&gt; viewValue
+        controller.$formatters.push(function (modelValue) {
+          // console.warn('$formatter("%s"): modelValue=%o (%o)', element.attr('ng-model'), modelValue, typeof modelValue);
+          var date;
+          if (angular.isUndefined(modelValue) || modelValue === null) {
+            date = NaN;
+          } else if (angular.isDate(modelValue)) {
+            date = modelValue;
+          } else if (options.timeType === 'string') {
+            date = dateParser.parse(modelValue, null, options.modelTimeFormat);
+          } else if (options.timeType === 'unix') {
+            date = new Date(modelValue * 1000);
+          } else {
+            date = new Date(modelValue);
+          }
+          // Setup default value?
+          // if(isNaN(date.getTime())) date = new Date(new Date().setMinutes(0) + 36e5);
+          controller.$dateValue = dateParser.timezoneOffsetAdjust(date, options.timezone);
+          return getTimeFormattedString();
+        });
+&nbsp;
+        // viewValue -&gt; element
+        controller.$render = function () {
+          // console.warn('$render("%s"): viewValue=%o', element.attr('ng-model'), controller.$viewValue);
+          element.val(getTimeFormattedString());
+        };
+&nbsp;
+        function getTimeFormattedString() {
+          return !controller.$dateValue || isNaN(controller.$dateValue.getTime()) ? '' : formatDate(controller.$dateValue, options.timeFormat);
+        }
+&nbsp;
+        // Garbage collection
+        scope.$on('$destroy', function () {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (timepicker) timepicker.destroy();
+          options = null;
+          timepicker = null;
+        });
+&nbsp;
+      }
+    };
+&nbsp;
+  });
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 16 2016 15:40:23 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

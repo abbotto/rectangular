@@ -1,0 +1,3 @@
+{
+	"font-awesome": ["node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}"]
+}

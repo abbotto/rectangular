@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/helpers/date-parser.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/helpers/</a> date-parser.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.16% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>171/176</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.79% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>91/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>39/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>158/161</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">358×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">355×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">266×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">89×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">6762×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6762×</span>
+<span class="cline-any cline-yes">6762×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">444×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">411×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">411×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-yes">978×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">960×</span>
+<span class="cline-any cline-yes">20160×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">978×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">942×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">978×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">9891×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-yes">1176×</span>
+<span class="cline-any cline-yes">1176×</span>
+<span class="cline-any cline-yes">1176×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1176×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">471×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">355×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('mgcrea.ngStrap.helpers.dateParser', [])
+&nbsp;
+.provider('$dateParser', function ($localeProvider) {
+&nbsp;
+  // define a custom ParseDate object to use instead of native Date
+  // to avoid date values wrapping when setting date component values
+  function ParseDate() {
+    this.year = 1970;
+    this.month = 0;
+    this.day = 1;
+    this.hours = 0;
+    this.minutes = 0;
+    this.seconds = 0;
+    this.milliseconds = 0;
+  }
+&nbsp;
+  ParseDate.prototype.setMilliseconds = <span class="fstat-no" title="function not covered" >function (value) {</span> <span class="cstat-no" title="statement not covered" >this.milliseconds = value; </span>};
+  ParseDate.prototype.setSeconds = function (value) { this.seconds = value; };
+  ParseDate.prototype.setMinutes = function (value) { this.minutes = value; };
+  ParseDate.prototype.setHours = function (value) { this.hours = value; };
+  ParseDate.prototype.getHours = function () { return this.hours; };
+  ParseDate.prototype.setDate = function (value) { this.day = value; };
+  ParseDate.prototype.setMonth = function (value) { this.month = value; };
+  ParseDate.prototype.setFullYear = function (value) { this.year = value; };
+  ParseDate.prototype.fromDate = function (value) {
+    this.year = value.getFullYear();
+    this.month = value.getMonth();
+    this.day = value.getDate();
+    this.hours = value.getHours();
+    this.minutes = value.getMinutes();
+    this.seconds = value.getSeconds();
+    this.milliseconds = value.getMilliseconds();
+    return this;
+  };
+&nbsp;
+  ParseDate.prototype.toDate = function () {
+    return new Date(this.year, this.month, this.day, this.hours, this.minutes, this.seconds, this.milliseconds);
+  };
+&nbsp;
+  var proto = ParseDate.prototype;
+&nbsp;
+  function noop() {
+  }
+&nbsp;
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) &amp;&amp; isFinite(n);
+  }
+&nbsp;
+  function indexOfCaseInsensitive(array, value) {
+    var len = array.length;
+    var str = value.toString().toLowerCase();
+    for (var i = 0; i &lt; len; i++) {
+      if (array[i].toLowerCase() === str) { return i; }
+    }
+<span class="cstat-no" title="statement not covered" >    return -1; </span>// Return -1 per the "Array.indexOf()" method.
+  }
+&nbsp;
+  var defaults = this.defaults = {
+    format: 'shortDate',
+    strict: false
+  };
+&nbsp;
+  this.$get = function ($locale, dateFilter) {
+&nbsp;
+    var DateParserFactory = function (config) {
+&nbsp;
+      var options = angular.extend({}, defaults, config);
+&nbsp;
+      var $dateParser = {};
+&nbsp;
+      /* eslint-disable key-spacing, quote-props */
+      var regExpMap = {
+        'sss'   : '[0-9]{3}',
+        'ss'    : '[0-5][0-9]',
+        's'     : options.strict ? '[1-5]?[0-9]' : '[0-9]|[0-5][0-9]',
+        'mm'    : '[0-5][0-9]',
+        'm'     : options.strict ? '[1-5]?[0-9]' : '[0-9]|[0-5][0-9]',
+        'HH'    : '[01][0-9]|2[0-3]',
+        'H'     : options.strict ? '1?[0-9]|2[0-3]' : '[01]?[0-9]|2[0-3]',
+        'hh'    : '[0][1-9]|[1][012]',
+        'h'     : options.strict ? '[1-9]|1[012]' : '0?[1-9]|1[012]',
+        'a'     : 'AM|PM',
+        'EEEE'  : $locale.DATETIME_FORMATS.DAY.join('|'),
+        'EEE'   : $locale.DATETIME_FORMATS.SHORTDAY.join('|'),
+        'dd'    : '0[1-9]|[12][0-9]|3[01]',
+        'd'     : options.strict ? '[1-9]|[1-2][0-9]|3[01]' : '0?[1-9]|[1-2][0-9]|3[01]',
+        'MMMM'  : $locale.DATETIME_FORMATS.MONTH.join('|'),
+        'MMM'   : $locale.DATETIME_FORMATS.SHORTMONTH.join('|'),
+        'MM'    : '0[1-9]|1[012]',
+        'M'     : options.strict ? '[1-9]|1[012]' : '0?[1-9]|1[012]',
+        'yyyy'  : '[1]{1}[0-9]{3}|[2]{1}[0-9]{3}',
+        'yy'    : '[0-9]{2}',
+        'y'     : options.strict ? '-?(0|[1-9][0-9]{0,3})' : '-?0*[0-9]{1,4}'
+      };
+&nbsp;
+      var setFnMap = {
+        'sss'   : proto.setMilliseconds,
+        'ss'    : proto.setSeconds,
+        's'     : proto.setSeconds,
+        'mm'    : proto.setMinutes,
+        'm'     : proto.setMinutes,
+        'HH'    : proto.setHours,
+        'H'     : proto.setHours,
+        'hh'    : proto.setHours,
+        'h'     : proto.setHours,
+        'EEEE'  : noop,
+        'EEE'   : noop,
+        'dd'    : proto.setDate,
+        'd'     : proto.setDate,
+        'a'     : function (value) { var hours = this.getHours() % 12; return this.setHours(value.match(/pm/i) ? hours + 12 : hours); },
+        'MMMM'  : function (value) { return this.setMonth(indexOfCaseInsensitive($locale.DATETIME_FORMATS.MONTH, value)); },
+        'MMM'   : function (value) { return this.setMonth(indexOfCaseInsensitive($locale.DATETIME_FORMATS.SHORTMONTH, value)); },
+        'MM'    : function (value) { return this.setMonth(1 * value - 1); },
+        'M'     : function (value) { return this.setMonth(1 * value - 1); },
+        'yyyy'  : proto.setFullYear,
+        'yy'    : function (value) { return this.setFullYear(2000 + 1 * value); },
+        'y'     : function (value) { return (1 * value &lt;= 50 &amp;&amp; value.length === 2) ? this.setFullYear(2000 + 1 * value) : this.setFullYear(1 * value); }
+      };
+      /* eslint-enable key-spacing, quote-props */
+&nbsp;
+      var regex;
+      var setMap;
+&nbsp;
+      $dateParser.init = function () {
+        $dateParser.$format = $locale.DATETIME_FORMATS[options.format] || options.format;
+        regex = regExpForFormat($dateParser.$format);
+        setMap = setMapForFormat($dateParser.$format);
+      };
+&nbsp;
+      $dateParser.isValid = function (date) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (angular.isDate(date)) <span class="cstat-no" title="statement not covered" >return !isNaN(date.getTime());</span>
+        return regex.test(date);
+      };
+&nbsp;
+      $dateParser.parse = function (value, baseDate, format, timezone) {
+        // check for date format special names
+        if (format) format = $locale.DATETIME_FORMATS[format] || format;
+        if (angular.isDate(value)) value = dateFilter(value, format || $dateParser.$format, timezone);
+        var formatRegex = format ? regExpForFormat(format) : regex;
+        var formatSetMap = format ? setMapForFormat(format) : setMap;
+        var matches = formatRegex.exec(value);
+        if (!matches) return false;
+        // use custom ParseDate object to set parsed values
+        var date = baseDate &amp;&amp; !isNaN(baseDate.getTime()) ? new ParseDate().fromDate(baseDate) : new ParseDate().fromDate(new Date(1970, 0, 1, 0));
+        for (var i = 0; i &lt; matches.length - 1; i++) {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (formatSetMap[i]) formatSetMap[i].call(date, matches[i + 1]);
+        }
+        // convert back to native Date object
+        var newDate = date.toDate();
+&nbsp;
+        // check new native Date object for day values overflow
+        if (parseInt(date.day, 10) !== newDate.getDate()) {
+          return false;
+        }
+&nbsp;
+        return newDate;
+      };
+&nbsp;
+      $dateParser.getDateForAttribute = function (key, value) {
+        var date;
+&nbsp;
+        if (value === 'today') {
+          var today = new Date();
+          date = new Date(today.getFullYear(), today.getMonth(), today.getDate() + (key === 'maxDate' ? 1 : 0), 0, 0, 0, (key === 'minDate' ? 0 : -1));
+        } else if (angular.isString(value) &amp;&amp; value.match(/^".+"$/)) { // Support {{ dateObj }}
+          date = new Date(value.substr(1, value.length - 2));
+        } else if (isNumeric(value)) {
+          date = new Date(parseInt(value, 10));
+        } else if (angular.isString(value) &amp;&amp; value.length === 0) { // Reset date
+          date = key === 'minDate' ? -Infinity : +Infinity;
+        } else {
+          date = new Date(value);
+        }
+&nbsp;
+        return date;
+      };
+&nbsp;
+      $dateParser.getTimeForAttribute = function (key, value) {
+        var time;
+&nbsp;
+        if (value === 'now') {
+          time = new Date().setFullYear(1970, 0, 1);
+        } else if (angular.isString(value) &amp;&amp; value.match(/^".+"$/)) {
+          time = new Date(value.substr(1, value.length - 2)).setFullYear(1970, 0, 1);
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (isNumeric(value)) {
+<span class="cstat-no" title="statement not covered" >          time = new Date(parseInt(value, 10)).setFullYear(1970, 0, 1);</span>
+        } else if (angular.isString(value) &amp;&amp; value.length === 0) { // Reset time
+          time = key === 'minTime' ? -Infinity : +Infinity;
+        } else {
+          time = $dateParser.parse(value, new Date(1970, 0, 1, 0));
+        }
+&nbsp;
+        return time;
+      };
+&nbsp;
+      /* Handle switch to/from daylight saving.
+      * Hours may be non-zero on daylight saving cut-over:
+      * &gt; 12 when midnight changeover, but then cannot generate
+      * midnight datetime, so jump to 1AM, otherwise reset.
+      * @param  date  (Date) the date to check
+      * @return  (Date) the corrected date
+      *
+      * __ copied from jquery ui datepicker __
+      */
+      $dateParser.daylightSavingAdjust = function (date) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!date) {
+<span class="cstat-no" title="statement not covered" >          return null;</span>
+        }
+        date.setHours(date.getHours() &gt; 12 ? <span class="branch-0 cbranch-no" title="branch not covered" >date.getHours() + 2 </span>: 0);
+        return date;
+      };
+&nbsp;
+      /* Correct the date for timezone offset.
+      * @param  date  (Date) the date to adjust
+      * @param  timezone  (string) the timezone to adjust for
+      * @param  undo  (boolean) to add or subtract timezone offset
+      * @return  (Date) the corrected date
+      */
+      $dateParser.timezoneOffsetAdjust = function (date, timezone, undo) {
+        if (!date) {
+          return null;
+        }
+        // Right now, only 'UTC' is supported.
+        if (timezone &amp;&amp; timezone === 'UTC') {
+          date = new Date(date.getTime());
+          date.setMinutes(date.getMinutes() + (undo ? -1 : 1) * date.getTimezoneOffset());
+        }
+        return date;
+      };
+&nbsp;
+      // Private functions
+&nbsp;
+      function regExpForFormat(format) {
+        // `format` string can contain literal values.
+        // These need to be escaped by surrounding with
+        // single quotes (e.g. `"h 'in the morning'"`).
+        // In order to output a single quote, escape it - i.e.,
+        // two single quotes in a sequence (e.g. `"h 'o''clock'"`).
+&nbsp;
+        var re = buildDateAbstractRegex(format);
+        return buildDateParseRegex(re);
+      }
+&nbsp;
+      function buildDateAbstractRegex(format) {
+        var escapedFormat = escapeReservedSymbols(format);
+        var escapedLiteralFormat = escapedFormat.replace(/''/g, '\\\'');
+        var literalRegex = /('(?:\\'|.)*?')/;
+        var formatParts = escapedLiteralFormat.split(literalRegex);
+        var dateElements = Object.keys(regExpMap);
+        var dateRegexParts = [];
+&nbsp;
+        angular.forEach(formatParts, function (part) {
+          if (isFormatStringLiteral(part)) {
+            part = trimLiteralEscapeChars(part);
+          } else {
+            // Abstract replaces to avoid collisions
+            for (var i = 0; i &lt; dateElements.length; i++) {
+              part = part.split(dateElements[i]).join('${' + i + '}');
+            }
+          }
+          dateRegexParts.push(part);
+        });
+&nbsp;
+        return dateRegexParts.join('');
+      }
+&nbsp;
+      function escapeReservedSymbols(text) {
+        return text.replace(/\\/g, '[\\\\]')
+                   .replace(/-/g, '[-]')
+                   .replace(/\./g, '[.]')
+                   .replace(/\*/g, '[*]')
+                   .replace(/\+/g, '[+]')
+                   .replace(/\?/g, '[?]')
+                   .replace(/\$/g, '[$]')
+                   .replace(/\^/g, '[^]')
+                   .replace(/\//g, '[/]')
+                   .replace(/\\s/g, '[\\s]');
+      }
+&nbsp;
+      function isFormatStringLiteral(text) {
+        return /^'.*'$/.test(text);
+      }
+&nbsp;
+      function trimLiteralEscapeChars(text) {
+        return text.replace(/^'(.*)'$/, '$1');
+      }
+&nbsp;
+      function buildDateParseRegex(abstractRegex) {
+        var dateElements = Object.keys(regExpMap);
+        var re = abstractRegex;
+&nbsp;
+        // Replace abstracted values
+        for (var i = 0; i &lt; dateElements.length; i++) {
+          re = re.split('${' + i + '}').join('(' + regExpMap[dateElements[i]] + ')');
+        }
+&nbsp;
+        return new RegExp('^' + re + '$', ['i']);
+      }
+&nbsp;
+      function setMapForFormat(format) {
+        var re = buildDateAbstractRegex(format);
+        return buildDateParseValuesMap(re);
+      }
+&nbsp;
+      function buildDateParseValuesMap(abstractRegex) {
+        var dateElements = Object.keys(regExpMap);
+        var valuesRegex = new RegExp('\\${(\\d+)}', 'g');
+        var valuesMatch;
+        var keyIndex;
+        var valueKey;
+        var valueFunction;
+        var valuesFunctionMap = [];
+&nbsp;
+        /* eslint-disable no-cond-assign */
+        while ((valuesMatch = valuesRegex.exec(abstractRegex)) !== null) {
+          keyIndex = valuesMatch[1];
+          valueKey = dateElements[keyIndex];
+          valueFunction = setFnMap[valueKey];
+&nbsp;
+          valuesFunctionMap.push(valueFunction);
+        }
+&nbsp;
+        return valuesFunctionMap;
+      }
+&nbsp;
+      $dateParser.init();
+      return $dateParser;
+&nbsp;
+    };
+&nbsp;
+    return DateParserFactory;
+&nbsp;
+  };
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 16 2016 15:40:23 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

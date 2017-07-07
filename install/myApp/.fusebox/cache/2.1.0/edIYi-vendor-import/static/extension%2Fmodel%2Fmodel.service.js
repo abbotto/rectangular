@@ -1,0 +1,6 @@
+module.exports = { contents: "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\n// Auto-generated file\nvar models_js_1 = require(\"models.js\");\nvar modelService = function modelService(appModel) {\n    var _model = function (key) {\n        return appModel[key];\n    };\n    var get = function (key) {\n        return angular.fromJson(_model(key));\n    };\n    var mixin = function (key, toBeMerged, deep) {\n        // Get the mixin data\n        var toBeMixed = get(key);\n        // Add mixin as beginning argument\n        toBeMerged.unshift(toBeMixed);\n        // Deep merge\n        if (deep) {\n            // eslint-disable-next-line prefer-reflect\n            return angular.merge.apply(angular.merge, toBeMerged);\n        }\n        // Shallow merge\n        // eslint-disable-next-line prefer-reflect\n        return angular.extend.apply(angular.extend, toBeMerged);\n    };\n    return { _model: _model, get: get, mixin: mixin };\n};\nexports.default = angular.module(\"model.service\", [models_js_1.default.name]).factory(\"model$\", modelService);\n",
+dependencies: ["models.js"],
+sourceMap: {},
+headerContent: undefined,
+mtime: 1498604735000
+};

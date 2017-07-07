@@ -1,0 +1,6 @@
+module.exports = { contents: "\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar component_directive_js_1 = require(\"app/extension/component/component.directive.js\");\nvar data_service_js_1 = require(\"app/extension/data/data.service.js\");\nvar home_controller_js_1 = require(\"app/component/home/home.controller.js\");\n// --------------------------------\n// Home Component (AngularJS)\n// --------------------------------\nvar HomeComponent = {};\nHomeComponent.controllerAs = \"vm\";\nHomeComponent.templateUrl = \"app/component/home/home.component.html\";\nHomeComponent.controller = home_controller_js_1.default;\nexports.default = angular.module(\"home.component\", [component_directive_js_1.default.name, data_service_js_1.default.name]).component(\"home\", HomeComponent);\n",
+dependencies: ["app/extension/component/component.directive.js","app/extension/data/data.service.js","app/component/home/home.controller.js"],
+sourceMap: {},
+headerContent: undefined,
+mtime: 1498604735000
+};

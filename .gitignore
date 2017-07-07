@@ -1,17 +1,13 @@
 # Blacklist Every File
 *
 
-# Whitelist Javascript Files
+# Whitelist Top-level Files
 !gulpfile.js
 !karma.conf.js
 !package.json
 !server.js
-
-# Whitelist Markdown Files
 !license.md
 !README.md
-
-# Whitelist Config Files
 !.babelrc
 !.envrc
 !.eslintignore
@@ -38,7 +34,7 @@
 !/install
 !/install/**/*
 
-# Blacklist Other Files
+# Blacklist Nested Files
 .DS_Store
 /node_modules
 /node_modules/**/*

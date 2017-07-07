@@ -1,0 +1,2603 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/tooltip/tooltip.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/tooltip/</a> tooltip.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>390/415</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.36% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>266/308</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.65% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>59/63</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.15% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>370/393</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">470×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">470×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">470×</span>
+<span class="cline-any cline-yes">470×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1173×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1145×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1145×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1145×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1166×</span>
+<span class="cline-any cline-yes">1166×</span>
+<span class="cline-any cline-yes">1166×</span>
+<span class="cline-any cline-yes">1164×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1217×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1202×</span>
+<span class="cline-any cline-yes">1202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">1202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">155×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">155×</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">125×</span>
+<span class="cline-any cline-yes">125×</span>
+<span class="cline-any cline-yes">125×</span>
+<span class="cline-any cline-yes">125×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">170×</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-yes">121×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">158×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">104×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">735×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1243×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">87×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-yes">145×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">1966×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">1892×</span>
+<span class="cline-any cline-yes">1891×</span>
+<span class="cline-any cline-yes">1891×</span>
+<span class="cline-any cline-yes">1891×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1145×</span>
+<span class="cline-any cline-yes">1145×</span>
+<span class="cline-any cline-yes">1927×</span>
+<span class="cline-any cline-yes">1927×</span>
+<span class="cline-any cline-yes">66×</span>
+<span class="cline-any cline-yes">1861×</span>
+<span class="cline-any cline-yes">1861×</span>
+<span class="cline-any cline-yes">1861×</span>
+<span class="cline-any cline-yes">1861×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">395×</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">305×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11178×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1863×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">599×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">599×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">140×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">140×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">296×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">296×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">510×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">729×</span>
+<span class="cline-any cline-yes">617×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">467×</span>
+<span class="cline-any cline-yes">467×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">150×</span>
+<span class="cline-any cline-yes">150×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">112×</span>
+<span class="cline-any cline-yes">112×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">729×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1238×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">422×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-yes">176×</span>
+<span class="cline-any cline-yes">176×</span>
+<span class="cline-any cline-yes">176×</span>
+<span class="cline-any cline-yes">118×</span>
+<span class="cline-any cline-yes">58×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">218×</span>
+<span class="cline-any cline-yes">218×</span>
+<span class="cline-any cline-yes">218×</span>
+<span class="cline-any cline-yes">172×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">622×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1265×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1265×</span>
+<span class="cline-any cline-yes">1043×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1043×</span>
+<span class="cline-any cline-yes">274×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1265×</span>
+<span class="cline-any cline-yes">1198×</span>
+<span class="cline-any cline-yes">1198×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1265×</span>
+<span class="cline-any cline-yes">1198×</span>
+<span class="cline-any cline-yes">1198×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1181×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2578×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1526×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">470×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">11730×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">1564×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">747×</span>
+<span class="cline-any cline-yes">747×</span>
+<span class="cline-any cline-yes">745×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">747×</span>
+<span class="cline-any cline-yes">747×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">735×</span>
+<span class="cline-any cline-yes">735×</span>
+<span class="cline-any cline-yes">735×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-yes">782×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.core', 'mgcrea.ngStrap.helpers.dimensions'])
+&nbsp;
+  .provider('$tooltip', function () {
+&nbsp;
+    var defaults = this.defaults = {
+      animation: 'am-fade',
+      customClass: '',
+      prefixClass: 'tooltip',
+      prefixEvent: 'tooltip',
+      container: false,
+      target: false,
+      placement: 'top',
+      templateUrl: 'tooltip/tooltip.tpl.html',
+      template: '',
+      contentTemplate: false,
+      trigger: 'hover focus',
+      keyboard: false,
+      html: false,
+      show: false,
+      title: '',
+      type: '',
+      delay: 0,
+      autoClose: false,
+      bsEnabled: true,
+      viewport: {
+        selector: 'body',
+        padding: 0
+      }
+    };
+&nbsp;
+    this.$get = function ($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
+&nbsp;
+      var isTouch = 'createTouch' in $window.document;
+      var $body = angular.element($window.document);
+&nbsp;
+      function TooltipFactory(element, config) {
+&nbsp;
+        var $tooltip = {};
+&nbsp;
+        // Common vars
+        var options = $tooltip.$options = angular.extend({}, defaults, config);
+        var promise = $tooltip.$promise = $bsCompiler.compile(options);
+        var scope = $tooltip.$scope = options.scope &amp;&amp; options.scope.$new() || $rootScope.$new();
+&nbsp;
+        var nodeName = element[0].nodeName.toLowerCase();
+        if (options.delay &amp;&amp; angular.isString(options.delay)) {
+          var split = options.delay.split(',').map(parseFloat);
+          options.delay = split.length &gt; 1 ? {show: split[0], hide: split[1]} : split[0];
+        }
+&nbsp;
+        // Store $id to identify the triggering element in events
+        // give priority to options.id, otherwise, try to use
+        // element id if defined
+        $tooltip.$id = options.id || element.attr('id') || '';
+&nbsp;
+        // Support scope as string options
+        if (options.title) {
+          scope.title = $sce.trustAsHtml(options.title);
+        }
+&nbsp;
+        // Provide scope helpers
+        scope.$setEnabled = <span class="fstat-no" title="function not covered" >function (isEnabled) {</span>
+<span class="cstat-no" title="statement not covered" >          scope.$$postDigest(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            $tooltip.setEnabled(isEnabled);</span>
+          });
+        };
+        scope.$hide = function () {
+          scope.$$postDigest(function () {
+            $tooltip.hide();
+          });
+        };
+        scope.$show = function () {
+          scope.$$postDigest(function () {
+            $tooltip.show();
+          });
+        };
+        scope.$toggle = function () {
+          scope.$$postDigest(function () {
+            $tooltip.toggle();
+          });
+        };
+        // Publish isShown as a protected var on scope
+        $tooltip.$isShown = scope.$isShown = false;
+&nbsp;
+        // Private vars
+        var timeout;
+        var hoverState;
+&nbsp;
+        // Fetch, compile then initialize tooltip
+        var compileData;
+        var tipElement;
+        var tipContainer;
+        var tipScope;
+        promise.then(function (data) {
+          compileData = data;
+          $tooltip.init();
+        });
+&nbsp;
+        $tooltip.init = function () {
+&nbsp;
+          // Options: delay
+          if (options.delay &amp;&amp; angular.isNumber(options.delay)) {
+            options.delay = {
+              show: options.delay,
+              hide: options.delay
+            };
+          }
+&nbsp;
+          // Replace trigger on touch devices ?
+          // if(isTouch &amp;&amp; options.trigger === defaults.trigger) {
+          //   options.trigger.replace(/hover/g, 'click');
+          // }
+&nbsp;
+          // Options : container
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (options.container === 'self') {
+<span class="cstat-no" title="statement not covered" >            tipContainer = element;</span>
+          } else if (angular.isElement(options.container)) {
+            tipContainer = options.container;
+          } else if (options.container) {
+            tipContainer = findElement(options.container);
+          }
+&nbsp;
+          // Options: trigger
+          bindTriggerEvents();
+&nbsp;
+          // Options: target
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (options.target) {
+<span class="cstat-no" title="statement not covered" >            options.target = angular.isElement(options.target) ? options.target : findElement(options.target);</span>
+          }
+&nbsp;
+          // Options: show
+          if (options.show) {
+            scope.$$postDigest(function () {
+              <span class="missing-if-branch" title="if path not taken" >I</span>if (options.trigger === 'focus') {
+<span class="cstat-no" title="statement not covered" >                element[0].focus();</span>
+              } else {
+                $tooltip.show();
+              }
+            });
+          }
+&nbsp;
+        };
+&nbsp;
+        $tooltip.destroy = function () {
+&nbsp;
+          // Unbind events
+          unbindTriggerEvents();
+&nbsp;
+          // Remove element
+          destroyTipElement();
+&nbsp;
+          // Destroy scope
+          scope.$destroy();
+&nbsp;
+        };
+&nbsp;
+        $tooltip.enter = function () {
+&nbsp;
+          clearTimeout(timeout);
+          hoverState = 'in';
+          if (!options.delay || !options.delay.show) {
+            return $tooltip.show();
+          }
+&nbsp;
+          timeout = setTimeout(function () {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (hoverState === 'in') $tooltip.show();
+          }, options.delay.show);
+&nbsp;
+        };
+&nbsp;
+        $tooltip.show = function () {
+          if (!options.bsEnabled || $tooltip.$isShown) return;
+&nbsp;
+          scope.$emit(options.prefixEvent + '.show.before', $tooltip);
+          var parent;
+          var after;
+          if (options.container) {
+            parent = tipContainer;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (tipContainer[0].lastChild) {
+<span class="cstat-no" title="statement not covered" >              after = angular.element(tipContainer[0].lastChild);</span>
+            } else {
+              after = null;
+            }
+          } else {
+            parent = null;
+            after = element;
+          }
+&nbsp;
+&nbsp;
+          // Hide any existing tipElement
+          if (tipElement) destroyTipElement();
+          // Fetch a cloned element linked from template
+          tipScope = $tooltip.$scope.$new();
+          tipElement = $tooltip.$element = compileData.link(tipScope, function (clonedElement, scope) {});
+&nbsp;
+          // Set the initial positioning.  Make the tooltip invisible
+          // so IE doesn't try to focus on it off screen.
+          tipElement.css({top: '-9999px', left: '-9999px', right: 'auto', display: 'block', visibility: 'hidden'});
+&nbsp;
+          // Options: animation
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (options.animation) tipElement.addClass(options.animation);
+          // Options: type
+          if (options.type) tipElement.addClass(options.prefixClass + '-' + options.type);
+          // Options: custom classes
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (options.customClass) <span class="cstat-no" title="statement not covered" >tipElement.addClass(options.customClass);</span>
+&nbsp;
+          // Append the element, without any animations.  If we append
+          // using $animate.enter, some of the animations cause the placement
+          // to be off due to the transforms.
+          if (after) {
+            after.after(tipElement);
+          } else {
+            parent.prepend(tipElement);
+          }
+&nbsp;
+          $tooltip.$isShown = scope.$isShown = true;
+          safeDigest(scope);
+&nbsp;
+          // Now, apply placement
+          $tooltip.$applyPlacement();
+&nbsp;
+          // Once placed, animate it.
+          // Support v1.2+ $animate
+          // https://github.com/angular/angular.js/issues/11713
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (angular.version.minor &lt;= 2) {
+<span class="cstat-no" title="statement not covered" >            $animate.enter(tipElement, parent, after, enterAnimateCallback);</span>
+          } else {
+            $animate.enter(tipElement, parent, after).then(enterAnimateCallback);
+          }
+          safeDigest(scope);
+&nbsp;
+          $$rAF(function () {
+            // Once the tooltip is placed and the animation starts, make the tooltip visible
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (tipElement) tipElement.css({visibility: 'visible'});
+&nbsp;
+            // Bind events
+            if (options.keyboard) {
+              if (options.trigger !== 'focus') {
+                $tooltip.focus();
+              }
+              bindKeyboardEvents();
+            }
+          });
+&nbsp;
+          if (options.autoClose) {
+            bindAutoCloseEvents();
+          }
+&nbsp;
+        };
+&nbsp;
+        function enterAnimateCallback() {
+          scope.$emit(options.prefixEvent + '.show', $tooltip);
+        }
+&nbsp;
+        $tooltip.leave = function () {
+&nbsp;
+          clearTimeout(timeout);
+          hoverState = 'out';
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (!options.delay || <span class="branch-1 cbranch-no" title="branch not covered" >!options.delay.hide)</span> {
+            return $tooltip.hide();
+          }
+<span class="cstat-no" title="statement not covered" >          timeout = setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (hoverState === 'out') {</span>
+<span class="cstat-no" title="statement not covered" >              $tooltip.hide();</span>
+            }
+          }, options.delay.hide);
+&nbsp;
+        };
+&nbsp;
+        var _blur;
+        var _tipToHide;
+        $tooltip.hide = function (blur) {
+&nbsp;
+          if (!$tooltip.$isShown) return;
+          scope.$emit(options.prefixEvent + '.hide.before', $tooltip);
+&nbsp;
+          // store blur value for leaveAnimateCallback to use
+          _blur = blur;
+&nbsp;
+          // store current tipElement reference to use
+          // in leaveAnimateCallback
+          _tipToHide = tipElement;
+&nbsp;
+          // Support v1.2+ $animate
+          // https://github.com/angular/angular.js/issues/11713
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (angular.version.minor &lt;= 2) {
+<span class="cstat-no" title="statement not covered" >            $animate.leave(tipElement, leaveAnimateCallback);</span>
+          } else {
+            $animate.leave(tipElement).then(leaveAnimateCallback);
+          }
+&nbsp;
+          $tooltip.$isShown = scope.$isShown = false;
+          safeDigest(scope);
+&nbsp;
+          // Unbind events
+          if (options.keyboard &amp;&amp; tipElement !== null) {
+            unbindKeyboardEvents();
+          }
+&nbsp;
+          if (options.autoClose &amp;&amp; tipElement !== null) {
+            unbindAutoCloseEvents();
+          }
+        };
+&nbsp;
+        function leaveAnimateCallback() {
+          scope.$emit(options.prefixEvent + '.hide', $tooltip);
+&nbsp;
+          // check if current tipElement still references
+          // the same element when hide was called
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (tipElement === _tipToHide) {
+            // Allow to blur the input when hidden, like when pressing enter key
+            if (_blur &amp;&amp; options.trigger === 'focus') {
+              return element[0].blur();
+            }
+&nbsp;
+            // clean up child scopes
+            destroyTipElement();
+          }
+        }
+&nbsp;
+        $tooltip.toggle = function () {
+          if ($tooltip.$isShown) {
+            $tooltip.leave();
+          } else {
+            $tooltip.enter();
+          }
+        };
+&nbsp;
+        $tooltip.focus = function () {
+          tipElement[0].focus();
+        };
+&nbsp;
+        $tooltip.setEnabled = function (isEnabled) {
+          options.bsEnabled = isEnabled;
+        };
+&nbsp;
+        $tooltip.setViewport = function (viewport) {
+          options.viewport = viewport;
+        };
+&nbsp;
+        // Protected methods
+&nbsp;
+        $tooltip.$applyPlacement = function () {
+          if (!tipElement) return;
+&nbsp;
+          // Determine if we're doing an auto or normal placement
+          var placement = options.placement;
+          var autoToken = /\s?auto?\s?/i;
+          var autoPlace = autoToken.test(placement);
+&nbsp;
+          if (autoPlace) {
+            placement = placement.replace(autoToken, '') || defaults.placement;
+          }
+&nbsp;
+          // Need to add the position class before we get
+          // the offsets
+          tipElement.addClass(options.placement);
+&nbsp;
+          // Get the position of the target element
+          // and the height and width of the tooltip so we can center it.
+          var elementPosition = getPosition();
+          var tipWidth = tipElement.prop('offsetWidth');
+          var tipHeight = tipElement.prop('offsetHeight');
+&nbsp;
+          // Refresh viewport position
+          $tooltip.$viewport = options.viewport &amp;&amp; findElement(options.viewport.selector || options.viewport);
+&nbsp;
+          // If we're auto placing, we need to check the positioning
+          if (autoPlace) {
+            var originalPlacement = placement;
+            var viewportPosition = getPosition($tooltip.$viewport);
+&nbsp;
+            if (/bottom/.test(originalPlacement) &amp;&amp; elementPosition.bottom + tipHeight &gt; viewportPosition.bottom) {
+              placement = originalPlacement.replace('bottom', 'top');
+            } else if (/top/.test(originalPlacement) &amp;&amp; elementPosition.top - tipHeight &lt; viewportPosition.top) {
+              placement = originalPlacement.replace('top', 'bottom');
+            }
+&nbsp;
+            if (/left/.test(originalPlacement) &amp;&amp; elementPosition.left - tipWidth &lt; viewportPosition.left) {
+              placement = placement.replace('left', 'right');
+            } else if (/right/.test(originalPlacement) &amp;&amp; elementPosition.right + tipWidth &gt; viewportPosition.width) {
+              placement = placement.replace('right', 'left');
+            }
+&nbsp;
+            tipElement.removeClass(originalPlacement).addClass(placement);
+          }
+&nbsp;
+          // Get the tooltip's top and left coordinates to center it with this directive.
+          var tipPosition = getCalculatedOffset(placement, elementPosition, tipWidth, tipHeight);
+          applyPlacement(tipPosition, placement);
+        };
+&nbsp;
+        $tooltip.$onKeyUp = function (evt) {
+          if (evt.which === 27 &amp;&amp; $tooltip.$isShown) {
+            $tooltip.hide();
+            evt.stopPropagation();
+          }
+        };
+&nbsp;
+        $tooltip.$onFocusKeyUp = function (evt) {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (evt.which === 27) {
+            element[0].blur();
+            evt.stopPropagation();
+          }
+        };
+&nbsp;
+        $tooltip.$onFocusElementMouseDown = <span class="fstat-no" title="function not covered" >function (evt) {</span>
+<span class="cstat-no" title="statement not covered" >          evt.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >          evt.stopPropagation();</span>
+          // Some browsers do not auto-focus buttons (eg. Safari)
+<span class="cstat-no" title="statement not covered" >          if ($tooltip.$isShown) {</span>
+<span class="cstat-no" title="statement not covered" >            element[0].blur();</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            element[0].focus();</span>
+          }
+        };
+&nbsp;
+        // bind/unbind events
+        function bindTriggerEvents() {
+          var triggers = options.trigger.split(' ');
+          angular.forEach(triggers, function (trigger) {
+            if (trigger === 'click') {
+              element.on('click', $tooltip.toggle);
+            } else if (trigger !== 'manual') {
+              element.on(trigger === 'hover' ? 'mouseenter' : 'focus', $tooltip.enter);
+              element.on(trigger === 'hover' ? 'mouseleave' : 'blur', $tooltip.leave);
+              if (nodeName === 'button' &amp;&amp; trigger !== 'hover') {
+                element.on(isTouch ? 'touchstart' : <span class="branch-1 cbranch-no" title="branch not covered" >'mousedown',</span> $tooltip.$onFocusElementMouseDown);
+              }
+            }
+          });
+        }
+&nbsp;
+        function unbindTriggerEvents() {
+          var triggers = options.trigger.split(' ');
+          for (var i = triggers.length; i--;) {
+            var trigger = triggers[i];
+            if (trigger === 'click') {
+              element.off('click', $tooltip.toggle);
+            } else <span class="missing-if-branch" title="else path not taken" >E</span>if (trigger !== 'manual') {
+              element.off(trigger === 'hover' ? 'mouseenter' : 'focus', $tooltip.enter);
+              element.off(trigger === 'hover' ? 'mouseleave' : 'blur', $tooltip.leave);
+              if (nodeName === 'button' &amp;&amp; trigger !== 'hover') {
+                element.off(isTouch ? 'touchstart' : <span class="branch-1 cbranch-no" title="branch not covered" >'mousedown',</span> $tooltip.$onFocusElementMouseDown);
+              }
+            }
+          }
+        }
+&nbsp;
+        function bindKeyboardEvents() {
+          if (options.trigger !== 'focus') {
+            tipElement.on('keyup', $tooltip.$onKeyUp);
+          } else {
+            element.on('keyup', $tooltip.$onFocusKeyUp);
+          }
+        }
+&nbsp;
+        function unbindKeyboardEvents() {
+          if (options.trigger !== 'focus') {
+            tipElement.off('keyup', $tooltip.$onKeyUp);
+          } else {
+            element.off('keyup', $tooltip.$onFocusKeyUp);
+          }
+        }
+&nbsp;
+        var _autoCloseEventsBinded = false;
+        function bindAutoCloseEvents() {
+          // use timeout to hookup the events to prevent
+          // event bubbling from being processed imediately.
+          $timeout(function () {
+            // Stop propagation when clicking inside tooltip
+            tipElement.on('click', stopEventPropagation);
+&nbsp;
+            // Hide when clicking outside tooltip
+            $body.on('click', $tooltip.hide);
+&nbsp;
+            _autoCloseEventsBinded = true;
+          }, 0, false);
+        }
+&nbsp;
+        function unbindAutoCloseEvents() {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (_autoCloseEventsBinded) {
+            tipElement.off('click', stopEventPropagation);
+            $body.off('click', $tooltip.hide);
+            _autoCloseEventsBinded = false;
+          }
+        }
+&nbsp;
+        function stopEventPropagation(event) {
+          event.stopPropagation();
+        }
+&nbsp;
+        // Private methods
+&nbsp;
+        function getPosition($element) {
+          $element = $element || (options.target || element);
+&nbsp;
+          var el = $element[0];
+          var isBody = el.tagName === 'BODY';
+&nbsp;
+          var elRect = el.getBoundingClientRect();
+          var rect = {};
+&nbsp;
+          // IE8 has issues with angular.extend and using elRect directly.
+          // By coping the values of elRect into a new object, we can continue to use extend
+          /* eslint-disable guard-for-in */
+          for (var p in elRect) {
+            // DO NOT use hasOwnProperty when inspecting the return of getBoundingClientRect.
+            rect[p] = elRect[p];
+          }
+          /* eslint-enable guard-for-in */
+&nbsp;
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (rect.width === null) {
+            // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
+<span class="cstat-no" title="statement not covered" >            rect = angular.extend({}, rect, {width: elRect.right - elRect.left, height: elRect.bottom - elRect.top});</span>
+          }
+          var elOffset = isBody ? {top: 0, left: 0} : dimensions.offset(el);
+          var scroll = {scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.prop('scrollTop') || 0};
+          var outerDims = isBody ? {width: document.documentElement.clientWidth, height: $window.innerHeight} : null;
+&nbsp;
+          return angular.extend({}, rect, scroll, outerDims, elOffset);
+        }
+&nbsp;
+        function getCalculatedOffset(placement, position, actualWidth, actualHeight) {
+          var offset;
+          var split = placement.split('-');
+&nbsp;
+          switch (split[0]) {
+            case 'right':
+              offset = {
+                top: position.top + position.height / 2 - actualHeight / 2,
+                left: position.left + position.width
+              };
+              break;
+            case 'bottom':
+              offset = {
+                top: position.top + position.height,
+                left: position.left + position.width / 2 - actualWidth / 2
+              };
+              break;
+            case 'left':
+              offset = {
+                top: position.top + position.height / 2 - actualHeight / 2,
+                left: position.left - actualWidth
+              };
+              break;
+            default:
+              offset = {
+                top: position.top - actualHeight,
+                left: position.left + position.width / 2 - actualWidth / 2
+              };
+              break;
+          }
+&nbsp;
+          if (!split[1]) {
+            return offset;
+          }
+&nbsp;
+          // Add support for corners @todo css
+          if (split[0] === 'top' || split[0] === 'bottom') {
+            switch (split[1]) {
+              case 'left':
+                offset.left = position.left;
+                break;
+              case 'right':
+                offset.left = position.left + position.width - actualWidth;
+                break;
+<span class="branch-2 cbranch-no" title="branch not covered" >              default:</span>
+<span class="cstat-no" title="statement not covered" >                break;</span>
+            }
+          } else <span class="missing-if-branch" title="else path not taken" >E</span>if (split[0] === 'left' || split[0] === 'right') {
+            switch (split[1]) {
+              case 'top':
+                offset.top = position.top - actualHeight + position.height;
+                break;
+              case 'bottom':
+                offset.top = position.top;
+                break;
+<span class="branch-2 cbranch-no" title="branch not covered" >              default:</span>
+<span class="cstat-no" title="statement not covered" >                break;</span>
+            }
+          }
+&nbsp;
+          return offset;
+        }
+&nbsp;
+        function applyPlacement(offset, placement) {
+          var tip = tipElement[0];
+          var width = tip.offsetWidth;
+          var height = tip.offsetHeight;
+&nbsp;
+          // manually read margins because getBoundingClientRect includes difference
+          var marginTop = parseInt(dimensions.css(tip, 'margin-top'), 10);
+          var marginLeft = parseInt(dimensions.css(tip, 'margin-left'), 10);
+&nbsp;
+          // we must check for NaN for ie 8/9
+          if (isNaN(marginTop)) marginTop = 0;
+          if (isNaN(marginLeft)) marginLeft = 0;
+&nbsp;
+          offset.top = offset.top + marginTop;
+          offset.left = offset.left + marginLeft;
+&nbsp;
+          // dimensions setOffset doesn't round pixel values
+          // so we use setOffset directly with our own function
+          dimensions.setOffset(tip, angular.extend({
+            using: function (props) {
+              tipElement.css({
+                top: Math.round(props.top) + 'px',
+                left: Math.round(props.left) + 'px',
+                right: ''
+              });
+            }
+          }, offset), 0);
+&nbsp;
+          // check to see if placing tip in new offset caused the tip to resize itself
+          var actualWidth = tip.offsetWidth;
+          var actualHeight = tip.offsetHeight;
+&nbsp;
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (placement === 'top' &amp;&amp; actualHeight !== height) {
+<span class="cstat-no" title="statement not covered" >            offset.top = offset.top + height - actualHeight;</span>
+          }
+&nbsp;
+          // If it's an exotic placement, exit now instead of
+          // applying a delta and changing the arrow
+          if (/top-left|top-right|bottom-left|bottom-right/.test(placement)) return;
+&nbsp;
+          var delta = getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight);
+&nbsp;
+          if (delta.left) {
+            offset.left += delta.left;
+          } else {
+            offset.top += delta.top;
+          }
+&nbsp;
+          dimensions.setOffset(tip, offset);
+&nbsp;
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (/top|right|bottom|left/.test(placement)) {
+            var isVertical = /top|bottom/.test(placement);
+            var arrowDelta = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight;
+            var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight';
+&nbsp;
+            replaceArrow(arrowDelta, tip[arrowOffsetPosition], isVertical);
+          }
+        }
+&nbsp;
+        // @source https://github.com/twbs/bootstrap/blob/v3.3.5/js/tooltip.js#L380
+        function getViewportAdjustedDelta(placement, position, actualWidth, actualHeight) {
+          var delta = {top: 0, left: 0};
+          if (!$tooltip.$viewport) return delta;
+&nbsp;
+          var viewportPadding = options.viewport &amp;&amp; options.viewport.padding || 0;
+          var viewportDimensions = getPosition($tooltip.$viewport);
+&nbsp;
+          if (/right|left/.test(placement)) {
+            var topEdgeOffset = position.top - viewportPadding - viewportDimensions.scroll;
+            var bottomEdgeOffset = position.top + viewportPadding - viewportDimensions.scroll + actualHeight;
+            if (topEdgeOffset &lt; viewportDimensions.top) { // top overflow
+              delta.top = viewportDimensions.top - topEdgeOffset;
+            } else if (bottomEdgeOffset &gt; viewportDimensions.top + viewportDimensions.height) { // bottom overflow
+              delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset;
+            }
+          } else {
+            var leftEdgeOffset = position.left - viewportPadding;
+            var rightEdgeOffset = position.left + viewportPadding + actualWidth;
+            if (leftEdgeOffset &lt; viewportDimensions.left) { // left overflow
+              delta.left = viewportDimensions.left - leftEdgeOffset;
+            } else if (rightEdgeOffset &gt; viewportDimensions.right) { // right overflow
+              delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset;
+            }
+          }
+&nbsp;
+          return delta;
+        }
+&nbsp;
+        function replaceArrow(delta, dimension, isHorizontal) {
+          var $arrow = findElement('.tooltip-arrow, .arrow', tipElement[0]);
+&nbsp;
+          $arrow.css(isHorizontal ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
+                .css(isHorizontal ? 'top' : 'left', '');
+        }
+&nbsp;
+        function destroyTipElement() {
+          // Cancel pending callbacks
+          clearTimeout(timeout);
+&nbsp;
+          if ($tooltip.$isShown &amp;&amp; tipElement !== null) {
+            if (options.autoClose) {
+              unbindAutoCloseEvents();
+            }
+&nbsp;
+            if (options.keyboard) {
+              unbindKeyboardEvents();
+            }
+          }
+&nbsp;
+          if (tipScope) {
+            tipScope.$destroy();
+            tipScope = null;
+          }
+&nbsp;
+          if (tipElement) {
+            tipElement.remove();
+            tipElement = $tooltip.$element = null;
+          }
+        }
+&nbsp;
+        return $tooltip;
+&nbsp;
+      }
+&nbsp;
+      // Helper functions
+&nbsp;
+      function safeDigest(scope) {
+        /* eslint-disable no-unused-expressions */
+        scope.$$phase || (scope.$root &amp;&amp; scope.$root.$$phase) || scope.$digest();
+        /* eslint-enable no-unused-expressions */
+      }
+&nbsp;
+      function findElement(query, element) {
+        return angular.element((element || document).querySelectorAll(query));
+      }
+&nbsp;
+      return TooltipFactory;
+&nbsp;
+    };
+&nbsp;
+  })
+&nbsp;
+  .directive('bsTooltip', function ($window, $location, $sce, $tooltip, $$rAF) {
+&nbsp;
+    return {
+      restrict: 'EAC',
+      scope: true,
+      link: function postLink(scope, element, attr, transclusion) {
+&nbsp;
+        var tooltip;
+        // Directive options
+        var options = {scope: scope};
+        angular.forEach(['template', 'templateUrl', 'controller', 'controllerAs', 'contentTemplate', 'placement', 'container', 'delay', 'trigger', 'html', 'animation', 'backdropAnimation', 'type', 'customClass', 'id'], function (key) {
+          if (angular.isDefined(attr[key])) options[key] = attr[key];
+        });
+&nbsp;
+        // use string regex match boolean attr falsy values, leave truthy values be
+        var falseValueRegExp = /^(false|0|)$/i;
+        angular.forEach(['html', 'container'], function (key) {
+          if (angular.isDefined(attr[key]) &amp;&amp; falseValueRegExp.test(attr[key])) {
+            options[key] = false;
+          }
+        });
+&nbsp;
+        // should not parse target attribute (anchor tag), only data-target #1454
+        var dataTarget = element.attr('data-target');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (angular.isDefined(dataTarget)) {
+<span class="cstat-no" title="statement not covered" >          if (falseValueRegExp.test(dataTarget)) {</span>
+<span class="cstat-no" title="statement not covered" >            options.target = false;</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            options.target = dataTarget;</span>
+          }
+        }
+&nbsp;
+        // overwrite inherited title value when no value specified
+        // fix for angular 1.3.1 531a8de72c439d8ddd064874bf364c00cedabb11
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!scope.hasOwnProperty('title')) {
+          scope.title = '';
+        }
+&nbsp;
+        // Observe scope attributes for change
+        attr.$observe('title', function (newValue) {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (angular.isDefined(newValue) || <span class="branch-1 cbranch-no" title="branch not covered" >!scope.hasOwnProperty('title'))</span> {
+            var oldValue = scope.title;
+            scope.title = $sce.trustAsHtml(newValue);
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (angular.isDefined(oldValue)) {
+              $$rAF(function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (tooltip) tooltip.$applyPlacement();
+              });
+            }
+          }
+        });
+&nbsp;
+        // Support scope as an object
+        if (attr.bsTooltip) {
+          scope.$watch(attr.bsTooltip, function (newValue, oldValue) {
+            if (angular.isObject(newValue)) {
+              angular.extend(scope, newValue);
+            } else {
+              scope.title = newValue;
+            }
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (angular.isDefined(oldValue)) {
+              $$rAF(function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (tooltip) tooltip.$applyPlacement();
+              });
+            }
+          }, true);
+        }
+&nbsp;
+        // Visibility binding support
+        if (attr.bsShow) {
+          scope.$watch(attr.bsShow, function (newValue, oldValue) {
+            if (!tooltip || !angular.isDefined(newValue)) return;
+            if (angular.isString(newValue)) newValue = !!newValue.match(/true|,?(tooltip),?/i);
+            if (newValue === true) {
+              tooltip.show();
+            } else {
+              tooltip.hide();
+            }
+          });
+        }
+&nbsp;
+        // Enabled binding support
+        if (attr.bsEnabled) {
+          scope.$watch(attr.bsEnabled, function (newValue, oldValue) {
+            // console.warn('scope.$watch(%s)', attr.bsEnabled, newValue, oldValue);
+            if (!tooltip || !angular.isDefined(newValue)) return;
+            if (angular.isString(newValue)) newValue = !!newValue.match(/true|1|,?(tooltip),?/i);
+            if (newValue === false) {
+              tooltip.setEnabled(false);
+            } else {
+              tooltip.setEnabled(true);
+            }
+          });
+        }
+&nbsp;
+        // Viewport support
+        if (attr.viewport) {
+          scope.$watch(attr.viewport, function (newValue) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (!tooltip || !angular.isDefined(newValue)) <span class="cstat-no" title="statement not covered" >return;</span>
+            tooltip.setViewport(newValue);
+          });
+        }
+&nbsp;
+        // Initialize popover
+        tooltip = $tooltip(element, options);
+&nbsp;
+        // Garbage collection
+        scope.$on('$destroy', function () {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (tooltip) tooltip.destroy();
+          options = null;
+          tooltip = null;
+        });
+&nbsp;
+      }
+    };
+&nbsp;
+  });
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 16 2016 15:40:23 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

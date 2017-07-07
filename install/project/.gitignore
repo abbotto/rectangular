@@ -1,17 +1,13 @@
 # Blacklist Every File
 *
 
-# Whitelist Javascript Files
+# Whitelist Top-Level Files
 !gulpfile.js
 !karma.conf.js
 !package.json
 !server.js
-
-# Whitelist Markdown Files
 !license.md
 !README.md
-
-# Whitelist Dot Files
 !.babelrc
 !.envrc
 !.eslintignore
@@ -34,5 +30,6 @@
 !/readme
 !/readme/**/*
 
-# Blacklist Other Files
+# Blacklist Nested Files
 .DS_Store
+.fusebox

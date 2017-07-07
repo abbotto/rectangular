@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/affix/affix.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/affix/</a> affix.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.25% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>107/127</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>44/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>104/123</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('mgcrea.ngStrap.affix', ['mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.helpers.debounce'])
+&nbsp;
+  .provider('$affix', function () {
+&nbsp;
+    var defaults = this.defaults = {
+      offsetTop: 'auto',
+      inlineStyles: true
+    };
+&nbsp;
+    this.$get = function ($window, debounce, dimensions) {
+&nbsp;
+      var bodyEl = angular.element($window.document.body);
+      var windowEl = angular.element($window);
+&nbsp;
+      function AffixFactory(element, config) {
+&nbsp;
+        var $affix = {};
+&nbsp;
+        // Common vars
+        var options = angular.extend({}, defaults, config);
+        var targetEl = options.target;
+&nbsp;
+        // Initial private vars
+        var reset = 'affix affix-top affix-bottom';
+        var setWidth = false;
+        var initialAffixTop = 0;
+        var initialOffsetTop = 0;
+        var offsetTop = 0;
+        var offsetBottom = 0;
+        var affixed = null;
+        var unpin = null;
+&nbsp;
+        var parent = element.parent();
+        // Options: custom parent
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (options.offsetParent) {
+<span class="cstat-no" title="statement not covered" >          if (options.offsetParent.match(/^\d+$/)) {</span>
+<span class="cstat-no" title="statement not covered" >            for (var i = 0; i &lt; (options.offsetParent * 1) - 1; i++) {</span>
+<span class="cstat-no" title="statement not covered" >              parent = parent.parent();</span>
+            }
+          } else {
+<span class="cstat-no" title="statement not covered" >            parent = angular.element(options.offsetParent);</span>
+          }
+        }
+&nbsp;
+        $affix.init = function () {
+&nbsp;
+          this.$parseOffsets();
+          initialOffsetTop = dimensions.offset(element[0]).top + initialAffixTop;
+          setWidth = !element[0].style.width;
+&nbsp;
+          // Bind events
+          targetEl.on('scroll', this.checkPosition);
+          targetEl.on('click', this.checkPositionWithEventLoop);
+          windowEl.on('resize', this.$debouncedOnResize);
+&nbsp;
+          // Both of these checkPosition() calls are necessary for the case where
+          // the user hits refresh after scrolling to the bottom of the page.
+          this.checkPosition();
+          this.checkPositionWithEventLoop();
+&nbsp;
+        };
+&nbsp;
+        $affix.destroy = function () {
+&nbsp;
+          // Unbind events
+          targetEl.off('scroll', this.checkPosition);
+          targetEl.off('click', this.checkPositionWithEventLoop);
+          windowEl.off('resize', this.$debouncedOnResize);
+&nbsp;
+        };
+&nbsp;
+        $affix.checkPositionWithEventLoop = function () {
+&nbsp;
+          // IE 9 throws an error if we use 'this' instead of '$affix'
+          // in this setTimeout call
+          setTimeout($affix.checkPosition, 1);
+&nbsp;
+        };
+&nbsp;
+        $affix.checkPosition = function () {
+          // if (!this.$element.is(':visible')) return
+&nbsp;
+          var scrollTop = getScrollTop();
+          var position = dimensions.offset(element[0]);
+          var elementHeight = dimensions.height(element[0]);
+&nbsp;
+          // Get required affix class according to position
+          var affix = getRequiredAffixClass(unpin, position, elementHeight);
+&nbsp;
+          // Did affix status changed this last check?
+          if (affixed === affix) return;
+          affixed = affix;
+&nbsp;
+          if (affix === 'top') {
+            unpin = null;
+            if (setWidth) {
+              element.css('width', '');
+            }
+            if (options.inlineStyles) {
+              element.css('position', (options.offsetParent) ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: 'relative');
+              element.css('top', '');
+            }
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if (affix === 'bottom') {
+<span class="cstat-no" title="statement not covered" >            if (options.offsetUnpin) {</span>
+<span class="cstat-no" title="statement not covered" >              unpin = -(options.offsetUnpin * 1);</span>
+            } else {
+              // Calculate unpin threshold when affixed to bottom.
+              // Hopefully the browser scrolls pixel by pixel.
+<span class="cstat-no" title="statement not covered" >              unpin = position.top - scrollTop;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (setWidth) {</span>
+<span class="cstat-no" title="statement not covered" >              element.css('width', '');</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (options.inlineStyles) {</span>
+<span class="cstat-no" title="statement not covered" >              element.css('position', (options.offsetParent) ? '' : 'relative');</span>
+<span class="cstat-no" title="statement not covered" >              element.css('top', (options.offsetParent) ? '' : ((bodyEl[0].offsetHeight - offsetBottom - elementHeight - initialOffsetTop) + 'px'));</span>
+            }
+          } else { // affix === 'middle'
+            unpin = null;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (setWidth) {
+              element.css('width', element[0].offsetWidth + 'px');
+            }
+            if (options.inlineStyles) {
+              element.css('position', 'fixed');
+              element.css('top', initialAffixTop + 'px');
+            }
+          }
+&nbsp;
+          // Add proper affix class
+          element.removeClass(reset).addClass('affix' + ((affix !== 'middle') ? '-' + affix : ''));
+&nbsp;
+        };
+&nbsp;
+        $affix.$onResize = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >          $affix.$parseOffsets();</span>
+<span class="cstat-no" title="statement not covered" >          $affix.checkPosition();</span>
+        };
+        $affix.$debouncedOnResize = debounce($affix.$onResize, 50);
+&nbsp;
+        $affix.$parseOffsets = function () {
+          var initialPosition = element.css('position');
+          // Reset position to calculate correct offsetTop
+          if (options.inlineStyles) {
+            element.css('position', (options.offsetParent) ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: 'relative');
+          }
+&nbsp;
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (options.offsetTop) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (options.offsetTop === 'auto') {
+              options.offsetTop = '+0';
+            }
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (options.offsetTop.match(/^[-+]\d+$/)) {
+              initialAffixTop = - options.offsetTop * 1;
+              <span class="missing-if-branch" title="if path not taken" >I</span>if (options.offsetParent) {
+<span class="cstat-no" title="statement not covered" >                offsetTop = dimensions.offset(parent[0]).top + (options.offsetTop * 1);</span>
+              } else {
+                offsetTop = dimensions.offset(element[0]).top - dimensions.css(element[0], 'marginTop', true) + (options.offsetTop * 1);
+              }
+            } else {
+<span class="cstat-no" title="statement not covered" >              offsetTop = options.offsetTop * 1;</span>
+            }
+          }
+&nbsp;
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (options.offsetBottom) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (options.offsetParent &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >options.offsetBottom.match(/^[-+]\d+$/))</span> {
+              // add 1 pixel due to rounding problems...
+<span class="cstat-no" title="statement not covered" >              offsetBottom = getScrollHeight() - (dimensions.offset(parent[0]).top + dimensions.height(parent[0])) + (options.offsetBottom * 1) + 1;</span>
+            } else {
+              offsetBottom = options.offsetBottom * 1;
+            }
+          }
+&nbsp;
+          // Bring back the element's position after calculations
+          if (options.inlineStyles) {
+            element.css('position', initialPosition);
+          }
+        };
+&nbsp;
+        // Private methods
+&nbsp;
+        function getRequiredAffixClass(_unpin, position, elementHeight) {
+          var scrollTop = getScrollTop();
+          var scrollHeight = getScrollHeight();
+&nbsp;
+          if (scrollTop &lt;= offsetTop) {
+            return 'top';
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if (_unpin !== null &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >scrollTop + _unpin &lt;= position.top)</span>) {
+<span class="cstat-no" title="statement not covered" >            return 'middle';</span>
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if (offsetBottom !== null &amp;&amp; (position.top + elementHeight + initialAffixTop &gt;= scrollHeight - offsetBottom)) {
+<span class="cstat-no" title="statement not covered" >            return 'bottom';</span>
+          }
+          return 'middle';
+        }
+&nbsp;
+        function getScrollTop() {
+          return targetEl[0] === $window ? <span class="branch-0 cbranch-no" title="branch not covered" >$window.pageYOffset </span>: targetEl[0].scrollTop;
+        }
+&nbsp;
+        function getScrollHeight() {
+          return targetEl[0] === $window ? <span class="branch-0 cbranch-no" title="branch not covered" >$window.document.body.scrollHeight </span>: targetEl[0].scrollHeight;
+        }
+&nbsp;
+        $affix.init();
+        return $affix;
+&nbsp;
+      }
+&nbsp;
+      return AffixFactory;
+&nbsp;
+    };
+&nbsp;
+  })
+&nbsp;
+  .directive('bsAffix', function ($affix, $window) {
+&nbsp;
+    return {
+      restrict: 'EAC',
+      require: '^?bsAffixTarget',
+      link: function postLink(scope, element, attr, affixTarget) {
+&nbsp;
+        var options = {scope: scope, target: affixTarget ? affixTarget.$element : <span class="branch-1 cbranch-no" title="branch not covered" >angular.element($window)}</span>;
+        angular.forEach(['offsetTop', 'offsetBottom', 'offsetParent', 'offsetUnpin', 'inlineStyles'], function (key) {
+          if (angular.isDefined(attr[key])) {
+            var option = attr[key];
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (/true/i.test(option)) <span class="cstat-no" title="statement not covered" >option = true;</span>
+            if (/false/i.test(option)) option = false;
+            options[key] = option;
+          }
+        });
+&nbsp;
+        var affix = $affix(element, options);
+        scope.$on('$destroy', function () {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (affix) affix.destroy();
+          options = null;
+          affix = null;
+        });
+&nbsp;
+      }
+    };
+&nbsp;
+  })
+&nbsp;
+  .directive('bsAffixTarget', function () {
+    return {
+      controller: function ($element) {
+        this.$element = $element;
+      }
+    };
+  });
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 16 2016 15:40:23 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
