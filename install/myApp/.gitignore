@@ -1,0 +1,35 @@
+# Blacklist Every File
+*
+
+# Whitelist Top-Level Files
+!gulpfile.js
+!karma.conf.js
+!package.json
+!server.js
+!license.md
+!README.md
+!.babelrc
+!.envrc
+!.eslintignore
+!.eslintrc.js
+!.gitignore
+!.jsbeautifyrc
+!.nvmrc
+!.stylelintrc
+!.travis.yml
+
+# Whitelist Source Files
+!/app
+!/app/**/*
+
+# Whitelist Dev Files
+!/dev
+!/dev/**/*
+
+# Whitelist Readme Files
+!/readme
+!/readme/**/*
+
+# Blacklist Nested Files
+.DS_Store
+.fusebox
