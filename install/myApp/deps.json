@@ -1,14 +1,23 @@
 {
 	"font": {
-		"font-awesome": ["node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}"],
-		"other": ["app/**/*.{ttf,woff,woff2,eot,svg}"]
+		"font-awesome": ["./node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}"],
+		"other": ["./app/**/*.{ttf,woff,woff2,eot,svg}"]
 	},
-	"markup": {
+	"image": {
+		"custom": ["./app/**/*.{bmp,gif,jpg,jpeg,png,svg}"]
+	},
+	"model": {
 		"custom": [
-			"app/component/**/*.html",
-			"app/extension/**/*.html",
-			"app/component/**/*.jsx",
-			"app/extension/**/*.jsx"
+			"./app/**/*.data.json",
+			"./app/**/*.mixin.json"
+		]
+	},
+	"template": {
+		"custom": [
+			"./app/component/**/*.html",
+			"./app/extension/**/*.html",
+			"./app/component/**/*.jsx",
+			"./app/extension/**/*.jsx"
 		]
 	},
 	"script": {
@@ -66,9 +75,9 @@
 			"./node_modules/bootstrap/dist/css/bootstrap-theme.min.css"
 		],
 		"custom": [
-			"app/design/style/vendor.scss",
-			"app/design/style/scaffold.scss",
-			"app/**/*.scss"
+			"./app/design/style/vendor.scss",
+			"./app/design/style/scaffold.scss",
+			"./app/**/*.scss"
 		]
 	}
 }

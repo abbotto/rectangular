@@ -1,0 +1,509 @@
+{
+  "tree": {
+    "react@15.6.1": {
+      "deps": {
+        "object-assign@4.1.1": {
+          "deps": {},
+          "name": "object-assign",
+          "version": "4.1.1"
+        },
+        "fbjs@0.8.12": {
+          "deps": {
+            "process@0.0.0": {
+              "deps": {
+                "object-assign-polyfill@0.0.0": {
+                  "deps": {},
+                  "name": "object-assign-polyfill",
+                  "version": "0.0.0"
+                }
+              },
+              "name": "process",
+              "version": "0.0.0"
+            }
+          },
+          "name": "fbjs",
+          "version": "0.8.12"
+        },
+        "prop-types@15.5.10": {
+          "deps": {},
+          "name": "prop-types",
+          "version": "15.5.10"
+        },
+        "create-react-class@15.6.0": {
+          "deps": {},
+          "name": "create-react-class",
+          "version": "15.6.0"
+        }
+      },
+      "name": "react",
+      "version": "15.6.1"
+    },
+    "react-dom@15.6.1": {
+      "deps": {},
+      "name": "react-dom",
+      "version": "15.6.1"
+    },
+    "react-jsx@1.0.0": {
+      "deps": {
+        "babel-standalone@6.25.0": {
+          "deps": {},
+          "name": "babel-standalone",
+          "version": "6.25.0"
+        },
+        "react@0.14.9": {
+          "deps": {
+            "fbjs@0.6.1": {
+              "deps": {},
+              "name": "fbjs",
+              "version": "0.6.1"
+            }
+          },
+          "name": "react",
+          "version": "0.14.9"
+        },
+        "react-dom@0.14.9": {
+          "deps": {},
+          "name": "react-dom",
+          "version": "0.14.9"
+        }
+      },
+      "name": "react-jsx",
+      "version": "1.0.0"
+    },
+    "immutable@3.8.1": {
+      "deps": {},
+      "name": "immutable",
+      "version": "3.8.1"
+    }
+  },
+  "flat": {
+    "react@15.6.1": {
+      "name": "react",
+      "version": "15.6.1",
+      "files": [
+        "react.js",
+        "lib/React.js",
+        "lib/ReactBaseClasses.js",
+        "lib/reactProdInvariant.js",
+        "lib/ReactNoopUpdateQueue.js",
+        "lib/canDefineProperty.js",
+        "lib/lowPriorityWarning.js",
+        "lib/ReactChildren.js",
+        "lib/PooledClass.js",
+        "lib/ReactElement.js",
+        "lib/ReactCurrentOwner.js",
+        "lib/ReactElementSymbol.js",
+        "lib/traverseAllChildren.js",
+        "lib/getIteratorFn.js",
+        "lib/KeyEscapeUtils.js",
+        "lib/ReactDOMFactories.js",
+        "lib/ReactElementValidator.js",
+        "lib/ReactComponentTreeHook.js",
+        "lib/checkReactTypeSpec.js",
+        "lib/ReactPropTypeLocationNames.js",
+        "lib/ReactPropTypesSecret.js",
+        "lib/ReactPropTypes.js",
+        "lib/ReactVersion.js",
+        "lib/createClass.js",
+        "lib/onlyChild.js",
+        "lib/getNextDebugID.js"
+      ]
+    },
+    "object-assign@4.1.1": {
+      "name": "object-assign",
+      "version": "4.1.1",
+      "files": [
+        "index.js"
+      ]
+    },
+    "fbjs@0.8.12": {
+      "name": "fbjs",
+      "version": "0.8.12",
+      "files": [
+        "lib/warning.js",
+        "lib/emptyFunction.js",
+        "lib/emptyObject.js",
+        "lib/invariant.js",
+        "lib/ExecutionEnvironment.js",
+        "lib/performanceNow.js",
+        "lib/performance.js",
+        "lib/createNodesFromMarkup.js",
+        "lib/createArrayFromMixed.js",
+        "lib/getMarkupWrap.js",
+        "lib/focusNode.js",
+        "lib/camelizeStyleName.js",
+        "lib/camelize.js",
+        "lib/hyphenateStyleName.js",
+        "lib/hyphenate.js",
+        "lib/memoizeStringOnly.js",
+        "lib/shallowEqual.js",
+        "lib/EventListener.js",
+        "lib/getUnboundedScrollPosition.js",
+        "lib/containsNode.js",
+        "lib/isTextNode.js",
+        "lib/isNode.js",
+        "lib/getActiveElement.js"
+      ]
+    },
+    "process@0.0.0": {
+      "name": "process",
+      "version": "0.0.0",
+      "files": [
+        "index.js"
+      ]
+    },
+    "object-assign-polyfill@0.0.0": {
+      "name": "object-assign-polyfill",
+      "version": "0.0.0",
+      "files": [
+        "index.js"
+      ]
+    },
+    "prop-types@15.5.10": {
+      "name": "prop-types",
+      "version": "15.5.10",
+      "files": [
+        "factory.js",
+        "factoryWithTypeCheckers.js",
+        "lib/ReactPropTypesSecret.js",
+        "checkPropTypes.js"
+      ]
+    },
+    "create-react-class@15.6.0": {
+      "name": "create-react-class",
+      "version": "15.6.0",
+      "files": [
+        "factory.js"
+      ]
+    },
+    "react-dom@15.6.1": {
+      "name": "react-dom",
+      "version": "15.6.1",
+      "files": [
+        "index.js",
+        "lib/ReactDOM.js",
+        "lib/ReactDOMComponentTree.js",
+        "lib/reactProdInvariant.js",
+        "lib/DOMProperty.js",
+        "lib/ReactDOMComponentFlags.js",
+        "lib/ReactDefaultInjection.js",
+        "lib/ARIADOMPropertyConfig.js",
+        "lib/BeforeInputEventPlugin.js",
+        "lib/EventPropagators.js",
+        "lib/EventPluginHub.js",
+        "lib/EventPluginRegistry.js",
+        "lib/EventPluginUtils.js",
+        "lib/ReactErrorUtils.js",
+        "lib/accumulateInto.js",
+        "lib/forEachAccumulated.js",
+        "lib/FallbackCompositionState.js",
+        "lib/PooledClass.js",
+        "lib/getTextContentAccessor.js",
+        "lib/SyntheticCompositionEvent.js",
+        "lib/SyntheticEvent.js",
+        "lib/SyntheticInputEvent.js",
+        "lib/ChangeEventPlugin.js",
+        "lib/ReactUpdates.js",
+        "lib/CallbackQueue.js",
+        "lib/ReactFeatureFlags.js",
+        "lib/ReactReconciler.js",
+        "lib/ReactRef.js",
+        "lib/ReactOwner.js",
+        "lib/ReactInstrumentation.js",
+        "lib/ReactDebugTool.js",
+        "lib/ReactInvalidSetStateWarningHook.js",
+        "lib/ReactHostOperationHistoryHook.js",
+        "lib/Transaction.js",
+        "lib/inputValueTracking.js",
+        "lib/getEventTarget.js",
+        "lib/isEventSupported.js",
+        "lib/isTextInputElement.js",
+        "lib/DefaultEventPluginOrder.js",
+        "lib/EnterLeaveEventPlugin.js",
+        "lib/SyntheticMouseEvent.js",
+        "lib/SyntheticUIEvent.js",
+        "lib/ViewportMetrics.js",
+        "lib/getEventModifierState.js",
+        "lib/HTMLDOMPropertyConfig.js",
+        "lib/ReactComponentBrowserEnvironment.js",
+        "lib/DOMChildrenOperations.js",
+        "lib/DOMLazyTree.js",
+        "lib/DOMNamespaces.js",
+        "lib/setInnerHTML.js",
+        "lib/createMicrosoftUnsafeLocalFunction.js",
+        "lib/setTextContent.js",
+        "lib/escapeTextContentForBrowser.js",
+        "lib/Danger.js",
+        "lib/ReactDOMIDOperations.js",
+        "lib/ReactDOMComponent.js",
+        "lib/AutoFocusUtils.js",
+        "lib/CSSPropertyOperations.js",
+        "lib/CSSProperty.js",
+        "lib/dangerousStyleValue.js",
+        "lib/DOMPropertyOperations.js",
+        "lib/quoteAttributeValueForBrowser.js",
+        "lib/ReactBrowserEventEmitter.js",
+        "lib/ReactEventEmitterMixin.js",
+        "lib/getVendorPrefixedEventName.js",
+        "lib/ReactDOMInput.js",
+        "lib/LinkedValueUtils.js",
+        "lib/ReactPropTypesSecret.js",
+        "lib/ReactDOMOption.js",
+        "lib/ReactDOMSelect.js",
+        "lib/ReactDOMTextarea.js",
+        "lib/ReactMultiChild.js",
+        "lib/ReactComponentEnvironment.js",
+        "lib/ReactInstanceMap.js",
+        "lib/ReactChildReconciler.js",
+        "lib/instantiateReactComponent.js",
+        "lib/ReactCompositeComponent.js",
+        "lib/ReactNodeTypes.js",
+        "lib/checkReactTypeSpec.js",
+        "lib/ReactPropTypeLocationNames.js",
+        "lib/shouldUpdateReactComponent.js",
+        "lib/ReactEmptyComponent.js",
+        "lib/ReactHostComponent.js",
+        "lib/KeyEscapeUtils.js",
+        "lib/traverseAllChildren.js",
+        "lib/ReactElementSymbol.js",
+        "lib/getIteratorFn.js",
+        "lib/flattenChildren.js",
+        "lib/ReactServerRenderingTransaction.js",
+        "lib/ReactServerUpdateQueue.js",
+        "lib/ReactUpdateQueue.js",
+        "lib/validateDOMNesting.js",
+        "lib/ReactDOMEmptyComponent.js",
+        "lib/ReactDOMTreeTraversal.js",
+        "lib/ReactDOMTextComponent.js",
+        "lib/ReactDefaultBatchingStrategy.js",
+        "lib/ReactEventListener.js",
+        "lib/ReactInjection.js",
+        "lib/ReactReconcileTransaction.js",
+        "lib/ReactInputSelection.js",
+        "lib/ReactDOMSelection.js",
+        "lib/getNodeForCharacterOffset.js",
+        "lib/SVGDOMPropertyConfig.js",
+        "lib/SelectEventPlugin.js",
+        "lib/SimpleEventPlugin.js",
+        "lib/SyntheticAnimationEvent.js",
+        "lib/SyntheticClipboardEvent.js",
+        "lib/SyntheticFocusEvent.js",
+        "lib/SyntheticKeyboardEvent.js",
+        "lib/getEventCharCode.js",
+        "lib/getEventKey.js",
+        "lib/SyntheticDragEvent.js",
+        "lib/SyntheticTouchEvent.js",
+        "lib/SyntheticTransitionEvent.js",
+        "lib/SyntheticWheelEvent.js",
+        "lib/ReactMount.js",
+        "lib/ReactDOMContainerInfo.js",
+        "lib/ReactDOMFeatureFlags.js",
+        "lib/ReactMarkupChecksum.js",
+        "lib/adler32.js",
+        "lib/ReactVersion.js",
+        "lib/findDOMNode.js",
+        "lib/getHostComponentFromComposite.js",
+        "lib/renderSubtreeIntoContainer.js",
+        "lib/ReactDOMUnknownPropertyHook.js",
+        "lib/ReactDOMNullInputValuePropHook.js",
+        "lib/ReactDOMInvalidARIAHook.js"
+      ]
+    },
+    "react-jsx@1.0.0": {
+      "name": "react-jsx",
+      "version": "1.0.0",
+      "files": [
+        "index.js"
+      ]
+    },
+    "babel-standalone@6.25.0": {
+      "name": "babel-standalone",
+      "version": "6.25.0",
+      "files": [
+        "babel.js"
+      ]
+    },
+    "react@0.14.9": {
+      "name": "react@0.14.9",
+      "version": "0.14.9",
+      "files": [
+        "react.js",
+        "lib/React.js",
+        "lib/ReactDOM.js",
+        "lib/ReactCurrentOwner.js",
+        "lib/ReactDOMTextComponent.js",
+        "lib/DOMChildrenOperations.js",
+        "lib/Danger.js",
+        "lib/ReactMultiChildUpdateTypes.js",
+        "lib/ReactPerf.js",
+        "lib/setInnerHTML.js",
+        "lib/setTextContent.js",
+        "lib/escapeTextContentForBrowser.js",
+        "lib/DOMPropertyOperations.js",
+        "lib/DOMProperty.js",
+        "lib/quoteAttributeValueForBrowser.js",
+        "lib/ReactComponentBrowserEnvironment.js",
+        "lib/ReactDOMIDOperations.js",
+        "lib/ReactMount.js",
+        "lib/ReactBrowserEventEmitter.js",
+        "lib/EventConstants.js",
+        "lib/EventPluginHub.js",
+        "lib/EventPluginRegistry.js",
+        "lib/EventPluginUtils.js",
+        "lib/ReactErrorUtils.js",
+        "lib/accumulateInto.js",
+        "lib/forEachAccumulated.js",
+        "lib/ReactEventEmitterMixin.js",
+        "lib/ViewportMetrics.js",
+        "lib/Object.assign.js",
+        "lib/isEventSupported.js",
+        "lib/ReactDOMFeatureFlags.js",
+        "lib/ReactElement.js",
+        "lib/canDefineProperty.js",
+        "lib/ReactEmptyComponentRegistry.js",
+        "lib/ReactInstanceHandles.js",
+        "lib/ReactRootIndex.js",
+        "lib/ReactInstanceMap.js",
+        "lib/ReactMarkupChecksum.js",
+        "lib/adler32.js",
+        "lib/ReactReconciler.js",
+        "lib/ReactRef.js",
+        "lib/ReactOwner.js",
+        "lib/ReactUpdateQueue.js",
+        "lib/ReactUpdates.js",
+        "lib/CallbackQueue.js",
+        "lib/PooledClass.js",
+        "lib/Transaction.js",
+        "lib/instantiateReactComponent.js",
+        "lib/ReactCompositeComponent.js",
+        "lib/ReactComponentEnvironment.js",
+        "lib/ReactPropTypeLocations.js",
+        "lib/ReactPropTypeLocationNames.js",
+        "lib/shouldUpdateReactComponent.js",
+        "lib/ReactEmptyComponent.js",
+        "lib/ReactNativeComponent.js",
+        "lib/validateDOMNesting.js",
+        "lib/ReactDefaultInjection.js",
+        "lib/BeforeInputEventPlugin.js",
+        "lib/EventPropagators.js",
+        "lib/FallbackCompositionState.js",
+        "lib/getTextContentAccessor.js",
+        "lib/SyntheticCompositionEvent.js",
+        "lib/SyntheticEvent.js",
+        "lib/SyntheticInputEvent.js",
+        "lib/ChangeEventPlugin.js",
+        "lib/getEventTarget.js",
+        "lib/isTextInputElement.js",
+        "lib/ClientReactRootIndex.js",
+        "lib/DefaultEventPluginOrder.js",
+        "lib/EnterLeaveEventPlugin.js",
+        "lib/SyntheticMouseEvent.js",
+        "lib/SyntheticUIEvent.js",
+        "lib/getEventModifierState.js",
+        "lib/HTMLDOMPropertyConfig.js",
+        "lib/ReactBrowserComponentMixin.js",
+        "lib/findDOMNode.js",
+        "lib/ReactDefaultBatchingStrategy.js",
+        "lib/ReactDOMComponent.js",
+        "lib/AutoFocusUtils.js",
+        "lib/CSSPropertyOperations.js",
+        "lib/CSSProperty.js",
+        "lib/dangerousStyleValue.js",
+        "lib/ReactDOMButton.js",
+        "lib/ReactDOMInput.js",
+        "lib/LinkedValueUtils.js",
+        "lib/ReactPropTypes.js",
+        "lib/getIteratorFn.js",
+        "lib/ReactDOMOption.js",
+        "lib/ReactChildren.js",
+        "lib/traverseAllChildren.js",
+        "lib/ReactDOMSelect.js",
+        "lib/ReactDOMTextarea.js",
+        "lib/ReactMultiChild.js",
+        "lib/ReactChildReconciler.js",
+        "lib/flattenChildren.js",
+        "lib/ReactEventListener.js",
+        "lib/ReactInjection.js",
+        "lib/ReactClass.js",
+        "lib/ReactComponent.js",
+        "lib/ReactNoopUpdateQueue.js",
+        "lib/ReactReconcileTransaction.js",
+        "lib/ReactInputSelection.js",
+        "lib/ReactDOMSelection.js",
+        "lib/getNodeForCharacterOffset.js",
+        "lib/SelectEventPlugin.js",
+        "lib/ServerReactRootIndex.js",
+        "lib/SimpleEventPlugin.js",
+        "lib/SyntheticClipboardEvent.js",
+        "lib/SyntheticFocusEvent.js",
+        "lib/SyntheticKeyboardEvent.js",
+        "lib/getEventCharCode.js",
+        "lib/getEventKey.js",
+        "lib/SyntheticDragEvent.js",
+        "lib/SyntheticTouchEvent.js",
+        "lib/SyntheticWheelEvent.js",
+        "lib/SVGDOMPropertyConfig.js",
+        "lib/ReactDefaultPerf.js",
+        "lib/ReactDefaultPerfAnalysis.js",
+        "lib/ReactVersion.js",
+        "lib/renderSubtreeIntoContainer.js",
+        "lib/ReactDOMServer.js",
+        "lib/ReactServerRendering.js",
+        "lib/ReactServerBatchingStrategy.js",
+        "lib/ReactServerRenderingTransaction.js",
+        "lib/ReactIsomorphic.js",
+        "lib/ReactDOMFactories.js",
+        "lib/ReactElementValidator.js",
+        "lib/onlyChild.js",
+        "lib/deprecated.js"
+      ]
+    },
+    "fbjs@0.6.1": {
+      "name": "fbjs@0.6.1",
+      "version": "0.6.1",
+      "files": [
+        "lib/ExecutionEnvironment.js",
+        "lib/createNodesFromMarkup.js",
+        "lib/createArrayFromMixed.js",
+        "lib/toArray.js",
+        "lib/invariant.js",
+        "lib/getMarkupWrap.js",
+        "lib/emptyFunction.js",
+        "lib/keyMirror.js",
+        "lib/warning.js",
+        "lib/emptyObject.js",
+        "lib/containsNode.js",
+        "lib/isTextNode.js",
+        "lib/isNode.js",
+        "lib/keyOf.js",
+        "lib/focusNode.js",
+        "lib/camelizeStyleName.js",
+        "lib/camelize.js",
+        "lib/hyphenateStyleName.js",
+        "lib/hyphenate.js",
+        "lib/memoizeStringOnly.js",
+        "lib/shallowEqual.js",
+        "lib/EventListener.js",
+        "lib/getUnboundedScrollPosition.js",
+        "lib/getActiveElement.js",
+        "lib/performanceNow.js",
+        "lib/performance.js",
+        "lib/mapObject.js"
+      ]
+    },
+    "react-dom@0.14.9": {
+      "name": "react-dom@0.14.9",
+      "version": "0.14.9",
+      "files": [
+        "server.js"
+      ]
+    },
+    "immutable@3.8.1": {
+      "name": "immutable",
+      "version": "3.8.1",
+      "files": [
+        "dist/immutable.js"
+      ]
+    }
+  }
+}

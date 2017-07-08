@@ -1,6 +1,6 @@
 "use strict";
 
-import PrintService from "app/extension/print/print.service.js";
+import PrintService from "~/app/extension/print/print.service.js";
 let print$;
 
 describe("print.service", () => {

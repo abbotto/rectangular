@@ -9,32 +9,15 @@ const preflight = function preflight() {
 	sh.exec("rm -rf dist && mkdir dist");
 	sh.exec("rm -rf tmp && mkdir tmp");
 	
-	// GLOBAL SCRIPTS
-	require("dev/task/global.js")();
-
-	// IMAGES
-	require("dev/task/image.js")();
-
-	// FONTS
-	require("dev/task/font.js")();
-	
-	// SASS
-	require("dev/task/sass.js")();
-
-	// ANGULAR SERVICES
-	require("dev/task/service.js")();
-
-	// ANGULAR CONSTANTS
-	require("dev/task/constant.js")(".envrc");
-	
-	// ANGULAR ROUTES
-	require("dev/task/route.js")();
-
-	// ANGULAR MODELS
-	require("dev/task/model.js")();
-
-	// ANGULAR TEMPLATES
-	require("dev/task/template.js")();
+	require("../../dev/bundle/task/env.js")(".envrc");
+	require("../../dev/bundle/task/font.js")();
+	require("../../dev/bundle/task/image.js")();
+	require("../../dev/bundle/task/model.js")();
+	require("../../dev/bundle/task/route.js")();
+	require("../../dev/bundle/task/script.js")();
+	require("../../dev/bundle/task/service.js")();
+	require("../../dev/bundle/task/style.js")();
+	require("../../dev/bundle/task/template.js")();
 };
 
 module.exports = preflight;

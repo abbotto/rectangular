@@ -1,6 +1,6 @@
 "use strict";
 
-import PromiseService from "app/extension/promise/promise.service.js";
+import PromiseService from "~/app/extension/promise/promise.service.js";
 let promise$;
 
 describe("promise.service", () => {

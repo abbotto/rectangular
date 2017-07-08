@@ -2,28 +2,27 @@
 
 const fs = require("fs");
 const glob = require("glob-concat");
-const parseAssets = require("dev/utility/parseAssets.js");
+const parseAssets = require("../../../dev/utility/parseAssets.js");
 const path = require("path");
 const pug = require("pug");
-const tmpTplJs = "tmp/template.auto.js";
 
-module.exports = function template(deps) {
-	const markup = deps.markup || require("deps.json").markup;
-	const tplFiles = glob.sync(
-		parseAssets(
-			markup
-		)
-	);
+module.exports = function template(deps, root) {
+	const markup = parseAssets(deps);
+	const tmpTplJs = root + "/tmp/template.auto.js";
+	
+	markup.forEach((filePath, i) => {
+		markup[i] = filePath.replace("./", root + "/");
+	});
+
+	const tplFiles = glob.sync(markup);
 	
 	let key, value;
 	let templates = [];
 	
 	tplFiles.forEach((filePath) => {
-		key = filePath
-			.replace("./", "")
-		;
+		key = filePath.replace(root + "/", "");
 		
-		path.extname(key) === "jsx"
+		path.extname(key) === ".jsx"
 			? value = JSON.stringify(fs.readFileSync(filePath, "utf8"))
 			: value = JSON.stringify(pug.compileFile(filePath)())
 		;

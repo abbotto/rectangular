@@ -1,19 +1,21 @@
 "use strict";
 
-const concatAssets = require("dev/utility/concatAssets.js");
+const concatAssets = require("../../../dev/utility/concatAssets.js");
 const fs = require("fs");
-const parseAssets = require("dev/utility/parseAssets.js");
+const parseAssets = require("../../../dev/utility/parseAssets.js");
 const sh = require("shelljs");
 
-module.exports = function script() {
-	const script = require("deps.json").script;
+module.exports = function script(deps, root) {
+	const scripts = parseAssets(deps);
+	
+	scripts.forEach((filePath, i) => {
+		scripts[i] = filePath.replace("./", root + "/");
+	});
 	
 	fs.writeFileSync(
 		"dist/legacy.js",
 		concatAssets(
-			parseAssets(
-				script
-			)
+			scripts
 		), "utf8"
 	);
 	

@@ -1,17 +1,17 @@
 "use strict";
 
-import AffixService from "app/extension/ui/ui.affix.service.js";
-import AlertService from "app/extension/ui/ui.alert.service.js";
-import AsideService from "app/extension/ui/ui.aside.service.js";
-import DatepickerService from "app/extension/ui/ui.datepicker.service.js";
-import DropdownService from "app/extension/ui/ui.dropdown.service.js";
-import ModalService from "app/extension/ui/ui.modal.service.js";
-import PopoverService from "app/extension/ui/ui.popover.service.js";
-import ScrollspyService from "app/extension/ui/ui.scrollspy.service.js";
-import SelectService from "app/extension/ui/ui.select.service.js";
-import TimepickerService from "app/extension/ui/ui.timepicker.service.js";
-import TooltipService from "app/extension/ui/ui.tooltip.service.js";
-import TypeaheadService from "app/extension/ui/ui.typeahead.service.js";
+import AffixService from "~/app/extension/ui/ui.affix.service.js";
+import AlertService from "~/app/extension/ui/ui.alert.service.js";
+import AsideService from "~/app/extension/ui/ui.aside.service.js";
+import DatepickerService from "~/app/extension/ui/ui.datepicker.service.js";
+import DropdownService from "~/app/extension/ui/ui.dropdown.service.js";
+import ModalService from "~/app/extension/ui/ui.modal.service.js";
+import PopoverService from "~/app/extension/ui/ui.popover.service.js";
+import ScrollspyService from "~/app/extension/ui/ui.scrollspy.service.js";
+import SelectService from "~/app/extension/ui/ui.select.service.js";
+import TimepickerService from "~/app/extension/ui/ui.timepicker.service.js";
+import TooltipService from "~/app/extension/ui/ui.tooltip.service.js";
+import TypeaheadService from "~/app/extension/ui/ui.typeahead.service.js";
 
 let affix$,
 	alert$,

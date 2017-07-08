@@ -1,17 +1,19 @@
 "use strict";
 
 const fs = require("fs");
-const tmpConstantsJs = "tmp/constant.auto.js";
 
 let kv;
 let constants = "";
 
-module.exports = function constant(fileName) {
+module.exports = function env(fileName, root) {
+	const tmpEnvJs = root + "/tmp/env.auto.js";
+	fileName = root + "/" + fileName;
+	
 	const lines = fs.readFileSync(fileName)
 		.toString()
 		.split("\n")
 	;
-
+	
 	lines.forEach((line) => {
 		kv = line.split("=");
 		// Non-strings
@@ -26,5 +28,5 @@ module.exports = function constant(fileName) {
 	});
 
 	constants = "export default angular.module(\"env.auto\", [])" + constants + ";";
-	fs.writeFile(tmpConstantsJs, constants);
+	fs.writeFile(tmpEnvJs, constants);
 };

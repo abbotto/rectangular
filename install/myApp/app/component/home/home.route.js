@@ -1,6 +1,6 @@
 "use strict";
 
-import homeComponent from "app/component/home/home.component.js";
+import homeComponent from "~/app/component/home/home.component.js";
 
 export default angular
 	.module("home.route", [

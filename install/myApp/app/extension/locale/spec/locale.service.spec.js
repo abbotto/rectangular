@@ -1,6 +1,6 @@
 "use strict";
 
-import LocaleService from "app/extension/locale/locale.service.js";
+import LocaleService from "~/app/extension/locale/locale.service.js";
 let locale$;
 
 describe("locale.service", () => {

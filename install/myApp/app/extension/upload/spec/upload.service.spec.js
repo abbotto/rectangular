@@ -1,6 +1,6 @@
 "use strict";
 
-import UploadService from "app/extension/upload/upload.service.js";
+import UploadService from "~/app/extension/upload/upload.service.js";
 let upload$;
 
 describe("upload.service", () => {

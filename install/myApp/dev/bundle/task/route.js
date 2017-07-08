@@ -5,17 +5,22 @@ const EOL = require("os").EOL;
 const fs = require("fs");
 const glob = require("glob-concat");
 const path = require("path");
-const tmpRouteJs = "tmp/route.auto.js";
 
-module.exports = function image() {
+module.exports = function route(paths, root) {
 	const deps = [];
 	const imports = [];
-	const routeFiles = glob.sync(["app/**/*.route.js"]);
 	const routes = [];
-
+	const tmpRouteJs = root + "/tmp/route.auto.js";
+	
+	paths.forEach((filePath, i) => {
+		paths[i] = filePath.replace("./", root + "/");
+	});
+	
+	const routeFiles = glob.sync(paths);
+	
 	routeFiles.forEach((file) => {
 		const route = path.basename(file).replace(".js", "");
-		imports.push("import " + camelCase(route) + " from \"" + file.split("node_modules/")[1] + "\";");
+		imports.push("import " + camelCase(route) + " from \"" + file.replace(root + "/", "~/") + "\";");
 		deps.push(camelCase(route) + ".name");
 		routes.push(route);
 	});

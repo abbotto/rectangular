@@ -2,22 +2,28 @@
 
 const fs = require("fs");
 const glob = require("glob-concat");
-const tmpModelJs = "tmp/model.auto.js";
+const parseAssets = require("../../../dev/utility/parseAssets.js");
 
-module.exports = function image() {
-	const modelFiles = glob.sync([
-		"app/**/*.data.json",
-		"app/**/*.mixin.json"
-	]);
+module.exports = function model(deps, root) {
+	const json = parseAssets(deps);
+	const tmpModelJs = root + "/tmp/model.auto.js";
+
+	json.forEach((filePath, i) => {
+		json[i] = filePath.replace("./", root + "/");
+	});
+
+	const modelFiles = glob.sync(json);
 	
 	let key;
 	let models = {};
 	
-	modelFiles.forEach((path) => {
-		key = path
-			.replace("./", "")
-		;
-		models[key] = fs.readFileSync(path, "utf8");
+	modelFiles.forEach((filePath) => {
+		key = filePath.replace("./", "");
+		
+		models[key] = fs.readFileSync(
+			filePath.replace("./", root + "/"),
+			"utf8"
+		);
 	});
 
 	models = "export default angular.module(\"model.auto\", []).constant(\"modelAuto\", " + JSON.stringify(models) + ");";

@@ -1,15 +1,15 @@
 "use strict";
 
-import BottomSheetService from "app/extension/ui/ui.bottomSheet.service.js";
-import ColorsService from "app/extension/ui/ui.colors.service.js";
-import DialogService from "app/extension/ui/ui.dialog.service.js";
-import IconService from "app/extension/ui/ui.icon.service.js";
-import InkRippleService from "app/extension/ui/ui.inkRipple.service.js";
-import MediaService from "app/extension/ui/ui.media.service.js";
-import PanelService from "app/extension/ui/ui.panel.service.js";
-import SidenavService from "app/extension/ui/ui.sidenav.service.js";
-import StickyService from "app/extension/ui/ui.sticky.service.js";
-import ToastService from "app/extension/ui/ui.toast.service.js";
+import BottomSheetService from "~/app/extension/ui/ui.bottomSheet.service.js";
+import ColorsService from "~/app/extension/ui/ui.colors.service.js";
+import DialogService from "~/app/extension/ui/ui.dialog.service.js";
+import IconService from "~/app/extension/ui/ui.icon.service.js";
+import InkRippleService from "~/app/extension/ui/ui.inkRipple.service.js";
+import MediaService from "~/app/extension/ui/ui.media.service.js";
+import PanelService from "~/app/extension/ui/ui.panel.service.js";
+import SidenavService from "~/app/extension/ui/ui.sidenav.service.js";
+import StickyService from "~/app/extension/ui/ui.sticky.service.js";
+import ToastService from "~/app/extension/ui/ui.toast.service.js";
 
 let bottomSheet$,
 	colors$,

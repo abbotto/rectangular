@@ -1,11 +1,11 @@
 "use strict";
 
-import appRoute from "route.js";
-import appService from "service.js";
+import appRoute from "~/app/route.js";
+import appService from "~/app/service.js";
 
 // Auto-generated files
-import appEnv from "../tmp/env.auto.js";
-import appTemplate from "../tmp/template.auto.js";
+import appEnv from "~/tmp/env.auto.js";
+import appTemplate from "~/tmp/template.auto.js";
 
 angular
 	.module("app", [

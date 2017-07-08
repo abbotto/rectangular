@@ -1,6 +1,6 @@
 "use strict";
 
-import DateService from "app/extension/date/date.service.js";
+import DateService from "~/app/extension/date/date.service.js";
 let date$;
 
 describe("date.service", () => {

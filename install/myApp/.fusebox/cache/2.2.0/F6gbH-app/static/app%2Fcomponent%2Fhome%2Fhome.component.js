@@ -1,0 +1,7 @@
+module.exports = { contents: "\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:true});var _componentDirective=require(\"~/app/extension/component/component.directive.js\");var _componentDirective2=_interopRequireDefault(_componentDirective);var _dataService=require(\"~/app/extension/data/data.service.js\");var _dataService2=_interopRequireDefault(_dataService);var _homeController=require(\"~/app/component/home/home.controller.js\");var _homeController2=_interopRequireDefault(_homeController);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// --------------------------------\n// Home Component (AngularJS)\n// --------------------------------\nvar HomeComponent={};HomeComponent.controllerAs=\"vm\";HomeComponent.templateUrl=\"app/component/home/home.component.html\";HomeComponent.controller=_homeController2.default;exports.default=angular.module(\"home.component\",[_componentDirective2.default.name,_dataService2.default.name]).component(\"home\",HomeComponent);",
+dependencies: ["~/app/extension/component/component.directive.js","~/app/extension/data/data.service.js","~/app/component/home/home.controller.js"],
+sourceMap: {},
+headerContent: undefined,
+mtime: 1499543873000,
+devLibsRequired : undefined
+};

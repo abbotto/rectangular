@@ -1,6 +1,6 @@
 "use strict";
 
-import ModelService from "app/extension/model/model.service.js";
+import ModelService from "~/app/extension/model/model.service.js";
 let model$;
 
 describe("model.service", () => {
