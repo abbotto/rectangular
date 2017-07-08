@@ -8,7 +8,7 @@ module.exports = function image() {
 	
 	fs.writeFileSync(
 		"dist/vendor-global.js",
-		require("dev/utility/joinFiles.js")(
+		require("dev/utility/concatAssets.js")(
 			require("dev/utility/parseAssets.js")(
 				globalVendorFiles
 			)

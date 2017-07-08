@@ -3,7 +3,7 @@
 const EOL = require("os").EOL;
 const fs = require("fs");
 
-module.exports = function joinFiles(files) {
+module.exports = function concatAssets(files) {
 	const script = [];
 	const n = files.length;
 	let i = 0;

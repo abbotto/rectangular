@@ -2,34 +2,36 @@
 
 const fs = require("fs");
 const glob = require("glob-concat");
+const parseAssets = require("dev/utility/parseAssets.js");
+const path = require("path");
 const pug = require("pug");
-const tmpTplJs = "tmp/templates.js";
+const tmpTplJs = "tmp/template.auto.js";
 
-module.exports = function template(patterns) {
-	const tplFiles = glob.sync(patterns || [
-		"app/component/**/*.html",
-		"app/extension/**/*.html",
-		"app/component/**/*.jsx",
-		"app/extension/**/*.jsx"
-	]);
+module.exports = function template(deps) {
+	const markup = deps.markup || require("deps.json").markup;
+	const tplFiles = glob.sync(
+		parseAssets(
+			markup
+		)
+	);
 	
 	let key, value;
 	let templates = [];
 	
-	tplFiles.forEach((path) => {
-		key = path
+	tplFiles.forEach((filePath) => {
+		key = filePath
 			.replace("./", "")
 		;
 		
-		key.indexOf(".jsx") > -1
-			? value = JSON.stringify(fs.readFileSync(path, "utf8"))
-			: value = JSON.stringify(pug.compileFile(path)())
+		path.extname(key) === "jsx"
+			? value = JSON.stringify(fs.readFileSync(filePath, "utf8"))
+			: value = JSON.stringify(pug.compileFile(filePath)())
 		;
 		
 		templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
 	});
 	
 	const cache = templates.join(";");
-	templates = "export default angular.module(\"app.template\", []).run(function($templateCache) {" + cache + "});";
+	templates = "export default angular.module(\"template.auto\", []).run(function($templateCache) {" + cache + "});";
 	fs.writeFile(tmpTplJs, templates);
 };

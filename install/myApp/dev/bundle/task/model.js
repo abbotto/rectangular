@@ -2,12 +2,13 @@
 
 const fs = require("fs");
 const glob = require("glob-concat");
-const tmpModelJs = "tmp/models.js";
+const tmpModelJs = "tmp/model.auto.js";
 
 module.exports = function image() {
-	const dataFiles = glob.sync(["app/**/*.data.json"]);
-	const mixinFiles = glob.sync(["app/**/*.mixin.json"]);
-	const modelFiles = mixinFiles.concat(dataFiles);
+	const modelFiles = glob.sync([
+		"app/**/*.data.json",
+		"app/**/*.mixin.json"
+	]);
 	
 	let key;
 	let models = {};
@@ -19,6 +20,6 @@ module.exports = function image() {
 		models[key] = fs.readFileSync(path, "utf8");
 	});
 
-	models = "export default angular.module(\"app.model\", []).constant(\"appModel\", " + JSON.stringify(models) + ");";
+	models = "export default angular.module(\"model.auto\", []).constant(\"modelAuto\", " + JSON.stringify(models) + ");";
 	fs.writeFile(tmpModelJs, models);
 };

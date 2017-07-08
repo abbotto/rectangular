@@ -1,17 +1,17 @@
 "use strict";
 
 import appRoute from "route.js";
+import appService from "service.js";
 
 // Auto-generated files
-import appConstant from "../tmp/constants.js";
-import appService from "../tmp/services.js";
-import appTemplate from "../tmp/templates.js";
+import appEnv from "../tmp/env.auto.js";
+import appTemplate from "../tmp/template.auto.js";
 
 angular
 	.module("app", [
-		appConstant.name,
-		appService.name,
+		appEnv.name,
 		appRoute.name,
+		appService.name,
 		appTemplate.name,
 		"ngAnimate",
 		"ngAria",

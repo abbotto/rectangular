@@ -37,11 +37,12 @@ fuse
 fuse
 	.bundle("app")
 	.target("browser")
-	// .sourceMaps(!isProduction)
+	.sourceMaps(NODE_ENV === "development")
 	.instructions("!> [index.js]")
 ;
 
 fuse.run();
 
 // GZIP the app bundle
+sh.exec("gzip -c -8 " + "dist/vendor.js > dist/vendor.js.gz");
 sh.exec("gzip -c -8 " + "dist/app.js > dist/app.js.gz");

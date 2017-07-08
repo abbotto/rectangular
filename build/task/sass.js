@@ -2,33 +2,25 @@
 
 const glob = require("glob-concat");
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
-const parseAssets = require("dev/utility/parseAssets.js");
-const path = require("path");
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
+const sassVendorFiles = require("dev/utility/parseAssets.js")(require("dev/asset/global.scss.json"));
 const sh = require("shelljs");
 const tmpAppCSS = "tmp/app.scss";
 
-module.exports = function sass(deps) {
-	const cssFiles = [];
-	const sass = deps.sass || require("deps.json").sass;
-	const sassFiles = [];
-	
-	const styleFiles = glob.sync(parseAssets(
-		sass
-	));
-	
-	styleFiles.forEach((file) => {
-		path.extname(file) === "css" && cssFiles.push(file);
-		path.extname(file) === "scss" && sassFiles.push(file);
-	});
-	
+const sassAppFiles = glob.sync([
+	"app/design/style/vendor.scss",
+	"app/design/style/scaffold.scss",
+	"app/**/*.scss"
+]);
+
+module.exports = function sass() {
 	sh.exec("touch " + "dist/app.css");
 	sh.exec("node_modules/stylelint/bin/stylelint.js " + "app/**/*.scss");
-	
-	sh.cat(sassFiles).to(tmpAppCSS);
+
+	sh.cat(sassAppFiles).to(tmpAppCSS);
 	sh.exec(nodeSASS + " -q --output-style compressed --include-path scss " + tmpAppCSS + " " + tmpAppCSS);
 	sh.exec(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpAppCSS);
-	
-	cssFiles.push(tmpAppCSS);
-	sh.cat(cssFiles).to("dist/app.css");
+
+	sassVendorFiles.push(tmpAppCSS);
+	sh.cat(sassVendorFiles).to("dist/app.css");
 };

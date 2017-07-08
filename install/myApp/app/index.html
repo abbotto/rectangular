@@ -15,8 +15,14 @@
 		<div id="app" class="view-animate" ui-view></div>
 		
 		<!-- Scripts -->
-		<script type="text/javascript" src="vendor.global.js"></script>
-		<script type="text/javascript" src="vendor.import.js"></script>
-		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="legacy.js">
+			// Bundle for scripts that can't be imported via ES6
+		</script>
+		<script type="text/javascript" src="vendor.js">
+			// Vendor bundle extracted via code-splitting
+		</script>
+		<script type="text/javascript" src="app.js">
+			// Application bundle after code-splitting
+		</script>
 	</body>
 </html>

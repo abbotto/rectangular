@@ -1,12 +1,12 @@
 "use strict";
 
 // Auto-generated file
-import componentRoute from "../tmp/component.route.js";
+import routeAuto from "../tmp/route.auto.js";
 
 export default angular
-	.module("app.route", [
+	.module("route", [
 		"ui.router",
-		componentRoute.name
+		routeAuto.name
 	])
 	.config(($urlRouterProvider) => {
 		$urlRouterProvider.otherwise("/");

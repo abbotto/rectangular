@@ -1,11 +1,11 @@
 "use strict";
 
 // Auto-generated file
-import appModel from "models.js";
+import appModel from "../../tmp/model.auto.js";
 
-const modelService = function modelService(appModel) {
+const modelService = function modelService(modelAuto) {
 	const _model = (key) => {
-		return appModel[key];
+		return modelAuto[key];
 	};
 	
 	const get = (key) => {

@@ -25,7 +25,7 @@ const preflight = function preflight() {
 	require("dev/task/service.js")();
 
 	// ANGULAR CONSTANTS
-	require("dev/task/constant.js")();
+	require("dev/task/constant.js")(".envrc");
 	
 	// ANGULAR ROUTES
 	require("dev/task/route.js")();
