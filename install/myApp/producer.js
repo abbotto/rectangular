@@ -86,9 +86,12 @@ if (args.indexOf("--spec") > -1 || args.indexOf("-s") > -1) {
 	;
 };
 
-if (NODE_ENV === "development") {
+if (args.indexOf("--watch") > -1) {
 	// vendor.hmr().watch();
-	app.watch("app/**/*.js");
+	app
+		.hmr()
+		.watch("app/**/*.js")
+	;
 }
 
 if (args.indexOf("--build") > -1) {

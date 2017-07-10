@@ -3,11 +3,11 @@
 const sh = require("shelljs");
 
 const port = 4444;
-const bundle = require("./producer.js");
+const producer = require("./producer.js");
 
-sh.exec("node producer.js --env --font --index --image --model --route --script --style --template --build");
+sh.exec("node producer.js --env --font --index --image --model --route --script --style --template --build --watch");
 
-bundle.dev(
+producer.dev(
 	{
 		port,
 		root: "dist",
