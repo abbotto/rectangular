@@ -2,7 +2,7 @@
 *
 
 # Whitelist Top-Level Files
-!bundle.js
+!producer.js
 !deps.json
 !gulpfile.js
 !karma.js
