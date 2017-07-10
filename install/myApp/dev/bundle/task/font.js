@@ -7,7 +7,8 @@ const sh = require("shelljs");
 
 module.exports = function font(deps, root) {
 	const fonts = parseAssets(deps);
-	const dest = fs.existsSync(root + "/dist/fonts");
+	const outputDir = root + "/dist/fonts";
+	const dest = fs.existsSync(outputDir);
 	
 	fonts.forEach((filePath, i) => {
 		fonts[i] = filePath.replace("./", root + "/");
@@ -15,8 +16,8 @@ module.exports = function font(deps, root) {
 	
 	const fontFiles = glob.sync(fonts);
 
-	dest && sh.exec("rm -rf " + root + "/dist/fonts");
-	!dest && sh.exec("mkdir " + root + "/dist/fonts");
+	dest && sh.exec("rm -rf " + outputDir + " && mkdir " + outputDir);
+	!dest && sh.exec("mkdir " + outputDir);
 
 	fontFiles.length && fontFiles.forEach((font) => {
 		font = font.replace("./", root + "/");
