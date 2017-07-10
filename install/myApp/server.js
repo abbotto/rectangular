@@ -1,33 +1,11 @@
-const host = "127.0.0.1";
-const port = 8088;
-const path = require("path");
-const compression = require("compression");
-const express = exports.express = require("express");
-const app = module.exports.app = exports.app = express();
-const route = exports.route = express.Router();
-const www = __dirname + "/dist";
+const port = 4444;
+const bundle = require("./bundle.js");
 
-app.set("view cache", true);
-app.use(express.static(www));
-app.use(compression());
-
-// Enable gzip encoding
-if (process.env.NODE_ENV === "production") {
-	app.get("*.js", (req, res, next) => {
-		req.url = req.url + ".gz";
-		res.set("Content-Encoding", "gzip");
-		next();
-	});
-}
-
-// This route handles HTML5Mode for AngularJS
-// It forwards missing files to index.html
-app.all("/*", (req, res) => {
-	res.sendFile(path.resolve(www + "/index.html"));
-});
-
-const server = app.listen((process.env.PORT || port), function appServer() {
-	const host = server.address().address;
-	const port = server.address().port;
-	// console.log("http://%s:%s", host, port);
-});
+bundle.dev(
+	{
+		port,
+		root: "dist",
+		httpServer: true,
+		socketURI: "ws://localhost:" + port
+	}
+);

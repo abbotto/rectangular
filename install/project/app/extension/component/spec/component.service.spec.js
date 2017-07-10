@@ -1,6 +1,6 @@
 "use strict";
 
-import ComponentService from "app/extension/component/component.service.js";
+import ComponentService from "~/app/extension/component/component.service.js";
 let component$;
 
 describe("component.service", () => {

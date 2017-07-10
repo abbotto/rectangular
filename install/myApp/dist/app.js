@@ -21,10 +21,10 @@ ___scope___.file("app/component/home/home.route.js", function(exports, require, 
 });
 ___scope___.file("app/component/home/home.component.js", function(exports, require, module, __filename, __dirname){
 
-"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _componentDirective=require("~/app/extension/component/component.directive.js");var _componentDirective2=_interopRequireDefault(_componentDirective);var _dataService=require("~/app/extension/data/data.service.js");var _dataService2=_interopRequireDefault(_dataService);var _homeController=require("~/app/component/home/home.controller.js");var _homeController2=_interopRequireDefault(_homeController);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// --------------------------------
+"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _componentDirective=require("~/app/extension/component/component.directive.js");var _componentDirective2=_interopRequireDefault(_componentDirective);var _dataService=require("~/app/extension/data/data.service.js");var _dataService2=_interopRequireDefault(_dataService);var _homeController=require("~/app/component/home/home.controller.js");var _homeController2=_interopRequireDefault(_homeController);var _homeComponent=require("~/app/component/home/home.component.html");var _homeComponent2=_interopRequireDefault(_homeComponent);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// --------------------------------
 // Home Component (AngularJS)
 // --------------------------------
-var HomeComponent={};HomeComponent.controllerAs="vm";HomeComponent.templateUrl="app/component/home/home.component.html";HomeComponent.controller=_homeController2.default;exports.default=angular.module("home.component",[_componentDirective2.default.name,_dataService2.default.name]).component("home",HomeComponent);
+var HomeComponent={};HomeComponent.controllerAs="vm";HomeComponent.template=_homeComponent2.default.default;HomeComponent.controller=_homeController2.default;console.log("homec",_homeController2.default);exports.default=angular.module("home.component",[_componentDirective2.default.name,_dataService2.default.name]).component("home",HomeComponent);
 });
 ___scope___.file("app/extension/component/component.directive.js", function(exports, require, module, __filename, __dirname){
 
@@ -69,6 +69,10 @@ model.TodoList.todo=data$.fromJS(["get groceries","mow the lawn","be a ninja"]);
 model.newTodoListItem="";// Called by TodoList parent (HomeComponentController)
 model.updateTodoList=function(){if(model.newTodoListItem.length){model.TodoList.todo=model.TodoList.todo.push(model.newTodoListItem);}// Render the TodoList component
 component$.render("TodoList",model.TodoList);};model.updateTodoList();};
+});
+___scope___.file("app/component/home/home.component.html", function(exports, require, module, __filename, __dirname){
+
+module.exports.default =  "<div id=\"home-component\">\n\t<h1 id=\"rectangular\">\n\t\t<a href='https://github.com/abbotto/rectangular'>{{vm.projectName}}</a>\n\t</h1>\n\t\n\t<p>\n\t\t<a href='https://travis-ci.org/abbotto/rectangular'>\n\t\t\t<img src='https://travis-ci.org/abbotto/rectangular.svg?branch=master' alt='Build Status' />\n\t\t</a>\n\t</p>\n\t\n\t<hr/>\n\t\n\t<h2>Basic Example</h2>\n\t\n\t<h3>Todo List</h3>\n\t\n\t<input ng-model=\"vm.newTodoListItem\" type=\"text\" placeholder=\"Angular Input\"/>\n\t<button ng-click=\"vm.updateTodoList()\">Update List</button>\n\t<br/><br/>\n\t\n\t<strong>React Output w/ Immutable Data</strong><br>\n\t<component name=\"'TodoList'\"></component>\n</div>\n"
 });
 ___scope___.file("app/service.js", function(exports, require, module, __filename, __dirname){
 

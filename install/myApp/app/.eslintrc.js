@@ -7,7 +7,9 @@ module.exports = {
 	},
 	"globals": {
 		"$": true,
-		"angular": true
+		"angular": true,
+		"jasmine": true,
+		"expect": true
 	},
 	"ecmaFeatures": {
 		"jsx": true,

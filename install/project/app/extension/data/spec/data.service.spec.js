@@ -1,6 +1,6 @@
 "use strict";
 
-import DataService from "app/extension/data/data.service.js";
+import DataService from "~/app/extension/data/data.service.js";
 let data$;
 
 describe("data.service", () => {

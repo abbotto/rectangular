@@ -2,12 +2,15 @@
 *
 
 # Whitelist Top-Level Files
+!bundle.js
+!deps.json
 !gulpfile.js
-!karma.conf.js
+!karma.js
 !package.json
 !server.js
 !license.md
 !README.md
+!uglify.json
 !.babelrc
 !.envrc
 !.eslintignore

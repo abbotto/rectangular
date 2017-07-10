@@ -44,11 +44,14 @@
 	},
 	"devDependencies": {
 		"angular-mocks": "1.5.5",
+		"camelcase": "4.1.0",
 		"dotenv": "^4.0.0",
 		"eslint": "^3.19.0",
 		"eslint-plugin-angular": "^1.6.4",
 		"eslint-plugin-disable": "^0.3.0",
 		"eslint-plugin-json": "^1.2.0",
+		"fuse-box": "2.2.0",
+		"glob-concat": "1.0.1",
 		"gulp": "^3.9.1",
 		"gulp-bump": "^2.7.0",
 		"gulp-livereload": "^3.8.1",
@@ -65,8 +68,14 @@
 		"karma-jasmine": "^1.1.0",
 		"karma-phantomjs-launcher": "^1.0.2",
 		"karma-spec-reporter": "0.0.31",
+		"lodash": "4.17.4",
+		"node-sass": "4.5.3",
 		"phantomjs-prebuilt": "^2.1.13",
+		"postcss": "6.0.6",
 		"rectangular": "github:abbotto/rectangular",
-		"shelljs": "^0.7.7"
+		"rollup": "0.43.0",
+		"shelljs": "0.7.8",
+		"stylelint": "7.12.0",
+		"typescript": "2.4.1"
 	}
 }

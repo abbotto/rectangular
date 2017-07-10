@@ -1,40 +1,26 @@
 "use strict";
 
-const sh = require("shelljs");
-const finder = require("glob-concat");
+const camelCase = require("camelcase");
 const fs = require("fs");
-const getPath = require("./utility/get.path.js");
-const transpile = require("./script/transpile.js");
+const glob = require("glob-concat");
+const path = require("path");
+const parseAssets = require("../../../dev/utility/parseAssets.js");
 
-// Load environment variables
-require("dotenv").config();
+module.exports = function spec(deps, root) {
+	const spec = (parseAssets(deps));
+	const imports = [];
+	const tmpSpecJs = root + "/tmp/spec.auto.js";
 
-const es6Files = finder.sync([
-	getPath() + "/node_modules/rectangular/tmp/app/**/*.js",
-	getPath() + "/node_modules/rectangular/tmp/dev/**/test.*.js",
-	getPath() + "/node_modules/rectangular/tmp/app/**/*.spec.js"
-]);
+	spec.forEach((filePath, i) => {
+		spec[i] = filePath.replace("./", root + "/");
+	});
+	
+	const specFiles = glob.sync(spec);
+	
+	specFiles.forEach((file) => {
+		const name = path.basename(file).replace(".js", "");
+		imports.push("import " + camelCase(name) + " from \"" + file.replace(root + "/", "~/") + "\";");
+	});
 
-transpile(es6Files);
-
-// Push the file contents into an array
-const script = [];
-const n = es6Files.length;
-let i = 0;
-
-// Prevent minified files from cramming together
-for (; i < n; i += 1) {
-	script.push(
-		fs.readFileSync(es6Files[i], "utf8")
-	);
-}
-
-// Write the output to a file
-fs.writeFileSync(
-	"tmp/spec.js",
-	script.join("\n\n").trim(),
-		"utf8"
-);
-
-// Run through webpack
-sh.exec("node_modules/.bin/webpack --config build/webpack/spec.config.js");
+	fs.writeFile(tmpSpecJs, imports.join(""));
+};

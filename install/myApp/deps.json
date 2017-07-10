@@ -1,19 +1,19 @@
 {
 	"font": {
 		"font-awesome": ["./node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}"],
-		"other": ["./app/**/*.{ttf,woff,woff2,eot,svg}"]
+		"files": ["./app/**/*.{ttf,woff,woff2,eot,svg}"]
 	},
 	"image": {
-		"custom": ["./app/**/*.{bmp,gif,jpg,jpeg,png,svg}"]
+		"files": ["./app/**/*.{bmp,gif,jpg,jpeg,png,svg}"]
 	},
 	"model": {
-		"custom": [
+		"files": [
 			"./app/**/*.data.json",
 			"./app/**/*.mixin.json"
 		]
 	},
 	"template": {
-		"custom": [
+		"files": [
 			"./app/component/**/*.html",
 			"./app/extension/**/*.html",
 			"./app/component/**/*.jsx",
@@ -57,6 +57,12 @@
 			"./node_modules/ng-file-upload/dist/ng-file-upload.min.js"
 		]
 	},
+	"spec": {
+		"files": [
+			"./dev/**/test.*.js",
+			"./app/**/*.spec.js"
+		]
+	},
 	"style": {
 		"normalize.css": [
 			"./node_modules/normalize.css/normalize.css"
@@ -74,7 +80,7 @@
 			"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 			"./node_modules/bootstrap/dist/css/bootstrap-theme.min.css"
 		],
-		"custom": [
+		"files": [
 			"./app/design/style/vendor.scss",
 			"./app/design/style/scaffold.scss",
 			"./app/**/*.scss"

@@ -1,7 +1,7 @@
 "use strict";
 
 // Auto-generated file
-import appModel from "../../tmp/model.auto.js";
+import appModel from "~/tmp/model.auto.js";
 
 const modelService = function modelService(modelAuto) {
 	const _model = (key) => {

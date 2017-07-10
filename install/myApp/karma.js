@@ -1,11 +1,11 @@
 // Karma configuration
 // npm run test
 const files = [
-	"./dist/vendor.global.js",
-	"./dist/vendor.import.js",
-	"./dist/app.js",
+	"./dist/legacy.js",
 	"./node_modules/angular-mocks/angular-mocks.js",
-	"./node_modules/rectangular/tmp/spec.js"
+	"./dist/vendor.js",
+	"./dist/app.js",
+	"./dist/spec.js"
 ];
 
 module.exports = function karmaConfig(config) {

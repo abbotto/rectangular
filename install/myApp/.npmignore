@@ -3,7 +3,7 @@
 
 # Whitelist Javascript Files
 !gulpfile.js
-!karma.conf.js
+!karma.js
 !package.json
 !server.js
 
