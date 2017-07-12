@@ -12,7 +12,7 @@ const HomeComponent = {};
 HomeComponent.controllerAs = "vm";
 HomeComponent.template = template.default;
 HomeComponent.controller = homeController;
-console.log("homeCTRL", homeController);
+console.log("homeCtrl", homeController);
 
 export default angular
 	.module("home.component", [

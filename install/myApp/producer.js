@@ -60,16 +60,6 @@ const fuse = FuseBox.init({
 });
 
 // ----------------------------------------------------------------
-// Dev server
-// ----------------------------------------------------------------
-isArg("--dev") && fuse.dev({
-	port: 4444,
-	root: "dist",
-	httpServer: true,
-	socketURI: "ws://localhost:4444"
-});
-
-// ----------------------------------------------------------------
 // Bundles
 // ----------------------------------------------------------------
 const vendor = fuse
@@ -96,22 +86,55 @@ if (isArg("--spec")) {
 };
 
 // ----------------------------------------------------------------
-// Watch
+// Server
 // ----------------------------------------------------------------
-isArg("--watch") && app.hmr().watch(__dirname + "/app/**");
+if (isArg("--server")) {
+	fuse.dev({
+		port: 4444,
+		root: "dist",
+		httpServer: true,
+		socketURI: "ws://localhost:4444"
+	});
+	
+	// Hot-module reload
+	app.hmr().watch(__dirname + "/app/**/*.js");
+	
+	// Additional watch actions
+	const watch = require("chokidar")
+		.watch(
+			[
+				"app/**/*.*",
+				"deps.json",
+				"uglify.json",
+			],
+			{
+				ignored: /[\/\\]\./,
+				persistent: true
+			}
+		)
+	;
+	
+	watch.on("change", function(path, stats) {
+		sh.exec("node producer.js --env --font --index --image --model --route --script --style --template");
+	});
+}
 
 // ----------------------------------------------------------------
 // Run fuse-box
 // ----------------------------------------------------------------
-fuse
-	.run()
-	.then(()=>{
-		if (isProduction) {
-			sh.exec("gzip -c -8 " + "dist/legacy.js > dist/legacy.js.gz");
-			sh.exec("gzip -c -8 " + "./dist/vendor.js > ./dist/vendor.js.gz");
-			sh.exec("gzip -c -8 " + "./dist/app.js > ./dist/app.js.gz");
-		}
-	})
-;
+if (isArg("--build") || isArg("--server")) {
+	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template");
+	
+	fuse
+		.run()
+		.then(() => {
+			if (isProduction) {
+				sh.exec("gzip -c -8 " + "dist/legacy.js > dist/legacy.js.gz");
+				sh.exec("gzip -c -8 " + "./dist/vendor.js > ./dist/vendor.js.gz");
+				sh.exec("gzip -c -8 " + "./dist/app.js > ./dist/app.js.gz");
+			}
+		})
+	;
+}
 
 module.exports = fuse;
