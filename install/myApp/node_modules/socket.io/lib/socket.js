@@ -8,7 +8,6 @@ var parser = require('socket.io-parser');
 var url = require('url');
 var debug = require('debug')('socket.io:socket');
 var hasBin = require('has-binary');
-var assign = require('object-assign');
 
 /**
  * Module exports.
@@ -26,7 +25,6 @@ exports.events = [
   'error',
   'connect',
   'disconnect',
-  'disconnecting',
   'newListener',
   'removeListener'
 ];
@@ -57,19 +55,18 @@ var emit = Emitter.prototype.emit;
  * @api public
  */
 
-function Socket(nsp, client, query){
+function Socket(nsp, client){
   this.nsp = nsp;
   this.server = nsp.server;
   this.adapter = this.nsp.adapter;
-  this.id = nsp.name !== '/' ? nsp.name + '#' + client.id : client.id;
+  this.id = nsp.name + '#' + client.id;
   this.client = client;
   this.conn = client.conn;
   this.rooms = {};
   this.acks = {};
   this.connected = true;
   this.disconnected = false;
-  this.handshake = this.buildHandshake(query);
-  this.fns = [];
+  this.handshake = this.buildHandshake();
 }
 
 /**
@@ -83,12 +80,10 @@ Socket.prototype.__proto__ = Emitter.prototype;
  */
 
 flags.forEach(function(flag){
-  Object.defineProperty(Socket.prototype, flag, {
-    get: function() {
-      this.flags = this.flags || {};
-      this.flags[flag] = true;
-      return this;
-    }
+  Socket.prototype.__defineGetter__(flag, function(){
+    this.flags = this.flags || {};
+    this.flags[flag] = true;
+    return this;
   });
 });
 
@@ -98,10 +93,8 @@ flags.forEach(function(flag){
  * @api public
  */
 
-Object.defineProperty(Socket.prototype, 'request', {
-  get: function() {
-    return this.conn.request;
-  }
+Socket.prototype.__defineGetter__('request', function(){
+  return this.conn.request;
 });
 
 /**
@@ -110,13 +103,7 @@ Object.defineProperty(Socket.prototype, 'request', {
  * @api private
  */
 
-Socket.prototype.buildHandshake = function(query){
-  var self = this;
-  function buildQuery(){
-    var requestQuery = url.parse(self.request.url, true).query;
-    //if socket-specific query exist, replace query strings in requestQuery
-    return assign({}, query, requestQuery);
-  }
+Socket.prototype.buildHandshake = function(){
   return {
     headers: this.request.headers,
     time: (new Date) + '',
@@ -125,7 +112,7 @@ Socket.prototype.buildHandshake = function(query){
     secure: !!this.request.connection.encrypted,
     issued: +(new Date),
     url: this.request.url,
-    query: buildQuery()
+    query: url.parse(this.request.url, true).query || {}
   };
 };
 
@@ -281,10 +268,8 @@ Socket.prototype.leaveAll = function(){
 };
 
 /**
- * Called by `Namespace` upon successful
+ * Called by `Namespace` upon succesful
  * middleware execution (ie: authorization).
- * Socket is added to namespace array before
- * call to join, so adapters can access it.
  *
  * @api private
  */
@@ -347,7 +332,7 @@ Socket.prototype.onevent = function(packet){
     args.push(this.ack(packet.id));
   }
 
-  this.dispatch(args);
+  emit.apply(this, args);
 };
 
 /**
@@ -431,7 +416,6 @@ Socket.prototype.onerror = function(err){
 Socket.prototype.onclose = function(reason){
   if (!this.connected) return this;
   debug('closing socket - reason %s', reason);
-  this.emit('disconnecting', reason);
   this.leaveAll();
   this.nsp.remove(this);
   this.client.remove(this);
@@ -483,64 +467,4 @@ Socket.prototype.compress = function(compress){
   this.flags = this.flags || {};
   this.flags.compress = compress;
   return this;
-};
-
-/**
- * Dispatch incoming event to socket listeners.
- *
- * @param {Array} event that will get emitted
- * @api private
- */
-
-Socket.prototype.dispatch = function(event){
-  debug('dispatching an event %j', event);
-  var self = this;
-  this.run(event, function(err){
-    process.nextTick(function(){
-      if (err) {
-        return self.error(err.data || err.message);
-      }
-      emit.apply(self, event);
-    });
-  });
-}
-
-/**
- * Sets up socket middleware.
- *
- * @param {Function} middleware function (event, next)
- * @return {Socket} self
- * @api public
- */
-
-Socket.prototype.use = function(fn){
-  this.fns.push(fn);
-  return this;
-};
-
-/**
- * Executes the middleware for an incoming event.
- *
- * @param {Array} event that will get emitted
- * @param {Function} last fn call in the middleware
- * @api private
- */
-Socket.prototype.run = function(event, fn){
-  var fns = this.fns.slice(0);
-  if (!fns.length) return fn(null);
-
-  function run(i){
-    fns[i](event, function(err){
-      // upon error, short-circuit
-      if (err) return fn(err);
-
-      // if no middleware left, summon callback
-      if (!fns[i + 1]) return fn(null);
-
-      // go on to next
-      run(i + 1);
-    });
-  }
-
-  run(0);
 };

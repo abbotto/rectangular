@@ -1,7 +1,7 @@
 "use strict";
 
 // Auto-generated file
-import routeAuto from "../tmp/route.auto.js";
+import routeAuto from "~/tmp/route.auto.js";
 
 export default angular
 	.module("route", [

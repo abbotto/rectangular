@@ -21,6 +21,10 @@
 !.stylelintrc
 !.travis.yml
 
+# Whitelist Watch Folder
+!/.watch
+!/.watch/**/*
+
 # Whitelist Source Files
 !/app
 !/app/**/*

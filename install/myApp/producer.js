@@ -63,6 +63,13 @@ const fuse = FuseBox.init({
 	plugins
 });
 
+args.indexOf("--dev") > -1 && fuse.dev({
+	port: 4444,
+	root: "dist",
+	httpServer: true,
+	socketURI: "ws://localhost:4444"
+});
+
 const vendor = fuse
 	.bundle("vendor")
 	.target("browser")
@@ -76,7 +83,7 @@ const app = fuse
 	.instructions("!> [app/index.js]")
 ;
 
-if (args.indexOf("--spec") > -1 || args.indexOf("-s") > -1) {
+if (args.indexOf("--spec") > -1) {
 	require("./dev/bundle/task/spec.js")(deps.spec, __dirname);
 	
 	fuse
@@ -90,7 +97,7 @@ if (args.indexOf("--watch") > -1) {
 	// vendor.hmr().watch();
 	app
 		.hmr()
-		.watch("app/**/*.js")
+		.watch("app/**")
 	;
 }
 

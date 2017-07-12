@@ -8,16 +8,18 @@ const sh = require("shelljs");
 module.exports = function img(deps, root) {
 	const images = parseAssets(deps);
 	const outputDir = root + "/dist/fonts";
-	const dest = fs.existsSync(outputDir);
+	const isDest = fs.existsSync(outputDir);
 	
 	images.forEach((filePath, i) => {
 		images[i] = filePath.replace("./", root + "/");
 	});
-
+	
 	const imgFiles = glob.sync(images);
 	
-	dest && sh.exec("rm -rf " + outputDir + " && mkdir " + outputDir);
-	!dest && sh.exec("mkdir " + outputDir);
+	isDest
+		? sh.exec("rm -rf " + outputDir + " && mkdir " + outputDir)
+		: sh.exec("mkdir " + outputDir)
+	;
 	
 	imgFiles.length && imgFiles.forEach((img) => {
 		img = img.replace("./", root + "/");

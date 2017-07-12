@@ -9,7 +9,6 @@ var engine = require('engine.io');
 var client = require('socket.io-client');
 var clientVersion = require('socket.io-client/package').version;
 var Client = require('./client');
-var Emitter = require('events').EventEmitter;
 var Namespace = require('./namespace');
 var Adapter = require('socket.io-adapter');
 var debug = require('debug')('socket.io:server');
@@ -25,14 +24,13 @@ module.exports = Server;
  * Socket.IO client source.
  */
 
-var clientSource = undefined;
-var clientSourceMap = undefined;
+var clientSource = read(require.resolve('socket.io-client/socket.io.js'), 'utf-8');
 
 /**
  * Server constructor.
  *
  * @param {http.Server|Number|Object} srv http server, port or options
- * @param {Object} [opts]
+ * @param {Object} opts
  * @api public
  */
 
@@ -96,16 +94,6 @@ Server.prototype.checkRequest = function(req, fn) {
 Server.prototype.serveClient = function(v){
   if (!arguments.length) return this._serveClient;
   this._serveClient = v;
-
-  if (v && !clientSource) {
-    clientSource = read(require.resolve('socket.io-client/dist/socket.io.min.js'), 'utf-8');
-    try {
-      clientSourceMap = read(require.resolve('socket.io-client/dist/socket.io.js.map'), 'utf-8');
-    } catch(err) {
-      debug('could not load sourcemap file');
-    }
-  }
-
   return this;
 };
 
@@ -121,7 +109,7 @@ var oldSettings = {
 };
 
 /**
- * Backwards compatibility.
+ * Backwards compatiblity.
  *
  * @api public
  */
@@ -261,14 +249,11 @@ Server.prototype.attach = function(srv, opts){
 Server.prototype.attachServe = function(srv){
   debug('attaching client serving req handler');
   var url = this._path + '/socket.io.js';
-  var urlMap = this._path + '/socket.io.js.map';
   var evs = srv.listeners('request').slice(0);
   var self = this;
   srv.removeAllListeners('request');
   srv.on('request', function(req, res) {
-    if (0 === req.url.indexOf(urlMap)) {
-      self.serveMap(req, res);
-    } else if (0 === req.url.indexOf(url)) {
+    if (0 === req.url.indexOf(url)) {
       self.serve(req, res);
     } else {
       for (var i = 0; i < evs.length; i++) {
@@ -287,13 +272,9 @@ Server.prototype.attachServe = function(srv){
  */
 
 Server.prototype.serve = function(req, res){
-  // Per the standard, ETags must be quoted:
-  // https://tools.ietf.org/html/rfc7232#section-2.3
-  var expectedEtag = '"' + clientVersion + '"';
-
   var etag = req.headers['if-none-match'];
   if (etag) {
-    if (expectedEtag == etag) {
+    if (clientVersion == etag) {
       debug('serve client 304');
       res.writeHead(304);
       res.end();
@@ -303,40 +284,9 @@ Server.prototype.serve = function(req, res){
 
   debug('serve client source');
   res.setHeader('Content-Type', 'application/javascript');
-  res.setHeader('ETag', expectedEtag);
-  res.setHeader('X-SourceMap', 'socket.io.js.map');
+  res.setHeader('ETag', clientVersion);
   res.writeHead(200);
   res.end(clientSource);
-};
-
-/**
- * Handles a request serving `/socket.io.js.map`
- *
- * @param {http.Request} req
- * @param {http.Response} res
- * @api private
- */
-
-Server.prototype.serveMap = function(req, res){
-  // Per the standard, ETags must be quoted:
-  // https://tools.ietf.org/html/rfc7232#section-2.3
-  var expectedEtag = '"' + clientVersion + '"';
-
-  var etag = req.headers['if-none-match'];
-  if (etag) {
-    if (expectedEtag == etag) {
-      debug('serve client 304');
-      res.writeHead(304);
-      res.end();
-      return;
-    }
-  }
-
-  debug('serve client sourcemap');
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('ETag', expectedEtag);
-  res.writeHead(200);
-  res.end(clientSourceMap);
 };
 
 /**
@@ -372,7 +322,7 @@ Server.prototype.onconnection = function(conn){
  * Looks up a namespace.
  *
  * @param {String} name nsp name
- * @param {Function} [fn] optional, nsp `connection` ev handler
+ * @param {Function} fn optional, nsp `connection` ev handler
  * @api public
  */
 
@@ -392,11 +342,10 @@ Server.prototype.of = function(name, fn){
 /**
  * Closes server connection
  *
- * @param {Function} [fn] optional, called as `fn([err])` on error OR all conns closed 
  * @api public
  */
 
-Server.prototype.close = function(fn){
+Server.prototype.close = function(){
   for (var id in this.nsps['/'].sockets) {
     if (this.nsps['/'].sockets.hasOwnProperty(id)) {
       this.nsps['/'].sockets[id].onclose();
@@ -405,10 +354,8 @@ Server.prototype.close = function(fn){
 
   this.engine.close();
 
-  if (this.httpServer) {
-    this.httpServer.close(fn);
-  } else {
-    fn && fn();
+  if(this.httpServer){
+    this.httpServer.close();
   }
 };
 
@@ -416,23 +363,18 @@ Server.prototype.close = function(fn){
  * Expose main namespace (/).
  */
 
-var emitterMethods = Object.keys(Emitter.prototype).filter(function(key){
-  return typeof Emitter.prototype[key] === 'function';
-});
-
-emitterMethods.concat(['to', 'in', 'use', 'send', 'write', 'clients', 'compress']).forEach(function(fn){
+['on', 'to', 'in', 'use', 'emit', 'send', 'write', 'clients', 'compress'].forEach(function(fn){
   Server.prototype[fn] = function(){
-    return this.sockets[fn].apply(this.sockets, arguments);
+    var nsp = this.sockets[fn];
+    return nsp.apply(this.sockets, arguments);
   };
 });
 
 Namespace.flags.forEach(function(flag){
-  Object.defineProperty(Server.prototype, flag, {
-    get: function() {
-      this.sockets.flags = this.sockets.flags || {};
-      this.sockets.flags[flag] = true;
-      return this;
-    }
+  Server.prototype.__defineGetter__(flag, function(){
+    this.sockets.flags = this.sockets.flags || {};
+    this.sockets.flags[flag] = true;
+    return this;
   });
 });
 
