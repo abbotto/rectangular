@@ -5,11 +5,11 @@
 // ----------------------------------------------------------------
 require("dotenv").config();
 
+const {NODE_ENV} = process.env;
 const sh = require("shelljs");
 const uglifyRules = require("./uglify.json");
 const deps = require("./deps.json");
 const isArg = (arg) => (process.argv.slice(2)).indexOf(arg) > -1;
-const NODE_ENV = process.env.NODE_ENV;
 const isProduction = NODE_ENV === "production";
 
 // ----------------------------------------------------------------
@@ -40,10 +40,10 @@ const {
 } = require("fuse-box");
 
 const plugins = [
-	EnvPlugin({ NODE_ENV: isProduction ? "production" : "development" }),
-	HTMLPlugin({ useDefault: true}),
+	EnvPlugin({NODE_ENV: isProduction ? "production" : "development"}),
+	HTMLPlugin({useDefault: true}),
 	BabelPlugin(),
-	SassPlugin({ outputStyle: "compressed" }),
+	SassPlugin({outputStyle: "compressed"}),
 	CSSPlugin()
 ];
 
@@ -88,39 +88,10 @@ if (isArg("--spec")) {
 // ----------------------------------------------------------------
 // Server
 // ----------------------------------------------------------------
-if (isArg("--server")) {
-	fuse.dev({
-		port: 4444,
-		root: "dist",
-		httpServer: true,
-		socketURI: "ws://localhost:4444"
-	});
-	
-	// Hot-module reload
-	app.hmr().watch(__dirname + "/app/**/*.js");
-	
-	// Additional watch actions
-	const watch = require("chokidar")
-		.watch(
-			[
-				"app/**/*.*",
-				"deps.json",
-				"uglify.json",
-			],
-			{
-				ignored: /[\/\\]\./,
-				persistent: true
-			}
-		)
-	;
-	
-	watch.on("change", function(path, stats) {
-		sh.exec("node producer.js --env --font --index --image --model --route --script --style --template");
-	});
-}
+isArg("--server") && require("./server.js")(fuse, app);
 
 // ----------------------------------------------------------------
-// Run fuse-box
+// Build
 // ----------------------------------------------------------------
 if (isArg("--build") || isArg("--server")) {
 	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template");
