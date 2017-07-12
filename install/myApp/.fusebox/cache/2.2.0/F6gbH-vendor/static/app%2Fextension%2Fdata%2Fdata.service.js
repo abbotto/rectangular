@@ -2,6 +2,6 @@ module.exports = { contents: "\"use strict\";Object.defineProperty(exports,\"__e
 dependencies: ["~/app/extension/data/immutable.vendor.service.js"],
 sourceMap: {},
 headerContent: undefined,
-mtime: 1499633737000,
+mtime: 1499877047000,
 devLibsRequired : undefined
 };
