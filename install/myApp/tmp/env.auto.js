@@ -1,1 +1,0 @@
-export default angular.module("env.auto", []).constant("APP_NAME", "Rectangular").constant("LANGUAGE", "en").constant("NODE_ENV", "development").constant("PORT", 8088);

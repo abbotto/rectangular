@@ -28,6 +28,7 @@
     "eslint-plugin-json": "^1.2.0",
     "fuse-box": "2.1.0",
     "glob-concat": "^1.0.1",
+    "lodash": "4.17.4",
     "marked": "^0.3.6",
     "node-sass": "^4.5.0",
     "postcss": "^5.2.14",

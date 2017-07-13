@@ -6,6 +6,7 @@
 require("dotenv").config();
 
 const {NODE_ENV} = process.env;
+// const rectangular = require("rectangular");
 const sh = require("shelljs");
 const uglifyRules = require("./uglify.json");
 const deps = require("./deps.json");
@@ -24,7 +25,6 @@ isArg("--route") && require("./dev/bundle/task/route.js")(["./app/**/*.route.js"
 isArg("--script") && require("./dev/bundle/task/script.js")(deps.script, __dirname);
 isArg("--style") && require("./dev/bundle/task/style.js")(deps.style, __dirname);
 isArg("--template") && require("./dev/bundle/task/template.js")(deps.template, __dirname);
-isArg("--index") && sh.exec("cp app/index.html dist/");
 
 // ----------------------------------------------------------------
 // Plugins
@@ -36,7 +36,8 @@ const {
 	FuseBox,
 	HTMLPlugin,
 	SassPlugin,
-	UglifyJSPlugin
+	UglifyJSPlugin,
+	WebIndexPlugin
 } = require("fuse-box");
 
 const plugins = [
@@ -44,10 +45,10 @@ const plugins = [
 	HTMLPlugin({useDefault: true}),
 	BabelPlugin(),
 	SassPlugin({outputStyle: "compressed"}),
-	CSSPlugin()
+	CSSPlugin(),
+	WebIndexPlugin({template: "app/index.html"}),
+	isProduction && UglifyJSPlugin(uglifyRules)
 ];
-
-isProduction && plugins.push(UglifyJSPlugin(uglifyRules));
 
 // ----------------------------------------------------------------
 // Initialize
@@ -93,7 +94,7 @@ isArg("--server") && require("./server.js")(fuse, app);
 // ----------------------------------------------------------------
 // Build
 // ----------------------------------------------------------------
-if (isArg("--build") || isArg("--server")) {
+if (isArg("--build") || isArg("--server") || isArg("--spec")) {
 	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template");
 	
 	fuse

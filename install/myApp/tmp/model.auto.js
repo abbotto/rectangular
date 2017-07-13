@@ -1,1 +1,0 @@
-export default angular.module("model.auto", []).constant("modelAuto", {});
