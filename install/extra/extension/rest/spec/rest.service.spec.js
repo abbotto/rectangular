@@ -1,6 +1,6 @@
 "use strict";
 
-import RestService from "app/extension/rest/rest.service.js";
+import RestService from "~/app/extension/rest/rest.service.js";
 let rest$;
 
 describe("rest.service", () => {

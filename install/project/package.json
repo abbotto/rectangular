@@ -7,17 +7,17 @@
 	"engines": {
 		"node": "6.11"
 	},
-  "scripts": {
-    "bump-major": "gulp bump-major",
-    "bump-minor": "gulp bump-minor",
-    "bump-patch": "gulp bump-patch",
-    "docs": "gulp docs",
-    "eslint": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
-    "init": "cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.11 && npm i && cd node_modules/rectangular && npm run init && cd ../../",
-    "heroku-postinstall": "npm run build",
-    "start": "node server.js",
-    "test": "npm run build-spec && node_modules/karma/bin/karma start karma.js"
-  },
+	"scripts": {
+		"bump-major": "gulp bump-major --gulpfile dev/gulp.js",
+		"bump-minor": "gulp bump-minor --gulpfile dev/gulp.js",
+		"bump-patch": "gulp bump-patch --gulpfile dev/gulp.js",
+		"docs": "gulp docs --gulpfile dev/gulp.js",
+		"eslint": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
+		"init": "cp .envrc .env && . ~/.nvm/nvm.sh && nvm i 6.11 && npm i && cd node_modules/rectangular && npm run init && cd ../../",
+		"heroku-postinstall": "node producer.js --build",
+		"start": "node producer.js --server",
+		"test": "node producer.js --spec && node_modules/karma/bin/karma start dev/karma.js"
+	},
 	"dependencies": {
 		"angular": "1.5.5",
 		"angular-animate": "1.5.5",

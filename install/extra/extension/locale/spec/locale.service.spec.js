@@ -1,6 +1,6 @@
 "use strict";
 
-import LocaleService from "app/extension/locale/locale.service.js";
+import LocaleService from "~/app/extension/locale/locale.service.js";
 let locale$;
 
 describe("locale.service", () => {
@@ -11,7 +11,7 @@ describe("locale.service", () => {
 	describe("When the `angular-translate` package is installed", () => {
 		it("the `locale$` service should be available", () => {
 			expect(locale$).toBeDefined();
-			expect(typeof locale$).toBe("function");
+			expect(typeof locale$).toBe("object");
 		});
 	});
 });

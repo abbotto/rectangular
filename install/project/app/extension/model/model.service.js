@@ -1,16 +1,11 @@
 "use strict";
 
 // Auto-generated file
-import appModel from "../../tmp/model.auto.js";
+import appModel from "~/tmp/model.auto.js";
 
 const modelService = function modelService(modelAuto) {
-	const _model = (key) => {
-		return modelAuto[key];
-	};
-	
-	const get = (key) => {
-		return angular.fromJson(_model(key));
-	};
+	const _model = (key) => modelAuto[key];
+	const get = (key) => angular.fromJson(_model(key));
 	
 	const mixin = (key, toBeMerged, deep) => {
 		// Get the mixin data

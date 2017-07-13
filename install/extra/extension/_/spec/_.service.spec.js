@@ -1,6 +1,6 @@
 "use strict";
 
-import LodashVendorService from "app/extension/_/_.service.js";
+import LodashVendorService from "~/app/extension/_/_.service.js";
 let _;
 
 describe("_.service", () => {

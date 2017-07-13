@@ -1,6 +1,8 @@
 "use strict";
 
+// import jasmine from "jasmine";
 import ModelService from "~/app/extension/model/model.service.js";
+
 let model$;
 
 describe("model.service", () => {
@@ -23,7 +25,7 @@ describe("model.service", () => {
 
 	beforeEach(() => {
 		model$ = ModelService;
-		model$._model = __.createSpy("model$._model");
+		model$._model = jasmine.createSpy("model$._model");
 
 		model$._model.and.callFake((key) => {
 			return appModelMock1[key];
@@ -50,7 +52,7 @@ describe("model.service", () => {
 
 	describe("When 'model$.get' is called", () => {
 		beforeEach(() => {
-			model$.get = __.createSpy("model$.get");
+			model$.get = jasmine.createSpy("model$.get");
 			result = model$.get(mockKey);
 		});
 		
@@ -71,7 +73,7 @@ describe("model.service", () => {
 
 	describe("When 'model$.mixin' is called", () => {
 		beforeEach(() => {
-			model$.mixin = __.createSpy("model$.mixin");
+			model$.mixin = jasmine.createSpy("model$.mixin");
 			result = model$.mixin(mockKey, [{version: "1.0.0"}]);
 		});
 		

@@ -1,6 +1,6 @@
 "use strict";
 
-import ngStrapVendorService from "app/extension/ui/ng-strap.vendor.service.js";
+import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapScrollspyService = function bootstrapScrollspyService($scrollspy) {
 	return $scrollspy;

@@ -1,17 +1,17 @@
 "use strict";
 
-import AffixService from "app/extension/ui/ui.affix.service.js";
-import AlertService from "app/extension/ui/ui.alert.service.js";
-import AsideService from "app/extension/ui/ui.aside.service.js";
-import DatepickerService from "app/extension/ui/ui.datepicker.service.js";
-import DropdownService from "app/extension/ui/ui.dropdown.service.js";
-import ModalService from "app/extension/ui/ui.modal.service.js";
-import PopoverService from "app/extension/ui/ui.popover.service.js";
-import ScrollspyService from "app/extension/ui/ui.scrollspy.service.js";
-import SelectService from "app/extension/ui/ui.select.service.js";
-import TimepickerService from "app/extension/ui/ui.timepicker.service.js";
-import TooltipService from "app/extension/ui/ui.tooltip.service.js";
-import TypeaheadService from "app/extension/ui/ui.typeahead.service.js";
+import AffixService from "~/app/extension/ui/ui.affix.service.js";
+import AlertService from "~/app/extension/ui/ui.alert.service.js";
+import AsideService from "~/app/extension/ui/ui.aside.service.js";
+import DatepickerService from "~/app/extension/ui/ui.datepicker.service.js";
+import DropdownService from "~/app/extension/ui/ui.dropdown.service.js";
+import ModalService from "~/app/extension/ui/ui.modal.service.js";
+import PopoverService from "~/app/extension/ui/ui.popover.service.js";
+import ScrollspyService from "~/app/extension/ui/ui.scrollspy.service.js";
+import SelectService from "~/app/extension/ui/ui.select.service.js";
+import TimepickerService from "~/app/extension/ui/ui.timepicker.service.js";
+import TooltipService from "~/app/extension/ui/ui.tooltip.service.js";
+import TypeaheadService from "~/app/extension/ui/ui.typeahead.service.js";
 
 let affix$,
 	alert$,
@@ -50,7 +50,7 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `alert$` service should be available", () => {
 			expect(alert$).toBeDefined();
-			expect(typeof alert$).toBe("function");
+			expect(typeof alert$).toBe("object");
 		});
 
 		it("the `aside$` service should be available", () => {
@@ -60,7 +60,7 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `datepicker$` service should be available", () => {
 			expect(datepicker$).toBeDefined();
-			expect(typeof datepicker$).toBe("function");
+			expect(typeof datepicker$).toBe("object");
 		});
 
 		it("the `dropdown$` service should be available", () => {
@@ -80,7 +80,7 @@ describe("ui.bootstrap.service", () => {
 
 		it("the `scrollspy$` service should be available", () => {
 			expect(scrollspy$).toBeDefined();
-			expect(typeof scrollspy$).toBe("function");
+			expect(typeof scrollspy$).toBe("object");
 		});
 
 		it("the `select$` service should be available", () => {
@@ -100,7 +100,7 @@ describe("ui.bootstrap.service", () => {
 		
 		it("the `typeahead$` service should be available", () => {
 			expect(typeahead$).toBeDefined();
-			expect(typeof typeahead$).toBe("function");
+			expect(typeof typeahead$).toBe("object");
 		});
 	});
 });

@@ -1,5 +1,7 @@
 "use strict";
 
-export default function teleprintVendorService($window) {
-	return $window.teleprint;
+import Teleprint from "teleprint";
+
+export default function teleprintVendorService() {
+	return Teleprint;
 };

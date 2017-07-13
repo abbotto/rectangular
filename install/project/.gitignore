@@ -2,7 +2,7 @@
 *
 
 # Whitelist Top-Level Files
-!bundle.js
+!producer.js
 !deps.json
 !gulpfile.js
 !karma.js
@@ -20,6 +20,10 @@
 !.nvmrc
 !.stylelintrc
 !.travis.yml
+
+# Whitelist Watch Folder
+!/.watch
+!/.watch/**/*
 
 # Whitelist Source Files
 !/app

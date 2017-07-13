@@ -1,6 +1,6 @@
 "use strict";
 
-import ngStrapVendorService from "app/extension/ui/ng-strap.vendor.service.js";
+import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapPopoverService = function bootstrapPopoverService($popover) {
 	return $popover;
