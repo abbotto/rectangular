@@ -9,7 +9,7 @@
 	- `node producer.js --flag`
 	
 ##### --build
-- Export all the JavaScript (ES6) to a bundle
+- Export all `custom` JavaScript (ES6) to a bundle
 
 ##### --clean
 - Clean tempoary directories and generate new ones
@@ -17,7 +17,7 @@
 	- `dist/`
 
 ##### --env
-- Export environment variables to an Angular constants file
+- Export `environment variables` to an Angular constants file
 	- `.envrc`
 
 ##### --font
@@ -27,16 +27,16 @@
 - Copy image files into the `dist/` folder
 
 ##### --model
-- Export all model (JSON) files to an Angular constants file 
+- Export all `models` (JSON) to an Angular constants file 
 	- *.data.json
 	- *.mixin.json
 
 ##### --route
-- Export all routes to an Angular service file
+- Export all `routes` to an Angular service file
 	- *.route.js
 
 ##### --script
-- Export all scripts that can't be imported via ES6 to a `legacy.js` file
+- Export all `scripts` that can't be imported via ES6 to a `legacy.js` file
 
 ##### --server
 - Start the development server
@@ -44,10 +44,10 @@
 	- `hot module reload` enabled
 
 ##### --spec
-- Export all tests and their dependencies to a bundle
+- Export all `tests` and their dependencies to a bundle
 
 ##### --style
-- Export all stylesheets to an bundle
+- Export all `stylesheets` to an bundle
 
 ##### --template
 - Export an Angular `$templateCache` file containing all templates
