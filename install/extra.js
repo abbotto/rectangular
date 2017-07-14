@@ -90,7 +90,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Material...");
 		
-		!fs.existSync("app/extension/ui") && sh.exec("mkdir app/extension/ui/");
+		!fs.existsSync("app/extension/ui") && sh.exec("mkdir app/extension/ui/");
 		
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/ui/material-design/. app/extension/ui/");
 		sh.exec("npm i --save angular-material");
