@@ -50,4 +50,4 @@
 - Export all `stylesheets` to an bundle
 
 ##### --template
-- Export an Angular `$templateCache` file containing all templates
+- Export all templates to an Angular `$templateCache` file
