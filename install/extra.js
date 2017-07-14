@@ -1,6 +1,5 @@
 "use strict";
 
-const args = process.argv.slice(2);
 const deps = require("./dev/deps.json");
 const fs = require("fs");
 const prompt = require("prompt");

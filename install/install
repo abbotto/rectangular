@@ -67,7 +67,7 @@ node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 rm package.js
 
 echo -e "Run the extras installer..."
-node extra.js "$projectName"
+node extra.js
 rm extra.js
 
 echo -e "Build the app..."
