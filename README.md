@@ -39,7 +39,7 @@ Once installed, you can immediatley focus on the features of your app - all the 
 	# Make the script executable
 	chmod +x install
 	
-	# Run the script
+	# Run the script and fill in the blanks
 	./install
 	
 	# Go to the app directory
