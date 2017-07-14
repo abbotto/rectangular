@@ -12,7 +12,7 @@
 - Export all `custom` JavaScript (ES6) to a bundle
 
 ##### --clean
-- Clean tempoary directories and generate new ones
+- Clean tempoary directories
 	- `tmp/`
 	- `dist/`
 
