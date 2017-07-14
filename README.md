@@ -2,13 +2,14 @@
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 
 #### Focus on apps, not ops.
-Once installed, you can immediatley focus on the features of your app - all the ops are done behind the scenes:
-- Sass + Stylelint + Autoprefix
-- Babel + Webpack + ESLint
-- Template + Model Caching
-- HTML templating w/ PUG
-- Asset Management
-- Minification
+- Once installed, you can immediatley focus on the features of your app.
+- All the ops are done behind the scenes, but most are still configurable:
+	- Sass + Stylelint + Autoprefix
+	- Fuse-Box + ESLint
+	- Template + Model Caching
+	- HTML templating w/ PUG
+	- Asset Management
+	- Minification
 
 ---
 
