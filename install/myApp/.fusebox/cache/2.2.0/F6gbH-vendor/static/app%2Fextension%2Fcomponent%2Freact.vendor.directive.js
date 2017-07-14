@@ -1,7 +1,0 @@
-module.exports = { contents: "\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:true});exports.default=reactVendorDrective;var _react=require(\"react\");var _reactDom=require(\"react-dom\");var _reactJsx=require(\"react-jsx\");function reactVendorDrective($rootScope,$templateCache){return{scope:{name:\"=\"},link:function link(scope,element){var unmountReactElement=function unmountReactElement(){delete $rootScope[scope.name];(0,_react.unmountComponentAtNode)(element[0]);};// Render React element\nvar renderReactComponent=function renderReactComponent(component){(0,_reactDom.render)(component,element[0]);};var scopeWatchCb=function scopeWatchCb(nv){if(nv){var data={};data[nv.alias||\"vm\"]=nv;// Convert JSX to React element\nvar component=(0,_reactJsx.client)($templateCache.get(data.vm.templateUrl),{});renderReactComponent(component(data));}};var rootScopeWatchCb=function rootScopeWatchCb(nv){if(nv)scope[scope.name]=nv;};var scopeWatch=scope.$watch(scope.name,scopeWatchCb,true);var rootScopeWatch=$rootScope.$watch(scope.name,rootScopeWatchCb,true);// Manually unmount the React component\n// when the scope is destroyed.\nscope.$on(\"$destroy\",unmountReactElement);}};};",
-dependencies: ["react","react-dom","react-jsx"],
-sourceMap: {},
-headerContent: undefined,
-mtime: 1497983766000,
-devLibsRequired : undefined
-};

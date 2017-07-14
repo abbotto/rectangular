@@ -1,6 +1,0 @@
-module.exports = { contents: "// --------------------------------\n// Todo-List Component (ReactJS)\n// --------------------------------\nexport default function TodoListComponent(component$, model, data$) {\n\tmodel.TodoList = {};\n\tmodel.TodoList.alias = \"vm\";\n\tmodel.TodoList.templateUrl = \"app/component/todo-list/todo-list.component.jsx\";\n\n\t// Immutable todo list\n\tmodel.TodoList.todo = data$.fromJS([\"get groceries\", \"mow the lawn\", \"be a ninja\"]);\n\n\t// Updated by TodoList parent (HomeComponentController)\n\tmodel.newTodoListItem = \"\";\n\n\t// Called by TodoList parent (HomeComponentController)\n\tmodel.updateTodoList = () => {\n\t\tif (model.newTodoListItem.length) {\n\t\t\tmodel.TodoList.todo = model.TodoList.todo.push(model.newTodoListItem);\n\t\t}\n\n\t\t// Render the TodoList component\n\t\tcomponent$.render(\"TodoList\", model.TodoList);\n\t};\n\n\tmodel.updateTodoList();\n};",
-dependencies: [],
-sourceMap: {},
-headerContent: undefined,
-mtime: 1498604735000
-};
