@@ -2,7 +2,7 @@
 
 const glob = require("glob-concat");
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
-const parseAssets = require("../../../dev/utility/parseAssets.js");
+const parseAssets = require(__dirname + "/utility/parseAssets.js");
 const path = require("path");
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const sh = require("shelljs");

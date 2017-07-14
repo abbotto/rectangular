@@ -4,7 +4,7 @@ const camelCase = require("camelcase");
 const fs = require("fs");
 const glob = require("glob-concat");
 const path = require("path");
-const parseAssets = require(__dirname + "/src/utility/parseAssets.js");
+const parseAssets = require(__dirname + "/utility/parseAssets.js");
 
 module.exports = function spec(deps, root) {
 	const spec = (parseAssets(deps));

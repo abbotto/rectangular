@@ -1,8 +1,8 @@
 "use strict";
 
-const concatAssets = require(__dirname + "/src/utility/concatAssets.js");
+const concatAssets = require(__dirname + "/utility/concatAssets.js");
 const fs = require("fs");
-const parseAssets = require(__dirname + "/src/utility/parseAssets.js");
+const parseAssets = require(__dirname + "/utility/parseAssets.js");
 
 module.exports = function script(deps, root) {
 	const scripts = parseAssets(deps);

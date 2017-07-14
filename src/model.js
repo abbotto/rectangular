@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const glob = require("glob-concat");
-const parseAssets = require(__dirname + "/src/utility/parseAssets.js");
+const parseAssets = require(__dirname + "/utility/parseAssets.js");
 
 module.exports = function model(deps, root) {
 	const json = parseAssets(deps);

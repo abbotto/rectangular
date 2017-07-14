@@ -18,13 +18,13 @@ const isProduction = NODE_ENV === "production";
 // ----------------------------------------------------------------
 isArg("--clean") && sh.exec("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
 isArg("--env") && rectangular.env(".envrc", __dirname);
-isArg("--font") && rectangular.font(deps.font, __dirname);
-isArg("--image") && rectangular.image(deps.image, __dirname);
-isArg("--model") && rectangular.model(deps.model, __dirname);
-isArg("--route") && rectangular.route(["./app/**/*.route.js"], __dirname);
-isArg("--script") && rectangular.script(deps.script, __dirname);
-isArg("--style") && rectangular.style(deps.style, __dirname, "dev/stylelint.json");
-isArg("--template") && rectangular.template(deps.template, __dirname);
+isArg("--font") && rectangular.fonts(deps.font, __dirname);
+isArg("--image") && rectangular.images(deps.image, __dirname);
+isArg("--model") && rectangular.models(deps.model, __dirname);
+isArg("--route") && rectangular.routes(["./app/**/*.route.js"], __dirname);
+isArg("--script") && rectangular.scripts(deps.script, __dirname);
+isArg("--style") && rectangular.styles(deps.style, __dirname, "dev/stylelint.json");
+isArg("--template") && rectangular.templates(deps.template, __dirname);
 
 // ----------------------------------------------------------------
 // Plugins
@@ -95,7 +95,7 @@ isArg("--server") && require("./dev/server.js")(fuse, app);
 // Build
 // ----------------------------------------------------------------
 if (isArg("--build") || isArg("--server") || isArg("--spec")) {
-	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template");
+	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template --clean");
 	
 	fuse
 		.run()

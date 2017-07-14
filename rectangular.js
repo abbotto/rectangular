@@ -19,7 +19,7 @@
 		context[name] = factory();
 	}
 }(
-	"RECTANGULAR",
+	"rectangular",
 	this,
 	() => {
 		const methods = {
@@ -52,9 +52,6 @@
 			}
 		};
 		
-		rectangular = (() => {
-			rectangular = methods;
-			return rectangular;
-		}());
+		return methods;
 	}
 ));
