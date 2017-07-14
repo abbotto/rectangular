@@ -15,9 +15,11 @@
 
 ##  <a name='Extensions'></a>Extensions
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
-- Rectangular ships with 2 extensions by default:
-	- The `Component Extension` = ReactJS + ReactDOM.
-	- The `Data Extension` = ImmutableJS.
+- As the name implies, extensions `extend` the capabilities of your app.
+- Rectangular ships with 3 extensions by default:
+	- The `Component` extension = `ReactJS + ReactDOM`.
+	- The `Data` extension = `ImmutableJS`.
+	- The `Model` extension for data files.
 
 ### <a name='AddingExtensions'></a>Adding Extensions
 - Typically, adding a new `extension` is as easy as putting services/directives in the extensions folder.
