@@ -36,7 +36,7 @@
 	- *.route.js
 
 ##### --script
-- Export all `scripts` that can't be imported via ES6 to a `legacy.js` file
+- Export all `scripts` that can't be imported via ES6 to a legacy bundle
 
 ##### --server
 - Start the development server
