@@ -93,8 +93,7 @@ Essentially, there are 3 parts to Rectangular:
 - Functions:		[View](readme/functions.md)
 - Models:			[View](readme/models.md)
 - Naming:			[View](readme/naming.md)
+- Producer:			[View](readme/producer.md)
 - Structure:		[View](readme/structure.md)
 - Tasks: 			[View](readme/tasks.md)
 - User Experience:	[View](readme/user-experience.md)
-
-

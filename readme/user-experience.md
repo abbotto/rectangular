@@ -15,4 +15,3 @@
 #### Assistive Technology
 - The `ngAria` module provides support for common ARIA attributes used in assistive technologies.
 - Learn more about `ngAria` [here](https://docs.angularjs.org/api/ngAria).
-
