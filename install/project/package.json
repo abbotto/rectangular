@@ -14,7 +14,6 @@
 		"bump-patch": "gulp bump-patch --gulpfile dev/gulp.js",
 		"docs": "gulp docs --gulpfile dev/gulp.js",
 		"eslint": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
-		"heroku-postinstall": "node producer.js --build",
 		"start": "node producer.js --server",
 		"test": "node producer.js --spec && node_modules/karma/bin/karma start dev/karma.js"
 	},
