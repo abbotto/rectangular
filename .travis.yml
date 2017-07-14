@@ -48,14 +48,14 @@ script:
   - mkdir app/extension/rest/
   - mkdir app/extension/upload/
   - mkdir app/extension/print/
-  - cp -a install/extra/extension/ui/bootstrap/. app/extension/ui/
-  - cp -a install/extra/extension/ui/material-design/. app/extension/ui/
-  - cp -a install/extra/extension/promise/. app/extension/promise/
-  - cp -a install/extra/extension/date/. app/extension/date/
-  - cp -a install/extra/extension/_/. app/extension/_/
-  - cp -a install/extra/extension/locale/. app/extension/locale/
-  - cp -a install/extra/extension/rest/. app/extension/rest/
-  - cp -a install/extra/extension/upload/. app/extension/upload/
-  - cp -a install/extra/extension/print/. app/extension/print/
+  - cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/. app/extension/ui/
+  - cp -a node_modules/rectangular/install/extra/extension/ui/material-design/. app/extension/ui/
+  - cp -a node_modules/rectangular/install/extra/extension/promise/. app/extension/promise/
+  - cp -a node_modules/rectangular/install/extra/extension/date/. app/extension/date/
+  - cp -a node_modules/rectangular/install/extra/extension/_/. app/extension/_/
+  - cp -a node_modules/rectangular/install/extra/extension/locale/. app/extension/locale/
+  - cp -a node_modules/rectangular/install/extra/extension/rest/. app/extension/rest/
+  - cp -a node_modules/rectangular/install/extra/extension/upload/. app/extension/upload/
+  - cp -a node_modules/rectangular/install/extra/extension/print/. app/extension/print/
   - cd ../../
   - npm test
