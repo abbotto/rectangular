@@ -48,7 +48,9 @@ nvm i 6.11
 # Fetch required files
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/extra.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 
+echo ""
 echo -e "Grab Rectangular..."
 npm i --save-dev abbotto/rectangular > /dev/null
 cd node_modules/rectangular/
