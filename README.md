@@ -70,10 +70,10 @@ Essentially, there are 3 parts to Rectangular:
 - A built-in `caching system` that retains your environment variables, models, and templates.
 - A built-in `karma` + `jasmine` testing suite to help your code pass with flying colors.
 - A built-in `service loader` that injects `services` at an application level.
-- A built-in `asset loader` for easily adding additional styles and scripts.
+- A built-in `dependency loader` for easily adding additional styles and scripts.
 - A built-in `route loader` that finds and compiles `routes` for you.
 - A built-in `eslint` config for `ES6` and `AngularJS`.
-- A built-in `livereload` server for development.
+- A built-in `development` server with `hot module reload` support.
 - A built-in task-runner provided by `gulp`.
 - A built-in `semantic versioning` system.
 
