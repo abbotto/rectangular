@@ -28,12 +28,12 @@
 
 ##### --model
 - Export all `models` (JSON) to an Angular constants file 
-	- *.data.json
-	- *.mixin.json
+	- `*.data.json`
+	- `*.mixin.json`
 
 ##### --route
 - Export all `routes` to an Angular service file
-	- *.route.js
+	- `*.route.js`
 
 ##### --script
 - Export all `scripts` that can't be imported via ES6 to a legacy bundle
