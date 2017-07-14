@@ -6,7 +6,7 @@
 
 #### Flags
 - The `producer` can be controlled by passing flags as arguments by calling:
-	- `node producer.js --flag
+	- `node producer.js --flag`
 	
 ##### --build
 - Export all the JavaScript (ES6) to a bundle
