@@ -58,4 +58,4 @@ script:
   - cp -a node_modules/rectangular/install/extra/extension/upload/. app/extension/upload/
   - cp -a node_modules/rectangular/install/extra/extension/print/. app/extension/print/
   - cd ../../
-  - npm test
+  - npm run test
