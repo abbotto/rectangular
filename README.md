@@ -80,6 +80,7 @@ Essentially, there are 3 parts to Rectangular:
 ### <a name='BuildSystem'></a>Build System
 - Supporting `SASS` syntax for expressive stylesheets.
 - Supporting `ES6` syntax for modernized JavaScript.
+- Supporting `TypeScript` for even more script features.
 - Supporting `PUG` syntax for cleaner HTML templates.
 - Supporting `stylelint` to make sure your styles come out shiny.
 - Supporting `autoprefixer` so your styles are welcome in web browsers.
