@@ -64,6 +64,7 @@
 		"node-sass": "4.5.3",
 		"phantomjs-prebuilt": "2.1.13",
 		"postcss": "6.0.6",
+		"prompt": "^1.0.0",
 		"rectangular": "github:abbotto/rectangular",
 		"shelljs": "0.7.8",
 		"stylelint": "7.12.0",
