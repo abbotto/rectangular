@@ -21,12 +21,12 @@ module.exports = {
 		"json"
 	],
 	parserOptions: {
-	sourceType: "module",
-	ecmaVersion: 6,
-	ecmaFeatures: {
+		sourceType: "module",
+		ecmaVersion: 6,
+		ecmaFeatures: {
 			jsx: true
 		}
-},
+	},
 	rules: {
 		"angular/angularelement": 1,
 		"angular/component-name": [2,
