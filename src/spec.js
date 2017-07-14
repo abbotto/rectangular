@@ -21,6 +21,6 @@ module.exports = function spec(deps, root) {
 		const name = path.basename(file).replace(".js", "");
 		imports.push("import " + camelCase(name) + " from \"" + file.replace(root + "/", "~/") + "\";");
 	});
-
+	
 	fs.writeFile(tmpSpecJs, imports.join(""));
 };

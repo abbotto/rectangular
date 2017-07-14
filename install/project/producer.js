@@ -76,15 +76,11 @@ const app = fuse
 	.instructions("!> [app/index.js]")
 ;
 
-if (isArg("--spec")) {
-	require("./dev/bundle/task/spec.js")(deps.spec, __dirname);
-	
-	fuse
-		.bundle("spec")
-		.target("browser")
-		.instructions("!> tmp/spec.auto.js")
-	;
-};
+isArg("--spec") && fuse
+	.bundle("spec")
+	.target("browser")
+	.instructions("!> tmp/spec.auto.js")
+;
 
 // ----------------------------------------------------------------
 // Server
@@ -96,6 +92,7 @@ isArg("--server") && require("./dev/server.js")(fuse, app);
 // ----------------------------------------------------------------
 if (isArg("--build") || isArg("--server") || isArg("--spec")) {
 	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template --clean");
+	isArg("--spec") && rectangular.specs(deps.spec, __dirname);
 	
 	fuse
 		.run()
