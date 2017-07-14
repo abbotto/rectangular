@@ -78,7 +78,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Strap...");
 		
-		sh.exec("mkdir app/extension/ui/");
+		sh.exec("mkdir " + args[0] + "/app/extension/ui/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/." + args[0] + "/app/extension/ui/");
 		sh.exec("npm i --save bootstrap angular-strap");
 	}
@@ -91,7 +91,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Material...");
 		
-		!fs.exists("app/extension/ui") && sh.exec("mkdir app/extension/ui/");
+		!fs.exists("app/extension/ui") && sh.exec("mkdir " + args[0] + "/app/extension/ui/");
 
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/ui/material-design/." + args[0] + "/app/extension/ui/");
 		sh.exec("npm i --save angular-material");
@@ -105,7 +105,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bluebird...");
 		
-		sh.exec("mkdir app/extension/promise/");
+		sh.exec("mkdir " + args[0] + "/app/extension/promise/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/promise/." + args[0] + "/app/extension/promise/");
 		sh.exec("npm i --save bluebird");
 	}
@@ -114,7 +114,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing MomentJS...");
 		
-		sh.exec("mkdir app/extension/date/");
+		sh.exec("mkdir " + args[0] + "/app/extension/date/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/date/." + args[0] + "/app/extension/date/");
 		sh.exec("npm i --save moment && npm i --save angular-moment");
 	}
@@ -126,7 +126,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Lodash...");
 		
-		sh.exec("mkdir app/extension/_/");
+		sh.exec("mkdir " + args[0] + "/app/extension/_/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/_/." + args[0] + "/app/extension/_/");
 		sh.exec("npm i --save lodash");
 	}
@@ -138,7 +138,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Teleprint...");
 		
-		sh.exec("mkdir app/extension/print/");
+		sh.exec("mkdir " + args[0] + "/app/extension/print/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/print/." + args[0] + "/app/extension/print/");
 		sh.exec("npm i --save teleprint");
 	}
@@ -147,7 +147,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Translate...");
 		
-		sh.exec("mkdir app/extension/locale/");
+		sh.exec("mkdir " + args[0] + "/app/extension/locale/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/locale/." + args[0] + "/app/extension/locale/");
 		sh.exec("npm i --save angular-translate");
 	}
@@ -159,7 +159,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Restangular...");
 		
-		sh.exec("mkdir app/extension/rest/");
+		sh.exec("mkdir " + args[0] + "/app/extension/rest/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/rest/." + args[0] + "/app/extension/rest/");
 		sh.exec("npm i --save lodash restangular");
 	}
@@ -171,7 +171,7 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing NG File Upload...");
 		
-		sh.exec("mkdir app/extension/upload/");
+		sh.exec("mkdir " + args[0] + "/app/extension/upload/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/upload/." + args[0] + "/app/extension/upload/");
 		sh.exec("npm i --save ng-file-upload");
 	}
@@ -179,11 +179,9 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs["ng-file-upload"];;
 	}
 	
-	sh.exec("rm -rf node_modules");
-	
 	// Update paths
 	deps.script = vendorJs;
 	deps.style = vendorCss;
 	
-	fs.writeFile("./dev/deps.json", JSON.stringify(deps));
+	fs.writeFile("./" + args[0] + "/dev/deps.json", JSON.stringify(deps));
 });
