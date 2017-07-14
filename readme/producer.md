@@ -2,6 +2,7 @@
 
 ### Overview
 - The `producer` file, as it's name implies, produces things.
+	- `producer.js`
 
 #### Flags
 - The `producer` can be controlled by passing flags as arguments by calling:
