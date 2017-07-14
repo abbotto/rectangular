@@ -64,7 +64,7 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Tests** (js)
 	- **Styles** (scss)
 	- **Models** ([data|mixin]json)
-	- **Images** (png, jpg, jpeg, gif, svg, ico)
+	- **Images** (bmp, gif, ico, jpeg, jpg, png, svg)
 
 ### <a name='AngularComponents'></a>Angular Components
 #### Example

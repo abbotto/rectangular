@@ -4,7 +4,7 @@
 		"files": ["./app/**/*.{ttf,woff,woff2,eot,svg}"]
 	},
 	"image": {
-		"files": ["./app/**/*.{bmp,gif,jpg,jpeg,png,svg}"]
+		"files": ["./app/**/*.{bmp,gif,ico,jpg,jpeg,png,svg}"]
 	},
 	"model": {
 		"files": [
