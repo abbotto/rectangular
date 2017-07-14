@@ -41,36 +41,36 @@ echo ""
 mkdir "$projectName"
 cd "$projectName"
 
-# Initialize package.json
+# NPM setup
+. ~/.nvm/nvm.sh
+nvm i 6.11
+
+# Fetch required files
+curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/extra.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
-curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
+
+echo -e "Grab Rectangular..."
+npm i --save-dev abbotto/rectangular > /dev/null
+cd node_modules/rectangular/
+cp .envrc .env
+npm i
+cd ../../
+
+echo -e "Copy project files..."
+cp -a node_modules/rectangular/install/project/. .
+cp .envrc .env
 
 echo -e "Add the project details..."
 node package.js "$projectName" "$projectDescription" "$projectLicense" "$author"
 rm package.js
 
-echo -e "Grab Rectangular..."
-npm i --save-dev abbotto/rectangular > /dev/null
-
-echo -e "Setup temporary project files and directories..."
-mkdir node_modules/rectangular/tmp
-mkdir node_modules/rectangular/tmp/project
-cp -a node_modules/rectangular/install/project/. node_modules/rectangular/tmp/project/
-cp package.json node_modules/rectangular/tmp/project/
-
-echo -e "Initialize Rectangular and run the extras installer..."
-cd node_modules/rectangular/
-cp .envrc .env
-npm i
-node install/extra.js
-cd ../../
-
-echo -e "Copy the project files and run the setup build..."
-cp -a node_modules/rectangular/tmp/project/. .
+echo -e "Run the extras installer..."
+node extra.js
+rm extra.js
 
 echo -e "Build the app..."
 npm i
-npm run build
+node run build
 
 # Completed
 echo ""

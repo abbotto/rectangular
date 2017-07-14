@@ -3,9 +3,10 @@
 const prompt = require("prompt");
 const sh = require("shelljs");
 const fs = require("fs");
+const deps = require("./dev/deps.json");
 
-let vendorJs = require("./../tmp/project/dev/asset/vendor.global.js.json");
-let vendorCss = require("./../tmp/project/dev/asset/vendor.scss.json");
+const vendorJs = deps.script;
+const vendorCss = deps.style;
 
 // Message
 console.log("\nChoose extra packages to install:\n");
@@ -77,14 +78,9 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Strap...");
 		
-		!fs.exists("tmp/project/app/extension/ui/*")
-			? sh.exec("mkdir tmp/project/app/extension/ui")
-			: sh.exec("rm -rf tmp/project/app/extension/ui")
-		;
-		
-		sh.exec("mkdir tmp/project/app/extension/ui/");
-		sh.exec("cp -a install/extra/extension/ui/bootstrap/. tmp/project/app/extension/ui/");
-		sh.exec("cd tmp/project && npm i --save bootstrap angular-strap && cd ..");
+		sh.exec("mkdir app/extension/ui/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/. app/extension/ui/");
+		sh.exec("npm i --save bootstrap angular-strap");
 	}
 	else {
 		delete vendorJs["angular-strap"];
@@ -95,14 +91,10 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Angular Material...");
 		
-		!fs.exists("tmp/project/app/extension/ui")
-			? sh.exec("mkdir tmp/project/app/extension/ui")
-			: sh.exec("rm -rf tmp/project/app/extension/ui")
-		;
-		
-		sh.exec("mkdir tmp/project/app/extension/ui/");
-		sh.exec("cp -a install/extra/extension/ui/material-design/. tmp/project/app/extension/ui/");
-		sh.exec("cd tmp/project && npm i --save angular-material && cd ..");
+		!fs.exists("app/extension/ui") && sh.exec("mkdir app/extension/ui/");
+
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/ui/material-design/. app/extension/ui/");
+		sh.exec("npm i --save angular-material");
 	}
 	else {
 		delete vendorJs["angular-material"];
@@ -113,19 +105,18 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Bluebird...");
 		
-		sh.exec("mkdir tmp/project/app/extension/promise/");
-		sh.exec("cp -a install/extra/extension/promise/. tmp/project/app/extension/promise/");
-		sh.exec("cd tmp/project && npm i --save bluebird && cd ..");
+		sh.exec("mkdir app/extension/promise/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/promise/. app/extension/promise/");
+		sh.exec("npm i --save bluebird");
 	}
 	
 	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing MomentJS...");
 		
-		sh.exec("mkdir tmp/project/app/extension/date/");
-		sh.exec("cp -a install/extra/extension/date/. tmp/project/app/extension/date/");
-		sh.exec("cd tmp/project && npm i --save moment && cd ..");
-		sh.exec("cd tmp/project && npm i --save angular-moment && cd ..");
+		sh.exec("mkdir app/extension/date/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/date/. app/extension/date/");
+		sh.exec("npm i --save moment && npm i --save angular-moment");
 	}
 	else {
 		delete vendorJs.moment;
@@ -135,9 +126,9 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Lodash...");
 		
-		sh.exec("mkdir tmp/project/app/extension/_/");
-		sh.exec("cp -a install/extra/extension/_/. tmp/project/app/extension/_/");
-		sh.exec("cd tmp/project && npm i --save lodash && cd ..");
+		sh.exec("mkdir app/extension/_/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/_/. app/extension/_/");
+		sh.exec("npm i --save lodash");
 	}
 	else if (input.Restangular.match(/^(?:No|no|N|n)$/)) {
 		delete vendorJs.lodash;
@@ -147,18 +138,18 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Teleprint...");
 		
-		sh.exec("mkdir tmp/project/app/extension/print/");
-		sh.exec("cp -a install/extra/extension/print/. tmp/project/app/extension/print/");
-		sh.exec("cd tmp/project && npm i --save teleprint && cd ..");
+		sh.exec("mkdir app/extension/print/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/print/. app/extension/print/");
+		sh.exec("npm i --save teleprint");
 	}
 	
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular Translate...");
 		
-		sh.exec("mkdir tmp/project/app/extension/locale/");
-		sh.exec("cp -a install/extra/extension/locale/. tmp/project/app/extension/locale/");
-		sh.exec("cd tmp/project && npm i --save angular-translate && cd ..");
+		sh.exec("mkdir app/extension/locale/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/locale/. app/extension/locale/");
+		sh.exec("npm i --save angular-translate");
 	}
 	else {
 		delete vendorJs["angular-translate"];
@@ -168,9 +159,9 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing Restangular...");
 		
-		sh.exec("mkdir tmp/project/app/extension/rest/");
-		sh.exec("cp -a install/extra/extension/rest/. tmp/project/app/extension/rest/");
-		sh.exec("cd tmp/project && npm i --save lodash restangular && cd ..");
+		sh.exec("mkdir app/extension/rest/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/rest/. app/extension/rest/");
+		sh.exec("npm i --save lodash restangular");
 	}
 	else {
 		delete vendorJs.restangular;
@@ -180,20 +171,19 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing NG File Upload...");
 		
-		sh.exec("mkdir tmp/project/app/extension/upload/");
-		sh.exec("cp -a install/extra/extension/upload/. tmp/project/app/extension/upload/");
-		sh.exec("cd tmp/project && npm i --save ng-file-upload && cd ..");
+		sh.exec("mkdir app/extension/upload/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/upload/. app/extension/upload/");
+		sh.exec("npm i --save ng-file-upload");
 	}
 	else {
 		delete vendorJs["ng-file-upload"];;
 	}
 	
-	sh.exec("rm -rf tmp/project/node_modules");
+	sh.exec("rm -rf node_modules");
 	
-	// Update paths to point to the root project directory
-	vendorJs = JSON.stringify(vendorJs);
-	vendorCss = JSON.stringify(vendorCss);
+	// Update paths
+	deps.script = vendorJs;
+	deps.style = vendorCss;
 	
-	fs.writeFile("tmp/project/dev/asset/vendor.global.js.json", vendorJs);
-	fs.writeFile("tmp/project/dev/asset/vendor.scss.json", vendorCss);
+	fs.writeFile("./dev/deps.json", JSON.stringify(deps));
 });

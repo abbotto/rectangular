@@ -8,9 +8,7 @@
   "engines": {
     "node": "6.11"
   },
-  "scripts": {
-    "init": ". ~/.nvm/nvm.sh && nvm i 6.11 && npm i && rm -rf tmp && mkdir tmp && cp .envrc .env"
-  },
+  "scripts": {},
   "dependencies": {},
   "devDependencies": {
     "asciify": "^1.3.5",
