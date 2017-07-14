@@ -52,7 +52,7 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 
 echo ""
 echo -e "Grab Rectangular..."
-npm i --save-dev abbotto/rectangular > /dev/null
+npm i
 cd node_modules/rectangular/
 cp .envrc .env
 npm i
