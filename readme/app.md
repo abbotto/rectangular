@@ -49,9 +49,12 @@ Services are used for `sending/receiving/manipulating` data.
 ## <a name='Directives'></a>Directives
 Directives are used to control DOM behaviour and to render data in HTML format.
 - The structure of a `directive` template path is this: `{{component|directive}}/{{template}}.directive.html`.
+- A `directive` should decorate, and should generally be implemented as an attribute and restricted to 'A'.
 
 ## <a name='Components'></a>Components
-A component is a specialized directive that organizes a controller with a template. One main difference between a component and a directive is that a component doesn't have a `link` function. For DOM decoration, a component can use directives with a link function.
+A component is a specialized directive that organizes a controller with a template. One main difference between a component and a directive is that a component doesn't have a `link` function.
+- A `component` is restricted to 'E' by default, meaning custom element.
+- For DOM decoration, a component can use directives.
 
 - Relevant files are placed in the `app/component/{{componentName}}` directory:
 	- **Components** (js)
