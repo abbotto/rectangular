@@ -96,4 +96,5 @@ Essentially, there are 3 parts to Rectangular:
 - Producer:			[View](readme/producer.md)
 - Structure:		[View](readme/structure.md)
 - Tasks: 			[View](readme/tasks.md)
+- Tests: 			[View](readme/tests.md)
 - User Experience:	[View](readme/user-experience.md)
