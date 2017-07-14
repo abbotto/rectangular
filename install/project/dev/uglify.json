@@ -1,0 +1,30 @@
+{
+	"comments": false,
+	"mangle": false,
+	"sourceMap": false,
+	"compress": {
+		"booleans": true,
+		"cascade": true,
+		"comparisons": true,
+		"conditionals": true,
+		"dead_code": true,
+		"drop_console": true,
+		"drop_debugger": true,
+		"evaluate": true,
+		"hoist_funs": false,
+		"hoist_vars": false,
+		"if_return": true,
+		"join_vars": true,
+		"loops": true,
+		"negate_iife": true,
+		"properties": true,
+		"sequences": true,
+		"side_effects": true,
+		"unsafe": true,
+		"unused": true,
+		"warnings": false
+	},
+	"output": {
+		"space_colon": false
+	}
+}

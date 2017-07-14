@@ -1,0 +1,58 @@
+{
+	"font": {
+		"font-awesome": ["./node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eot,svg}"],
+		"files": ["./app/**/*.{ttf,woff,woff2,eot,svg}"]
+	},
+	"image": {
+		"files": ["./app/**/*.{bmp,gif,jpg,jpeg,png,svg}"]
+	},
+	"model": {
+		"files": [
+			"./app/**/*.data.json",
+			"./app/**/*.mixin.json"
+		]
+	},
+	"template": {
+		"files": [
+			"!./app/**/*.mockup.html",
+			"./app/component/**/*.html",
+			"./app/extension/**/*.html",
+			"./app/component/**/*.jsx",
+			"./app/extension/**/*.jsx"
+		]
+	},
+	"script": {
+		"react": [
+			"./node_modules/react/dist/react.min.js"
+		],
+		"angular": [
+			"./node_modules/angular/angular.min.js",
+			"./node_modules/angular-animate/angular-animate.min.js",
+			"./node_modules/angular-aria/angular-aria.min.js",
+			"./node_modules/angular-messages/angular-messages.min.js",
+			"./node_modules/angular-sanitize/angular-sanitize.min.js",
+			"./node_modules/angular-ui-router/release/angular-ui-router.min.js"
+		]
+	},
+	"spec": {
+		"files": [
+			"./app/**/*.spec.js"
+		]
+	},
+	"style": {
+		"normalize.css": [
+			"./node_modules/normalize.css/normalize.css"
+		],
+		"font-awesome": [
+			"./node_modules/font-awesome/css/font-awesome.css"
+		],
+		"animate.css": [
+			"./node_modules/animate.css/animate.min.css"
+		],
+		"files": [
+			"./app/design/style/vendor.scss",
+			"./app/design/style/scaffold.scss",
+			"./app/**/*.scss"
+		]
+	}
+}
