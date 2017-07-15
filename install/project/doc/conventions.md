@@ -14,6 +14,14 @@
 * [Functions](#Functions)
 	* [Named Function Expressions](#NamedFunctionExpressions)
 
+## <a name='FunctionalFileStructure'></a> Functional File Structure (FFS)
+- Basically, files are organized according to what they are used for and folders are kept as flat as possible.
+	- For example, the `home` component is located here: `app/component/home/`.
+	- Component-specific directives, services, models, view, route, and styles are all kept in the same directory inside of `app/component`.
+	- Global modules can go in the `app/extension` folder.
+	- Global models can go in the `app/model` folder.
+	- Global styles, fonts and images can go in the `app/design` folder.
+
 ## <a name='NamingStructure'></a>Naming Structure
 
 ### <a name='Modules'></a>Modules
