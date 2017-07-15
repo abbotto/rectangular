@@ -24,10 +24,6 @@
 !/dev
 !/dev/**/*
 
-# Whitelist Readme Files
-!/readme
-!/readme/**/*
-
 # Blacklist Nested Files
 .DS_Store
 .fusebox
