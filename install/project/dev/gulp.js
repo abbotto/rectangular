@@ -8,13 +8,15 @@ require("dotenv")
 	.config()
 ;
 
+const root = __dirname.slice(0, -4);
+
 // Versioning
 gulp
 	.task("bump-major", () => {
 		gulp
-			.src(["./package.json"])
+			.src([root + "/package.json"])
 			.pipe(bump({type: "major"}))
-			.pipe(gulp.dest("./"))
+			.pipe(gulp.dest(root))
 		;
 	})
 ;
@@ -22,9 +24,9 @@ gulp
 gulp
 	.task("bump-minor", () => {
 		gulp
-			.src(["./package.json"])
+			.src([root + "/package.json"])
 			.pipe(bump({type: "minor"}))
-			.pipe(gulp.dest("./"))
+			.pipe(gulp.dest(root))
 		;
 	})
 ;
@@ -32,9 +34,9 @@ gulp
 gulp
 	.task("bump-patch", () => {
 		gulp
-			.src(["./package.json"])
+			.src([root + "/package.json"])
 			.pipe(bump({type: "patch"}))
-			.pipe(gulp.dest("./"))
+			.pipe(gulp.dest(root))
 		;
 	})
 ;
@@ -47,15 +49,13 @@ gulp
 		const options = {
 			html5Mode: true,
 			startPage: "/api",
-			title: "App Docs",
-			image: "path/to/image.png",
-			imageLink: "http://domain.com",
+			title: "API",
 			titleLink: "/api"
 		};
 		gulp
-			.src("SOME_PATH")
+			.src([root + "/app/**/*.js"])
 			.pipe(gulpDocs.process(options))
-			.pipe(gulp.dest("./doc/api"))
+			.pipe(gulp.dest(root + "/doc/api"))
 			.pipe(process.exit())
 		;
 	})

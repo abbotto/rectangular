@@ -3,7 +3,8 @@
 /**
 * @ngdoc directive
 * @name component.directive:component
-*
+* @element list
+
 * @description
 * A directive for rendering JSX with ReactJS
 *
