@@ -13,24 +13,6 @@
 
 ---
 
-## Focus on apps, not ops.
-- Once installed, you can immediatley focus on the features of your app.
-- All the ops are done behind the scenes, but most are still configurable.
-- With Rectangular, you can take advantage of the following goodies:
-	- Autoprefixer
-	- Code Minification
-	- Dependency Management
-	- ES6
-	- ESLint
-	- Fuse-Box
-	- Model Caching
-	- PUG Templating
-	- Sass
-	- Stylelint
-	- Template Caching
-
----
-
 ## <a name='Installation'></a>Installation
 
 ### <a name='Requirements'></a>Requirements
@@ -56,7 +38,25 @@
 	npm start
 
 ## <a name='Overview'></a>Overview
-Out-of-the-box, Rectangular gives you the power to build Angular 1 apps that are:
+
+### Focus on apps, not ops.
+
+Once installed, you can immediatley focus on the features of your app.
+- All the ops are done behind the scenes, but most are still configurable.
+- With Rectangular, you can take advantage of the following goodies:
+	- Autoprefixer
+	- Code Minification
+	- Dependency Management
+	- ES6
+	- ESLint
+	- Fuse-Box
+	- Model Caching
+	- PUG Templating
+	- Sass
+	- Stylelint
+	- Template Caching
+
+Out-of-the-box, Rectangular gives you the power to build AngularJS apps that are:
 - Scalable
 - Testable
 - Organized
