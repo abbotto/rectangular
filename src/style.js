@@ -36,15 +36,14 @@ module.exports = function style(deps, root, config) {
 	cssFiles.push(tmpAppCSS);
 	sh.cat(cssFiles).to("dist/app.css");
 	
-	const appCSS = new CleanCSS({compatibility: "ie9"})
-		.minify(
-			fs.readFileSync(
-				"dist/app.css",
-				"utf8"
-			)
-		)
-		.styles
-	;
+	const appCSS = new CleanCSS({
+		compatibility: "ie9"
+	})
+	.minify(fs.readFileSync(
+		"dist/app.css",
+		"utf8"
+	))
+	.styles;
 	
 	fs.writeFile("dist/app.css", appCSS);
 };
