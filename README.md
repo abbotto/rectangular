@@ -33,13 +33,6 @@ Essentially, there are 3 parts to Rectangular:
 - the `Application Kit`
 - the `Build System`
 
-Out-of-the-box, Rectangular gives you the power to build AngularJS apps that are:
-- Scalable
-- Testable
-- Organized
-- Responsive
-- Modular
-
 Once installed, you can immediatley focus on the features of your app.
 - All the ops are done behind the scenes, but most are still configurable.
 - With Rectangular, you can take advantage of the following goodies:
