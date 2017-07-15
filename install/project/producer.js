@@ -78,7 +78,7 @@ const vendor = fuse
 const app = fuse
 	.bundle("app")
 	.target("browser")
-	.sourceMaps(NODE_ENV === "development")
+	.sourceMaps(!isProduction)
 	.instructions("!> [app/index.js]")
 ;
 
