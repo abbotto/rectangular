@@ -4,9 +4,11 @@ const camelCase = require("camelcase");
 const EOL = require("os").EOL;
 const fs = require("fs");
 const glob = require("glob-concat");
+const parseAssets = require(__dirname + "/utility/parseAssets.js");
 const path = require("path");
 
 module.exports = function route(paths, root) {
+	paths = parseAssets(paths);
 	const deps = [];
 	const imports = [];
 	const routes = [];
