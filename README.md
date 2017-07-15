@@ -93,7 +93,6 @@ Essentially, there are 3 parts to Rectangular:
 - Conventions:		[View](readme/conventions.md)
 - Dependencies:		[View](readme/dependencies.md)
 - Extensions:		[View](readme/extensions.md)
-- Functions:		[View](readme/functions.md)
 - Models:			[View](readme/models.md)
 - Producer:			[View](readme/producer.md)
 - Structure:		[View](readme/structure.md)
