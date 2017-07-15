@@ -4,14 +4,12 @@
 ## Table of Contents
 * [Documentation](install/project/README.md)
 * [Installation](#Installation)
-	* [Procedure](#Procedure)
 * [Overview](#Overview)
 
 ---
 
 ## <a name='Installation'></a>Installation
 
-### <a name='Procedure'></a>Procedure
 	# Download the install script
 	curl -O https://raw.githubusercontent.com/abbotto/rectangular/master/install/install
 	
