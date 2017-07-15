@@ -12,7 +12,8 @@
 		- `angular.module("componentName.service")`.
 	- `componentName.*.route.js`.
 		- `angular.module("componentName.route")`.
-- Other related component files should be prefixed with the component name:
+- Files related to components files should be prefixed with the component name:
+	- `componentName.*.service.js`
 	- `componentName.*.html`.
 	- `componentName.*.scss`.
 
