@@ -107,6 +107,7 @@ if (isArg("--build") || isArg("--server") || isArg("--spec")) {
 				sh.exec("gzip -c -8 " + "dist/legacy.js > dist/legacy.js.gz");
 				sh.exec("gzip -c -8 " + "./dist/vendor.js > ./dist/vendor.js.gz");
 				sh.exec("gzip -c -8 " + "./dist/app.js > ./dist/app.js.gz");
+				sh.exec("gzip -c -8 " + "./dist/app.css > ./dist/app.css.gz");
 			}
 		})
 	;
