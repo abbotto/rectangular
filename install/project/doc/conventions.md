@@ -12,7 +12,7 @@
 	* [Services](#Services)
 		* [Factories](#Factories)
 		* [Caveats](#Caveats)
-* [Functions](#Functions)
+* [Function Structure](#FunctionStructure)
 	* [Named Function Expressions](#NamedFunctionExpressions)
 
 ## <a name='FileStructure'></a> File Structure
@@ -68,7 +68,7 @@
 	- This rule can be disabled for `non-constructor` services such as `.factory()`.
 	- To disable, add the following line to the top of the service file: `/* eslint-plugin-disable angular */`
 
-## <a name='Functions'></a>Functions
+## <a name='FunctionStructure'></a>Function Structure
 
 ### <a name='NamedFunctionExpressions'></a>Named Function Expressions
 - It's preferable to use `named functions` instead of passing an `anonymous function` in as a callback.
