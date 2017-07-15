@@ -18,7 +18,7 @@ const isProduction = NODE_ENV === "production";
 // Build tasks
 // ----------------------------------------------------------------
 isArg("--clean") && sh.exec("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
-isArg("--doc") && sh.exec("gulp docs --gulpfile dev/gulp.js");
+isArg("--doc") && sh.exec("gulp doc --gulpfile dev/gulp.js");
 isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");
@@ -26,7 +26,7 @@ isArg("--env") && rectangular.env(".envrc", __dirname);
 isArg("--font") && rectangular.fonts(deps.font, __dirname);
 isArg("--image") && rectangular.images(deps.image, __dirname);
 isArg("--model") && rectangular.models(deps.model, __dirname);
-isArg("--route") && rectangular.routes(["./app/**/*.route.js"], __dirname);
+isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
 isArg("--style") && rectangular.styles(deps.style, __dirname, "dev/stylelint.json");
 isArg("--template") && rectangular.templates(deps.template, __dirname);

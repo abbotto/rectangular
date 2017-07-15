@@ -43,7 +43,7 @@ gulp
 const gulpDocs = require("gulp-ngdocs");
 
 gulp
-	.task("docs", [], () => {
+	.task("doc", [], () => {
 		const options = {
 			html5Mode: true,
 			startPage: "/api",
@@ -55,7 +55,7 @@ gulp
 		gulp
 			.src("SOME_PATH")
 			.pipe(gulpDocs.process(options))
-			.pipe(gulp.dest("./docs"))
+			.pipe(gulp.dest("./doc/api"))
 			.pipe(process.exit())
 		;
 	})

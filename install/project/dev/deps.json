@@ -21,6 +21,11 @@
 			"./app/extension/**/*.jsx"
 		]
 	},
+	"route": {
+		"files": [
+			"./app/**/*.route.js"
+		]
+	},
 	"script": {
 		"react": [
 			"./node_modules/react/dist/react.min.js"
