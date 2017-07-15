@@ -1,7 +1,6 @@
 "use strict";
 
 const CleanCSS = require("clean-css");
-const cleanCSS = new CleanCSS({compatibility: "ie9"});
 const fs = require("fs");
 const glob = require("glob-concat");
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
@@ -37,12 +36,15 @@ module.exports = function style(deps, root, config) {
 	cssFiles.push(tmpAppCSS);
 	sh.cat(cssFiles).to("dist/app.css");
 	
-	const appCSS = cleanCSS.minify(
-		fs.readFileSync(
-			"dist/app.css",
-			"utf8"
+	const appCSS = new CleanCSS({compatibility: "ie9"})
+		.minify(
+			fs.readFileSync(
+				"dist/app.css",
+				"utf8"
+			)
 		)
-	);
+		.styles
+	;
 	
 	fs.writeFile("dist/app.css", appCSS);
 };
