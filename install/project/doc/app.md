@@ -74,7 +74,7 @@ A simple Angular component may resemble the following:
 	(() => {
 		const options = {};
 		
-		options.templateUrl = "home/home.component.html";
+		options.templateUrl = "home/home.html";
 		options.controllerAs = "vm";
 		
 		options.controller = function HomeController() {
