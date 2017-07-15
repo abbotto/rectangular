@@ -34,7 +34,7 @@
 
 ### <a name='Components'></a>Components
 - Component module names should be `lowerCamelCase`.
-- Files related to components files should be prefixed with the component name:
+- Files related to components should be prefixed with the component name:
 	- `componentName.*.service.js`
 	- `componentName.*.html`.
 	- `componentName.*.scss`.
