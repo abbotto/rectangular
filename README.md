@@ -48,7 +48,7 @@ Once installed, you can immediatley focus on the features of your app.
 	- Build System
 	- Code Minification
 	- Dependency Management
-	- ES6
+	- ES6/ES2015
 	- ESLint
 	- Fuse-Box
 	- Model Caching
