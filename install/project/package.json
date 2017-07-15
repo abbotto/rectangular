@@ -10,7 +10,7 @@
 	"scripts": {
 		"eslint": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
 		"start": "node producer.js --server",
-		"test": "node producer.js --spec && node_modules/karma/bin/karma start dev/karma.js"
+		"test": "node producer.js --spec --production && node_modules/karma/bin/karma start dev/karma.js"
 	},
 	"dependencies": {
 		"angular": "1.5.5",
