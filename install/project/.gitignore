@@ -3,23 +3,14 @@
 
 # Whitelist Top-Level Files
 !producer.js
-!deps.json
-!gulpfile.js
-!karma.js
 !package.json
-!server.js
 !license.md
 !README.md
-!uglify.json
 !.babelrc
 !.envrc
-!.eslintignore
 !.eslintrc.js
 !.gitignore
-!.jsbeautifyrc
 !.nvmrc
-!.stylelintrc
-!.travis.yml
 
 # Whitelist Doc Folder
 !/doc
