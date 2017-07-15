@@ -1,3 +1,5 @@
+# Extensions
+
 ## Table of Contents
 * [Extensions](#Extensions)
 	* [Adding Extensions](#AddingExtensions)
@@ -13,7 +15,7 @@
 		* [Printing](#Printing)
 		* [Virtual DOM](#VirtualDOM)
 
-##  <a name='Extensions'></a>Extensions
+## <a name='Extensions'></a>Extensions
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
 - As the name implies, extensions `extend` the capabilities of your app.
 - There optional extensions that you can install during the install process.
