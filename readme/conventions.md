@@ -49,7 +49,9 @@
 	- This rule can be disabled for `non-constructor` services such as `.factory()`.
 	- To disable, add the following line to the top of the service file: `/* eslint-plugin-disable angular */`
 
-### Named Function Expressions
+### Functions
+
+#### Named Function Expressions
 - It's preferable to use `named functions` instead of passing an `anonymous function` in as a callback.
 - If a function must be anonymous, consider using an `arrow function`.
 
@@ -67,7 +69,7 @@
 		// Logic goes here...
 	};
 
-### Immediately Invoked Function Expressions
+#### Immediately Invoked Function Expressions
 - All AngularJS modules should be wrapped in an `Immediately Invoked Function Expression` (IIFE).
 	- An `IIFE` encapsulates the module and removes variables and constants from the `global` scope.
 	- This helps to prevent `name collisions`.
