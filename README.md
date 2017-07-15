@@ -30,6 +30,11 @@
 ## <a name='Overview'></a>Overview
 
 ### Focus on apps, not ops.
+Essentially, there are 3 parts to Rectangular:
+- the `Project Installer`
+- the `Application Kit`
+- the `Build System`
+
 Out-of-the-box, Rectangular gives you the power to build AngularJS apps that are:
 - Scalable
 - Testable
@@ -53,8 +58,3 @@ Once installed, you can immediatley focus on the features of your app.
 	- Stylelint
 	- Template Caching
 	- TypeScript
-
-Essentially, there are 3 parts to Rectangular:
-- the `Project Installer`
-- the `Application Kit`
-- the `Build System`
