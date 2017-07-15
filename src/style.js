@@ -1,11 +1,13 @@
 "use strict";
 
+const CleanCSS = require("clean-css");
 const glob = require("glob-concat");
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
 const path = require("path");
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const sh = require("shelljs");
+const minify = new CleanCSS().minify;
 
 module.exports = function style(deps, root, config) {
 	const cssFiles = [];
@@ -20,7 +22,7 @@ module.exports = function style(deps, root, config) {
 	const styleFiles = glob.sync(styles);
 	
 	styleFiles.forEach((file) => {
-		path.extname(file) === ".css" && cssFiles.push(file);
+		path.extname(file) === ".css" && cssFiles.push(minify(file));
 		path.extname(file) === ".scss" && sassFiles.push(file);
 	});
 	
