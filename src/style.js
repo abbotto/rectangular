@@ -1,6 +1,6 @@
 "use strict";
 
-const dir = __dirname.replace("rectangular/src", "rectangular/");
+const dir = __dirname.replace("rectangular/src", "rectangular");
 const fs = require("fs");
 const glob = require("glob-concat");
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
