@@ -1,5 +1,6 @@
 "use strict";
 
+const dir = __dirname.replace("rectangular/src", "rectangular/");
 const fs = require("fs");
 const glob = require("glob-concat");
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
@@ -12,8 +13,8 @@ module.exports = function style(deps, root) {
 	const styles = parseAssets(deps);
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
-	const nodeSASS = "chmod +x " + root + "/node_modules/rectangular/node_modules/node-sass/bin/node-sass && " + root + "/node_modules/rectangular/node_modules/node-sass/bin/node-sass";
-	const postCSS = "chmod +x " + root + "/node_modules/rectangular/node_modules/postcss/lib/postcss.js && node " + root + "/node_modules/rectangular/node_modules/postcss/lib/postcss.js";
+	const nodeSASS = "chmod +x " + dir + "/node_modules/node-sass/bin/node-sass && " + dir + "/node_modules/node-sass/bin/node-sass";
+	const postCSS = "chmod +x " + dir + "/node_modules/postcss/lib/postcss.js && node " + dir + "/node_modules/postcss/lib/postcss.js";
 	
 	styles.forEach((filePath, i) => {
 		styles[i] = filePath.replace("./", root + "/");
