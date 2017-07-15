@@ -16,8 +16,6 @@ module.exports = function style(deps, root, config) {
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
 	
-	let appCSS;
-	
 	styles.forEach((filePath, i) => {
 		styles[i] = filePath.replace("./", root + "/");
 	});
@@ -39,7 +37,7 @@ module.exports = function style(deps, root, config) {
 	cssFiles.push(tmpAppCSS);
 	sh.cat(cssFiles).to("dist/app.css");
 	
-	appCSS = cleanCSS.minify(
+	const appCSS = cleanCSS.minify(
 		fs.readFileSync(
 			"dist/app.css",
 			"utf8"
