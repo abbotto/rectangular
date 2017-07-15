@@ -28,7 +28,7 @@ isArg("--image") && rectangular.images(deps.image, __dirname);
 isArg("--model") && rectangular.models(deps.model, __dirname);
 isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
-isArg("--style") && rectangular.styles(deps.style, __dirname, "dev/stylelint.json");
+isArg("--style") && rectangular.styles(deps.style, __dirname);
 isArg("--template") && rectangular.templates(deps.template, __dirname);
 if (isArg("--production")) isProduction = true;
 

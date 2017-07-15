@@ -10,7 +10,7 @@ const purify = require("purify-css");
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const sh = require("shelljs");
 
-module.exports = function style(deps, root, config) {
+module.exports = function style(deps, root) {
 	const cssFiles = [];
 	const styles = parseAssets(deps);
 	const sassFiles = [];
@@ -28,7 +28,6 @@ module.exports = function style(deps, root, config) {
 	});
 	
 	sh.exec("touch " + "dist/app.css");
-	sh.exec("node_modules/stylelint/bin/stylelint.js --config " + root + "/" + config + " " + root + "/app/**/*.scss");
 	
 	sh.cat(sassFiles).to(tmpAppCSS);
 	sh.exec(nodeSASS + " -q --output-style compressed --include-path scss " + tmpAppCSS + " " + tmpAppCSS);
