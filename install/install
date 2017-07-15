@@ -70,9 +70,9 @@ echo -e "Run the extras installer..."
 node extra.js
 rm extra.js
 
-echo -e "Build the app..."
+echo -e "Building the app..."
 npm i
-node producer.js --build
+node producer.js --build --production
 
 # Completed
 echo ""
