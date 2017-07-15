@@ -14,7 +14,10 @@ module.exports = function style(deps, root, config) {
 	const styles = parseAssets(deps);
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
-
+	
+	
+	let appCSS;
+	
 	styles.forEach((filePath, i) => {
 		styles[i] = filePath.replace("./", root + "/");
 	});
@@ -22,7 +25,7 @@ module.exports = function style(deps, root, config) {
 	const styleFiles = glob.sync(styles);
 	
 	styleFiles.forEach((file) => {
-		path.extname(file) === ".css" && cssFiles.push(cleanCSS.minify(file));
+		path.extname(file) === ".css" && cssFiles.push(file);
 		path.extname(file) === ".scss" && sassFiles.push(file);
 	});
 	
@@ -35,4 +38,14 @@ module.exports = function style(deps, root, config) {
 	
 	cssFiles.push(tmpAppCSS);
 	sh.cat(cssFiles).to("dist/app.css");
+	
+	appCSS = cleanCSS.minify(
+		fs.readFileSync(
+			"dist/app.css",
+			"utf8"
+		)
+	);
+	
+	cleanCSS.minify(
+		fs.writeFile("dist/app.css", appCSS);
 };
