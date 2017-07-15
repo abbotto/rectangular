@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Functional File Structure](#FunctionalFileStructure)
+* [File Structure](#FileStructure)
 * [Naming Structure](#NamingStructure)
 	* [Modules](#Modules)
 	* [Components](#Components)
@@ -15,7 +15,7 @@
 * [Functions](#Functions)
 	* [Named Function Expressions](#NamedFunctionExpressions)
 
-## <a name='FunctionalFileStructure'></a> Functional File Structure (FFS)
+## <a name='FileStructure'></a> File Structure
 - Basically, files are organized according to what they are used for and folders are kept as flat as possible.
 	- For example, the `home` component is located here: `app/component/home/`.
 	- Component-specific directives, services, models, view, route, and styles are all kept in the same directory inside of `app/component`.
