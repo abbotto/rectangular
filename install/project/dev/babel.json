@@ -1,15 +1,11 @@
 {
 	"compact": true,
 	"presets": [
-		[
-			"es2015",
-			{"modules": false}
-		],
 		"react",
 		["env", {
 			"targets": {
 				"browsers": [
-					"last 2 versions",
+					"last 3 versions",
 					"safari >= 7",
 					"ie >= 9"
 				]

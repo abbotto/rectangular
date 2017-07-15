@@ -1,18 +1,6 @@
 # Rectangular
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 
-#### Focus on apps, not ops.
-- Once installed, you can immediatley focus on the features of your app.
-- All the ops are done behind the scenes, but most are still configurable:
-	- Sass + Stylelint + Autoprefix
-	- Fuse-Box + ESLint
-	- Template + Model Caching
-	- HTML templating w/ PUG
-	- Asset Management
-	- Minification
-
----
-
 ## Table of Contents
 * [Installation](#Installation)
 	* [Requirements](#Requirements)
@@ -22,6 +10,24 @@
 	* [Application Kit](#ApplicationKit)
 	* [Build System](#BuildSystem)
 * [Documentation](install/project/README.md)
+
+---
+
+#### Focus on apps, not ops.
+- Once installed, you can immediatley focus on the features of your app.
+- All the ops are done behind the scenes, but most are still configurable.
+- With Rectangular, you can take advantage of the following goodies:
+	- Autoprefixer
+	- Code Minification
+	- Dependency Management
+	- ES6
+	- ESLint
+	- Fuse-Box
+	- Model Caching
+	- PUG Templating
+	- Sass
+	- Stylelint
+	- Template Caching
 
 ---
 
