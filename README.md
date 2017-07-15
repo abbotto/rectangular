@@ -21,7 +21,7 @@
 	* [Project Installer](#Project-Installer)
 	* [Application Kit](#ApplicationKit)
 	* [Build System](#BuildSystem)
-* [Documentation](#Documentation)
+* [Documentation](install/project/README.md)
 
 ---
 
@@ -85,17 +85,3 @@ Essentially, there are 3 parts to Rectangular:
 - Supporting `PUG` syntax for cleaner HTML templates.
 - Supporting `stylelint` to make sure your styles come out shiny.
 - Supporting `autoprefixer` so your styles are welcome in web browsers.
-
----
-
-## <a name='Documentation'></a>Documentation
-- App:				[View](readme/app.md)
-- Conventions:		[View](readme/conventions.md)
-- Dependencies:		[View](readme/dependencies.md)
-- Extensions:		[View](readme/extensions.md)
-- Models:			[View](readme/models.md)
-- Producer:			[View](readme/producer.md)
-- Structure:		[View](readme/structure.md)
-- Tasks: 			[View](readme/tasks.md)
-- Tests: 			[View](readme/tests.md)
-- User Experience:	[View](readme/user-experience.md)
