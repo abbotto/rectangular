@@ -1,5 +1,16 @@
 "use strict";
 
+/**
+* @ngdoc directive
+* @name component.directive:component
+*
+* @description
+* A directive for rendering JSX with ReactJS
+*
+* @example
+* <component name="myComponent"></component>
+*/
+
 import {unmountComponentAtNode} from "react";
 import {render} from "react-dom";
 import {client} from "react-jsx";

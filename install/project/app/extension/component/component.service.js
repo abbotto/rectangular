@@ -1,4 +1,3 @@
-
 "use strict";
 
 import reactVendorService from "~/app/extension/component/react.vendor.service.js";
