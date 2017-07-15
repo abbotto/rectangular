@@ -1,13 +1,10 @@
 "use strict";
 
-const CleanCSS = require("clean-css");
 const fs = require("fs");
 const glob = require("glob-concat");
-const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
 const path = require("path");
 const purify = require("purify-css");
-const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const sh = require("shelljs");
 
 module.exports = function style(deps, root) {
@@ -15,6 +12,8 @@ module.exports = function style(deps, root) {
 	const styles = parseAssets(deps);
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
+	const nodeSASS = "chmod +x " + root + "/node_modules/rectangular/node_modules/node-sass/bin/node-sass && " + root + "/node_modules/rectangular/node_modules/node-sass/bin/node-sass";
+	const postCSS = "chmod +x " + root + "/node_modules/rectangular/node_modules/postcss/lib/postcss.js && node " + root + "/node_modules/rectangular/node_modules/postcss/lib/postcss.js";
 	
 	styles.forEach((filePath, i) => {
 		styles[i] = filePath.replace("./", root + "/");
@@ -36,14 +35,10 @@ module.exports = function style(deps, root) {
 	cssFiles.push(tmpAppCSS);
 	sh.cat(cssFiles).to("dist/app.css");
 	
-	const appCSS = new CleanCSS({
-		compatibility: "ie9"
-	})
-	.minify(fs.readFileSync(
+	const appCSS = fs.readFileSync(
 		"dist/app.css",
 		"utf8"
-	))
-	.styles;
+	);
 
 	const content = [
 		root + "/app/**/*.js",
@@ -51,6 +46,7 @@ module.exports = function style(deps, root) {
 	];
 
 	const options = {
+		minify: true,
 		output: "dist/app.css"
 	};
 
