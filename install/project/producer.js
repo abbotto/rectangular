@@ -12,7 +12,7 @@ const babelRules = require("./dev/babel.json");
 const deps = require("./dev/deps.json");
 const uglifyRules = require("./dev/uglify.json");
 const isArg = (arg) => (process.argv.slice(2)).indexOf(arg) > -1;
-const isProduction = NODE_ENV === "production";
+let isProduction = NODE_ENV === "production";
 
 // ----------------------------------------------------------------
 // Build tasks
@@ -30,6 +30,7 @@ isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
 isArg("--style") && rectangular.styles(deps.style, __dirname, "dev/stylelint.json");
 isArg("--template") && rectangular.templates(deps.template, __dirname);
+if (isArg("--production")) isProduction = true;
 
 // ----------------------------------------------------------------
 // Plugins
