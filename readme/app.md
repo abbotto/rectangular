@@ -135,7 +135,7 @@ A simple React component may resemble the following:
 	})();
 
 ## <a name='Controllers'></a>Controllers
-Controllers are used in components and directives.
+Controllers are used in both components and directives.
 
 - Controllers should be used for:
 	- Setting up the initial state of the View Model.

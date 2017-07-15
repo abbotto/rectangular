@@ -90,7 +90,7 @@ Essentially, there are 3 parts to Rectangular:
 
 ## <a name='Documentation'></a>Documentation
 - App:				[View](readme/app.md)
-- Assets:			[View](readme/assets.md)
+- Dependencies:		[View](readme/dependencies.md)
 - Extensions:		[View](readme/extensions.md)
 - Functions:		[View](readme/functions.md)
 - Models:			[View](readme/models.md)
