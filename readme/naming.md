@@ -3,17 +3,17 @@
 ### Modules
 
 #### Files
-- Files containing a module will share a name with that module, with the exception of components.
-	- `{{componentName}}.component.js`.
-		- `angular.module("{{componentName}}.component")`.
-	- `{{componentName}}.*.controller.js`.
-		- `angular.module("{{ComponentName}}.controller")`.
-	- `{{componentName}}.*.service.js`.
-		- `angular.module("{{componentName}}.service")`.
-	- `{{componentName}}.*.route.js`.
-		- `angular.module("{{componentName}}.route")`.
-	- `{{componentName}}.*.html`.
-	- `{{componentName}}.*.scss`.
+- Files containing a module will share a name with that module:
+	- `componentName.component.js`.
+		- `angular.module("componentName.component")`.
+	- `componentName.*.controller.js`.
+		- `angular.module("ComponentName.controller")`.
+	- `componentName.*.service.js`.
+		- `angular.module("componentName.service")`.
+	- `componentName.*.route.js`.
+		- `angular.module("componentName.route")`.
+	- `componentName.*.html`.
+	- `componentName.*.scss`.
 
 #### Components
 - Component module names should be `lowerCamelCase`.
