@@ -7,7 +7,7 @@ const parseAssets = require(__dirname + "/utility/parseAssets.js");
 const path = require("path");
 const postCSS = "chmod +x node_modules/postcss/lib/postcss.js && node node_modules/postcss/lib/postcss.js";
 const sh = require("shelljs");
-const minify = new CleanCSS().minify;
+const minify = new CleanCSS({compatibility: "ie9"}).minify;
 
 module.exports = function style(deps, root, config) {
 	const cssFiles = [];
