@@ -1,3 +1,11 @@
+/**
+* @ngdoc component
+* @name todoList.component:todoList
+*
+* @description
+* A ReactJS component used to render a list in a view
+*/
+
 // --------------------------------
 // Todo-List Component (ReactJS)
 // --------------------------------
