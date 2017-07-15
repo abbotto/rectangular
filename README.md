@@ -53,6 +53,7 @@ Once installed, you can immediatley focus on the features of your app.
 	- Fuse-Box
 	- Model Caching
 	- PUG Templating
+	- PurifyCSS
 	- Sass
 	- Stylelint
 	- Template Caching
