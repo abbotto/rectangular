@@ -51,7 +51,7 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 
 echo ""
-echo -e "Grab Rectangular..."
+echo -e "Fetching Rectangular..."
 npm i
 cd node_modules/rectangular/
 cp .envrc .env
@@ -72,7 +72,7 @@ rm extra.js
 
 echo -e "Build the app..."
 npm i
-npm run build
+node producer.js --build
 
 # Completed
 echo ""
