@@ -13,6 +13,7 @@
 			},
 			"image": { ... },
 			"model": { ... },
+			"route": { ... },
 			"template": { ... },
 			"script": { ... },
 			"spec": { ... },
