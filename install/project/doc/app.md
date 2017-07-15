@@ -15,7 +15,12 @@
 	* [View Model](#ViewModel)
 * [Templates](#Templates)
 	* [Example](#TemplateIncludeExample)
-
+* [UX](#UX)
+	* [Animations](#Animations)
+	* [Messages](#Messages)
+	* [Sanitize](#Sanitize)
+	* [Assistive Technology](#AssistiveTechnology)
+	
 ## <a name='AppModules'></a>App Modules
 - App Modules are registered in `app/index.js`.
 
@@ -154,3 +159,21 @@ Controllers are used in both components and directives.
 ### <a name='TemplateIncludeExample'></a>Example
 
 	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
+
+## <a name='UX'></a>UX
+
+### <a name='Animations'></a>Animations
+- The `ngAnimate` module provides support for CSS-based and JavaScript-based animations.
+- Learn more about `ngAnimate` [here](https://docs.angularjs.org/api/ngAnimate).
+
+### <a name='Messages'></a>Messages
+- The `ngMessage` module commonly is to display error messages for inputs.
+- Learn more about `ngMessage` [here](https://docs.angularjs.org/api/ngMessages).
+
+### <a name='Sanitize'></a>Sanitize
+- The `ngSanitize` module provides functionality to sanitize HTML.
+- Learn more about `ngSanitize` [here](https://docs.angularjs.org/api/ngSanitize).
+
+### <a name='AssistiveTechnology'></a>Assistive Technology
+- The `ngAria` module provides support for common ARIA attributes used in assistive technologies.
+- Learn more about `ngAria` [here](https://docs.angularjs.org/api/ngAria).

@@ -5,4 +5,3 @@
 - Extensions:		[View](doc/extensions.md)
 - Models:			[View](doc/models.md)
 - Producer:			[View](doc/producer.md)
-- UX:				[View](doc/ux.md)
