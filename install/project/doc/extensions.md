@@ -103,7 +103,7 @@
 #### <a name='ImmutableData'></a>Immutable Data
 - Service is called `data.service` and is injected via `data$`.
 - Directive is called `data.directive` and is added via `data-src`.
-- Learn more about 'immutable-js' [here](http://facebook.github.io/immutable-js/docs/).
+- Learn more about `immutable-js` [here](http://facebook.github.io/immutable-js/docs/).
 
 #### <a name='Printing'></a>Printing
 - Service is called `print.service` and is injected via `print$`.
@@ -112,4 +112,4 @@
 #### <a name='VirtualDOM'></a>Virtual DOM
 - Service is injected via `component$`.
 - Directive is called `component.directive` and is added via `<component name="MyComponent"></component>`.
-- Learn more about 'react' [here](https://facebook.github.io/react/docs/hello-world.html).
+- Learn more about `react` [here](https://facebook.github.io/react/docs/hello-world.html).
