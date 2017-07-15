@@ -8,8 +8,9 @@ require("dotenv").config();
 const {NODE_ENV} = process.env;
 const rectangular = require("rectangular");
 const sh = require("shelljs");
-const uglifyRules = require("./dev/uglify.json");
+const babelRules = require("./dev/babel.json");
 const deps = require("./dev/deps.json");
+const uglifyRules = require("./dev/uglify.json");
 const isArg = (arg) => (process.argv.slice(2)).indexOf(arg) > -1;
 const isProduction = NODE_ENV === "production";
 
@@ -47,7 +48,7 @@ const {
 const plugins = [
 	EnvPlugin({NODE_ENV: isProduction ? "production" : "development"}),
 	HTMLPlugin({useDefault: true}),
-	BabelPlugin(),
+	BabelPlugin(babelRules),
 	SassPlugin({outputStyle: "compressed"}),
 	CSSPlugin(),
 	WebIndexPlugin({template: "app/index.html"}),

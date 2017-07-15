@@ -6,7 +6,6 @@
 !package.json
 !license.md
 !README.md
-!.babelrc
 !.envrc
 !.eslintrc.js
 !.gitignore
