@@ -5,14 +5,14 @@
 * [Naming Structure](#NamingStructure)
 	* [Modules](#Modules)
 	* [Components](#Components)
-* [Directives](#Directives)
-* [Components](#Components)
-	* [Angular Components](#AngularComponents)
-	* [React Components](#ReactComponents)
-* [Controllers](#Controllers)
-	* [View Model](#ViewModel)
-* [Templates](#Templates)
-	* [Example](#TemplateIncludeExample)
+	* [Controllers](#Controllers)
+	* [Directives](#Directives)
+	* [Filters](#Filters)
+	* [Services](#Services)
+		* [Factories](#Factories)
+		* [Caveats](#Caveats)
+* [Functions](#Functions)
+	* [NamedFunctionExpressions](#NamedFunctionExpressions)
 
 ### <a name='NamingStructure'></a>Naming Structure
 
