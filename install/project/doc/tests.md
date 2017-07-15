@@ -1,3 +1,0 @@
-## Testing
-
-- `npm run test`
