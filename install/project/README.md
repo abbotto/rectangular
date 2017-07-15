@@ -5,7 +5,6 @@
 - Extensions:		[View](doc/extensions.md)
 - Models:			[View](doc/models.md)
 - Producer:			[View](doc/producer.md)
-- Structure:		[View](doc/structure.md)
 - Tasks: 			[View](doc/tasks.md)
 - Tests: 			[View](doc/tests.md)
 - User Experience:	[View](doc/user-experience.md)
