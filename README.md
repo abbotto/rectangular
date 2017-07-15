@@ -52,4 +52,3 @@ Once installed, you can immediately focus on building your app.
 
 	# Start developing
 	npm start
-
