@@ -1,4 +1,5 @@
-## Dependencies
+# Dependencies
+
 - Dependency paths are stored in the `dev/deps.json` file that is used by Rectangular to compile your assets.
 - The top-level key names are important because the `producer` depends on them. If you need to change them you need to update the `producer` as well.
 - Lower level key names are arbitrary.
