@@ -25,7 +25,7 @@
 ### --bump-major
 - Increment the `SerVer` major number (`1.*.*`).
 
-### --docs
+### --doc
 - Generate `JSDoc` documentation.
 
 ### --env
