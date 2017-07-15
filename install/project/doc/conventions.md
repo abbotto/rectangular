@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+* [Functional File Structure](#FunctionalFileStructure)
 * [Naming Structure](#NamingStructure)
 	* [Modules](#Modules)
 	* [Components](#Components)
