@@ -19,9 +19,9 @@
 ### <a name='Modules'></a>Modules
 - Files containing a module will share a name with that module:
 	- `angular.module("componentName.component")` => `componentName.component.js`.
-	- `angular.module("ComponentName.controller")` => `componentName.*.controller.js`.
-	- `angular.module("componentName.service")` => `componentName.*.service.js`.
-	- `angular.module("componentName.route")` => `componentName.*.route.js`.
+	- `angular.module("ComponentName.controller")` => `componentName.controller.js`.
+	- `angular.module("componentName.service")` => `componentName.service.js`.
+	- `angular.module("componentName.route")` => `componentName.route.js`.
 
 ### <a name='Components'></a>Components
 - Component module names should be `lowerCamelCase`.
