@@ -16,7 +16,7 @@
 * [Templates](#Templates)
 	* [Example](#TemplateIncludeExample)
 
-## <a name='NPMTasks></a>NPM Tasks
+## <a name='NPMTasks'></a>NPM Tasks
 
 	npm run build
 	npm run bump-patch
