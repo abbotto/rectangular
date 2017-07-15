@@ -1,8 +1,8 @@
 ## Conventions
 
-### Modules
+### Naming Structure
 
-#### Files
+#### Modules
 - Files containing a module will share a name with that module:
 	- `componentName.component.js`.
 		- `angular.module("componentName.component")`.
@@ -12,24 +12,24 @@
 		- `angular.module("componentName.service")`.
 	- `componentName.*.route.js`.
 		- `angular.module("componentName.route")`.
+
+#### Components
+- Component module names should be `lowerCamelCase`.
 - Files related to components files should be prefixed with the component name:
 	- `componentName.*.service.js`
 	- `componentName.*.html`.
 	- `componentName.*.scss`.
 
-### Components
-- Component module names should be `lowerCamelCase`.
-	
-### Controllers
+#### Controllers
 - Controllers should be named in `UpperCamelCase` format.
 
-### Directives
+#### Directives
 - Directives should be named in `lowerCamelCase` format.
 
-### Filters
+#### Filters
 - Filters should be named in `lowerCamelCase` format.
 
-### Services
+#### Services
 - A service that is invoked with `.service()` is a `constructor` function.
 	- It can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
 	- It should be named in `lowerCamelCase` format.
@@ -37,7 +37,7 @@
 	- Angular-style: `$service`.
 	- Custom-style: `service$`.
 
-#### Factories
+##### Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
 	- It returns an object that contains the members of the service.
 	- It should be named in `lowerCamelCase` format.
