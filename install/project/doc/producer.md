@@ -16,6 +16,15 @@
 	- `tmp/`
 	- `dist/`
 
+#### --bump-patch
+- Increment the `SerVer` patch number (`*.*.1`).
+
+#### --bump-minor
+- Increment the `SerVer` minor number (`*.1.*`).
+
+#### --bump-major
+- Increment the `SerVer` major number (`1.*.*`).
+
 #### --env
 - Export `environment variables` to an Angular constants file
 	- `.envrc`
