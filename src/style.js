@@ -48,7 +48,8 @@ module.exports = function style(deps, root) {
 
 	const options = {
 		minify: true,
-		output: "dist/app.css"
+		output: "dist/app.css",
+		rejected: true
 	};
 
 	purify(content, appCSS, options);
