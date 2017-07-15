@@ -24,6 +24,7 @@
     "postcss": "^5.2.14",
     "prompt": "^1.0.0",
     "pug": "^2.0.0-beta11",
+    "purify-css": "1.2.5",
     "shelljs": "^0.7.6",
     "strip-comments": "^0.4.4",
     "stylefmt": "^5.1.2",
