@@ -6,9 +6,6 @@
 * [Installation](#Installation)
 	* [Procedure](#Procedure)
 * [Overview](#Overview)
-	* [Project Installer](#Project-Installer)
-	* [Application Kit](#ApplicationKit)
-	* [Build System](#BuildSystem)
 
 ---
 
