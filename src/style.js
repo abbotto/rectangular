@@ -2,6 +2,7 @@
 
 const CleanCSS = require("clean-css");
 const cleanCSS = new CleanCSS({compatibility: "ie9"});
+const fs = require("fs");
 const glob = require("glob-concat");
 const nodeSASS = "chmod +x node_modules/node-sass/bin/node-sass && node_modules/node-sass/bin/node-sass";
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
@@ -14,7 +15,6 @@ module.exports = function style(deps, root, config) {
 	const styles = parseAssets(deps);
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
-	
 	
 	let appCSS;
 	
@@ -46,6 +46,5 @@ module.exports = function style(deps, root, config) {
 		)
 	);
 	
-	cleanCSS.minify(
-		fs.writeFile("dist/app.css", appCSS);
+	fs.writeFile("dist/app.css", appCSS);
 };
