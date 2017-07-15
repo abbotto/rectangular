@@ -8,11 +8,6 @@
 		"node": "6.11"
 	},
 	"scripts": {
-		"build": "node producer.js --build",
-		"bump-major": "gulp bump-major --gulpfile dev/gulp.js",
-		"bump-minor": "gulp bump-minor --gulpfile dev/gulp.js",
-		"bump-patch": "gulp bump-patch --gulpfile dev/gulp.js",
-		"docs": "gulp docs --gulpfile dev/gulp.js",
 		"eslint": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
 		"start": "node producer.js --server",
 		"test": "node producer.js --spec && node_modules/karma/bin/karma start dev/karma.js"

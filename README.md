@@ -47,7 +47,7 @@
 	cd myApp
 
 	# Start developing
-	npm run dev
+	npm start
 
 ## <a name='Overview'></a>Overview
 Out-of-the-box, Rectangular gives you the power to build Angular 1 apps that are:

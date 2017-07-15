@@ -17,6 +17,7 @@ const isProduction = NODE_ENV === "production";
 // Build tasks
 // ----------------------------------------------------------------
 isArg("--clean") && sh.exec("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
+isArg("--doc") && sh.exec("gulp docs --gulpfile dev/gulp.js");
 isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");

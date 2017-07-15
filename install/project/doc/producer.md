@@ -25,6 +25,9 @@
 #### --bump-major
 - Increment the `SerVer` major number (`1.*.*`).
 
+#### --docs
+- Generate `JSDoc` documentation.
+
 #### --env
 - Export `environment variables` to an Angular constants file
 	- `.envrc`
