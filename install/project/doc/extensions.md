@@ -26,19 +26,15 @@
 - Typically, adding a new `extension` is as easy as putting services/directives in the extensions folder.
 - A 3rd-party library can be add in the following way `extension`:
 
-		(() => {
-			const exampleVendorService = function exampleVendorService($window) {
-				return $window.exampleLibrary;
-			};
+		const exampleVendorService = function exampleVendorService($window) {
+			return $window.exampleLibrary;
+		};
 
-			angular.module("example.vendor.service", []).factory("serviceName$", exampleVendorService);
-		})();
+		angular.module("example.vendor.service", []).factory("serviceName$", exampleVendorService);
 
 - The extension can then be aliased as follows:
 
-		(() => {
-			angular.module("example.service", ["example.vendor.service"]);
-		})();
+		angular.module("example.service", ["example.vendor.service"]);
 
 ### <a name='AvailableExtensions'></a>Available Extensions
 
