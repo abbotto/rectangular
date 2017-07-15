@@ -12,7 +12,7 @@
 		* [Factories](#Factories)
 		* [Caveats](#Caveats)
 * [Functions](#Functions)
-	* [NamedFunctionExpressions](#NamedFunctionExpressions)
+	* [Named Function Expressions](#NamedFunctionExpressions)
 
 ## <a name='NamingStructure'></a>Naming Structure
 
