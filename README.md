@@ -44,6 +44,7 @@ Once installed, you can immediatley focus on the features of your app.
 - All the ops are done behind the scenes, but most are still configurable.
 - With Rectangular, you can take advantage of the following goodies:
 	- Autoprefixer
+	- Babel
 	- Build System
 	- Code Minification
 	- Dependency Management
