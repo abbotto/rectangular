@@ -4,15 +4,19 @@
 
 #### Files
 - Files containing a module will share a name with that module, with the exception of components.
-	- `{{component}}.js`.
-		- `angular.module("{{component}}.component")`.
-	- `{{component}}.*.service.js`.
-		- `angular.module("{{component}}.service")`.
-	
+	- `{{componentName}}.component.js`.
+		- `angular.module("{{componentName}}.component")`.
+	- `{{componentName}}.*.controller.js`.
+		- `angular.module("{{ComponentName}}.controller")`.
+	- `{{componentName}}.*.service.js`.
+		- `angular.module("{{componentName}}.service")`.
+	- `{{componentName}}.*.route.js`.
+		- `angular.module("{{componentName}}.route")`.
+	- `{{componentName}}.*.html`.
+	- `{{componentName}}.*.scss`.
+
 #### Components
-- Component module names should:
-	- Be `lowerCamelCase`.
-	- Follow this format: `{{component}}.*.{{type}}`.
+- Component module names should be `lowerCamelCase`.
 	
 ### Controllers
 - Controllers should be named in `UpperCamelCase` format.
@@ -27,9 +31,9 @@
 - A service that is invoked with `.service()` is a `constructor` function.
 	- It can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
 	- It should be named in `lowerCamelCase` format.
-- Angular services are prefixed with `$`. To keep things consistent and concise, all other services except for `_` should have a suffix of `$`.
+- Angular services are prefixed with `$`. To keep things consistent and concise, all custom services with `alphanumeric` names should have a suffix of `$`.
 	- Angular-style: `$service`.
-	- App-style: `service$`.
+	- Custom-style: `service$`.
 
 #### Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
@@ -37,7 +41,6 @@
 	- It should be named in `lowerCamelCase` format.
 	
 ### Caveat
-
 - Currently, there isn't an `eslint-plugin-angular` rule to enforce naming conventions on `constructor` services.
 - A ticket has been created [here](https://github.com/Gillespie59/eslint-plugin-angular/issues/418) to address the problem.
 - For the time being, `Rectangular` will enforce `UpperCamelCase` for all services.
