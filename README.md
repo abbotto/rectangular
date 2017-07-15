@@ -17,7 +17,7 @@ Essentially, there are 3 parts to Rectangular:
 - the `Build System`
 
 Once installed, you can immediately focus on building your app.
-- All of the ops are done behind the scenes, but most are still configurable.
+- All of the ops are done behind the scenes, and many things are configurable.
 - With Rectangular, you can take advantage of the following goodies:
 	- Autoprefixer
 	- Babel
