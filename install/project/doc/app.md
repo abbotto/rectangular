@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [NPM Tasks](#NPMTasks)
+
 * [App Modules](#AppModules)
 * [Routes](#Routes)
 	* [Example](#RoutesExample)
@@ -15,16 +15,7 @@
 	* [View Model](#ViewModel)
 * [Templates](#Templates)
 	* [Example](#TemplateIncludeExample)
-
-## <a name='NPMTasks'></a>NPM Tasks
-
-	npm run build
-	npm run bump-patch
-	npm run bump-minor
-	npm run bump-major
-	npm run docs
-	npm run start
-	npm run test
+* [NPM Tasks](#NPMTasks)
 
 ## <a name='AppModules'></a>App Modules
 - App Modules are registered in `app/index.js`.
@@ -168,3 +159,13 @@ Controllers are used in both components and directives.
 ### <a name='TemplateIncludeExample'></a>Example
 
 	<ng-include src="'{{component}}/{{template}}.html'"></ng-include>
+
+## <a name='NPMTasks'></a>NPM Tasks
+
+	npm run build
+	npm run bump-patch
+	npm run bump-minor
+	npm run bump-major
+	npm run docs
+	npm run start
+	npm run test
