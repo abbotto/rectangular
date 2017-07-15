@@ -1,4 +1,4 @@
-## Naming
+## Conventions
 
 ### Modules
 
@@ -17,7 +17,7 @@
 	- `componentName.*.html`.
 	- `componentName.*.scss`.
 
-#### Components
+### Components
 - Component module names should be `lowerCamelCase`.
 	
 ### Controllers
