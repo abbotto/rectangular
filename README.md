@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 [![David](https://img.shields.io/david/expressjs/express.svg)]()
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-<a href="https://twitter.com/intent/tweet" target="_blank"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/></a>
+<a href="https://twitter.com/intent/?text=Checkout%20Rectangular%3A%20https%3A%2F%2Fgithub.com%2Fabbotto%2Frectangular%2F" target="_blank"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/></a>
 
 ## Table of Contents
 * [User Manual](install/project/README.md)
