@@ -19,17 +19,17 @@ Essentially, there are 3 parts to Rectangular:
 Once installed, you can immediately focus on building your app.
 - All of the ops are done behind the scenes, and many things are configurable.
 - With Rectangular, you can take advantage of the following goodies:
-	- Autoprefixer
+	- Autoprefixer for CSS/SASS
 	- Babel
 	- Code Minification
 	- Dependency Management
-	- ES6/ES2015
+	- ES6/ES2015 Syntax
 	- ESLint
-	- Fuse-Box
+	- Fuse-Box Bundles
 	- Model Caching
 	- PUG Templating
 	- PurifyCSS
-	- Sass
+	- SASS Syntax
 	- Stylelint
 	- Template Caching
 	- TypeScript
