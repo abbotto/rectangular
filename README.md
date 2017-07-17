@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 
 ## Table of Contents
-* [Documentation](install/project/README.md)
+* [User Manual](install/project/README.md)
 * [Overview](#Overview)
 * [Installation](#Installation)
 
