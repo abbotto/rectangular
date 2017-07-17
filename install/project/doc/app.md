@@ -163,17 +163,13 @@ Controllers are used in both components and directives.
 ## <a name='UX'></a>UX
 
 ### <a name='Animations'></a>Animations
-- The `ngAnimate` module provides support for CSS-based and JavaScript-based animations.
-- Learn more about `ngAnimate` [here](https://docs.angularjs.org/api/ngAnimate).
+- The [ngAnimate](https://docs.angularjs.org/api/ngAnimate) module provides support for CSS-based and JavaScript-based animations.
 
 ### <a name='Messages'></a>Messages
-- The `ngMessage` module commonly is to display error messages for inputs.
-- Learn more about `ngMessage` [here](https://docs.angularjs.org/api/ngMessages).
+- The [ngMessage](https://docs.angularjs.org/api/ngMessages) module commonly is to display error messages for inputs.
 
 ### <a name='Sanitize'></a>Sanitize
-- The `ngSanitize` module provides functionality to sanitize HTML.
-- Learn more about `ngSanitize` [here](https://docs.angularjs.org/api/ngSanitize).
+- The [ngSanitize](https://docs.angularjs.org/api/ngSanitize) module provides functionality to sanitize HTML.
 
 ### <a name='AssistiveTechnology'></a>Assistive Technology
-- The `ngAria` module provides support for common ARIA attributes used in assistive technologies.
-- Learn more about `ngAria` [here](https://docs.angularjs.org/api/ngAria).
+- The [ngAria](https://docs.angularjs.org/api/ngAria) module provides support for common ARIA attributes used in assistive technologies.
