@@ -8,9 +8,9 @@
 		"node": "6.11"
 	},
 	"scripts": {
-		"jsdoc": "node producer.js --doc",
-		"stylelint": "node_modules/stylelint/bin/stylelint.js --config dev/stylelint.json app/**/*.scss",
-		"eslint": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
+		"doc": "node producer.js --doc",
+		"lint-css": "node_modules/stylelint/bin/stylelint.js --config dev/stylelint.json app/**/*.scss",
+		"lint-js": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
 		"start": "node producer.js --server",
 		"test": "node producer.js --spec --production && node_modules/karma/bin/karma start dev/karma.js"
 	},

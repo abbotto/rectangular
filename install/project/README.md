@@ -21,14 +21,14 @@
 ### Linting
 - To lint JavaScript files, run the following command:
 
-		npm run eslint
+		npm run lint-js
 		
 - To lint Stylesheet files, run the following command:
 
-		npm run stylelint
+		npm run lint-css
 
 ### Documentation
 - Generated documentation can be found in `doc/api`.
 - To generate documentation, run the following command:
 
-		npm run jsdoc
+		npm run doc
