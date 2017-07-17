@@ -1,6 +1,6 @@
-# Overview
+# User Manual
 
-### User Manual
+### Overview
 - [Application](doc/app.md)
 - [Conventions](doc/conventions.md)
 - [Dependencies](doc/dependencies.md)
