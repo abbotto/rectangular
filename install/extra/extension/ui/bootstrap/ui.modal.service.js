@@ -5,7 +5,7 @@
 * - Exposes the Angular Strap `Modal` service
 * - Requires `angular-strap`
 *
-* @module Extension->Modal-Service
+* @module Extension->UI-Modal-Service
 */
 
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";

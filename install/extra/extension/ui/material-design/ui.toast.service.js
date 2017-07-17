@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdToast` service
 * - Requires `angular-material`
 *
-* @module Extension->Toast-Service
+* @module Extension->UI-Toast-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `BottomSheet` service
 * - Requires `angular-material`
 *
-* @module Extension->BottomSheet-Service
+* @module Extension->UI-BottomSheet-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

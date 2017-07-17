@@ -5,7 +5,7 @@
 * - Exposes the Angular Strap `Datepicker` service
 * - Requires `angular-strap`
 *
-* @module Extension->Datepicker-Service
+* @module Extension->UI-Datepicker-Service
 */
 
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";

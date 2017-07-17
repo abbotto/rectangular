@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdPanel` service
 * - Requires `angular-material`
 *
-* @module Extension->Panel-Service
+* @module Extension->UI-Panel-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

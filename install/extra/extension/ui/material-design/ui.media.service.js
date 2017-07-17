@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdMedia` service
 * - Requires `angular-material`
 *
-* @module Extension->Media-Service
+* @module Extension->UI-Media-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

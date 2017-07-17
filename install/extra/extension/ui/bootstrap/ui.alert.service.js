@@ -5,7 +5,7 @@
 * - Exposes the Angular Strap `Alert` service
 * - Requires `angular-strap`
 *
-* @module Extension->Alert-Service
+* @module Extension->UI-Alert-Service
 */
 
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";

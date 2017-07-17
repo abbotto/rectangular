@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdInkRipple` service
 * - Requires `angular-material`
 *
-* @module Extension->InkRipple-Service
+* @module Extension->UI-InkRipple-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

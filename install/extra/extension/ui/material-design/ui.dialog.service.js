@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdDialog` service
 * - Requires `angular-material`
 *
-* @module Extension->Dialog-Service
+* @module Extension->UI-Dialog-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

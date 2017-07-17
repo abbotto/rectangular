@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdIcon` service
 * - Requires `angular-material`
 *
-* @module Extension->Icon-Service
+* @module Extension->UI-Icon-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

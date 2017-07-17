@@ -5,7 +5,7 @@
 * - Exposes the Angular Material `mdSidenav` service
 * - Requires `angular-material`
 *
-* @module Extension->Sidenav-Service
+* @module Extension->UI-Sidenav-Service
 */
 
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";

@@ -5,7 +5,7 @@
 * - Exposes the Angular Strap `Scrollspy` service
 * - Requires `angular-strap`
 *
-* @module Extension->Scrollspy-Service
+* @module Extension->UI-Scrollspy-Service
 */
 
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";

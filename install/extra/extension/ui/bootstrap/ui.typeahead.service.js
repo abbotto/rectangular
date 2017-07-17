@@ -5,7 +5,7 @@
 * - Exposes the Angular Strap `Typeahead` service
 * - Requires `angular-strap`
 *
-* @module Extension->Typeahead-Service
+* @module Extension->UI-Typeahead-Service
 */
 
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
