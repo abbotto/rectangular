@@ -17,7 +17,7 @@ export default function reactVendorService($rootScope) {
 	* @name render
 	* @param {String} name A JSX template reference
 	* @param {Object} model The view model
-	* @returns {Function} Updates the JSX template view
+	* @returns {Function} Updates the JSX template in the view
 	*/
 	component$.render = (name, model) => {
 		$rootScope[name] = model;
