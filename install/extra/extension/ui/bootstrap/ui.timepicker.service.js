@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `timepicker$`
+* SERVICE - `timepicker$`
 * - Exposes the Angular Strap `Timepicker` service
 * - Requires `angular-strap`
 *

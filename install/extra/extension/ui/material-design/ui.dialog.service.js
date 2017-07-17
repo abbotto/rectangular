@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `Dialog$`
+* SERVICE - `Dialog$`
 * - Exposes the Angular Material `mdDialog` service
 * - Requires `angular-material`
 *

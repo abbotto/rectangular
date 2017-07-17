@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `tooltip$`
+* SERVICE - `tooltip$`
 * - Exposes the Angular Strap `Tooltip` service
 * - Requires `angular-strap`
 *

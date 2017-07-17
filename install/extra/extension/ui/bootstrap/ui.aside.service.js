@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `aside$`
+* SERVICE - `aside$`
 * - Exposes the Angular Strap `Aside` service
 * - Requires `angular-strap`
 *

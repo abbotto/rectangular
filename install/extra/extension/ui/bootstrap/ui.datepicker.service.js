@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `datepicker$`
+* SERVICE - `datepicker$`
 * - Exposes the Angular Strap `Datepicker` service
 * - Requires `angular-strap`
 *

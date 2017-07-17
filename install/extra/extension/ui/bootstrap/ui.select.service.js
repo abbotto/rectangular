@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `select$`
+* SERVICE - `select$`
 * - Exposes the Angular Strap `Select` service
 * - Requires `angular-strap`
 *

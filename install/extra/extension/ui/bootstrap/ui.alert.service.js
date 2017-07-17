@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `alert$`
+* SERVICE - `alert$`
 * - Exposes the Angular Strap `Alert` service
 * - Requires `angular-strap`
 *

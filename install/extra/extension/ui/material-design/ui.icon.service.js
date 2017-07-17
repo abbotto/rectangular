@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `Icon$`
+* SERVICE - `Icon$`
 * - Exposes the Angular Material `mdIcon` service
 * - Requires `angular-material`
 *

@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `inkRipple$`
+* SERVICE - `inkRipple$`
 * - Exposes the Angular Material `mdInkRipple` service
 * - Requires `angular-material`
 *

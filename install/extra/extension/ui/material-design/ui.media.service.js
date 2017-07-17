@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `media$`
+* SERVICE - `media$`
 * - Exposes the Angular Material `mdMedia` service
 * - Requires `angular-material`
 *

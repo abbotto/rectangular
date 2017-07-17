@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `Colors$`
+* SERVICE - `Colors$`
 * - Exposes the Angular Material `MDColors` service
 * - Requires `angular-material`
 *

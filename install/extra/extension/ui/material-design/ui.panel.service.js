@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `panel$`
+* SERVICE - `panel$`
 * - Exposes the Angular Material `mdPanel` service
 * - Requires `angular-material`
 *

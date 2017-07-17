@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `dropdown$`
+* SERVICE - `dropdown$`
 * - Exposes the Angular Strap `Dropdown` service
 * - Requires `angular-strap`
 *

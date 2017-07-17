@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `bottomSheet$`
+* SERVICE - `bottomSheet$`
 * - Exposes the Angular Material `BottomSheet` service
 * - Requires `angular-material`
 *

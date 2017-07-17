@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `sidenav$`
+* SERVICE - `sidenav$`
 * - Exposes the Angular Material `mdSidenav` service
 * - Requires `angular-material`
 *

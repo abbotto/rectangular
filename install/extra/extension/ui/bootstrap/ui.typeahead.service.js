@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `typeahead$`
+* SERVICE - `typeahead$`
 * - Exposes the Angular Strap `Typeahead` service
 * - Requires `angular-strap`
 *

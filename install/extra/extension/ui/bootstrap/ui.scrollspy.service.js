@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `scrollspy$`
+* SERVICE - `scrollspy$`
 * - Exposes the Angular Strap `Scrollspy` service
 * - Requires `angular-strap`
 *

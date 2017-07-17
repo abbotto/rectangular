@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `affix$`
+* SERVICE - `affix$`
 * - Exposes the Angular Strap `Affix` service
 * - Requires `angular-strap`
 *

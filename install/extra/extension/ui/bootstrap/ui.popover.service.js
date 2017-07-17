@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `popover$`
+* SERVICE - `popover$`
 * - Exposes the Angular Strap `Popover` service
 * - Requires `angular-strap`
 *

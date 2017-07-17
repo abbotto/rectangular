@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `modal$`
+* SERVICE - `modal$`
 * - Exposes the Angular Strap `Modal` service
 * - Requires `angular-strap`
 *

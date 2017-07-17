@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `sticky$`
+* SERVICE - `sticky$`
 * - Exposes the Angular Material `mdSticky` service
 * - Requires `angular-material`
 *

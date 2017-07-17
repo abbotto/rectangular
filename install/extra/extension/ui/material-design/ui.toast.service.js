@@ -1,7 +1,7 @@
 "use strict";
 
 /**
-* Service - `toast$`
+* SERVICE - `toast$`
 * - Exposes the Angular Material `mdToast` service
 * - Requires `angular-material`
 *
