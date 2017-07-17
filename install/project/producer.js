@@ -52,12 +52,12 @@ isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");
 isArg("--env") && rectangular.env(".envrc", __dirname);
-isArg("--font") && rectangular.fonts(deps.font, __dirname);
-isArg("--image") && rectangular.images(deps.image, __dirname);
 isArg("--model") && rectangular.models(deps.model, __dirname);
 isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
 isArg("--style") && rectangular.styles(deps.style, __dirname);
+isArg("--font") && rectangular.fonts(deps.font, __dirname);
+isArg("--image") && rectangular.images(deps.image, __dirname);
 isArg("--template") && rectangular.templates(deps.template, __dirname);
 if (isArg("--production")) isProduction = true;
 
