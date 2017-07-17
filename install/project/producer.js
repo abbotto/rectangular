@@ -18,7 +18,7 @@ const uglifyRules = require("./dev/uglify.json");
 const isArg = (arg) => (process.argv.slice(2)).indexOf(arg) > -1;
 let isProduction = NODE_ENV === "production";
 
-const markdownDocs = () => {
+const markdownToHtml = () => {
 	const readme = fs
 		.readFileSync("doc/api/index.html", "utf8")
 		.split("doc/").join("")
@@ -47,7 +47,7 @@ const markdownDocs = () => {
 // ----------------------------------------------------------------
 isArg("--clean") && sh.exec("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
 isArg("--doc") && sh.exec("node node_modules/jsdoc/jsdoc.js -r -c dev/jsdoc.json app/");
-isArg("--doc") && markdownDocs();
+isArg("--doc") && markdownToHtml();
 isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");
