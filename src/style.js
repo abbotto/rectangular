@@ -47,10 +47,10 @@ module.exports = function style(deps, root) {
 	];
 
 	const options = {
-		info: false,
+		info: true,
 		minify: true,
 		output: "dist/app.css",
-		rejected: true
+		rejected: false
 	};
 
 	purify(content, appCSS, options);
