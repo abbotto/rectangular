@@ -1,11 +1,13 @@
 "use strict";
 
 /**
-* @ngdoc controller
-* @name home.component:home
+* COMPONENT - `home`
+* - The root component of the app
 *
-* @description
-* The root component of the app
+* @module Component->Home
+*
+* @example
+* <home></home>
 */
 
 import componentDirective from "~/app/extension/component/component.directive.js";

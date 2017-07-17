@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `popover$`
+* - Exposes the Angular Strap `Popover` service
+* - Requires `angular-strap`
+*
+* @module Extension->Popover-Service
+*/
+
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapPopoverService = function bootstrapPopoverService($popover) {

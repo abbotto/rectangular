@@ -6,19 +6,48 @@
 require("dotenv").config();
 
 const {NODE_ENV} = process.env;
+const fs = require("fs");
+const glob = require("glob-concat");
 const rectangular = require("rectangular");
 const sh = require("shelljs");
 const babelRules = require("./dev/babel.json");
 const deps = require("./dev/deps.json");
+const showdown = require("showdown");
+const markdown = new showdown.Converter();
 const uglifyRules = require("./dev/uglify.json");
 const isArg = (arg) => (process.argv.slice(2)).indexOf(arg) > -1;
 let isProduction = NODE_ENV === "production";
+
+const markdownDocs = () => {
+	const readme = fs
+		.readFileSync("doc/api/index.html", "utf8")
+		.split("doc/").join("")
+		.split(".md").join(".html")
+	;
+	
+	fs.writeFile("doc/api/index.html", readme);
+	
+	const files = glob.sync(["doc/*.md"]);
+	
+	let md;
+	
+	files.forEach((file) => {
+		md = markdown.makeHtml(fs.readFileSync(file, "utf8"));
+		fs.writeFile(
+			file
+				.split("doc/").join("doc/api/")
+				.split(".md").join(".html")
+			, md
+		);
+	});
+};
 
 // ----------------------------------------------------------------
 // Build tasks
 // ----------------------------------------------------------------
 isArg("--clean") && sh.exec("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
-isArg("--doc") && sh.exec("gulp doc --gulpfile dev/gulp.js");
+isArg("--doc") && sh.exec("node node_modules/jsdoc/jsdoc.js -r -c dev/jsdoc.json app/");
+isArg("--doc") && markdownDocs();
 isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");

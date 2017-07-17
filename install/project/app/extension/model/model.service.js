@@ -1,11 +1,10 @@
 "use strict";
 
 /**
-* @ngdoc service
-* @name model.service:model$
+* SERVICE - `model$`
+* - A service for fetching and mixing data models
 *
-* @description
-* A service for fetching and mixing data models
+* @module Extension->Model-Service
 */
 
 // Auto-generated file
@@ -15,28 +14,22 @@ const modelService = function modelService(modelAuto) {
 	const _model = (key) => modelAuto[key];
 	
 	/**
-	* @ngdoc method
-	* @name get
-	* @methodOf model.service:model$
-	*
-	* @description
 	* Fetches data models
 	*
+	* @method
+	* @name get
 	* @param {String} key The path to the required model
 	* @returns {Object} The requested data model
 	*/
 	const get = (key) => angular.fromJson(_model(key));
 
 	/**
-	* @ngdoc method
-	* @name mixin
-	* @methodOf model.service:model$
-	*
-	* @description
 	* A service for fetching and mixing data models
 	*
+	* @method
+	* @name mixin
 	* @param {String} key The path to the required model
-	* @param {Object} source The object to be mixed with the requested object
+	* @param {Object} source The object to be mixed with the requested model
 	* @param {Boolean} deep Perform a deep merge
 	* @returns {Object} A mixture of passed in objects
 	*/

@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `scrollspy$`
+* - Exposes the Angular Strap `Scrollspy` service
+* - Requires `angular-strap`
+*
+* @module Extension->Scrollspy-Service
+*/
+
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapScrollspyService = function bootstrapScrollspyService($scrollspy) {

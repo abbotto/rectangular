@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `alert$`
+* - Exposes the Angular Strap `Alert` service
+* - Requires `angular-strap`
+*
+* @module Extension->Alert-Service
+*/
+
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapAlertService = function bootstrapAlertService($alert) {

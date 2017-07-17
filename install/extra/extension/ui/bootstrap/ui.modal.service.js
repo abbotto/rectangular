@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `modal$`
+* - Exposes the Angular Strap `Modal` service
+* - Requires `angular-strap`
+*
+* @module Extension->Modal-Service
+*/
+
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapModalService = function bootstrapModalService($modal) {

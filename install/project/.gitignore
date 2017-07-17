@@ -23,6 +23,8 @@
 !/dev
 !/dev/**/*
 
-# Blacklist Nested Files
+# Blacklist Other Files
 .DS_Store
 .fusebox
+/doc/api
+/doc/api/**/*

@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `Dialog$`
+* - Exposes the Angular Material `mdDialog` service
+* - Requires `angular-material`
+*
+* @module Extension->Dialog-Service
+*/
+
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";
 
 const angularMaterialDialogService = function materialDialogService($mdDialog) {

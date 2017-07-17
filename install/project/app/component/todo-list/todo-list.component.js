@@ -1,9 +1,16 @@
 /**
-* @ngdoc component
-* @name todoList.component:todoList
+* COMPONENT
+* - Uses the `component$` service to update the `<component />` directive
 *
-* @description
-* A ReactJS component used to render a list in a view
+* @module Component->Todo-List
+* @params {Object} component$ The component service object
+* @params {Object} view-model The data model for the component template
+* @params {Object} data$ The data service object
+*
+* @example
+* import todoListComponent from "~/app/component/todo-list/todo-list.component.js";
+* ...
+* todoListComponent(component$, vm, data$);
 */
 
 // --------------------------------

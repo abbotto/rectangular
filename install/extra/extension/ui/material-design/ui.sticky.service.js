@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `sticky$`
+* - Exposes the Angular Material `mdSticky` service
+* - Requires `angular-material`
+*
+* @module Extension->Sticky-Service
+*/
+
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";
 
 const angularMaterialStickyService = function materialStickyService($mdSticky) {

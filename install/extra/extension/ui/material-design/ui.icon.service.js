@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `Icon$`
+* - Exposes the Angular Material `mdIcon` service
+* - Requires `angular-material`
+*
+* @module Extension->Icon-Service
+*/
+
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";
 
 const angularMaterialIconService = function materialIconService($mdIcon) {

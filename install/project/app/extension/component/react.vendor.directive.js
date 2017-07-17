@@ -1,22 +1,39 @@
 "use strict";
 
 /**
-* @ngdoc directive
-* @name component.directive:component
-* @element list
-
-* @description
-* A directive for rendering JSX with ReactJS
+* DIRECTIVE - `component`
+* - A directive for rendering `JSX` with `ReactJS`
+*
+* @module Extension->Component-Directive
 *
 * @example
-* <component name="myComponent"></component>
+* // JavaScript
+* model.TodoList = {};
+* model.TodoList.alias = "vm";
+* model.TodoList.templateUrl = "app/component/todo-list/todo-list.jsx";
+* ...
+* component$.render("TodoList", model.TodoList);
+*
+* @example
+* // JSX
+* <div id="TodoList">
+* 	<ul>
+* 		{vm.todo.map(
+* 			(value) => <li>{value}</li>
+* 		)}
+* 	</ul>
+* </div>;
+*
+* @example
+* // HTML
+* <component name="TodoList"></component>
 */
 
 import {unmountComponentAtNode} from "react";
 import {render} from "react-dom";
 import {client} from "react-jsx";
 
-export default function reactVendorDrective(
+export default function reactVendorDirective(
 	$rootScope,
 	$templateCache
 ) {

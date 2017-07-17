@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `aside$`
+* - Exposes the Angular Strap `Aside` service
+* - Requires `angular-strap`
+*
+* @module Extension->Aside-Service
+*/
+
 import ngStrapVendorService from "~/app/extension/ui/ng-strap.vendor.service.js";
 
 const bootstrapAsideService = function bootstrapAsideService($aside) {

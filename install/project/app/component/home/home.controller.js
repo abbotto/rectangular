@@ -1,11 +1,12 @@
 "use strict";
 
 /**
-* @ngdoc controller
-* @name home.controller:Home
+* CONTROLLER - `home`
+* - Triggers the `todoListComponent` which renders a list in the `HomeComponent`
 *
-* @description
-* Triggers the `todoListComponent` which renders a list in the view
+* @module Component->Home-Controller
+* @param {Object} component$ The `component.service` module
+* @param {Object} data$ The `data.service` module
 */
 
 import todoListComponent from "~/app/component/todo-list/todo-list.component.js";

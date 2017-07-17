@@ -1,5 +1,23 @@
 "use strict";
 
+/**
+ * CONFIGURATION
+ * - The application entry point
+ * - Imports default modules
+ *     - `env.auto`
+ *     - `ngAnimate`
+ *     - `ngAria`
+ *     - `ngMessages`
+ *     - `ngSanitize`
+ *     - `route`
+ *     - `service`
+ *     - `template.auto`
+ * - Sets `html5Mode` to true
+ * - Sets `$logProvider.debugEnabled` to true when in `development` mode
+ *
+ * @module Application
+ */
+
 import appRoute from "~/app/route.js";
 import appService from "~/app/service.js";
 

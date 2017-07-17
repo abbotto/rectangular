@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `toast$`
+* - Exposes the Angular Material `mdToast` service
+* - Requires `angular-material`
+*
+* @module Extension->Toast-Service
+*/
+
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";
 
 const angularMaterialToastService = function materialToastService($mdToast) {

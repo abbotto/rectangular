@@ -1,5 +1,12 @@
 "use strict";
 
+/**
+* ROUTE
+* - The main route module of the application
+*
+* @module Application->Route
+*/
+
 // Auto-generated file
 import routeAuto from "~/tmp/route.auto.js";
 

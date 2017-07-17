@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `promise$`
+* - A service for JavaScript Promises
+* - Requires `bluebird`
+*
+* @module Extension->Promise-Service
+*/
+
 import Promise from "bluebird";
 
 export default function bluebirdVendorService($rootScope) {

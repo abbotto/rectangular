@@ -1,5 +1,13 @@
 "use strict";
 
+/**
+* Service - `Colors$`
+* - Exposes the Angular Material `MDColors` service
+* - Requires `angular-material`
+*
+* @module Extension->MDColors-Service
+*/
+
 import angularMaterialVendorService from "~/app/extension/ui/angular-material.vendor.service.js";
 
 const angularMaterialColorsService = function materialColorsService($mdColors) {

@@ -27,9 +27,9 @@ gulp
 			.src([root + "/package.json"])
 			.pipe(bump({type: "minor"}))
 			.pipe(gulp.dest(root))
-		;
+			;
 	})
-;
+	;
 
 gulp
 	.task("bump-patch", () => {
@@ -37,26 +37,6 @@ gulp
 			.src([root + "/package.json"])
 			.pipe(bump({type: "patch"}))
 			.pipe(gulp.dest(root))
-		;
-	})
-;
-
-// ngDocs
-const gulpDocs = require("gulp-ngdocs");
-
-gulp
-	.task("doc", [], () => {
-		const options = {
-			html5Mode: true,
-			startPage: "/api",
-			title: "API",
-			titleLink: "/api"
-		};
-		gulp
-			.src([root + "/app/**/*.js"])
-			.pipe(gulpDocs.process(options))
-			.pipe(gulp.dest(root + "/doc/api"))
-			.pipe(process.exit())
 		;
 	})
 ;
