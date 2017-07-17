@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/abbotto/rectangular.svg?branch=master)](https://travis-ci.org/abbotto/rectangular)
 [![David](https://img.shields.io/david/expressjs/express.svg)]()
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]()
+[![https://twitter.com/intent/tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)]()
 
 ## Table of Contents
 * [User Manual](install/project/README.md)
