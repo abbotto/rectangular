@@ -2,7 +2,7 @@
 
 /**
 * SERVICE - `model$`
-* - A service for fetching and mixing data models
+* - A service for working with data models
 *
 * @module Extension->Model-Service
 */
