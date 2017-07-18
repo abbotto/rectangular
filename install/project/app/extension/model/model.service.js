@@ -19,7 +19,7 @@ const modelService = function modelService(modelAuto) {
 	* @method
 	* @name get
 	* @param {String} key The path to the required model
-	* @returns {Object} The requested data model
+	* @returns {Object} The requested object
 	*/
 	const get = (key) => angular.fromJson(_model(key));
 
@@ -31,7 +31,7 @@ const modelService = function modelService(modelAuto) {
 	* @param {String} key The path to the required model
 	* @param {Object} source The object to be mixed with the requested model
 	* @param {Boolean} deep Perform a deep merge
-	* @returns {Object} A mixture of passed in objects
+	* @returns {Object} A new object made by mixing the source objects
 	*/
 	const mixin = (key, source, deep) => {
 		// Get the mixin data
