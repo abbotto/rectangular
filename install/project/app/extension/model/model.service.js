@@ -24,7 +24,7 @@ const modelService = function modelService(modelAuto) {
 	const get = (key) => angular.fromJson(_model(key));
 
 	/**
-	* A service for fetching and mixing data models
+	* A method for mixing fetched data models with a source object
 	*
 	* @method
 	* @name mixin
