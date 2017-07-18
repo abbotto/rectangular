@@ -5,7 +5,7 @@
 * - A service for dealing with RESTful APIs
 * - Requires `restangular`
 *
-* @module Extension->Rest-Service
+* @module Extension->REST-Service
 */
 
 export default function restangularVendorService(Restangular) {
