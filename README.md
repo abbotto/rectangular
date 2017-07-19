@@ -12,7 +12,6 @@
 ---
 
 ## <a name='Overview'></a>Overview
-
 ### Focus on apps, not ops.
 There are 3 parts to Rectangular:
 - the `Project Installer`
