@@ -68,7 +68,11 @@ module.exports = {
 		"angular/no-jquery-angularelement": 2,
 		"angular/no-private-call": 2,
 		"angular/no-service-method": 2,
-		"angular/no-services": [2, ["$http", "$resource", "Restangular"]],
+		"angular/no-services": [2, [
+			"$http",
+			"$resource",
+			"Restangular"
+		]],
 		"angular/on-watch": 2,
 		"angular/rest-service": 0,
 		"angular/service-name": [1,
