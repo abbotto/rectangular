@@ -29,7 +29,7 @@
 - Generate `JSDoc` documentation.
 
 ### --env
-- Export `environment variables` to an Angular constants file
+- Export `environment variables` to an AngularJS `constants` file
 	- `.envrc`
 
 ### --font
@@ -39,7 +39,7 @@
 - Copy image files into the `dist/` folder
 
 ### --model
-- Export all `models` (JSON) to an Angular constants file 
+- Export all `models` (JSON) to an AngularJS `constants` file 
 	- `*.data.json`
 	- `*.mixin.json`
 
@@ -47,7 +47,7 @@
 - Force the app to be built in production mode
 
 ### --route
-- Export all `routes` to an Angular service file
+- Export all `routes` to an AngularJS `service` file
 	- `*.route.js`
 
 ### --script
@@ -65,4 +65,4 @@
 - Export all `stylesheets` to an bundle
 
 ### --template
-- Export all `templates` to an Angular `$templateCache` file
+- Export all `templates` to an AngularJS `$templateCache` file

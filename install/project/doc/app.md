@@ -9,7 +9,7 @@
 * [Services](#Services)
 * [Directives](#Directives)
 * [Components](#Components)
-	* [Angular Components](#AngularComponents)
+	* [AngularJS Components](#AngularComponents)
 	* [React Components](#ReactComponents)
 * [Controllers](#Controllers)
 	* [View Model](#ViewModel)
@@ -72,9 +72,9 @@ A component is a specialized directive that organizes a controller with a templa
 	- **Models** ([data|mixin]json)
 	- **Images** (bmp, gif, ico, jpeg, jpg, png, svg)
 
-### <a name='AngularComponents'></a>Angular Components
+### <a name='AngularJSComponents'></a>AngularJS Components
 #### Example
-A simple Angular component may resemble the following:
+A simple AngularJS component may resemble the following:
 
 	const options = {};
 	
@@ -91,7 +91,7 @@ A simple Angular component may resemble the following:
 	;
 
 ### <a name='ReactComponents'></a>React Components
-React components can be rendered within Angular components.
+React components can be rendered within AngularJS components.
 
 #### Example
 A simple React component may resemble the following:
