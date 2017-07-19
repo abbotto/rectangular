@@ -24,7 +24,6 @@
 	- Global styles, fonts and images can go in the `app/design` folder.
 
 ## <a name='NamingStructure'></a>Naming Structure
-
 ### <a name='Modules'></a>Modules
 - Files containing a module will share a name with that module:
 	- `angular.module("componentName.component")` => `componentName.component.js`.
@@ -80,3 +79,4 @@
 	const RemoteController = function RemoteController() {
 		// Logic goes here...
 	};
+	

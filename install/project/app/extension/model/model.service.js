@@ -42,13 +42,11 @@ const modelService = function modelService(modelAuto) {
 		
 		// Deep merge
 		if (deep) {
-			// eslint-disable-next-line prefer-reflect
-			return angular.merge.apply(angular.merge, source);
+			return angular.merge.apply(null, source);
 		}
 		
 		// Shallow merge
-		// eslint-disable-next-line prefer-reflect
-		return angular.extend.apply(angular.extend, source);
+		return angular.extend.apply(null, source);
 	};
 	
 	return {_model, get, mixin};
