@@ -10,7 +10,7 @@
 	* [Directives](#Directives)
 	* [Filters](#Filters)
 	* [Services](#Services)
-		* [Constructor](#Constructors)
+		* [Constructors](#Constructors)
 		* [Factories](#Factories)
 * [Function Structure](#FunctionStructure)
 	* [Named Function Expressions](#NamedFunctionExpressions)
@@ -49,7 +49,7 @@
 - Filters should be named in `lowerCamelCase` format.
 
 ### <a name='Services'></a>Services
-#### <a name='Constructors'></a>Constructor
+#### <a name='Constructors'></a>Constructors
 - A service that is invoked with `.service()` is a `constructor` function.
 	- It can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
 	- It should be named in `lowerCamelCase` format.
