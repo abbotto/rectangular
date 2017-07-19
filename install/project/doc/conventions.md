@@ -63,7 +63,6 @@
 	- It should be named in `lowerCamelCase` format.
 
 ## <a name='FunctionStructure'></a>Function Structure
-
 ### <a name='NamedFunctionExpressions'></a>Named Function Expressions
 - It's preferable to use `named functions` instead of passing an `anonymous function` in as a callback.
 - If a function must be anonymous, consider using an `arrow function`.
