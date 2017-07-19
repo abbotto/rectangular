@@ -91,7 +91,7 @@ A simple AngularJS component may resemble the following:
 	;
 
 ### <a name='ReactComponents'></a>React Components
-React components can be rendered within AngularJS components.
+React components can be rendered within AngularJS components with the `Component` extension.
 
 #### Example
 A simple React component may resemble the following:
