@@ -30,7 +30,7 @@ Once installed, you can immediately focus on building your app.
 	- ES6/ES2015 Syntax
 	- ESLint
 	- Fuse-Box Bundles
-	- Gulp
+	- Gulp Toolkit
 	- Hot Module Reloading
 	- Model Caching
 	- PUG Templating
