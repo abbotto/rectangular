@@ -22,6 +22,7 @@ Essentially, there are 3 parts to Rectangular:
 Once installed, you can immediately focus on building your app.
 - All of the ops are done behind the scenes, and many things are configurable.
 - With Rectangular, you can take advantage of the following goodies:
+	- AngularJS
 	- Autoprefixer for CSS/SASS
 	- Babel
 	- Code Minification
