@@ -39,6 +39,7 @@ Once installed, you can immediately focus on building your app.
 	- Stylelint
 	- Template Caching
 	- TypeScript
+	- UI-Router
 
 ---
 
