@@ -40,7 +40,7 @@
 
 ### <a name='Controllers'></a>Controllers
 - Controllers should be named in `UpperCamelCase` format.
-- This provides a consistent way to identify and reference controllers without using the `Controller/Ctrl` suffix.
+- This provides a consistent way to identify and reference controllers without using the common `Controller/Ctrl` suffix.
 
 ### <a name='Directives'></a>Directives
 - Directives should be named in `lowerCamelCase` format.
@@ -84,4 +84,3 @@
 	const RemoteController = function RemoteController() {
 		// Logic goes here...
 	};
-	
