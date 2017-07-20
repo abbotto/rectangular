@@ -28,7 +28,7 @@
 		npm run lint-css
 
 ### Documentation
-- Generated documentation can be found in `doc/api`.
+- Generated documentation can be found in `doc/api/index.html`.
 - To generate documentation, run the following command:
 
 		npm run doc
