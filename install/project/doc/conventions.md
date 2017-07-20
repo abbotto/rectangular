@@ -51,15 +51,18 @@
 - Filters should be named in `lowerCamelCase` format.
 
 ### <a name='Services'></a>Services
+- Angular service/factory names are prefixed with `$`.
+- To keep things consistent and concise, all custom service/factory names with `alphanumeric` characters should have a suffix of `$`.
+
 #### <a name='Constructors'></a>Constructors
 - A service that is invoked with `.service()` is a `constructor` function.
 	- Constuctor services are compatible with ES6 classes.
 	- Under the hood, they are instantiated with the `new` keyword.
 	- They use `this` for public methods and variables.
-	- The service names should be in `lowerCamelCase` format.
-- Angular service names are prefixed with `$`. To keep things consistent and concise, all custom service names with `alphanumeric` characters should have a suffix of `$`.
+	- Constructor service names should be in `UpperCamelCase` format.
+- Naming:
 	- Angular-style: `$service`.
-	- Custom-style: `service$`.
+	- Custom-style: `Service$`.
 
 #### <a name='Factories'></a>Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
@@ -67,7 +70,10 @@
 		- For example, you would use a factory if you want to return a `closure` in order to expose a function call.
 	- It returns an object that contains the members of the service.
 	- The factory names should be in `lowerCamelCase` format.
-
+- Naming:
+	- Angular-style: `$factory`.
+	- Custom-style: `factory$`.
+	
 ## <a name='FunctionStructure'></a>Function Structure
 ### <a name='NamedFunctionExpressions'></a>Named Function Expressions
 - It's preferable to use `named functions` instead of passing an `anonymous function` in as a callback.
