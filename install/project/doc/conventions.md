@@ -50,14 +50,18 @@
 ### <a name='Services'></a>Services
 #### <a name='Constructors'></a>Constructors
 - A service that is invoked with `.service()` is a `constructor` function.
-	- It can be instantiated with the `new` keyword, and uses `this` for public methods and variables.
+	- Constuctor services are compatible with ES6 classes.
+	- Under the hood, it's instantiated with the `new` keyword.
+	- It uses `this` for public methods and variables.
 	- It should be named in `lowerCamelCase` format.
-- Angular services are prefixed with `$`. To keep things consistent and concise, all custom services with `alphanumeric` names should have a suffix of `$`.
+- Angular service names are prefixed with `$`. To keep things consistent and concise, all custom service names with `alphanumeric` characters should have a suffix of `$`.
 	- Angular-style: `$service`.
 	- Custom-style: `service$`.
 
 #### <a name='Factories'></a>Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
+	- Factories should be used in cases where a service is required but an ES6 class is not.
+		- For example, you would use a factory if you need to return a function.
 	- It returns an object that contains the members of the service.
 	- It should be named in `lowerCamelCase` format.
 
