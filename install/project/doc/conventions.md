@@ -25,11 +25,12 @@
 
 ## <a name='NamingStructure'></a>Naming Structure
 ### <a name='Modules'></a>Modules
-- Module filenames names should be `lowerCamelCase`.
+- Module names and filenames names should be `lowerCamelCase`.
 - Files containing a module will share a name with that module:
 	- `angular.module("componentName.component")` => `componentName.component.js`.
-	- `angular.module("ComponentName.controller")` => `componentName.controller.js`.
+	- `angular.module("componentName.controller")` => `componentName.controller.js`.
 	- `angular.module("componentName.service")` => `componentName.service.js`.
+	- `angular.module("componentName.filter")` => `componentName.filter.js`.
 	- `angular.module("componentName.route")` => `componentName.route.js`.
 
 ### <a name='Components'></a>Components
