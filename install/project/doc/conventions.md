@@ -40,6 +40,7 @@
 
 ### <a name='Controllers'></a>Controllers
 - Controllers should be named in `UpperCamelCase` format.
+- This provides a consistent way to identify and reference controllers without using the `Controller/Ctrl` suffix.
 
 ### <a name='Directives'></a>Directives
 - Directives should be named in `lowerCamelCase` format.
