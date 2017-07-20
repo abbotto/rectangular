@@ -51,9 +51,9 @@
 #### <a name='Constructors'></a>Constructors
 - A service that is invoked with `.service()` is a `constructor` function.
 	- Constuctor services are compatible with ES6 classes.
-	- Under the hood, it's instantiated with the `new` keyword.
-	- It uses `this` for public methods and variables.
-	- It should be named in `lowerCamelCase` format.
+	- Under the hood, they are instantiated with the `new` keyword.
+	- They use `this` for public methods and variables.
+	- The service names should be in `lowerCamelCase` format.
 - Angular service names are prefixed with `$`. To keep things consistent and concise, all custom service names with `alphanumeric` characters should have a suffix of `$`.
 	- Angular-style: `$service`.
 	- Custom-style: `service$`.
@@ -61,9 +61,9 @@
 #### <a name='Factories'></a>Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
 	- Factories should be used in cases where a service is required but an ES6 class is not.
-		- For example, you would use a factory if you need to return a function.
+		- For example, you would use a factory if you need to return a function in a service.
 	- It returns an object that contains the members of the service.
-	- It should be named in `lowerCamelCase` format.
+	- The factory names should be in `lowerCamelCase` format.
 
 ## <a name='FunctionStructure'></a>Function Structure
 ### <a name='NamedFunctionExpressions'></a>Named Function Expressions
