@@ -25,6 +25,7 @@
 
 ## <a name='NamingStructure'></a>Naming Structure
 ### <a name='Modules'></a>Modules
+- Module filenames names should be `lowerCamelCase`.
 - Files containing a module will share a name with that module:
 	- `angular.module("componentName.component")` => `componentName.component.js`.
 	- `angular.module("ComponentName.controller")` => `componentName.controller.js`.
