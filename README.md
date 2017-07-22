@@ -27,7 +27,7 @@ Once you have the `Application Kit` installed, you can immediately focus on buil
 - [ES6/ES2015](https://babeljs.io/learn-es2015/)
 - [ESLint](http://eslint.org/)
 - [Fuse-Box](http://fuse-box.org/)
-	- [BabelJS](https://babeljs.io/)
+	- [BabelJS](http://fuse-box.org/plugins/babelplugin)
 	- [Bundles](http://fuse-box.org/page/bundle)
 	- [Hot Module Reloading](http://fuse-box.org/page/development#hot-module-reload)
 	- [TypeScript](http://fuse-box.org/page/typescript#typescript)
