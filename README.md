@@ -36,7 +36,6 @@ Once you have the `Application Kit` installed, you can immediately focus on buil
 - [PurifyCSS](https://github.com/purifycss/purifycss)
 - [SASS](https://github.com/sass/node-sass)
 - [Stylelint](https://stylelint.io/)
-
 - [UI-Router](https://ui-router.github.io/)
 
 ---
