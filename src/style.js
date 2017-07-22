@@ -8,7 +8,7 @@ const path = require("path");
 const purify = require("purify-css");
 const sh = require("shelljs");
 
-module.exports = function style(deps, root) {
+module.exports = function style(deps, root, purifyOptions) {
 	const cssFiles = [];
 	const styles = parseAssets(deps);
 	const sassFiles = [];
@@ -46,12 +46,5 @@ module.exports = function style(deps, root) {
 		root + "/app/**/*.html"
 	];
 
-	const options = {
-		info: true,
-		minify: true,
-		output: "dist/app.css",
-		rejected: false
-	};
-
-	purify(content, appCSS, options);
+	purify(content, appCSS, purifyOptions);
 };

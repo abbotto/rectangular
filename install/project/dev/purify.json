@@ -1,0 +1,6 @@
+{
+	"info": true,
+	"minify": true,
+	"output": "dist/app.css",
+	"rejected": false
+}
