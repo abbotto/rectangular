@@ -12,35 +12,10 @@ const rectangular = require("rectangular");
 const sh = require("shelljs");
 const babelRules = require("./dev/babel.json");
 const deps = require("./dev/deps.json");
-const showdown = require("showdown");
-const markdown = new showdown.Converter();
+const markdownToHtml = require("./dev/markdown.js");
 const uglifyRules = require("./dev/uglify.json");
 const isArg = (arg) => (process.argv.slice(2)).indexOf(arg) > -1;
 let isProduction = NODE_ENV === "production";
-
-const markdownToHtml = () => {
-	const readme = fs
-		.readFileSync("doc/api/index.html", "utf8")
-		.split("doc/").join("")
-		.split(".md").join(".html")
-	;
-	
-	fs.writeFile("doc/api/index.html", readme);
-	
-	const files = glob.sync(["doc/*.md"]);
-	
-	let md;
-	
-	files.forEach((file) => {
-		md = markdown.makeHtml(fs.readFileSync(file, "utf8"));
-		fs.writeFile(
-			file
-				.split("doc/").join("doc/api/")
-				.split(".md").join(".html")
-			, md
-		);
-	});
-};
 
 // ----------------------------------------------------------------
 // Build tasks
