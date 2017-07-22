@@ -24,17 +24,19 @@ Once you have the `Application Kit` installed, you can immediately focus on buil
 
 - [AngularJS](https://angularjs.org/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
-- [BabelJS](https://babeljs.io/)
 - [ES6/ES2015](https://babeljs.io/learn-es2015/)
 - [ESLint](http://eslint.org/)
 - [Fuse-Box](http://fuse-box.org/)
+	- [BabelJS](https://babeljs.io/)
+	- [Bundles](http://fuse-box.org/page/bundle)
+	- [Hot Module Reloading](http://fuse-box.org/page/development#hot-module-reload)
+	- [TypeScript](http://fuse-box.org/page/typescript#typescript)
 - [Gulp](http://gulpjs.com/)
-- [Hot Module Reloading](http://fuse-box.org/page/development#hot-module-reload)
 - [PUG](https://pugjs.org/)
 - [PurifyCSS](https://github.com/purifycss/purifycss)
 - [SASS](https://github.com/sass/node-sass)
 - [Stylelint](https://stylelint.io/)
-- [TypeScript](http://fuse-box.org/page/typescript#typescript)
+
 - [UI-Router](https://ui-router.github.io/)
 
 ---
