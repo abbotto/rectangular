@@ -2,8 +2,7 @@ const sh = require("shelljs");
 const watch = require("chokidar")
 	.watch([
 		"app/**/*.*",
-		"deps.json",
-		"uglify.json"
+		"dev/*.json"
 	],
 	{
 		ignored: /[\/\\]\./,
