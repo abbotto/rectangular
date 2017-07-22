@@ -17,7 +17,7 @@
 ### Focus on apps, not ops.
 Rectangular has everything you need to get started building first-class web applications:
 - An interactive `installer`
-- A bare-bones `application`
+- An `application` kit
 - A powerful build `toolkit`
 
 The `installer` asks you a few questions and downloads the `application`. Once you have the `application` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to put everything together.
