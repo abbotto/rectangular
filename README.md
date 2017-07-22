@@ -23,7 +23,7 @@ Rectangular has everything you need to get started building first-class web appl
 Once you have the `Application Kit` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. With Rectangular, you get to take advantage of the following goodies:
 
 - [AngularJS](https://angularjs.org/)
-- [CSS Autoprefixer](https://github.com/postcss/autoprefixer)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [BabelJS](https://babeljs.io/)
 - [ES6/ES2015](https://babeljs.io/learn-es2015/)
 - [ESLint](http://eslint.org/)
