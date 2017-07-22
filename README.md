@@ -20,7 +20,7 @@ Rectangular has everything you need to get started building first-class web appl
 - the `Application Kit`
 - the `Build System`
 
-Once you have the `Application Kit` installed, you can immediately focus on building your app. Everything is well-organized, configurable and is easy to operate. With Rectangular, you get to take advantage of the following goodies:
+Once you have the `Application Kit` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. With Rectangular, you get to take advantage of the following goodies:
 
 	- AngularJS
 	- Autoprefixer for CSS/SASS
