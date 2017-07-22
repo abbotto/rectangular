@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-
 * [App Modules](#AppModules)
 * [Routes](#Routes)
 	* [Example](#RoutesExample)
@@ -30,7 +29,7 @@ Routes are pathways within the application.
 - The structure of a route path is this: `{{component}}/{{template}}.html`.
 - `ui-router` handles all the routing in Rectangular apps - you can learn more about it [here](https://github.com/angular-ui/ui-router).
 
-### <a name='RoutesExample'></a>Example
+#### <a name='RoutesExample'></a>Example
 - A route looks something like this:
 
 		(() => {
