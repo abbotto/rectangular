@@ -15,12 +15,14 @@
 
 ## <a name='Overview'></a>Overview
 ### Focus on apps, not ops.
-Rectangular has everything you need to get started building first-class web applications. There are 3 parts to Rectangular:
-- the `Project Installer`
-- the `Application Kit`
-- the `Build System`
+Rectangular has everything you need to get started building first-class web applications:
+- An interactive `installer`
+- A bare-bones `application`
+- A powerful build `toolkit`
 
-Once you have the `Application Kit` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. With Rectangular, you get to take advantage of the following goodies:
+The `installer` asks you a few questions and downloads the `application`. Once you have the `application` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to put everything together.
+
+With Rectangular, you get to take advantage of the following goodies:
 
 - [AngularJS](https://angularjs.org/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
