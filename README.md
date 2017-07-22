@@ -23,20 +23,17 @@ Rectangular has everything you need to get started building first-class web appl
 Once you have the `Application Kit` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. With Rectangular, you get to take advantage of the following goodies:
 
 - [AngularJS](https://angularjs.org/)
-- [Autoprefixer](https://github.com/postcss/autoprefixer) for CSS/SASS
+- [CSS Autoprefixer](https://github.com/postcss/autoprefixer)
 - [BabelJS](https://babeljs.io/)
-- Dependency Management
-- [ES6/ES2015](https://babeljs.io/learn-es2015/) Syntax
+- [ES6/ES2015](https://babeljs.io/learn-es2015/)
 - [ESLint](http://eslint.org/)
-- [Fuse-Box](http://fuse-box.org/) Bundles
-- [Gulp](http://gulpjs.com/) Toolkit
+- [Fuse-Box](http://fuse-box.org/)
+- [Gulp](http://gulpjs.com/)
 - [Hot Module Reloading](http://fuse-box.org/page/development#hot-module-reload)
-- Model Caching
-- [PUG](https://pugjs.org/) Templating
+- [PUG](https://pugjs.org/)
 - [PurifyCSS](https://github.com/purifycss/purifycss)
-- [SASS](https://github.com/sass/node-sass) Syntax
+- [SASS](https://github.com/sass/node-sass)
 - [Stylelint](https://stylelint.io/)
-- [Template Caching](https://docs.angularjs.org/api/ng/service/$templateCache)
 - [TypeScript](http://fuse-box.org/page/typescript#typescript)
 - [UI-Router](https://ui-router.github.io/)
 
