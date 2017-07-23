@@ -2,7 +2,7 @@
 
 /**
 * CONTROLLER - `home`
-* - Triggers the `todoListComponent` which renders a list in the `HomeComponent`
+* - Triggers the `todo-list` data in the `HomeComponent`
 *
 * @module Component->Home-Controller
 * @param {Object} data$ The `data.service` module
