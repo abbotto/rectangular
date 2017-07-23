@@ -5,12 +5,10 @@
 * - Triggers the `todoListComponent` which renders a list in the `HomeComponent`
 *
 * @module Component->Home-Controller
-* @param {Object} component$ The `component.service` module
 * @param {Object} data$ The `data.service` module
 */
 
 export default function HomeComponentController(
-	component$,
 	data$
 ) {
 	const vm = this;
