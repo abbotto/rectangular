@@ -47,7 +47,7 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 
 ---
 
-#### You can optionally install more goodies during the install process:
+#### You can optionally include more goodies during the install process:
 - [Angular Material](https://material.angularjs.org/latest/)
 - [Angular Moment](https://github.com/urish/angular-moment/)
 - [Angular Strap](https://mgcrea.github.io/angular-strap/)
