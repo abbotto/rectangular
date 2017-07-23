@@ -9,8 +9,6 @@
 * @param {Object} data$ The `data.service` module
 */
 
-import todoListComponent from "~/app/component/todo-list/todo-list.component.js";
-
 export default function HomeComponentController(
 	component$,
 	data$
