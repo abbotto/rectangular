@@ -28,17 +28,7 @@ branches:
 
 before_install:
 - |
-    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qvE '(^\.)/' || {
-      echo "Only dotfiles were updated, stopping build process."
-      exit
-    }
-- |
-    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qvE '(\.md$)|(^(doc))/' || {
-      echo "Only docs were updated, stopping build process."
-      exit
-    }
-- |
-    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qE '(rectangular\.js)|(^(install/project))|(^(install/extra))|(^(src))/' || {
+    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qE '(\.js)|(\.json)|(\.scss)|(\.html)/' || {
       echo "Non-application files were updated, stopping build process."
       exit
     }
