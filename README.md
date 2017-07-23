@@ -16,7 +16,7 @@
 ---
 
 ## <a name='Overview'></a>Overview
-### Focus on apps, not ops.
+#### Focus on apps, not ops.
 Rectangular has everything you need to get started building first-class web applications:
 - An interactive `installer`
 - A bare-bones `application`
