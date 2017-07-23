@@ -15,11 +15,10 @@
 	
 	<h3>Todo List</h3>
 	
-	<input ng-model="vm.newTodoListItem" type="text" placeholder="New Item"/>
+	<input ng-model="vm.newTodoListItem" type="text" placeholder="Angular Input"/>
 	<button ng-click="vm.updateTodoList()">Update List</button>
 	<br/><br/>
 	
-	<ul>
-		<li ng-repeat="vm.todo as item">{{item}}</li>
-	</ul>
+	<strong>React Output w/ Immutable Data</strong><br>
+	<component name="'TodoList'"></component>
 </div>

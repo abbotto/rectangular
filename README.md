@@ -37,6 +37,7 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 - [Fuse-Box](http://fuse-box.org/)
 - [Gulp](http://gulpjs.com/)
 - [Hot Module Reloading](http://fuse-box.org/page/development#hot-module-reload)
+- [ImmutableJS](https://facebook.github.io/immutable-js/)
 - [PUG](https://pugjs.org/)
 - [PurifyCSS](https://github.com/purifycss/purifycss/)
 - [SASS](https://github.com/sass/node-sass)
