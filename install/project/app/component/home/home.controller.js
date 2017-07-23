@@ -15,7 +15,7 @@ export default function HomeComponentController(
 	vm.projectName = "Rectangular";
 	vm.newTodoListItem = "";
 	
-	// Immutable todo list
+	// Immutable data
 	vm.data = data$.List([
 		"get groceries",
 		"mow the lawn",
