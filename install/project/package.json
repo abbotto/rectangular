@@ -26,10 +26,7 @@
 		"babel-runtime": "6.23.0",
 		"font-awesome": "^4.7.0",
 		"immutable": "^3.8.1",
-		"normalize.css": "^5.0.0",
-		"react": "^15.5.4",
-		"react-dom": "^15.5.4",
-		"react-jsx": "^1.0.0"
+		"normalize.css": "^5.0.0"
 	},
 	"devDependencies": {
 		"angular-mocks": "1.5.5",
