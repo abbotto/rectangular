@@ -1,7 +1,6 @@
 # Application
 
 ## Table of Contents
-
 * [App Modules](#AppModules)
 * [Routes](#Routes)
 	* [Example](#RoutesExample)
