@@ -26,6 +26,13 @@ branches:
   only:
     - master
 
+before_install:
+- |
+    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qvE '(\.md$)|(^(docs|examples))/' || {
+      echo "Only docs were updated, stopping build process."
+      exit
+    }
+
 script:
   - npm i > /dev/null && node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .
   - projectName="ci-app"
