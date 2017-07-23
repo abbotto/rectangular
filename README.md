@@ -24,9 +24,7 @@ Rectangular has everything you need to get started building first-class web appl
 
 The `installer` asks you a few questions and downloads the bare-bones `application`. Once you have the `application` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to help put everything together.
 
-With Rectangular, you get to take advantage of the following goodies:
-
-### Included
+The following goodies are baked into Rectangular:
 - [AngularJS](https://angularjs.org/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer/)
 - [BabelJS](http://fuse-box.org/plugins/babelplugin/)
@@ -46,7 +44,7 @@ With Rectangular, you get to take advantage of the following goodies:
 
 ---
 
-### Optional
+You can optionally install more goodies during the install process:
 - [Angular Material](https://material.angularjs.org/latest/)
 - [Angular Moment](https://github.com/urish/angular-moment/)
 - [Angular Strap](https://mgcrea.github.io/angular-strap/)
