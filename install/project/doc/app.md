@@ -24,7 +24,7 @@
 ## <a name='Routes'></a>Routes
 Routes are pathways within the application.
 - Route modules are registered in `app/route.js`.
-- The structure of a route path is this: `{{component}}/{{template}}.html`.
+- The structure of a route path looks like the: `{{component}}/{{template}}.html`.
 - `ui-router` handles all the routing in Rectangular apps - you can learn more about it [here](https://github.com/angular-ui/ui-router).
 
 #### <a name='RoutesExample'></a>Example
@@ -51,7 +51,7 @@ Services are used for `sending/receiving/manipulating` data.
 
 ## <a name='Directives'></a>Directives
 Directives are used to control DOM behaviour and to render data in HTML format.
-- The structure of a `directive` template path is this: `{{component|directive}}/{{template}}.directive.html`.
+- The structure of a `directive` template path looks like the: `{{component|directive}}/{{template}}.directive.html`.
 - A `directive` should decorate, and should generally be implemented as an attribute and restricted to 'A'.
 
 ## <a name='Components'></a>Components
@@ -104,7 +104,7 @@ Controllers are used in both components and directives.
 - The `vm` variable is assigned using the `controllerAs` syntax.
 
 ## <a name='Templates'></a>Templates
-- The structure of a template path is this: `{{component}}/{{template}}.html`.
+- The structure of a template path looks like the: `{{component}}/{{template}}.html`.
 
 ### <a name='TemplateIncludeExample'></a>Example
 
