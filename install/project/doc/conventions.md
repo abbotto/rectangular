@@ -64,8 +64,8 @@
 #### <a name='Factories'></a>Factories
 - A `factory` is an implementation of a service that is invoked with `.factory()`.
 	- Factories should be used in cases where a service is required but an ES6 class is not.
-		- You would use a factory if you want to return a `closure` in order to expose a function call.
-		- You would use a factory if you wanted return an object that contains the members of the service.
+		- Example: You would use a factory if you want to return a `closure` in order to expose a function call.
+		- Example: You would use a factory if you wanted return an object that contains the members of the service.
 	- The `factory$` names should be in `lowerCamelCase` format.
 
 ## <a name='FunctionStructure'></a>Function Structure
