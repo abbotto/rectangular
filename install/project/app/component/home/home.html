@@ -20,6 +20,6 @@
 	<br/><br/>
 	
 	<ul>
-		<li ng-repeat="vm.todo as item">{{item}}</li>
+		<li ng-repeat="item in vm.list" ng-bind="item"></li>
 	</ul>
 </div>
