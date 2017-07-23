@@ -13,7 +13,7 @@ module.exports = function style(deps, root, purifyOptions) {
 	const styles = parseAssets(deps);
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
-	const nodeSASS = "chmod +x " + dir + "/node_modules/.bin/node-sass && " + dir + "/node_modules/node-sass/bin/node-sass";
+	const nodeSASS = "chmod +x " + dir + "/node_modules/.bin/node-sass && " + dir + "/node_modules/.bin/node-sass";
 	const postCSS = "chmod +x " + dir + "/node_modules/postcss/lib/postcss.js && node " + dir + "/node_modules/postcss/lib/postcss.js";
 	
 	styles.forEach((filePath, i) => {
