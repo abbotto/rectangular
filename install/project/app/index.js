@@ -12,7 +12,7 @@
  *     - `route`
  *     - `service`
  *     - `template.auto`
- * - Enable HTML5 routes
+ * - Enable HTML5 routes - removes the need for `/#/`
  * - Disable deprecated `$http` legacy promise methods
  * - Disable/enable debugging
  *
