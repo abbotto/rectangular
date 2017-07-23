@@ -31,6 +31,7 @@ With Rectangular, you get to take advantage of the following goodies:
 - [Fuse-Box](http://fuse-box.org/)
 	- [BabelJS](http://fuse-box.org/plugins/babelplugin)
 	- [Bundles](http://fuse-box.org/page/bundle)
+	- [Development Server](http://fuse-box.org/page/development#development-server)
 	- [Hot Module Reloading](http://fuse-box.org/page/development#hot-module-reload)
 	- [TypeScript](http://fuse-box.org/page/typescript#typescript)
 - [Gulp](http://gulpjs.com/)
