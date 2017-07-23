@@ -36,12 +36,23 @@ angular
 		"ngMessages",
 		"ngSanitize"
 	])
+	// Enable HTML5 routes
 	.config(($locationProvider) => {
 		$locationProvider.html5Mode(true);
 	})
-	.config(($logProvider, NODE_ENV) => {
+	// Disable deprecated `$http` legacy promise methods
+	.config(($httpProvider) => {
+		$httpProvider.useLegacyPromiseExtensions = false;
+	})
+	// Disable/enable debugging
+	.config((
+		$compileProvider,
+		$logProvider,
+		NODE_ENV
+	) => {
 		NODE_ENV === "development"
-			&& $logProvider.debugEnabled(true)
+			? $logProvider.debugEnabled(true)
+			: $compileProvider.debugInfoEnabled(false)
 		;
 	})
 ;

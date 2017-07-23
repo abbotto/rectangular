@@ -13,23 +13,22 @@ export default function HomeComponentController(
 ) {
 	const vm = this;
 	vm.projectName = "Rectangular";
+	vm.newTodoListItem = "";
 	
 	// Immutable todo list
-	vm.todo = data$.fromJS([
+	vm.data = data$.List([
 		"get groceries",
 		"mow the lawn",
 		"be a ninja"
 	]);
 	
-	// Updated by TodoList parent (HomeComponentController)
-	vm.newTodoListItem = "";
-	
-	// Called by TodoList parent (HomeComponentController)
 	vm.updateTodoList = () => {
 		if (vm.newTodoListItem.length) {
-			vm.todo = vm.todo.push(vm.newTodoListItem);
+			vm.data = vm.data.push(vm.newTodoListItem);
+			vm.list = vm.data.toJS();
 		}
 	};
 	
+	vm.list = vm.data.toJS();
 	vm.updateTodoList();
 };
