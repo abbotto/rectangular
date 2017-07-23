@@ -10,7 +10,6 @@
 * <home></home>
 */
 
-import componentDirective from "~/app/extension/component/component.directive.js";
 import dataService from "~/app/extension/data/data.service.js";
 import homeController from "~/app/component/home/home.controller.js";
 
@@ -24,7 +23,6 @@ HomeComponent.controller = homeController;
 
 export default angular
 	.module("home.component", [
-		componentDirective.name,
 		dataService.name
 	])
 	.component("home", HomeComponent)
