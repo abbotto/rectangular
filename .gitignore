@@ -16,15 +16,9 @@
 !/src
 !/src/**/*
 
-# Whitelist Readme Files
-!/readme
-!/readme/**/*
-
 # Whitelist Install Files
 !/install
 !/install/**/*
 
 # Blacklist Nested Files
 .DS_Store
-/node_modules
-/node_modules/**/*
