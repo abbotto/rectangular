@@ -44,6 +44,8 @@ With Rectangular, you get to take advantage of the following goodies:
 - [Stylelint](https://stylelint.io/)
 - [UI-Router](https://ui-router.github.io/)
 
+---
+
 ### Optional
 - [Angular Material](https://material.angularjs.org/latest/)
 - [Angular Moment](https://github.com/urish/angular-moment/)
