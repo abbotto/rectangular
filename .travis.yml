@@ -29,7 +29,7 @@ branches:
 before_install:
 - |
     git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qE '(\.js)|(\.json)|(\.html)|(\.ts)/' || {
-      echo "Non-application files were updated, stopping build process."
+      echo "No {html|js|json|ts} files were updated, stopping build process."
       exit
     }
 
