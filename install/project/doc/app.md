@@ -16,7 +16,7 @@
 	* [Messages](#Messages)
 	* [Sanitize](#Sanitize)
 	* [Assistive Technology](#AssistiveTechnology)
-	
+
 ## <a name='AppModules'></a>App Modules
 - App Modules are registered in `app/index.js`.
 
@@ -27,22 +27,21 @@ Routes are pathways within the application.
 - `ui-router` handles all the routing in Rectangular apps - you can learn more about it [here](https://github.com/angular-ui/ui-router).
 
 #### <a name='RoutesExample'></a>Example
-- A route looks something like this:
+A route looks something like this:
 
-		(() => {
-			angular
-			.module("home.route", [
-				"home.component"
-			])
-			.config(($stateProvider) => {
-				$stateProvider
-					.state("home", {
-						"url": "/",
-						"template": "<home></home>"
-					})
-				;
-			});
-		})();
+	angular
+		.module("home.route", [
+			"home.component"
+		])
+		.config(($stateProvider) => {
+			$stateProvider
+				.state("home", {
+					"url": "/",
+					"template": "<home></home>"
+				})
+			;
+		})
+	;
 
 ## <a name='Services'></a>Services
 Services are used for `sending/receiving/manipulating` data.
