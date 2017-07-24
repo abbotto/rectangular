@@ -22,7 +22,7 @@ Rectangular has everything you need to get started building first-class web appl
 - A bare-bones `application`
 - A powerful build `toolkit`
 
-The `installer` asks you a few questions and downloads the bare-bones `application`. Once you have the `application` installed, you can immediately focus on building your app. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to help put everything together.
+The `installer` asks you a few questions and downloads the bare-bones `application`. Once you have the `application` installed, you can immediately focus on building it up. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to help put everything together.
 
 ---
 
