@@ -22,7 +22,7 @@ Rectangular has everything you need to get started building first-class web appl
 - A bare-bones `application`
 - A powerful build `toolkit`
 
-The `installer` asks you a few questions and downloads the bare-bones `application`. Once the `application` has been installed, all you have to do is focus on building it up. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to help put everything together.
+The `installer` asks you a few questions and downloads the bare-bones `application`. Once the `application` has been installed, it's ready for you to work your magic. Everything is well-organized, configurable and easy to operate. The build `toolkit` is used to help put everything together.
 
 ---
 
@@ -48,17 +48,17 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 ---
 
 #### You can optionally include more goodies during the install process:
-- [Angular Material](https://material.angularjs.org/latest/)
-- [Angular Moment](https://github.com/urish/angular-moment/)
-- [Angular Strap](https://mgcrea.github.io/angular-strap/)
-- [Angular Translate](https://angular-translate.github.io/)
-- [Bluebird](http://bluebirdjs.com/)
-- [Lodash](https://lodash.com/docs/)
-- [MomentJS](https://momentjs.com/)
-- [NG File Upload](https://github.com/danialfarid/ng-file-upload/)
-- [ReactJS](https://facebook.github.io/react/)
-- [Restangular](https://github.com/mgonto/restangular/)
-- [Teleprint](https://github.com/abbotto/teleprint/)
+- [Angular Material](https://material.angularjs.org/latest/) - A UI Component framework implementation of Google's `Material Design` specification.
+- [Angular Moment](https://github.com/urish/angular-moment/) - MomentJS directives for your AngularJS app.
+- [Angular Strap](https://mgcrea.github.io/angular-strap/) - A set of Bootstrap 3+ directives for your AngularJS app.
+- [Angular Translate](https://angular-translate.github.io/) - Translate your AngularJS app.
+- [Bluebird](http://bluebirdjs.com/) - A full-featured JavaScript promises library with unmatched performance.
+- [Lodash](https://lodash.com/docs/) - A modern JavaScript utility library delivering modularity, performance & extras.
+- [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
+- [NG File Upload](https://github.com/danialfarid/ng-file-upload/) - Lightweight directive to upload files with optional FileAPI shim for cross-browser support.
+- [ReactJS](https://facebook.github.io/react/) - A JavaScript library for building user interfaces.
+- [Restangular](https://github.com/mgonto/restangular/) - A service that simplifies common `GET`, `POST`, `DELETE`, and `UPDATE` requests.
+- [Teleprint](https://github.com/abbotto/teleprint/) - Prints HTML from a `URL`, from the `DOM`, or from a `string`.
 
 ---
 
