@@ -48,7 +48,7 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 ---
 
 #### You can optionally include more goodies during the install process:
-- [Angular Material](https://material.angularjs.org/latest/) - A UI Component framework implementation of Google's `Material Design` specification.
+- [Angular Material](https://material.angularjs.org/latest/) - A UI component framework implementation of Google's `Material Design` specification.
 - [Angular Moment](https://github.com/urish/angular-moment/) - MomentJS directives for your AngularJS app.
 - [Angular Strap](https://mgcrea.github.io/angular-strap/) - A set of Bootstrap 3+ directives for your AngularJS app.
 - [Angular Translate](https://angular-translate.github.io/) - Translate your AngularJS app.

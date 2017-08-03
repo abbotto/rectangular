@@ -17,13 +17,13 @@
 	- `dist/`
 
 ### --bump-patch
-- Increment the `SerVer` patch number (`*.*.1`).
+- Increment the `SemVer` patch number (`*.*.1`).
 
 ### --bump-minor
-- Increment the `SerVer` minor number (`*.1.*`).
+- Increment the `SemVer` minor number (`*.1.*`).
 
 ### --bump-major
-- Increment the `SerVer` major number (`1.*.*`).
+- Increment the `SemVer` major number (`1.*.*`).
 
 ### --doc
 - Generate `JSDoc` documentation.
