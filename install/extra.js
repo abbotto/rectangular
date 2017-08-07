@@ -166,7 +166,7 @@ prompt.get(schema, (err, input) => {
 		
 		sh.exec("mkdir app/extension/component/");
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/component/. app/extension/component/");
-		sh.exec("npm i --save react reat-dom react-jsx");
+		sh.exec("npm i --save react react-dom react-jsx");
 	}
 	else {
 		delete vendorJs.react;
