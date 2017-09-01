@@ -8,9 +8,9 @@
 * @module Extension->Print-Service
 */
 
+// eslint-disable-next-line no-unused-vars
 import Teleprint from "teleprint";
 
 export default function teleprintVendorService() {
-	Teleprint = window.teleprint;
-	return Teleprint;
+	return window.teleprint;
 };
