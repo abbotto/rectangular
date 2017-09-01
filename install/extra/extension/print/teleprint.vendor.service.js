@@ -11,5 +11,6 @@
 import Teleprint from "teleprint";
 
 export default function teleprintVendorService() {
+	Teleprint = window.teleprint;
 	return Teleprint;
 };
