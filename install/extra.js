@@ -27,6 +27,12 @@ const schema = {
 			description: "Install Angular Material? [y/n]",
 			required: true
 		},
+		D3: {
+			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
+			message: "Yes|No|yes|no|Y|N|y|n]",
+			description: "Install D3? [y/n]",
+			required: true
+		},
 		Lodash: {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
@@ -120,7 +126,16 @@ prompt.get(schema, (err, input) => {
 	else {
 		delete vendorJs.moment;
 	}
-	
+
+	if (input.D3.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing Lodash...");
+		
+		sh.exec("mkdir app/extension/chart/");
+		sh.exec("cp -a node_modules/rectangular/install/extra/extension/chart/. app/extension/chart/");
+		sh.exec("npm i --save d3");
+	}
+
 	if (input.Lodash.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Lodash...");
@@ -132,7 +147,7 @@ prompt.get(schema, (err, input) => {
 	else if (input.Restangular.match(/^(?:No|no|N|n)$/)) {
 		delete vendorJs.lodash;
 	}
-	
+
 	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Teleprint...");
@@ -141,7 +156,7 @@ prompt.get(schema, (err, input) => {
 		sh.exec("cp -a node_modules/rectangular/install/extra/extension/print/. app/extension/print/");
 		sh.exec("npm i --save teleprint");
 	}
-	
+
 	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular Translate...");
@@ -153,7 +168,7 @@ prompt.get(schema, (err, input) => {
 	else {
 		delete vendorJs["angular-translate"];
 	}
-	
+
 	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Restangular...");
@@ -165,7 +180,7 @@ prompt.get(schema, (err, input) => {
 	else {
 		delete vendorJs.restangular;
 	}
-	
+
 	if (input["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing NG File Upload...");
@@ -177,10 +192,10 @@ prompt.get(schema, (err, input) => {
 	else {
 		delete vendorJs["ng-file-upload"];;
 	}
-	
+
 	// Update paths
 	deps.script = vendorJs;
 	deps.style = vendorCss;
-	
+
 	fs.writeFile(__dirname + "/dev/deps.json", JSON.stringify(deps));
 });

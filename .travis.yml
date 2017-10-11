@@ -46,9 +46,10 @@ script:
   - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author" && rm package.js
   - npm i
   - cp -a node_modules/rectangular/install/project/. .
-  - npm i --save bootstrap angular-strap angular-material bluebird moment angular-moment lodash angular-translate restangular ng-file-upload teleprint
+  - npm i --save bootstrap angular-strap angular-material bluebird d3 moment angular-moment lodash angular-translate restangular ng-file-upload teleprint
   - mkdir app/extension/ui/
   - mkdir app/extension/promise/
+  - mkdir app/extension/chart/
   - mkdir app/extension/date/
   - mkdir app/extension/_/
   - mkdir app/extension/locale/
@@ -58,6 +59,7 @@ script:
   - cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/. app/extension/ui/
   - cp -a node_modules/rectangular/install/extra/extension/ui/material-design/. app/extension/ui/
   - cp -a node_modules/rectangular/install/extra/extension/promise/. app/extension/promise/
+  - cp -a node_modules/rectangular/install/extra/extension/chart/. app/extension/chart/
   - cp -a node_modules/rectangular/install/extra/extension/date/. app/extension/date/
   - cp -a node_modules/rectangular/install/extra/extension/_/. app/extension/_/
   - cp -a node_modules/rectangular/install/extra/extension/locale/. app/extension/locale/
