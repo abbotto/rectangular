@@ -6,6 +6,7 @@
 	* [Available Extensions](#AvailableExtensions)
 		* [UI Services](#UIServices)
 		* [Arrays, Objects & Strings](#ArraysObjectsStrings)
+		* [Charts](#Charts)
 		* [Date & Time](#DateTime)
 		* [REST](#REST)
 		* [Promises](#Promises)
@@ -74,6 +75,10 @@
 #### <a name='ArraysObjectsStrings'></a>Arrays, Objects & Strings
 - Service is called `_.service` and is injected via `_`.
 - Learn more about `Lodash` [here](https://example.com/docs/4.16.6).
+
+#### <a name='Charts'></a>Charts
+- Service is called `chart.service` and is injected via `chart$`.
+- Learn more about `D3` [here](https://github.com/d3/d3/wiki).
 
 #### <a name='DateTime'></a>Date & Time
 - Service is called `date.service` and is injected via `date$`.
