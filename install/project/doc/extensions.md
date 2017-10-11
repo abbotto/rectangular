@@ -74,11 +74,11 @@
 
 #### <a name='ArraysObjectsStrings'></a>Arrays, Objects & Strings
 - Service is called `_.service` and is injected via `_`.
-- Learn more about `Lodash` [here](https://example.com/docs/4.16.6).
+- Learn more about `Lodash` [here](https://lodash.com/docs/4.17.4).
 
 #### <a name='Charts'></a>Charts
 - Service is called `chart.service` and is injected via `chart$`.
-- Learn more about `D3` [here](https://github.com/d3/d3/wiki).
+- Learn more about `d3` [here](https://github.com/d3/d3/wiki).
 
 #### <a name='DateTime'></a>Date & Time
 - Service is called `date.service` and is injected via `date$`.

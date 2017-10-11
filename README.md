@@ -53,6 +53,7 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 - [Angular Strap](https://mgcrea.github.io/angular-strap/) - A set of Bootstrap 3+ directives for your AngularJS app.
 - [Angular Translate](https://angular-translate.github.io/) - Translate your AngularJS app.
 - [Bluebird](http://bluebirdjs.com/) - A full-featured JavaScript promises library with unmatched performance.
+- [D3](https://github.com/d3/d3/wiki/) - Chart information with data-driven documents.
 - [Lodash](https://lodash.com/docs/) - A modern JavaScript utility library delivering modularity, performance & extras.
 - [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [NG File Upload](https://github.com/danialfarid/ng-file-upload/) - Lightweight directive to upload files with optional FileAPI shim for cross-browser support.
