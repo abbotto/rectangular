@@ -22,9 +22,9 @@ module.exports = function template(deps, root) {
 	tplFiles.forEach((filePath) => {
 		key = filePath.replace(root + "/", "");
 		
-		path.extname(key) === ".jsx"
-			? value = JSON.stringify(fs.readFileSync(filePath, "utf8"))
-			: value = JSON.stringify(pug.compileFile(filePath)())
+		path.extname(key) === ".tpl"
+			? value = JSON.stringify(pug.compileFile(filePath)())
+			: value = JSON.stringify(fs.readFileSync(filePath, "utf8"))
 		;
 		
 		templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
