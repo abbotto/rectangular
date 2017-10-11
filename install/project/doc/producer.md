@@ -1,68 +1,68 @@
 # Producer
 
 ## Overview
-- The `producer` file, as it's name implies, produces things.
-	- `producer.js`
+The `producer` file is a master configuration that retains a context, plugins and other settings.
 
 ## Flags
-- The `producer` can be controlled by passing flags as arguments by calling:
-	- `node producer.js --flag`
-	
+The `producer` can be controlled by passing flags as arguments by calling:
+
+	node producer.js --flag
+
 ### --build
-- Export all `custom` JavaScript (ES6) to a bundle
+Export all `custom` JavaScript (ES6) to a bundle.
 
 ### --clean
-- Clean tempoary directories
-	- `tmp/`
-	- `dist/`
+Clean tempoary directories.
+- `tmp/`
+- `dist/`
 
 ### --bump-patch
-- Increment the `SemVer` patch number (`*.*.1`).
+Increment the `SemVer` patch number (`*.*.1`).
 
 ### --bump-minor
-- Increment the `SemVer` minor number (`*.1.*`).
+Increment the `SemVer` minor number (`*.1.*`).
 
 ### --bump-major
-- Increment the `SemVer` major number (`1.*.*`).
+Increment the `SemVer` major number (`1.*.*`).
 
 ### --doc
-- Generate `JSDoc` documentation.
+Generate `JSDoc` documentation.
 
 ### --env
-- Export `environment variables` to an AngularJS `constants` file
-	- `.envrc`
+Export `environment variables` to an AngularJS `constants` file.
+- `.envrc`
 
 ### --font
-- Copy font files into the `dist/` folder
+Copy font files into the `dist/` folder.
 
 ### --image
-- Copy image files into the `dist/` folder
+Copy image files into the `dist/` folder.
 
 ### --model
-- Export all `models` (JSON) to an AngularJS `constants` file 
-	- `*.data.json`
-	- `*.mixin.json`
+Export all `models` (JSON) to an AngularJS `constants` file 
+- `*.data.json`
+- `*.mixin.json`
 
 ### --production
-- Force the app to be built in production mode
+Force the app to be built in production mode
 
 ### --route
-- Export all `routes` to an AngularJS `service` file
-	- `*.route.js`
+Export all `routes` to an AngularJS `service` file
+- `*.route.js`
 
 ### --script
-- Export all `scripts` that can't be imported via ES6 to a legacy bundle
+Export all `scripts` that can't be imported via ES6 to a legacy bundle.
 
 ### --server
-- Start the development server
-	- `watch` enabled
-	- `hot module reload` enabled
+Start the development server:
+- `watch` enabled
+- `hot module reload` enabled
 
 ### --spec
-- Export all `tests` and their dependencies to a bundle
+Export all `tests` and their dependencies to a bundle.
 
 ### --style
-- Export all `stylesheets` to an bundle
+Export all `stylesheets` to an bundle.
 
 ### --template
-- Export all `templates` to an AngularJS `$templateCache` file
+Export all `templates` to an AngularJS `$templateCache` file.
