@@ -13,14 +13,12 @@
 		* [Language Support](#LanguageSupport)
 		* [Immutable Data](#ImmutableData)
 		* [Printing](#Printing)
-		* [Virtual DOM](#VirtualDOM)
 
 ## <a name='Extensions'></a>Extensions
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
 - As the name implies, extensions `extend` the capabilities of your app.
 - There optional extensions that you can install during the install process.
-- Rectangular ships with 3 extensions by default:
-	- The `Component` extension = `ReactJS + ReactDOM`.
+- Rectangular ships with 2 extensions by default:
 	- The `Data` extension = `ImmutableJS`.
 	- The `Model` extension for data files.
 
@@ -108,8 +106,3 @@
 #### <a name='Printing'></a>Printing
 - Service is called `print.service` and is injected via `print$`.
 - Learn more about `teleprint` [here](https://github.com/abbotto/teleprint).
-
-#### <a name='VirtualDOM'></a>Virtual DOM
-- Service is injected via `component$`.
-- Directive is called `component.directive` and is added via `<component name="MyComponent"></component>`.
-- Learn more about `react` [here](https://facebook.github.io/react/docs/hello-world.html).

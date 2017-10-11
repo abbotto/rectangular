@@ -56,7 +56,6 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 - [Lodash](https://lodash.com/docs/) - A modern JavaScript utility library delivering modularity, performance & extras.
 - [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [NG File Upload](https://github.com/danialfarid/ng-file-upload/) - Lightweight directive to upload files with optional FileAPI shim for cross-browser support.
-- [ReactJS](https://facebook.github.io/react/) - A JavaScript library for building user interfaces.
 - [Restangular](https://github.com/mgonto/restangular/) - A service that simplifies common `GET`, `POST`, `DELETE`, and `UPDATE` requests.
 - [Teleprint](https://github.com/abbotto/teleprint/) - Prints HTML from a `URL`, from the `DOM`, or from a `string`.
 

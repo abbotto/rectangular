@@ -33,12 +33,6 @@ const schema = {
 			description: "Install Lodash? [y/n]",
 			required: true
 		},
-		ReactJS: {
-			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
-			message: "Yes|No|yes|no|Y|N|y|n]",
-			description: "Install ReactJS? [y/n]",
-			required: true
-		},
 		Restangular: {
 			pattern: /^(?:Yes|No|yes|no|Y|N|y|n)$/,
 			message: "Yes|No|yes|no|Y|N|y|n]",
@@ -158,18 +152,6 @@ prompt.get(schema, (err, input) => {
 	}
 	else {
 		delete vendorJs["angular-translate"];
-	}
-
-	if (input.ReactJS.match(/^(?:Yes|yes|Y|y)$/)) {
-		console.log("");
-		console.log("Installing ReactJS...");
-		
-		sh.exec("mkdir app/extension/component/");
-		sh.exec("cp -a node_modules/rectangular/install/extra/extension/component/. app/extension/component/");
-		sh.exec("npm i --save react react-dom react-jsx");
-	}
-	else {
-		delete vendorJs.react;
 	}
 	
 	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {
