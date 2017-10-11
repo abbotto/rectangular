@@ -24,6 +24,11 @@
 	- Global styles, fonts and images can go in the `app/design` folder.
 
 ## <a name='NamingStructure'></a>Naming Structure
+- The current naming convention has been chosen to:
+	- Increase consistency between file names and module names.
+	- To improve organization within directories and in the documentation.
+	- To make the names seem more naturally aligned with the way people speak.
+
 ### <a name='Modules'></a>Modules
 - Module names and filenames names should be `lowerCamelCase`.
 - Files containing a module will share a name with that module:
