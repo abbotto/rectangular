@@ -17,7 +17,9 @@
 
 ## <a name='Overview'></a>Overview
 #### Focus on apps, not ops.
-Rectangular is a developer-friendly front-end system for building world-class web applications:
+Rectangular is a developer-friendly front-end system for building world-class web applications.
+
+It offers the following benefits:
 - An interactive `installer`
 - A bare-bones `application`
 - A powerful build `toolkit`
@@ -26,7 +28,7 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 
 ---
 
-#### The following goodies are baked into Rectangular:
+#### These goodies are baked into Rectangular:
 - [AngularJS](https://angularjs.org/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer/)
 - [BabelJS](http://fuse-box.org/plugins/babelplugin/)
