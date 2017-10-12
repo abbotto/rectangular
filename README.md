@@ -17,7 +17,7 @@
 
 ## <a name='Overview'></a>Overview
 #### Focus on apps, not ops.
-Rectangular is a front-end development kit for building world-class web applications:
+Rectangular is a developer-friendly front-end system for building world-class web applications:
 - An interactive `installer`
 - A bare-bones `application`
 - A powerful build `toolkit`
