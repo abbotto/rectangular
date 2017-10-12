@@ -15,27 +15,33 @@ module.exports = function style(deps, root, purifyOptions) {
 	const tmpAppCSS = root + "/tmp/app.scss";
 	const nodeSASS = "chmod +x " + dir + "/node_modules/.bin/node-sass && " + dir + "/node_modules/.bin/node-sass";
 	const postCSS = "chmod +x " + dir + "/node_modules/postcss/lib/postcss.js && node " + dir + "/node_modules/postcss/lib/postcss.js";
-	
+
 	styles.forEach((filePath, i) => {
 		styles[i] = filePath.replace("./", root + "/");
 	});
 
 	const styleFiles = glob.sync(styles);
-	
+
 	styleFiles.forEach((file) => {
 		path.extname(file) === ".css" && cssFiles.push(file);
 		path.extname(file) === ".scss" && sassFiles.push(file);
 	});
-	
-	sh("touch " + "dist/app.css");
-	
-	sh.cat(sassFiles).to(tmpAppCSS);
+
+	sh("touch " + dir + "/dist/app.css");
+
+	sassFiles.forEach((file) => {
+		sh("cat " + file + " >> " + tmpAppCSS);
+	})
+
 	sh(nodeSASS + " -q --output-style compressed --include-path scss " + tmpAppCSS + " " + tmpAppCSS);
 	sh(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpAppCSS);
 	
 	cssFiles.push(tmpAppCSS);
-	sh.cat(cssFiles).to("dist/app.css");
-	
+
+	cssFiles.forEach((file) => {
+		sh("cat " + file + " >> dist/app.css");
+	})
+
 	const appCSS = fs.readFileSync(
 		"dist/app.css",
 		"utf8"
