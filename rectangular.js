@@ -35,9 +35,6 @@
 			images: (deps, root) => {
 				require(__dirname + "/src/image.js")(deps, root);
 			},
-			models: (deps, root) => {
-				require(__dirname + "/src/model.js")(deps, root);
-			},
 			routes: (deps, root) => {
 				require(__dirname + "/src/route.js")(deps, root);
 			},

@@ -20,7 +20,7 @@ module.exports = function template(deps, root) {
 	let templates = [];
 	
 	tplFiles.forEach((filePath) => {
-		key = filePath.replace(root + "/", "");
+		key = filePath.replace("~/" + root + "/", "");
 		
 		path.extname(key) === ".tpl"
 			? value = JSON.stringify(pug.compileFile(filePath)())

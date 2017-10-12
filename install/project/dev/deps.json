@@ -6,12 +6,6 @@
 	"image": {
 		"files": ["./app/**/*.{bmp,gif,ico,jpg,jpeg,png,svg}"]
 	},
-	"model": {
-		"files": [
-			"./app/**/*.data.json",
-			"./app/**/*.mixin.json"
-		]
-	},
 	"template": {
 		"files": [
 			"!./app/**/*.mockup.html",
@@ -83,9 +77,16 @@
 			"./node_modules/bootstrap/dist/css/bootstrap-theme.min.css"
 		],
 		"files": [
-			"./app/design/style/vendor.scss",
-			"./app/design/style/scaffold.scss",
-			"./app/**/*.scss"
+			"./app/design/sass/*.import.scss",
+			"./app/design/sass/*.preset.scss",
+			"./app/design/sass/*.mixin.scss",
+			"./app/design/sass/*.style.scss",
+			"./app/design/sass/*.patch.scss",
+			"./app/component/**/*.import.scss",
+			"./app/component/**/*.preset.scss",
+			"./app/component/**/*.mixin.scss",
+			"./app/component/**/*.style.scss",
+			"./app/component/**/*.patch.scss"
 		]
 	}
 }

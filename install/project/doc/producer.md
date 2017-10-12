@@ -38,11 +38,6 @@ Copy font files into the `dist/` folder.
 ### --image
 Copy image files into the `dist/` folder.
 
-### --model
-Export all `models` (JSON) to an AngularJS `constants` file 
-- `*.data.json`
-- `*.mixin.json`
-
 ### --production
 Force the app to be built in production mode
 

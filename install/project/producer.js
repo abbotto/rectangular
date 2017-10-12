@@ -28,7 +28,6 @@ isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");
 isArg("--env") && rectangular.env(".envrc", __dirname);
-isArg("--model") && rectangular.models(deps.model, __dirname);
 isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
 isArg("--style") && rectangular.styles(deps.style, __dirname, purifyRules);
@@ -41,6 +40,7 @@ if (isArg("--production")) isProduction = true;
 // Plugins
 // ----------------------------------------------------------------
 const {
+	JSONPlugin,
 	BabelPlugin,
 	CSSPlugin,
 	EnvPlugin,
@@ -48,17 +48,18 @@ const {
 	HTMLPlugin,
 	SassPlugin,
 	UglifyJSPlugin,
-	WebIndexPlugin
-} = require("fuse-box");
+	WebIndexPlugin,
+} = require('fuse-box');
 
 const plugins = [
-	EnvPlugin({NODE_ENV: isProduction ? "production" : "development"}),
+	EnvPlugin({NODE_ENV: isProduction ? 'production' : 'development'}),
 	HTMLPlugin({useDefault: true}),
+	JSONPlugin(),
 	BabelPlugin(babelRules),
-	SassPlugin({outputStyle: "compressed"}),
+	SassPlugin({outputStyle: 'compressed'}),
 	CSSPlugin(),
-	WebIndexPlugin({template: "app/index.html"}),
-	isProduction && UglifyJSPlugin(uglifyRules)
+	WebIndexPlugin({template: 'app/index.html'}),
+	isProduction && UglifyJSPlugin(uglifyRules),
 ];
 
 // ----------------------------------------------------------------
@@ -102,7 +103,7 @@ isArg("--server") && require("./dev/server.js")(fuse, app);
 // Build
 // ----------------------------------------------------------------
 if (isArg("--build") || isArg("--server") || isArg("--spec")) {
-	sh.exec("node producer.js --env --font --index --image --model --route --script --style --template --clean");
+	sh.exec("node producer.js --env --font --index --image --route --script --style --template --clean");
 	isArg("--spec") && rectangular.specs(deps.spec, __dirname);
 	
 	fuse

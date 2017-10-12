@@ -12,7 +12,6 @@
 				"files": ["./app/**/*.{ttf,woff,woff2,eot,svg}"]
 			},
 			"image": { ... },
-			"model": { ... },
 			"route": { ... },
 			"template": { ... },
 			"script": { ... },

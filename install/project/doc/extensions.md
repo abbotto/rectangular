@@ -19,9 +19,8 @@
 - Extensions consist of `3rd-party` or `custom` code that is integrated into the app.
 - As the name implies, extensions `extend` the capabilities of your app.
 - There optional extensions that you can install during the install process.
-- Rectangular ships with 2 extensions by default:
+- Rectangular ships with 1 extension installed by default:
 	- The `Data` extension = `ImmutableJS`.
-	- The `Model` extension for data files.
 
 ### <a name='AddingExtensions'></a>Adding Extensions
 - Typically, adding a new `extension` is as easy as putting services/directives in the extensions folder.

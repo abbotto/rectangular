@@ -12,13 +12,14 @@
 
 import dataService from "~/app/extension/data/data.service.js";
 import homeController from "~/app/component/home/home.controller.js";
+import homeTemplate from '~/app/component/home/home.template.html';
 
 // --------------------------------
 // Home Component (AngularJS)
 // --------------------------------
 const HomeComponent = {};
 HomeComponent.controllerAs = "vm";
-HomeComponent.templateUrl = "app/component/home/home.component.html";
+HomeComponent.templateUrl = homeTemplate.default;
 HomeComponent.controller = homeController;
 
 export default angular

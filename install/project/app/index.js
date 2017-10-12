@@ -37,9 +37,6 @@ angular
 		"ngMessages",
 		"ngSanitize"
 	])
-	.config(($locationProvider) => {
-		$locationProvider.html5Mode(true);
-	})
 	.config(($httpProvider) => {
 		$httpProvider.useLegacyPromiseExtensions = false;
 	})

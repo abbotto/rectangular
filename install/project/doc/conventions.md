@@ -42,8 +42,8 @@
 - Component module names should be `lowerCamelCase`.
 - Files related to components should be prefixed with the component name:
 	- `componentName.*.service.js`
-	- `componentName.*.html`.
-	- `componentName.*.scss`.
+	- `componentName.*.template.html`
+	- `componentName.*.style.scss`
 
 ### <a name='Controllers'></a>Controllers
 - Controllers should be named in `UpperCamelCase` format.

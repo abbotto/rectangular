@@ -15,7 +15,11 @@ export default angular
 		"ui.router",
 		routeAuto.name
 	])
-	.config(($urlRouterProvider) => {
+	.config((
+		$locationProvider,
+		$urlRouterProvider
+	) => {
+		$locationProvider.html5Mode(false);
 		$urlRouterProvider.otherwise("/");
 	})
 ;
