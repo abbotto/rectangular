@@ -1,4 +1,4 @@
-const sh = require("shelljs");
+const sh = require("shellcmd");
 const watch = require("chokidar")
 	.watch([
 		"app/**/*.*",
@@ -25,12 +25,12 @@ module.exports = (fuse, app) => {
 		(path, stats) => {
 			console.log("\"" + path + "\" has been changed...\n");
 			
-			if (path === "deps.json") sh.exec("node producer.js --env --font --image --script --route --template");
-			else if (path.indexOf(".html") > -1 || path.indexOf(".jsx") > -1) sh.exec("node producer.js --template");
-			else if (path.indexOf(".scss") > -1) sh.exec("node producer.js --style");
-			else if (path.indexOf(".route.js") > -1) sh.exec("node producer.js --route");
-			else if (path.indexOf(".spec.js") > -1) sh.exec("node producer.js --spec");
-			else if (path.indexOf(".js") < 0) sh.exec("node producer.js --env --font --image");
+			if (path === "deps.json") sh("node producer.js --env --font --image --script --route --template");
+			else if (path.indexOf(".html") > -1 || path.indexOf(".jsx") > -1) sh("node producer.js --template");
+			else if (path.indexOf(".scss") > -1) sh("node producer.js --style");
+			else if (path.indexOf(".route.js") > -1) sh("node producer.js --route");
+			else if (path.indexOf(".spec.js") > -1) sh("node producer.js --spec");
+			else if (path.indexOf(".js") < 0) sh("node producer.js --env --font --image");
 		}
 	);
 };

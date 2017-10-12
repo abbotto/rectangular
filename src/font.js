@@ -3,7 +3,7 @@
 const fs = require("fs");
 const glob = require("glob-concat");
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
-const sh = require("shelljs");
+const sh = require("shellcmd");
 
 module.exports = function font(deps, root) {
 	const fonts = parseAssets(deps);
@@ -17,12 +17,12 @@ module.exports = function font(deps, root) {
 	const fontFiles = glob.sync(fonts);
 
 	isDest
-		? sh.exec("rm -rf " + outputDir + " && mkdir " + outputDir)
-		: sh.exec("mkdir " + outputDir)
+		? sh("rm -rf " + outputDir + " && mkdir " + outputDir)
+		: sh("mkdir " + outputDir)
 	;
 
 	fontFiles.length && fontFiles.forEach((font) => {
 		font = font.replace("./", root + "/");
-		sh.exec("cp " + font + " " + root + "/dist/fonts/");
+		sh("cp " + font + " " + root + "/dist/fonts/");
 	});
 };

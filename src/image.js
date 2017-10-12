@@ -3,7 +3,7 @@
 const fs = require("fs");
 const glob = require("glob-concat");
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
-const sh = require("shelljs");
+const sh = require("shellcmd");
 
 module.exports = function img(deps, root) {
 	const images = parseAssets(deps);
@@ -17,12 +17,12 @@ module.exports = function img(deps, root) {
 	const imgFiles = glob.sync(images);
 	
 	isDest
-		? sh.exec("rm -rf " + outputDir + " && mkdir " + outputDir)
-		: sh.exec("mkdir " + outputDir)
+		? sh("rm -rf " + outputDir + " && mkdir " + outputDir)
+		: sh("mkdir " + outputDir)
 	;
 	
 	imgFiles.length && imgFiles.forEach((img) => {
 		img = img.replace("./", root + "/");
-		sh.exec("cp " + img + " " + root + "/dist/images/");
+		sh("cp " + img + " " + root + "/dist/images/");
 	});
 };

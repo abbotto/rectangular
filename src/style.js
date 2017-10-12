@@ -6,7 +6,7 @@ const glob = require("glob-concat");
 const parseAssets = require(__dirname + "/utility/parseAssets.js");
 const path = require("path");
 const purify = require("purify-css");
-const sh = require("shelljs");
+const sh = require("shellcmd");
 
 module.exports = function style(deps, root, purifyOptions) {
 	const cssFiles = [];
@@ -27,11 +27,11 @@ module.exports = function style(deps, root, purifyOptions) {
 		path.extname(file) === ".scss" && sassFiles.push(file);
 	});
 	
-	sh.exec("touch " + "dist/app.css");
+	sh("touch " + "dist/app.css");
 	
 	sh.cat(sassFiles).to(tmpAppCSS);
-	sh.exec(nodeSASS + " -q --output-style compressed --include-path scss " + tmpAppCSS + " " + tmpAppCSS);
-	sh.exec(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpAppCSS);
+	sh(nodeSASS + " -q --output-style compressed --include-path scss " + tmpAppCSS + " " + tmpAppCSS);
+	sh(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpAppCSS);
 	
 	cssFiles.push(tmpAppCSS);
 	sh.cat(cssFiles).to("dist/app.css");

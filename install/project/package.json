@@ -56,7 +56,7 @@
 		"phantomjs-prebuilt": "2.1.13",
 		"prompt": "^1.0.0",
 		"rectangular": "github:abbotto/rectangular",
-		"shelljs": "0.7.8",
+		"shellcmd": "0.0.4",
 		"showdown": "1.7.1",
 		"stylelint": "7.12.0",
 		"typescript": "2.4.1"

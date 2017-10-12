@@ -9,7 +9,7 @@ const {NODE_ENV} = process.env;
 const fs = require("fs");
 const glob = require("glob-concat");
 const rectangular = require("rectangular");
-const sh = require("shelljs");
+const sh = require("shellcmd");
 const babelRules = require("./dev/babel.json");
 const deps = require("./dev/deps.json");
 const markdownToHtml = require("./dev/markdown.js");
@@ -21,12 +21,12 @@ let isProduction = NODE_ENV === "production";
 // ----------------------------------------------------------------
 // Build tasks
 // ----------------------------------------------------------------
-isArg("--clean") && sh.exec("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
-isArg("--doc") && sh.exec("node node_modules/jsdoc/jsdoc.js -r -c dev/jsdoc.json app/");
+isArg("--clean") && sh("rm -rf dist && mkdir dist && rm -rf tmp && mkdir tmp");
+isArg("--doc") && sh("node node_modules/jsdoc/jsdoc.js -r -c dev/jsdoc.json app/");
 isArg("--doc") && markdownToHtml();
-isArg("--bump-patch") && sh.exec("gulp bump-patch --gulpfile dev/gulp.js");
-isArg("--bump-minor") && sh.exec("gulp bump-minor --gulpfile dev/gulp.js");
-isArg("--bump-major") && sh.exec("gulp bump-major --gulpfile dev/gulp.js");
+isArg("--bump-patch") && sh("gulp bump-patch --gulpfile dev/gulp.js");
+isArg("--bump-minor") && sh("gulp bump-minor --gulpfile dev/gulp.js");
+isArg("--bump-major") && sh("gulp bump-major --gulpfile dev/gulp.js");
 isArg("--env") && rectangular.env(".envrc", __dirname);
 isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
@@ -103,17 +103,17 @@ isArg("--server") && require("./dev/server.js")(fuse, app);
 // Build
 // ----------------------------------------------------------------
 if (isArg("--build") || isArg("--server") || isArg("--spec")) {
-	sh.exec("node producer.js --env --font --index --image --route --script --style --template --clean");
+	sh("node producer.js --env --font --index --image --route --script --style --template --clean");
 	isArg("--spec") && rectangular.specs(deps.spec, __dirname);
 	
 	fuse
 		.run()
 		.then(() => {
 			if (isProduction) {
-				sh.exec("gzip -c -8 " + "dist/legacy.js > dist/legacy.js.gz");
-				sh.exec("gzip -c -8 " + "./dist/vendor.js > ./dist/vendor.js.gz");
-				sh.exec("gzip -c -8 " + "./dist/app.js > ./dist/app.js.gz");
-				sh.exec("gzip -c -8 " + "./dist/app.css > ./dist/app.css.gz");
+				sh("gzip -c -8 " + "dist/legacy.js > dist/legacy.js.gz");
+				sh("gzip -c -8 " + "./dist/vendor.js > ./dist/vendor.js.gz");
+				sh("gzip -c -8 " + "./dist/app.js > ./dist/app.js.gz");
+				sh("gzip -c -8 " + "./dist/app.css > ./dist/app.css.gz");
 			}
 		})
 	;
