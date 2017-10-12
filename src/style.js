@@ -13,6 +13,7 @@ module.exports = function style(deps, root, purifyOptions) {
 	const styles = parseAssets(deps);
 	const sassFiles = [];
 	const tmpAppCSS = root + "/tmp/app.scss";
+	const distAppCSS = root + "/dist/app.css";
 	const nodeSASS = "chmod +x " + dir + "/node_modules/.bin/node-sass && " + dir + "/node_modules/.bin/node-sass";
 	const postCSS = "chmod +x " + dir + "/node_modules/postcss/lib/postcss.js && node " + dir + "/node_modules/postcss/lib/postcss.js";
 
@@ -27,7 +28,7 @@ module.exports = function style(deps, root, purifyOptions) {
 		path.extname(file) === ".scss" && sassFiles.push(file);
 	});
 
-	sh("touch " + dir + "/dist/app.css");
+	sh("touch " + distAppCSS);
 
 	sassFiles.forEach((file) => {
 		sh("cat " + file + " >> " + tmpAppCSS);
@@ -39,11 +40,11 @@ module.exports = function style(deps, root, purifyOptions) {
 	cssFiles.push(tmpAppCSS);
 
 	cssFiles.forEach((file) => {
-		sh("cat " + file + " >> dist/app.css");
+		sh("cat " + file + " >> " + distAppCSS);
 	})
 
 	const appCSS = fs.readFileSync(
-		"dist/app.css",
+		distAppCSS,
 		"utf8"
 	);
 

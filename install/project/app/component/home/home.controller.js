@@ -23,7 +23,7 @@ export default function HomeComponentController(
 	]);
 	
 	vm.updateTodoList = () => {
-		if (vm.newTodoListItem.length) {
+		if (vm.newTodoListItem.length && vm.data.indexOf(vm.newTodoListItem) < 0) {
 			vm.data = vm.data.push(vm.newTodoListItem);
 			vm.list = vm.data.toJS();
 		}
