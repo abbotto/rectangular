@@ -27,7 +27,7 @@ module.exports = function template(deps, root) {
 			: value = JSON.stringify(fs.readFileSync(filePath, "utf8"))
 		;
 		
-		templates.push("$templateCache.put(\"" + key + "\"," + value + ")");
+		templates.push("$templateCache.put(\"~/" + key + "\"," + value + ")");
 	});
 	
 	const cache = templates.join(";");
