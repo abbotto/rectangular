@@ -19,7 +19,7 @@ import homeTemplate from '~/app/component/home/home.template.html';
 // --------------------------------
 const HomeComponent = {};
 HomeComponent.controllerAs = "vm";
-HomeComponent.templateUrl = homeTemplate.default;
+HomeComponent.template = homeTemplate.default;
 HomeComponent.controller = homeController;
 
 export default angular
