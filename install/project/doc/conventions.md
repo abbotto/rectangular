@@ -27,7 +27,7 @@
 - The current naming convention has been chosen to:
 	- Increase consistency between file names and module names.
 	- To improve organization within directories and in the documentation.
-	- To make the names seem more naturally aligned with the way people speak.
+	- To make the names more naturally aligned with the way English is generally spoken.
 
 ### <a name='Modules'></a>Modules
 - Module names and filenames names should be `lowerCamelCase`.
