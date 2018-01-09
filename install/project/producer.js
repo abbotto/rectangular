@@ -49,16 +49,16 @@ const {
 	SassPlugin,
 	UglifyJSPlugin,
 	WebIndexPlugin,
-} = require('fuse-box');
+} = require("fuse-box");
 
 const plugins = [
-	EnvPlugin({NODE_ENV: isProduction ? 'production' : 'development'}),
+	EnvPlugin({NODE_ENV: isProduction ? "production" : "development"}),
 	HTMLPlugin({useDefault: true}),
 	JSONPlugin(),
 	BabelPlugin(babelRules),
-	SassPlugin({outputStyle: 'compressed'}),
+	SassPlugin({outputStyle: "compressed"}),
 	CSSPlugin(),
-	WebIndexPlugin({template: 'app/index.html'}),
+	WebIndexPlugin({template: "app/index.html"}),
 	isProduction && UglifyJSPlugin(uglifyRules),
 ];
 

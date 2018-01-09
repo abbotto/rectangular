@@ -32,7 +32,7 @@ module.exports = function style(deps, root, purifyOptions) {
 
 	sassFiles.forEach((file) => {
 		sh("cat " + file + " >> " + tmpAppCSS);
-	})
+	});
 
 	sh(nodeSASS + " -q --output-style compressed --include-path scss " + tmpAppCSS + " " + tmpAppCSS);
 	sh(postCSS + " --use autoprefixer -b 'last 5 versions' < " + tmpAppCSS);
@@ -41,7 +41,7 @@ module.exports = function style(deps, root, purifyOptions) {
 
 	cssFiles.forEach((file) => {
 		sh("cat " + file + " >> " + distAppCSS);
-	})
+	});
 
 	const appCSS = fs.readFileSync(
 		distAppCSS,
