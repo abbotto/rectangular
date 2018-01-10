@@ -21,7 +21,7 @@ prompt.get(schema, (err, input) => {
 	if (input["Angular Strap"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular Strap...");
-		
+
 		sh("mkdir app/extension/ui/");
 		sh("cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/. app/extension/ui/");
 		sh("npm i --save bootstrap angular-strap");
@@ -30,13 +30,13 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs["angular-strap"];
 		delete vendorCss.bootstrap;
 	}
-	
+
 	if (input["Angular Material"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular Material...");
-		
+
 		!fs.existsSync("app/extension/ui") && sh("mkdir app/extension/ui/");
-		
+
 		sh("cp -a node_modules/rectangular/install/extra/extension/ui/material-design/. app/extension/ui/");
 		sh("npm i --save angular-material");
 	}
@@ -44,7 +44,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs["angular-material"];
 		delete vendorCss["angular-material"];
 	}
-	
+
 	if (input.Bluebird.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Bluebird...");
@@ -53,7 +53,7 @@ prompt.get(schema, (err, input) => {
 		sh("cp -a node_modules/rectangular/install/extra/extension/promise/. app/extension/promise/");
 		sh("npm i --save bluebird");
 	}
-	
+
 	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing MomentJS...");
