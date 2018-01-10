@@ -103,7 +103,7 @@ isArg("--server") && require("./dev/server.js")(fuse, app);
 // Build
 // ----------------------------------------------------------------
 if (isArg("--build") || isArg("--server") || isArg("--spec")) {
-	sh("node producer.js --env --font --index --image --route --script --style --template --clean");
+	sh("node composer.js --env --font --index --image --route --script --style --template --clean");
 	isArg("--spec") && rectangular.specs(deps.spec, __dirname);
 	
 	fuse

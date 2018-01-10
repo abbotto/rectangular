@@ -72,7 +72,7 @@ rm extra.js
 
 echo -e "Building the app..."
 npm i
-node producer.js --build --production
+node composer.js --build --production
 
 # Completed
 echo ""

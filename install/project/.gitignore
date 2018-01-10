@@ -2,7 +2,7 @@
 *
 
 # Whitelist Top-Level Files
-!producer.js
+!composer.js
 !package.json
 !license.md
 !README.md

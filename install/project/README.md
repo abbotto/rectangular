@@ -6,7 +6,7 @@
 - [Dependencies](doc/dependencies.md)
 - [Extensions](doc/extensions.md)
 - [Models](doc/models.md)
-- [Producer](doc/producer.md)
+- [Composer](doc/composer.md)
 
 ### Development Server
 - To start the development server, run the following command:
