@@ -12,7 +12,7 @@
 
 import dataService from "~/app/extension/data/data.service.js";
 import homeController from "~/app/component/home/home.controller.js";
-import homeTemplate from '~/app/component/home/home.template.html';
+import homeTemplate from "~/app/component/home/home.template.html";
 
 // --------------------------------
 // Home Component (AngularJS)

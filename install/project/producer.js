@@ -48,7 +48,7 @@ const {
 	HTMLPlugin,
 	SassPlugin,
 	UglifyJSPlugin,
-	WebIndexPlugin,
+	WebIndexPlugin
 } = require("fuse-box");
 
 const plugins = [
@@ -59,7 +59,7 @@ const plugins = [
 	SassPlugin({outputStyle: "compressed"}),
 	CSSPlugin(),
 	WebIndexPlugin({template: "app/index.html"}),
-	isProduction && UglifyJSPlugin(uglifyRules),
+	isProduction && UglifyJSPlugin(uglifyRules)
 ];
 
 // ----------------------------------------------------------------
