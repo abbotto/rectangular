@@ -6,8 +6,6 @@
 require("dotenv").config();
 
 const {NODE_ENV} = process.env;
-const fs = require("fs");
-const glob = require("glob-concat");
 const rectangular = require("rectangular");
 const sh = require("shellcmd");
 const babelRules = require("./dev/babel.json");
