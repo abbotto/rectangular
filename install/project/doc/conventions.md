@@ -56,8 +56,8 @@
 - Filters should be named in `lowerCamelCase` format.
 
 ### <a name='Services'></a>Services
-- Angular service/factory names are prefixed with `$`.
-- To keep things consistent and concise, all custom service/factory names with `alphanumeric` characters should have a suffix of `$`.
+- Built-in services and factories are prefixed with `$`.
+- Custom service/factory names with `alphanumeric` characters should be suffixed with `$`.
 
 #### <a name='Constructors'></a>Constructors
 - A service that is invoked with `.service()` is a `constructor` function.
