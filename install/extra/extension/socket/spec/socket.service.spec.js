@@ -1,17 +1,17 @@
 "use strict";
 
-import RestService from "~/app/extension/rest/rest.service.js";
-let rest$;
+import SocketService from "~/app/extension/socket/socket.service.js";
+let socket$;
 
-describe("rest.service", () => {
+describe("socket.service", () => {
 	beforeEach(() => {
-		rest$ = RestService;
+		socket$ = SocketService;
 	});
 
-	describe("When the `restangular` package is installed", () => {
-		it("the `rest$` service should be available", () => {
-			expect(rest$).toBeDefined();
-			expect(typeof rest$).toBe("object");
+	describe("When the `socket.io` package is installed", () => {
+		it("the `socket$` service should be available", () => {
+			expect(socket$).toBeDefined();
+			expect(typeof socket$).toBe("object");
 		});
 	});
 });

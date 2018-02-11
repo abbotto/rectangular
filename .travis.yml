@@ -46,7 +46,7 @@ script:
   - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author" && rm package.js
   - npm i
   - cp -a node_modules/rectangular/install/project/. .
-  - npm i --save bootstrap angular-strap angular-material bluebird d3 moment angular-moment lodash angular-translate restangular ng-file-upload teleprint
+  - npm i --save bootstrap angular-strap angular-material bluebird d3 moment angular-moment lodash angular-translate restangular socket.io ng-file-upload teleprint
   - mkdir app/extension/ui/
   - mkdir app/extension/promise/
   - mkdir app/extension/chart/
@@ -54,6 +54,7 @@ script:
   - mkdir app/extension/_/
   - mkdir app/extension/locale/
   - mkdir app/extension/rest/
+  - mkdir app/extension/socket/
   - mkdir app/extension/upload/
   - mkdir app/extension/print/
   - cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/. app/extension/ui/
@@ -64,6 +65,7 @@ script:
   - cp -a node_modules/rectangular/install/extra/extension/_/. app/extension/_/
   - cp -a node_modules/rectangular/install/extra/extension/locale/. app/extension/locale/
   - cp -a node_modules/rectangular/install/extra/extension/rest/. app/extension/rest/
+  - cp -a node_modules/rectangular/install/extra/extension/socket/. app/extension/socket/
   - cp -a node_modules/rectangular/install/extra/extension/upload/. app/extension/upload/
   - cp -a node_modules/rectangular/install/extra/extension/print/. app/extension/print/
   - npm run test
