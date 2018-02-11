@@ -57,7 +57,7 @@
 
 ### <a name='Services'></a>Services
 - Built-in services and factories are prefixed with `$`.
-- Custom service/factory names with `alphanumeric` characters should be suffixed with `$`.
+- Custom services and factories with `alphanumeric` names should be suffixed with `$`.
 
 #### <a name='Constructors'></a>Constructors
 - A service that is invoked with `.service()` is a `constructor` function.
