@@ -60,6 +60,7 @@ The `installer` asks you a few questions and downloads the bare-bones `applicati
 - [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [NG File Upload](https://github.com/danialfarid/ng-file-upload/) - Lightweight directive to upload files with optional FileAPI shim for cross-browser support.
 - [Restangular](https://github.com/mgonto/restangular/) - A service that simplifies common `GET`, `POST`, `DELETE`, and `UPDATE` requests.
+- [SocketIO](https://socket.io/) - Enables real-time bidirectional event-based communication.
 - [Teleprint](https://github.com/abbotto/teleprint/) - Prints HTML from a `URL`, from the `DOM`, or from a `string`.
 
 ---
