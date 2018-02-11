@@ -1,1 +1,1 @@
-module.exports = require("./dev/eslint.js");
+module.exports = require("./dev/eslint.global.js");

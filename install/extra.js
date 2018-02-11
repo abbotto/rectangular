@@ -120,6 +120,18 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs.restangular;
 	}
 
+	if (input.SocketIO.match(/^(?:Yes|yes|Y|y)$/)) {
+		console.log("");
+		console.log("Installing SocketIO...");
+
+		sh("mkdir app/extension/upload/");
+		sh("cp -a node_modules/rectangular/install/extra/extension/socket/. app/extension/socket/");
+		sh("npm i --save socket.io");
+	}
+	else {
+		delete vendorJs["socket.io"];;
+	}
+	
 	if (input["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing NG File Upload...");

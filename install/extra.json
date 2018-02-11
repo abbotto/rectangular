@@ -47,6 +47,12 @@
 		"description": "Install MomentJS? [y/n]",
 		"required": true
 	},
+	"SocketIO": {
+		"pattern": "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
+		"message": "Yes|No|yes|no|Y|N|y|n]",
+		"description": "Install SocketIO? [y/n]",
+		"required": true
+	},
 	"Teleprint": {
 		"pattern": "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
 		"message": "Yes|No|yes|no|Y|N|y|n]",
