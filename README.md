@@ -1,5 +1,5 @@
 # Rectangular
-#### Covering all the right angles
+#### An app in a box
 
 ---
 
