@@ -14,7 +14,7 @@ console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
 const schema = {
-	properties: require("extra.json")
+	properties: require("./extra.json")
 };
 
 prompt.get(schema, (err, input) => {
