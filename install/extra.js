@@ -14,7 +14,7 @@ console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
 const schema = {
-	properties: require(__dirname + "/vendor.js")
+	properties: require("vendor.js")
 };
 
 prompt.get(schema, (err, input) => {
