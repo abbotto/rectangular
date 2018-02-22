@@ -9,7 +9,7 @@ module.exports = function concatAssets(files) {
 	let i = 0;
 	
 	for (; i < n; i += 1) {
-		script.push(fs.readFileSync(files[i], "utf8"));
+		fs.existsSync(files[i]) && script.push(fs.readFileSync(files[i], "utf8"));
 	}
 	
 	// Prevent minified files from cramming together

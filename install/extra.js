@@ -85,6 +85,7 @@ const schema = {
 };
 
 prompt.get(schema, (err, input) => {
+	console.log(err, input);
 	if (input["Angular Strap"].match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing Angular Strap...");
