@@ -27,5 +27,7 @@
     "strip-comments": "0.4.4",
     "stylefmt": "5.3.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "yesno": "0.0.1"
+  }
 }
