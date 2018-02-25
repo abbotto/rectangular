@@ -30,7 +30,7 @@ const msg = {
 	Teleprint: "Install Teleprint? [y/n]"
 };
 
-prompt.ask(msg["Angular Strap"], true, (ok) {
+prompt.ask(msg["Angular Strap"], true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing Angular Strap...");
@@ -45,7 +45,7 @@ prompt.ask(msg["Angular Strap"], true, (ok) {
 	}
 });
 
-prompt.ask(msg.Bluebird, true, (ok) {
+prompt.ask(msg.Bluebird, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing Bluebird...");
@@ -56,7 +56,7 @@ prompt.ask(msg.Bluebird, true, (ok) {
 	}
 });
 
-prompt.ask(msg.MomentJS, true, (ok) {
+prompt.ask(msg.MomentJS, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing MomentJS...");
@@ -70,7 +70,7 @@ prompt.ask(msg.MomentJS, true, (ok) {
 	}
 });
 
-prompt.ask(msg.D3, true, (ok) {
+prompt.ask(msg.D3, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing D3...");
@@ -81,7 +81,7 @@ prompt.ask(msg.D3, true, (ok) {
 	}
 });
 
-prompt.ask(msg.Lodash, true, (ok) {
+prompt.ask(msg.Lodash, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing Lodash...");
@@ -95,7 +95,7 @@ prompt.ask(msg.Lodash, true, (ok) {
 	}
 });
 
-prompt.ask(msg.D3, true, (ok) {
+prompt.ask(msg.D3, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing Teleprint...");
@@ -106,7 +106,7 @@ prompt.ask(msg.D3, true, (ok) {
 	}
 });
 
-prompt.ask(msg["Angular Translate"], true, (ok) {
+prompt.ask(msg["Angular Translate"], true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing Angular Translate...");
@@ -120,7 +120,7 @@ prompt.ask(msg["Angular Translate"], true, (ok) {
 	}
 });
 
-prompt.ask(msg.Restangular, true, (ok) {
+prompt.ask(msg.Restangular, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing Restangular...");
@@ -134,7 +134,7 @@ prompt.ask(msg.Restangular, true, (ok) {
 	}
 });
 
-prompt.ask(msg.SocketIO, true, (ok) {
+prompt.ask(msg.SocketIO, true, (ok) => {
 	if (ok) {
 		console.log("");
 		console.log("Installing SocketIO...");
@@ -148,7 +148,7 @@ prompt.ask(msg.SocketIO, true, (ok) {
 	}
 });
 
-prompt.ask(msg["NG File Upload"], true, (ok) {
+prompt.ask(msg["NG File Upload"], true, (ok) => {
 	if (input.match(/^(?:Yes|yes|Y|y)$/)) {
 		console.log("");
 		console.log("Installing NG File Upload...");
