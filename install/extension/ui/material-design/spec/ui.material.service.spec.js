@@ -22,7 +22,7 @@ let bottomSheet$,
 	sticky$,
 	toast$;
 
-describe("angular-material.vendor.service", () => {
+describe("ui.material.service", () => {
 	beforeEach(() => {
 		bottomSheet$ = BottomSheetService;
 		colors$ = ColorsService;
