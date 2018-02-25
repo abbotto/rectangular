@@ -13,9 +13,6 @@ prompt.options.no = ["N", "No", "n", "no"];
 // Message
 console.log("\nChoose extra packages to install:\n");
 
-// Start the prompt
-prompt.start();
-
 const msg = {
 	"Angular Material": "Install Angular Material? [y/n]",
 	"Angular Strap": "Install Angular Strap? [y/n]",
