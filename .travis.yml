@@ -44,8 +44,12 @@ script:
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
   - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author" && rm package.js
+  - mkdir -p tmp
+  - cd tmp
+  - git clone https://github.com/abbotto/rectangular.git
+  - cd ../
   - npm i
-  - cp -a node_modules/rectangular/install/project/. .
+  - cp -a tmp/rectangular/install/project/. .
   - npm i --save bootstrap angular-strap angular-material bluebird d3 moment angular-moment lodash angular-translate restangular socket.io ng-file-upload teleprint
   - mkdir app/extension/ui/
   - mkdir app/extension/promise/
@@ -57,15 +61,16 @@ script:
   - mkdir app/extension/socket/
   - mkdir app/extension/upload/
   - mkdir app/extension/print/
-  - cp -a node_modules/rectangular/install/extension/ui/bootstrap/. app/extension/ui/
-  - cp -a node_modules/rectangular/install/extension/ui/material-design/. app/extension/ui/
-  - cp -a node_modules/rectangular/install/extension/promise/. app/extension/promise/
-  - cp -a node_modules/rectangular/install/extension/chart/. app/extension/chart/
-  - cp -a node_modules/rectangular/install/extension/date/. app/extension/date/
-  - cp -a node_modules/rectangular/install/extension/_/. app/extension/_/
-  - cp -a node_modules/rectangular/install/extension/locale/. app/extension/locale/
-  - cp -a node_modules/rectangular/install/extension/rest/. app/extension/rest/
-  - cp -a node_modules/rectangular/install/extension/socket/. app/extension/socket/
-  - cp -a node_modules/rectangular/install/extension/upload/. app/extension/upload/
-  - cp -a node_modules/rectangular/install/extension/print/. app/extension/print/
+  - cp -a tmp/rectangular/install/extension/ui/bootstrap/. app/extension/ui/
+  - cp -a tmp/rectangular/install/extension/ui/material-design/. app/extension/ui/
+  - cp -a tmp/rectangular/install/extension/promise/. app/extension/promise/
+  - cp -a tmp/rectangular/install/extension/chart/. app/extension/chart/
+  - cp -a tmp/rectangular/install/extension/date/. app/extension/date/
+  - cp -a tmp/rectangular/install/extension/_/. app/extension/_/
+  - cp -a tmp/rectangular/install/extension/locale/. app/extension/locale/
+  - cp -a tmp/rectangular/install/extension/rest/. app/extension/rest/
+  - cp -a tmp/rectangular/install/extension/socket/. app/extension/socket/
+  - cp -a tmp/rectangular/install/extension/upload/. app/extension/upload/
+  - cp -a tmp/rectangular/install/extension/print/. app/extension/print/
+  - npm i
   - npm run test
