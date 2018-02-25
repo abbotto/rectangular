@@ -40,7 +40,7 @@ script:
   - projectLicense="MIT"
   - projectAuthor="rectangular"
   - mkdir "$projectName" && cd "$projectName"
-  - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/extra.js > /dev/null
+  - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/extension.js > /dev/null
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
   - curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
   - node package.js "$projectName" "$projectDescription" "$projectLicense" "$author" && rm package.js
@@ -57,15 +57,15 @@ script:
   - mkdir app/extension/socket/
   - mkdir app/extension/upload/
   - mkdir app/extension/print/
-  - cp -a node_modules/rectangular/install/extra/extension/ui/bootstrap/. app/extension/ui/
-  - cp -a node_modules/rectangular/install/extra/extension/ui/material-design/. app/extension/ui/
-  - cp -a node_modules/rectangular/install/extra/extension/promise/. app/extension/promise/
-  - cp -a node_modules/rectangular/install/extra/extension/chart/. app/extension/chart/
-  - cp -a node_modules/rectangular/install/extra/extension/date/. app/extension/date/
-  - cp -a node_modules/rectangular/install/extra/extension/_/. app/extension/_/
-  - cp -a node_modules/rectangular/install/extra/extension/locale/. app/extension/locale/
-  - cp -a node_modules/rectangular/install/extra/extension/rest/. app/extension/rest/
-  - cp -a node_modules/rectangular/install/extra/extension/socket/. app/extension/socket/
-  - cp -a node_modules/rectangular/install/extra/extension/upload/. app/extension/upload/
-  - cp -a node_modules/rectangular/install/extra/extension/print/. app/extension/print/
+  - cp -a node_modules/rectangular/install/extension/ui/bootstrap/. app/extension/ui/
+  - cp -a node_modules/rectangular/install/extension/ui/material-design/. app/extension/ui/
+  - cp -a node_modules/rectangular/install/extension/promise/. app/extension/promise/
+  - cp -a node_modules/rectangular/install/extension/chart/. app/extension/chart/
+  - cp -a node_modules/rectangular/install/extension/date/. app/extension/date/
+  - cp -a node_modules/rectangular/install/extension/_/. app/extension/_/
+  - cp -a node_modules/rectangular/install/extension/locale/. app/extension/locale/
+  - cp -a node_modules/rectangular/install/extension/rest/. app/extension/rest/
+  - cp -a node_modules/rectangular/install/extension/socket/. app/extension/socket/
+  - cp -a node_modules/rectangular/install/extension/upload/. app/extension/upload/
+  - cp -a node_modules/rectangular/install/extension/print/. app/extension/print/
   - npm run test
