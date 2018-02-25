@@ -50,10 +50,14 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/package.js > /dev/null
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/project/package.json > /dev/null
 
+npm i
+
 echo ""
 echo -e "Fetching Rectangular..."
 mkdir -p tmp
+cd tmp
 git clone https://github.com/abbotto/rectangular.git
+cd ../
 
 echo -e "Copy project files..."
 cp -a tmp/rectangular/install/project/. .
