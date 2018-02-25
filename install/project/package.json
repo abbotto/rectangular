@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"contributors": [],
 	"engines": {
-		"node": "8.9"
+		"node": "6.9"
 	},
 	"scripts": {
 		"doc": "node composer.js --doc",

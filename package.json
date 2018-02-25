@@ -6,7 +6,7 @@
   "main": "rectangular.js",
   "author": "Jared Abbott",
   "engines": {
-    "node": "8.9"
+    "node": "6.9"
   },
   "scripts": {},
   "dependencies": {
