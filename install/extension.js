@@ -82,8 +82,8 @@ const extensions = {
 console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
-const schema = { properties: extensions };
-sh("cd tmp && git clone https://github.com/abbotto/rectangular.git")
+const schema = {properties: extensions};
+sh("cd tmp && git clone https://github.com/abbotto/rectangular.git");
 
 prompt.get(schema, (err, input) => {
 	if (input["Angular Strap"].match(yes)) {
