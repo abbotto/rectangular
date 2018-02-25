@@ -6,13 +6,12 @@ const prompt = require("prompt");
 const sh = require("shellcmd");
 const vendorCss = deps.style;
 const vendorJs = deps.script;
+const extensions = require("./install/extension.json");
 
 console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
-const schema = {
-	properties: require("extension.json")
-};
+const schema = {properties: extensions};
 
 prompt.get(schema, (err, input) => {
 	if (input["Angular Strap"].match(/^(?:Yes|yes|Y|y)$/)) {
