@@ -52,14 +52,11 @@ curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/
 
 echo ""
 echo -e "Fetching Rectangular..."
-npm i
-cd node_modules/rectangular/
-cp .envrc .env
-npm i
-cd ../../
+mkdir -p tmp
+git clone https://github.com/abbotto/rectangular.git
 
 echo -e "Copy project files..."
-cp -a node_modules/rectangular/install/project/. .
+cp -a tmp/rectangular/install/project/. .
 cp .envrc .env
 
 echo -e "Add the project details..."
@@ -73,6 +70,13 @@ rm extension.js
 echo -e "Building the app..."
 npm i
 node composer.js --build --production
+
+rm -rf tmp/rectangular
+npm i
+
+cd node_modules/rectangular/
+cp .envrc .env
+npm i
 
 # Completed
 echo ""

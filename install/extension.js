@@ -82,52 +82,61 @@ const extensions = {
 console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
-const schema = {properties: extensions};
+const schema = { properties: extensions };
+sh("cd tmp && git clone https://github.com/abbotto/rectangular.git")
 
 prompt.get(schema, (err, input) => {
 	if (input["Angular Strap"].match(yes)) {
 		console.log("");
 		console.log("Installing Angular Strap...");
-		
-		sh("mkdir app/extension/ui/");
-		sh("cp -a node_modules/rectangular/install/extension/ui/bootstrap/. app/extension/ui/");
-		sh("npm i --save bootstrap angular-strap");
+
+		sh(
+			"mkdir app/extension/ui/",
+			"cp -a tmp/rectangular/install/extension/ui/bootstrap/. app/extension/ui/",
+			"npm i --save bootstrap angular-strap"
+		);
 	}
 	else {
 		delete vendorJs["angular-strap"];
 		delete vendorCss.bootstrap;
 	}
-	
+
 	if (input["Angular Material"].match(yes)) {
 		console.log("");
 		console.log("Installing Angular Material...");
-		
+
 		!fs.existsSync("app/extension/ui") && sh("mkdir app/extension/ui/");
-		
-		sh("cp -a node_modules/rectangular/install/extension/ui/material-design/. app/extension/ui/");
-		sh("npm i --save angular-material");
+
+		sh(
+			"cp -a tmp/rectangular/install/extension/ui/material-design/. app/extension/ui/",
+			"npm i --save angular-material"
+		);
 	}
 	else {
 		delete vendorJs["angular-material"];
 		delete vendorCss["angular-material"];
 	}
-	
+
 	if (input.Bluebird.match(yes)) {
 		console.log("");
 		console.log("Installing Bluebird...");
-		
-		sh("mkdir app/extension/promise/");
-		sh("cp -a node_modules/rectangular/install/extension/promise/. app/extension/promise/");
-		sh("npm i --save bluebird");
+
+		sh(
+			"mkdir app/extension/promise/",
+			"cp -a tmp/rectangular/install/extension/promise/. app/extension/promise/",
+			"npm i --save bluebird"
+		);
 	}
-	
+
 	if (input.MomentJS.match(yes)) {
 		console.log("");
 		console.log("Installing MomentJS...");
-		
-		sh("mkdir app/extension/date/");
-		sh("cp -a node_modules/rectangular/install/extension/date/. app/extension/date/");
-		sh("npm i --save moment && npm i --save angular-moment");
+
+		sh(
+			"mkdir app/extension/date/",
+			"cp -a tmp/rectangular/install/extension/date/. app/extension/date/",
+			"npm i --save moment && npm i --save angular-moment"
+		);
 	}
 	else {
 		delete vendorJs.moment;
@@ -135,20 +144,24 @@ prompt.get(schema, (err, input) => {
 
 	if (input.D3.match(yes)) {
 		console.log("");
-		console.log("Installing Lodash...");
-		
-		sh("mkdir app/extension/chart/");
-		sh("cp -a node_modules/rectangular/install/extension/chart/. app/extension/chart/");
-		sh("npm i --save d3");
+		console.log("Installing D3...");
+
+		sh(
+			"mkdir app/extension/chart/",
+			"cp -a tmp/rectangular/install/extension/chart/. app/extension/chart/",
+			"npm i --save d3"
+		);
 	}
 
 	if (input.Lodash.match(yes)) {
 		console.log("");
 		console.log("Installing Lodash...");
-		
-		sh("mkdir app/extension/_/");
-		sh("cp -a node_modules/rectangular/install/extension/_/. app/extension/_/");
-		sh("npm i --save lodash");
+
+		sh(
+			"mkdir app/extension/_/",
+			"cp -a tmp/rectangular/install/extension/_/. app/extension/_/",
+			"npm i --save lodash"
+		);
 	}
 	else if (input.Restangular.match(/^(?:No|no|N|n)$/)) {
 		delete vendorJs.lodash;
@@ -157,19 +170,23 @@ prompt.get(schema, (err, input) => {
 	if (input.Teleprint.match(yes)) {
 		console.log("");
 		console.log("Installing Teleprint...");
-		
-		sh("mkdir app/extension/print/");
-		sh("cp -a node_modules/rectangular/install/extension/print/. app/extension/print/");
-		sh("npm i --save teleprint");
+
+		sh(
+			"mkdir app/extension/print/",
+			"cp -a tmp/rectangular/install/extension/print/. app/extension/print/",
+			"npm i --save teleprint"
+		);
 	}
 
 	if (input["Angular Translate"].match(yes)) {
 		console.log("");
 		console.log("Installing Angular Translate...");
-		
-		sh("mkdir app/extension/locale/");
-		sh("cp -a node_modules/rectangular/install/extension/locale/. app/extension/locale/");
-		sh("npm i --save angular-translate");
+
+		sh(
+			"mkdir app/extension/locale/",
+			"cp -a tmp/rectangular/install/extension/locale/. app/extension/locale/",
+			"npm i --save angular-translate"
+		);
 	}
 	else {
 		delete vendorJs["angular-translate"];
@@ -178,10 +195,12 @@ prompt.get(schema, (err, input) => {
 	if (input.Restangular.match(yes)) {
 		console.log("");
 		console.log("Installing Restangular...");
-		
-		sh("mkdir app/extension/rest/");
-		sh("cp -a node_modules/rectangular/install/extension/rest/. app/extension/rest/");
-		sh("npm i --save lodash restangular");
+
+		sh(
+			"mkdir app/extension/rest/",
+			"cp -a tmp/rectangular/install/extension/rest/. app/extension/rest/",
+			"npm i --save lodash restangular"
+		);
 	}
 	else {
 		delete vendorJs.restangular;
@@ -191,21 +210,25 @@ prompt.get(schema, (err, input) => {
 		console.log("");
 		console.log("Installing SocketIO...");
 
-		sh("mkdir app/extension/upload/");
-		sh("cp -a node_modules/rectangular/install/extension/socket/. app/extension/socket/");
-		sh("npm i --save socket.io");
+		sh(
+			"mkdir app/extension/upload/",
+			"cp -a tmp/rectangular/install/extension/socket/. app/extension/socket/",
+			"npm i --save socket.io"
+		);
 	}
 	else {
 		delete vendorJs["socket.io"];;
 	}
-	
+
 	if (input["NG File Upload"].match(yes)) {
 		console.log("");
 		console.log("Installing NG File Upload...");
-		
-		sh("mkdir app/extension/upload/");
-		sh("cp -a node_modules/rectangular/install/extension/upload/. app/extension/upload/");
-		sh("npm i --save ng-file-upload");
+
+		sh(
+			"mkdir app/extension/upload/",
+			"cp -a tmp/rectangular/install/extension/upload/. app/extension/upload/",
+			"npm i --save ng-file-upload"
+		);
 	}
 	else {
 		delete vendorJs["ng-file-upload"];;

@@ -12,7 +12,8 @@
 		"lint-css": "node_modules/stylelint/bin/stylelint.js --config dev/stylelint.json app/**/*.scss",
 		"lint-js": "node_modules/eslint/bin/eslint.js --quiet --fix --ext .json --ext .js .",
 		"start": "node composer.js --server",
-		"test": "node composer.js --spec && node_modules/karma/bin/karma start dev/karma.js"
+		"test": "node composer.js --spec && node_modules/karma/bin/karma start dev/karma.js",
+		"--"
 	},
 	"dependencies": {
 		"@uirouter/angularjs": "1.0.12",
