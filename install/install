@@ -43,7 +43,7 @@ cd "$projectName"
 
 # NPM setup
 . ~/.nvm/nvm.sh
-nvm i 6.11
+nvm i 8.9
 
 # Fetch required files
 curl -O -s https://raw.githubusercontent.com/abbotto/rectangular/master/install/extension.js > /dev/null

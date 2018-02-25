@@ -6,74 +6,74 @@ const prompt = require("prompt");
 const sh = require("shellcmd");
 const vendorCss = deps.style;
 const vendorJs = deps.script;
-const yesOrNo = "/^(?:Yes|No|yes|no|Y|N|y|n)$/";
-const message = "Yes|No|yes|no|Y|N|y|n]";
+const pattern = "/^(?:Yes|No|yes|no|Y|N|y|n)$/";
+const message = "Yes|No|yes|no|Y|N|y|n";
 
 const extensions = {
 	"Angular Strap": {
 		description: "Install Angular Strap? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	"Angular Material": {
 		description: "Install Angular Material? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	D3: {
 		description: "Install D3? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	Lodash: {
 		description: "Install Lodash? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	Restangular: {
 		description: "Install Restangular? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	Bluebird: {
 		description: "Install Bluebird? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	"NG File Upload": {
 		description: "Install NG File Upload? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	MomentJS: {
 		description: "Install MomentJS? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	SocketIO: {
 		description: "Install SocketIO? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	Teleprint: {
 		description: "Install Teleprint? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	},
 	"Angular Translate": {
 		description: "Install Angular Translate? [y/n]",
 		message,
-		pattern: yesOrNo,
+		pattern,
 		required: true
 	}
 };
