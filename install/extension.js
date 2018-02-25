@@ -59,8 +59,8 @@ const extensions = {
 		pattern,
 		required: true
 	},
-	SocketIO: {
-		description: "Install SocketIO? [y/n]",
+	"SocketIO Client": {
+		description: "Install SocketIO Client? [y/n]",
 		message,
 		pattern,
 		required: true
@@ -208,13 +208,16 @@ prompt.get(schema, (err, input) => {
 
 	if (input.SocketIO.match(yes)) {
 		console.log("");
-		console.log("Installing SocketIO...");
+		console.log("Installing SocketIO Client...");
 
 		sh(
-			"mkdir app/extension/upload/",
+			"mkdir app/extension/socket/",
 			"cp -a tmp/rectangular/install/extension/socket/. app/extension/socket/",
 			"npm i --save socket.io-client"
 		);
+	}
+	else {
+		delete vendorJs["socket.io-client"];
 	}
 
 	if (input["NG File Upload"].match(yes)) {

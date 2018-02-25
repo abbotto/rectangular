@@ -96,7 +96,7 @@
 
 #### <a name='WebSockets'></a>WebSockets
 - Service is called `socket.service` and is injected via `socket$`.
-- Learn more about `socket.io` [here](https://socket.io/docs/).
+- Learn more about `socket.io-client` [here](https://socket.io/docs/).
 
 #### <a name='FileUploading'></a>File Uploading
 - Service is called `upload.service` and is injected via `upload$`.

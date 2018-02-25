@@ -8,7 +8,7 @@ describe("socket.service", () => {
 		socket$ = SocketService;
 	});
 
-	describe("When the `socket.io` package is installed", () => {
+	describe("When the `socket.io-client` package is installed", () => {
 		it("the `socket$` service should be available", () => {
 			expect(socket$).toBeDefined();
 			expect(typeof socket$).toBe("object");

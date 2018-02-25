@@ -52,6 +52,9 @@
 		"ng-file-upload": [
 			"./node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js",
 			"./node_modules/ng-file-upload/dist/ng-file-upload.min.js"
+		],
+		"socket.io": [
+			"./node_modules/socket.io-client/dist/socket.io.js"
 		]
 	},
 	"spec": {
