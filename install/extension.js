@@ -6,8 +6,9 @@ const prompt = require("prompt");
 const sh = require("shellcmd");
 const vendorCss = deps.style;
 const vendorJs = deps.script;
-const pattern = "/^(?:Yes|No|yes|no|Y|N|y|n)$/";
+const pattern = /^(?:Yes|No|yes|no|Y|N|y|n)$/;
 const message = "Yes|No|yes|no|Y|N|y|n";
+const yes = /^(?:Yes|yes|Y|y)$/;
 
 const extensions = {
 	"Angular Strap": {
@@ -82,7 +83,6 @@ console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
 const schema = {properties: extensions};
-const yes = "/^(?:Yes|No|yes|no|Y|N|y|n)$/";
 
 prompt.get(schema, (err, input) => {
 	if (input["Angular Strap"].match(yes)) {
@@ -211,7 +211,6 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs["ng-file-upload"];;
 	}
 
-	// Update paths
 	deps.script = vendorJs;
 	deps.style = vendorCss;
 
