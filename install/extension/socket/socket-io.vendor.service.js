@@ -8,7 +8,7 @@
 * @module Extension->Socket-Service
 */
 
-import * as SocketIO from "socket.io";
+import * as SocketIO from "socket-io-client";
 
 export default function socketIoVendorService() {
 	return SocketIO;

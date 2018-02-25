@@ -50,7 +50,7 @@ script:
   - cd ../
   - npm i
   - cp -a tmp/rectangular/install/project/. .
-  - npm i --save bootstrap angular-strap angular-material bluebird d3 moment angular-moment lodash angular-translate restangular socket.io ng-file-upload teleprint
+  - npm i --save bootstrap angular-strap angular-material bluebird d3 moment angular-moment lodash angular-translate restangular socket-io-client ng-file-upload teleprint
   - mkdir app/extension/ui/
   - mkdir app/extension/promise/
   - mkdir app/extension/chart/

@@ -213,7 +213,7 @@ prompt.get(schema, (err, input) => {
 		sh(
 			"mkdir app/extension/upload/",
 			"cp -a tmp/rectangular/install/extension/socket/. app/extension/socket/",
-			"npm i --save socket.io"
+			"npm i --save socket-io-client"
 		);
 	}
 	else {

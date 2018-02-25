@@ -75,7 +75,8 @@ echo -e "Building the app..."
 npm i
 node composer.js --build --production
 
-rm -rf tmp/rectangular
+mkdir -p node_modules/rectangular
+cp -a tmp/rectangular/. node_modules/rectangular
 npm i
 
 cd node_modules/rectangular/
