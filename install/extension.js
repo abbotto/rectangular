@@ -6,71 +6,74 @@ const prompt = require("prompt");
 const sh = require("shellcmd");
 const vendorCss = deps.style;
 const vendorJs = deps.script;
+const yesOrNo = "/^(?:Yes|No|yes|no|Y|N|y|n)$/";
+const message = "Yes|No|yes|no|Y|N|y|n]";
+
 const extensions = {
 	"Angular Strap": {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n",
 		description: "Install Angular Strap? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	"Angular Material": {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install Angular Material? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	D3: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install D3? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	Lodash: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install Lodash? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	Restangular: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install Restangular? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	Bluebird: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install Bluebird? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	"NG File Upload": {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install NG File Upload? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	MomentJS: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install MomentJS? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	SocketIO: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install SocketIO? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	Teleprint: {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install Teleprint? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	},
 	"Angular Translate": {
-		pattern: "/^(?:Yes|No|yes|no|Y|N|y|n)$/",
-		message: "Yes|No|yes|no|Y|N|y|n]",
 		description: "Install Angular Translate? [y/n]",
+		message,
+		pattern: yesOrNo,
 		required: true
 	}
 };
@@ -79,9 +82,10 @@ console.log("\nChoose extra packages to install:\n");
 prompt.start();
 
 const schema = {properties: extensions};
+const yes = "/^(?:Yes|No|yes|no|Y|N|y|n)$/";
 
 prompt.get(schema, (err, input) => {
-	if (input["Angular Strap"].match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["Angular Strap"].match(yes)) {
 		console.log("");
 		console.log("Installing Angular Strap...");
 		
@@ -94,7 +98,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorCss.bootstrap;
 	}
 	
-	if (input["Angular Material"].match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["Angular Material"].match(yes)) {
 		console.log("");
 		console.log("Installing Angular Material...");
 		
@@ -108,7 +112,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorCss["angular-material"];
 	}
 	
-	if (input.Bluebird.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.Bluebird.match(yes)) {
 		console.log("");
 		console.log("Installing Bluebird...");
 		
@@ -117,7 +121,7 @@ prompt.get(schema, (err, input) => {
 		sh("npm i --save bluebird");
 	}
 	
-	if (input.MomentJS.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.MomentJS.match(yes)) {
 		console.log("");
 		console.log("Installing MomentJS...");
 		
@@ -129,7 +133,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs.moment;
 	}
 
-	if (input.D3.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.D3.match(yes)) {
 		console.log("");
 		console.log("Installing Lodash...");
 		
@@ -138,7 +142,7 @@ prompt.get(schema, (err, input) => {
 		sh("npm i --save d3");
 	}
 
-	if (input.Lodash.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.Lodash.match(yes)) {
 		console.log("");
 		console.log("Installing Lodash...");
 		
@@ -150,7 +154,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs.lodash;
 	}
 
-	if (input.Teleprint.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.Teleprint.match(yes)) {
 		console.log("");
 		console.log("Installing Teleprint...");
 		
@@ -159,7 +163,7 @@ prompt.get(schema, (err, input) => {
 		sh("npm i --save teleprint");
 	}
 
-	if (input["Angular Translate"].match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["Angular Translate"].match(yes)) {
 		console.log("");
 		console.log("Installing Angular Translate...");
 		
@@ -171,7 +175,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs["angular-translate"];
 	}
 
-	if (input.Restangular.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.Restangular.match(yes)) {
 		console.log("");
 		console.log("Installing Restangular...");
 		
@@ -183,7 +187,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs.restangular;
 	}
 
-	if (input.SocketIO.match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input.SocketIO.match(yes)) {
 		console.log("");
 		console.log("Installing SocketIO...");
 
@@ -195,7 +199,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs["socket.io"];;
 	}
 	
-	if (input["NG File Upload"].match(/^(?:Yes|yes|Y|y)$/)) {
+	if (input["NG File Upload"].match(yes)) {
 		console.log("");
 		console.log("Installing NG File Upload...");
 		
