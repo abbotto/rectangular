@@ -28,7 +28,7 @@ module.exports = function style(deps, root, purifyOptions) {
 		path.extname(file) === ".scss" && sassFiles.push(file);
 	});
 
-	sh("touch " + distAppCSS);
+	sh("echo '' > " + distAppCSS);
 
 	sassFiles.forEach((file) => {
 		sh("cat " + file + " >> " + tmpAppCSS);
