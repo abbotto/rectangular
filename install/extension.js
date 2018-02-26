@@ -206,7 +206,7 @@ prompt.get(schema, (err, input) => {
 		delete vendorJs.restangular;
 	}
 
-	if (input.SocketIO.match(yes)) {
+	if (input["SocketIO Client"].match(yes)) {
 		console.log("");
 		console.log("Installing SocketIO Client...");
 
