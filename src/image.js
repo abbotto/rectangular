@@ -7,20 +7,20 @@ const sh = require("shellcmd");
 
 module.exports = function img(deps, root) {
 	const images = parseAssets(deps);
-	const outputDir = root + "/dist/fonts";
+	const outputDir = root + "/dist/images";
 	const isDest = fs.existsSync(outputDir);
-	
+
 	images.forEach((filePath, i) => {
 		images[i] = filePath.replace("./", root + "/");
 	});
-	
+
 	const imgFiles = glob.sync(images);
-	
+
 	isDest
 		? sh("rm -rf " + outputDir + " && mkdir " + outputDir)
 		: sh("mkdir " + outputDir)
-	;
-	
+		;
+
 	imgFiles.length && imgFiles.forEach((img) => {
 		img = img.replace("./", root + "/");
 		sh("cp " + img + " " + root + "/dist/images/");
