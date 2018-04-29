@@ -6,7 +6,7 @@
   "main": "rectangular.js",
   "author": "Jared Abbott",
   "engines": {
-    "node": "8.9"
+    "node": "9"
   },
   "scripts": {},
   "dependencies": {
@@ -16,10 +16,10 @@
     "eslint-plugin-disable": "1.0.1",
     "eslint-plugin-json": "1.2.0",
     "glob-concat": "1.0.1",
-    "lodash": "4.17.5",
+    "lodash": "4.17.10",
     "marked": "0.3.19",
-    "node-sass": "4.8.3",
-    "postcss": "6.0.21",
+    "node-sass": "4.9.0",
+    "postcss": "6.0.22",
     "prompt": "1.0.0",
     "pug": "2.0.3",
     "purify-css": "1.2.6",
