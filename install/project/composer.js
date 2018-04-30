@@ -25,7 +25,7 @@ isArg("--doc") && markdownToHtml();
 isArg("--bump-patch") && sh("gulp bump-patch --gulpfile dev/gulp.js");
 isArg("--bump-minor") && sh("gulp bump-minor --gulpfile dev/gulp.js");
 isArg("--bump-major") && sh("gulp bump-major --gulpfile dev/gulp.js");
-isArg("--env") && rectangular.env(".envrc", __dirname);
+isArg("--env") && rectangular.env(".env", __dirname);
 isArg("--route") && rectangular.routes(deps.route, __dirname);
 isArg("--script") && rectangular.scripts(deps.script, __dirname);
 isArg("--style") && rectangular.styles(deps.style, __dirname, purifyRules);
