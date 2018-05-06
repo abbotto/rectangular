@@ -54,5 +54,5 @@ module.exports = function style(deps, root, purifyOptions) {
 		root + "/app/**/*.html"
 	];
 
-	purify(content, appCSS, purifyOptions);
+	purify(content, appCSS.split("../fonts").join("fonts"), purifyOptions);
 };
